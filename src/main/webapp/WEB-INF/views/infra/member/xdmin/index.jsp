@@ -20,11 +20,25 @@
 	<style type="text/css">
 		.background{
 			background-image: url("../resources/images/xdmin/dog.jpg");
-			background-size: cover;
 		}
 		
-		.size{
+		.image{
 			background-color: rgba(255,255,255,0.3);
+			height: 100%;
+		}
+		
+		.mid{
+			text-align: center;
+		}
+		
+		h2{
+			color: white;
+			margin-top: 10rem;
+		}
+		
+		.txt{
+			color: white;
+			font-size: 17px;	
 		}
 		
 	</style>
@@ -33,48 +47,11 @@
 <body>
 
 	<div class="background">
-		<div class="size">
+		<div class="image mid">
 			<br>
 			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			<br>
-			
+			<h2>안녕하세요, #Daily Pet에 방문해주셔서 감사합니다.</h2>
+			<span class="txt">사용자, 관리자를 선택해주세요.</span>
 		</div>
 	</div>
 

@@ -8,13 +8,12 @@
 
 <html lang="KO">
 <head>
-	<title>Home</title>
-	<!-- Boxiocns CDN Link -->
-	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-	<!-- Font Awesome -->
+	<title>#dail_pet</title>
+	<!-- 폰트어썸 -->
 	<script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
 	<!-- user css -->
 	<link rel="stylesheet" href="/resources/css/adminstyle.css" />
+	<!-- 부트스트랩 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 	

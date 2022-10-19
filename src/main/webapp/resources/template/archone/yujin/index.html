@@ -13,6 +13,12 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 	<style type="text/css">
+		.background{
+			background-image:url(../images/xdmin/dog.jpg); 
+			background-attachment: fixed; 
+			background-size: cover;
+		}
+		
 		.mid{
 			text-align: center;
 		}
@@ -21,12 +27,14 @@
 			font-family: 'Happiness-Sans-Title';
 			color: white;
 			margin-top: 10rem;
+			/* text-shadow: -1px 0 #f4f4f4, 0 1px #f4f4f4, 1px 0 #f4f4f4, 0 -1px #f4f4f4; */
 		}
 		
 		.txt{
 		   	font-family: 'OTWelcomeRA';
 			color: white;
-			font-size: 20px;	
+			font-size: 20px;
+			text-shadow: -1px 0 #f4f4f4, 0 1px #f4f4f4, 1px 0 #f4f4f4, 0 -1px #f4f4f4;	
 		}
 		
 		@font-face {
@@ -52,7 +60,7 @@
 			height: 200px;
 			padding : 90px 0;
 		}
-		
+
 		.choose{
 		 	font-family: 'OTWelcomeRA';
 			font-size: 20px;
@@ -72,42 +80,40 @@
 			color: white;
 			font-weight: bold;
 			font-size: 15px;
+			cursor: pointer;
 		}
 		
 	</style>
 </head>
 
-<body style="background-image:url(../images/xdmin/dog.jpg); background-attachment: fixed; background-color: rgba(255,255,255,0.5);">
-
-	<div class="background">
-		<div class="mid">
-			<br>
-			<br>
-			<h2>안녕하세요, #Daily Pet에 방문해주셔서 감사합니다.</h2>
-			<br>
-			<span class="txt">사용자, 관리자를 선택해주세요.</span>
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="container wid">
-				<div class="row mid">
-					<div class="col-lg-4 col-md-4">
-						<div class="container box">
-							<span class="choose">관리자</span>
-						</div>
-						<br>
-						<br>
-						<span class="under">ENTER</span>
+<body class="background">
+	<div class="mid">
+		<br>
+		<br>
+		<h2>안녕하세요, #Daily Pet에 방문해주셔서 감사합니다.</h2>
+		<br>
+		<span class="txt">사용자, 관리자를 선택해주세요.</span>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="container wid">
+			<div class="row mid">
+				<div class="col-lg-4 col-md-4">
+					<div class="container box">
+						<span class="choose">관리자</span>
 					</div>
-					<div class="col-lg-4 col-md-4">
-						<div class="container box">
-							<span class="choose"><center>사용자</center></span>
-						</div>
-						<br>
-						<br>
-						<span class="under">ENTER</span>
+					<br>
+					<br>
+					<span class="under">ENTER</span>
+				</div>
+				<div class="col-lg-4 col-md-4">
+					<div class="container box">
+						<span class="choose"><center>사용자</center></span>
 					</div>
+					<br>
+					<br>
+					<span class="under" onClick="user()">ENTER</span>
 				</div>
 			</div>
 		</div>
@@ -124,5 +130,10 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>							<!-- jQuery 기본 js파일 -->
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>										<!-- jQuery UI 라이브러리 js파일 -->
 
+<script type="text/javascript">
+	function user(){
+		 location.href = "../yujin/home.html";
+	}
+</script>
 </body>
 </html>

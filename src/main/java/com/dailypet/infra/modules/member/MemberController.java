@@ -11,5 +11,5 @@ public class MemberController {
 	public String index() throws Exception {
 		return "infra/member/user/index";
 	}
-
+	
 }

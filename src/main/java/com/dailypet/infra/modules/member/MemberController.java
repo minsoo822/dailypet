@@ -9,7 +9,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "index")
 	public String index() throws Exception {
-		return "infra/member/xdmin/index";
+		return "infra/member/user/index";
 	}
 
 }

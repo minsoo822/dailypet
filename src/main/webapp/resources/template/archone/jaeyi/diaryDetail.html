@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>Interior Design Website Templates Free Download</title>
+    <title>일기 상세</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -25,25 +25,65 @@
     <![endif]-->
 </head>
 
+<style type="text/css">
+
+	.navbar-fixed-top {
+		background-color: black;
+	}
+	
+	.container2 {
+		margin: 5% 15% 0 25%;
+		width: 800px;
+		height: 500px;
+		border: 1px solid lightgray;
+	}
+	
+	.imgdetail {
+		overflow: hidden;
+	}
+
+	.img-responsive {
+		width: 100%;
+	    height: 100%;
+	    max-width: 700px;
+	    max-height: 500px;
+		object-fit: cover;
+	}
+	
+	.profileView {
+		width: 35px;
+	    height: 35px; 
+	    border-radius: 70%;
+	    overflow: hidden;
+	}
+	
+	.profilepic {
+		width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	}
+	
+</style>
+
 <body>
-    <div class="header navbar-fixed-top">
+    <div class="header navbar-fixed-top header-collapse">
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="index.html"><img src="images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="../index.html"><img src="../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		            <div class="navigation">
-		                <div id="navigation">
+		                <div id="navigation"><div id="menu-button">Menu</div>
 		                    <ul>
 		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
+		                        <li class="has-sub"><span class="submenu-button"></span><a href="service-list.html" title="Service List">유기동물 찾기</a>
 		                            <ul>
 		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
 		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
 		                            </ul>
 		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
+		                        <li class="has-sub"><span class="submenu-button"></span><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
 		                            <ul>
 		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
 		                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
@@ -55,14 +95,14 @@
 					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
 					              </ul>
 					          </li> -->
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">내 주변 편의시설</a>
+					          	<li class="has-sub"><span class="submenu-button"></span><a href="../diaryList.html" title="Portfolio">내 주변 편의시설</a>
 	<!-- 						메뉴구현x 일단 링크만 생성						
 								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
 								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
 								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
 	-->							
 								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
-	                            <li><a href="error.html" title="Error">로그인</a> </li>
+	                            </li><li><a href="error.html" title="Error">로그인</a> </li>
 	                            <li><a href="error.html" title="Error">회원가입</a> </li>
 	                        </ul>
 	                    </div>
@@ -71,77 +111,41 @@
 	        </div>
 	    </div>
 	</div>
-    <div class="page-header">
-        <!-- page header -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-caption">
-                        <h2 class="page-title">Our Services</h2>
-                        <p>Integer gravida odio id eros feugiat posuerece justo mi, blandit
-                            <br> ut elementum eget, lobortis vitae tortor tincidunt non erat. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- /.page header -->
     <div class="content">
-        <div class="container">
+    	<div class="container2">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img ">
-                            <!-- service img -->
-                            <a href="../service-detail.html" class="imghover"><img src="../images/service-pic-1.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="../service-detail.html" class="title">Interior</a></h2>
-                            <p>Phasellus hendrerit mauris vitae odio suscip max pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
                     <div class="service-block text-center">
                         <!-- service block -->
                         <div class="service-img">
                             <!-- service img -->
-                            <a href="../service-detail.html" class="imghover"><img src="images/service-pic-2.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
+                            <div class="imgdetail">
+                            	<img src="../images/IMG_0308.jpg" class="img-responsive" alt="">
+                            </div>
                         </div>
                         <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="../service-detail.html" class="title">Exterior</a></h2>
-                            <p>Donec tempus odio ac dignissim ultricies massa varius natoque penatibus arturient montes, nascetur ridiculus mus aliquam.</p>
-                        </div>
-                        <!-- service content -->
                     </div>
                     <!-- /.service block -->
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="service-block text-center">
-                        <!-- service block -->
-                        <div class="service-img">
-                            <!-- service img -->
-                            <a href="../service-detail.html" class="imghover"><img src="images/service-pic-3.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"> </a>
-                        </div>
-                        <!-- service img -->
-                        <div class="service-content">
-                            <!-- service content -->
-                            <h2><a href="../service-detail.html" class="title">Landscape</a></h2>
-                            <p>Vestibulum diam arcu varius natoque penatibus magnis dis parturient ridiculus mus mollisid iaculis necaliquamd antetiam consequat.</p>
-                        </div>
-                        <!-- service content -->
-                    </div>
-                    <!-- /.service block -->
-                </div>
+               <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                	<div class="service-content">
+					<!-- service content -->
+						<div class="row" style="margin: 10px 0">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+								<div class="profileView">
+									<img src="../images/jennieprofile.jpg" class="profilepic" alt="">
+							   	</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="vertical-align: middle">
+							    <h5>jennierubyjerry</h5>
+							</div>
+						</div>
+					</div>
+					<!-- service content -->
+				</div>
             </div>
-        </div>
+		</div>
     </div>
     <div class="footer">
         <!-- footer-->

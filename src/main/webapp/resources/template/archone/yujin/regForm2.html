@@ -97,7 +97,19 @@
 	    }
 	    
 	    .input{
-	    	width: 320px;
+	    	width: 350px;
+	    	height: 40px;
+	    	margin-top: 6px;
+	    }
+	    
+	    .input2{
+	   		width: 300px;
+	    	height: 40px;
+	    	margin-top: 6px;
+	    }
+	     
+	    .input3{
+	   		width: 280px;
 	    	height: 40px;
 	    	margin-top: 6px;
 	    }
@@ -266,7 +278,7 @@
                         		<span>아이디</span>
                         	</div>
                         	<div class="col-5">
-                       			<input class="form-control input" type="text" name="userID" id="userID">
+                       			<input class="form-control input2" type="text" name="userID" id="userID">
                         	</div>
                        	</div>
                        	<hr>
@@ -275,7 +287,7 @@
                         		<span>닉네임</span>
                         	</div>
                         	<div class="col-5">
-                       			<input class="form-control input" type="text" name="nickname" id="nickname">
+                       			<input class="form-control input2" type="text" name="nickname" id="nickname">
                         	</div>
                        	</div>
                        	<hr>
@@ -301,14 +313,14 @@
                        		<div class="col-2 gray">
                         		<span>주소</span>
                         	</div>
-                        	<div class="col-5">
-                       			<div class="input-group">
-									<input class="form-control input" type="text" name="zip" id="zip" placeholder="우편번호">
-									<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-									<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
-								</div>
+                        	<div class="col-4">
+								<input class="form-control input3" type="text" name="zip" id="zip" placeholder="우편번호">
                         	</div>
-                       	</div>                       	
+                        	<div class="col-2 top2">
+                       			<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+								<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                        	</div>
+                       	</div>   
 						<button type="button" class="btn btn-secondary right" id="btn">가입완료 <i class="fa-solid fa-angle-right"></i></button>
 						<br>
 						<br>

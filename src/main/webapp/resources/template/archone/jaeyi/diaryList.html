@@ -30,6 +30,7 @@
 
 	.navbar-fixed-top {
 		background-color: black;
+		margin-bottom: 100px;
 	}
 	
 	.content {
@@ -91,6 +92,14 @@
 		margin-top: -20px;
 	}
 	
+	.nav > li > a {
+		display: inline;
+	}
+	
+	.fixed-top {
+		margin-top: 100px;
+	}
+	
 </style>
 
 <body>
@@ -140,6 +149,21 @@
 	    </div>
 	</div>
     <!-- /.page header -->
+	<nav class="navbar fixed-top bg-light">
+		<div class="container-fluid">
+			<ul class="nav justify-content-end">
+				<li class="nav-item">
+			 		<a class="nav-link active" aria-current="page" href="#">Active</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
     <div class="content">
         <div class="container2">
 			<div class="service-block">

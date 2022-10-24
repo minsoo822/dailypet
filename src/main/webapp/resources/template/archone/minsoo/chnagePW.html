@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>Interior Design Website Templates Free Download</title>
+    <title>비밀번호 변경</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -26,7 +26,7 @@
     <![endif]-->
     <style type="text/css">
     .changePwBack {
-    	background: gray;
+    	background: #f3f0eb;;
     	height: 450px;
     	text-align: center;
     }
@@ -38,6 +38,7 @@
     }
     .form-control {
     	color: #000;
+    	border-radius: 8px;
     }
     .password{
     	width: 450px;
@@ -49,17 +50,25 @@
     	background: #f3f0eb;
     	color: #372d2b;
     	text-align: center;
-    	width: 120px;
+    	width: 70px;
     	height: 50px;
-    	border-radius: 10px;
+    	border-radius: 8px;
     	font-size: 13pt;
     	font-weight: bold;
+    	margin-left: 10px;
     }
     .Searchbtn:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
     }
+    .text {
+    	padding-top: 10px;
+    }
+    .myPage {
+    	margin-bottom: 30px;
+    }
+    .
     </style>
 </head>
 
@@ -127,37 +136,15 @@
         <div class="container">
             <div class="row">
             	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget widget-search">
-                        <!-- widget search -->
-                        <form>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Here" aria-describedby="basic-addon2">
-                                <span class="input-group-addon" id="basic-addon2"> <i class="fa fa-search"></i></span> </div>
-                            <!-- /input-group -->
-                        </form>
-                    </div>
-                    <!-- /.widget search -->
-                    <div class="widget widget-categories" style="text-align: right;">
+                    <div class="widget widget-categories" style="text-align: right; background: #fff;">
                         <!-- widget categories -->
                         <!-- widget start -->
-                        <h3 class="widget-title"> 마이페이지 </h3>
+                        <h3 class="widget-title myPage"> 마이페이지 </h3>
                         <ul class="listnone">
                             <li><a href="#">비밀번호 변경 </a></li>
                             <li><a href="#">회원탈퇴</a></li>
                         </ul>
                     </div>
-                    <!-- /.widget categories -->
-                    <!-- widget start -->
-                    <div class="widget widget-archives">
-                        <!-- widget archives -->
-                        <h3 class="widget-title"> Archives </h3>
-                        <ul class="listnone">
-                            <li><a href="#">December  2020</a></li>
-                            <li><a href="#">November  2020</a></li>
-                            <li><a href="#">October  2020</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.widget archives -->
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="row">
@@ -168,19 +155,19 @@
                         		</div>
                         	</div>
                         	<div class="row password">
-                        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">기존 비밀번호</div>
+                        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text">기존 비밀번호</div>
                         		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         			<input type="text" class="form-control">
                         		</div>
                         	</div>
                         	<div class="row password">
-                        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">변경할 비밀번호</div>
+                        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text">변경할 비밀번호</div>
                         		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         			<input type="text" class="form-control">
                         		</div>
                         	</div>
                         	<div class="row password">
-                        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">비밀번호 화인</div>
+                        		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text">비밀번호 확인</div>
                         		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
                         			<input type="text" class="form-control">
                         		</div>
@@ -190,10 +177,10 @@
                 </div>
             </div>
             <div class="row">
-            	<div class="col" style="display: flex; justify-content: flex-end;">
+            	<div class="col" style="display: flex; justify-content: flex-end; margin-top: 50px;">
             		<div class="btn-group">
-            		<button type="button" class="Searchbtn">버튼</button>
-            		<button type="button" class="Searchbtn">버튼</button>
+            		<button type="button" class="Searchbtn">취소</button>
+            		<button type="button" class="Searchbtn">변경</button>
             		</div>
             	</div>
             </div>

@@ -53,7 +53,7 @@
 		
 		.div2 {
 		    display: flex;
-			margin-left: 55px;
+			margin-left: 30px;
 		}
 		
 		.foot{
@@ -92,28 +92,10 @@
 	    	font-size: 16px;
 	    	text-align: center;
 	    	width: 150px;
-	    	height: 40px;
+	    	height: 35px;
 	    	margin-top: 6px;
 	    }
-	    
-	    .input{
-	    	width: 350px;
-	    	height: 40px;
-	    	margin-top: 6px;
-	    }
-	    
-	    .input2{
-	   		width: 300px;
-	    	height: 40px;
-	    	margin-top: 6px;
-	    }
-	     
-	    .input3{
-	   		width: 280px;
-	    	height: 40px;
-	    	margin-top: 6px;
-	    }
-	    
+
 		hr{
 			margin-top: 0px;
 			margin-bottom: 10px;
@@ -125,11 +107,39 @@
 		
 		select{
 			width: 370px;
-	    	height: 40px;	
+	    	height: 35px;	
+    	    border: 1px solid #e2dcdb;
+			font-size: 14px;
+			margin-top: 5px;
 		}
 		
 		.top3{
 			margin-top: 6px;
+		}
+		
+		.top4{
+			margin-top: 4px;
+		}
+		
+		label{
+			font-size: 14px;
+			font-weight: nomal;
+		}
+		
+		.input{
+			height: 35px;
+			margin-top: 6px;
+		}
+		
+		.form-check{
+			margin-top: 10px;
+		}
+		
+		.addScroll{
+			overflow-y:auto;
+			background-color:#E9ECEF;
+			width: 475px;
+			height: 200px;
 		}
 		
     </style>
@@ -231,32 +241,32 @@
                         <h3>기본 정보</h3>
                         <hr>
                        	<div class="row div2">
-                       		<div class="col-2 gray">
-                        		<span>성명</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">성명</label>
                         	</div>
-                        	<div class="col-4">
+                        	<div class="col-lg-4 col-md-4 col-sm-4">
                        			<input class="form-control input" type="text" name="name" id="name">
                         	</div>
                         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                       		<div class="col-2 gray">
-                        		<span>연락처</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">연락처</label>
                         	</div>
-                        	<div class="col-4">
-                        		<input class="form-control input" type="text" name="tel" id="tel">
+                        	<div class="col-lg-4 col-md-4 col-sm-4">
+                        		<input class="form-control input" type="text" name="tel" id="tel" placeholder="ex)010-0000-0000">
                         	</div>
                        	</div>
                        	<hr>
                        	<div class="row div2 left">
-                       		<div class="col-2 gray">
-                        		<span>이메일</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">이메일</label>
                         	</div>
-                        	<div class="col-4">
+                        	<div class="col-lg-4 col-md-4 col-sm-4">
 								<input type="text" class="form-control input" name="emailID" id="emailID">
 							</div>	
 							<div class="col-1 top2">
-								<span>@</span>
+								<span>&nbsp;@&nbsp;</span>
 							</div>
-							<div class="col-4 top3">
+							<div class="col-lg-4 col-md-4 col-sm-4">
 								<select class="form-select" name="emailseq">
 									<option value="">::선택::</option>
 									<option value="1">naver.com</option>
@@ -274,55 +284,159 @@
                         <h3>필수 입력 사항</h3>
                         <hr>
                         <div class="row div2 left">
-                       		<div class="col-2 gray">
-                        		<span>아이디</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">아이디</label>
                         	</div>
-                        	<div class="col-5">
-                       			<input class="form-control input2" type="text" name="userID" id="userID">
+                        	<div class="col-lg-3 col-md-3 col-sm-3">
+                       			<input class="form-control input" type="text" name="userID" id="userID" placeholder="4자리 이상의 영문 + 숫자">
                         	</div>
                        	</div>
                        	<hr>
                    	   	<div class="row div2 left">
-                       		<div class="col-2 gray">
-                        		<span>닉네임</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">닉네임</label>
                         	</div>
-                        	<div class="col-5">
-                       			<input class="form-control input2" type="text" name="nickname" id="nickname">
+                        	<div class="col-lg-3 col-md-3 col-sm-3">
+                       			<input class="form-control input" type="text" name="nickname" id="nickname">
                         	</div>
                        	</div>
                        	<hr>
                   		<div class="row div2 left">
-                       		<div class="col-2 gray">
-                        		<span>비밀번호</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">비밀번호</label>
                         	</div>
-                        	<div class="col-5">
+                        	<div class="col-lg-4 col-md-4 col-sm-4">
                        			<input class="form-control input" type="password" name="pw" id="pw">
                         	</div>
                        	</div>
                        	<hr>
 						<div class="row div2 left">
-                       		<div class="col-2 gray">
-                        		<span>비밀번호 확인</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">비밀번호 확인</label>
                         	</div>
-                        	<div class="col-5">
+                        	<div class="col-lg-4 col-md-4 col-sm-4">
                        			<input class="form-control input" type="password" name="pwcheck" id="pwcheck">
                         	</div>
                        	</div>  
                        	<hr>
                        	<div class="row div2 left">
-                       		<div class="col-2 gray">
-                        		<span>주소</span>
+                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+                        		<label class="top4">주소</label>
                         	</div>
-                        	<div class="col-4">
-								<input class="form-control input3" type="text" name="zip" id="zip" placeholder="우편번호">
-                        	</div>
-                        	<div class="col-2 top2">
-                       			<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-								<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
-                        	</div>
-                       	</div>   
-						<button type="button" class="btn btn-secondary right" id="btn">가입완료 <i class="fa-solid fa-angle-right"></i></button>
+                        	<div class="col-lg-10 col-md-10 col-sm-10">
+                        		<div class="row">
+		                        	<div class="col-lg-4 col-md-4 col-sm-4">
+										<input class="form-control input" type="text" name="zip" id="zip" placeholder="우편번호">
+		                        	</div>
+		                        	<div class="col-lg-2 col-md-2 col-sm-2 top3">
+										&nbsp;                        	
+		                       			<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+										<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+		                        	</div>
+		                       		<div class="col-lg-10 col-md-10 col-sm-10">
+		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="주소">
+		                        	</div>
+		                        	<div class="col-lg-5 col-md-5 col-sm-5">
+		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="상세주소">
+		                        	</div>
+		                        	<div class="col-lg-5 col-md-5 col-sm-5">
+		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="참고항목" readonly>
+		                        	</div>
+								</div>
+							</div>
+						</div>
+						<hr>
 						<br>
+						<br>
+						<h3>반려동물 정보 등록</h3>
+						<hr>
+						<div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">집사 이름</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input class="form-control input" type="text" name="owner" id="owner">
+							</div>
+						</div>
+						<hr>
+						<div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">이미지 첨부</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input class="form-control input" name="MultipartFile" type="file" multiple="multiple">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 top2">
+								<div id="ifmmUploadedImagePreview" class="addScroll">
+									<c:forEach items="${imageUpload}" var="imageUpload" varStatus="status">
+										<img src="${imageUpload.path }${imageUpload.uuidName}" id="img">
+									</c:forEach>
+								</div>
+							</div>							
+						</div>
+						<hr>
+						<div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">이름</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input class="form-control input" type="text" name="petName" id="petName" placeholder="반려동물의 이름을 적어주세요.">
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">나이</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input class="form-control input" type="text" name="age" id="age">
+							</div>
+						</div>
+						<hr>
+						<div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">품종</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input class="form-control input" type="text" name="kind" id="kind" placeholder="ex) 포메라니안">
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">성별</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 top2">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
+								<label class="form-check-label" for="inlineRadio4">남아</label>
+								&nbsp;&nbsp;
+								<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
+								<label class="form-check-label" for="inlineRadio5">여아</label>
+								&nbsp;&nbsp;
+								<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">
+								<label class="form-check-label" for="inlineRadio5">중성화</label>
+							</div>
+						</div>
+						<hr>
+						<div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">칩 여부</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 top2">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="option4">
+								<label class="form-check-label" for="inlineRadio4">예</label>
+								&nbsp;&nbsp;
+								<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio5" value="option5">
+								<label class="form-check-label" for="inlineRadio5">아니오</label>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">접종 여부</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 top2">
+								<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio4" value="option4">
+								<label class="form-check-label" for="inlineRadio4">예</label>
+								&nbsp;&nbsp;
+								<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio5" value="option5">
+								<label class="form-check-label" for="inlineRadio5">아니오</label>
+							</div>
+						</div>
+						<hr>
+						<br>
+						<button type="button" class="btn btn-secondary right" id="btn">가입완료 <i class="fa-solid fa-angle-right"></i></button>
 						<br>
                     </div>
                 </div>

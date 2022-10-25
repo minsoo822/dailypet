@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>Interior Design Website Templates Free Download</title>
+    <title>마이페이지 수정</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -25,10 +25,22 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-     /* div {
+   	/* div {
     	border: 1px solid orange;
     }  */
-    
+    .otherbtn{
+    	border: 1px solid #efefef;
+    	background: #f3f0eb;
+    	color: #372d2b;
+    	text-align: center;
+    	width: 90px;
+    	height: 50px;
+    	border-radius: 6px;
+    	font-size: 13pt;
+    	font-weight: bold;
+    	margin-left: auto;
+    	margin-right: auto;
+    }
     .Searchbtn {
     	border: 1px solid #efefef;
     	background: #f3f0eb;
@@ -42,15 +54,19 @@
     	margin-left: auto;
     	margin-right: auto;
    	}
-   	.Searchbtn:hover {
+   	.Searchbtn:hover , .otherbtn:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
     }
     .post-img  {
     	background: gray;
-    	width: 212px;
+    	width: 220px;
     	height: 250px;
+    }
+    .petImg {
+    	max-width: 100%;
+    	max-height: 100%;
     }
     .text {
     	padding-top: 10px;
@@ -58,6 +74,13 @@
     }
     .form-control {
     	color: #000;
+    }
+    .myPage {
+    	margin-bottom: 30px;
+    	font-weight: bold;
+    }
+    .post-block {
+    	margin-bottom: 5px;
     }
     </style>
 </head>
@@ -129,7 +152,7 @@
                     <div class="widget widget-categories" style="text-align: right;">
                         <!-- widget categories -->
                         <!-- widget start -->
-                        <h3 class="widget-title"> 마이페이지 </h3>
+                        <h3 class="widget-title myPage"> 마이페이지 </h3>
                         <ul class="listnone">
                             <li><a href="#">비밀번호 변경 </a></li>
                             <li><a href="#">회원탈퇴</a></li>
@@ -143,9 +166,12 @@
                             <div class="post-block">
                                 <!-- post block -->
                                 <div class="post-img">
-                                    <a href="#"><img src="../images/post-img.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
+                                    <img src="" class="petImg" id="imageM">
                                 </div>
                                 <!-- /.post block -->
+                            </div>
+                            <div>
+                            	<input type="file" id="fileM" class="form-control" style="width: 220px; height: 30px;">
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -212,10 +238,13 @@
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                             <div class="post-block">
                                 <!-- post block -->
-                                <div class="post-img" style="width: 212px; height: 250px;">
-                                    <a href="#"><img src="../images/post-img.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
+                                <div class="post-img">
+                                    <img src="" class="petImg" id="imageP">
                                 </div>
                                 <!-- /.post block -->
+                            </div>
+                            <div>
+                            	<input type="file" id="fileP" class="form-control" style="width: 220px; height: 30px;">
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -265,8 +294,8 @@
             <div class="row">
             	<div class="col" style="display: flex; justify-content: flex-end; margin-right: 20px;">
             		<div class="btn-group">
-            		<button type="button" class="Searchbtn">버튼</button>
-            		<button type="button" class="Searchbtn">버튼</button>
+            		<button type="button" class="otherbtn">목록으로</button>
+            		<button type="button" class="otherbtn">저장하기</button>
             		</div>
             	</div>
             </div>
@@ -341,6 +370,27 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/menumaker.js"></script>
     <script src="../js/navigation.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    
+	//주인이미지 미리보기
+    $("#fileM").on("change", function(e) {
+		var tmp = e.target.files[0];
+	    var img = URL.createObjectURL(tmp);
+	    $("#imageM").attr("src", img);
+	});
+  	//반려동물 이미지 미리보기
+    $("#fileP").on("change", function(e) {
+		var tmp = e.target.files[0];
+	    var img = URL.createObjectURL(tmp);
+	    $("#imageP").attr("src", img);
+	});
+    
+    
+    
+    </script>
+    
+    
+    
 </body>
 
 </html>

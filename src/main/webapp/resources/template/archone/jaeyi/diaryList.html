@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
     <!-- Style -->
     <link href="../css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -29,14 +30,74 @@
 
 	.navbar-fixed-top {
 		background-color: black;
+		margin-bottom: 100px;
+	}
+	
+	.content {
+		display: flex;
+		 justify-content: center;
 	}
 	
 	.container2 {
 		margin-top: 5%;
-		max-width: 500px;
-		max-height: 650px;
-		text-align: center;
+		width: 500px;
+		height: auto;
 		border: 1px solid lightgray;
+	}
+	
+	.service-profile {
+		height: 50px;
+	}
+	
+	.profileView {
+		width: 30px;
+	    height: 30px; 
+	    border-radius: 70%;
+	    overflow: hidden;
+	    margin-left: 20px;
+	}
+	
+	.profilepic {
+		width: 100%;
+	    height: 100%;
+	    object-fit: cover;
+	}
+	
+	.img-responsive {
+		width: 100%;
+	    height: 100%;
+	    max-width: 500px;
+		max-height: 500px;
+		object-fit: cover;
+	}
+	
+	.imghover {
+		overflow: hidden;
+	}
+	
+	button {
+		background-color: white;
+		border: none;
+	}
+	
+	.service-content > * {
+		margin-left: 10px;
+	}
+	
+	.postbtn {
+		margin: -20px 0 0 10px;
+	}
+	
+	.cardcontent {
+		margin-top: -20px;
+	}
+	
+	.nav > li > a {
+		display: inline;
+	}
+	
+	.fixed-top {
+		margin-top: 100px;
 	}
 	
 </style>
@@ -88,19 +149,50 @@
 	    </div>
 	</div>
     <!-- /.page header -->
+	<nav class="navbar fixed-top bg-light">
+		<div class="container-fluid">
+			<ul class="nav justify-content-end">
+				<li class="nav-item">
+			 		<a class="nav-link active" aria-current="page" href="#">Active</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Link</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
     <div class="content">
         <div class="container2">
 			<div class="service-block">
 			    <!-- service block -->
+			    <div class="service-profile">
+			    	<div class="row" style="margin-top: 15px">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+							<div class="profileView">
+								<img src="../images/jennieprofile.jpg" class="profilepic" alt="">
+						   	</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+						    <h5 style="margin: 10px 0 0 -25px; font-size: 13px"><b>jennierubyjerry</b></h5>
+						</div>
+					</div>
+			    </div>
 				<div class="service-img ">
 				    <!-- service img -->
-				    <a href="service-detail.html" class="imghover"><img src="../images/service-pic-1.jpg" class="img-responsive" alt=""> </a>
+				    <a href="service-detail.html" class="imghover"><img src="../images/IMG_0308.jpg" class="img-responsive" alt=""></a>
 				</div>
 				<!-- service img -->
 				<div class="service-content">
-				    <!-- service content -->
-				    <h2><a href="service-detail.html" class="title">Interior</a></h2>
-				    <p>Phasellus hendrerit mauris vitae odio suscip max pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
+					<div class="postbtn">
+						<button type="button" id="like"><span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span></button><button type="button" id="comment"><span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span></button>
+					</div>
+				    <p><b>좋아요 9,234개</b></p>
+				    <div class="cardcontent">
+				    	<h5 style="font-size: 13px; display: inline"><b>jennierubyjerry</b></h5><p style="font-size: 13px; display: inline;">오늘은 일요일🥰🥰 제리랑 놀기</p>
+				    </div>
 				</div>
 				<!-- service content -->
 			</div>
@@ -175,6 +267,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/menumaker.js"></script>
     <script src="../js/navigation.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

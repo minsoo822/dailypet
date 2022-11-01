@@ -1,5 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +13,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>유기동물 리스트</title>
+    <title>반려동물 리스트</title>
     <!-- Bootstrap -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -193,7 +198,7 @@
                             <div class="post-block">
                                <div class="row">
 	                               <div class="col"> 
-		                           		<h1>유기동물 리스트</h1>
+		                           		<h1>반려동물리스트</h1>
 	                               </div>
 							   </div>
 							   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">

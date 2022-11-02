@@ -10,14 +10,14 @@
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
     <title>일기 상세</title>
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
     <!-- Style -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="../../css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -57,6 +57,10 @@
 	    height: 30px; 
 	    border-radius: 70%;
 	    overflow: hidden;
+	}
+	
+	#userid {
+		display: inline;
 	}
 	
 	.profilepic {
@@ -127,9 +131,44 @@
 		margin-top: -20px;
 	}
 	
+	.row {
+		margin: 0;
+		padding: 0;
+	}
+	
+	div.col-lg-7 {
+		padding: 0;
+	}
+	
+	.col-lg-5 {
+		position: relative;
+		height: 500px;
+	}
+		
 	.cardfooter {
-		bottom: 0;
 		position: absolute;
+	    bottom: 0;
+	}
+	
+	.cardfooter .form-control {
+		margin-bottom: 2px;
+		padding: 0 15px;
+	}
+	
+	#writecomm {
+		width: 280px;
+		padding: 8px;
+		display: inline;
+		border: none;
+	}
+	
+	#upcomment {
+		color: brown;
+		background-color: none;
+		border: none;
+		font-size: 14px;
+		font-weight: bold;
+		display: inline;
 	}
 	
 </style>
@@ -139,7 +178,7 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="../index.html"><img src="../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="../index.html"><img src="../../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		            <div class="navigation">
@@ -185,36 +224,36 @@
 		<nav class="icon">
 			<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 			<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage.html"><img src="../images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+			<span><div class="profileheader"><a href="diaryMypage.html"><img src="../../images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
     <div class="content">
     	<div class="container2">
             <div class="row">
-                <div class="col-lg-7">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 					<div class="imgdetail">
-						<img src="../images/IMG_0308.jpg" class="img-responsive" alt="">
+						<img src="../../images/IMG_0308.jpg" class="img-responsive" alt="">
 					</div>
                 </div>
-               <div class="col-lg-5">
-               		<div class="row" style="margin-top: 10px;">
-						<div class="col-lg-2">
+               <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+               		<div class="row" style="margin-top: 10px">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 							<div class="profileView">
-								<img src="../images/jennieprofile.jpg" class="profilepic" alt="">
+								<img src="../../images/jennieprofile.jpg" class="profilepic" alt="">
 						   	</div>
 						</div>
-						<div class="col-lg-4">
-						    <h5 style="margin: 10px 0 0 -15px; font-size: 13px"><b>jennierubyjerry</b></h5>
-						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">	
+					    	<h5 id="userid" style="margin: 10px 0 0 -15px; font-size: 13px"><b>jennierubyjerry</b></h5>
+					    </div>
 					</div>
-					<hr style="color: lightgray; margin-top: 15px; margin-bottom: 0">
-					<div class="row" style="margin: 10px 0 0 -20px">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+					<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
+					<div class="row" style="margin-top: 10px">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 							<div class="profileView">
-								<img src="../images/jennieprofile.jpg" class="profilepic" alt="">
+								<img src="../../images/jennieprofile.jpg" class="profilepic" alt="">
 						   	</div>
 						</div>
-						<h5 style="margin: 10px 5px 0 5px; font-size: 13px; display: inline"><b>jennierubyjerry</b></h5><h5 style="margin-top: 10px; font-size: 13px; display: inline">오늘은 일요일🥰🥰 제리랑 놀기</h5>
+						<h5 id="userid" style="margin: 10px 5px 0 5px; font-size: 13px; display: inline"><b>jennierubyjerry</b></h5><h5 style="margin-top: 10px; font-size: 13px; display: inline">오늘은 일요일🥰🥰 제리랑 놀기</h5>
 					</div>
 					<div class="cardfooter">
 						<div class="service-content">
@@ -223,13 +262,14 @@
 							</div>
 						    <p><b>좋아요 9,234개</b></p>
 						    <div class="cardcontent">
-						    	<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline"><b>jennierubyjerry</b></h5><p style="font-size: 13px; display: inline;">오늘은 일요일!! 제리랑 놀기</p>
+						    	<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline"><b>jennierubyjerry</b></h5><p style="font-size: 13px; display: inline;">오늘은 일요일!!! 제리랑 놀기</p>
 						    	<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
 						    	<p style="font-size: 11px; color: lightgray">21시간 전</p>
 						    </div>
 						</div>
 						<div class="cardcomment">
-					    	<input class="form-control" type="text" placeholder="댓글 달기...">
+					    	<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
+					    	<button type="submit" id="upcomment">게시</button>
 					    </div>
 					</div>
 				</div>
@@ -300,11 +340,11 @@
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/menumaker.js"></script>
-    <script src="../js/navigation.js" type="text/javascript"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/menumaker.js"></script>
+    <script src="../../js/navigation.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
 </body>
 

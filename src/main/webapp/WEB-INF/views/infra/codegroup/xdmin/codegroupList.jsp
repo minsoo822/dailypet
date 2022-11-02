@@ -32,7 +32,9 @@
     <![endif]-->
     
     <style type="text/css">
-    
+    div {
+		/* border: 1px solid orange; */   
+    }
     .category {
     	text-align: right;
     	height: 500px;
@@ -64,7 +66,9 @@
     .post-block {
     	margin-top: 30px;
     }
-    
+    table, th, td {
+    	text-align: center;
+    }
     </style>
     
 </head>
@@ -225,14 +229,15 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="row">
 								<div class="col">
-									<table class="table table-striped">
+									<table class="table table-striped" style="text-align: center;">
 										<tr>
 											<th>
 												<input type="checkbox">
 											</th>
 											<th>#</th>
-											<th>Seq<>
-											<th>이름</th>
+											<th>Seq</th>
+											<th>코드그룹 이름</th>
+											<th>코드갯수</th>
 											<th>생성일</th>
 											<th>사용유무</th>
 											<th>삭제유무</th>
@@ -255,6 +260,9 @@
 															<c:out value="${list.ifcgName }"/>
 														</td>
 														<td>
+															<c:out value="${list.ifcgcodeCount }"/>
+														</td>
+														<td>
 															<c:out value="${list.ifcgModDate }"/>
 														</td>
 														<td>
@@ -270,6 +278,18 @@
 									</table>
 								</div>
 							</div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        	<div class="row" style="margin-top: 20px;">
+                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<button type="button" class="btn btn-warning">삭제</button>
+									<button type="button" class="btn btn-danger">삭제</button>
+                        		</div>
+                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
+									<button type="button" class="btn btn-success">엑셀</button>
+									<button type="button" class="btn btn-primary" style="margin-left: 5px;">추가</button>
+                        		</div>
+                        	</div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="st-pagination">

@@ -10,13 +10,14 @@
 	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
-			ifcgSeq
-			,ifcgName
-			,ifcgName_eng
-			,ifcgModDate
-			,ifcgUseNy
-			,ifcgDelNy
-		FROM codegroup
+			a.ifcgSeq
+			,a.ifcgName
+			,a.ifcgName_eng
+			,a.ifcgModDate
+			,a.ifcgUseNy
+			,a.ifcgDelNy
+			,(select COUNT(aa.cg_ifcgSeq) from code aa WHERE aa.cg_ifcgSeq = a.ifcgSeq ) AS ifcgcodeCount
+		FROM codegroup a
 		WHERE 1=1
 	</select>
 

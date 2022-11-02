@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -14,14 +16,14 @@
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
     <title>반려동물 리스트</title>
     <!-- Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
     <!-- Style -->
-    <link href="../../css/style.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,7 +32,9 @@
     <![endif]-->
     
     <style type="text/css">
-    
+    div {
+		/* border: 1px solid orange; */   
+    }
     .category {
     	text-align: right;
     	height: 500px;
@@ -62,7 +66,9 @@
     .post-block {
     	margin-top: 30px;
     }
-    
+    table, th, td {
+    	text-align: center;
+    }
     </style>
     
 </head>
@@ -73,7 +79,7 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="index.html"><img src="../../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		            <div class="navigation">
@@ -223,32 +229,67 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<div class="row">
 								<div class="col">
-									<table class="table table-striped">
+									<table class="table table-striped" style="text-align: center;">
 										<tr>
 											<th>
 												<input type="checkbox">
 											</th>
 											<th>#</th>
-											<th>이름</th>
-											<th>성별</th>
-											<th>연락처</th>
-											<th>이메일</th>
-											<th>주소</th>
+											<th>Seq</th>
+											<th>코드그룹 이름</th>
+											<th>코드갯수</th>
+											<th>생성일</th>
+											<th>사용유무</th>
+											<th>삭제유무</th>
 										</tr>
-										<tr>
-											<td>
-												<input type="checkbox">
-											</td>
-											<td>1</td>
-											<td>김민수</td>
-											<td>남자</td>
-											<td>01023456789</td>
-											<td>minsoo822@naver.com</td>
-											<td>강남구 테헤란로123</td>
-										</tr>
+										<c:choose>
+											<c:when test="${fn:length(list) eq 0 }">
+												<td>데이터가 존재하지 않습니다</td>
+											</c:when>
+											<c:otherwise>	
+												<c:forEach items="${list }" var="list" varStatus="status">
+													<tr>
+														<td>
+															<input type="checkbox">
+														</td>
+														<td>#</td>
+														<td>
+															<c:out value="${list.ifcgSeq }"/>
+														</td>
+														<td>
+															<c:out value="${list.ifcgName }"/>
+														</td>
+														<td>
+															<c:out value="${list.ifcgcodeCount }"/>
+														</td>
+														<td>
+															<c:out value="${list.ifcgModDate }"/>
+														</td>
+														<td>
+															<c:out value="${list.ifcgUseNy }"/>
+														</td>
+														<td>
+															<c:out value="${list.ifcgDelNy }"/>
+														</td>
+													</tr>
+												</c:forEach>
+											</c:otherwise>
+										</c:choose>
 									</table>
 								</div>
 							</div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        	<div class="row" style="margin-top: 20px;">
+                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<button type="button" class="btn btn-warning">삭제</button>
+									<button type="button" class="btn btn-danger">삭제</button>
+                        		</div>
+                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
+									<button type="button" class="btn btn-success">엑셀</button>
+									<button type="button" class="btn btn-primary" style="margin-left: 5px;">추가</button>
+                        		</div>
+                        	</div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="st-pagination">
@@ -330,11 +371,11 @@
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../js/jquery.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/menumaker.js"></script>
-    <script src="../../js/navigation.js" type="text/javascript"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/menumaker.js"></script>
+    <script src="/resources/js/navigation.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@ public class CodeGroup {
 	private String ifcgModDate;
 	private Integer ifcgUseNy;
 	private Integer ifcgDelNy;
+	private Integer ifcgcodeCount;
 	
 	
 	public String getIfcgSeq() {
@@ -45,6 +46,12 @@ public class CodeGroup {
 	}
 	public void setIfcgDelNy(Integer ifcgDelNy) {
 		this.ifcgDelNy = ifcgDelNy;
+	}
+	public Integer getIfcgcodeCount() {
+		return ifcgcodeCount;
+	}
+	public void setIfcgcodeCount(Integer ifcgcodeCount) {
+		this.ifcgcodeCount = ifcgcodeCount;
 	}
 
 	

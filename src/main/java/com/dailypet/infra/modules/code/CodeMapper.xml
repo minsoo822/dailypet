@@ -7,7 +7,18 @@
 <mapper namespace="com.dailypet.infra.modules.code.CodeMapper">
 
     <resultMap id="resultMapObj" type="com.dailypet.infra.modules.code.Code"></resultMap>
-	
+		
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			ifcdSeq
+		    ,ifcdName
+		    ,ifcdName_eng
+		    ,ifcdModDate
+		    ,ifcdUseNy
+		    ,ifcdDelNy
+		    FROM code
+	    WHERE 1=1
+	</select>	
 
 
 </mapper>	

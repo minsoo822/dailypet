@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailypet.infra.modules.codegroup.CodeGroupMapper">
+
+    <resultMap id="resultMapObj" type="com.dailypet.infra.modules.codegroup.CodeGroup"></resultMap>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			ifcgSeq
+			,ifcgName
+			,ifcgName_eng
+			,ifcgModDate
+			,ifcgUseNy
+			,ifcgDelNy
+		FROM codegroup
+		WHERE 1=1
+	</select>
+
+
+</mapper>	

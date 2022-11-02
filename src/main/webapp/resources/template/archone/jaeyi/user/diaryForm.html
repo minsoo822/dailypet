@@ -40,7 +40,7 @@
 	.container2 {
 		margin-top: 5%;
 		width: 1000px;
-		height: auto;
+		height: 550px;
 		border: 1px solid lightgray;
 		border-radius: 8px;
 	}
@@ -59,10 +59,21 @@
 	    margin-left: 20px;
 	}
 	
-	h3 {
-		margin-top: 10px;
+	.boxheader {
 		font-weight: bold;
-		text-align: center;
+		display: inline;
+		font-size: 15px;
+	}
+	
+	.headercen {
+		margin-left: 440px;
+		margin-top: 10px;
+	}
+	
+	.headerrig {
+		float: right;
+		color: brown;
+		margin: 5px 10px;
 	}
 	
 	hr {
@@ -80,28 +91,52 @@
 		background-color: none;
 	}
 	
-	.btnUpload {
-		width: 150px;
-		height: 35px;
-		background: #F8F6F2;
-		border: none;
-		border-radius: 6px;
-		font-weight: bold;
+	#attachbox {
+		height: 470px;
+	}
+	
+	#filebox label {
+		padding: .5em .75em;
+		color: #fff;
+		font-size: inherit;
+		line-height: normal;
+		background-color: #aa9144;
 		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		border: 1px solid #aa9144;
+		border-radius: .25em;
+		-webkit-transition: background-color 0.2s;
+		transition: background-color 0.2s;
+	}
+
+	#filebox label:hover {
+		background-color: #e2dcdb;
+		color: black;
+	}
+
+	#filebox label:active {
+		background-color: #367c36;
+	}
+
+	#filebox input[type="file"] {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
 	}
 	
 	.btnUpload:hover {
 		background: lightgray;
 		color: #fff;
 	}
-/* 	
-	#imagefile {
-		display: none;
+	
+	.form-control {
+		color: black;
 	}
- */	
+	
 </style>
 
 <body>
@@ -160,14 +195,22 @@
 	</div>
     <div class="content">
         <div class="container2">
-        	<h3>새 게시물 만들기</h3>
+        	<div class="boxheader">
+        		<span class="headercen">새 게시물 만들기</span>
+        		<a href="diarylist.html">
+        			<span class="headerrig">공유하기</span>
+        		</a>
+        	</div>
         	<hr>
             <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                	<label for="file">
-                		<div class="btnUpload">파일 업로드하기</div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="filebox">
+                	<div id="attachbox">
+                		<label for="imagefile" style="vertical-align: center">
+                		파일 업로드하기
+                		<input class="form-control" type="file" id="imagefile" name="imagefile" style="display: none" accept=".jpg,.png,.jpeg,.mp4,.mkv" onchange="setThumbnail(event);"/>
                 	</label>
-                    <input class="form-control" id="imagefile" name="imagefile" type="file" accept=".jpg,.png,.jpeg,.mp4,.mkv">
+                	<div id="imgPreview" class="imgPreview"></div>
+                	</div>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                     <div class="row">
@@ -248,6 +291,21 @@
         </div>
     </div>
     <!-- /.footer-->
+    
+    <script>
+		function setThumbnail(event) {
+		  var reader = new FileReader();
+		
+		  reader.onload = function(event) {
+		    var img = document.createElement("img");
+		    img.setAttribute("src", event.target.result);
+		    document.querySelector("div#imgPreview").appendChild(img);
+		  };
+		
+		  reader.readAsDataURL(event.target.files[0]);
+		}
+    </script>
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="../../js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -129,7 +129,7 @@
 		            <div class="navigation">
 		                <div id="navigation">
 		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
+		                        <li class="active"><a href="/animal/home" title="Home">홈</a></li>
 		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
 		                            <ul>
 		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
@@ -251,7 +251,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="/resources/service-detail.html" class="btn btn-default">바로가기</a></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="../service-detail.html" class="btn btn-default">바로가기</a></div>
             </div>
         </div>
     </div>

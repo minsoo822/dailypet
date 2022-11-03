@@ -8,7 +8,9 @@ public class Code {
 	private String ifcdModDate;
 	private Integer ifcdUseNy;
 	private Integer ifcdDelNy;
-	
+	private Integer cg_ifcgSeq;
+	private Integer ifcgSeq;
+	private String ifcgName;
 	
 	public String getIfcdSeq() {
 		return ifcdSeq;
@@ -46,7 +48,23 @@ public class Code {
 	public void setIfcdDelNy(Integer ifcdDelNy) {
 		this.ifcdDelNy = ifcdDelNy;
 	}
-	
-	
+	public Integer getCg_ifcgSeq() {
+		return cg_ifcgSeq;
+	}
+	public void setCg_ifcgSeq(Integer cg_ifcgSeq) {
+		this.cg_ifcgSeq = cg_ifcgSeq;
+	}
+	public Integer getIfcgSeq() {
+		return ifcgSeq;
+	}
+	public void setIfcgSeq(Integer ifcgSeq) {
+		this.ifcgSeq = ifcgSeq;
+	}
+	public String getIfcgName() {
+		return ifcgName;
+	}
+	public void setIfcgName(String ifcgName) {
+		this.ifcgName = ifcgName;
+	}
 	
 }

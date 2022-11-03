@@ -7,18 +7,109 @@
 <mapper namespace="com.dailypet.infra.modules.code.CodeMapper">
 
     <resultMap id="resultMapObj" type="com.dailypet.infra.modules.code.Code"></resultMap>
+	
+	<sql id = "selectCommon">
+		FROM code a
+		INNER JOIN codegroup b ON a.cg_ifcgSeq = b.ifcgSeq
+		WHERE 1=1
+		
+		<if test="shDelNy != null and !shDelNy.equals('')">AND a.ifcdDelNy = #{shDelNy}</if>
+		<if test="shUseNy != null and !shUseNy.equals('')">AND a.ifcdUseNy = #{shUseNy}</if>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND a.ifcdModDate BETWEEN #{shstartDate} AND #{shendDate}</when>
+		</choose>
+		
+		<choose>
+			<when test="shOption == 1">AND a.ifcdName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 2">AND b.ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3">AND a.ifcdName_eng LIKE CONCAT('%',#{shValue},'%')</when>
+		</choose>
+	</sql>
 		
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
-			ifcdSeq
-		    ,ifcdName
+			a.ifcdSeq
+			,b.ifcgName
+		    ,a.ifcdName
+		    ,a.ifcdName_eng
+		    ,a.ifcdModDate
+		    ,a.ifcdUseNy
+		    ,a.ifcdDelNy
+		    ,a.cg_ifcgSeq
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, b.*
+		<include refid="selectCommon" />
+			AND a.ifcdSeq = #{seq}
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectcgName" resultMap="resultMapObj">
+    	SELECT
+    		ifcgSeq
+    		, ifcgName
+    	FROM codegroup
+    	WHERE 1=1
+    </select>
+    
+    <insert id="insert">
+		INSERT INTO code (
+			ifcdName
 		    ,ifcdName_eng
 		    ,ifcdModDate
 		    ,ifcdUseNy
 		    ,ifcdDelNy
-		    FROM code
-	    WHERE 1=1
-	</select>	
+		    ,cg_ifcgSeq
+		)
+		VALUES (
+			#{ifcdName}
+			, #{ifcdName_eng}
+			, now()
+			, 1
+			, 0
+			, #{cg_ifcgSeq}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+		
+	</insert>
+    
+    <update id="update">
+		UPDATE code
+		SET
+			ifcdName = #{ifcdName}
+			, ifcdName_eng = #{ifcdName_eng}
+			, ifcdModDate = now()
+			, ifcdUseNy = #{ifcdUseNy}
+			, ifcdDelNy = #{ifcdDelNy}
+			, cg_ifcgSeq = #{cg_ifcgSeq}
+		WHERE 1=1
+			AND ifcdSeq = #{seq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE code
+		SET
+			ifcdDelNy = 1
+		WHERE 1=1
+			AND ifcdSeq = #{seq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM code
+		WHERE 1=1
+			AND ifcdSeq = #{seq}
+	</delete>	
 
 
 </mapper>	

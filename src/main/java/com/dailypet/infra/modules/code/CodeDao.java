@@ -20,4 +20,35 @@ public class CodeDao {
 	public List<Code> selectList(CodeVo vo) throws Exception {
 		return sqlSession.selectList(namespace + ".selectList", vo);
 	}
+	
+	public Code selectOne(CodeVo vo) {
+		Code result = sqlSession.selectOne(namespace + ".selectOne", vo);
+		System.out.println("dao result: " + result);
+		return result;
+	}
+	
+	public int selectOneCount(CodeVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
+	}
+	
+	public List<Code> selectcgName(CodeVo vo){ 
+		return sqlSession.selectList(namespace + ".selectcgName", vo); 
+	} 
+	
+	public int insert(Code dto) {
+		return sqlSession.insert(namespace + ".insert", dto);
+	}
+	
+	public int update(Code dto) {
+		return sqlSession.update(namespace + ".update", dto);
+	}
+	
+	public int uelete(Code dto) {
+		return sqlSession.update(namespace + ".uelete", dto);
+	}
+	
+	public int delete(CodeVo vo) {
+		return sqlSession.delete(namespace + ".delete", vo);
+	}
+	
 }

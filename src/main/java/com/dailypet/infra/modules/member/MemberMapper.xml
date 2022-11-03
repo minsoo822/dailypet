@@ -8,6 +8,50 @@
 
 	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.member.Member"></resultMap>
 
-
-
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT 
+			*
+		FROM member a
+		WHERE 1=1
+		ORDER BY a.ifmmSeq DESC;
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+	</select>
+	
+	<select id="selectOne" resultMap ="resultMapObj">
+		SELECT 
+			a.*
+		FROM member a
+		WHERE 1=1
+			AND a.ifmmSeq = #{ifmmSeq}
+	</select>
+	
+	<select id="selectOneID" resultMap="resultMapObj">
+		SELECT
+			a.ifmmSeq
+			, a.ifmmID
+		FROM
+			member 
+		WHERE 
+			1=1
+			AND a.ifmmID = #{ifmmID}
+	</select>
+	
+	<select id="selectOneLogin" resultMap="resultMapObj">
+		SELECT
+			a.ifmmSeq
+			, a.ifmmID
+		FROM
+			member
+		WHERE 
+			1=1
+			AND a.ifmmID = #{ifmmID}
+			<if test="pw != null and !pw.equals('')">
+				AND a.ifmmPW = #{ifmmPW}
+			</if>
+			AND a.ifmmDelNy = 0
+	</select>
+	
 </mapper>

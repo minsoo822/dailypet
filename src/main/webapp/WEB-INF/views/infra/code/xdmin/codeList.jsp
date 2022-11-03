@@ -27,6 +27,8 @@
     <!-- Style -->
     <link href="/resources/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     
     <style type="text/css">
     
@@ -425,8 +427,7 @@
     </script>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/resources/js/bootstrap.min.js"></script>
     <script src="/resources/js/menumaker.js"></script>

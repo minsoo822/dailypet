@@ -227,9 +227,6 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 left">
                                 <h1>LOGIN</h1>
                                 <br>
-                                sessSeq: <c:out value="${sessSeq }"/><br>
-								sessName: <c:out value="${sessName }"/><br>
-								sessId: <c:out value="${sessId }"/><br>
                                 <div class="row">
                                     <div class="col-md-11">
                                         <div class="form-group has-feedback">
@@ -254,6 +251,7 @@
 									<div class="col-md-11">
 										<span class="right">비밀번호 찾기</span> 
 										<span class="right">|</span>
+										<span class="right">아이디 찾기</span>
 										<br>
 										<br>
 										<br> 

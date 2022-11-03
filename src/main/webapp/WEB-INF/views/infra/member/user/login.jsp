@@ -18,13 +18,14 @@
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
     <title>로그인</title>
     <!-- Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
     <!-- Style -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -166,7 +167,7 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="../index.html"><img src="../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="../index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		            <div class="navigation">
@@ -289,7 +290,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 top2">
-                    <div class="contact-pic mb30"> <img src="../images/contact-pic.jpg" class="img-responsive" alt=""> </div>
+                    <div class="contact-pic mb30"> <img src="/resources/images/contact-pic.jpg" class="img-responsive" alt=""> </div>
                     <div class="contact-info">
                         <h2>#Daily Pet</h2>
                         <address>
@@ -375,11 +376,11 @@
     </div>
     <!-- /.footer-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/menumaker.js"></script>
-    <script src="../js/navigation.js" type="text/javascript"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/menumaker.js"></script>
+    <script src="/resources/js/navigation.js" type="text/javascript"></script>
     
     <script type="text/javascript">
 	
@@ -395,7 +396,7 @@
 			,data : { "ifmmID" : $("#ifmmID").val(), "ifmmPW" : $("#ifmmPW").val()}
 			,success: function(response) {
 				if(response.rt == "success") {
-					location.href = "/";     
+					location.href = "/animal/home";     
 				} else if($("#ifmmID").val() == "" || $("#ifmmPW").val() == "") {
 					alert("아이디와 비밀번호를 입력해주세요.");
 				} else{

@@ -123,7 +123,7 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="../index.html"><img src="../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="../index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		            <div class="navigation">
@@ -175,7 +175,7 @@
         </div>
     </div>
     
-    <img src="../images/xdmin/cat.jpg">
+    <img src="/resources/images/xdmin/cat.jpg">
     
     <div class="container">
     <br>
@@ -184,7 +184,7 @@
              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                  <a href="#scroll_move1">
 			<div class="outline pinside30 text-center mb30">
-			    <div class="mb30"> <img src="../images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
+			    <div class="mb30"> <img src="/resources/images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
 			    <div class="">
 			        <h2>유기동물 찾기</h2>
 			        <p>소중한 두번째 가족을 찾고 계신가요?</p>
@@ -195,7 +195,7 @@
              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                  <a href="#scroll_move2">
                   <div class="outline pinside30 text-center mb30">
-                      <div class="mb30"> <img src="../images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
+                      <div class="mb30"> <img src="/resources/images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
                       <div class="">
                           <h2>내 주변 편의시설</h2>
                           <p>내 주변에 있는 편의시설을 검색해보세요.</p>
@@ -206,7 +206,7 @@
              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                  <a href="#scroll_move4">
                   <div class="outline pinside30 text-center mb30">
-                      <div class="mb30"> <img src="../images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
+                      <div class="mb30"> <img src="/resources/images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
                       <div class="">
                           <h2>육아수첩</h2>
                           <p>매일 달라지는 반려동물의 모습을 담아보세요.</p>
@@ -378,11 +378,11 @@
     
 <!-- /.tiny footer block -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../js/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/menumaker.js"></script>
-<script src="../js/navigation.js" type="text/javascript"></script>
+  <script src="/resources/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="/resources/js/bootstrap.min.js"></script>
+  <script src="/resources/js/menumaker.js"></script>
+  <script src="/resources/js/navigation.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(function () {

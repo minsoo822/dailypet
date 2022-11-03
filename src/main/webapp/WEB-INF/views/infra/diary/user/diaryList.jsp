@@ -35,7 +35,7 @@
 
 <style type="text/css">
 	div {
-		border: 1px solid orange;
+		/* border: 1px solid orange; */
 	}
 
 	.navbar-fixed-top {
@@ -54,6 +54,8 @@
 		height: auto;
 		border: 1px solid lightgray;
 		border-radius: 2px;
+		display: flex;
+		flex-direction: column;
 	}
 	
 	.service-profile {
@@ -230,12 +232,11 @@
 		</ul>
 	</div> -->
     <div class="content">
+				    	<c:forEach items="${list }" var="list" varStatus="status">
         <div class="container2">
 			<div class="service-block">
-			    <!-- service block -->
 			    <div class="row">
 				    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				    	<c:forEach items="${list }" var="list" varStatus="status">
 					    	<!-- 상단바 s -->
 						    <div class="service-profile">
 						    	<div class="row" style="margin-top: 15px">
@@ -287,12 +288,11 @@
 						    	<input class="form-control" type="text" placeholder="댓글 달기...">
 						    </div>
 						    <!-- Coment e -->
-					    </c:forEach>
-					<!-- service content -->
 					</div>
 				</div>
 			</div>
         </div>
+					    </c:forEach>
     </div>
     <div class="footer">
         <!-- footer-->

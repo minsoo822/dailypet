@@ -194,15 +194,16 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="/index.html"><img src="/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 	        </div>
 	    </div>
 	</div>
     <!-- /.page header -->
     <form id="form" name="codeform" method="post">
+    <input type="hidden" name="ifcdSeq">
 	<!-- *Vo.jsp s -->
-	<%@include file="codeVo.jsp"%>		<!-- #-> -->
+	<%@include file="codeVo.jsp"%>
 	<!-- *Vo.jsp e -->
 	<div class="content">
         <div class="container">
@@ -422,7 +423,7 @@
 	var goUrlDele = "/code/codeDele";
 	var goUrlForm = "/code/codeForm";
 	
-	var seq = $("input:hidden[name=seq]");
+	var ifcdSeq = $("input:hidden[name=ifcdSeq]");
 
 	var form = $("form[name=codeform]");
 	var formVo = $("form[name=formVo]");

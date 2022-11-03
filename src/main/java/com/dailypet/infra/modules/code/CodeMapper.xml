@@ -45,7 +45,7 @@
 			a.*
 			, b.*
 		<include refid="selectCommon" />
-			AND a.ifcdSeq = #{seq}
+			AND a.ifcdSeq = #{ifcdSeq}
 	</select>
 	
 	<select id="selectOneCount" resultType="Integer">
@@ -94,7 +94,7 @@
 			, ifcdDelNy = #{ifcdDelNy}
 			, cg_ifcgSeq = #{cg_ifcgSeq}
 		WHERE 1=1
-			AND ifcdSeq = #{seq}
+			AND ifcdSeq = #{ifcdSeq}
 	</update>
 	
 	<update id="uelete">
@@ -102,13 +102,13 @@
 		SET
 			ifcdDelNy = 1
 		WHERE 1=1
-			AND ifcdSeq = #{seq}
+			AND ifcdSeq = #{ifcdSeq}
 	</update>
 	
 	<delete id="delete">
 		DELETE FROM code
 		WHERE 1=1
-			AND ifcdSeq = #{seq}
+			AND ifcdSeq = #{ifcdSeq}
 	</delete>	
 
 

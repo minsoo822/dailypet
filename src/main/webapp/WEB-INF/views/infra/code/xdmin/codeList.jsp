@@ -147,7 +147,7 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="row">
                     	<form method="post" name="codeform">
-					    <input type="hidden" name="seq">
+					    <input type="hidden" name="ifcdSeq">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
                     	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -263,7 +263,9 @@
 																<c:out value="${list.ifcgName }"/>
 															</td>
 															<td>
-																<c:out value="${list.ifcdName }"/>
+																<a href="javascript:goForm(<c:out value="${list.ifcdSeq }"/>)">
+																	<c:out value="${list.ifcdName }"/>
+																</a>
 															</td>
 															<td>
 																<c:out value="${list.ifcdModDate }"/>
@@ -378,7 +380,7 @@
     <script type="text/javascript">
     
 		var form = $("form[name=codeform]");
-		var seq = $("input:hidden[name=seq]");
+		var ifcdSeq = $("input:hidden[name=ifcdSeq]");
 		
 		var goUrlList = "/code/codeList";
 		var goUrlForm = "/code/codeForm";
@@ -386,6 +388,16 @@
 		$("#searchBtn").on("click", function(){
 			form.attr("action", goUrlList).submit();
 		});
+		
+		goForm = function(keyValue) {
+			ifcdSeq.val(keyValue);
+			form.attr("action", goUrlForm).submit();
+		}
+		
+		/* goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlList).submit();
+		} */
 /* 		
 		$("#regbtn").on("click", function(){
 			form.attr("action", goUrlForm).submit();

@@ -25,12 +25,12 @@
     <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
     <!-- Style -->
     <link href="/resources/css/style.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     
     <style type="text/css">
     
@@ -150,44 +150,52 @@
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="row">
+                    	<form method="post" name="codeform">
+					    <input type="hidden" name="seq">
+						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
                     	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="row">
                             	<div class="col searchBox">
                             		<div class="row">
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>삭제유무</option>
-                            					<option></option>
+                            				<select class="form-control" name="shDelNy">
+                            					<option value="" <c:if test="${empty vo.shDelNy }">selected</c:if>>삭제여부</option>
+												<option value="0" <c:if test="${vo.shDelNy eq 0 }">selected</c:if>>N</option>
+												<option value="1" <c:if test="${vo.shDelNy eq 1 }">selected</c:if>>Y</option>
                             				</select>
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>선택</option>
-                            					<option></option>
+                            				<select class="form-control" name="shOptionDate">
+                            					<option value="">날짜선택</option>
+												<option value="1">가입일</option>
                             				</select>
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="date" class="form-control">
+                            				<input type="text" id="shstartDate" name="shstartDate" class="form-control shDate" value="${vo.shstartDate}" placeholder="시작일" autocomplete="off">
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="date" class="form-control">
+                            				<input type="text" id="shendDate" name="shendDate" class="form-control shDate" value="${vo.shendDate}" placeholder="종료일" autocomplete="off">
                             			</div>
                             		</div>
                             		<div class="row">
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>사용유무</option>
-                            					<option></option>
+                            				<select class="form-control" name="shUseNy">
+                            					<option value="" <c:if test="${empty vo.shUseNy }">selected</c:if>>사용여부</option>
+												<option value="0" <c:if test="${vo.shUseNy eq 0 }">selected</c:if>>N</option>
+												<option value="1" <c:if test="${vo.shUseNy eq 1 }">selected</c:if>>Y</option>
                             				</select>
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>검색옵션</option>
-                            					<option></option>
-                            				</select>
+                           					<select class="form-control" name="shOption">
+												<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>선택</option>
+												<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>코드이름</option>
+												<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름</option>
+												<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>코드이름(영문)</option>
+											 </select>
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="text" class="form-control" placeholder="검색어">
+                            				<input type="text" class="form-control" name="shValue" value="<c:out value="${vo.shValue }"/>" placeholder="검색어 입력">
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; justify-content: space-between; width: 150px;">
                             				<button type="button" class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -197,6 +205,7 @@
                             	</div>
                             </div>
                         </div>
+                        </form>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="post-block">
                                <div class="row">
@@ -206,7 +215,7 @@
 							   </div>
 							   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">
 	                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
-		                           		 <p class="meta">total: 0</p>
+		                           		 <p class="meta">total: </p><c:out value="${vo.totalRows - ((vo.thisPage -1) * vo.rowNumToShow + status.index) }"/>
 	                               </div>
 	                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
 		                           		&nbsp;
@@ -233,8 +242,9 @@
 											</th>
 											<th>#</th>
 											<th>Seq</th>
+											<th>코드그룹이름</th>
 											<th>코드이름</th>
-											<th>생성일</th>
+											<th>가입일</th>
 											<th>사용유무</th>
 											<th>삭제유무</th>
 										</tr>
@@ -244,7 +254,7 @@
 													<td>데이터가 존재하지 않습니다</td>
 												</c:when>
 												<c:otherwise>	
-													<c:forEach items="${list }" var="list" varStatus="status">
+													<c:forEach items="${list}" var="list" varStatus="status">
 														<tr>
 															<td>
 																<input type="checkbox">
@@ -252,6 +262,9 @@
 															<td>#</td>
 															<td>
 																<c:out value="${list.ifcdSeq }"/>
+															</td>
+															<td>
+																<c:out value="${list.ifcgName }"/>
 															</td>
 															<td>
 																<c:out value="${list.ifcdName }"/>
@@ -282,7 +295,7 @@
                         		</div>
                         		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
 									<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
-									<button type="button" class="btn btn-primary" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button>
+									<a href="/code/codeForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
                         		</div>
                         	</div>
                         </div>
@@ -365,6 +378,44 @@
             </div>
         </div>
     </div>
+    
+    <script type="text/javascript">
+    
+		var form = $("form[name=codeform]");
+		var seq = $("input:hidden[name=seq]");
+		
+		var goUrlList = "/code/codeList";
+		var goUrlForm = "/code/codeForm";
+		
+		$("#searchBtn").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
+/* 		
+		$("#regbtn").on("click", function(){
+			form.attr("action", goUrlForm).submit();
+		});
+ */		
+		$(document).ready(function() {
+			$("input.shDate").datepicker();
+		});
+		
+		$.datepicker.setDefaults({
+			dateFormat : 'yy-mm-dd',
+			prevText : '이전 달',
+			nextText : '다음 달',
+			monthNames : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
+					'9월', '10월', '11월', '12월' ],
+			monthNamesShort : [ '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월',
+					'9월', '10월', '11월', '12월' ],
+			dayNames : [ '일', '월', '화', '수', '목', '금', '토' ],
+			dayNamesShort : [ '일', '월', '화', '수', '목', '금', '토' ],
+			dayNamesMin : [ '일', '월', '화', '수', '목', '금', '토' ],
+			showMonthAfterYear : true,
+			yearSuffix : '년'
+		});
+    
+    </script>
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -35,7 +35,7 @@
     .category {
     	text-align: right;
     	height: 500px;
-    	background: white;ㄹ
+    	background: white;
     	border: 1px solid gray;
     }
     .searchBox {
@@ -62,6 +62,11 @@
     }
     .post-block {
     	margin-top: 30px;
+    }
+    
+    .in:hover {
+    	cursor: pointer;
+    	background-color: #372d2b;
     }
     
     </style>
@@ -196,8 +201,8 @@
                             				<input type="text" class="form-control" name="shValue" value="<c:out value="${vo.shValue }"/>" placeholder="검색어 입력">
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; justify-content: space-between; width: 150px;">
-                            				<button type="button" class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            				<button type="button" class="resetBtn"><i class="fa-solid fa-rotate-left"></i></button>
+                            				<button type="button" class="searchBtn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            				<button type="button" class="resetBtn" id="resetBtn"><i class="fa-solid fa-rotate-left"></i></button>
                             			</div>
                             		</div>
                             	</div>
@@ -253,7 +258,7 @@
 												</c:when>
 												<c:otherwise>	
 													<c:forEach items="${list}" var="list" varStatus="status">
-														<tr>
+														<tr onclick="goForm(${list.ifcdSeq })" class="in">
 															<td>
 																<input type="checkbox">
 															</td>
@@ -265,9 +270,7 @@
 																<c:out value="${list.ifcgName }"/>
 															</td>
 															<td>
-																<a href="javascript:goForm(<c:out value="${list.ifcdSeq }"/>)">
-																	<c:out value="${list.ifcdName }"/>
-																</a>
+																<c:out value="${list.ifcdName }"/>
 															</td>
 															<td>
 																<c:out value="${list.ifcdModDate }"/>
@@ -391,8 +394,12 @@
 			form.attr("action", goUrlList).submit();
 		});
 		
-		goForm = function(keyValue) {
-			ifcdSeq.val(keyValue);
+		$("#resetBtn").on("click", function(){
+			$(location).attr("href", goUrlList);
+		});
+		
+		goForm = function(key) {
+			ifcdSeq.attr("value", key);
 			form.attr("action", goUrlForm).submit();
 		}
 		

@@ -437,7 +437,7 @@
 	}); 
 	
 	$("#btnList").on("click", function(){
-		form.attr("action", goUrlList).submit();
+		formVo.attr("action", goUrlList).submit();
 	});
 	
 	$("#realclearbtn").on("click", function(){

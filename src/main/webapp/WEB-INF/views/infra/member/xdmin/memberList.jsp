@@ -250,6 +250,18 @@
 							</div>
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        	<div class="row" style="margin-top: 20px;">
+                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
+									<button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+                        		</div>
+                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
+									<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
+									<button type="button" class="btn btn-primary" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button>
+                        		</div>
+                        	</div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="st-pagination">
                                 <ul class="pagination">
                                     <li><a href="#">Previous</a></li>

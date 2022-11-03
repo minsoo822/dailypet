@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailypet.infra.modules.diary.DiaryMapper">
+
+    <resultMap id="resultMapObj" type="com.dailypet.infra.modules.diary.Diary"></resultMap>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			a.ifdaSeq
+			,a.ifdaContents
+			,a.ifdaDelNy
+			,a.ifdaRegDate
+			,a.ifdaModDate
+			,a.member_seq
+            ,b.ifmmID
+            FROM diary a
+            JOIN member b
+            ON a.member_seq = b.ifmmSeq
+			WHERE 1=1
+			ORDER BY a.ifdaSeq DESC
+	</select>
+	
+
+
+</mapper>	

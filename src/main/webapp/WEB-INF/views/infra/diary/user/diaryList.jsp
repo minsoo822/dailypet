@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,16 +15,16 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>육아수첩 마이피드</title>
+    <title>일기 홈</title>
     <!-- Bootstrap -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
     <!-- Style -->
-    <link href="../../css/style.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,20 +34,38 @@
 </head>
 
 <style type="text/css">
+	div {
+		border: 1px solid orange;
+	}
 
 	.navbar-fixed-top {
 		background-color: black;
+		margin-bottom: 100px;
+	}
+	
+	.content {
+		display: flex;
+		 justify-content: center;
 	}
 	
 	.container2 {
-		margin: 6% 10%;
-	} 
+		margin-top: 5%;
+		width: 500px;
+		height: auto;
+		border: 1px solid lightgray;
+		border-radius: 2px;
+	}
 	
-	.profile {
-		width: 180px;
-	    height: 180px; 
+	.service-profile {
+		height: 50px;
+	}
+	
+	.profileView {
+		width: 30px;
+	    height: 30px; 
 	    border-radius: 70%;
 	    overflow: hidden;
+	    margin-left: 20px;
 	}
 	
 	.profilepic {
@@ -49,26 +74,52 @@
 	    object-fit: cover;
 	}
 	
+	.img-responsive {
+		width: 100%;
+	    height: 100%;
+	    max-width: 500px;
+		max-height: 500px;
+		object-fit: cover;
+	}
+	
 	.imghover {
 		overflow: hidden;
 	}
 	
-	.img-responsive {
-		width: 100%;
-	    height: 100%;
-	    max-width: 360px;
-	    max-height: 304px;
-		object-fit: cover;
+	button {
+		background-color: white;;
+		border: none;
 	}
 	
-	#followbtn {
+	#like, #comment {
+		margin-right: 10px;
+	}
+	
+	.service-content > * {
+		margin-left: 10px;
+	}
+	
+	.postbtn {
+		margin: -20px 0 0 10px;
+	}
+	
+	.cardcontent {
+		margin-top: -20px;
+	}
+/* 	
+	.nav-link {
+		display: inline;
+		position: absolute;
+	}
+	
+	.fixed-top {
+		margin: 100px 0 0 0;
+		border: 1px solid lightgray;
 		background-color: white;
-		width: 100px;
-		border: 1px solid gray;
-		border-radius: 4px;
-		font-weight: bold;
+		position: relative;
+	    height: 50px;
 	}
-	
+*/	
 	.diaryheader {
 		position: fixed;
 		margin-top: 100px;
@@ -105,7 +156,16 @@
 		margin-bottom: 10px;
 		color: black;
 	}
-
+	
+	.form-control {
+		margin-bottom: 0;
+		margin-top: 10px;
+	}
+	
+	.service-block {
+		margin-bottom: 0;
+	}
+	
 </style>
 
 <body>
@@ -113,7 +173,7 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="../index.html"><img src="../../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="../index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		            <div class="navigation">
@@ -155,132 +215,83 @@
 	    </div>
 	</div>
     <!-- /.page header -->
-    <div class="diaryheader">
+	<div class="diaryheader">
 		<nav class="icon">
 			<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 			<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage.html"><img src="../../images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+			<span><div class="profileheader"><a href="diaryMypage.html"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
+	<!-- <div class="diaryheader">
+		<ul class="nav">
+			<li><a><i class="fa-sharp fa-solid fa-house"></i></a></li>
+			<li><a><i class="fa-regular fa-square-plus"></i></a></li>
+			<li><a><div class="profileheader"><img src="../images/jennieprofile.jpg" class="profilepic" alt=""></div></a></li>
+		</ul>
+	</div> -->
     <div class="content">
-    	<div class="container2">
-    		<div class="row">
-    			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    			</div>
-    			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    				<div class="profile mb10">
-    					<img src="../../images/jennieprofile.jpg" class="profilepic" alt="">
-    				</div>
-    			</div>
-    			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-    				<div class="row">
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    					</div>
-    					<div class="col-lg-4 col-md-4 col-sm-4">
-    						<h2>jennierubyjerry</h2>
-    					</div>
-    					<div class="col-lg-4 col-md-4 col-sm-4">
-    						<button type="button" id="followbtn">팔로우</button>
-    					</div>
-    				</div>
-    				<br>
-    				<div class="row">
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    					</div>
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    						<h4>게시물 <b>0</b></h4>
-    					</div>
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    						<h4>팔로워 <b>0</b></h4>
-    					</div>
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    						<h4>팔로잉 <b>0</b></h4>
-    					</div>
-    				</div>
-    				<div class="row" style="margin-top: 10px">
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    					</div>
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    						<h4><b>김제니</b></h4>
-    					</div>
-    				</div>
-    				<div class="row" style="margin-top: 10px">
-    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-    					</div>
-    					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-    						<h4>허제리 : 안녕하세용</h4>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    			</div>
-    		</div>
-    		<br>
-    		<hr style="border: 1px solid lightgray; width: 1150px">
-    	</div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img mb30">
-                        <a href="diaryDetail.html" class="imghover"><img src="../../images/IMG_0308.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img mb30">
-                        <a href="diaryDetail.html" class="imghover"><img src="../../images/IMG_0309.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img imghover mb30">
-                        <a href="diaryDetail.html" class="imghover"><img src="../../images/IMG_6216.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img mb30">
-                       <a href="diaryDetail.html" class="imghover"><img src="../../images/project-pic-4.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img  mb30">
-                        <a href="diaryDetail.html" class="imghover"><img src="../../images/project-pic-5.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img mb30">
-                        <a href="diaryDetail.html" class="imghover"><img src="../../images/project-pic-6.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img mb30">
-                      <a href="diaryDetail.html" class="imghover"><img src="../../images/project-pic-7.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img mb30">
-                        <a href="diaryDetail.html" class="imghover"><img src="../../images/project-pic-8.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div class="project-img  mb30">
-                        <a href="diaryDetail.html" class="imghover"><img src="../../images/project-pic-9.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="st-pagination">
-                    <ul class="pagination">
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#" class="active">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">Next</a></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="container2">
+			<div class="service-block">
+			    <!-- service block -->
+			    <div class="row">
+				    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				    	<c:forEach items="${list }" var="list" varStatus="status">
+					    	<!-- 상단바 s -->
+						    <div class="service-profile">
+						    	<div class="row" style="margin-top: 15px">
+									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+										<div class="profileView">
+											<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
+									   	</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+									    <h5 style="margin: 10px 0 0 -25px; font-size: 13px"><b><c:out value="${list.ifmmID }"></c:out></b></h5>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
+									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" style="vertical-align: middle">
+										<button type="button" id="delpost"><i class="fa-regular fa-trash-can fa-lg"></i></button>
+									</div>
+								</div>
+						    </div>
+							<!-- 상단바 e -->
+							<!-- 일기 사진 s -->
+							<div class="service-img ">
+							    <a href="service-detail.html" class="imghover"><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt=""></a>
+							</div>
+							<!-- 일기 사진 e -->
+							<div class="service-content">
+								<!-- 좋아요 댓글 버튼 s -->
+								<div class="postbtn">
+									<button type="button" id="like">
+										<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
+									</button>
+									<button type="button" id="comment">
+										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+									</button>
+								</div>
+								<!-- 좋아요 댓글 버튼 e -->
+								<!-- 좋아요 갯수	 s -->	
+							    <p><b>좋아요 9,234개</b></p>
+							    <!-- 좋아요 갯수	 e -->
+							    <!-- contents s -->
+							    <div class="cardcontent">
+							    	<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline"><b><c:out value="${list.ifmmID }"></c:out></b>
+							    	</h5><p style="font-size: 13px; display: inline;"><c:out value="${list.ifdaContents }"/></p>
+							    	<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
+							    	<p style="font-size: 11px; color: lightgray"><c:out value="${list.ifdaRegDate }"/></p>
+							    </div>
+							    <!-- contents e -->
+							</div>
+							<!-- Coment s -->
+							<div class="cardcomment">
+						    	<input class="form-control" type="text" placeholder="댓글 달기...">
+						    </div>
+						    <!-- Coment e -->
+					    </c:forEach>
+					<!-- service content -->
+					</div>
+				</div>
+			</div>
         </div>
     </div>
     <div class="footer">
@@ -347,11 +358,11 @@
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../js/jquery.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/menumaker.js"></script>
-    <script src="../../js/navigation.js" type="text/javascript"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/menumaker.js"></script>
+    <script src="/resources/js/navigation.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
 </body>
 

@@ -1,4 +1,4 @@
-package com.dailypet.infra.common.util.constants;
+package com.dailypet.infra.common.constants;
 
 public class Constants {
 	

@@ -1,4 +1,3 @@
-
 package com.dailypet.infra.modules.member;
 
 import java.util.HashMap;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.dailypet.infra.common.util.constants.Constants;
+import com.dailypet.infra.common.constants.Constants;
 
 
 @Controller

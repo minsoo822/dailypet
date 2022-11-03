@@ -157,11 +157,11 @@
 								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
                             	<c:if test="${sessSeq eq null}">
 					        		<!-- 로그인전 -->
-			        				<li><a href="#" title="회원가입">회원가입</a></li>
-									<li><a href="/member/login" title="로그인">로그인</a></li>
+					        		<li><a href="/member/login" title="로그인">로그인</a></li>
+			        				<li><a href="/member/regForm1" title="회원가입">회원가입</a></li>
 					        	</c:if>
 						        <c:if test="${sessSeq ne null}">
-					        		<li><a href="#" title="로그아웃" type="button"><c:out value="${sessId }"/>님, 반갑습니다</a></li>
+					        		<li><a href="#" type="button"><c:out value="${sessId }"/>님, 반갑습니다</a></li>
 									<li><a href="/member/logoutProc" title="로그아웃" type="button" id="btnLogout">로그아웃</a></li>
 					            </c:if>
 	                        </ul>

@@ -61,4 +61,16 @@ public class MemberController {
 		return returnMap;
 	}
 	
+	@RequestMapping(value = "regForm1")
+	public String regForm1() throws Exception {
+
+		return "infra/member/user/regForm1";
+	}
+	
+	@RequestMapping(value = "regForm2")
+	public String regForm2() throws Exception {
+
+		return "infra/member/user/regForm2";
+	}
+	
 }

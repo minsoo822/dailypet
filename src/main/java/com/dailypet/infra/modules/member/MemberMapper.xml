@@ -10,7 +10,24 @@
 
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT 
-			*
+			a.ifmmSeq
+			, a.ifmmName
+			, a.ifmmZipcode
+			, a.ifmmAddr1
+			, a.ifmmAddr2
+			, a.ifmmAddr3
+			, a.ifmmID
+			, a.ifmmPW
+			, a.ifmmNickname
+			, a.ifmmTelecom
+			, a.ifmmTel
+			, a.ifmmEmail
+			, a.ifmmEmailID
+			, a.ifmmEmailDomain
+			, a.ifmmIntroduction
+			, a.ifmmRegDate
+			, a.ifmmModDate
+			, a.ifmmDelNy
 		FROM member a
 		WHERE 1=1
 		ORDER BY a.ifmmSeq DESC;
@@ -30,28 +47,28 @@
 	
 	<select id="selectOneID" resultMap="resultMapObj">
 		SELECT
-			a.ifmmSeq
-			, a.ifmmID
-		FROM
-			member 
-		WHERE 
-			1=1
-			AND a.ifmmID = #{ifmmID}
-	</select>
-	
-	<select id="selectOneLogin" resultMap="resultMapObj">
-		SELECT
-			a.ifmmSeq
-			, a.ifmmID
+			ifmmSeq
+			, ifmmID
 		FROM
 			member
 		WHERE 
 			1=1
-			AND a.ifmmID = #{ifmmID}
-			<if test="pw != null and !pw.equals('')">
-				AND a.ifmmPW = #{ifmmPW}
+			AND ifmmID = #{ifmmID}
+	</select>
+	
+	<select id="selectOneLogin" resultMap="resultMapObj">
+		SELECT
+			ifmmSeq
+			, ifmmID
+		FROM
+			member
+		WHERE 
+			1=1
+			AND ifmmID = #{ifmmID}
+			<if test="ifmmPW != null and !ifmmPW.equals('')">
+				AND ifmmPW = #{ifmmPW}
 			</if>
-			AND a.ifmmDelNy = 0
+			AND ifmmDelNy = 0
 	</select>
 	
 </mapper>

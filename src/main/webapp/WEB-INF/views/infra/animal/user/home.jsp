@@ -129,7 +129,7 @@
 		            <div class="navigation">
 		                <div id="navigation">
 		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
+		                        <li class="active"><a href="/animal/home" title="Home">홈</a></li>
 		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
 		                            <ul>
 		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
@@ -237,7 +237,7 @@
             <div class="row" id="#scroll_move1">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <div class="project-img mb30">
-                        <a href="../service-detail.html" class="imghover"><img src="../images/xdmin/lonelydog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="../service-detail.html" class="imghover"><img src="/resources/images/xdmin/lonelydog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -278,7 +278,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <div class="project-img mb30">
-                        <a href="../service-detail.html" class="imghover"><img src="../images/xdmin/walk.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="../service-detail.html" class="imghover"><img src="/resources/images/xdmin/walk.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
             </div>
@@ -301,7 +301,7 @@
             <div class="row" id="#scroll_move4">
             	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <div class="project-img mb30">
-                        <a href="../service-detail.html" class="imghover"><img src="../images/xdmin/diary.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="../service-detail.html" class="imghover"><img src="/resources/images/xdmin/diary.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">

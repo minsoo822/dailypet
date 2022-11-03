@@ -16,12 +16,6 @@ public class CodeController {
 	@Autowired
 	CodeServiceImpl service;
 	
-	public void setSearchAndPaging(CodeVo vo) throws Exception {
-		
-		vo.setParamsPaging(service.selectOneCount(vo));
-		vo.setShDelNy(vo.getShDelNy() == null ? 0 : vo.getShDelNy());
-	}
-	
 	@RequestMapping(value = "codeList")
 	public String selectList(CodeVo vo, Model model) throws Exception {
 		
@@ -48,7 +42,7 @@ public class CodeController {
 		
 		service.insert(dto);
 		
-		vo.setSeq(dto.getIfcdSeq());
+		vo.setIfcdSeq(dto.getIfcdSeq());
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		

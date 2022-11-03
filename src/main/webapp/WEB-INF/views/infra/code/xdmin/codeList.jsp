@@ -23,21 +23,17 @@
     <!-- Font Awesome -->
     <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- Style -->
     <link href="/resources/css/style.css" rel="stylesheet">
-    <link href="/resources/common/jquery/jquery-ui-1.13.1.custom/jquery-ui.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-	<link rel="stylesheet" href="/resources/demos/style.css">
-	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     
     <style type="text/css">
     
     .category {
     	text-align: right;
     	height: 500px;
-    	background: white;
+    	background: white;ㄹ
     	border: 1px solid gray;
     }
     .searchBox {
@@ -151,7 +147,7 @@
                 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                     <div class="row">
                     	<form method="post" name="codeform">
-					    <input type="hidden" name="seq">
+					    <input type="hidden" name="ifcdSeq">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
                     	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -267,7 +263,9 @@
 																<c:out value="${list.ifcgName }"/>
 															</td>
 															<td>
-																<c:out value="${list.ifcdName }"/>
+																<a href="javascript:goForm(<c:out value="${list.ifcdSeq }"/>)">
+																	<c:out value="${list.ifcdName }"/>
+																</a>
 															</td>
 															<td>
 																<c:out value="${list.ifcdModDate }"/>
@@ -382,7 +380,7 @@
     <script type="text/javascript">
     
 		var form = $("form[name=codeform]");
-		var seq = $("input:hidden[name=seq]");
+		var ifcdSeq = $("input:hidden[name=ifcdSeq]");
 		
 		var goUrlList = "/code/codeList";
 		var goUrlForm = "/code/codeForm";
@@ -390,6 +388,16 @@
 		$("#searchBtn").on("click", function(){
 			form.attr("action", goUrlList).submit();
 		});
+		
+		goForm = function(keyValue) {
+			ifcdSeq.val(keyValue);
+			form.attr("action", goUrlForm).submit();
+		}
+		
+		/* goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlList).submit();
+		} */
 /* 		
 		$("#regbtn").on("click", function(){
 			form.attr("action", goUrlForm).submit();
@@ -417,7 +425,8 @@
     </script>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/resources/js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/resources/js/bootstrap.min.js"></script>
     <script src="/resources/js/menumaker.js"></script>

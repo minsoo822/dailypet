@@ -35,7 +35,7 @@
 
 <style type="text/css">
 	div {
-		/* border: 1px solid orange; */
+		border: 1px solid orange;
 	}
 
 	.navbar-fixed-top {
@@ -231,67 +231,69 @@
 		</ul>
 	</div> -->
     <div class="content">
-	        <div class="container2" style="display: block;">
-	        	<c:forEach items="${list }" var="list" varStatus="status">
-				    <div class="row" style="margin-bottom: 100px;">
-					    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					    	<!-- 상단바 s -->
-					    	<div class="row" style="margin-top: 15px; height: 50px;">
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-									<div class="profileView">
-										<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
-								   	</div>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-								    <h5 style="margin: 10px 0 0 -25px; font-size: 13px"><b><c:out value="${list.ifmmID }"/></b></h5>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4"></div>
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" style="vertical-align: middle">
-									<button type="button" id="delpost"><i class="fa-regular fa-trash-can fa-lg"></i></button>
-								</div>
-							</div>
-							<!-- 상단바 e -->
-							<!-- 일기 사진 s -->
-							<div class="row">
-								<div class="col" >
-									<div class="service-img" style="width: 500px; margin-left: auto; margin-right: auto;">
-									    <a href="#" class="imghover"><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt=""></a>
-									</div>
-								</div>
-							</div>
-							<!-- 일기 사진 e -->
-							<div class="service-content">
-								<!-- 좋아요 댓글 버튼 s -->
-								<div class="postbtn">
-									<button type="button" id="like">
-										<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
-									</button>
-									<button type="button" id="comment">
-										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
-									</button>
-								</div>
-								<!-- 좋아요 댓글 버튼 e -->
-								<!-- 좋아요 갯수	 s -->	
-							    <p><b>좋아요 9,234개</b></p>
-							    <!-- 좋아요 갯수	 e -->
-							    <!-- contents s -->
-							    <div class="cardcontent">
-							    	<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline"><b>dkdlel</b>
-							    	</h5><p style="font-size: 13px; display: inline;">내용</p>
-							    	<p style="font-size: 11px; color: lightgray">2022/22/22</p>
-							    	<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
-							    </div>
-							    <!-- contents e -->
-							</div>
-							<!-- Coment s -->
-							<div class="cardcomment">
-						    	<input class="form-control" type="text" placeholder="댓글 달기/resources.">
-						    </div>
-						    <!-- Coment e -->
+		<c:forEach items="${list }" var="list" varStatus="status">
+			<div class="container2">
+				<div class="row" style="margin-bottom: 100px;">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<!-- 상단바 s -->
+					<div class="row" style="margin-top: 15px; height: 50px;">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+							<div class="profileView">
+								<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
+						   	</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+						    <h5 style="margin: 10px 0 0 -25px; font-size: 13px"><b><c:out value="${list.ifmmID }"/></b></h5>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">&nbsp;</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" style="vertical-align: middle">
+								<button type="button" id="delpost"><i class="fa-regular fa-trash-can fa-lg"></i></button>
 						</div>
 					</div>
-				</c:forEach>	
-	        </div>
+					<!-- 상단바 e -->
+					<!-- 일기 사진 s -->
+					<div class="row">
+						<div class="col" >
+							<div class="service-img" style="width: 500px; margin-left: auto; margin-right: auto;">
+							    <a href="#" class="imghover"><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt=""></a>
+							</div>
+						</div>
+					</div>
+					<!-- 일기 사진 e -->
+					<div class="service-content">
+						<!-- 좋아요 댓글 버튼 s -->
+						<div class="postbtn">
+							<button type="button" id="like">
+								<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
+						</button>
+						<button type="button" id="comment">
+							<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+							</button>
+						</div>
+						<!-- 좋아요 댓글 버튼 e -->
+						<!-- 좋아요 갯수	 s -->	
+						<p><b>좋아요 9,234개</b></p>
+						<!-- 좋아요 갯수	 e -->
+						<!-- contents s -->
+						<div class="cardcontent">
+							<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline">
+								<b>dkdlel</b>
+							</h5>
+							<p style="font-size: 13px; display: inline;">내용</p>
+							<p style="font-size: 11px; color: lightgray">2022/22/22</p>
+							<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
+						</div>
+						<!-- contents e -->
+					</div>
+					<!-- Coment s -->
+					<div class="cardcomment">
+					   	<input class="form-control" type="text" placeholder="댓글 달기/resources.">
+					   </div>
+					   <!-- Coment e -->
+					</div>
+				</div>
+			</div>
+		</c:forEach>	
     </div>
     <div class="footer">
         <!-- footer-->

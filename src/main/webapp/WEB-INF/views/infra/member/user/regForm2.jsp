@@ -644,8 +644,7 @@
 		
 		$(id).remove();
 	}
-	
-	
+
 	var goUrlJoin = "/member/memberJoin";
 	
 	$("#btnSave").on("click", function(){

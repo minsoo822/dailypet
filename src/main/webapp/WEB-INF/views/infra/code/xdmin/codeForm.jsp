@@ -13,6 +13,7 @@
     <title>반려동물 리스트</title>
     <!-- Bootstrap -->
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
@@ -20,6 +21,7 @@
     <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
     <!-- Style -->
     <link href="/resources/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 <style type="text/css">
@@ -412,6 +414,7 @@
             </div>
         </div>
     </div>
+   
     <!-- /.footer-->
 	
 	<script type="text/javascript">
@@ -429,7 +432,7 @@
 	var formVo = $("form[name=formVo]");
 
 	$("#btnSubmit").on("click", function(){
-		if (seq.val() == "0" || seq.val() == ""){
+		if (ifcdSeq.val() == "0" || ifcdSeq.val() == ""){
 	   		form.attr("action", goUrlInst).submit();
 	   	} else {
 	   		form.attr("action", goUrlUpdt).submit();

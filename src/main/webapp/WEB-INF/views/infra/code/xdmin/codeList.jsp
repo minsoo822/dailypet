@@ -69,6 +69,10 @@
     	background-color: #372d2b;
     }
     
+    th, td {
+    	text-align: center;
+    }
+    
     </style>
     
 </head>
@@ -275,11 +279,17 @@
 															<td>
 																<c:out value="${list.ifcdModDate }"/>
 															</td>
-															<td>
-																<c:out value="${list.ifcdUseNy }"/>
+															<td id="UseNY">
+																<c:choose>
+																	<c:when test="${list.ifcdUseNy eq 0 }">N</c:when>
+																	<c:otherwise>Y</c:otherwise>
+																</c:choose>
 															</td>
-															<td>
-																<c:out value="${list.ifcdDelNy }"/>
+															<td id="DelNY">
+																<c:choose>
+																	<c:when test="${list.ifcdDelNy eq 0 }">N</c:when>
+																	<c:otherwise>Y</c:otherwise>
+																</c:choose>
 															</td>
 														</tr>
 													</c:forEach>

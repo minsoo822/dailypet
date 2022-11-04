@@ -35,9 +35,8 @@
 
 <style type="text/css">
 	div {
-		border: 1px solid orange;
+		/* border: 1px solid orange; */
 	}
-
 	.navbar-fixed-top {
 		background-color: black;
 		margin-bottom: 100px;
@@ -49,7 +48,7 @@
 		 margin: 0px 100px;
 	}
 	
-	.container2 {
+	.box {
 		margin-top: 5%;
 		width: 500px;
 		height: auto;
@@ -231,9 +230,9 @@
 		</ul>
 	</div> -->
     <div class="content">
+			<div class="container" style="margin-left: auto; margin-right: auto; width: 500px; margin-top: 5%;">
 		<c:forEach items="${list }" var="list" varStatus="status">
-			<div class="container2">
-				<div class="row" style="margin-bottom: 100px;">
+				<div class="row box">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<!-- 상단바 s -->
 					<div class="row" style="margin-top: 15px; height: 50px;">
@@ -253,7 +252,7 @@
 					<!-- 상단바 e -->
 					<!-- 일기 사진 s -->
 					<div class="row">
-						<div class="col" >
+						<div class="col" style="overflow: hidden;" >
 							<div class="service-img" style="width: 500px; margin-left: auto; margin-right: auto;">
 							    <a href="#" class="imghover"><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt=""></a>
 							</div>
@@ -286,14 +285,17 @@
 						<!-- contents e -->
 					</div>
 					<!-- Coment s -->
-					<div class="cardcomment">
-					   	<input class="form-control" type="text" placeholder="댓글 달기/resources.">
-					   </div>
-					   <!-- Coment e -->
+					<div class="cardcomment" style="margin-bottom: 10px; margin-left: 5px; margin-right: 5px;">
+						<div class="col-11">
+					  	 	<input class="form-control" type="text" placeholder="댓글 달기/resources.">
+					   	</div>
+					   	<button><i class="fa-regular fa-paper-plane"></i></button>
+				   </div>
+				   <!-- Coment e -->
 					</div>
 				</div>
-			</div>
-		</c:forEach>	
+			</c:forEach>	
+		</div>
     </div>
     <div class="footer">
         <!-- footer-->

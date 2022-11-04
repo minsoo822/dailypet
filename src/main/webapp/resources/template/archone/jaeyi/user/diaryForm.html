@@ -90,9 +90,11 @@
 		outline: none;
 		background-color: none;
 	}
-	
+	 
 	#attachbox {
-		height: 470px;
+		height: 280px;
+		text-align: center;
+		margin-top: 210px;
 	}
 	
 	#filebox label {
@@ -137,6 +139,9 @@
 		color: black;
 	}
 	
+	.box{
+		border-color: black;
+	}
 </style>
 
 <body>
@@ -203,13 +208,13 @@
         	</div>
         	<hr>
             <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="filebox">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="filebox" style="border-right:1px solid lightgray; ">
                 	<div id="attachbox">
-                		<label for="imagefile" style="vertical-align: center">
-                		파일 업로드하기
+                		<label for="imagefile">
+               			파일 업로드하기
                 		<input class="form-control" type="file" id="imagefile" name="imagefile" style="display: none" accept=".jpg,.png,.jpeg,.mp4,.mkv" onchange="setThumbnail(event);"/>
-                	</label>
-                	<div id="imgPreview" class="imgPreview"></div>
+	                	</label>
+	                	<div id="imgPreview" class="imgPreview"></div>
                 	</div>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">

@@ -153,7 +153,7 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="../index.html"><img src="../../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
+		            <a href="/resources/index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
 		        </div>
 		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 		            <div class="navigation">
@@ -166,10 +166,10 @@
 		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
 		                            </ul>
 		                        </li>
-		                        <li class="has-sub"><span class="submenu-button"></span><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
+		                        <li class="has-sub"><span class="submenu-button"></span><a href="/resources/searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
 		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
+		                                <li><a href="/resources/searchingPlace.html" title="Projects">편의시설 찾기</a></li>
+		                                <li><a href="/resources/reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
 		                            </ul>
 		                        </li>
 	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
@@ -178,11 +178,11 @@
 					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
 					              </ul>
 					          </li> -->
-					          	<li class="has-sub"><span class="submenu-button"></span><a href="../diaryList.html" title="Portfolio">육아수첩</a>
+					          	<li class="has-sub"><span class="submenu-button"></span><a href="/resources/diaryList.html" title="Portfolio">육아수첩</a>
 	<!-- 						메뉴구현x 일단 링크만 생성						
-								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
-								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
+								<li><a href="/resources/diaryMypage.html" title="Contact Us">육아수첩</a> </li>
+								<li><a href="/resources/diaryDetail.html" title="Projects">일기 상세</a></li>
+								<li><a href="/resources/diaryForm.html" title="Projects">일기 쓰기</a></li>
 	-->							
 								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
 	                            </li><li><a href="error.html" title="Error">로그인</a> </li>
@@ -199,7 +199,7 @@
 		<nav class="icon">
 			<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 			<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage.html"><img src="../images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+			<span><div class="profileheader"><a href="diaryMypage.html"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
     <div class="content">
@@ -225,7 +225,7 @@
                     <div class="row">
 						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 							<div class="profileView">
-								<img src="../../images/jennieprofile.jpg" class="profilepic" alt="">
+								<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
 						   	</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -316,11 +316,11 @@
     </script>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../../js/jquery.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/menumaker.js"></script>
-    <script src="../../js/navigation.js" type="text/javascript"></script>
+    <script src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/menumaker.js"></script>
+    <script src="/resources/js/navigation.js" type="text/javascript"></script>
 </body>
 
 </html>

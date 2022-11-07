@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface DiaryService {
 	
-	public List<Diary> seleList(DiaryVo vo) throws Exception;
-
+	public List<Diary> selectList(DiaryVo vo) throws Exception;
+//	public Diary selectOne(DiaryVo vo) throws Exception;
+	
+	
 }

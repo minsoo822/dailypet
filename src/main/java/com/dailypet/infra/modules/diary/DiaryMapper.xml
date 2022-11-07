@@ -24,6 +24,16 @@
 			ORDER BY a.ifdaSeq DESC
 	</select>
 	
+	<!-- <select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.ifmmID
+			a.ifmmName
+			a.ifmmIntroduction
+			FROM member
+			WHERE 1=1
+			프로필사진조인
+			AND ifmmSeq = #{ifmmSeq}
+	</select> -->
 
 
 </mapper>	

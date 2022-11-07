@@ -54,6 +54,7 @@
 		height: auto;
 		border: 1px solid lightgray;
 		border-radius: 2px;
+		margin-bottom: 100px;
 	}
 	
 	.service-profile {
@@ -276,20 +277,22 @@
 						<!-- contents s -->
 						<div class="cardcontent">
 							<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline">
-								<b>dkdlel</b>
+								<b><c:out value="${list.ifmmID }"/></b>
 							</h5>
-							<p style="font-size: 13px; display: inline;">내용</p>
+							<p style="font-size: 13px; display: inline;"><c:out value="${list.ifdaContents }"/></p>
 							<p style="font-size: 11px; color: lightgray">2022/22/22</p>
 							<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
 						</div>
 						<!-- contents e -->
 					</div>
 					<!-- Coment s -->
-					<div class="cardcomment" style="margin-bottom: 10px; margin-left: 5px; margin-right: 5px;">
-						<div class="col-11">
+					<div class="cardcomment" style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px;">
+						<div>
 					  	 	<input class="form-control" type="text" placeholder="댓글 달기/resources.">
 					   	</div>
-					   	<button><i class="fa-regular fa-paper-plane"></i></button>
+					   <div>
+					   		<button><i class="fa-regular fa-paper-plane"></i></button>
+					   	</div>
 				   </div>
 				   <!-- Coment e -->
 					</div>

@@ -14,13 +14,32 @@ public class DiaryController {
 	@Autowired
 	DiaryServiceImpl service;
 	
-	
+//	일기리스트
 	@RequestMapping(value = "DiaryList")
 	public String selectList(DiaryVo vo, Model model) throws Exception {
-		List<Diary> list = service.seleList(vo);
+		List<Diary> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/diary/user/diaryList";
 	}
-	
+//	일기폼
+	@RequestMapping(value = "DiaryForm")
+	public String diaryForm() throws Exception {
+		
+		return "infra/diary/user/diaryForm";
+	}
+//	일기리스트 디테일
+	@RequestMapping(value = "DiaryDetail")
+	public String diaryDetail() throws Exception {
+		
+		return "infra/diary/user/diaryDetail";
+	}
+//	나의 일기리스트
+	@RequestMapping(value = "DiaryMypage")
+	public String diaryMypage(DiaryVo vo, Model model) throws Exception {
+//		Diary item = service.selectOne(vo);
+//		model.addAttribute("item", item);
+		
+		return "infra/diary/user/diaryMypage";
+	}
 }

@@ -21,6 +21,10 @@ public class DiaryDao {
 		return sqlSession.selectList(namespace + ".selectList", vo);
 	}
 	
+//	public Diary selectOne(DiaryVo vo) throws Exception {
+//		return sqlSession.selectOne(namespace + ".selectOne", vo);
+//	}
+	
 	
 	
 }

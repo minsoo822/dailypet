@@ -12,10 +12,15 @@ public class DiaryServiceImpl implements DiaryService{
 	DiaryDao dao;
 
 	@Override
-	public List<Diary> seleList(DiaryVo vo) throws Exception {
+	public List<Diary> selectList(DiaryVo vo) throws Exception {
 		return dao.selectList(vo);
 	}
-
+	
+//	@Override
+//	public Diary selectOne(DiaryVo vo) throws Exception {
+//		return dao.selectOne(vo);
+//	}
+	
 	
 	
 	

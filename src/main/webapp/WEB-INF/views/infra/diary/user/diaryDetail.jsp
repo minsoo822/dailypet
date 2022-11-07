@@ -15,7 +15,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>ì¼ê¸° ìì¸</title>
+    <title>일기 상세</title>
     <!-- Bootstrap -->
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
@@ -191,34 +191,34 @@
 		            <div class="navigation">
 		                <div id="navigation"><div id="menu-button">Menu</div>
 		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">í</a></li>
-		                        <li class="has-sub"><span class="submenu-button"></span><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a>
+		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
+		                        <li class="has-sub"><span class="submenu-button"></span><a href="service-list.html" title="Service List">유기동물 찾기</a>
 		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">ì êµ­ ì ê¸°ëë¬¼</a></li>
+		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
+		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
 		                            </ul>
 		                        </li>
-		                        <li class="has-sub"><span class="submenu-button"></span><a href="../searchingPlace.html" title="Portfolio">ë´ ì£¼ë³ í¸ììì¤</a>
+		                        <li class="has-sub"><span class="submenu-button"></span><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
 		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">í¸ììì¤ ì°¾ê¸°</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">ë´ ìì½ ì ë³´</a></li>
+		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
+		                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
 		                            </ul>
 		                        </li>
 	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
 					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">ë°ë ¤ëë¬¼ ì¼ê¸°</a></li>
+					                  <li><a href="blog-default.html" title="Blog">반려동물 일기</a></li>
 					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
 					              </ul>
 					          </li> -->
-					          	<li class="has-sub"><span class="submenu-button"></span><a href="../diaryList.html" title="Portfolio">ì¡ììì²©</a>
-	<!-- 						ë©ë´êµ¬íx ì¼ë¨ ë§í¬ë§ ìì±						
-								<li><a href="../diaryMypage.html" title="Contact Us">ì¡ììì²©</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">ì¼ê¸° ìì¸</a></li>
-								<li><a href="../diaryForm.html" title="Projects">ì¼ê¸° ì°ê¸°</a></li>
+					          	<li class="has-sub"><span class="submenu-button"></span><a href="../diaryList.html" title="Portfolio">육아수첩</a>
+	<!-- 						메뉴구현x 일단 링크만 생성						
+								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
+								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
+								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
 	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">í¼ë§</a> </li> -->
-	                            </li><li><a href="error.html" title="Error">ë¡ê·¸ì¸</a> </li>
-	                            <li><a href="error.html" title="Error">íìê°ì</a> </li>
+								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
+	                            </li><li><a href="error.html" title="Error">로그인</a> </li>
+	                            <li><a href="error.html" title="Error">회원가입</a> </li>
 	                        </ul>
 	                    </div>
 	                </div>
@@ -260,23 +260,23 @@
 								<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
 						   	</div>
 						</div>
-						<h5 id="userid" style="margin: 10px 5px 0 5px; font-size: 13px; display: inline"><b>jennierubyjerry</b></h5><h5 style="margin-top: 10px; font-size: 13px; display: inline">ì¤ëì ì¼ìì¼ð¥°ð¥° ì ë¦¬ë ëê¸°</h5>
+						<h5 id="userid" style="margin: 10px 5px 0 5px; font-size: 13px; display: inline"><b>jennierubyjerry</b></h5><h5 style="margin-top: 10px; font-size: 13px; display: inline">오늘은 일요일🥰🥰 제리랑 놀기</h5>
 					</div>
 					<div class="cardfooter">
 						<div class="service-content">
 							<div class="postbtn">
 								<button type="button" id="like"><span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span></button><button type="button" id="comment"><span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span></button>
 							</div>
-						    <p><b>ì¢ìì 9,234ê°</b></p>
+						    <p><b>좋아요 9,234개</b></p>
 						    <div class="cardcontent">
-						    	<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline"><b>jennierubyjerry</b></h5><p style="font-size: 13px; display: inline;">ì¤ëì ì¼ìì¼!!! ì ë¦¬ë ëê¸°</p>
+						    	<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline"><b>jennierubyjerry</b></h5><p style="font-size: 13px; display: inline;">오늘은 일요일!!! 제리랑 놀기</p>
 						    	<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
-						    	<p style="font-size: 11px; color: lightgray">21ìê° ì </p>
+						    	<p style="font-size: 11px; color: lightgray">21시간 전</p>
 						    </div>
 						</div>
 						<div class="cardcomment">
-					    	<input class="form-control" id="writecomm" type="text" placeholder="ëê¸ ë¬ê¸°...">
-					    	<button type="submit" id="upcomment">ê²ì</button>
+					    	<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
+					    	<button type="submit" id="upcomment">게시</button>
 					    </div>
 					</div>
 				</div>
@@ -356,3 +356,4 @@
 </body>
 
 </html>
+

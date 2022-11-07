@@ -38,6 +38,20 @@ public class MemberDao {
 		return rtSeq;
 	}
 	
+	public int selectOneCount(MemberVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
+	}
+	
+	//아이디 중복 체크
+	public int selectOneCheckId(Member dto) {
+		return sqlSession.selectOne(namespace + ".selectOneCheckId", dto);
+	}
+	
+	//닉네임 중복 체크
+	public int selectOneCheckNick(Member dto) {
+		return sqlSession.selectOne(namespace + ".selectOneCheckNick", dto);
+	}
+	
 	//로그인
 	public Member selectOneLogin(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneLogin", dto);

@@ -61,6 +61,40 @@ public class MemberController {
 		return returnMap;
 	}
 	
+	//아이디 중복 체크
+	@ResponseBody
+	@RequestMapping(value = "idCheck")
+	public Map<String, Object> checkId(Member dto) throws Exception {
+
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+		int result = service.selectOneCheckId(dto);
+
+		if (result > 0) {
+			returnMap.put("rt", "fail");
+		} else {
+			returnMap.put("rt", "success");
+		}
+		return returnMap;
+	}
+	
+	//닉네임 중복 체크
+	@ResponseBody
+	@RequestMapping(value = "nickCheck")
+	public Map<String, Object> checkNick(Member dto) throws Exception {
+
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+		int result = service.selectOneCheckNick(dto);
+
+		if (result > 0) {
+			returnMap.put("rt", "fail");
+		} else {
+			returnMap.put("rt", "success");
+		}
+		return returnMap;
+	}
+	
 	@RequestMapping(value = "regForm1")
 	public String regForm1() throws Exception {
 

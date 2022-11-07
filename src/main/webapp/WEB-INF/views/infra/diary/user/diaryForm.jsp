@@ -187,7 +187,7 @@
 
 <body>
 	<form method="post" id="mainForm" enctype="multipart/form-data">
-	<input type="hidden" name="ifmmSeq"value="${sessSeq}">
+	<input type="hidden" name="ifmmSeq"value="${vo.ifmmSeq}">
     <div class="header navbar-fixed-top header-collapse">
 		<div class="container">
 		    <div class="row">
@@ -253,7 +253,7 @@
         	<div class="boxheader">
         		<span class="headercen">새 게시물 만들기</span>
         		<a href="diarylist.html">
-        			<span class="headerrig">공유하기</span>
+        			<span class="headerrig" id="diarySaveBtn">공유하기</span>
         		</a>
         	</div>
         	<hr>
@@ -275,10 +275,10 @@
 						   	</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-						    <h5 style="margin: 10px 0 0 -10px; font-size: 13px"><b>jennierubyjerry</b></h5>
+						    <h5 style="margin: 10px 0 0 -10px; font-size: 13px"><b><c:out value="${item.ifmmID }"/></b></h5>
 						</div>
 					</div>
-					<textarea class="form-control" placeholder="문구 입력..." name="diarycontent" id="diarycontent" maxlength="2000" style="height: 400px"></textarea>
+					<textarea class="form-control" placeholder="문구 입력..." name="ifdaComents" id="diarycontent" maxlength="2000" style="height: 400px"></textarea>
                 </div>
             </div>
         </div>
@@ -348,6 +348,13 @@
     <!-- /.footer-->
     </form>
     <script>
+    	var form = $("#mainForm")
+    	
+    	$("#diarySaveBtn").on("click", function() {
+    		form.attr("action" , "/diary/DiaryInst").submit();
+    	});
+    
+    
 		function setThumbnail(event) {
 		  var reader = new FileReader();
 		

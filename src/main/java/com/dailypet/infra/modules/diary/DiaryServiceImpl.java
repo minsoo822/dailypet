@@ -20,6 +20,7 @@ public class DiaryServiceImpl implements DiaryService{
 	}
 	@Override
 	public Diary selectOne(DiaryVo vo) throws Exception {
+		System.out.println("selectOne : " + dao.selectOne(vo));
 		return dao.selectOne(vo);
 	}
 

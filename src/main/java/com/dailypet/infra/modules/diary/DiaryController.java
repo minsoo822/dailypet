@@ -28,7 +28,7 @@ public class DiaryController {
 	public String diaryForm(DiaryVo vo, Model model) throws Exception {
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
-		
+		System.out.println("item : " + item);
 		return "infra/diary/user/diaryForm";
 	}
 //	일기폼
@@ -38,6 +38,7 @@ public class DiaryController {
 		
 		return "redirect:/diary/DiaryList";
 	}
+	
 	
 //	일기리스트 디테일
 	@RequestMapping(value = "DiaryDetail")

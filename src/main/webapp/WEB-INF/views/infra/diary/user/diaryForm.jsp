@@ -116,6 +116,7 @@
 		margin: 5px 10px;
 	}
 	
+	
 	hr {
 		margin: 10px 0;
 	}
@@ -135,7 +136,6 @@
 	#attachbox {
 		height: 280px;
 		text-align: center;
-		margin-top: 210px;
 	}
 	
 	#filebox label {
@@ -249,7 +249,7 @@
         	</div>
         	<hr>
             <div class="row" id="whole">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="filebox" style="border-right:1px solid lightgray; ">
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" id="filebox" style="border-right:1px solid lightgray; height: 490px;">
                 	<div id="attachbox">
                 		<label for="imagefile">
                			파일 업로드하기

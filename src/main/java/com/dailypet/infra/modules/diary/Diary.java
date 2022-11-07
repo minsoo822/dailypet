@@ -1,6 +1,10 @@
 package com.dailypet.infra.modules.diary;
 
-public class Diary {
+import org.springframework.web.multipart.MultipartFile;
+
+import com.dailypet.infra.common.base.Base;
+
+public class Diary extends Base{
 	
 	private String ifdaSeq;
 	private String ifmmSeq;
@@ -10,6 +14,8 @@ public class Diary {
 	private String ifdaRegDate;
 	private String ifdaModDate;
 	private String ifmmID;
+	
+	 private MultipartFile[] diary_image;
 	
 	
 	public String getIfdaSeq() {
@@ -59,6 +65,12 @@ public class Diary {
 	}
 	public void setIfmmID(String ifmmID) {
 		this.ifmmID = ifmmID;
+	}
+	public MultipartFile[] getDiary_image() {
+		return diary_image;
+	}
+	public void setDiary_image(MultipartFile[] diary_image) {
+		this.diary_image = diary_image;
 	}
 	
 	

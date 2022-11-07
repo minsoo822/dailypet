@@ -24,16 +24,61 @@
 			ORDER BY a.ifdaSeq DESC
 	</select>
 	
-	<!-- <select id="selectOne" resultMap="resultMapObj">
+	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-			a.ifmmID
-			a.ifmmName
-			a.ifmmIntroduction
-			FROM member
+			*
 			WHERE 1=1
-			프로필사진조인
+			<!-- 프로필사진조인 -->
 			AND ifmmSeq = #{ifmmSeq}
-	</select> -->
-
+	</select>
+	<insert id="insertDiary">
+		INSERT INTO diary (
+			ifdaComents
+			member_seq
+		)
+		VALUES (
+			#{ifdaComents}
+			,#{ifmmSeq}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<select id="selectLastSeq" resultType="Integer"> <!-- 마지막 seq 조회 -->
+		SELECT
+			ifmmseq
+		FROM member
+		ORDER BY seq DESC
+		LIMIT 1
+	</select>
+	<insert id="diaryUploaded">
+		INSERT INTO diaryUploaded (
+			type
+			defaultNy
+			sort
+			path
+			originalName
+			uuidName
+			ext
+			size
+			delNy
+			pseq
+		)
+		VALUES (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{ifmmSeq}
+		)
+	</insert>
+	
+	
 
 </mapper>	

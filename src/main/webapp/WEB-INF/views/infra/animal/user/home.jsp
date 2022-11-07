@@ -119,6 +119,8 @@
 </head>
 
 <body>
+	<form method="post" id="mainForm">
+	<input type="hidden" name="ifmmSeq" value="${dto.ifmmSeq }">
     <div class="header navbar-fixed-top">
 		<div class="container">
 		    <div class="row">
@@ -149,16 +151,19 @@
 					              </ul>
 					          </li> -->
 					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">육아수첩</a>
+					          		<ul>
+					          			<li><a href="javascript:goDiaryForm(${sessSeq })" title="Projects">일기 쓰기</a></li>
+					          		</ul>
 	<!-- 						메뉴구현x 일단 링크만 생성						
 								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
 								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
-								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
+								
 	-->							
 								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
                             	<c:if test="${sessSeq eq null}">
 					        		<!-- 로그인전 -->
 					        		<li><a href="/member/login" title="로그인">로그인</a></li>
-			        				<li><a href="/member/regForm1" title="회원가입">회원가입</a></li>
+			        				<li><a href="/member/regForm1" type" title="회원가입">회원가입</a></li>
 					        	</c:if>
 						        <c:if test="${sessSeq ne null}">
 					        		<li><a href="#" type="button"><c:out value="${sessId }"/>님, 반갑습니다</a></li>
@@ -382,7 +387,7 @@
             </div>
         </div>
     </div>
-    
+    </form>
 <!-- /.tiny footer block -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="/resources/js/jquery.min.js"></script>
@@ -414,6 +419,15 @@
 			}
 		});
 	});
+    
+    
+    var seq = $("input:hidden[name=ifmmSeq]");
+    var form = $("#mainForm");
+    
+    goDiaryForm = function(key) {
+    	seq.attr("value", key);
+    	form.attr("action", "/diary/DiaryForm").submit();
+    }
 </script>
     
     

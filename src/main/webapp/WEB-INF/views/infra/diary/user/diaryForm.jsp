@@ -186,6 +186,8 @@
 </style>
 
 <body>
+	<form method="post" id="mainForm" enctype="multipart/form-data">
+	<input type="hidden" name="ifmmSeq"value="${sessSeq}">
     <div class="header navbar-fixed-top header-collapse">
 		<div class="container">
 		    <div class="row">
@@ -222,8 +224,15 @@
 								<li><a href="/resources/diaryForm.html" title="Projects">일기 쓰기</a></li>
 	-->							
 								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
-	                            </li><li><a href="error.html" title="Error">로그인</a> </li>
-	                            <li><a href="error.html" title="Error">회원가입</a> </li>
+	                           <c:if test="${sessSeq eq null}">
+					        		<!-- 로그인전 -->
+					        		<li><a href="/member/login" title="로그인">로그인</a></li>
+			        				<li><a href="/member/regForm1" title="회원가입">회원가입</a></li>
+					        	</c:if>
+						        <c:if test="${sessSeq ne null}">
+					        		<li><a href="#" type="button"><c:out value="${sessId }"/>님, 반갑습니다</a></li>
+									<li><a href="/member/logoutProc" title="로그아웃" type="button" id="btnLogout">로그아웃</a></li>
+					            </c:if>
 	                        </ul>
 	                    </div>
 	                </div>
@@ -253,7 +262,7 @@
                 	<div id="attachbox">
                 		<label for="imagefile">
                			파일 업로드하기
-                		<input class="form-control" type="file" id="imagefile" name="imagefile" style="display: none" accept=".jpg,.png,.jpeg,.mp4,.mkv" onchange="setThumbnail(event);"/>
+                		<input class="form-control" type="file" id="imagefile" name="diary_image" style="display: none" accept=".jpg,.png,.jpeg,.mp4,.mkv" onchange="setThumbnail(event);"/>
 	                	</label>
 	                	<div id="imgPreview" class="imgPreview"></div>
                 	</div>
@@ -337,7 +346,7 @@
         </div>
     </div>
     <!-- /.footer-->
-    
+    </form>
     <script>
 		function setThumbnail(event) {
 		  var reader = new FileReader();

@@ -21,10 +21,11 @@ public class DiaryDao {
 		return sqlSession.selectList(namespace + ".selectList", vo);
 	}
 	
-//	public Diary selectOne(DiaryVo vo) throws Exception {
-//		return sqlSession.selectOne(namespace + ".selectOne", vo);
-//	}
-	
-	
+	public Diary selectOne(DiaryVo vo) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectOne", vo);
+	}
+	public int insertDiary(Diary dto) throws Exception { return sqlSession.insert(namespace + ".insertDiary", dto); }
+	public int insertDiaryUploaded(Diary dto) throws Exception { return sqlSession.insert(namespace + ".diaryUploaded", dto); }
+	public int selectLastSeq() throws Exception { return sqlSession.selectOne(namespace + ".selectLastSeq", ""); }
 	
 }

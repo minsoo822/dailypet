@@ -18,6 +18,7 @@ public class MemberServiceImpl implements MemberService{
 		return list;
 	}
 	
+	//로그인 관련
 	@Override
 	public Member selectOneID(Member dto) throws Exception {
 		return dao.selectOneID(dto);
@@ -29,5 +30,15 @@ public class MemberServiceImpl implements MemberService{
 		return dao.selectOneLogin(dto);
 	}
 	
+	//아이디 중복 체크
+	@Override
+	public int selectOneCheckId(Member dto) throws Exception {
+		return dao.selectOneCheckId(dto);
+	}
 	
+	//닉네임 중복 체크
+	@Override
+	public int selectOneCheckNick(Member dto) throws Exception {
+		return dao.selectOneCheckNick(dto);
+	}
 }

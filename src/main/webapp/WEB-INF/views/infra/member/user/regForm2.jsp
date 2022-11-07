@@ -26,13 +26,15 @@
     <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
     <!-- Style -->
     <link href="/resources/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e2405cb6e30cd78e7478b78325118dec&libraries=services"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+	
     <style type="text/css">
     	.right{
     		float: right;
@@ -154,6 +156,26 @@
 			background-color:#E9ECEF;
 			width: 475px;
 			height: 180px;
+		}
+		
+		#nicknameFeedback.valid-feedback{
+			color: green;
+			font-size: 12px;
+		}
+		
+		#nicknameFeedback.invalid-feedback{
+			color: red;
+			font-size: 12px;
+		}
+		
+		#ifmmIDFeedback.valid-feedback{
+			color: green;
+			font-size: 12px;
+		}
+		
+		#ifmmIDFeedback.invalid-feedback{
+			color: red;
+			font-size: 12px;
 		}
 		
     </style>
@@ -278,7 +300,7 @@
 								<input type="text" class="form-control input" name="emailID" id="emailID">
 							</div>	
 							<div class="col-1 top2">
-								<span>&nbsp;@&nbsp;</span>
+								<span>@</span>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
 								<select class="form-select" name="emailseq">
@@ -302,7 +324,9 @@
                         		<label class="top4">아이디</label>
                         	</div>
                         	<div class="col-lg-3 col-md-3 col-sm-3">
-                       			<input class="form-control input" type="text" name="userID" id="userID" placeholder="4자리 이상의 영문 + 숫자">
+                       			<input type="hidden" id="ifmmIDAllowNY" name="ifmmIDAllowNY" value="0">
+								<input class="form-control input" type="text" name="ifmmID" id="ifmmID" placeholder="4자리 이상의 영문 + 숫자">
+								<div class="invalid-feedback" id="ifmmIDFeedback"></div>
                         	</div>
                        	</div>
                        	<hr>
@@ -311,7 +335,9 @@
                         		<label class="top4">닉네임</label>
                         	</div>
                         	<div class="col-lg-3 col-md-3 col-sm-3">
-                       			<input class="form-control input" type="text" name="nickname" id="nickname">
+                       			<input type="hidden" id="nicknameAllowNY" name="nicknameAllowNY" value="0">
+								<input type="text" class="form-control input" id="nickname" name="nickname">
+								<div class="invalid-feedback" id="nicknameFeedback"></div>
                         	</div>
                        	</div>
                        	<hr>
@@ -329,8 +355,12 @@
                         		<label class="top4">비밀번호 확인</label>
                         	</div>
                         	<div class="col-lg-4 col-md-4 col-sm-4">
-                       			<input class="form-control input" type="password" name="pwcheck" id="pwcheck">
+                       			<input class="form-control input" type="password" name="pwCheck" id="pwCheck">
                         	</div>
+                        	<div class="col-lg-4 col-md-4 col-sm-4">
+								<span id="alert-success" style="display: none; color: #097e01; text-align: left; font-size: 15px; margin-top: 9px;"><i class="fa-solid fa-circle-info"></i>&nbsp; 비밀번호가 일치합니다.</span>
+								<span id="alert-danger" style="display: none; color: #c53e3e; text-align: left; font-size: 15px; margin-top: 9px;"><i class="fa-solid fa-circle-info"></i>&nbsp; 비밀번호가 일치하지 않습니다.</span>
+							</div> 
                        	</div>  
                        	<hr>
                        	<div class="row div2 left">
@@ -340,20 +370,20 @@
                         	<div class="col-lg-10 col-md-10 col-sm-10">
                         		<div class="row">
 		                        	<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="zip" id="zip" placeholder="우편번호">
+										<input class="form-control input" type="text" name="zip" id="zip" placeholder="우편번호" readonly>
 		                        	</div>
 		                        	<div class="col-lg-2 col-md-2 col-sm-2 top3">
 		                       			<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 										<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 		                        	</div>
 		                       		<div class="col-lg-10 col-md-10 col-sm-10">
-		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="주소">
+		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="주소" readonly>
 		                        	</div>
 		                        	<div class="col-lg-5 col-md-5 col-sm-5">
-		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="상세주소">
+		                        		<input class="form-control input" type="text" name="addr2" id="addr2" placeholder="상세주소">
 		                        	</div>
 		                        	<div class="col-lg-5 col-md-5 col-sm-5">
-		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="참고항목" readonly>
+		                        		<input class="form-control input" type="text" name="addr3" id="addr3" placeholder="참고항목" readonly>
 		                        	</div>
 								</div>
 							</div>
@@ -379,7 +409,7 @@
 										<label class="top4">이미지 첨부</label>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" name="MultipartFile" type="file" multiple="multiple">
+										<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">
 									</div>
 									<div class="col-lg-6 col-md-6 col-sm-6 top2">
 										<div id="UploadedImagePreview" class="addScroll">
@@ -530,7 +560,7 @@
     </div>
     <!-- /.footer-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-     <script src="/resources/js/jquery.min.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/resources/js/bootstrap.min.js"></script>
     <script src="/resources/js/menumaker.js"></script>
@@ -538,7 +568,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-	{<script type="text/javascript">
+	<script type="text/javascript">
 	/* 반려동물 등록 */
 	var count_pet = 0;	
 	
@@ -547,21 +577,13 @@
 	var tmp = ""; 
 		
 	tmp += '<div id="petDelete' + count_pet + '">'
-	tmp += '<div class="row div2 left">';
-	tmp += '<div class="col-lg-2 col-md-2 col-sm-2 gray">';
-	tmp += '<label class="top4">집사 이름</label>';
-	tmp += '</div>';
-	tmp += '<div class="col-lg-4 col-md-4 col-sm-4">';
-	tmp += '<input class="form-control input" type="text" name="owner" id="owner">';
-	tmp += '</div>';
-	tmp += '</div>';
 	tmp += '<hr>';
 	tmp += '<div class="row div2 left">';
 	tmp += '<div class="col-lg-2 col-md-2 col-sm-2 gray">';
 	tmp += '<label class="top4">이미지 첨부</label>';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-4 col-md-4 col-sm-4">';
-	tmp += '<input class="form-control input" name="MultipartFile" type="file" multiple="multiple">';
+	tmp += '<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-6 col-md-6 col-sm-6 top2">';
 	tmp += '<div id="UploadedImagePreview" class="addScroll">';
@@ -651,9 +673,143 @@
    		form.attr("action", goUrlJoin).submit();
 	}); 
 	 
-	</script> 
+	$("#addrButton").on("click", function(){
+		openZipSearch();
+	});
+	
+	$("#clearButton").on("click", function(){
+		$("#zip").val('');
+		$("#addr1").val('');
+		$("#arrd2").val('');
+		$("#addr3").val('');
+	});
 
- 
+
+	function openZipSearch() {
+	    new daum.Postcode({
+	          oncomplete: function(data) {
+        	    var addr = '';
+	  		    var extraAddr = '';
+
+				if (data.userSelectedType === 'R') { 
+	                  addr = data.roadAddress;
+	              } else { 
+	                  addr = data.jibunAddress;
+	              }
+
+	              if(data.userSelectedType === 'R'){
+	                  if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                      extraAddr += data.bname;
+	                  }
+	                  if(data.buildingName !== '' && data.apartment === 'Y'){
+	                      extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                  }
+	                  if(extraAddr !== ''){
+	                      extraAddr = ' (' + extraAddr + ')';
+	                  }
+	                  document.getElementById("addr3").value = extraAddr;
+	              
+	              } else {
+	                  document.getElementById("addr3").value = '';
+	              }
+
+	              document.getElementById('zip').value = data.zonecode;
+	              document.getElementById("addr1").value = addr;
+	              document.getElementById("addr2").focus();
+	              
+				}
+	    
+	    }).open();
+	}
+	 
+	//비밀번호 일치 체크
+	$('#pwCheck').focusout(function () {
+        var pwd1 = $("#pw").val();
+        var pwd2 = $("#pwCheck").val();
+  
+        if ( pwd1 != '' && pwd2 == '' ) {
+            null;
+        } else if (pwd1 != "" || pwd2 != "") {
+            if (pwd1 == pwd2) {
+                $("#alert-success").css('display', 'inline-block');
+                $("#alert-danger").css('display', 'none');
+            } else {
+                $("#alert-success").css('display', 'none');
+                $("#alert-danger").css('display', 'inline-block');
+            }
+        }
+    });
+	
+	//아이디 중복 체크
+	 $("#ifmmID").on("focusout", function(){
+ 		$.ajax({
+ 			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/member/idCheck"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { "ifmmID" : $("#ifmmID").val() }
+			,success: function(response) {
+				if(response.rt == "success") {
+					document.getElementById("ifmmID").classList.add('is-valid');
+
+					document.getElementById("ifmmIDFeedback").classList.remove('invalid-feedback');
+					document.getElementById("ifmmIDFeedback").classList.add('valid-feedback');
+					document.getElementById("ifmmIDFeedback").innerText = "사용 가능한 아이디입니다.";
+					
+					document.getElementById("ifmmIDAllowNY").value = 1;
+				} else {
+					document.getElementById("ifmmID").classList.add('is-invalid');
+					
+					document.getElementById("ifmmIDFeedback").classList.remove('valid-feedback');
+					document.getElementById("ifmmIDFeedback").classList.add('invalid-feedback');
+					document.getElementById("ifmmIDFeedback").innerText = "이미 사용중인 아이디입니다.";
+					
+					document.getElementById("ifmmIDAllowNY").value = 0;
+				}
+			}
+		});
+ 	});
+	 	 
+	
+	//닉네임 중복 체크
+	 $("#nickname").on("focusout", function(){
+			$.ajax({
+				async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/member/nickCheck"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { "ifmmNickname" : $("#nickname").val() }
+			,success: function(response) {
+				if(response.rt == "success") {
+					document.getElementById("nickname").classList.add('is-valid');
+		
+					document.getElementById("nicknameFeedback").classList.remove('invalid-feedback');
+					document.getElementById("nicknameFeedback").classList.add('valid-feedback');
+					document.getElementById("nicknameFeedback").innerText = "사용 가능한 닉네임입니다.";
+					
+					document.getElementById("nicknameAllowNY").value = 1;
+					
+				} else {
+					document.getElementById("nickname").classList.add('is-invalid');
+					
+					document.getElementById("nicknameFeedback").classList.remove('valid-feedback');
+					document.getElementById("nicknameFeedback").classList.add('invalid-feedback');
+					document.getElementById("nicknameFeedback").innerText = "이미 사용중인 닉네임입니다.";
+					
+					document.getElementById("nicknameAllowNY").value = 0;
+				}
+		
+			}
+		});
+	});
+	 	 
+	
+</script> 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
-
 </html>

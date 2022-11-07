@@ -2,7 +2,7 @@
 
 <div class="container-fluid px-0 mt-2">
     <div class="row">
-        <div class="col">
+        <div class="col text-center">
             <ul class="pagination justify-content-center mb-0">
 				<c:if test="${vo.startPage gt vo.pageNumToShow}">
                 	<li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>

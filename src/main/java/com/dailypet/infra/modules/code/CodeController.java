@@ -28,10 +28,6 @@ public class CodeController {
 		
 		setSearchAndPaging(vo);
 		
-		System.out.println("thispage : " +vo.getThisPage());
-		System.out.println("rowNumToShow: " +vo.getRowNumToShow());
-		System.out.println("pageNumToShow : " +vo.getPageNumToShow());
-		
 		if(vo.getTotalRows() > 0) {
 			List<Code> list = service.selectList(vo);
 			model.addAttribute("list", list);

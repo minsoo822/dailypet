@@ -17,11 +17,25 @@ public class CodeController {
 	@Autowired
 	CodeServiceImpl service;
 	
+	public void setSearchAndPaging(CodeVo vo) throws Exception {
+			
+		vo.setParamsPaging(service.selectOneCount(vo));
+		vo.setShOptionDate(vo.getShOptionDate() == null ? 0 : vo.getShOptionDate());
+	}
+	
 	@RequestMapping(value = "codeList")
 	public String selectList(CodeVo vo, Model model) throws Exception {
 		
-		List<Code> list = service.selectList(vo);
-		model.addAttribute("list", list);
+		setSearchAndPaging(vo);
+		
+		System.out.println("thispage : " +vo.getThisPage());
+		System.out.println("rowNumToShow: " +vo.getRowNumToShow());
+		System.out.println("pageNumToShow : " +vo.getPageNumToShow());
+		
+		if(vo.getTotalRows() > 0) {
+			List<Code> list = service.selectList(vo);
+			model.addAttribute("list", list);
+		}
 		
 		return "infra/code/xdmin/codeList";
 	}

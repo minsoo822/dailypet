@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -43,6 +43,9 @@
     	background: gray;
     	height: 200px;
     	padding: 37px 20px;
+    }
+    .form-control {
+    	color: black;
     }
     .searchBtn, .resetBtn {
     	border: 1px solid #efefef;
@@ -161,6 +164,7 @@
 					    <input type="hidden" name="ifcdSeq">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+						<input type="hidden" name="checkboxSeqArray">
                     	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="row">
                             	<div class="col searchBox">
@@ -244,9 +248,7 @@
 								<div class="col">
 									<table class="table table-striped">
 										<tr>
-											<th>
-												<input type="checkbox">
-											</th>
+											<th><input class="form-check-input" type="checkbox" name="check" id="allcheck"></th>
 											<th>#</th>
 											<th>Seq</th>
 											<th>코드그룹이름</th>
@@ -263,9 +265,7 @@
 												<c:otherwise>	
 													<c:forEach items="${list}" var="list" varStatus="status">
 														<tr onclick="goForm(${list.ifcdSeq })" class="in">
-															<td>
-																<input type="checkbox">
-															</td>
+															<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifcdSeq }"/>"></td>
 															<td>#</td>
 															<td>
 																<c:out value="${list.ifcdSeq }"/>
@@ -299,31 +299,23 @@
 									</table>
 								</div>
 							</div>
-                        </div>
-                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        	<div class="row" style="margin-top: 20px;">
-                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						</div>
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div class="row" style="margin-top: 20px;">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 									<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
 									<button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                        		</div>
-                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
+							    </div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
 									<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
 									<a href="/code/codeForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
-                        		</div>
-                        	</div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="st-pagination">
-                                <ul class="pagination">
-                                    <li><a href="#">Previous</a></li>
-                                    <li><a href="#" class="active">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">Next</a></li>
-                                </ul>
-                            </div>
-                        </div>
+								</div>
+							</div>
+						</div>
                     </div>
+                    <!-- pagination s -->
+					<%@include file="../../../common/xdmin/include/pagination.jsp"%>
+					<!-- pagination e -->
                 </div>
             </div>
         </div>
@@ -394,6 +386,21 @@
     
     <script type="text/javascript">
     
+		$(document).ready(function() {
+			$("#allcheck").click(function() {
+				if($("#allcheck").is(":checked")) $("input[name=check]").prop("checked", true);
+				else $("input[name=check]").prop("checked", false);
+			});
+		
+			$("input[name=check]").click(function() {
+				var total = $("input[name=check]").length;
+				var checked = $("input[name=check]:checked").length;
+		
+				if(total != checked) $("#allcheck").prop("checked", false);
+				else $("#allcheck").prop("checked", true); 
+			});
+		});
+    
 		var form = $("form[name=codeform]");
 		var ifcdSeq = $("input:hidden[name=ifcdSeq]");
 		
@@ -413,10 +420,6 @@
 			form.attr("action", goUrlForm).submit();
 		}
 		
-		/* goList = function(thisPage) {
-			$("input:hidden[name=thisPage]").val(thisPage);
-			form.attr("action", goUrlList).submit();
-		} */
 /* 		
 		$("#regbtn").on("click", function(){
 			form.attr("action", goUrlForm).submit();

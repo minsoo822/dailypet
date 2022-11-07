@@ -34,7 +34,11 @@ public class DiaryController {
 //	일기폼
 	@RequestMapping(value = "DiaryInst")
 	public String insertDiary(Diary dto) throws Exception {
+		
+		dto.setMm_ifmmSeq(dto.getIfmmSeq());
+		System.out.println("dto.getMm_ifmmSeq() : " +dto.getMm_ifmmSeq());
 		int insertDiary = service.insertDiary(dto);
+		
 		
 		return "redirect:/diary/DiaryList";
 	}

@@ -187,7 +187,7 @@
 
 <body>
 	<form method="post" id="mainForm" enctype="multipart/form-data">
-	<input type="hidden" name="ifmmSeq"value="${vo.ifmmSeq}">
+	<input type="hidden" name="ifmmSeq" value="${item.ifmmSeq}">
     <div class="header navbar-fixed-top header-collapse">
 		<div class="container">
 		    <div class="row">
@@ -217,7 +217,7 @@
 					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
 					              </ul>
 					          </li> -->
-					          	<li class="has-sub"><span class="submenu-button"></span><a href="/resources/diaryList.html" title="Portfolio">육아수첩</a>
+					          	<li class="has-sub"><span class="submenu-button"></span><a href="/resources/diaryList" title="Portfolio">육아수첩</a>
 	<!-- 						메뉴구현x 일단 링크만 생성						
 								<li><a href="/resources/diaryMypage.html" title="Contact Us">육아수첩</a> </li>
 								<li><a href="/resources/diaryDetail.html" title="Projects">일기 상세</a></li>
@@ -252,8 +252,8 @@
         <div class="container2">
         	<div class="boxheader">
         		<span class="headercen">새 게시물 만들기</span>
-        		<a href="diarylist.html">
-        			<span class="headerrig" id="diarySaveBtn">공유하기</span>
+        		<a href="#" id="diarySaveBtn">
+        			<span class="headerrig">공유하기</span>
         		</a>
         	</div>
         	<hr>
@@ -278,7 +278,7 @@
 						    <h5 style="margin: 10px 0 0 -10px; font-size: 13px"><b><c:out value="${item.ifmmID }"/></b></h5>
 						</div>
 					</div>
-					<textarea class="form-control" placeholder="문구 입력..." name="ifdaComents" id="diarycontent" maxlength="2000" style="height: 400px"></textarea>
+					<textarea class="form-control" placeholder="문구 입력..." name="ifdaContents" id="diarycontent" maxlength="2000" style="height: 400px"></textarea>
                 </div>
             </div>
         </div>
@@ -348,9 +348,12 @@
     <!-- /.footer-->
     </form>
     <script>
+    	
+    	var seq = $("input:hidden[name=ifmmSeq]");
     	var form = $("#mainForm")
     	
     	$("#diarySaveBtn").on("click", function() {
+    		
     		form.attr("action" , "/diary/DiaryInst").submit();
     	});
     

@@ -120,7 +120,7 @@
 
 <body>
 	<form method="post" id="mainForm">
-	<input type="hidden" name="ifmmSeq" value="${dto.ifmmSeq }">
+	<input type="hidden" name="ifmmSeq" value="${ sessSeq}">
     <div class="header navbar-fixed-top">
 		<div class="container">
 		    <div class="row">
@@ -152,7 +152,7 @@
 					          </li> -->
 					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">육아수첩</a>
 					          		<ul>
-					          			<li><a href="javascript:goDiaryForm(${ifmmSeq })" title="Projects">일기 쓰기</a></li>
+					          			<li><a href="javascript:goDiaryForm(${sessSeq })" title="Projects">일기 쓰기</a></li>
 					          		</ul>
 	<!-- 						메뉴구현x 일단 링크만 생성						
 								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>

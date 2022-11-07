@@ -19,7 +19,7 @@
             ,b.ifmmID
             FROM diary a
             JOIN member b
-            ON a.member_seq = b.ifmmSeq
+            ON a.mm_ifmmSeq = b.ifmmSeq
 			WHERE 1=1
 			ORDER BY a.ifdaSeq DESC
 	</select>
@@ -35,16 +35,13 @@
 	
 	<insert id="insertDiary">
 		INSERT INTO diary (
-			ifdaComents
-			member_seq
+			ifdaContents
+			,mm_ifmmSeq
 		)
 		VALUES (
-			#{ifdaComents}
+			#{ifdaContents}
 			,#{ifmmSeq}
 		)
-		<selectKey resultType="String" keyProperty="seq" order="AFTER">
-			SELECT last_insert_id()
-		</selectKey>
 	</insert>
 	
 	<select id="selectLastSeq" resultType="Integer"> <!-- 마지막 seq 조회 -->
@@ -57,15 +54,15 @@
 	<insert id="diaryUploaded">
 		INSERT INTO diaryUploaded (
 			type
-			defaultNy
-			sort
-			path
-			originalName
-			uuidName
-			ext
-			size
-			delNy
-			pseq
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
 		)
 		VALUES (
 			#{type}

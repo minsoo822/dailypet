@@ -8,7 +8,7 @@ public class Diary extends Base{
 	
 	private String ifdaSeq;
 	private String ifmmSeq;
-	private String member_seq;
+	private String mm_ifmmSeq;
 	private String ifdaContents;
 	private Integer ifdaDelNy;
 	private String ifdaRegDate;
@@ -29,12 +29,6 @@ public class Diary extends Base{
 	}
 	public void setIfmmSeq(String ifmmSeq) {
 		this.ifmmSeq = ifmmSeq;
-	}
-	public String getMember_seq() {
-		return member_seq;
-	}
-	public void setMember_seq(String member_seq) {
-		this.member_seq = member_seq;
 	}
 	public String getIfdaContents() {
 		return ifdaContents;
@@ -71,6 +65,12 @@ public class Diary extends Base{
 	}
 	public void setDiary_image(MultipartFile[] diary_image) {
 		this.diary_image = diary_image;
+	}
+	public String getMm_ifmmSeq() {
+		return mm_ifmmSeq;
+	}
+	public void setMm_ifmmSeq(String mm_ifmmSeq) {
+		this.mm_ifmmSeq = mm_ifmmSeq;
 	}
 	
 	

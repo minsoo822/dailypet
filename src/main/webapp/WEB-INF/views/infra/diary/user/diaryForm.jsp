@@ -44,6 +44,43 @@
 		border-radius: 8px;
 	}
 	
+	.diaryheader {
+		position: fixed;
+		margin-top: 100px;
+		margin-bottom: 5%;
+		border: 1px solid lightgray;
+		background-color: white;
+		top: 0;
+		left: 0;
+		padding: 1.5rem;
+		height: 60px;
+		width: 100%;
+		z-index: 1;
+	}
+	
+	.profileheader {
+		width: 30px;
+	    height: 30px;
+	    border-radius: 70%;
+	    overflow: hidden;
+	    display: inline-block;
+	}
+	
+	.icon {
+		margin-right: 400px;
+		float: right;
+	}
+	
+	.icon span {
+		margin: 0 15px;
+		vertical-align: middle;
+	}
+	
+	.icon i {
+		margin-bottom: 10px;
+		color: black;
+	}
+	
 	#whole {
 		width: 1000px;
 	}

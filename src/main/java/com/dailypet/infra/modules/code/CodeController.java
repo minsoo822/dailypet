@@ -24,7 +24,7 @@ public class CodeController {
 	}
 	
 	@RequestMapping(value = "codeList")
-	public String selectList(CodeVo vo, Model model) throws Exception {
+	public String selectList(@ModelAttribute("vo") CodeVo vo, Model model) throws Exception {
 		
 		setSearchAndPaging(vo);
 		

@@ -5,9 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<!DOCTYPE html>
-<html lang="ko">
-
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,11 +31,21 @@
     <style type="text/css">
     
     .category {
-    	text-align: right;
+    	text-align: left;
     	height: 500px;
     	background: white;
-    	border: 1px solid gray;
+    	border: none;
     }
+    
+    .listtitle {
+    	font-weight: bold;
+    	font-size: 19px;
+    }
+    
+    .listmenu {
+    	margin-left: 15px;
+    }
+    
     .searchBox {
     	max-width: 100%;
     	background: gray;
@@ -72,8 +80,21 @@
     	background-color: #372d2b;
     }
     
+    #rowNum {
+    	max-width: 100px;
+    }
+    
     th, td {
     	text-align: center;
+    }
+    
+    .pagination>.active>a {
+    	background-color: #808080;
+    	border-color: #808080;
+    }
+    
+    .pagination>li>a {
+    	color: #808080;
     }
     
     </style>
@@ -148,13 +169,15 @@
                     <div class="widget widget-categories category" >
                         <!-- widget categories -->
                         <!-- widget start -->
-                        <h3 class="widget-title"> 대시보드 </h3>
                         <ul class="listnone">
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior/free-website-template/">회원 리스트 </a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-websites-templates-free-download/">반려동물 리스트</a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free-download/">유기동물 리스트</a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free/">코드 리스트</a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free/">코드그룹 리스트</a></li>
+                        	<li class="listtitle">Setting</li>
+                            <li class="listmenu"><a href="/member/memberList">회원 리스트 </a></li>
+                            <li class="listmenu"><a href="/findpet/findpetList">반려동물 리스트</a></li>
+                            <li class="listmenu"><a href="/animal/animalList">유기동물 리스트</a></li>
+                            <br>
+                            <li class="listtitle">Code</li>
+                            <li class="listmenu" style="color: #808080"><a href="/code/codeList"><b>코드 리스트</b></a></li>
+                            <li class="listmenu"><a href="/codegroup/codegroupList">코드그룹 리스트</a></li>
                         </ul>
                     </div>
                 </div>
@@ -226,12 +249,12 @@
 							   </div>
 							   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">
 	                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
-		                           		 <p class="meta">total: </p><c:out value="${vo.totalRows - ((vo.thisPage -1) * vo.rowNumToShow + status.index) }"/>
+		                           		 <p class="meta">total: <c:out value="${vo.totalRows - ((vo.thisPage -1) * vo.rowNumToShow + status.index) }"/></p>
 	                               </div>
 	                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
 		                           		&nbsp;
 	                               </div>
-	                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
+	                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="rowNum"> 
 	                                	<select class="form-control">
 	                                		<option>10</option>
 	                                		<option>20</option>
@@ -418,6 +441,11 @@
 		goForm = function(key) {
 			ifcdSeq.attr("value", key);
 			form.attr("action", goUrlForm).submit();
+		}
+		
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action", goUrlList).submit();
 		}
 		
 /* 		

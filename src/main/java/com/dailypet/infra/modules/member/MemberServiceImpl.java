@@ -18,6 +18,28 @@ public class MemberServiceImpl implements MemberService{
 		return list;
 	}
 	
+	//회원가입
+	public int userInsert(Member dto) throws Exception {
+		return dao.userInsert(dto);
+	}
+	
+	public int animalInsert(Member dto) throws Exception {
+		return dao.animalInsert(dto);
+	}
+	
+	public static String selectOneCachedCode(String ifmmSeq) throws Exception {
+		String rt = "";
+		for(Member codeRow : Member.cachedCodeArrayList) {
+			if (codeRow.getSeq().equals(ifmmSeq)) {
+				rt = codeRow.getIfmmName();
+			} else {
+				// by pass
+			}
+		}
+		return rt;
+		
+	}
+	
 	//로그인 관련
 	@Override
 	public Member selectOneID(Member dto) throws Exception {

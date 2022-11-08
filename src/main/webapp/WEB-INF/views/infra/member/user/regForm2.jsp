@@ -121,12 +121,20 @@
 			color: black;
 		}
 		
-		select{
+		.select1{
 			width: 370px;
 	    	height: 35px;	
     	    border: 1px solid #e2dcdb;
 			font-size: 14px;
 			margin-top: 5px;
+		}
+		
+		.select2{
+			width: 80px;
+	    	height: 35px;	
+    	    border: 1px solid #e2dcdb;
+			font-size: 14px;
+			margin-top: 6px;
 		}
 		
 		.top3{
@@ -281,14 +289,22 @@
                         		<label class="top4">성명</label>
                         	</div>
                         	<div class="col-lg-4 col-md-4 col-sm-4">
-                       			<input class="form-control input" type="text" name="name" id="name">
+                       			<input class="form-control input" type="text" name="ifmmName" id="ifmmName">
                         	</div>
                         	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                        		<div class="col-lg-2 col-md-2 col-sm-2 gray">
                         		<label class="top4">연락처</label>
                         	</div>
-                        	<div class="col-lg-4 col-md-4 col-sm-4">
-                        		<input class="form-control input" type="text" name="tel" id="tel" placeholder="ex)010-0000-0000">
+                        	<div class="col-lg-1 col-md-1 col-sm-1">
+                        		<select class="form-select select2" name="ifmmTelecom">
+									<option value="">::선택::</option>
+									<option value="1">SKT</option>
+									<option value="2">KT</option>
+									<option value="3">LG</option>
+								</select> 
+                        	</div>
+                        	<div class="col-lg-3 col-md-3 col-sm-3">
+                        		<input class="form-control input" type="text" name="ifmmTel" id="ifmmTel" placeholder="ex)010-0000-0000">
                         	</div>
                        	</div>
                        	<hr>
@@ -297,20 +313,19 @@
                         		<label class="top4">이메일</label>
                         	</div>
                         	<div class="col-lg-4 col-md-4 col-sm-4">
-								<input type="text" class="form-control input" name="emailID" id="emailID">
+								<input type="text" class="form-control input" name="ifmmEmailID" id="ifmmEmailID">
 							</div>	
 							<div class="col-1 top2">
 								<span>@</span>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<select class="form-select" name="emailseq">
+								<select class="form-select select1" name="ifmmEmailDomain">
 									<option value="">::선택::</option>
 									<option value="1">naver.com</option>
 									<option value="2">gmail.com</option>
 									<option value="3">hanmail.com</option>
 									<option value="4">nate.com</option>
 									<option value="5">daum.net</option>
-									<option value="6">kakao.com</option>
 								</select> 
 							</div>
                        	</div>
@@ -336,7 +351,7 @@
                         	</div>
                         	<div class="col-lg-3 col-md-3 col-sm-3">
                        			<input type="hidden" id="nicknameAllowNY" name="nicknameAllowNY" value="0">
-								<input type="text" class="form-control input" id="nickname" name="nickname">
+								<input type="text" class="form-control input" id="nickname" name="ifmmNickname">
 								<div class="invalid-feedback" id="nicknameFeedback"></div>
                         	</div>
                        	</div>
@@ -346,7 +361,7 @@
                         		<label class="top4">비밀번호</label>
                         	</div>
                         	<div class="col-lg-4 col-md-4 col-sm-4">
-                       			<input class="form-control input" type="password" name="pw" id="pw">
+                       			<input class="form-control input" type="password" name="ifmmPW" id="pw">
                         	</div>
                        	</div>
                        	<hr>
@@ -370,20 +385,20 @@
                         	<div class="col-lg-10 col-md-10 col-sm-10">
                         		<div class="row">
 		                        	<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="zip" id="zip" placeholder="우편번호" readonly>
+										<input class="form-control input" type="text" name="ifmmZipcode" id="ifmmZipcode" placeholder="우편번호" readonly>
 		                        	</div>
 		                        	<div class="col-lg-2 col-md-2 col-sm-2 top3">
 		                       			<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 										<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
 		                        	</div>
 		                       		<div class="col-lg-10 col-md-10 col-sm-10">
-		                        		<input class="form-control input" type="text" name="addr1" id="addr1" placeholder="주소" readonly>
+		                        		<input class="form-control input" type="text" name="ifmmAddr1" id="ifmmAddr1" placeholder="주소" readonly>
 		                        	</div>
 		                        	<div class="col-lg-5 col-md-5 col-sm-5">
-		                        		<input class="form-control input" type="text" name="addr2" id="addr2" placeholder="상세주소">
+		                        		<input class="form-control input" type="text" name="ifmmAddr2" id="ifmmAddr2" placeholder="상세주소">
 		                        	</div>
 		                        	<div class="col-lg-5 col-md-5 col-sm-5">
-		                        		<input class="form-control input" type="text" name="addr3" id="addr3" placeholder="참고항목" readonly>
+		                        		<input class="form-control input" type="text" name="ifmmAddr3" id="ifmmAddr3" placeholder="참고항목" readonly>
 		                        	</div>
 								</div>
 							</div>
@@ -394,96 +409,85 @@
 						<h3>반려동물 정보 등록</h3>
 						<hr>
 						<div id="petPoint">
-							<div>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">집사 이름</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="owner" id="owner">
-									</div>
+							<div class="row div2 left">
+								<div class="col-lg-2 col-md-2 col-sm-2 gray">
+									<label class="top4">이미지 첨부</label>
 								</div>
-								<hr>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">이미지 첨부</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">
-									</div>
-									<div class="col-lg-6 col-md-6 col-sm-6 top2">
-										<div id="UploadedImagePreview" class="addScroll">
-											<c:forEach items="${imageUpload}" var="imageUpload" varStatus="status">
-												<img src="${imageUpload.path }${imageUpload.uuidName}" id="img">
-											</c:forEach>
-										</div>
-									</div>							
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">
 								</div>
-								<hr>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">이름</label>
+								<div class="col-lg-6 col-md-6 col-sm-6 top2">
+									<div id="UploadedImagePreview" class="addScroll">
+										<c:forEach items="${imageUpload}" var="imageUpload" varStatus="status">
+											<img src="${imageUpload.path }${imageUpload.uuidName}" id="img">
+										</c:forEach>
 									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="petName" id="petName" placeholder="반려동물의 이름을 적어주세요.">
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">나이</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="age" id="age">
-									</div>
+								</div>							
+							</div>
+							<hr>
+							<div class="row div2 left">
+								<div class="col-lg-2 col-md-2 col-sm-2 gray">
+									<label class="top4">이름</label>
 								</div>
-								<hr>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">품종</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="kind" id="kind" placeholder="ex) 포메라니안">
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">성별</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 top2">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
-										<label class="form-check-label" for="inlineRadio4">남아</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
-										<label class="form-check-label" for="inlineRadio5">여아</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">
-										<label class="form-check-label" for="inlineRadio5">중성화</label>
-									</div>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input class="form-control input" type="text" name="ifamName" id="ifamName" placeholder="반려동물의 이름을 적어주세요.">
 								</div>
-								<hr>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">칩 여부</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 top2">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="option4">
-										<label class="form-check-label" for="inlineRadio4">예</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio5" value="option5">
-										<label class="form-check-label" for="inlineRadio5">아니오</label>
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">접종 여부</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 top2">
-										<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio4" value="option4">
-										<label class="form-check-label" for="inlineRadio4">예</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio5" value="option5">
-										<label class="form-check-label" for="inlineRadio5">아니오</label>
-									</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 gray">
+									<label class="top4">나이</label>
 								</div>
-								<hr class="hr1">
-								<button type="button" class="btn btn-secondary left" id="btn" onClick="addPet();"><i class="fa-solid fa-plus"></i></button>
-								<br>
-								<br>
-		                    </div>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input class="form-control input" type="text" name="ifamAge" id="ifamAge">
+								</div>
+							</div>
+							<hr>
+							<div class="row div2 left">
+								<div class="col-lg-2 col-md-2 col-sm-2 gray">
+									<label class="top4">품종</label>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4">
+									<input class="form-control input" type="text" name="ifamKind" id="ifamKind" placeholder="ex) 포메라니안">
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 gray">
+									<label class="top4">성별</label>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 top2">
+									<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">
+									<label class="form-check-label" for="inlineRadio4">남아</label>
+									&nbsp;&nbsp;
+									<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">
+									<label class="form-check-label" for="inlineRadio5">여아</label>
+									&nbsp;&nbsp;
+									<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">
+									<label class="form-check-label" for="inlineRadio5">중성화</label>
+								</div>
+							</div>
+							<hr>
+							<div class="row div2 left">
+								<div class="col-lg-2 col-md-2 col-sm-2 gray">
+									<label class="top4">칩 여부</label>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 top2">
+									<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="option4">
+									<label class="form-check-label" for="inlineRadio4">예</label>
+									&nbsp;&nbsp;
+									<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio5" value="option5">
+									<label class="form-check-label" for="inlineRadio5">아니오</label>
+								</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 gray">
+									<label class="top4">접종 여부</label>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-4 top2">
+									<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio4" value="option4">
+									<label class="form-check-label" for="inlineRadio4">예</label>
+									&nbsp;&nbsp;
+									<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio5" value="option5">
+									<label class="form-check-label" for="inlineRadio5">아니오</label>
+								</div>
+							</div>
+							<hr class="hr1">
+							<button type="button" class="btn btn-secondary left" id="btn" onClick="addPet();"><i class="fa-solid fa-plus"></i></button>
+							<br>
+							<br>
 		                </div>
 		                <button type="button" class="btn btn-secondary right" id="btnSave">가입완료 <i class="fa-solid fa-angle-right"></i></button>
 						<a href="/member/regForm1">

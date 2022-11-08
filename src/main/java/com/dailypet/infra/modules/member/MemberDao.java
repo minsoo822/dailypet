@@ -42,6 +42,16 @@ public class MemberDao {
 		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
 	}
 	
+	
+	//회원가입
+	public int userInsert(Member dto) {
+		return sqlSession.insert(namespace + ".userInsert", dto);
+	}
+	
+	public int animalInsert(Member dto) {
+		return sqlSession.insert(namespace + ".animalInsert", dto);
+	}
+	
 	//아이디 중복 체크
 	public int selectOneCheckId(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneCheckId", dto);

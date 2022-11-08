@@ -26,6 +26,20 @@ public class MemberController {
 		return "infra/member/user/login";
 	}
 	
+	//회원가입
+	@RequestMapping(value="allInst")
+	public String allInst(Member dto) throws Exception {
+		dto.setIfmmEmail(dto.getIfmmEmailID() + MemberServiceImpl.selectOneCachedCode(dto.getIfmmEmailDomain()));
+		
+		service.userInsert(dto);
+		service.animalInsert(dto);
+		
+		for (int i = 0; i < dto.getIfamName().length(); i++) {
+		}
+		
+		return "infra/member/user/regDone";
+	}
+	
 	// 로그인
 	@ResponseBody
 	@RequestMapping(value = "loginProc")
@@ -42,7 +56,7 @@ public class MemberController {
 				httpSession.setAttribute("sessSeq", rtMember2.getIfmmSeq());
 				httpSession.setAttribute("sessId", rtMember2.getIfmmID());
 
-				System.out.println(httpSession.getAttribute("sessName"));
+				System.out.println(httpSession.getAttribute("sessSeq"));
 				returnMap.put("rt", "success");
 			}
 		} else {
@@ -105,6 +119,12 @@ public class MemberController {
 	public String regForm2() throws Exception {
 
 		return "infra/member/user/regForm2";
+	}
+	
+	@RequestMapping(value = "regDone")
+	public String regDone() throws Exception {
+
+		return "infra/member/user/regDone";
 	}
 	
 	@RequestMapping(value = "memberDel1")

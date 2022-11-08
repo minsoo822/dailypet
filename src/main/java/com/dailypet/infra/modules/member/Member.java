@@ -1,6 +1,11 @@
 package com.dailypet.infra.modules.member;
 
-public class Member {
+import java.util.ArrayList;
+import java.util.List;
+
+import com.dailypet.infra.common.base.Base;
+
+public class Member extends Base{
 	
 	//주인 등록
 	public String ifmmSeq;
@@ -16,14 +21,24 @@ public class Member {
 	public String ifmmTel;
 	public String ifmmEmail;
 	public String ifmmEmailID;
-	public Integer ifmmEmailDomain;
+	public String ifmmEmailDomain;
 	public String ifmmIntroduction;
 	public String ifmmRegDate;
 	public String ifmmModDate;
 	public Integer ifmmDelNy;
 	
+	//동물 등록
+	public String mm_ifmmSeq;
+	public String ifamName;
+	public Integer ifamAge;
+	public String ifamKind;
+	public Integer ifamGender;
+	public Integer ifamChipNY;
+	public Integer ifamVaccinateNY;
+
 	
-	//
+	public static List<Member> cachedCodeArrayList = new ArrayList<Member>();
+
 	
 	public String getIfmmSeq() {
 		return ifmmSeq;
@@ -103,10 +118,10 @@ public class Member {
 	public void setIfmmEmailID(String ifmmEmailID) {
 		this.ifmmEmailID = ifmmEmailID;
 	}
-	public Integer getIfmmEmailDomain() {
+	public String getIfmmEmailDomain() {
 		return ifmmEmailDomain;
 	}
-	public void setIfmmEmailDomain(Integer ifmmEmailDomain) {
+	public void setIfmmEmailDomain(String ifmmEmailDomain) {
 		this.ifmmEmailDomain = ifmmEmailDomain;
 	}
 	public String getIfmmIntroduction() {
@@ -132,6 +147,48 @@ public class Member {
 	}
 	public void setIfmmDelNy(Integer ifmmDelNy) {
 		this.ifmmDelNy = ifmmDelNy;
+	}
+	public String getMm_ifmmSeq() {
+		return mm_ifmmSeq;
+	}
+	public void setMm_ifmmSeq(String mm_ifmmSeq) {
+		this.mm_ifmmSeq = mm_ifmmSeq;
+	}
+	public String getIfamName() {
+		return ifamName;
+	}
+	public void setIfamName(String ifamName) {
+		this.ifamName = ifamName;
+	}
+	public Integer getIfamAge() {
+		return ifamAge;
+	}
+	public void setIfamAge(Integer ifamAge) {
+		this.ifamAge = ifamAge;
+	}
+	public String getIfamKind() {
+		return ifamKind;
+	}
+	public void setIfamKind(String ifamKind) {
+		this.ifamKind = ifamKind;
+	}
+	public Integer getIfamGender() {
+		return ifamGender;
+	}
+	public void setIfamGender(Integer ifamGender) {
+		this.ifamGender = ifamGender;
+	}
+	public Integer getIfamChipNY() {
+		return ifamChipNY;
+	}
+	public void setIfamChipNY(Integer ifamChipNY) {
+		this.ifamChipNY = ifamChipNY;
+	}
+	public Integer getIfamVaccinateNY() {
+		return ifamVaccinateNY;
+	}
+	public void setIfamVaccinateNY(Integer ifamVaccinateNY) {
+		this.ifamVaccinateNY = ifamVaccinateNY;
 	}
 	
 	

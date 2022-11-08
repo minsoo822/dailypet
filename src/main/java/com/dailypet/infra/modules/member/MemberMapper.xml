@@ -33,6 +33,69 @@
 		ORDER BY a.ifmmSeq DESC;
 	</select>
 	
+	<!-- 회원가입 -->
+	<insert id="userInsert">
+		INSERT INTO member (
+			ifmmName
+			, ifmmZipcode
+			, ifmmAddr1
+			, ifmmAddr2
+			, ifmmAddr3
+			, ifmmID
+			, ifmmPW
+			, ifmmNickname
+			, ifmmTelecom
+			, ifmmTel
+			, ifmmEmail
+			, ifmmEmailID
+			, ifmmEmailDomain
+			, ifmmRegDate
+			, ifmmDelNy
+		)
+		VALUES (
+			#{ifmmName}
+			, #{ifmmZipcode}
+			, #{ifmmAddr1}
+			, #{ifmmAddr2}
+			, #{ifmmAddr3}
+			, #{ifmmID}
+			, #{ifmmPW}
+			, #{ifmmNickname}
+			, #{ifmmTelecom}
+			, #{ifmmTel}
+			, #{ifmmEmail}
+			, #{ifmmEmailID}
+			, #{ifmmEmailDomain}
+			, now()
+			, 0
+		)
+		
+		<selectKey resultType="String" keyProperty="ifmmSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+
+	<insert id="animalInsert">
+		INSERT INTO animal(
+			mm_ifmmSeq
+			, ifamName
+			, ifamAge
+			, ifamKind
+			, ifamGender
+			, ifamChipNY
+			, ifamVaccinateNY
+		)
+		VALUES(
+			#{ifmmSeq}
+			, #{ifamName}
+			, #{ifamAge}
+			, #{ifamKind}
+			, #{ifamGender}
+			, #{ifamChipNY}
+			, #{ifamVaccinateNY}
+		)
+	</insert>
+	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 	</select>

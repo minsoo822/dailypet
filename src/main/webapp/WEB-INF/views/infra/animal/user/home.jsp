@@ -426,7 +426,7 @@
     
     goDiaryForm = function(key) {
     	seq.attr("value", key);
-    	form.attr("action", "/diary/DiaryForm").submit();
+    	form.attr("action", "/diary/diaryForm").submit();
     }
 </script>
     

@@ -354,7 +354,7 @@
     	
     	$("#diarySaveBtn").on("click", function() {
     		
-    		form.attr("action" , "/diary/DiaryInst").submit();
+    		form.attr("action" , "/diary/diaryInst").submit();
     	});
     
     

@@ -4,6 +4,8 @@ public class DiaryVo {
 	
 	private String ifdaSeq;
 	private String ifmmSeq;
+	
+	private String mm_ifmmSeq;
 
 	public String getIfdaSeq() {
 		return ifdaSeq;
@@ -19,6 +21,14 @@ public class DiaryVo {
 
 	public void setIfmmSeq(String ifmmSeq) {
 		this.ifmmSeq = ifmmSeq;
+	}
+
+	public String getMm_ifmmSeq() {
+		return mm_ifmmSeq;
+	}
+
+	public void setMm_ifmmSeq(String mm_ifmmSeq) {
+		this.mm_ifmmSeq = mm_ifmmSeq;
 	}
 	
 	

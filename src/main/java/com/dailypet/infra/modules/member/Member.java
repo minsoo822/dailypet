@@ -1,7 +1,8 @@
 package com.dailypet.infra.modules.member;
 
 public class Member {
-	 
+	
+	//주인 등록
 	public String ifmmSeq;
 	public String ifmmName;
 	public String ifmmZipcode;
@@ -20,6 +21,9 @@ public class Member {
 	public String ifmmRegDate;
 	public String ifmmModDate;
 	public Integer ifmmDelNy;
+	
+	
+	//
 	
 	public String getIfmmSeq() {
 		return ifmmSeq;

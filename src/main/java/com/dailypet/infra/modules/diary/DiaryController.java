@@ -2,6 +2,8 @@ package com.dailypet.infra.modules.diary;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,14 +33,14 @@ public class DiaryController {
 		System.out.println("item : " + item);
 		return "infra/diary/user/diaryForm";
 	}
+	
 //	일기폼
 	@RequestMapping(value = "diaryInst")
-	public String insertDiary(Diary dto) throws Exception {
+	public String insertDiary(Diary dto, HttpSession httpSession) throws Exception {
 		
-		dto.setMm_ifmmSeq(dto.getIfmmSeq());
-		System.out.println("dto.getMm_ifmmSeq() : " +dto.getMm_ifmmSeq());
+		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));   
+		System.out.println("dto.getMm_ifmmSeq() : " + dto.getMm_ifmmSeq());
 		int insertDiary = service.insertDiary(dto);
-		
 		
 		return "redirect:/diary/diaryList";
 	}

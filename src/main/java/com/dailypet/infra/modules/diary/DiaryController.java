@@ -16,7 +16,7 @@ public class DiaryController {
 	DiaryServiceImpl service;
 	
 //	일기리스트
-	@RequestMapping(value = "DiaryList")
+	@RequestMapping(value = "diaryList")
 	public String selectList(@ModelAttribute("vo") DiaryVo vo, Model model) throws Exception {
 		List<Diary> list = service.selectList(vo);
 		model.addAttribute("list", list);
@@ -24,7 +24,7 @@ public class DiaryController {
 		return "infra/diary/user/diaryList";
 	}
 //	일기폼
-	@RequestMapping(value = "DiaryForm")
+	@RequestMapping(value = "diaryForm")
 	public String diaryForm(DiaryVo vo, Model model) throws Exception {
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
@@ -32,7 +32,7 @@ public class DiaryController {
 		return "infra/diary/user/diaryForm";
 	}
 //	일기폼
-	@RequestMapping(value = "DiaryInst")
+	@RequestMapping(value = "diaryInst")
 	public String insertDiary(Diary dto) throws Exception {
 		
 		dto.setMm_ifmmSeq(dto.getIfmmSeq());
@@ -40,18 +40,18 @@ public class DiaryController {
 		int insertDiary = service.insertDiary(dto);
 		
 		
-		return "redirect:/diary/DiaryList";
+		return "redirect:/diary/diaryList";
 	}
 	
 	
 //	일기리스트 디테일
-	@RequestMapping(value = "DiaryDetail")
+	@RequestMapping(value = "diaryDetail")
 	public String diaryDetail() throws Exception {
 		
 		return "infra/diary/user/diaryDetail";
 	}
 //	나의 일기리스트
-	@RequestMapping(value = "DiaryMypage")
+	@RequestMapping(value = "diaryMypage")
 	public String diaryMypage(DiaryVo vo, Model model) throws Exception {
 //		Diary item = service.selectOne(vo);
 //		model.addAttribute("item", item);

@@ -41,7 +41,7 @@ public class DiaryController {
 		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));  
 		int insertDiary = service.insertDiary(dto);
 		
-		return "redirect:/diary/diaryList";
+		return "redirect:/diary/diaryForm";
 	}
 	
 	

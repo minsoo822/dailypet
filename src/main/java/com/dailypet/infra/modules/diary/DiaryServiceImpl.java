@@ -26,7 +26,7 @@ public class DiaryServiceImpl implements DiaryService{
 
 	@Override
 	public int insertDiary(Diary dto) throws Exception {
-		int insertDiary = dao.insertDiary(dto);
+		return dao.insertDiary(dto);
 //		int pseq = dao.selectLastSeq();
 //
 //        int j = 0;
@@ -52,7 +52,6 @@ public class DiaryServiceImpl implements DiaryService{
 //                j++;
 //            }
 //        }
-		return insertDiary;
 	}
 	
 	

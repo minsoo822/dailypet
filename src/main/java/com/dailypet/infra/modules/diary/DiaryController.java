@@ -28,9 +28,11 @@ public class DiaryController {
 //	일기폼
 	@RequestMapping(value = "diaryForm")
 	public String diaryForm(DiaryVo vo, Model model) throws Exception {
+		
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		System.out.println("item : " + item);
+		
 		return "infra/diary/user/diaryForm";
 	}
 	
@@ -39,7 +41,7 @@ public class DiaryController {
 	public String insertDiary(Diary dto, HttpSession httpSession) throws Exception {
 		
 		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));  
-		int insertDiary = service.insertDiary(dto);
+		service.insertDiary(dto);
 		
 		return "redirect:/diary/diaryForm";
 	}

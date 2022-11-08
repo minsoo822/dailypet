@@ -107,4 +107,11 @@ public class MemberController {
 		return "infra/member/user/regForm2";
 	}
 	
+	@RequestMapping(value = "memberDel1")
+	public String memberDel1() throws Exception {
+
+		return "infra/member/user/memberDel1";
+	}
+	
+	
 }

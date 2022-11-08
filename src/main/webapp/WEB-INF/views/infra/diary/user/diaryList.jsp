@@ -167,6 +167,23 @@
 		margin-bottom: 0;
 	}
 	
+	.commentBox {
+		border: 1px solid lightgray;
+		padding: 0;
+	}
+	
+	#commentForm {
+		width: 400px;
+		border: none;
+		margin: 0;
+		display: inline;
+	}
+	
+	#commSubmit {
+		margin-left: 5px;
+		display: inline;
+	}
+	
 </style>
 
 <body>
@@ -265,9 +282,9 @@
 						<div class="postbtn">
 							<button type="button" id="like">
 								<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
-						</button>
-						<button type="button" id="comment">
-							<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+							</button>
+							<button type="button" id="comment">
+								<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
 							</button>
 						</div>
 						<!-- 좋아요 댓글 버튼 e -->
@@ -287,11 +304,9 @@
 					</div>
 					<!-- Coment s -->
 					<div class="cardcomment" style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px;">
-						<div>
-					  	 	<input class="form-control" type="text" placeholder="댓글 달기/resources.">
-					   	</div>
-					   <div>
-					   		<button><i class="fa-regular fa-paper-plane"></i></button>
+						<div class="commentBox">
+					  	 	<input class="form-control" type="text" placeholder="댓글 달기" id="commentForm">
+					  	 	<button id="commSubmit"><i class="fa-regular fa-paper-plane"></i></button>
 					   	</div>
 				   </div>
 				   <!-- Coment e -->

@@ -18,7 +18,6 @@
 			,a.mm_ifmmSeq
             ,b.ifmmID
             FROM diary a
-            
             JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
 			WHERE 1=1
 			ORDER BY a.ifdaSeq DESC
@@ -47,14 +46,14 @@
 		</selectKey>
 	</insert>
 	
-	<select id="selectLastSeq" resultType="Integer"> <!-- 마지막 seq 조회 -->
+	<!-- <select id="selectLastSeq" resultType="Integer"> 마지막 seq 조회
 		SELECT
 			ifmmSeq
 		FROM member
-		ORDER BY seq DESC
+		ORDER BY ifmmSeq DESC
 		LIMIT 1
-	</select>
-	<insert id="diaryUploaded">
+	</select> -->
+	<!-- <insert id="diaryUploaded">
 		INSERT INTO diaryUploaded (
 			type
 			,defaultNy
@@ -77,8 +76,8 @@
 			,#{ext}
 			,#{size}
 			,0
-			,#{ifmmSeq}
+			,#{pseq}
 		)
-	</insert>
+	</insert> -->
 	
 </mapper>	

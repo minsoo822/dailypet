@@ -27,31 +27,31 @@ public class DiaryServiceImpl implements DiaryService{
 	@Override
 	public int insertDiary(Diary dto) throws Exception {
 		int insertDiary = dao.insertDiary(dto);
-		int pseq = dao.selectLastSeq();
-
-        int j = 0;
-        for(MultipartFile myFile : dto.getDiary_image()) {
-
-            if(!myFile.isEmpty()) {
-                // postServiceImpl
-                String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
-//                		DiaryServiceImpl.java  ->	 DiaryServiceImpl -> ""  ->	 diaryserviceimpl -> 	diary
-                UtilUpload.uploadPost(myFile, pathModule, dto);
-                    
-                    System.out.println(myFile.getOriginalFilename());
-                if(myFile.getOriginalFilename().toUpperCase().contains(".MP4") == true ) {
-                    dto.setType(3);
-                } else {
-                    dto.setType(2);
-                }
-                dto.setDefaultNy(j == 0 ? 1 : 0);
-                dto.setSort(j+1);
-                dto.setPseq(pseq);
-
-                dao.insertDiaryUploaded(dto);
-                j++;
-            }
-        }
+//		int pseq = dao.selectLastSeq();
+//
+//        int j = 0;
+//        for(MultipartFile myFile : dto.getDiary_image()) {
+//
+//            if(!myFile.isEmpty()) {
+//                // postServiceImpl
+//                String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
+////                		DiaryServiceImpl.java  ->	 DiaryServiceImpl -> ""  ->	 diaryserviceimpl -> 	diary
+//                UtilUpload.uploadPost(myFile, pathModule, dto);
+//                    
+//                    System.out.println(myFile.getOriginalFilename());
+//                if(myFile.getOriginalFilename().toUpperCase().contains(".MP4") == true ) {
+//                    dto.setType(3);
+//                } else {
+//                    dto.setType(2);
+//                }
+//                dto.setDefaultNy(j == 0 ? 1 : 0);
+//                dto.setSort(j+1);
+//                dto.setPseq(pseq);
+//
+//                dao.insertDiaryUploaded(dto);
+//                j++;
+//            }
+//        }
 		return insertDiary;
 	}
 	

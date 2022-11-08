@@ -38,8 +38,7 @@ public class DiaryController {
 	@RequestMapping(value = "diaryInst")
 	public String insertDiary(Diary dto, HttpSession httpSession) throws Exception {
 		
-		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));   
-		System.out.println("dto.getMm_ifmmSeq() : " + dto.getMm_ifmmSeq());
+		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));  
 		int insertDiary = service.insertDiary(dto);
 		
 		return "redirect:/diary/diaryList";

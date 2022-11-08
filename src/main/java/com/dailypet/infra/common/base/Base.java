@@ -14,7 +14,7 @@ public class Base {
 	private String ext;
 	private String size;
 	private Integer delNy;
-	private Integer pseq;
+	private String pseq;
 	
 	
 //--------------------------------------------------------------------------------------	
@@ -78,15 +78,11 @@ public class Base {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
-	public Integer getPseq() {
+	public String getPseq() {
 		return pseq;
 	}
-	public void setPseq(Integer pseq) {
+	public void setPseq(String pseq) {
 		this.pseq = pseq;
 	}
-	
-	
-	
-	
 	
 }

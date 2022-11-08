@@ -8,8 +8,8 @@
 
 	<!-- mysql s 2022.02.15 -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://database-yj.cuoyjvanhy9f.ap-northeast-2.rds.amazonaws.com:33063/dailypet" />
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="url" value="jdbc:log4jdbc:mysql://database-yj.cuoyjvanhy9f.ap-northeast-2.rds.amazonaws.com:33063/dailypet" />
 		<property name="username" value="yujinjin45" />
 		<property name="password" value="Dbwlsgodqhr^^!!" />
 	</bean>

@@ -15,11 +15,11 @@
 			,a.ifdaDelNy
 			,a.ifdaRegDate
 			,a.ifdaModDate
-			,a.member_seq
+			,a.mm_ifmmSeq
             ,b.ifmmID
             FROM diary a
-            JOIN member b
-            ON a.mm_ifmmSeq = b.ifmmSeq
+            
+            JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
 			WHERE 1=1
 			ORDER BY a.ifdaSeq DESC
 	</select>
@@ -27,10 +27,10 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			*
-			FROM member 
-			WHERE 1=1
-			<!-- 프로필사진조인 -->
-			AND ifmmSeq = #{ifmmSeq}
+		FROM member 
+		WHERE 1=1
+		<!-- 프로필사진조인 -->
+		AND ifmmSeq = #{mm_ifmmSeq}
 	</select>
 	
 	<insert id="insertDiary">
@@ -46,7 +46,7 @@
 	
 	<select id="selectLastSeq" resultType="Integer"> <!-- 마지막 seq 조회 -->
 		SELECT
-			ifmmseq
+			ifmmSeq
 		FROM member
 		ORDER BY seq DESC
 		LIMIT 1
@@ -78,6 +78,4 @@
 		)
 	</insert>
 	
-	
-
 </mapper>	

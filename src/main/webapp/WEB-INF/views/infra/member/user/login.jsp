@@ -232,7 +232,7 @@
                                         <div class="form-group has-feedback">
                                             <label class="control-label" for="id">ID</label>
                                             <div class="input-group"> <span class="input-group-addon"><div class="top"><i class="fa fa-user"></i></div></span>
-                                                <input type="text" class="form-control" id="ifmmID" name="ifmmID" placeholder="아이디 입력">
+                                                <input type="text" class="form-control" id="ifmmID" name="ifmmID" placeholder="아이디 입력" value="admnin12">
                                             </div>
                                         </div>
                                     </div>
@@ -240,7 +240,7 @@
                                         <div class="form-group has-feedback">
                                             <label class="control-label" for="pw">Password</label>
                                             <div class="input-group"> <span class="input-group-addon"><div class="top"><i class="fa-solid fa-lock"></i></div></span>
-                                                <input type="password" class="form-control" id="ifmmPW" name="ifmmPW" placeholder="비밀번호 입력 (8~12자 영문자 + 숫자 + 특수문자)">
+                                                <input type="password" class="form-control" id="ifmmPW" name="ifmmPW" placeholder="비밀번호 입력 (8~12자 영문자 + 숫자 + 특수문자)" value="1234">
                                             </div>
                                         </div>
                                     </div>

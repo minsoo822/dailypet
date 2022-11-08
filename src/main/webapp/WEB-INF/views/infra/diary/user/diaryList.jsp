@@ -235,9 +235,9 @@
     <!-- /.page header -->
 	<div class="diaryheader">
 		<nav class="icon">
-			<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
-			<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage.html"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+			<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
+			<span style="font-size: 25px"><a href="diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
+			<span><div class="profileheader"><a href="diaryMypage"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
 	<!-- <div class="diaryheader">
@@ -385,6 +385,13 @@
     <script src="/resources/js/menumaker.js"></script>
     <script src="/resources/js/navigation.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript">
+    	
+		var ifdaSeq = $("input:hidden[name=ifdaSeq]");
+	
+    </script>
+    
 </body>
 
 </html>

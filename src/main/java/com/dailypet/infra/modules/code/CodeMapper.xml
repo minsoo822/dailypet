@@ -95,22 +95,19 @@
 			, ifcdUseNy = #{ifcdUseNy}
 			, ifcdDelNy = #{ifcdDelNy}
 			, cg_ifcgSeq = #{cg_ifcgSeq}
-		WHERE 1=1
-			AND ifcdSeq = #{ifcdSeq}
+		WHERE ifcdSeq = #{ifcdSeq}
 	</update>
 	
 	<update id="uelete">
 		UPDATE code
 		SET
 			ifcdDelNy = 1
-		WHERE 1=1
-			AND ifcdSeq = #{ifcdSeq}
+		WHERE ifcdSeq = #{ifcdSeq}
 	</update>
 	
 	<delete id="delete">
 		DELETE FROM code
-		WHERE 1=1
-			AND ifcdSeq = #{ifcdSeq}
+		WHERE ifcdSeq = #{ifcdSeq}
 	</delete>	
 
 

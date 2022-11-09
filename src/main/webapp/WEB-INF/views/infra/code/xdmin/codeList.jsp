@@ -13,7 +13,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>반려동물 리스트</title>
+    <title>코드 리스트</title>
     <!-- Bootstrap -->
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -202,7 +202,7 @@
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                             				<select class="form-control" name="shOptionDate">
                             					<option value="">날짜선택</option>
-												<option value="1">가입일</option>
+												<option value="1">최근수정일</option>
                             				</select>
                             			</div>
                             			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -276,7 +276,7 @@
 											<th>Seq</th>
 											<th>코드그룹이름</th>
 											<th>코드이름</th>
-											<th>가입일</th>
+											<th>최근수정일</th>
 											<th>사용유무</th>
 											<th>삭제유무</th>
 										</tr>

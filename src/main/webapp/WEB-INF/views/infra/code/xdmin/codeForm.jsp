@@ -169,17 +169,17 @@
 		color: white;
 	}
 	
-	.btn-danger {
+	.btn-danger, #btnDelete {
 		background-color: #DC3545;
 		color: white;
 	}
 	
-	.btn-outline-danger {
+	.btn-outline-danger, #btnUelete {
 		background-color: white;
 		color: #DC3545;
 	}
 	
-	.btn-warning {
+	.btn-warning, #btnReset {
 		background-color: #FFC107;
 		color: white;
 	}
@@ -203,10 +203,7 @@
 	</div>
     <!-- /.page header -->
     <form id="form" name="codeform" method="post">
-    <input type="hidden" name="ifcdSeq">
-	<!-- *Vo.jsp s -->
-	<%@include file="codeVo.jsp"%>
-	<!-- *Vo.jsp e -->
+    <input type="hidden" id="ifcdSeq" value="${item.ifcdSeq}">
 	<div class="content">
         <div class="container">
             <div class="row">
@@ -291,11 +288,26 @@
 						<br>
 						<button type="button" class="btn btn-secondary" id="btnList"><i class="fa-solid fa-list"></i></button>
 						<button type="button" class="btn btn-dark right" id="btnSubmit"><i class="fa-solid fa-check"></i></button>
-						<button type="button" class="btn btn-danger right" id="btnDelete" data-bs-toggle="modal" data-bs-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
-						<button type="button" class="btn btn-outline-danger right" id="btnUelete" data-bs-toggle="modal" data-bs-target="#ueleteModal"><i class="fa-solid fa-x"></i></button>
-						<button type="button" class="btn btn-warning right" id="btnReset" data-bs-toggle="modal" data-bs-target="#resetModal"><i class="fa-solid fa-rotate-left"></i></button>
-						
-						<div class="modal fade" id="ueleteModal" tabindex="-1" aria-labelledby="ueleteModalLabel" aria-hidden="true">
+						<button type="button" class="btn btn-danger right" data-toggle="modal" data-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
+						<button type="button" class="btn btn-outline-danger right" data-toggle="modal" data-target="#ueleteModal"><i class="fa-solid fa-x"></i></button>
+						<button type="button" class="btn btn-warning right" id="btnReset" data-toggle="modal" data-target="#resetModal"><i class="fa-solid fa-rotate-left"></i></button>
+
+						<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="deleteModalLabel">내용 취소</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+									</div>
+									<div class="modal-body">해당 데이터를 삭제하시겠습니까?</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+										<button type="button" class="btn btn-secondary" id="btnDelete">삭제</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="ueleteModal" tabindex="-1" role="dialog" aria-labelledby="ueleteModalLabel" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -305,27 +317,12 @@
 									<div class="modal-body">해당 데이터를 비활성화하시겠습니까?</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-										<button type="button" class="btn btn-secondary" id="realuelbtn">삭제</button>
+										<button type="button" class="btn btn-secondary" id="btnUelete">삭제</button>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h5 class="modal-title" id="deleteModalLabel">내용 취소</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">해당 데이터를 삭제하시겠습니까?</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-										<button type="button" class="btn btn-secondary" id="realdelbtn">삭제</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="modal fade" id="resetModal" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+						<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
@@ -335,7 +332,7 @@
 									<div class="modal-body">입력한 데이터를 모두 삭제하시겠습니까?</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-										<button type="button" class="btn btn-secondary" id="realresetbtn">삭제</button>
+										<button type="button" class="btn btn-secondary" id="btnReset">삭제</button>
 									</div>
 								</div>
 							</div>
@@ -419,41 +416,41 @@
 	
 	<script type="text/javascript">
 	
-	var goUrlList = "/code/codeList";
-	var goUrlInst = "/code/codeInst";
-	var goUrlUpdt = "/code/codeUpdt";
-	var goUrlUele = "/code/codeUele";
-	var goUrlDele = "/code/codeDele";
-	var goUrlForm = "/code/codeForm";
+		var goUrlList = "/code/codeList";
+		var goUrlInst = "/code/codeInst";
+		var goUrlUpdt = "/code/codeUpdt";
+		var goUrlUele = "/code/codeUele";
+		var goUrlDele = "/code/codeDele";
+		var goUrlForm = "/code/codeForm";
+		
+		var ifcdSeq = $("#ifcdSeq");
 	
-	var ifcdSeq = $("input:hidden[name=ifcdSeq]");
-
-	var form = $("form[name=codeform]");
-	var formVo = $("form[name=formVo]");
-
-	$("#btnSubmit").on("click", function(){
-		if (ifcdSeq.val() == "0" || ifcdSeq.val() == ""){
-	   		form.attr("action", goUrlInst).submit();
-	   	} else {
-	   		form.attr("action", goUrlUpdt).submit();
-	   	}
-	}); 
+		var form = $("form[name=codeform]");
+		var formVo = $("form[name=formVo]");
 	
-	$("#btnList").on("click", function(){
-		formVo.attr("action", goUrlList).submit();
-	});
-	
-	$("#realclearbtn").on("click", function(){
-		formVo.attr("action", goUrlForm).submit();
-	});
-	
-	$("#realdelbtn").on("click", function(){
-		formVo.attr("action", goUrlDele).submit();
-	});
-	
-	$("#realuelbtn").on("click", function(){
-		formVo.attr("action", goUrlUele).submit();
-	});
+		$("#btnSubmit").on("click", function(){
+			if (ifcdSeq.val() == "0" || ifcdSeq.val() == ""){
+		   		form.attr("action", goUrlInst).submit();
+		   	} else {
+		   		form.attr("action", goUrlUpdt).submit();
+		   	}
+		}); 
+		
+		$("#btnList").on("click", function(){
+			formVo.attr("action", goUrlList).submit();
+		});
+		
+		$("#btnReset").on("click", function(){
+			formVo.attr("action", goUrlForm).submit();
+		});
+		
+		$("#btnDelete").on("click", function(){
+			formVo.attr("action", goUrlDele).submit();
+		});
+		
+		$("#btnUelete").on("click", function(){
+			formVo.attr("action", goUrlUele).submit();
+		});
 	
 	</script>
 	
@@ -464,5 +461,6 @@
     <script src="/resources/js/menumaker.js"></script>
     <script src="/resources/js/navigation.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>

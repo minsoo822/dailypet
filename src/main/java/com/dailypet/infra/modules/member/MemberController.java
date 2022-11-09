@@ -34,9 +34,6 @@ public class MemberController {
 		service.userInsert(dto);
 		service.animalInsert(dto);
 		
-		for (int i = 0; i < dto.getIfamName().length(); i++) {
-		}
-		
 		return "infra/member/user/regDone";
 	}
 	

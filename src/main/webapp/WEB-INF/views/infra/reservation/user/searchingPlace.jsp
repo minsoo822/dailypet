@@ -299,30 +299,7 @@
 			</div>
         </div>
     </div>
-    <!-- /.footer-->
-    <div class="tiny-footer">
-        <!-- tiny footer block -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="copyright-content">
-                       Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

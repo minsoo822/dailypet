@@ -4,7 +4,7 @@
 	<div class="container">
 	    <div class="row">
 	        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-	            <a href="../index.html"><img src="/resources/images/headerLogo.png" style="width: 70px; height: 70px" alt=""></a>
+	            <a href="../index.html"><img src="/resources/images/headerLogo.png" style="width: 195px; height: 50px" alt=""></a>
 	        </div>
 	        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 	            <div class="navigation">

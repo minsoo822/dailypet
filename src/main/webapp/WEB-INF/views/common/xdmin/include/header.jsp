@@ -13,8 +13,8 @@
 	                        <li class="active"><a href="/animal/home" title="Home">홈</a></li>
 	                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
 	                            <ul>
-	                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
-	                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
+	                                <li><a href="/findpet/findpetList" title="Service List">유기동물 찾기</a></li>
+	                                <li><a href="/findpet/findpetList" title="Service Detail">전국 유기동물</a></li>
 	                            </ul>
 	                        </li>
 	                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -83,130 +83,119 @@
 	<!-- herder s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <div class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-caption">
-                        <!-- <h1 class="page-title">News Single</h1>
-                        <p> Maecenas ac nulla non urna ullamcorper iaculis necauris
-                            <br> maximus libero non magna faucibus congue. </p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="container">
-			<div class="row mb-5">
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-					<div class="row">
-						<div class="col">
-						    <img class="petImg" src="" id="image">
-						</div>
+    <div class="totalContent">
+	    <div class="content">
+	        <div class="container">
+				<div class="row mb-5">
+	                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<div class="row">
+							<div class="col">
+							    <img class="petImg" src="" id="image">
+							</div>
+						</div>	
+						<div class="row">
+							<div class="col">
+								<input type="file" id="file" class="form-control" style="width: 446px;">
+							</div>
+						</div>	
 					</div>	
-					<div class="row">
-						<div class="col">
-							<input type="file" id="file" class="form-control" style="width: 446px;">
+	                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								이름
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<input type="text" class="form-control" placeholder="">
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								품종
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<input type="text" class="form-control" placeholder="">
+							</div>
 						</div>
-					</div>	
-				</div>	
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							이름
+						<hr>
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								나이
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<input type="text" class="form-control" placeholder="">
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								성별
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<input type="text" class="form-control" placeholder="">
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<input type="text" class="form-control" placeholder="">
+						<hr>
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								위탁장소
+							</div>
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1">
+								<input type="text" class="form-control" placeholder="우편번호" id="zip_code">
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
+								<button type="button" class="Searchbtn" onclick="sample4_execDaumPostcode()"><i class="fa-solid fa-magnifying-glass"></i></button>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
+								<button type="button" class="Searchbtn" id="address_reset"><i class="fa-solid fa-rotate-left"></i></button>
+							</div>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							품종
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								&nbsp;
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+								<input type="text" class="form-control" placeholder="도로명 주소" id="address">
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<input type="text" class="form-control" placeholder="">
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								&nbsp;
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+								<input type="text" class="form-control" placeholder="상세 주소" id="address_detail">
+							</div>
 						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							나이
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								발견장소
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+								<input type="text" class="form-control" placeholder="정확한 장소를 입력해주세요.">
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<input type="text" class="form-control" placeholder="">
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								발견일시
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+								<input class="form-control" type="datetime-local" id="hopedate" name="hopedate">
+							</div>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							성별
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								특이사항
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+								<input type="text" class="form-control">
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-							<input type="text" class="form-control" placeholder="">
-						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							위탁장소
-						</div>
-						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1">
-							<input type="text" class="form-control" placeholder="우편번호" id="zip_code">
-						</div>
-						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
-							<button type="button" class="Searchbtn" onclick="sample4_execDaumPostcode()"><i class="fa-solid fa-magnifying-glass"></i></button>
-						</div>
-						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
-							<button type="button" class="Searchbtn" id="address_reset"><i class="fa-solid fa-rotate-left"></i></button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							&nbsp;
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-							<input type="text" class="form-control" placeholder="도로명 주소" id="address">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							&nbsp;
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-							<input type="text" class="form-control" placeholder="상세 주소" id="address_detail">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							발견장소
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-							<input type="text" class="form-control" placeholder="정확한 장소를 입력해주세요.">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							발견일시
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-							<input class="form-control" type="datetime-local" id="hopedate" name="hopedate">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							특이사항
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-							<input type="text" class="form-control">
-						</div>
-					</div>
-                </div>
-			</div>
-			<div class="row">
-				<div class="col" style="display: flex; justify-content: flex-end;">
-					<button type="button" class="btnSave">취소</button>
-					<button type="button" class="btnSave">저장</button>
+	                </div>
 				</div>
-			</div>
-			<hr>
-        </div>
-    </div>
+				<div class="row">
+					<div class="col" style="display: flex; justify-content: flex-end;">
+						<button type="button" class="btnSave">취소</button>
+						<button type="button" class="btnSave">저장</button>
+					</div>
+				</div>
+				<hr>
+	        </div>
+	    </div>
+	</div>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <!-- footer e -->

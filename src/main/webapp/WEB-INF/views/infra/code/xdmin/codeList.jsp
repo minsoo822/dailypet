@@ -148,200 +148,188 @@
 	        </div>
 	    </div>
 	</div>
-    <!-- 헤더 e -->
-    <div class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-caption">
-                       <!--  <h1 class="page-title">latest news</h1>
-                        <p>Praesent sit amet dapibus dui, non ullamcorper nisecenas ac
-                            <br> nulla non urna ullamcorper iaculis nec eu leo. </p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="container">
-            <div class="row">
-            	 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget widget-categories category" >
-                        <!-- widget categories -->
-                        <!-- widget start -->
-                        <ul class="listnone">
-                        	<li class="listtitle">Setting</li>
-                            <li class="listmenu"><a href="/member/memberList">회원 리스트 </a></li>
-                            <li class="listmenu"><a href="/findpet/findpetList">반려동물 리스트</a></li>
-                            <li class="listmenu"><a href="/animal/animalList">유기동물 리스트</a></li>
-                            <br>
-                            <li class="listtitle">Code</li>
-                            <li class="listmenu" style="color: #808080"><a href="/code/codeList"><b>코드 리스트</b></a></li>
-                            <li class="listmenu"><a href="/codegroup/codegroupList">코드그룹 리스트</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                    <div class="row">
-                    	<form method="post" name="codeform">
-					    <input type="hidden" name="ifcdSeq">
-						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
-						<input type="hidden" name="checkboxSeqArray">
-                    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="row">
-                            	<div class="col searchBox">
-                            		<div class="row">
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control" name="shDelNy">
-                            					<option value="" <c:if test="${empty vo.shDelNy }">selected</c:if>>삭제여부</option>
-												<option value="0" <c:if test="${vo.shDelNy eq 0 }">selected</c:if>>N</option>
-												<option value="1" <c:if test="${vo.shDelNy eq 1 }">selected</c:if>>Y</option>
-                            				</select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control" name="shOptionDate">
-                            					<option value="">날짜선택</option>
-												<option value="1">최근수정일</option>
-                            				</select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="text" id="shstartDate" name="shstartDate" class="form-control shDate" value="${vo.shstartDate}" placeholder="시작일" autocomplete="off">
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="text" id="shendDate" name="shendDate" class="form-control shDate" value="${vo.shendDate}" placeholder="종료일" autocomplete="off">
-                            			</div>
-                            		</div>
-                            		<div class="row">
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control" name="shUseNy">
-                            					<option value="" <c:if test="${empty vo.shUseNy }">selected</c:if>>사용여부</option>
-												<option value="0" <c:if test="${vo.shUseNy eq 0 }">selected</c:if>>N</option>
-												<option value="1" <c:if test="${vo.shUseNy eq 1 }">selected</c:if>>Y</option>
-                            				</select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                           					<select class="form-control" name="shOption">
-												<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>선택</option>
-												<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>코드이름</option>
-												<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름</option>
-												<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>코드이름(영문)</option>
-											 </select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="text" class="form-control" name="shValue" value="<c:out value="${vo.shValue }"/>" placeholder="검색어 입력">
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; justify-content: space-between; width: 150px;">
-                            				<button type="button" class="searchBtn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            				<button type="button" class="resetBtn" id="resetBtn"><i class="fa-solid fa-rotate-left"></i></button>
-                            			</div>
-                            		</div>
-                            	</div>
-                            </div>
-                        </div>
-                        </form>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="post-block">
-                               <div class="row">
-	                               <div class="col"> 
-		                           		<h1>코드 리스트</h1>
-	                               </div>
-							   </div>
-							   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">
-	                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
-		                           		 <p class="meta">total: <c:out value="${vo.totalRows - ((vo.thisPage -1) * vo.rowNumToShow + status.index) }"/></p>
-	                               </div>
-	                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
-		                           		&nbsp;
-	                               </div>
-	                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="rowNum"> 
-	                                	<select class="form-control">
-	                                		<option>10</option>
-	                                		<option>20</option>
-	                                		<option>30</option>
-	                                		<option>40</option>
-	                                	</select>
-	                               </div>
-							   </div>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="row">
-								<div class="col">
-									<table class="table table-striped">
-										<tr>
-											<th><input class="form-check-input" type="checkbox" name="check" id="allcheck"></th>
-											<th>#</th>
-											<th>Seq</th>
-											<th>코드그룹이름</th>
-											<th>코드이름</th>
-											<th>최근수정일</th>
-											<th>사용유무</th>
-											<th>삭제유무</th>
-										</tr>
-										<tr>
-											<c:choose>
-												<c:when test="${fn:length(list) eq 0 }">
-													<td>데이터가 존재하지 않습니다</td>
-												</c:when>
-												<c:otherwise>	
-													<c:forEach items="${list}" var="list" varStatus="status">
-														<tr onclick="goForm(${list.ifcdSeq })" class="in">
-															<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifcdSeq }"/>"></td>
-															<td>#</td>
-															<td>
-																<c:out value="${list.ifcdSeq }"/>
-															</td>
-															<td>
-																<c:out value="${list.ifcgName }"/>
-															</td>
-															<td>
-																<c:out value="${list.ifcdName }"/>
-															</td>
-															<td>
-																<c:out value="${list.ifcdModDate }"/>
-															</td>
-															<td id="UseNY">
-																<c:choose>
-																	<c:when test="${list.ifcdUseNy eq 0 }">N</c:when>
-																	<c:otherwise>Y</c:otherwise>
-																</c:choose>
-															</td>
-															<td id="DelNY">
-																<c:choose>
-																	<c:when test="${list.ifcdDelNy eq 0 }">N</c:when>
-																	<c:otherwise>Y</c:otherwise>
-																</c:choose>
-															</td>
-														</tr>
-													</c:forEach>
-												</c:otherwise>
-											</c:choose>
-										</tr>
-									</table>
+	<div class="totalContent">
+	    <div class="content">
+	        <div class="container">
+	            <div class="row">
+	            	 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+	                    <div class="widget widget-categories category" >
+	                        <!-- widget categories -->
+	                        <!-- widget start -->
+	                        <ul class="listnone">
+	                        	<li class="listtitle">Setting</li>
+	                            <li class="listmenu"><a href="/member/memberList">회원 리스트 </a></li>
+	                            <li class="listmenu"><a href="/findpet/findpetList">반려동물 리스트</a></li>
+	                            <li class="listmenu"><a href="/animal/animalList">유기동물 리스트</a></li>
+	                            <br>
+	                            <li class="listtitle">Code</li>
+	                            <li class="listmenu" style="color: #808080"><a href="/code/codeList"><b>코드 리스트</b></a></li>
+	                            <li class="listmenu"><a href="/codegroup/codegroupList">코드그룹 리스트</a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+	                    <div class="row">
+	                    	<form method="post" name="codeform">
+						    <input type="hidden" name="ifcdSeq">
+							<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+							<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+							<input type="hidden" name="checkboxSeqArray">
+	                    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                            <div class="row">
+	                            	<div class="col searchBox">
+	                            		<div class="row">
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<select class="form-control" name="shDelNy">
+	                            					<option value="" <c:if test="${empty vo.shDelNy }">selected</c:if>>삭제여부</option>
+													<option value="0" <c:if test="${vo.shDelNy eq 0 }">selected</c:if>>N</option>
+													<option value="1" <c:if test="${vo.shDelNy eq 1 }">selected</c:if>>Y</option>
+	                            				</select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<select class="form-control" name="shOptionDate">
+	                            					<option value="">날짜선택</option>
+													<option value="1">최근수정일</option>
+	                            				</select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<input type="text" id="shstartDate" name="shstartDate" class="form-control shDate" value="${vo.shstartDate}" placeholder="시작일" autocomplete="off">
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<input type="text" id="shendDate" name="shendDate" class="form-control shDate" value="${vo.shendDate}" placeholder="종료일" autocomplete="off">
+	                            			</div>
+	                            		</div>
+	                            		<div class="row">
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<select class="form-control" name="shUseNy">
+	                            					<option value="" <c:if test="${empty vo.shUseNy }">selected</c:if>>사용여부</option>
+													<option value="0" <c:if test="${vo.shUseNy eq 0 }">selected</c:if>>N</option>
+													<option value="1" <c:if test="${vo.shUseNy eq 1 }">selected</c:if>>Y</option>
+	                            				</select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                           					<select class="form-control" name="shOption">
+													<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>선택</option>
+													<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>코드이름</option>
+													<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름</option>
+													<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>코드이름(영문)</option>
+												 </select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<input type="text" class="form-control" name="shValue" value="<c:out value="${vo.shValue }"/>" placeholder="검색어 입력">
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; justify-content: space-between; width: 150px;">
+	                            				<button type="button" class="searchBtn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+	                            				<button type="button" class="resetBtn" id="resetBtn"><i class="fa-solid fa-rotate-left"></i></button>
+	                            			</div>
+	                            		</div>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                        </form>
+	                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                            <div class="post-block">
+	                               <div class="row">
+		                               <div class="col"> 
+			                           		<h1>코드 리스트</h1>
+		                               </div>
+								   </div>
+								   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">
+		                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
+			                           		 <p class="meta">total: <c:out value="${vo.totalRows - ((vo.thisPage -1) * vo.rowNumToShow + status.index) }"/></p>
+		                               </div>
+		                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
+			                           		&nbsp;
+		                               </div>
+		                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="rowNum"> 
+		                                	<select class="form-control">
+		                                		<option>10</option>
+		                                		<option>20</option>
+		                                		<option>30</option>
+		                                		<option>40</option>
+		                                	</select>
+		                               </div>
+								   </div>
+	                            </div>
+	                            <hr>
+	                        </div>
+	                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row">
+									<div class="col">
+										<table class="table table-striped">
+											<tr>
+												<th><input class="form-check-input" type="checkbox" name="check" id="allcheck"></th>
+												<th>#</th>
+												<th>Seq</th>
+												<th>코드그룹이름</th>
+												<th>코드이름</th>
+												<th>최근수정일</th>
+												<th>사용유무</th>
+												<th>삭제유무</th>
+											</tr>
+											<tr>
+												<c:choose>
+													<c:when test="${fn:length(list) eq 0 }">
+														<td>데이터가 존재하지 않습니다</td>
+													</c:when>
+													<c:otherwise>	
+														<c:forEach items="${list}" var="list" varStatus="status">
+															<tr onclick="goForm(${list.ifcdSeq })" class="in">
+																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifcdSeq }"/>"></td>
+																<td>#</td>
+																<td>
+																	<c:out value="${list.ifcdSeq }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifcgName }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifcdName }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifcdModDate }"/>
+																</td>
+																<td id="UseNY">
+																	<c:choose>
+																		<c:when test="${list.ifcdUseNy eq 0 }">N</c:when>
+																		<c:otherwise>Y</c:otherwise>
+																	</c:choose>
+																</td>
+																<td id="DelNY">
+																	<c:choose>
+																		<c:when test="${list.ifcdDelNy eq 0 }">N</c:when>
+																		<c:otherwise>Y</c:otherwise>
+																	</c:choose>
+																</td>
+															</tr>
+														</c:forEach>
+													</c:otherwise>
+												</c:choose>
+											</tr>
+										</table>
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="row" style="margin-top: 20px;">
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-									<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
-									<button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-							    </div>
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
-									<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
-									<a href="/code/codeForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row" style="margin-top: 20px;">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+								    </div>
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
+										<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
+										<a href="/code/codeForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
+									</div>
 								</div>
 							</div>
-						</div>
-                    </div>
-                    <!-- pagination s -->
-					<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-					<!-- pagination e -->
-                </div>
-            </div>
-        </div>
+	                    </div>
+	                    <!-- pagination s -->
+						<%@include file="../../../common/xdmin/include/pagination.jsp"%>
+						<!-- pagination e -->
+	                </div>
+	            </div>
+	        </div>
+	    </div>
     </div>
     <div class="footer">
         <!-- footer-->

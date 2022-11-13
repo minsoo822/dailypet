@@ -120,193 +120,181 @@
 	        </div>
 	    </div>
 	</div>
-    <!-- 헤더 e -->
-    <div class="page-header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-caption">
-                       <!--  <h1 class="page-title">latest news</h1>
-                        <p>Praesent sit amet dapibus dui, non ullamcorper nisecenas ac
-                            <br> nulla non urna ullamcorper iaculis nec eu leo. </p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="container">
-            <div class="row">
-            	 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                    <div class="widget widget-categories category" >
-                        <!-- widget categories -->
-                        <!-- widget start -->
-                        <h3 class="widget-title"> 대시보드 </h3>
-                        <ul class="listnone">
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior/free-website-template/">회원 리스트 </a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-websites-templates-free-download/">반려동물 리스트</a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free-download/">유기동물 리스트</a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free/">코드 리스트</a></li>
-                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free/">코드그룹 리스트</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                    <div class="row">
-                    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="row">
-                            	<div class="col searchBox">
-                            		<div class="row">
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>삭제유무</option>
-                            					<option></option>
-                            				</select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>선택</option>
-                            					<option></option>
-                            				</select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="date" class="form-control">
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="date" class="form-control">
-                            			</div>
-                            		</div>
-                            		<div class="row">
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>사용유무</option>
-                            					<option></option>
-                            				</select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<select class="form-control">
-                            					<option>검색옵션</option>
-                            					<option></option>
-                            				</select>
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                            				<input type="text" class="form-control" placeholder="검색어">
-                            			</div>
-                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; justify-content: space-between; width: 150px;">
-                            				<button type="button" class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                            				<button type="button" class="resetBtn"><i class="fa-solid fa-rotate-left"></i></button>
-                            			</div>
-                            		</div>
-                            	</div>
-                            </div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="post-block">
-                               <div class="row">
-	                               <div class="col"> 
-		                           		<h1>코드그룹 리스트</h1>
-	                               </div>
-							   </div>
-							   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">
-	                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
-		                           		 <p class="meta">total: 0</p>
-	                               </div>
-	                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
-		                           		&nbsp;
-	                               </div>
-	                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
-	                                	<select class="form-control">
-	                                		<option>10</option>
-	                                		<option>20</option>
-	                                		<option>30</option>
-	                                		<option>40</option>
-	                                	</select>
-	                               </div>
-							   </div>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="row">
-								<div class="col">
-									<table class="table table-striped" style="text-align: center;">
-										<tr>
-											<th>
-												<input type="checkbox">
-											</th>
-											<th>#</th>
-											<th>Seq</th>
-											<th>코드그룹 이름</th>
-											<th>코드갯수</th>
-											<th>생성일</th>
-											<th>사용유무</th>
-											<th>삭제유무</th>
-										</tr>
-										<c:choose>
-											<c:when test="${fn:length(list) eq 0 }">
-												<td>데이터가 존재하지 않습니다</td>
-											</c:when>
-											<c:otherwise>	
-												<c:forEach items="${list }" var="list" varStatus="status">
-													<tr>
-														<td>
-															<input type="checkbox">
-														</td>
-														<td>#</td>
-														<td>
-															<c:out value="${list.ifcgSeq }"/>
-														</td>
-														<td>
-															<c:out value="${list.ifcgName }"/>
-														</td>
-														<td>
-															<c:out value="${list.ifcgcodeCount }"/>
-														</td>
-														<td>
-															<c:out value="${list.ifcgModDate }"/>
-														</td>
-														<td>
-															<c:out value="${list.ifcgUseNy }"/>
-														</td>
-														<td>
-															<c:out value="${list.ifcgDelNy }"/>
-														</td>
-													</tr>
-												</c:forEach>
-											</c:otherwise>
-										</c:choose>
-									</table>
+	<div class="totalContent">
+	    <div class="content">
+	        <div class="container">
+	            <div class="row">
+	            	 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+	                    <div class="widget widget-categories category" >
+	                        <!-- widget categories -->
+	                        <!-- widget start -->
+	                        <h3 class="widget-title"> 대시보드 </h3>
+	                        <ul class="listnone">
+	                            <li><a href="https://easetemplate.com/downloads/interior-exterior/free-website-template/">회원 리스트 </a></li>
+	                            <li><a href="https://easetemplate.com/downloads/interior-exterior-websites-templates-free-download/">반려동물 리스트</a></li>
+	                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free-download/">유기동물 리스트</a></li>
+	                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free/">코드 리스트</a></li>
+	                            <li><a href="https://easetemplate.com/downloads/interior-exterior-website-template-free/">코드그룹 리스트</a></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+	                    <div class="row">
+	                    	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                            <div class="row">
+	                            	<div class="col searchBox">
+	                            		<div class="row">
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<select class="form-control">
+	                            					<option>삭제유무</option>
+	                            					<option></option>
+	                            				</select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<select class="form-control">
+	                            					<option>선택</option>
+	                            					<option></option>
+	                            				</select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<input type="date" class="form-control">
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<input type="date" class="form-control">
+	                            			</div>
+	                            		</div>
+	                            		<div class="row">
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<select class="form-control">
+	                            					<option>사용유무</option>
+	                            					<option></option>
+	                            				</select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<select class="form-control">
+	                            					<option>검색옵션</option>
+	                            					<option></option>
+	                            				</select>
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	                            				<input type="text" class="form-control" placeholder="검색어">
+	                            			</div>
+	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="display: flex; justify-content: space-between; width: 150px;">
+	                            				<button type="button" class="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+	                            				<button type="button" class="resetBtn"><i class="fa-solid fa-rotate-left"></i></button>
+	                            			</div>
+	                            		</div>
+	                            	</div>
+	                            </div>
+	                        </div>
+	                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                            <div class="post-block">
+	                               <div class="row">
+		                               <div class="col"> 
+			                           		<h1>코드그룹 리스트</h1>
+		                               </div>
+								   </div>
+								   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">
+		                               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
+			                           		 <p class="meta">total: 0</p>
+		                               </div>
+		                               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8"> 
+			                           		&nbsp;
+		                               </div>
+		                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> 
+		                                	<select class="form-control">
+		                                		<option>10</option>
+		                                		<option>20</option>
+		                                		<option>30</option>
+		                                		<option>40</option>
+		                                	</select>
+		                               </div>
+								   </div>
+	                            </div>
+	                            <hr>
+	                        </div>
+	                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row">
+									<div class="col">
+										<table class="table table-striped" style="text-align: center;">
+											<tr>
+												<th>
+													<input type="checkbox">
+												</th>
+												<th>#</th>
+												<th>Seq</th>
+												<th>코드그룹 이름</th>
+												<th>코드갯수</th>
+												<th>생성일</th>
+												<th>사용유무</th>
+												<th>삭제유무</th>
+											</tr>
+											<c:choose>
+												<c:when test="${fn:length(list) eq 0 }">
+													<td>데이터가 존재하지 않습니다</td>
+												</c:when>
+												<c:otherwise>	
+													<c:forEach items="${list }" var="list" varStatus="status">
+														<tr>
+															<td>
+																<input type="checkbox">
+															</td>
+															<td>#</td>
+															<td>
+																<c:out value="${list.ifcgSeq }"/>
+															</td>
+															<td>
+																<c:out value="${list.ifcgName }"/>
+															</td>
+															<td>
+																<c:out value="${list.ifcgcodeCount }"/>
+															</td>
+															<td>
+																<c:out value="${list.ifcgModDate }"/>
+															</td>
+															<td>
+																<c:out value="${list.ifcgUseNy }"/>
+															</td>
+															<td>
+																<c:out value="${list.ifcgDelNy }"/>
+															</td>
+														</tr>
+													</c:forEach>
+												</c:otherwise>
+											</c:choose>
+										</table>
+									</div>
 								</div>
-							</div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        	<div class="row" style="margin-top: 20px;">
-                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-									<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
-									<button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
-                        		</div>
-                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
-									<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
-									<button type="button" class="btn btn-primary" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button>
-                        		</div>
-                        	</div>
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="st-pagination">
-                                <ul class="pagination">
-                                    <li><a href="#">Previous</a></li>
-                                    <li><a href="#" class="active">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">Next</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	                        </div>
+	                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                        	<div class="row" style="margin-top: 20px;">
+	                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+	                        		</div>
+	                        		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
+										<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
+										<button type="button" class="btn btn-primary" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button>
+	                        		</div>
+	                        	</div>
+	                        </div>
+	                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                            <div class="st-pagination">
+	                                <ul class="pagination">
+	                                    <li><a href="#">Previous</a></li>
+	                                    <li><a href="#" class="active">1</a></li>
+	                                    <li><a href="#">2</a></li>
+	                                    <li><a href="#">3</a></li>
+	                                    <li><a href="#">Next</a></li>
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/resources/js/jquery.min.js"></script>

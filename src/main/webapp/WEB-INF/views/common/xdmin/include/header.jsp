@@ -4,26 +4,26 @@
 	<div class="container">
 	    <div class="row">
 	        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-	            <a href="../index.html"><img src="/resources/images/headerLogo.png" style="width: 195px; height: 50px" alt=""></a>
+	            <a href="/animal/home"><img src="/resources/images/headerLogo.png" style="width: 195px; height: 50px" alt=""></a>
 	        </div>
 	        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 	            <div class="navigation">
 	                <div id="navigation">
 	                    <ul>
 	                        <li class="active"><a href="/animal/home" title="Home">홈</a></li>
-	                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
+	                        <li class="has-sub"><a href="/findpet/findpetList" title="Service List">유기동물 찾기</a>
 	                            <ul>
 	                                <li><a href="/findpet/findpetList" title="Service List">유기동물 찾기</a></li>
 	                                <li><a href="/findpet/findpetList" title="Service Detail">전국 유기동물</a></li>
 	                            </ul>
 	                        </li>
-	                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
+	                        <li class="has-sub"><a href="/reservation/searchingPlace" title="Portfolio">내 주변 편의시설</a>
 	                            <ul>
-	                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-	                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
+	                                <li><a href="/reservation/seachingPlace" title="Projects">편의시설 찾기</a></li>
+	                                <li><a href="/reservation/reservationPage" title="Projects Detail">내 예약 정보</a></li>
 	                            </ul>
 	                        </li>
-				          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">육아수첩</a>
+				          	<li class="has-sub"><a href="/diary/diaryList" title="Portfolio">육아수첩</a>
 				          		<ul>
 				          			<li><a href="javascript:goDiaryForm(${sessSeq })" title="Projects">일기 쓰기</a></li>
 				          			<li><a href="/diary/diaryList" title="Projects">일기 목록</a></li>

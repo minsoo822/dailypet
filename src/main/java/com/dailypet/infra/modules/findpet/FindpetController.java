@@ -11,14 +11,17 @@ public class FindpetController {
 	public String findpetList() throws Exception {
 		return "infra/findpet/user/findpetList";
 	}
+	
 	@RequestMapping(value = "findpetView")
 	public String findpetView() throws Exception {
 		return "infra/findpet/user/findpetView";
 	}
+	
 	@RequestMapping(value = "findpetMod")
 	public String findpetMod() throws Exception {
 		return "infra/findpet/user/findpetMod";
 	}
+	
 	@RequestMapping(value = "findpetSearchForm")
 	public String findpetSearchForm() throws Exception {
 		return "infra/findpet/user/findpetSearchForm";

@@ -238,11 +238,11 @@
 	    var goUrlForm = "/findpet/findpetMod";
 	    
 	    $("#searchGo").on("click", function(){
-			form.attr("action", goUrlList).submit();
+	    	$(location).attr("href", goUrlList).submit();
 		});
 	
 	    $("#formGo").on("click", function(){
-			form.attr("action", goUrlForm).submit();
+	    	$(location).attr("href", goUrlForm).submit();
 		});
 	    
     </script>

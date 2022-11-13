@@ -95,9 +95,10 @@
 </head>
 
 <body>
-    <%@include file="../../../common/xdmin/include/header.jsp"%>
 
 	<form method="post" id="mainForm">
+ 	<%@include file="../../../common/xdmin/include/header.jsp"%>
+
 	<input type="hidden" name="ifmmSeq" value="${ sessSeq}">
     
     <img src="/resources/images/xdmin/cat.jpg">

@@ -138,21 +138,8 @@
     <!-- herder s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <div class="page-header">
-        <!-- page header -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-caption">
-                        <!-- <h2 class="page-title">Our projects</h2>
-                        <p>Nullam tincidunt quis ligula vitae sollicitudin. Phasellus ut leo ut
-                            <br> purus interdum dapibus quis at arcu scelerisque maximus.</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
+    <div class="totalContent">
+    	<div class="container">
 	    <div class="row Search">
 		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 		    	<div class="filebox">
@@ -316,6 +303,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>

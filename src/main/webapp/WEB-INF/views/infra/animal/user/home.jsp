@@ -6,10 +6,6 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="true" %>
 
-
-<!DOCTYPE html>
-<html lang="ko">
-
 <head>
 	<%@include file="../../../common/xdmin/include/head.jsp"%>
 	
@@ -60,6 +56,14 @@
 		font-family: 'Raleway', sans-serif; 
 		line-height: 28px; 
 		font-weight: 300; 
+	    font-family: 'NanumSquareNeo-Variable';
+	}
+	
+	@font-face {
+	    font-family: 'NanumSquareNeo-Variable';
+	    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+	    font-weight: normal;
+	    font-style: normal;
 	}
 	
 	.btn-default { 

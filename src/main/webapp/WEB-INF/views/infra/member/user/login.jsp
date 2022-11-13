@@ -76,16 +76,9 @@
 			text-rendering: optimizeLegibility; 
 		}
 		
-		@font-face {
-		    font-family: 'Unilab';
-		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205-2@1.0/Unilab.woff2') format('woff2');
-		    font-weight: bold;
-		    font-style: normal;
-		}
-		
 		address{
-			font-size: 20px;    
-			font-family: 'Unilab';
+			font-size: 14px;    
+			font-family: 'NanumSquareNeo-Variable';
 		}
 		
 		strong{
@@ -94,7 +87,8 @@
 		}
 	
 		.text-caps {
-		    font-size: 25px;
+		    font-size: 14px;
+   			font-family: 'NanumSquareNeo-Variable';
 		}
 		
 		.text{
@@ -287,7 +281,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 top2">
-                    <div class="contact-pic mb30"> <img src="/resources/images/contact-pic.jpg" class="img-responsive" alt=""> </div>
+                    <div class="contact-pic mb30"> <img src="/resources/images/headerLogo.png" class="img-responsive" alt=""> </div>
                     <div class="contact-info">
                         <h2>#Daily Pet</h2>
                         <address>
@@ -302,7 +296,6 @@
                         <address>
                             <span class="text-caps">e-mail:</span> <strong>ezen@itAcademy.com</strong>
                         </address>
-                        <div class="social-circle"> <span class="text">Be social: </span> <a href="#"><i class="fa fa-facebook-square"></i></a> <a href="#"><i class="fa fa-twitter-square"></i></a> <a href="#"><i class="fa fa-google-plus-square"></i></a> <a href="#"><i class="fa fa-youtube-square"></i></a> <a href="#"><i class="fa fa-pinterest-square"></i></a> </div>
                     </div>
                     <!-- /.widget search -->
                 </div>

@@ -1,7 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
+
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -13,16 +17,16 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>ì ê¸°ëë¬¼ ê²ì</title>
+    <title>유기동물 검색</title>
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
     <!-- Style -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -69,7 +73,7 @@
     	width: 50%;
     	text-align: center;
     }
-    /* inputfile ì»¤ì¤í s */
+    /* inputfile 커스텀 s */
     .filebox {
     	text-align: center;
     }
@@ -108,8 +112,8 @@
 	    overflow: hidden;
 	    border: 0;
 	}
-	/* inputfile ì»¤ì¤í e */
-	/* ì´ë¯¸ì§ íë¦¬ë·° s */
+	/* inputfile 커스텀 e */
+	/* 이미지 프리뷰 s */
 	.preview {
 		margin-bottom: 50px;
 	}
@@ -124,58 +128,16 @@
 		max-height: 100%;
 		padding: 20px 0px 0px 40px;
 	}
-    /* ì´ë¯¸ì§ íë¦¬ë·° e */
+    /* 이미지 프리뷰 e */
     </style>
     
     
 </head>
 
 <body>
-    <div class="header navbar-fixed-top">
-		<div class="container">
-		    <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="index.html"><img src="../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		            <div class="navigation">
-		                <div id="navigation">
-		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">í</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a>
-		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">ì êµ­ ì ê¸°ëë¬¼</a></li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">ë´ ì£¼ë³ í¸ììì¤</a>
-		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">í¸ììì¤ ì°¾ê¸°</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">ë´ ìì½ ì ë³´</a></li>
-		                            </ul>
-		                        </li>
-	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">ë°ë ¤ëë¬¼ ì¼ê¸°</a></li>
-					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-					              </ul>
-					          </li> -->
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">ë´ ì£¼ë³ í¸ììì¤</a>
-	<!-- 						ë©ë´êµ¬íx ì¼ë¨ ë§í¬ë§ ìì±						
-								<li><a href="../diaryMypage.html" title="Contact Us">ì¡ììì²©</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">ì¼ê¸° ìì¸</a></li>
-								<li><a href="../diaryForm.html" title="Projects">ì¼ê¸° ì°ê¸°</a></li>
-	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">í¼ë§</a> </li> -->
-	                            <li><a href="error.html" title="Error">ë¡ê·¸ì¸</a> </li>
-	                            <li><a href="error.html" title="Error">íìê°ì</a> </li>
-	                        </ul>
-	                    </div> 
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+    <!-- herder s -->
+    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    <!-- header e -->
     <div class="page-header">
         <!-- page header -->
         <div class="container">
@@ -194,7 +156,7 @@
 	    <div class="row Search">
 		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 		    	<div class="filebox">
-				    <input type="text" class="upload-name" value="ì²¨ë¶íì¼" placeholder="ì²¨ë¶íì¼">
+				    <input type="text" class="upload-name" value="첨부파일" placeholder="첨부파일">
 				    <label for="input_imgs"><i class="fa-solid fa-magnifying-glass"></i></label> 
     				<button class="Reserbtn" id="reset"><i class="fa-solid fa-rotate-left"></i></button>
 				    <input type="file" id="input_imgs" multiple />
@@ -203,7 +165,7 @@
 	    </div>
 	    <div class="row contents">
 		    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			   <span>ë³´ë¤ ì íí ê²°ê³¼ë¥¼ ìí´ ì ëªí ì¬ì§ì¼ë¡ ì¬ë ¤ì£¼ì¸ì.</span>
+			   <span>보다 정확한 결과를 위해 선명한 사진으로 올려주세요.</span>
 	    	</div>
 	    </div>
 	    <div class="row preview">
@@ -217,58 +179,58 @@
 		    <div class="col">
 			   	<ul class="nav nav-tabs">
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="#">ì êµ­</a>
+				    <a class="nav-link active" aria-current="page" href="#">전국</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ìì¸</a>
+				    <a class="nav-link" href="#">서울</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ê²½ê¸°</a>
+				    <a class="nav-link" href="#">경기</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì¸ì²</a>
+				    <a class="nav-link" href="#">인천</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ë¶ì°</a>
+				    <a class="nav-link" href="#">부산</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ëêµ¬</a>
+				    <a class="nav-link" href="#">대구</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ëì </a>
+				    <a class="nav-link" href="#">대전</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì ë¨</a>
+				    <a class="nav-link" href="#">전남</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ê²½ë¨</a>
+				    <a class="nav-link" href="#">경남</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì¶©ë¨</a>
+				    <a class="nav-link" href="#">충남</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ê´ì£¼</a>
+				    <a class="nav-link" href="#">광주</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì¸ì°</a>
+				    <a class="nav-link" href="#">울산</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ê²½ë¶</a>
+				    <a class="nav-link" href="#">경북</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì ë¶</a>
+				    <a class="nav-link" href="#">전북</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì¶©ë¶</a>
+				    <a class="nav-link" href="#">충북</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ê°ì</a>
+				    <a class="nav-link" href="#">강원</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì ì£¼</a>
+				    <a class="nav-link" href="#">제주</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">ì¸ì¢</a>
+				    <a class="nav-link" href="#">세종</a>
 				</ul>
 			</div>
 		</div>
@@ -279,66 +241,66 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="findpetView.html" class="imghover"><img class="imgsize" src="../images/findpet/zz.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="findpetView.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/zz.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/coco.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/coco.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/dog2.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/dog2.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img imghover mb30">
-                        <a href="service-detail.html"><img class="imgsize" src="../images/findpet/fox.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/fox.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/galina-bugorra.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/galina-bugorra.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/gogog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/gogog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/hiena.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/hiena.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img imghover mb30">
-                        <a href="service-detail.html"><img class="imgsize" src="../images/findpet/miAcat.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/miAcat.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/mm.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/mm.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/siba.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/siba.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="../images/findpet/sudal.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/sudal.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
                     <div class="project-img imghover mb30">
-                        <a href="service-detail.html"><img class="imgsize" src="../images/findpet/taiger.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/taiger.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
                     </div>
                 </div>
             </div>
@@ -355,76 +317,12 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <!-- footer-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">About us</h3>
-                        <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- social block -->
-                        <h3 class="widget-title">Our Address</h3>
-                        <p>1309 Roosevelt Wilson Lane
-                            <br> Colton, CA 92324</p>
-                    </div>
-                    <!-- /.social block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">e-mail Us</h3>
-                        <p>info@yourwebsitedomain.com</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">Call us</h3>
-                        <p>180-874-5234</p>
-                        <p>180-752-3957</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.footer-->
-    <div class="tiny-footer">
-        <!-- tiny footer block -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="copyright-content">
-                      Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/menumaker.js"></script>
-    <script src="../js/navigation.js" type="text/javascript"></script>
-    
+    <!-- footer s -->
+    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <!-- footer e -->
+    <!-- footScript s -->
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <!-- footScript e -->
     <script type="text/javascript">
 
     $("#file").on('change',function(){
@@ -444,7 +342,7 @@
 
         filesArr.forEach(function(f) {
             if(!f.type.match("image.*")) {
-                alert("íì¥ìë ì´ë¯¸ì§ íì¥ìë§ ê°ë¥í©ëë¤.");
+                alert("확장자는 이미지 확장자만 가능합니다.");
                 return;
             }
 

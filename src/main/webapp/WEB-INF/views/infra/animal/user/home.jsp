@@ -87,6 +87,24 @@
 		-webkit-font-smoothing: antialiased; 
 		text-rendering: optimizeLegibility; 
 	}
+	
+	.btnGo {
+    	border: 1px solid #efefef;
+    	background: #f3f0eb;
+    	color: #372d2b;
+    	text-align: center;
+    	width: 150px;
+    	height: 50px;
+    	border-radius: 10px;
+    	font-size: 13pt;
+    	font-weight: bold;
+    }
+    
+    .btnGo:hover {
+    	background: #372d2b;
+    	color: #f3f0eb;
+    	cursor: pointer;
+    }
     </style>
     
     <title>#Daily Pet</title>
@@ -170,7 +188,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="../service-detail.html" class="btn btn-default">바로가기</a></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="../service-detail.html" class="btn btnGo">바로가기</a></div>
             </div>
         </div>
     </div>
@@ -202,7 +220,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="service-detail.html" class="btn btn-default">바로가기</a></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="service-detail.html" class="btn btnGo">바로가기</a></div>
             </div>
         </div>
     </div>
@@ -233,7 +251,7 @@
                     </div>
                 </div>
                 <div class="row">
-                	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="service-detail.html" class="btn btn-default">바로가기</a></div>
+                	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="service-detail.html" class="btn btnGo">바로가기</a></div>
             	</div>
             </div>
         </div>

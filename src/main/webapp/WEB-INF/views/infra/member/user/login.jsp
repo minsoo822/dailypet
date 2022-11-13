@@ -82,7 +82,7 @@
 		}
 		
 		strong{
-			font-size: 25px;
+			font-size: 14px;
 	   		color: #464241;
 		}
 	
@@ -153,6 +153,10 @@
 			margin-left: 200px;
 		}
 		
+		.size{
+			width: 350px;
+			height: 380px;
+		}
     </style>
 </head>
 
@@ -281,7 +285,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 top2">
-                    <div class="contact-pic mb30"> <img src="/resources/images/headerLogo.png" class="img-responsive" alt=""> </div>
+                    <div class="contact-pic mb30"><img src="/resources/images/headerLogo.png" class="img-responsive size" alt=""> </div>
                     <div class="contact-info">
                         <h2>#Daily Pet</h2>
                         <address>

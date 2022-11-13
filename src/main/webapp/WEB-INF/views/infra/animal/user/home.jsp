@@ -7,7 +7,8 @@
 <%@ page session="true" %>
 
 <head>
-	<%@include file="../../../common/xdmin/include/head.jsp"%>
+
+<%@include file="../../../common/xdmin/include/head.jsp"%>
 	
     <style type="text/css">
     .mid{

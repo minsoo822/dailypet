@@ -76,8 +76,8 @@
 	    	<div class="totalContent">
 			    <div class="row">
 				    <div class="col Search">
-			    		<button class="Searchbtn" id="searchGo"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-			    		<button class="Searchbtn" id="formGo"style="margin-left: 20px;"><i class="fa-regular fa-plus"></i></button>
+			    		<button class="Searchbtn" type="button" id="searchGo"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+			    		<button class="Searchbtn" type="button" id="formGo" style="margin-left: 20px;"><i class="fa-regular fa-plus"></i></button>
 			    	</div>
 			    </div>
 				<div class="row">
@@ -231,14 +231,20 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    
     <script type="text/javascript">
     
-    $("#searchGo").on("click", function() {
-    	location.href= "/findpet/findpetSearchForm";
-    });
-    $("#formGo").on("click", function() {
-    	location.href= "/findpet/findpetMod";
-    });
+	    var goUrlList = "/findpet/findpetSearchForm";
+	    var goUrlForm = "/findpet/findpetMod";
+	    
+	    $("#searchGo").on("click", function(){
+			form.attr("action", goUrlList).submit();
+		});
+	
+	    $("#formGo").on("click", function(){
+			form.attr("action", goUrlForm).submit();
+		});
+	    
     </script>
 </body>
 

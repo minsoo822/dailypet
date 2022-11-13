@@ -257,49 +257,16 @@
         </div>
     </div>
  	<%@include file="../../../common/xdmin/include/footer.jsp"%>
- </form>
-<!-- /.tiny footer block -->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="/resources/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="/resources/js/bootstrap.min.js"></script>
-  <script src="/resources/js/menumaker.js"></script>
-  <script src="/resources/js/navigation.js" type="text/javascript"></script>
+</form>
+
+<%@include file="../../../common/xdmin/include/footScript.jsp"%>
 
 <script type="text/javascript">
-    $(function () {
-        $('a').click(function (){
-            $('html, body').animate({scrollTop: $(this.hash).offset.top}, 300);
-        });
-    });
-    
-    $("#btnLogout").on("click", function(){
-		$.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			,url: "/member/logoutProc"
-			,data: {}
-			,success: function(response) {
-				if(response.rt == "success") {
-					location.href = "/member/login";
-				} else {
-					alert("다시 시도해주세요.")
-				}
-			}
-		});
-	});
-    
     
     var seq = $("input:hidden[name=ifmmSeq]");
     var form = $("#mainForm");
     
-    goDiaryForm = function(key) {
-    	seq.attr("value", key);
-    	form.attr("action", "/diary/diaryForm").submit();
-    }
 </script>
-    
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

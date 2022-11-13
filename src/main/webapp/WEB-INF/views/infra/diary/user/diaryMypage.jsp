@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -34,11 +35,6 @@
 </head>
 
 <style type="text/css">
-
-	.navbar-fixed-top {
-		background-color: black;
-	}
-	
 	.container2 {
 		margin: 6% 10%;
 	} 
@@ -118,51 +114,9 @@
 <body>
 	<form method="post" id="mainForm">
 		<input type="hidden" name="ifmmSeq" value="${vo.ifmmSeq }">
-	    <div class="header navbar-fixed-top header-collapse">
-			<div class="container">
-			    <div class="row">
-			        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			            <a href="../index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-			        </div>
-			        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-			            <div class="navigation">
-			                <div id="navigation"><div id="menu-button">Menu</div>
-			                    <ul>
-			                        <li class="active"><a href="index.html" title="Home">홈</a></li>
-			                        <li class="has-sub"><span class="submenu-button"></span><a href="service-list.html" title="Service List">유기동물 찾기</a>
-			                            <ul>
-			                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
-			                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
-			                            </ul>
-			                        </li>
-			                        <li class="has-sub"><span class="submenu-button"></span><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
-			                            <ul>
-			                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-			                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
-			                            </ul>
-			                        </li>
-		                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-						              <ul>
-						                  <li><a href="blog-default.html" title="Blog">반려동물 일기</a></li>
-						                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-						              </ul>
-						          </li> -->
-						          	<li class="has-sub"><span class="submenu-button"></span><a href="../diaryList.html" title="Portfolio">육아수첩</a>
-		<!-- 						메뉴구현x 일단 링크만 생성						
-									<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
-									<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
-									<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
-		-->							
-									<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
-		                            </li><li><a href="error.html" title="Error">로그인</a> </li>
-		                            <li><a href="error.html" title="Error">회원가입</a> </li>
-		                        </ul>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
+	    <!-- herder s -->
+	    <%@include file="../../../common/xdmin/include/header.jsp"%>
+	    <!-- header e -->
 	    <!-- /.page header -->
 	    <div class="diaryheader">
 			<nav class="icon">
@@ -258,15 +212,13 @@
 	            </div>
 	        </div>
 	    </div>
+	    <!-- footer s -->
 	    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+	    <!-- footer e -->
     </form>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/resources/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/menumaker.js"></script>
-    <script src="/resources/js/navigation.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
+    <!-- footScript s -->
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <!-- footScript e -->
 </body>
 
 </html>

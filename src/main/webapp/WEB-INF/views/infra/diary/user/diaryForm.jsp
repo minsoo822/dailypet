@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <html>
 <head>
@@ -25,12 +26,6 @@
 </head>
 
 <style type="text/css">
-
-	.navbar-fixed-top {
-		background-color: black;
-		margin-bottom: 100px;
-	}
-	
 	.content {
 		display: flex;
 		justify-content: center;
@@ -188,58 +183,9 @@
 <body>
 	<form method="post" id="mainForm" enctype="multipart/form-data">
 	<input type="hidden" name="ifmmSeq" value="${item.ifmmSeq}">
-    <div class="header navbar-fixed-top header-collapse">
-		<div class="container">
-		    <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="/resources/index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		            <div class="navigation">
-		                <div id="navigation"><div id="menu-button">Menu</div>
-		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
-		                        <li class="has-sub"><span class="submenu-button"></span><a href="service-list.html" title="Service List">유기동물 찾기</a>
-		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-sub"><span class="submenu-button"></span><a href="/resources/searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
-		                            <ul>
-		                                <li><a href="/resources/searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-		                                <li><a href="/resources/reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
-		                            </ul>
-		                        </li>
-	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">반려동물 일기</a></li>
-					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-					              </ul>
-					          </li> -->
-					          	<li class="has-sub"><span class="submenu-button"></span><a href="/resources/diaryList" title="Portfolio">육아수첩</a>
-	<!-- 						메뉴구현x 일단 링크만 생성						
-								<li><a href="/resources/diaryMypage.html" title="Contact Us">육아수첩</a> </li>
-								<li><a href="/resources/diaryDetail.html" title="Projects">일기 상세</a></li>
-								<li><a href="/resources/diaryForm.html" title="Projects">일기 쓰기</a></li>
-	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
-	                           <c:if test="${sessSeq eq null}">
-					        		<!-- 로그인전 -->
-					        		<li><a href="/member/login" title="로그인">로그인</a></li>
-			        				<li><a href="/member/regForm1" title="회원가입">회원가입</a></li>
-					        	</c:if>
-						        <c:if test="${sessSeq ne null}">
-					        		<li><a href="#" type="button"><c:out value="${sessId }"/>님, 반갑습니다</a></li>
-									<li><a href="/member/logoutProc" title="로그아웃" type="button" id="btnLogout">로그아웃</a></li>
-					            </c:if>
-	                        </ul>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+    <!-- herder s -->
+    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    <!-- header e -->
     <!-- /.page header -->
 	<div class="diaryheader">
 		<nav class="icon">
@@ -283,9 +229,13 @@
             </div>
         </div>
     </div>
-  	<%@include file="../../../common/xdmin/include/footer.jsp"%>
-    <!-- /.footer-->
+  	<!-- footer s -->
+    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <!-- footer e -->
     </form>
+    <!-- footScript s -->
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <!-- footScript e -->
     <script>
     	
     	var seq = $("input:hidden[name=ifmmSeq]");
@@ -310,12 +260,7 @@
 		}
     </script>
     
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/resources/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/menumaker.js"></script>
-    <script src="/resources/js/navigation.js" type="text/javascript"></script>
+    
 </body>
 
 </html>

@@ -14,11 +14,6 @@
 	<%@include file="../../../common/xdmin/include/head.jsp"%>
 	
     <style type="text/css">
-    .header-collapse{
-    	color: #f7ca35;
-    	background-color:#f7ca35;
-    }
-    
     .mid{
     	margin-left: 8rem;
     }
@@ -96,8 +91,9 @@
 
 <body>
 
+<%@include file="../../../common/xdmin/include/header.jsp"%>
+
 	<form method="post" id="mainForm">
- 	<%@include file="../../../common/xdmin/include/header.jsp"%>
 
 	<input type="hidden" name="ifmmSeq" value="${ sessSeq}">
     

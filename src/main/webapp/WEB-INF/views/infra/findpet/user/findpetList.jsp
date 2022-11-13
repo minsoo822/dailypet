@@ -68,165 +68,178 @@
 </head>
 
 <body>
-     <!-- herder s -->
-    <%@include file="../../../common/xdmin/include/header.jsp"%>
-    <!-- header e -->
-    <div class="container">
-	    <div class="row">
-		    <div class="col Search">
-	    		<button class="Searchbtn"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-	    		<button class="Searchbtn"style="margin-left: 20px;"><i class="fa-regular fa-plus"></i></button>
+	<form action="" id="searchForm">
+    	<!-- herder s -->
+    	<%@include file="../../../common/xdmin/include/header.jsp"%>
+	    <!-- header e -->
+	    <div class="container">
+	    	<div class="totalContent">
+			    <div class="row">
+				    <div class="col Search">
+			    		<button class="Searchbtn" id="searchGo"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+			    		<button class="Searchbtn" id="formGo"style="margin-left: 20px;"><i class="fa-regular fa-plus"></i></button>
+			    	</div>
+			    </div>
+				<div class="row">
+				    <div class="col">
+					   	<ul class="nav nav-tabs">
+						  <li class="nav-item">
+						    <a class="nav-link active" aria-current="page" href="#">전국</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">서울</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">경기</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">인천</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">부산</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">대구</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">대전</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">전남</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">경남</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">충남</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">광주</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">울산</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">경북</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">전북</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">충북</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">강원</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">제주</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link" href="#">세종</a>
+						</ul>
+					</div>
+				</div>
 	    	</div>
+		    <!-- /.page header -->
+		    <div class="content" style="padding-top: 50px;">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="findpetView.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/zz.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/coco.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/dog2.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img imghover mb30">
+		                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/fox.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/galina-bugorra.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/gogog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/hiena.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img imghover mb30">
+		                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/miAcat.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/mm.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/siba.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/sudal.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img imghover mb30">
+		                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/taiger.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+		                <div class="st-pagination">
+		                    <ul class="pagination">
+		                        <li><a href="#">Previous</a></li>
+		                        <li><a href="#" class="active">1</a></li>
+		                        <li><a href="#">2</a></li>
+		                        <li><a href="#">3</a></li>
+		                        <li><a href="#">Next</a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 	    </div>
-		<div class="row">
-		    <div class="col">
-			   	<ul class="nav nav-tabs">
-				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="#">전국</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">서울</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">경기</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">인천</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">부산</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">대구</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">대전</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">전남</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">경남</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">충남</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">광주</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">울산</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">경북</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">전북</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">충북</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">강원</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">제주</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link" href="#">세종</a>
-				</ul>
-			</div>
-		</div>
-    </div>
-    <!-- /.page header -->
-    <div class="content" style="padding-top: 50px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="findpetView.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/zz.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/coco.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/dog2.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img imghover mb30">
-                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/fox.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/galina-bugorra.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/gogog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/hiena.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img imghover mb30">
-                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/miAcat.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/mm.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/siba.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img mb30">
-                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/sudal.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                    <div class="project-img imghover mb30">
-                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/taiger.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="st-pagination">
-                    <ul class="pagination">
-                        <li><a href="#">Previous</a></li>
-                        <li><a href="#" class="active">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">Next</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- footer s -->
-    <%@include file="../../../common/xdmin/include/footer.jsp"%>
-    <!-- footer e -->
-    </div>
+	    <!-- footer s -->
+	    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+	    <!-- footer e -->
+	    </div>
+    </form>
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    <script type="text/javascript">
+    
+    $("#searchGo").on("click", function() {
+    	location.href= "/findpet/findpetSearchForm";
+    });
+    $("#formGo").on("click", function() {
+    	location.href= "/findpet/findpetMod";
+    });
+    </script>
 </body>
 
 </html>

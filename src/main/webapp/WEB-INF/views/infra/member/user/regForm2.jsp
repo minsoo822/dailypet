@@ -186,6 +186,79 @@
 			font-size: 12px;
 		}
 		
+		.btnGo {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 100px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    
+	    .btnGo:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    
+	    .btnBack {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	text-align: center;
+	    	width: 58px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    
+	    .btnBack:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    
+	    .btnPlus {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	text-align: center;
+	    	width: 40px;
+	    	height: 40px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    
+	    .btnPlus:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    
+	    .btnMinus {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	text-align: center;
+	    	width: 40px;
+	    	height: 40px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    
+	    .btnMinus:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    
+	    .btn-space{
+		    margin-right: 5px;
+		}
+		
     </style>
 </head>
 
@@ -235,346 +308,270 @@
 	        </div>
         </div>
     </div>
-   <div class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <!-- <h1 class="hero-title"><strong>Interior-exterior</strong><br>
-          Free Webstite template</h1>
-                    <a href="#" class="btn btn-white">REad more <i class="fa fa-plus"></i></a>  -->&nbsp;</div>
-            </div>
-        </div>
-    </div>
     <form name="formReg" method="post" enctype="multipart/form-data" autocomplete="off">
 	    <div class="content">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	                    <div class="bg-light pinside30">
-	                        <div class="row">
-	                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	                                <h1>회원가입</h1>
-	                                <p>#Daily Pet 회원 가입으로 다양한 서비스를 만나보세요.</p>
-	                                <br>
-	                                <div class="row div1 reg">
-	                               		<div class="col-1 wid"> 	
-	                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
-	                               			<br>
-	                               			<span>약관동의</span>
-	                               		</div>
-	                               		<div class="col-1 top">
-	                               			<i class="fa-solid fa-angle-right"></i>
-	                               		</div>
-	                               		<div class="col-1 wid">
-	                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
-	                               			<br>
-	                               			<span>정보입력</span>
-	                               		</div>
-	                               		<div class="col-1 top">
-	                               			<i class="fa-solid fa-angle-right"></i>
-	                               		</div>
-	                               		<div class="col-1 wid">
-	                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
-	                               			<br>
-	                               			<span>가입완료</span>
-	                               		</div> 
-	                               	</div>
-	                            </div>
-	                        </div>
-	                        <br>
-	                        <br>
-	                        <h3>기본 정보</h3>
-	                        <hr>
-	                       	<div class="row div2">
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">성명</label>
-	                        	</div>
-	                        	<div class="col-lg-4 col-md-4 col-sm-4">
-	                       			<input class="form-control input" type="text" name="ifmmName" id="ifmmName">
-	                        	</div>
-	                        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">연락처</label>
-	                        	</div>
-	                        	<div class="col-lg-1 col-md-1 col-sm-1">
-	                        		<select class="form-select select2" name="ifmmTelecom">
-										<option value="">::선택::</option>
-										<option value="1">SKT</option>
-										<option value="2">KT</option>
-										<option value="3">LG</option>
-									</select> 
-	                        	</div>
-	                        	<div class="col-lg-3 col-md-3 col-sm-3">
-	                        		<input class="form-control input" type="text" name="ifmmTel" id="ifmmTel" placeholder="ex)010-0000-0000">
-	                        	</div>
-	                       	</div>
-	                       	<hr>
-	                       	<div class="row div2 left">
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">이메일</label>
-	                        	</div>
-	                        	<div class="col-lg-4 col-md-4 col-sm-4">
-									<input type="text" class="form-control input" name="ifmmEmailID" id="ifmmEmailID">
-								</div>	
-								<div class="col-1 top2">
-									<span>@</span>
-								</div>
-								<div class="col-lg-4 col-md-4 col-sm-4">
-									<select class="form-select select1" name="ifmmEmailDomain">
-										<option value="">::선택::</option>
-										<option value="1">naver.com</option>
-										<option value="2">gmail.com</option>
-										<option value="3">hanmail.com</option>
-										<option value="4">nate.com</option>
-										<option value="5">daum.net</option>
-									</select> 
-								</div>
-	                       	</div>
-							<hr>
-							<br>
-							<br>
-	                        <h3>필수 입력 사항</h3>
-	                        <hr>
-	                        <div class="row div2 left">
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">아이디</label>
-	                        	</div>
-	                        	<div class="col-lg-3 col-md-3 col-sm-3">
-	                       			<input type="hidden" id="ifmmIDAllowNY" name="ifmmIDAllowNY" value="0">
-									<input class="form-control input" type="text" name="ifmmID" id="ifmmID" placeholder="4자리 이상의 영문 + 숫자">
-									<div class="invalid-feedback" id="ifmmIDFeedback"></div>
-	                        	</div>
-	                       	</div>
-	                       	<hr>
-	                   	   	<div class="row div2 left">
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">닉네임</label>
-	                        	</div>
-	                        	<div class="col-lg-3 col-md-3 col-sm-3">
-	                       			<input type="hidden" id="nicknameAllowNY" name="nicknameAllowNY" value="0">
-									<input type="text" class="form-control input" id="nickname" name="ifmmNickname">
-									<div class="invalid-feedback" id="nicknameFeedback"></div>
-	                        	</div>
-	                       	</div>
-	                       	<hr>
-	                  		<div class="row div2 left">
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">비밀번호</label>
-	                        	</div>
-	                        	<div class="col-lg-4 col-md-4 col-sm-4">
-	                       			<input class="form-control input" type="password" name="ifmmPW" id="pw">
-	                        	</div>
-	                       	</div>
-	                       	<hr>
-							<div class="row div2 left">
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">비밀번호 확인</label>
-	                        	</div>
-	                        	<div class="col-lg-4 col-md-4 col-sm-4">
-	                       			<input class="form-control input" type="password" name="pwCheck" id="pwCheck">
-	                        	</div>
-	                        	<div class="col-lg-4 col-md-4 col-sm-4">
-									<span id="alert-success" style="display: none; color: #097e01; text-align: left; font-size: 15px; margin-top: 9px;"><i class="fa-solid fa-circle-info"></i>&nbsp; 비밀번호가 일치합니다.</span>
-									<span id="alert-danger" style="display: none; color: #c53e3e; text-align: left; font-size: 15px; margin-top: 9px;"><i class="fa-solid fa-circle-info"></i>&nbsp; 비밀번호가 일치하지 않습니다.</span>
-								</div> 
-	                       	</div>  
-	                       	<hr>
-	                       	<div class="row div2 left">
-	                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
-	                        		<label class="top4">주소</label>
-	                        	</div>
-	                        	<div class="col-lg-10 col-md-10 col-sm-10">
-	                        		<div class="row">
-			                        	<div class="col-lg-4 col-md-4 col-sm-4">
-											<input class="form-control input" type="text" name="ifmmZipcode" id="ifmmZipcode" placeholder="우편번호" readonly>
-			                        	</div>
-			                        	<div class="col-lg-2 col-md-2 col-sm-2 top3">
-			                       			<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
-											<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
-			                        	</div>
-			                       		<div class="col-lg-10 col-md-10 col-sm-10">
-			                        		<input class="form-control input" type="text" name="ifmmAddr1" id="ifmmAddr1" placeholder="주소" readonly>
-			                        	</div>
-			                        	<div class="col-lg-5 col-md-5 col-sm-5">
-			                        		<input class="form-control input" type="text" name="ifmmAddr2" id="ifmmAddr2" placeholder="상세주소">
-			                        	</div>
-			                        	<div class="col-lg-5 col-md-5 col-sm-5">
-			                        		<input class="form-control input" type="text" name="ifmmAddr3" id="ifmmAddr3" placeholder="참고항목" readonly>
-			                        	</div>
-									</div>
-								</div>
-							</div>
-							<hr>
-							<br>
-							<br>
-							<h3>반려동물 정보 등록</h3>
-							<hr>
-							<div id="petPoint">
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">이미지 첨부</label>
+	    	<div class="totalContent">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		                    <div class="bg-light pinside30">
+		                        <div class="row">
+		                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		                                <h1>회원가입</h1>
+		                                <p>#Daily Pet 회원 가입으로 다양한 서비스를 만나보세요.</p>
+		                                <br>
+		                                <div class="row div1 reg">
+		                               		<div class="col-1 wid"> 	
+		                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
+		                               			<br>
+		                               			<span>약관동의</span>
+		                               		</div>
+		                               		<div class="col-1 top">
+		                               			<i class="fa-solid fa-angle-right"></i>
+		                               		</div>
+		                               		<div class="col-1 wid">
+		                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
+		                               			<br>
+		                               			<span>정보입력</span>
+		                               		</div>
+		                               		<div class="col-1 top">
+		                               			<i class="fa-solid fa-angle-right"></i>
+		                               		</div>
+		                               		<div class="col-1 wid">
+		                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
+		                               			<br>
+		                               			<span>가입완료</span>
+		                               		</div> 
+		                               	</div>
+		                            </div>
+		                        </div>
+		                        <br>
+		                        <br>
+		                        <h3>기본 정보</h3>
+		                        <hr>
+		                       	<div class="row div2">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">성명</label>
+		                        	</div>
+		                        	<div class="col-lg-4 col-md-4 col-sm-4">
+		                       			<input class="form-control input" type="text" name="ifmmName" id="ifmmName">
+		                        	</div>
+		                        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">연락처</label>
+		                        	</div>
+		                        	<div class="col-lg-1 col-md-1 col-sm-1">
+		                        		<select class="form-select select2" name="ifmmTelecom">
+											<option value="">::선택::</option>
+											<option value="1">SKT</option>
+											<option value="2">KT</option>
+											<option value="3">LG</option>
+										</select> 
+		                        	</div>
+		                        	<div class="col-lg-3 col-md-3 col-sm-3">
+		                        		<input class="form-control input" type="text" name="ifmmTel" id="ifmmTel" placeholder="ex)010-0000-0000">
+		                        	</div>
+		                       	</div>
+		                       	<hr>
+		                       	<div class="row div2 left">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">이메일</label>
+		                        	</div>
+		                        	<div class="col-lg-4 col-md-4 col-sm-4">
+										<input type="text" class="form-control input" name="ifmmEmailID" id="ifmmEmailID">
+									</div>	
+									<div class="col-1 top2">
+										<span>@</span>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">
+										<select class="form-select select1" name="ifmmEmailDomain">
+											<option value="">::선택::</option>
+											<option value="1">naver.com</option>
+											<option value="2">gmail.com</option>
+											<option value="3">hanmail.com</option>
+											<option value="4">nate.com</option>
+											<option value="5">daum.net</option>
+										</select> 
 									</div>
-									<div class="col-lg-6 col-md-6 col-sm-6 top2">
-										<div id="UploadedImagePreview" class="addScroll">
-											<c:forEach items="${imageUpload}" var="imageUpload" varStatus="status">
-												<img src="${imageUpload.path }${imageUpload.uuidName}" id="img">
-											</c:forEach>
+		                       	</div>
+								<hr>
+								<br>
+								<br>
+		                        <h3>필수 입력 사항</h3>
+		                        <hr>
+		                        <div class="row div2 left">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">아이디</label>
+		                        	</div>
+		                        	<div class="col-lg-3 col-md-3 col-sm-3">
+		                       			<input type="hidden" id="ifmmIDAllowNY" name="ifmmIDAllowNY" value="0">
+										<input class="form-control input" type="text" name="ifmmID" id="ifmmID" placeholder="4자리 이상의 영문 + 숫자">
+										<div class="invalid-feedback" id="ifmmIDFeedback"></div>
+		                        	</div>
+		                       	</div>
+		                       	<hr>
+		                   	   	<div class="row div2 left">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">닉네임</label>
+		                        	</div>
+		                        	<div class="col-lg-3 col-md-3 col-sm-3">
+		                       			<input type="hidden" id="nicknameAllowNY" name="nicknameAllowNY" value="0">
+										<input type="text" class="form-control input" id="nickname" name="ifmmNickname">
+										<div class="invalid-feedback" id="nicknameFeedback"></div>
+		                        	</div>
+		                       	</div>
+		                       	<hr>
+		                  		<div class="row div2 left">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">비밀번호</label>
+		                        	</div>
+		                        	<div class="col-lg-4 col-md-4 col-sm-4">
+		                       			<input class="form-control input" type="password" name="ifmmPW" id="pw">
+		                        	</div>
+		                       	</div>
+		                       	<hr>
+								<div class="row div2 left">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">비밀번호 확인</label>
+		                        	</div>
+		                        	<div class="col-lg-4 col-md-4 col-sm-4">
+		                       			<input class="form-control input" type="password" name="pwCheck" id="pwCheck">
+		                        	</div>
+		                        	<div class="col-lg-4 col-md-4 col-sm-4">
+										<span id="alert-success" style="display: none; color: #097e01; text-align: left; font-size: 15px; margin-top: 9px;"><i class="fa-solid fa-circle-info"></i>&nbsp; 비밀번호가 일치합니다.</span>
+										<span id="alert-danger" style="display: none; color: #c53e3e; text-align: left; font-size: 15px; margin-top: 9px;"><i class="fa-solid fa-circle-info"></i>&nbsp; 비밀번호가 일치하지 않습니다.</span>
+									</div> 
+		                       	</div>  
+		                       	<hr>
+		                       	<div class="row div2 left">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">주소</label>
+		                        	</div>
+		                        	<div class="col-lg-10 col-md-10 col-sm-10">
+		                        		<div class="row">
+				                        	<div class="col-lg-4 col-md-4 col-sm-4">
+												<input class="form-control input" type="text" name="ifmmZipcode" id="ifmmZipcode" placeholder="우편번호" readonly>
+				                        	</div>
+				                        	<div class="col-lg-2 col-md-2 col-sm-2 top3">
+				                       			<button type="button" class="btn btn-outline-secondary" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+												<button class="btn btn-outline-secondary" type="button" id="clearButton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+				                        	</div>
+				                       		<div class="col-lg-10 col-md-10 col-sm-10">
+				                        		<input class="form-control input" type="text" name="ifmmAddr1" id="ifmmAddr1" placeholder="주소" readonly>
+				                        	</div>
+				                        	<div class="col-lg-5 col-md-5 col-sm-5">
+				                        		<input class="form-control input" type="text" name="ifmmAddr2" id="ifmmAddr2" placeholder="상세주소">
+				                        	</div>
+				                        	<div class="col-lg-5 col-md-5 col-sm-5">
+				                        		<input class="form-control input" type="text" name="ifmmAddr3" id="ifmmAddr3" placeholder="참고항목" readonly>
+				                        	</div>
 										</div>
-									</div>							
-								</div>
-								<hr>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">이름</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="ifamName" id="ifamName" placeholder="반려동물의 이름을 적어주세요.">
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">나이</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="ifamAge" id="ifamAge">
 									</div>
 								</div>
 								<hr>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">품종</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" type="text" name="ifamKind" id="ifamKind" placeholder="ex) 포메라니안">
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">성별</label>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 top2">
-										<input class="form-check-input" type="radio" name="ifamGender" id="gender1" value="9">
-										<label class="form-check-label" for="gender1">남아</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="ifamGender" id="gender2" value="10">
-										<label class="form-check-label" for="gender2">여아</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="ifamGender" id="gender3" value="11">
-										<label class="form-check-label" for="gender3">중성화</label>
-									</div>
-								</div>
+								<br>
+								<br>
+								<h3>반려동물 정보 등록</h3>
 								<hr>
-								<div class="row div2 left">
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">칩 여부</label>
+								<div id="petPoint">
+									<div class="row div2 left">
+										<div class="col-lg-2 col-md-2 col-sm-2 gray">
+											<label class="top4">이미지 첨부</label>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4">
+											<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">
+										</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 top2">
+											<div id="UploadedImagePreview" class="addScroll">
+												<c:forEach items="${imageUpload}" var="imageUpload" varStatus="status">
+													<img src="${imageUpload.path }${imageUpload.uuidName}" id="img">
+												</c:forEach>
+											</div>
+										</div>							
 									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 top2">
-										<input class="form-check-input" type="radio" name="ifamChipNY" id="chip1" value="1">
-										<label class="form-check-label" for="chip1">예</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="ifamChipNY" id="chip2" value="0">
-										<label class="form-check-label" for="chip2">아니오</label>
+									<hr>
+									<div class="row div2 left">
+										<div class="col-lg-2 col-md-2 col-sm-2 gray">
+											<label class="top4">이름</label>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4">
+											<input class="form-control input" type="text" name="ifamName" id="ifamName" placeholder="반려동물의 이름을 적어주세요.">
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 gray">
+											<label class="top4">나이</label>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4">
+											<input class="form-control input" type="text" name="ifamAge" id="ifamAge">
+										</div>
 									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 gray">
-										<label class="top4">접종 여부</label>
+									<hr>
+									<div class="row div2 left">
+										<div class="col-lg-2 col-md-2 col-sm-2 gray">
+											<label class="top4">품종</label>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4">
+											<input class="form-control input" type="text" name="ifamKind" id="ifamKind" placeholder="ex) 포메라니안">
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 gray">
+											<label class="top4">성별</label>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 top2">
+											<input class="form-check-input" type="radio" name="ifamGender" id="gender1" value="9">
+											<label class="form-check-label" for="gender1">남아</label>
+											&nbsp;&nbsp;
+											<input class="form-check-input" type="radio" name="ifamGender" id="gender2" value="10">
+											<label class="form-check-label" for="gender2">여아</label>
+											&nbsp;&nbsp;
+											<input class="form-check-input" type="radio" name="ifamGender" id="gender3" value="11">
+											<label class="form-check-label" for="gender3">중성화</label>
+										</div>
 									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 top2">
-										<input class="form-check-input" type="radio" name="ifamVaccinateNY" id="vac1" value="1">
-										<label class="form-check-label" for="vac1">예</label>
-										&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="ifamVaccinateNY" id="vac2" value="0">
-										<label class="form-check-label" for="vac2">아니오</label>
+									<hr>
+									<div class="row div2 left">
+										<div class="col-lg-2 col-md-2 col-sm-2 gray">
+											<label class="top4">칩 여부</label>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 top2">
+											<input class="form-check-input" type="radio" name="ifamChipNY" id="chip1" value="1">
+											<label class="form-check-label" for="chip1">예</label>
+											&nbsp;&nbsp;
+											<input class="form-check-input" type="radio" name="ifamChipNY" id="chip2" value="0">
+											<label class="form-check-label" for="chip2">아니오</label>
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 gray">
+											<label class="top4">접종 여부</label>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 top2">
+											<input class="form-check-input" type="radio" name="ifamVaccinateNY" id="vac1" value="1">
+											<label class="form-check-label" for="vac1">예</label>
+											&nbsp;&nbsp;
+											<input class="form-check-input" type="radio" name="ifamVaccinateNY" id="vac2" value="0">
+											<label class="form-check-label" for="vac2">아니오</label>
+										</div>
 									</div>
-								</div>
-								<hr class="hr1">
-								<button type="button" class="btn btn-secondary left" id="btn" onClick="addPet();"><i class="fa-solid fa-plus"></i></button>
+									<hr class="hr1">
+									<button type="button" class="btn btnPlus left" id="btn" onClick="addPet();"><i class="fa-solid fa-plus"></i></button>
+									<br>
+									<br>
+				                </div>
+				                <button type="button" class="btn btnGo right" id="btnSave">가입완료 <i class="fa-solid fa-angle-right"></i></button>
+								<a href="/member/regForm1">
+									<button type="button" class="btn btn-space btnBack right"><i class="fa-solid fa-angle-left"></i>이전 </button>
+								</a>
 								<br>
 								<br>
 			                </div>
-			                <button type="button" class="btn btn-secondary right" id="btnSave">가입완료 <i class="fa-solid fa-angle-right"></i></button>
-							<a href="/member/regForm1">
-								<button type="button" class="btn btn-secondary right"><i class="fa-solid fa-angle-left"></i>이전 </button>
-							</a>
-							<br>
-							<br>
-		                </div>
-		            </div> 
+			            </div> 
+			        </div>
 		        </div>
-	        </div>
+			</div>
 	    </div>
     </form>
 
-    <div class="footer">
-        <!-- footer-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">About us</h3>
-                        <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- social block -->
-                        <h3 class="widget-title">Our Address</h3>
-                        <p>1309 Roosevelt Wilson Lane
-                            <br> Colton, CA 92324</p>
-                    </div>
-                    <!-- /.social block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">e-mail Us</h3>
-                        <p>info@yourwebsitedomain.com</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">Call us</h3>
-                        <p>180-874-5234</p>
-                        <p>180-752-3957</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tiny-footer">
-        <!-- tiny footer block -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="copyright-content">
-                      Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.footer-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/resources/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/menumaker.js"></script>
-    <script src="/resources/js/navigation.js" type="text/javascript"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+   	<%@include file="../../../common/xdmin/include/footer.jsp"%>
 
+	<%@include file="../../../common/xdmin/include/footScript.jsp"%>
+	
 	<script type="text/javascript">
 	/* 반려동물 등록 */
 	var count_pet = 0;	
@@ -657,8 +654,8 @@
 	tmp += '</div>';
 	tmp += '</div>';
 	tmp += '<hr class="hr1">';
-	tmp += '<button type="button" class="btn btn-secondary left" id="btn" onClick="addPet();"><i class="fa-solid fa-plus"></i></button>';
-	tmp += '<button type="button" class="btn btn-secondary left" id="btn" onClick="remove(petDelete' + count_pet + ')"><i class="fa-solid fa-minus"></i></button>';
+	tmp += '<button type="button" class="btn btnPlus btn-space left" id="btn" onClick="addPet();"><i class="fa-solid fa-plus"></i></button>';
+	tmp += '<button type="button" class="btn btnMinus left" id="btn" onClick="remove(petDelete' + count_pet + ')"><i class="fa-solid fa-minus"></i></button>';
 	tmp += '</div>';
 	tmp += '<br>'	
 	

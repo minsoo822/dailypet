@@ -84,7 +84,6 @@
 		border: none; 
 		text-transform: uppercase; 
 		border-radius: 40px; 
-		font-family: 'Raleway', sans-serif; 
 		-webkit-font-smoothing: antialiased; 
 		text-rendering: optimizeLegibility; 
 	}
@@ -94,10 +93,10 @@
     	background: #f3f0eb;
     	color: #372d2b;
     	text-align: center;
-    	width: 150px;
+    	width: 50px;
     	height: 50px;
     	border-radius: 10px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
     }
     

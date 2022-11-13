@@ -129,6 +129,41 @@
 			font-size: 100px;
 		}
 		
+		.btnLog {
+	    	border: 1px solid #efefef;
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	text-align: center;
+	    	width: 60px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    
+	    .btnLog:hover {
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	cursor: pointer;
+	    }
+	    
+	    .btnHome {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	text-align: center;
+	    	width: 60px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    
+	    .btnHome:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+		
     </style>
 </head>
 
@@ -178,145 +213,69 @@
 	        </div>
         </div>
     </div>
-   <div class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <!-- <h1 class="hero-title"><strong>Interior-exterior</strong><br>
-          Free Webstite template</h1>
-                    <a href="#" class="btn btn-white">REad more <i class="fa fa-plus"></i></a>  -->&nbsp;</div>
-            </div>
-        </div>
-    </div>
     <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="bg-light pinside30">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h1>회원가입</h1>
-                                <p>#Daily Pet 회원 가입으로 다양한 서비스를 만나보세요.</p>
-                                <br>
-                                <div class="row div1 reg">
-                               		<div class="col-1 wid"> 	
-                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
-                               			<br>
-                               			<span>약관동의</span>
-                               		</div>
-                               		<div class="col-1 top">
-                               			<i class="fa-solid fa-angle-right"></i>
-                               		</div>
-                               		<div class="col-1 wid">
-                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
-                               			<br>
-                               			<span>정보입력</span>
-                               		</div>
-                               		<div class="col-1 top">
-                               			<i class="fa-solid fa-angle-right"></i>
-                               		</div>
-                               		<div class="col-1 wid">
-                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
-                               			<br>
-                               			<span>가입완료</span>
-                               		</div> 
-                               	</div>
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <hr class="hr2">
-                        <div class="mydiv">
-                        	<br>
-                        	<br>
-                        	<img src="/resources/images/xdmin/done.jpg">
-                        	<br>
-                        	<span>#Daily Pet 회원 가입을 축하합니다.</span>
-                        	<br>
-                        	<span>로그인 후 #Daily Pet의 다양한 기능을 이용해보세요.</span>
-                        </div>
-						<br>                        
-                        <div class="mid">
-                        	<button type="button" class="btn btn-secondary">홈으로</button>
-                       		<button type="button" class="btn btn-secondary btn-default">로그인</button>
-                       	</div>
-					</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <!-- footer-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">About us</h3>
-                        <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- social block -->
-                        <h3 class="widget-title">Our Address</h3>
-                        <p>1309 Roosevelt Wilson Lane
-                            <br> Colton, CA 92324</p>
-                    </div>
-                    <!-- /.social block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">e-mail Us</h3>
-                        <p>info@yourwebsitedomain.com</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">Call us</h3>
-                        <p>180-874-5234</p>
-                        <p>180-752-3957</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tiny-footer">
-        <!-- tiny footer block -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="copyright-content">
-                      Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.footer-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/resources/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/menumaker.js"></script>
-    <script src="/resources/js/navigation.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/d843c66cc1.js" crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    	<div class="totalContent">
+	        <div class="container">
+	            <div class="row">
+	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                    <div class="bg-light pinside30">
+	                        <div class="row">
+	                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	                                <h1>회원가입</h1>
+	                                <p>#Daily Pet 회원 가입으로 다양한 서비스를 만나보세요.</p>
+	                                <br>
+	                                <div class="row div1 reg">
+	                               		<div class="col-1 wid"> 	
+	                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
+	                               			<br>
+	                               			<span>약관동의</span>
+	                               		</div>
+	                               		<div class="col-1 top">
+	                               			<i class="fa-solid fa-angle-right"></i>
+	                               		</div>
+	                               		<div class="col-1 wid">
+	                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
+	                               			<br>
+	                               			<span>정보입력</span>
+	                               		</div>
+	                               		<div class="col-1 top">
+	                               			<i class="fa-solid fa-angle-right"></i>
+	                               		</div>
+	                               		<div class="col-1 wid">
+	                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
+	                               			<br>
+	                               			<span>가입완료</span>
+	                               		</div> 
+	                               	</div>
+	                            </div>
+	                        </div>
+	                        <br>
+	                        <br>
+	                        <hr class="hr2">
+	                        <div class="mydiv">
+	                        	<br>
+	                        	<br>
+	                        	<img src="/resources/images/xdmin/done.jpg">
+	                        	<br>
+	                        	<span>#Daily Pet 회원 가입을 축하합니다.</span>
+	                        	<br>
+	                        	<span>로그인 후 #Daily Pet의 다양한 기능을 이용해보세요.</span>
+	                        </div>
+							<br>                        
+	                        <div class="mid">
+	                        	<button type="button" class="btn btnHome">홈으로</button>
+	                       		<button type="button" class="btn btnLog">로그인</button>
+	                       	</div>
+						</div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<%@include file="../../../common/xdmin/include/footer.jsp"%>
+
+	<%@include file="../../../common/xdmin/include/footScript.jsp"%>
 </body>
 
 </html>

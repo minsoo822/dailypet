@@ -98,6 +98,7 @@
     	font-size: 13pt;
     	font-weight: bold;
 	    margin-left: 10px;
+	    margin-bottom: 0px;
 	}
 	.filebox label:hover {
     	background: #372d2b;

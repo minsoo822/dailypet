@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dailypet.infra.common.constants.Constants;
+import com.dailypet.infra.common.util.UtilCookie;
 
 
 @Controller
@@ -67,6 +68,7 @@ public class MemberController {
 	@RequestMapping(value = "logoutProc")
 	public Map<String, Object> logoutProc(HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
+		UtilCookie.deleteCookie();
 		httpSession.invalidate();
 		returnMap.put("rt", "success");
 		return returnMap;

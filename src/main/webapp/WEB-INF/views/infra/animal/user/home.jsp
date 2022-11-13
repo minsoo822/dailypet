@@ -119,7 +119,7 @@
 
 	<input type="hidden" name="ifmmSeq" value="${ sessSeq}">
     
-    <img src="/resources/images/xdmin/cat.jpg">
+    <img src="/resources/images/xdmin/cat.jpg" style="width: 100%">
     
     <div class="container">
     <br>

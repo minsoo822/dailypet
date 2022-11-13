@@ -18,8 +18,8 @@
 	                            </ul>
 	                        </li>
 	                        <li class="has-sub"><a href="/reservation/searchingPlace" title="Portfolio">내 주변 편의시설</a>
-	                            <ul>
-	                                <li><a href="/reservation/seachingPlace" title="Projects">편의시설 찾기</a></li>
+	                            <ul>			
+	                                <li><a href="/reservation/searchingPlace" title="Projects">편의시설 찾기</a></li>
 	                                <li><a href="/reservation/reservationPage" title="Projects Detail">내 예약 정보</a></li>
 	                            </ul>
 	                        </li>

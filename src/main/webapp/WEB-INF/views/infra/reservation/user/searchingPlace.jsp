@@ -106,200 +106,154 @@
 
 
 <body>
-    <div class="header navbar-fixed-top">
-		<div class="container">
-		    <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		            <div class="navigation">
-		                <div id="navigation">
-		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
-		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
-		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-		                                <li><a href="../reservationPage.html" title="Projects Detail">내 예약 정보</a></li>
-		                            </ul>
-		                        </li>
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">육아수첩</a>
-	<!-- 						메뉴구현x 일단 링크만 생성						
-								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
-								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
-	-->							
-	                            <li><a href="error.html" title="Error">로그인</a> </li>
-	                            <li><a href="error.html" title="Error">회원가입</a> </li>
-	                        </ul>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-    <div class="page-header">
-        <!-- page header -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-caption">
-                        <h2 class="page-title">Our projects</h2>
-                        <p>Nullam tincidunt quis ligula vitae sollicitudin. Phasellus ut leo ut
-                            <br> purus interdum dapibus quis at arcu scelerisque maximus.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.page header -->
-    <div class="content">
-        <div class="container">
-            <div class="row">
-            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-                    <ul class="nav flex-column nav-pills me-3">
-                    	<li class="nav-item">
-							<button class="nav-link active" type="button" aria-current="page" href="#">병원</button>
-						</li>
-						<li class="nav-item">
-							<button class="nav-link" type="button" href="#">호텔</button>
-						</li>
-						<li class="nav-item">
-							<button class="nav-link" type="button" href="#">미용실</button>
-						</li>
-						<li class="nav-item">
-							<button class="nav-link" type="button" href="#">유치원</button>
-						</li>
-					</ul>
-				</div>
-				<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">	
-                    <div class="map_wrap">
-					    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
-					    <div id="menu_wrap" class="bg_white">
-					        <div class="option">
-					            <div>
-			                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
-			                    <button type="submit">검색하기</button> 
-					            </div>
-					        </div>
-					        <hr>
-					        <ul id="placesList"></ul>
-					        <div id="pagination"></div>
-					    </div>
+    <!-- herder s -->
+    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    <!-- header e -->
+    <div class="totalContent">
+	    <div class="content">
+	        <div class="container">
+	            <div class="row">
+	            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+	                    <ul class="nav flex-column nav-pills me-3">
+	                    	<li class="nav-item">
+								<button class="nav-link active" type="button" aria-current="page" href="#">병원</button>
+							</li>
+							<li class="nav-item">
+								<button class="nav-link" type="button" href="#">호텔</button>
+							</li>
+							<li class="nav-item">
+								<button class="nav-link" type="button" href="#">미용실</button>
+							</li>
+							<li class="nav-item">
+								<button class="nav-link" type="button" href="#">유치원</button>
+							</li>
+						</ul>
 					</div>
-					<br>
-		        	<table class="table table-striped table-hover">
-						<thead>
-							<tr>
-								<th scope="col">#</th>
-								<th scope="col">상호명</th>
-								<th scope="col">위치</th>
-								<th scope="col">전화번호</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">1</th>
-								<td>로우앤슬로우</td>
-								<td>서울 용산구 보광로 126</td>
-								<td>02-793-2268</td>
-								<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
-							</tr>
-							<tr>
-								<th scope="row">2</th>
-								<td>바토스 이태원점</td>
-								<td>서울 용산구 이태원로 15길 1</td>
-								<td>02-797-8226</td>
-								<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
-							</tr>
-							<tr>
-								<th scope="row">3</th>
-								<td>명동교자 이태원점</td>
-								<td>서울 용산구 녹사평대로 136</td>
-								<td>02-790-7300</td>
-								<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-						<div class="offcanvas-header">
-							<h5 class="offcanvas-title" style="font-size: 20px; margin-left: 35%"><b>플레이스 예약</b></h5>
-							<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">	
+	                    <div class="map_wrap">
+						    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
+						    <div id="menu_wrap" class="bg_white">
+						        <div class="option">
+						            <div>
+				                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
+				                    <button type="submit">검색하기</button> 
+						            </div>
+						        </div>
+						        <hr>
+						        <ul id="placesList"></ul>
+						        <div id="pagination"></div>
+						    </div>
 						</div>
 						<br>
-						<div class="offcanvas-body">
-							<div class="row">
-								<div class="col-3">
-									<p>고객명</p>
-								</div>
-								<div class="col-9">
-									<input class="form-control" type="text" id="name" name="name">
-								</div>
+			        	<table class="table table-striped table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">상호명</th>
+									<th scope="col">위치</th>
+									<th scope="col">전화번호</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>로우앤슬로우</td>
+									<td>서울 용산구 보광로 126</td>
+									<td>02-793-2268</td>
+									<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>바토스 이태원점</td>
+									<td>서울 용산구 이태원로 15길 1</td>
+									<td>02-797-8226</td>
+									<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>명동교자 이태원점</td>
+									<td>서울 용산구 녹사평대로 136</td>
+									<td>02-790-7300</td>
+									<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+							<div class="offcanvas-header">
+								<h5 class="offcanvas-title" style="font-size: 20px; margin-left: 35%"><b>플레이스 예약</b></h5>
+								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 							</div>
-							<div class="row">
-								<div class="col-3">
-									<p>예약자명</p>
+							<br>
+							<div class="offcanvas-body">
+								<div class="row">
+									<div class="col-3">
+										<p>고객명</p>
+									</div>
+									<div class="col-9">
+										<input class="form-control" type="text" id="name" name="name">
+									</div>
 								</div>
-								<div class="col-9">
-									<input class="form-control" type="text" id="petname" name="petname">
+								<div class="row">
+									<div class="col-3">
+										<p>예약자명</p>
+									</div>
+									<div class="col-9">
+										<input class="form-control" type="text" id="petname" name="petname">
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-3">
-									<p>연락처</p>
+								<div class="row">
+									<div class="col-3">
+										<p>연락처</p>
+									</div>
+									<div class="col-9">
+										<select class="form-select" name="telecom" id="telecom" style="width: 28%; display: inline">
+											<option selected>::통신사::</option>
+											<option value="1">SKT</option>
+											<option value="2">KT</option>
+											<option value="3">LG</option>
+										</select>
+										<input class="form-control" type="text" id="phone" name="phone" placeholder="ex. 010-1234-5678" style="width: 70%; display: inline">
+									</div>
 								</div>
-								<div class="col-9">
-									<select class="form-select" name="telecom" id="telecom" style="width: 28%; display: inline">
-										<option selected>::통신사::</option>
-										<option value="1">SKT</option>
-										<option value="2">KT</option>
-										<option value="3">LG</option>
-									</select>
-									<input class="form-control" type="text" id="phone" name="phone" placeholder="ex. 010-1234-5678" style="width: 70%; display: inline">
+								<div class="row">
+									<div class="col-3">
+										<p>방문 목적</p>
+									</div>
+									<div class="col-9">
+										<input class="form-control" type="text" id="purpose" name="purpose" placeholder="간략하게 적어주세요.">
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-3">
-									<p>방문 목적</p>
+								<div class="row">
+									<div class="col-3">
+										<p>예약 날짜</p>
+									</div>
+									<div class="col-9">
+										<input class="form-control" type="datetime-local" id="hopedate" name="hopedate">
+									</div>
 								</div>
-								<div class="col-9">
-									<input class="form-control" type="text" id="purpose" name="purpose" placeholder="간략하게 적어주세요.">
+								<div class="row">
+									<div class="col-3">
+										<p>요청사항</p>
+									</div>
+									<div class="col-9">
+										<input class="form-control" type="text" placeholder="간략하게 적어주세요.">
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-3">
-									<p>예약 날짜</p>
+								<div class="gobooking">
+									<a href="reservationPage.html">
+										<button class="btn btn-secondary" type="button" id="bookingbtn">예약하기</button>
+									</a>
 								</div>
-								<div class="col-9">
-									<input class="form-control" type="datetime-local" id="hopedate" name="hopedate">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-3">
-									<p>요청사항</p>
-								</div>
-								<div class="col-9">
-									<input class="form-control" type="text" placeholder="간략하게 적어주세요.">
-								</div>
-							</div>
-							<div class="gobooking">
-								<a href="reservationPage.html">
-									<button class="btn btn-secondary" type="button" id="bookingbtn">예약하기</button>
-								</a>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-        </div>
+	        </div>
+	    </div>
     </div>
+    <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <!-- footer e -->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/resources/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -308,6 +262,7 @@
     <script src="/resources/js/navigation.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=fd23c44e522eb4a174fd81bfe4833f36&libraries=services"></script>
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     
     <script type="text/javascript">
     

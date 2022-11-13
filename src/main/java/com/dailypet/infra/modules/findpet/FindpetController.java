@@ -9,19 +9,19 @@ public class FindpetController {
 	
 	@RequestMapping(value = "findpetList")
 	public String findpetList() throws Exception {
-		return "infra/findpet/findpetList";
+		return "infra/findpet/user/findpetList";
 	}
 	@RequestMapping(value = "findpetView")
 	public String findpetView() throws Exception {
-		return "infra/findpet/findpetView";
+		return "infra/findpet/user/findpetView";
 	}
 	@RequestMapping(value = "findpetMod")
 	public String findpetMod() throws Exception {
-		return "infra/findpet/findpetMod";
+		return "infra/findpet/user/findpetMod";
 	}
 	@RequestMapping(value = "findpetSearchForm")
 	public String findpetSearchForm() throws Exception {
-		return "infra/findpet/findpetSearchForm";
+		return "infra/findpet/user/findpetSearchForm";
 	}
 	
 	

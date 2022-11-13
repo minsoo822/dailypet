@@ -11,7 +11,7 @@
 
 <head>
 	<!-- meta,link s -->
-    <%@include file="../../../common/xdmin/include/head.jsp"%>
+    <%@include file="../../common/xdmin/include/head.jsp"%>
     <!-- meta,link e -->
     <title></title>
     <style type="text/css">
@@ -22,16 +22,16 @@
 <body>
 	<form method="post" id="">
     <!-- herder s -->
-    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    <%@include file="../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
    
     
     <!-- footer s -->
-    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <%@include file="../../common/xdmin/include/footer.jsp"%>
     <!-- footer e -->
     </form>
     <!-- footScript s -->
-    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <%@include file="../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
 </body>
 

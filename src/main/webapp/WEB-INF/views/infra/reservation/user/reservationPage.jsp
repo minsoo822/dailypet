@@ -4,24 +4,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
-    <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>나의 예약 정보</title>
-    <!-- Bootstrap -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
-    <!-- Style -->
-    <link href="/resources/css/style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<title>나의 예약 정보</title>
+    <%@include file="../../../common/xdmin/include/head.jsp"%>
 </head>
 
 <style type="text/css">
@@ -30,11 +18,17 @@
 		color: black;
 	}
 	
-	.form-select {
-		height: 50px;
-		font-size: 13px;
-		text-align: center;
-		border: 1px solid #e2dcdb;
+	.container2 {
+		display: flex;
+		justify-content : center;
+	}
+	
+	.bg-light {
+		width: 1000px;
+		background-color: #f8f9fa !important;
+	}
+	.buttongroup {
+		margin-top: 20px;
 	}
 	
 	.form-control, .form-select {
@@ -65,88 +59,140 @@
     	color: #f3f0eb;
     	cursor: pointer;
 	}
+	.btnDelete {
+		border: 1px solid #efefef;
+    	background: #CC3333;
+    	color: #f3f0eb;
+    	text-align: center;
+    	width: 130px;
+    	height: 50px;
+    	border-radius: 10px;
+    	font-size: 13pt;
+    	font-weight: bold;
+	}
 </style>
 
 <body>
-    <!-- herder s -->
+    <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-	<div class="totalContent">
-	    <div class="content">
-	        <div class="container">
-	        	<div class="bg-light pinside30">
-				    <div class="row">
-				        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				            <h1><b>나의 예약 정보</b></h1>
-				            <!-- <p>Please complete the form below. We'll do everything we can to respond to you as quickly as possible.</p> -->
-				            <form>
+    <form id="form" name="reserform" method="post">
+    	<input type="hidden" id="ifrsSeq">
+		<div class="totalContent">
+		    <div class="content">
+		        <div class="container2">
+		        	<div class="bg-light pinside30">
+					    <div class="row">
+					        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					            <h1><b>나의 예약 정보</b></h1>
 				                <div class="row">
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="name">고객명</label>
+				                            <label class="control-label" for="ifmmName">고객명</label>
 			                                <p>여기에</p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="petname">예약자명</label>
+				                            <label class="control-label" for="ifamName">예약자명</label>
 			                                <p>value값을</p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="phone">연락처</label><br>
-			                                <select class="form-select" name="telecom" id="telecom" style="width: 22%; display: inline">
-												<option selected>::통신사::</option>
-												<option value="1">SKT</option>
-												<option value="2">KT</option>
-												<option value="3">LG</option>
-											</select>
+				                            <label class="control-label" for="ifmmPhone">연락처</label><br>
 											<p style="width: 77%; display: inline">불러</p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="purpose">예약 목적</label>
-			                                <p>옵니다</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				                        <div class="form-group">
 				                            <label class="control-label" for="textarea">예약 희망 날짜</label>
-				                            <input class="form-control" type="datetime-local" id="reserdate" name="reserdate"></textarea>
+				                            <p>옵니다</p>
 				                        </div>
 				                    </div>
-				                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				                    <div class="col-md-6">
+				                        <div class="form-group has-feedback">
+				                            <label class="control-label" for="ifrsLocation">위치</label>
+			                                <p>~</p>
+				                        </div>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <div class="form-group has-feedback">
+				                            <label class="control-label" for="ifrsPlace">예약 장소</label>
+			                                <p>!</p>
+				                        </div>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <div class="form-group has-feedback">
+				                            <label class="control-label" for="ifrsPurpose">예약 목적</label>
+			                                <p>얍</p>
+				                        </div>
+				                    </div>
+				                    <div class="col-md-6">
 				                        <div class="form-group">
-				                            <label class="control-label" for="textarea">요청사항</label>
+				                            <label class="control-label" for="ifrsRequest">요청사항</label>
 				                            <p>짜잔</p>
 				                        </div>
 				                    </div>
 				                    <div class="buttongroup">
-				                    	<div class="col-md-2" id="cbtn">
-					                        <div class="form-group">
-					                        	<a href="/reservation/reservationForm">
-					                        		<button type="button" id="" class="btn changebtn">내용 변경</button>
-					                        	</a>
-					                        </div>
+					                    <div class="row justify-content-center">
+					                    	<!-- 예약 삭제 버튼(모달까지) -->
+					                    	<div class="col-md-2" id="cbtn">
+						                        <div class="form-group">
+					                        		<button type="button" class="btn btnDelete" data-toggle="modal" data-target="#deleteModal">예약 취소</button>
+						                        </div>
+						                    </div>
+						                    <div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+												<div class="modal-dialog">
+													<div class="modal-content">
+														<div class="modal-header">
+															<h5 class="modal-title" id="deleteModalLabel">예약 취소</h5>
+															<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+														</div>
+														<div class="modal-body">입력한 데이터를 모두 삭제하시겠습니까?</div>
+														<div class="modal-footer">
+															<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+															<button type="button" class="btn btn-secondary" id="btnDel">삭제</button>
+														</div>
+													</div>
+												</div>
+											</div>
+											<!-- 예약 삭제 버튼(모달까지) -->
+					                    	<div class="col-md-2" id="cbtn">
+						                        <div class="form-group">
+						                        	<a href="/reservation/reservationForm">
+						                        		<button type="button" id="" class="btn changebtn">내용 변경</button>
+						                        	</a>
+						                        </div>
+						                    </div>
 					                    </div>
-				                    </div>
+									</div>
 				                </div>
-				            </form>
-				        </div>
-				    </div>
-				</div>
-	        </div>
+					        </div>
+					    </div>
+					</div>
+		        </div>
+		    </div>
 	    </div>
-    </div>
+	</form>
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/resources/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/menumaker.js"></script>
-    <script src="/resources/js/navigation.js" type="text/javascript"></script>
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    
+    <script type="text/javascript">
+    	
+	    var ifrsSeq = $("#ifrsSeq");
+		
+		var form = $("form[name=reserform]");
+//		var formVo = $("form[name=formVo]");
+		
+    	var goUrlDele = "/reservation/reserDele";
+    
+	    /* $("#btnDel").on("click", function(){
+			formVo.attr("action", goUrlDele).submit();
+		}); */
+    
+    </script>
+    
 </body>
 
 </html>

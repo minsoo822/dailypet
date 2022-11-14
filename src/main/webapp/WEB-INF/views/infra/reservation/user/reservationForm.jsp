@@ -8,21 +8,32 @@
 
 <html>
 <head>
-    <%@include file="../../../common/xdmin/include/head.jsp"%>
-
+    <title>예약 수정</title>
+	<%@include file="../../../common/xdmin/include/head.jsp"%>
+    
 	<style type="text/css">
 	
 	.form-control {
 		color: black;
 	}
 	
+	.container2 {
+		display: flex;
+		justify-content : center;
+	}
+	
+	.bg-light {
+		width: 1000px;
+		background-color: #f8f9fa !important; 
+	}
+/* 	
 	.form-select {
 		height: 50px;
 		font-size: 13px;
 		text-align: center;
 		border: 1px solid #e2dcdb;
 	}
-	
+ */	
 	.form-control, .form-select {
 		border-radius: 6px;
 	}
@@ -38,7 +49,7 @@
     	background: #f3f0eb;
     	color: #372d2b;
     	text-align: center;
-    	width: 70px;
+    	width: 100px;
     	height: 50px;
     	border-radius: 10px;
     	font-size: 13pt;
@@ -46,11 +57,11 @@
 	}
 		
 	.okBtn {
-    	border: 1px solid #efefef;
+    	border: 1px solid #372d2b;
     	background: #f3f0eb;
     	color: #372d2b;
     	text-align: center;
-    	width: 100px;
+    	width: 130px;
     	height: 50px;
     	border-radius: 10px;
     	font-size: 13pt;
@@ -61,7 +72,7 @@
     	color: #f3f0eb;
     	cursor: pointer;
     }
-    .cancleBtn {
+    .cancelBtn {
     	border: 1px solid #efefef;
     	background: #f3f0eb;
     	color: #372d2b;
@@ -81,14 +92,14 @@
 
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     
-    <form method="post" id="reserForm">
-	    <div class="totalContent">
-		    <div class="content">
-		        <div class="container">
-		        	<div class="bg-light pinside30">
-					    <div class="row">
-					        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					            <h1><b>나의 예약 정보</b></h1>
+    <div class="totalContent">
+	    <div class="content">
+	        <div class="container2">
+	        	<div class="bg-light pinside30">
+				    <div class="row">
+				        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				            <h1><b>나의 예약 정보</b></h1>
+				            <form method="post" id="reserForm">
 				                <div class="row">
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
@@ -105,13 +116,31 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="phone">연락처</label><br>
-			                                <select class="form-select" name="ifmmTelecom" id="ifmmTelecom" style="width: 22%; display: inline">
+			                                <!-- <select class="form-select" name="ifmmTelecom" id="ifmmTelecom" style="width: 15%; display: inline">
 												<option selected>::통신사::</option>
 												<option value="1">SKT</option>
 												<option value="2">KT</option>
 												<option value="3">LG</option>
-											</select>
-											<input class="form-control" type="text" id="ifmmPhone" name="ifmmPhone" style="width: 77%; display: inline">
+											</select> -->
+											<input class="form-control" type="text" id="ifmmPhone" name="ifmmPhone">
+				                        </div>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <div class="form-group">
+				                            <label class="control-label" for="textarea">예약 희망 날짜</label>
+				                            <input class="form-control" type="datetime-local" id="ifrsHopeDate" name="ifrsHopeDate">
+				                        </div>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <div class="form-group has-feedback">
+				                            <label class="control-label" for="ifrsLocation">위치</label>
+			                                <input type="text" class="form-control" id="ifrsLocation" name="ifrsLocation" readonly>
+				                        </div>
+				                    </div>
+				                    <div class="col-md-6">
+				                        <div class="form-group has-feedback">
+				                            <label class="control-label" for="ifrsPlace">예약 장소</label>
+			                                <input type="text" class="form-control" id="ifrsPlace" name="ifrsPlace" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
@@ -120,13 +149,7 @@
 			                                <input type="text" class="form-control" id="ifrsPurpose" name="ifrsPurpose">
 				                        </div>
 				                    </div>
-				                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				                        <div class="form-group">
-				                            <label class="control-label" for="textarea">예약 희망 날짜</label>
-				                            <input class="form-control" type="datetime-local" id="ifrsHopeDate" name="ifrsHopeDate"></textarea>
-				                        </div>
-				                    </div>
-				                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				                    <div class="col-md-6">
 				                        <div class="form-group">
 				                            <label class="control-label" for="textarea">요청사항</label>
 				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3" placeholder=""></textarea>
@@ -140,22 +163,22 @@
 					                        	</a>
 					                        </div>
 					                    </div>
-					                    <div class="col-md-1" id="cbtn">
+					                    <div class="col-md-2" id="cbtn">
 					                        <div class="form-group">
 					                        	<a href="reservationPage">
-					                            	<button type="button" id="btnReturn" class="btn cancleBtn">취소</button>
+					                            	<button type="button" id="btnReturn" class="btn cancelBtn">취소</button>
 					                            </a>
 					                        </div>
 					                    </div>
 				                    </div>
 				                </div>
-					        </div>
-					    </div>
-					</div>
-		        </div>
-		    </div>
+							</form>
+				        </div>
+				    </div>
+				</div>
+	        </div>
 	    </div>
-    </form>
+    </div>
     
   	<%@include file="../../../common/xdmin/include/footer.jsp"%>
     

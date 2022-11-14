@@ -115,7 +115,7 @@
 
 <%@include file="../../../common/xdmin/include/header.jsp"%>
 
-	<form method="post" id="mainForm">
+<form method="post" id="mainForm">
 
 	<input type="hidden" name="ifmmSeq" value="${ sessSeq}">
     
@@ -148,7 +148,7 @@
                  </a>
              </div>
              <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                 <a href="#scroll_move4">
+               	<a href="#scroll_move4">
                   <div class="outline pinside30 text-center mb30">
                       <div class="mb30"> <img src="/resources/images/creative-ideas.png" class="" alt="Interior Design Website Templates Free Download"> </div>
                       <div class="">
@@ -156,10 +156,10 @@
                           <p>매일 달라지는 반려동물의 모습을 담아보세요.</p>
                       </div>
                   </div>
-                 </a>
-             </div>
-         </div>
-     </div>
+               	</a>
+            </div>
+        </div>
+    </div>
     <div class="space-medium">
         <div class="container">
             <div class="row">
@@ -256,8 +256,9 @@
             </div>
         </div>
     </div>
- 	<%@include file="../../../common/xdmin/include/footer.jsp"%>
 </form>
+
+<%@include file="../../../common/xdmin/include/footer.jsp"%>
 
 <%@include file="../../../common/xdmin/include/footScript.jsp"%>
 

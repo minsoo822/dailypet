@@ -80,6 +80,9 @@
     	margin-bottom: 5px;
     }
     </style>
+    
+    <title>마이페이지 수정</title>
+    
 </head>
 
 <body>

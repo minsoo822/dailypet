@@ -220,7 +220,7 @@
 	            	<div class="col" style="display: flex; justify-content: flex-end; margin-right: 20px;">
 	            		<div class="btn-group">
 	            		<!-- <button type="button" class="Searchbtn">버튼</button> -->
-	            		<button type="button" class="Searchbtn">수정하기</button>
+	            		<button type="button" class="Searchbtn" id="modBtn">수정하기</button>
 	            		</div>
 	            	</div>
 	            </div>
@@ -233,6 +233,15 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    
+    <script type="text/javascript">
+    	var goUrlMod = "/member/mypageMod"
+    
+	    $("#modBtn").on("click", function(){
+	    	$(location).attr("href", goUrlMod).submit();
+		});
+    	
+    </script>
 </body>
 
 </html>

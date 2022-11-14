@@ -21,7 +21,7 @@
 			,data: {}
 			,success: function(response) {
 				if(response.rt == "success") {
-					location.href = "/member/login";
+					location.href = "/member/login";`
 				} else {
 					alert("다시 시도해주세요.")
 				}

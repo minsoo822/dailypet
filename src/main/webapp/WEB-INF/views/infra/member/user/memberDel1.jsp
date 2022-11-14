@@ -1,8 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,15 +15,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>íìíí´</title>
+    <title>회원탈퇴</title>
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
     <!-- Style -->
-    <link href="../css/style.css" rel="stylesheet">
+    <link href="/resources/css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -80,7 +82,7 @@
 	    }
 	    
 	    .btn{
-	    	border: 1px solid #efefef;
+	    	border: 1px solid #372d2b;
 	    	background: #f3f0eb;
 	    	color: #372d2b;
 	    	text-align: center;
@@ -99,280 +101,175 @@
 </head>
 
 <body>
-    <div class="header navbar-fixed-top">
-        <div class="container">
-            <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="../index.html"><img src="../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		            <div class="navigation">
-		                <div id="navigation">
-		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">í</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a>
-		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">ì êµ­ ì ê¸°ëë¬¼</a></li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">ë´ ì£¼ë³ í¸ììì¤</a>
-		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">í¸ììì¤ ì°¾ê¸°</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">ë´ ìì½ ì ë³´</a></li>
-		                            </ul>
-		                        </li>
-	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">ë°ë ¤ëë¬¼ ì¼ê¸°</a></li>
-					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-					              </ul>
-					          </li> -->
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">ì¡ììì²©</a>
-	<!-- 						ë©ë´êµ¬íx ì¼ë¨ ë§í¬ë§ ìì±						
-								<li><a href="../diaryMypage.html" title="Contact Us">ì¡ììì²©</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">ì¼ê¸° ìì¸</a></li>
-								<li><a href="../diaryForm.html" title="Projects">ì¼ê¸° ì°ê¸°</a></li>
-	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">í¼ë§</a> </li> -->
-	                            <li><a href="error.html" title="Error">ë¡ê·¸ì¸</a> </li>
-	                            <li><a href="error.html" title="Error">íìê°ì</a> </li>
-	                        </ul>
-	                    </div> 
-	                </div>
-	            </div>
-	        </div>
-        </div>
-    </div>
-   <div class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                    <!-- <h1 class="hero-title"><strong>Interior-exterior</strong><br>
-          Free Webstite template</h1>
-                    <a href="#" class="btn btn-white">REad more <i class="fa fa-plus"></i></a>  -->&nbsp;</div>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="bg-light pinside30">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <h1>íìíí´</h1>
-                                <p>#Daily Pet ë ì´ì©í´ì£¼ì¸ì.</p>
-                                <br>
-                                <div class="row div1 reg">
-                               		<div class="col-1 wid"> 	
-                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
-                               			<br>
-                               			<span>íí´ì½ê´</span>
-                               		</div>
-                               		<div class="col-1 top">
-                               			<i class="fa-solid fa-angle-right"></i>
-                               		</div>
-                               		<div class="col-1 wid">
-                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
-                               			<br>
-                               			<span>íí´ìë£</span>
-                               		</div> 
-                               	</div>
-                            </div>
-                        </div>
-                        <br>
-                        <br>
-                        <hr>
-                        <h3>[íì] ì½ê´ì í¨ë ¥ ë° ê°ì </h3>
-                        <hr>
-                   		<div id="mydiv">
-							ì  1 ì¥ ì´ ì¹<br>
-								ì  1 ì¡° (ëª©ì )<br>
-									ì´ ì½ê´ì {COMPANY_NAME}(ì´í "ì¬ì´í¸"ë¼ í©ëë¤)ìì ì ê³µíë ì¸í°ë·ìë¹ì¤(ì´í "ìë¹ì¤"ë¼ í©ëë¤)ì ì´ì© ì¡°ê±´ ë° ì ì°¨ì ê´í ê¸°ë³¸ì ì¸ ì¬í­ì ê·ì í¨ì ëª©ì ì¼ë¡ í©ëë¤.<br>
-								ì  2 ì¡° (ì½ê´ì í¨ë ¥ ë° ë³ê²½)<br>
-									â  ì´ ì½ê´ì ìë¹ì¤ íë©´ì´ë ê¸°íì ë°©ë²ì¼ë¡ ì´ì©ê³ ê°ìê² ê³µì§í¨ì¼ë¡ì¨ í¨ë ¥ì ë°ìí©ëë¤.<br>
-									â¡ ì¬ì´í¸ë ì´ ì½ê´ì ë´ì©ì ë³ê²½í  ì ìì¼ë©°, ë³ê²½ë ì½ê´ì ì 1í­ê³¼ ê°ì ë°©ë²ì¼ë¡ ê³µì§ ëë íµì§í¨ì¼ë¡ì¨ í¨ë ¥ì ë°ìí©ëë¤.<br>
-								ì  3 ì¡° (ì©ì´ì ì ì)<br>
-									ì´ ì½ê´ìì ì¬ì©íë ì©ì´ì ì ìë ë¤ìê³¼ ê°ìµëë¤.<br>
-									â  íì : ì¬ì´í¸ì ìë¹ì¤ ì´ì©ê³ì½ì ì²´ê²°íê±°ë ì´ì©ì ìì´ë(ID)ë¥¼ ë¶ì¬ë°ì ê°ì¸ ëë ë¨ì²´ë¥¼ ë§í©ëë¤.<br>
-									â¡ ì ì²­ì : íìê°ìì ì ì²­íë ê°ì¸ ëë ë¨ì²´ë¥¼ ë§í©ëë¤.<br>
-									â¢ ìì´ë(ID) : íìì ìë³ê³¼ ìë¹ì¤ ì´ì©ì ìíì¬ íìì´ ì íê³  ì¬ì´í¸ê° ì¹ì¸íë ë¬¸ìì ì«ìì ì¡°í©ì ë§í©ëë¤.<br>
-									â£ ë¹ë°ë²í¸ : íìì´ ë¶ì¬ ë°ì ìì´ë(ID)ì ì¼ì¹ë íììì íì¸íê³ , íì ìì ì ë¹ë°ì ë³´í¸íê¸° ìíì¬ íìì´ ì í ë¬¸ìì ì«ìì ì¡°í©ì ë§í©ëë¤.<br>
-									â¤ í´ì§ : ì¬ì´í¸ ëë íìì´ ìë¹ì¤ ì´ì©ê³ì½ì ì·¨ìíë ê²ì ë§í©ëë¤.<br>
-							ì  2 ì¥ ìë¹ì¤ ì´ì©ê³ì½<br>
-								ì  4 ì¡° (ì´ì©ê³ì½ì ì±ë¦½)<br>
-									â  ì´ì©ì½ê´ íë¨ì ëì ë²í¼ì ëë¥´ë©´ ì´ ì½ê´ì ëìíë ê²ì¼ë¡ ê°ì£¼ë©ëë¤.<br>
-									â¡ ì´ì©ê³ì½ì ìë¹ì¤ ì´ì©í¬ë§ìì ì´ì©ì½ê´ ëì í ì´ì© ì ì²­ì ëíì¬ ì¬ì´í¸ê° ì¹ëí¨ì¼ë¡ì¨ ì±ë¦½í©ëë¤.<br>
-								ì  5 ì¡° (ì´ì©ì ì²­)<br>
-									â  ì ì²­ìê° ë³¸ ìë¹ì¤ë¥¼ ì´ì©íê¸° ìí´ìë ì¬ì´í¸ ìì ì ê°ìì ì²­ ìììì ìêµ¬íë ì´ì©ì ì ë³´ë¥¼ ê¸°ë¡íì¬ ì ì¶í´ì¼ í©ëë¤.<br>
-									â¡ ê°ìì ì²­ ììì ê¸°ì¬íë ëª¨ë  ì´ì©ì ì ë³´ë ëª¨ë ì¤ì  ë°ì´í°ì¸ ê²ì¼ë¡ ê°ì£¼ë©ëë¤. ì¤ëªì´ë ì¤ì  ì ë³´ë¥¼ ìë ¥íì§ ìì ì¬ì©ìë ë²ì ì¸ ë³´í¸ë¥¼ ë°ì ì ìì¼ë©°, ìë¹ì¤ì ì íì ë°ì ì ììµëë¤.<br>
-								ì  6 ì¡° (ì´ì©ì ì²­ì ì¹ë)<br>
-									â  ì¬ì´í¸ë ì ì²­ìì ëíì¬ ì 2í­, ì 3í­ì ê²½ì°ë¥¼ ìì¸ë¡ íì¬ ìë¹ì¤ ì´ì©ì ì²­ì ì¹ëí©ëë¤.<br>
-									â¡ ì¬ì´í¸ë ë¤ìì í´ë¹íë ê²½ì°ì ê·¸ ì ì²­ì ëí ì¹ë ì íì¬ì ê° í´ìë  ëê¹ì§ ì¹ëì ì ë³´í  ì ììµëë¤.<br>
-										ê°. ìë¹ì¤ ê´ë ¨ ì¤ë¹ì ì¬ì ê° ìë ê²½ì°<br>
-										ë. ê¸°ì ì ì§ì¥ì´ ìë ê²½ì°<br>
-										ë¤. ê¸°í ì¬ì´í¸ê° íìíë¤ê³  ì¸ì ëë ê²½ì°<br>
-									â¢ ì¬ì´í¸ë ì ì²­ìê° ë¤ìì í´ë¹íë ê²½ì°ìë ì¹ëì ê±°ë¶í  ì ììµëë¤.<br>
-										ê°. ë¤ë¥¸ ê°ì¸(ì¬ì´í¸)ì ëªìë¥¼ ì¬ì©íì¬ ì ì²­í ê²½ì°<br>
-										ë. ì´ì©ì ì ë³´ë¥¼ íìë¡ ê¸°ì¬íì¬ ì ì²­í ê²½ì°<br>
-										ë¤. ì¬íì ìëì§ì ëë ë¯¸íììì ì í´í  ëª©ì ì¼ë¡ ì ì²­í ê²½ì°<br>
-										ë¼. ê¸°í ì¬ì´í¸ ìì ì ì´ì©ì ì²­ìê±´ì ì¶©ì¡±íì§ ëª»íë ê²½ì°<br>
-								ì  7 ì¡° (ì´ì©ìì ë³´ì ë³ê²½)<br>
-									íìì ì´ì© ì ì²­ìì ê¸°ì¬íë íìì ë³´ê° ë³ê²½ëìì ê²½ì°ìë, ì¨ë¼ì¸ì¼ë¡ ìì íì¬ì¼ íë©° ë³ê²½íì§ ììì¼ë¡ ì¸íì¬ ë°ìëë ëª¨ë  ë¬¸ì ì ì±ìì íììê² ììµëë¤.<br>
-							ì  3 ì¥ ê³ì½ ë¹ì¬ìì ìë¬´<br>
-								ì  8 ì¡° (ì¬ì´í¸ì ìë¬´)<br>
-								â  ì¬ì´í¸ë íììê² ê° í¸ì ìë¹ì¤ë¥¼ ì ê³µí©ëë¤.<br>
-										ê°. ì ê·ìë¹ì¤ì ëë©ì¸ ì ë³´ì ëí ë´ì¤ë í° ë°ì¡<br>
-										ë. ì¶ê° ëë©ì¸ ë±ë¡ì ê°ì¸ì ë³´ ìë ìë ¥<br>
-										ë¤. ëë©ì¸ ë±ë¡, ê´ë¦¬ë¥¼ ìí ê°ì¢ ë¶ê°ìë¹ì¤<br>
-									â¡ ì¬ì´í¸ë ìë¹ì¤ ì ê³µê³¼ ê´ë ¨íì¬ ì·¨ëí íìì ê°ì¸ì ë³´ë¥¼ íìì ëììì´ íì¸ìê² ëì¤, ê³µê° ëë ë°°í¬í  ì ìì¼ë©°, ìë¹ì¤ê´ë ¨ ìë¬´ ì´ì¸ì ììì  ëª©ì ì¼ë¡ ì¬ì©í  ì ììµëë¤. ë¨, ë¤ì ê° í¸ì 1ì í´ë¹íë ê²½ì°ë ìì¸ìëë¤.<br>
-										ê°. ì ê¸°íµì ê¸°ë³¸ë² ë± ë²ë¥ ì ê·ì ì ìí´ êµ­ê°ê¸°ê´ì ìêµ¬ê° ìë ê²½ì°<br>
-										ë. ë²ì£ì ëí ìì¬ìì ëª©ì ì´ ìê±°ë ì ë³´íµì ì¤ë¦¬ ììíì ìì²­ì´ ìë ê²½ì°<br>
-										ë¤. ê¸°í ê´ê³ë²ë ¹ìì ì í ì ì°¨ì ë°ë¥¸ ìì²­ì´ ìë ê²½ì°<br>
-									â¢ ì¬ì´í¸ë ì´ ì½ê´ìì ì í ë°ì ë°ë¼ ì§ìì , ìì ì ì¼ë¡ ìë¹ì¤ë¥¼ ì ê³µí  ìë¬´ê° ììµëë¤.<br>
-								ì  9 ì¡° (íìì ìë¬´)<br>
-									â  íìì ìë¹ì¤ ì´ì© ì ë¤ì ê° í¸ì íìë¥¼ íì§ ììì¼ í©ëë¤.<br>
-										ê°. ë¤ë¥¸ íìì IDë¥¼ ë¶ì íê² ì¬ì©íë íì<br>
-										ë. ìë¹ì¤ìì ì»ì ì ë³´ë¥¼ ì¬ì´í¸ì ì¬ì ì¹ë ìì´ íìì ì´ì© ì´ì¸ì ëª©ì ì¼ë¡ ë³µì íê±°ë ì´ë¥¼ ë³ê²½, ì¶í ë° ë°©ì¡ ë±ì ì¬ì©íê±°ë íì¸ìê² ì ê³µíë íì<br>
-										ë¤. ì¬ì´í¸ì ì ìê¶, íì¸ì ì ìê¶ ë± ê¸°í ê¶ë¦¬ë¥¼ ì¹¨í´íë íì<br>
-										ë¼. ê³µê³µì§ì ë° ë¯¸íììì ìë°ëë ë´ì©ì ì ë³´, ë¬¸ì¥, ëí ë±ì íì¸ìê² ì í¬íë íì<br>
-										ë§. ë²ì£ì ê²°ë¶ëë¤ê³  ê°ê´ì ì¼ë¡ íë¨ëë íì<br>
-										ë°. ê¸°í ê´ê³ë²ë ¹ì ìë°°ëë íì<br>
-									â¡ íìì ê´ê³ë²ë ¹, ì´ ì½ê´ìì ê·ì íë ì¬í­, ìë¹ì¤ ì´ì© ìë´ ë° ì£¼ì ì¬í­ì ì¤ìíì¬ì¼ í©ëë¤.<br>
-									â¢ íìì ë´ì©ë³ë¡ ì¬ì´í¸ê° ìë¹ì¤ ê³µì§ì¬í­ì ê²ìíê±°ë ë³ëë¡ ê³µì§í ì´ì© ì í ì¬í­ì ì¤ìíì¬ì¼ í©ëë¤.<br>
-							ì  4 ì¥ ìë¹ì¤ ì ê³µ ë° ì´ì©<br>
-								ì  10 ì¡° (íì ìì´ë(ID)ì ë¹ë°ë²í¸ ê´ë¦¬ì ëí íìì ìë¬´)<br>
-									â  ìì´ë(ID)ì ë¹ë°ë²í¸ì ëí ëª¨ë  ê´ë¦¬ë íììê² ì±ìì´ ììµëë¤. íììê² ë¶ì¬ë ìì´ë(ID)ì ë¹ë°ë²í¸ì ê´ë¦¬ìí, ë¶ì ì¬ì©ì ìíì¬ ë°ìíë ëª¨ë  ê²°ê³¼ì ëí ì ì ì¸ ì±ìì íììê² ììµëë¤.<br>
-									â¡ ìì ì ìì´ë(ID)ê° ë¶ì íê² ì¬ì©ë ê²½ì° ëë ê¸°í ë³´ì ìë°ì ëíì¬, íìì ë°ëì ì¬ì´í¸ì ê·¸ ì¬ì¤ì íµë³´í´ì¼ í©ëë¤.<br>
-								ì  11 ì¡° (ìë¹ì¤ ì í ë° ì ì§)<br>
-									â  ì¬ì´í¸ë ì ì, ì¬ë³, ì²ì¬ì§ë³ ëë ì´ì ì¤íë êµ­ê°ë¹ìì¬íê° ë°ìíê±°ë ë°ìí  ì°ë ¤ê° ìë ê²½ì°ì ì ê¸°íµì ì¬ìë²ì ìí ê¸°ê°íµì  ì¬ììê° ì ê¸°íµì ìë¹ì¤ë¥¼ ì¤ì§íë ë± ê¸°í ë¶ê°í­ë ¥ì  ì¬ì ê° ìë ê²½ì°ìë ìë¹ì¤ì ì ë¶ ëë ì¼ë¶ë¥¼ ì ííê±°ë ì ì§í  ì ììµëë¤.<br>
-									â¡ ì¬ì´í¸ë ì 1í­ì ê·ì ì ìíì¬ ìë¹ì¤ì ì´ì©ì ì ííê±°ë ì ì§í  ëìë ê·¸ ì¬ì  ë° ì íê¸°ê° ë±ì ì§ì²´ìì´ íììê² ìë ¤ì¼ í©ëë¤.<br>
-							ì 5ì¥ ê³ì½ì¬í­ì ë³ê²½, í´ì§<br>
-								ì  12 ì¡° (ì ë³´ì ë³ê²½)<br>
-									íìì´ ì£¼ì, ë¹ë°ë²í¸ ë± ê³ ê°ì ë³´ë¥¼ ë³ê²½íê³ ì íë ê²½ì°ìë ííì´ì§ì íìì ë³´ ë³ê²½ ìë¹ì¤ë¥¼ ì´ì©íì¬ ë³ê²½í  ì ììµëë¤.<br>
-								ì  13 ì¡° (ê³ì½ì¬í­ì í´ì§)<br>
-									íìì ìë¹ì¤ ì´ì©ê³ì½ì í´ì§í  ì ìì¼ë©°, í´ì§í  ê²½ì°ìë ë³¸ì¸ì´ ì§ì  ìë¹ì¤ë¥¼ íµíê±°ë ì í ëë ì¨ë¼ì¸ ë±ì¼ë¡ ì¬ì´í¸ì í´ì§ì ì²­ì íì¬ì¼ í©ëë¤. ì¬ì´í¸ë í´ì§ì ì²­ì´ ì ìë ë¹ì¼ë¶í° í´ë¹ íìì ìë¹ì¤ ì´ì©ì ì íí©ëë¤. ì¬ì´í¸ë íìì´ ë¤ì ê° í­ì 1ì í´ë¹íì¬ ì´ì©ê³ì½ì í´ì§íê³ ì í  ê²½ì°ìë í´ì§ì¡°ì¹ 7ì¼ì ê¹ì§ ê·¸ ë»ì ì´ì©ê³ ê°ìê² íµì§íì¬ ìëªí  ê¸°íë¥¼ ì£¼ì´ì¼ í©ëë¤.
-									â  ì´ì©ê³ ê°ì´ ì´ì©ì í ê·ì ì ìë°íê±°ë ê·¸ ì´ì©ì í ê¸°ê° ë´ì ì í ì¬ì ë¥¼ í´ìíì§ ìë ê²½ì°<br>
-									â¡ ì ë³´íµì ì¤ë¦¬ììíê° ì´ì©í´ì§ë¥¼ ìêµ¬í ê²½ì°<br>
-									â¢ ì´ì©ê³ ê°ì´ ì ë¹í ì¬ì  ìì´ ìê²¬ì§ì ì ìíì§ ìëí ê²½ì°<br>
-									â£ íì¸ ëªìë¡ ì ì²­ì íìê±°ë ì ì²­ì ë´ì©ì íì ê¸°ì¬ ëë íììë¥ë¥¼ ì²¨ë¶íì¬ ì´ì©ê³ì½ì ì²´ê²°í ê²½ì°<br>
-									ì¬ì´í¸ë ìê¸° ê·ì ì ìíì¬ í´ì§ë ì´ì©ê³ ê°ì ëí´ìë ë³ëë¡ ì í ê¸°ê°ëì ê°ìì ì íí  ì ììµëë¤.<br>
-							ì 6ì¥ ìí´ë°°ì<br>
-								ì  14 ì¡° (ë©´ì±ì¡°í­)<br>
-									â  ì¬ì´í¸ë íìì´ ìë¹ì¤ ì ê³µì¼ë¡ë¶í° ê¸°ëëë ì´ìµì ì»ì§ ëª»íìê±°ë ìë¹ì¤ ìë£ì ëí ì·¨ì¬ì í ëë ì´ì©ì¼ë¡ ë°ìíë ìí´ ë±ì ëí´ìë ì±ìì´ ë©´ì ë©ëë¤.<br>
-									â¡ ì¬ì´í¸ë íìì ê·ì±ì¬ì ë ì 3ìì ê³ ìë¡ ì¸íì¬ ìë¹ì¤ì ì¥ì ê° ë°ìíê±°ë íìì ë°ì´í°ê° í¼ìë ê²½ì°ì ì±ìì´ ë©´ì ë©ëë¤.<br>
-									â¢ ì¬ì´í¸ë íìì´ ê²ì ëë ì ì¡í ìë£ì ë´ì©ì ëí´ìë ì±ìì´ ë©´ì ë©ëë¤.<br>
-									â£ ìíê¶ì´ ìë ëë©ì¸ì ê²½ì°, ì´ë¡ ì¸í´ ë°ìí  ìë ìë ìí´ë ë°°ìì ëí ì±ìì êµ¬ë§¤í íì ë¹ì¬ììê² ìì¼ë©°, ì¬ì´í¸ë ì´ì ëí ì¼ì²´ì ì±ìì ì§ì§ ììµëë¤.<br>
-							ì  15 ì¡° (ê´í ë²ì)<br>
-								ìë¹ì¤ì ê´ë ¨íì¬ ì¬ì´í¸ì íìê°ì ë¶ìì´ ë°ìí  ê²½ì° ì¬ì´í¸ì ë³¸ì¬ ìì¬ì§ë¥¼ ê´í íë ë²ìì ê´í ë²ìì¼ë¡ í©ëë¤.<br>
-						</div>
-						 <hr>
-						<div class="form-check right">
-						 	<input class="form-check-input" type="radio" name="agree">
-							<label class="form-check-label" for="flexRadioDefault1">ëìí©ëë¤.</label>
-						</div>
-						<br>
-						<hr>
-						<br>
-						<div class="btn-group" style="display: flex; justify-content: flex-end;">
-							<button type="button" class="btn btn-secondary">BACK <i class="fa-solid fa-angle-right"></i></button>
-							<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"style="margin-left: 15px;">NEXT <i class="fa-solid fa-angle-right"></i></button>
-						</div>
-						<!-- Modal -->
-						<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-									  ...
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Understood</button>
+	<!-- herder s -->
+    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    <!-- header e -->
+	<form method="post" id="mainForm">
+		<div class="totalContent">
+		    <div class="content">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		                    <div class="bg-light pinside30">
+		                        <div class="row">
+		                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		                                <h1>회원탈퇴</h1>
+		                                <p>#Daily Pet 또 이용해주세요.</p>
+		                                <br>
+		                                <div class="row div1 reg">
+		                               		<div class="col-1 wid"> 	
+		                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
+		                               			<br>
+		                               			<span>탈퇴약관</span>
+		                               		</div>
+		                               		<div class="col-1 top">
+		                               			<i class="fa-solid fa-angle-right"></i>
+		                               		</div>
+		                               		<div class="col-1 wid">
+		                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
+		                               			<br>
+		                               			<span>탈퇴완료</span>
+		                               		</div> 
+		                               	</div>
+		                            </div>
+		                        </div>
+		                        <br>
+		                        <br>
+		                        <hr>
+		                        <h3>[필수] 약관의 효력 및 개정</h3>
+		                        <hr>
+		                   		<div id="mydiv">
+									제 1 장 총 칙<br>
+										제 1 조 (목적)<br>
+											이 약관은 {COMPANY_NAME}(이하 "사이트"라 합니다)에서 제공하는 인터넷서비스(이하 "서비스"라 합니다)의 이용 조건 및 절차에 관한 기본적인 사항을 규정함을 목적으로 합니다.<br>
+										제 2 조 (약관의 효력 및 변경)<br>
+											① 이 약관은 서비스 화면이나 기타의 방법으로 이용고객에게 공지함으로써 효력을 발생합니다.<br>
+											② 사이트는 이 약관의 내용을 변경할 수 있으며, 변경된 약관은 제1항과 같은 방법으로 공지 또는 통지함으로써 효력을 발생합니다.<br>
+										제 3 조 (용어의 정의)<br>
+											이 약관에서 사용하는 용어의 정의는 다음과 같습니다.<br>
+											① 회원 : 사이트와 서비스 이용계약을 체결하거나 이용자 아이디(ID)를 부여받은 개인 또는 단체를 말합니다.<br>
+											② 신청자 : 회원가입을 신청하는 개인 또는 단체를 말합니다.<br>
+											③ 아이디(ID) : 회원의 식별과 서비스 이용을 위하여 회원이 정하고 사이트가 승인하는 문자와 숫자의 조합을 말합니다.<br>
+											④ 비밀번호 : 회원이 부여 받은 아이디(ID)와 일치된 회원임을 확인하고, 회원 자신의 비밀을 보호하기 위하여 회원이 정한 문자와 숫자의 조합을 말합니다.<br>
+											⑤ 해지 : 사이트 또는 회원이 서비스 이용계약을 취소하는 것을 말합니다.<br>
+									제 2 장 서비스 이용계약<br>
+										제 4 조 (이용계약의 성립)<br>
+											① 이용약관 하단의 동의 버튼을 누르면 이 약관에 동의하는 것으로 간주됩니다.<br>
+											② 이용계약은 서비스 이용희망자의 이용약관 동의 후 이용 신청에 대하여 사이트가 승낙함으로써 성립합니다.<br>
+										제 5 조 (이용신청)<br>
+											① 신청자가 본 서비스를 이용하기 위해서는 사이트 소정의 가입신청 양식에서 요구하는 이용자 정보를 기록하여 제출해야 합니다.<br>
+											② 가입신청 양식에 기재하는 모든 이용자 정보는 모두 실제 데이터인 것으로 간주됩니다. 실명이나 실제 정보를 입력하지 않은 사용자는 법적인 보호를 받을 수 없으며, 서비스의 제한을 받을 수 있습니다.<br>
+										제 6 조 (이용신청의 승낙)<br>
+											① 사이트는 신청자에 대하여 제2항, 제3항의 경우를 예외로 하여 서비스 이용신청을 승낙합니다.<br>
+											② 사이트는 다음에 해당하는 경우에 그 신청에 대한 승낙 제한사유가 해소될 때까지 승낙을 유보할 수 있습니다.<br>
+												가. 서비스 관련 설비에 여유가 없는 경우<br>
+												나. 기술상 지장이 있는 경우<br>
+												다. 기타 사이트가 필요하다고 인정되는 경우<br>
+											③ 사이트는 신청자가 다음에 해당하는 경우에는 승낙을 거부할 수 있습니다.<br>
+												가. 다른 개인(사이트)의 명의를 사용하여 신청한 경우<br>
+												나. 이용자 정보를 허위로 기재하여 신청한 경우<br>
+												다. 사회의 안녕질서 또는 미풍양속을 저해할 목적으로 신청한 경우<br>
+												라. 기타 사이트 소정의 이용신청요건을 충족하지 못하는 경우<br>
+										제 7 조 (이용자정보의 변경)<br>
+											회원은 이용 신청시에 기재했던 회원정보가 변경되었을 경우에는, 온라인으로 수정하여야 하며 변경하지 않음으로 인하여 발생되는 모든 문제의 책임은 회원에게 있습니다.<br>
+									제 3 장 계약 당사자의 의무<br>
+										제 8 조 (사이트의 의무)<br>
+										① 사이트는 회원에게 각 호의 서비스를 제공합니다.<br>
+												가. 신규서비스와 도메인 정보에 대한 뉴스레터 발송<br>
+												나. 추가 도메인 등록시 개인정보 자동 입력<br>
+												다. 도메인 등록, 관리를 위한 각종 부가서비스<br>
+											② 사이트는 서비스 제공과 관련하여 취득한 회원의 개인정보를 회원의 동의없이 타인에게 누설, 공개 또는 배포할 수 없으며, 서비스관련 업무 이외의 상업적 목적으로 사용할 수 없습니다. 단, 다음 각 호의 1에 해당하는 경우는 예외입니다.<br>
+												가. 전기통신기본법 등 법률의 규정에 의해 국가기관의 요구가 있는 경우<br>
+												나. 범죄에 대한 수사상의 목적이 있거나 정보통신윤리 위원회의 요청이 있는 경우<br>
+												다. 기타 관계법령에서 정한 절차에 따른 요청이 있는 경우<br>
+											③ 사이트는 이 약관에서 정한 바에 따라 지속적, 안정적으로 서비스를 제공할 의무가 있습니다.<br>
+										제 9 조 (회원의 의무)<br>
+											① 회원은 서비스 이용 시 다음 각 호의 행위를 하지 않아야 합니다.<br>
+												가. 다른 회원의 ID를 부정하게 사용하는 행위<br>
+												나. 서비스에서 얻은 정보를 사이트의 사전승낙 없이 회원의 이용 이외의 목적으로 복제하거나 이를 변경, 출판 및 방송 등에 사용하거나 타인에게 제공하는 행위<br>
+												다. 사이트의 저작권, 타인의 저작권 등 기타 권리를 침해하는 행위<br>
+												라. 공공질서 및 미풍양속에 위반되는 내용의 정보, 문장, 도형 등을 타인에게 유포하는 행위<br>
+												마. 범죄와 결부된다고 객관적으로 판단되는 행위<br>
+												바. 기타 관계법령에 위배되는 행위<br>
+											② 회원은 관계법령, 이 약관에서 규정하는 사항, 서비스 이용 안내 및 주의 사항을 준수하여야 합니다.<br>
+											③ 회원은 내용별로 사이트가 서비스 공지사항에 게시하거나 별도로 공지한 이용 제한 사항을 준수하여야 합니다.<br>
+									제 4 장 서비스 제공 및 이용<br>
+										제 10 조 (회원 아이디(ID)와 비밀번호 관리에 대한 회원의 의무)<br>
+											① 아이디(ID)와 비밀번호에 대한 모든 관리는 회원에게 책임이 있습니다. 회원에게 부여된 아이디(ID)와 비밀번호의 관리소홀, 부정사용에 의하여 발생하는 모든 결과에 대한 전적인 책임은 회원에게 있습니다.<br>
+											② 자신의 아이디(ID)가 부정하게 사용된 경우 또는 기타 보안 위반에 대하여, 회원은 반드시 사이트에 그 사실을 통보해야 합니다.<br>
+										제 11 조 (서비스 제한 및 정지)<br>
+											① 사이트는 전시, 사변, 천재지변 또는 이에 준하는 국가비상사태가 발생하거나 발생할 우려가 있는 경우와 전기통신사업법에 의한 기간통신 사업자가 전기통신서비스를 중지하는 등 기타 불가항력적 사유가 있는 경우에는 서비스의 전부 또는 일부를 제한하거나 정지할 수 있습니다.<br>
+											② 사이트는 제1항의 규정에 의하여 서비스의 이용을 제한하거나 정지할 때에는 그 사유 및 제한기간 등을 지체없이 회원에게 알려야 합니다.<br>
+									제5장 계약사항의 변경, 해지<br>
+										제 12 조 (정보의 변경)<br>
+											회원이 주소, 비밀번호 등 고객정보를 변경하고자 하는 경우에는 홈페이지의 회원정보 변경 서비스를 이용하여 변경할 수 있습니다.<br>
+										제 13 조 (계약사항의 해지)<br>
+											회원은 서비스 이용계약을 해지할 수 있으며, 해지할 경우에는 본인이 직접 서비스를 통하거나 전화 또는 온라인 등으로 사이트에 해지신청을 하여야 합니다. 사이트는 해지신청이 접수된 당일부터 해당 회원의 서비스 이용을 제한합니다. 사이트는 회원이 다음 각 항의 1에 해당하여 이용계약을 해지하고자 할 경우에는 해지조치 7일전까지 그 뜻을 이용고객에게 통지하여 소명할 기회를 주어야 합니다.
+											① 이용고객이 이용제한 규정을 위반하거나 그 이용제한 기간 내에 제한 사유를 해소하지 않는 경우<br>
+											② 정보통신윤리위원회가 이용해지를 요구한 경우<br>
+											③ 이용고객이 정당한 사유 없이 의견진술에 응하지 아니한 경우<br>
+											④ 타인 명의로 신청을 하였거나 신청서 내용의 허위 기재 또는 허위서류를 첨부하여 이용계약을 체결한 경우<br>
+											사이트는 상기 규정에 의하여 해지된 이용고객에 대해서는 별도로 정한 기간동안 가입을 제한할 수 있습니다.<br>
+									제6장 손해배상<br>
+										제 14 조 (면책조항)<br>
+											① 사이트는 회원이 서비스 제공으로부터 기대되는 이익을 얻지 못하였거나 서비스 자료에 대한 취사선택 또는 이용으로 발생하는 손해 등에 대해서는 책임이 면제됩니다.<br>
+											② 사이트는 회원의 귀책사유나 제3자의 고의로 인하여 서비스에 장애가 발생하거나 회원의 데이터가 훼손된 경우에 책임이 면제됩니다.<br>
+											③ 사이트는 회원이 게시 또는 전송한 자료의 내용에 대해서는 책임이 면제됩니다.<br>
+											④ 상표권이 있는 도메인의 경우, 이로 인해 발생할 수도 있는 손해나 배상에 대한 책임은 구매한 회원 당사자에게 있으며, 사이트는 이에 대한 일체의 책임을 지지 않습니다.<br>
+									제 15 조 (관할법원)<br>
+										서비스와 관련하여 사이트와 회원간에 분쟁이 발생할 경우 사이트의 본사 소재지를 관할하는 법원을 관할법원으로 합니다.<br>
+								</div>
+								 <hr>
+								<div class="form-check right">
+								 	<input class="form-check-input" type="radio" name="agree">
+									<label class="form-check-label" for="flexRadioDefault1">동의합니다.</label>
+								</div>
+								<br>
+								<hr>
+								<br>
+								<div class="btn-group" style="display: flex; justify-content: flex-end;">
+									<button type="button" class="btn btn-secondary">BACK <i class="fa-solid fa-angle-right"></i></button>
+									<button type="button" class="btn btn-primary" id="memberDel2" data-bs-toggle="modal" data-bs-target="#staticBackdrop"style="margin-left: 15px;">NEXT <i class="fa-solid fa-angle-right"></i></button>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+												<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+											  ...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+												<button type="button" class="btn btn-primary">Understood</button>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-						</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer">
-        <!-- footer-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">About us</h3>
-                        <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- social block -->
-                        <h3 class="widget-title">Our Address</h3>
-                        <p>1309 Roosevelt Wilson Lane
-                            <br> Colton, CA 92324</p>
-                    </div>
-                    <!-- /.social block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">e-mail Us</h3>
-                        <p>info@yourwebsitedomain.com</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">Call us</h3>
-                        <p>180-874-5234</p>
-                        <p>180-752-3957</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tiny-footer">
-        <!-- tiny footer block -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="copyright-content">
-                      Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.footer-->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="../js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/menumaker.js"></script>
-    <script src="../js/navigation.js" type="text/javascript"></script>
-    <script src="https://kit.fontawesome.com/d843c66cc1.js" crossorigin="anonymous"></script>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</form>   
+    <!-- footer s -->
+    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <!-- footer e -->
+    <!-- footScript s -->
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <!-- footScript e -->
     <script type="text/javascript">
+    
+
+    var form = $("#mainForm");
+    
+    $("#memberDel2").on("click", function(){
+    	form.attr("action", "/member/memberDel2").submit();
+    });
     
     </script>
     

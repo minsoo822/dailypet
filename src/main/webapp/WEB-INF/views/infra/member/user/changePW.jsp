@@ -89,8 +89,8 @@
                         <!-- widget start -->
                         <h3 class="widget-title myPage"> 마이페이지 </h3>
                         <ul class="listnone">
-                            <li><a href="#">비밀번호 변경 </a></li>
-                            <li><a href="#">회원탈퇴</a></li>
+                            <li><a href="/member/changePW">비밀번호 변경 </a></li>
+                            <li><a href="/member/memberDel1">회원탈퇴</a></li>
                         </ul>
                     </div>
                 </div>

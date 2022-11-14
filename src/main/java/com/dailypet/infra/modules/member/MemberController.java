@@ -131,23 +131,26 @@ public class MemberController {
 
 		return "infra/member/user/memberDel1";
 	}
-	
+	@RequestMapping(value = "memberDel2")
+	public String memberDel2() throws Exception {
+
+		return "infra/member/user/memberDel2";
+	}
 	@RequestMapping(value = "myPage")
 	public String myPage() throws Exception {
 
 		return "infra/member/user/mypage";
 	}
-	
 	@RequestMapping(value = "mypageMod") 
 	public String myPageMod() throws Exception {
 
 		return "infra/member/user/mypageMod";
 	}
-
 	@RequestMapping(value = "changePW")
 	public String changePW() throws Exception {
 
 		return "infra/member/user/changePW";
 	}
+	
 	
 }

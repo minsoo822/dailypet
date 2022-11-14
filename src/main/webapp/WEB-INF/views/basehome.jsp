@@ -20,10 +20,10 @@
 </head>
 
 <body>
-	<form method="post" id="">
     <!-- herder s -->
     <%@include file="../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
+	<form method="post" id="">
    
     
     <!-- footer s -->

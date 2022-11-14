@@ -168,114 +168,78 @@
 </head>
 
 <body>
-    <div class="header navbar-fixed-top">
-        <div class="container">
-            <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="/animal/home"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		            <div class="navigation">
-		                <div id="navigation">
-		                    <ul>
-		                        <li class="active"><a href="/animal/home" title="Home">홈</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
-		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
-		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
-		                            </ul>
-		                        </li>
-	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">반려동물 일기</a></li>
-					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-					              </ul>
-					          </li> -->
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">육아수첩</a>
-	<!-- 						메뉴구현x 일단 링크만 생성						
-								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
-								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
-	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
-	                            <li><a href="error.html" title="Error">로그인</a> </li>
-	                            <li><a href="error.html" title="Error">회원가입</a> </li>
-	                        </ul>
-	                    </div> 
-	                </div>
-	            </div>
-	        </div>
-        </div>
-    </div>
-    <div class="content">
-    	<div class="totalContent">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	                    <div class="bg-light pinside30">
-	                        <div class="row">
-	                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	                                <h1>회원가입</h1>
-	                                <p>#Daily Pet 회원 가입으로 다양한 서비스를 만나보세요.</p>
-	                                <br>
-	                                <div class="row div1 reg">
-	                               		<div class="col-1 wid"> 	
-	                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
-	                               			<br>
-	                               			<span>약관동의</span>
-	                               		</div>
-	                               		<div class="col-1 top">
-	                               			<i class="fa-solid fa-angle-right"></i>
-	                               		</div>
-	                               		<div class="col-1 wid">
-	                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
-	                               			<br>
-	                               			<span>정보입력</span>
-	                               		</div>
-	                               		<div class="col-1 top">
-	                               			<i class="fa-solid fa-angle-right"></i>
-	                               		</div>
-	                               		<div class="col-1 wid">
-	                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
-	                               			<br>
-	                               			<span>가입완료</span>
-	                               		</div> 
-	                               	</div>
-	                            </div>
-	                        </div>
-	                        <br>
-	                        <br>
-	                        <hr class="hr2">
-	                        <div class="mydiv">
-	                        	<br>
-	                        	<br>
-	                        	<img src="/resources/images/xdmin/done.jpg">
-	                        	<br>
-	                        	<span>#Daily Pet 회원 가입을 축하합니다.</span>
-	                        	<br>
-	                        	<span>로그인 후 #Daily Pet의 다양한 기능을 이용해보세요.</span>
-	                        </div>
-							<br>                        
-	                        <div class="mid">
-	                        	<button type="button" class="btn btnHome">홈으로</button>
-	                       		<button type="button" class="btn btnLog">로그인</button>
-	                       	</div>
-						</div>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-
-	<%@include file="../../../common/xdmin/include/footer.jsp"%>
-
-	<%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <!-- herder s -->
+    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    <!-- header e -->
+    <form method="post" id="mainForm">
+	    <div class="totalContent">
+		    <div class="content">
+		    	<div class="totalContent">
+			        <div class="container">
+			            <div class="row">
+			                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			                    <div class="bg-light pinside30">
+			                        <div class="row">
+			                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			                                <h1>회원가입</h1>
+			                                <p>#Daily Pet 회원 가입으로 다양한 서비스를 만나보세요.</p>
+			                                <br>
+			                                <div class="row div1 reg">
+			                               		<div class="col-1 wid"> 	
+			                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
+			                               			<br>
+			                               			<span>약관동의</span>
+			                               		</div>
+			                               		<div class="col-1 top">
+			                               			<i class="fa-solid fa-angle-right"></i>
+			                               		</div>
+			                               		<div class="col-1 wid">
+			                               			<span class="foot2"><i class="fa-solid fa-paw"></i></span>
+			                               			<br>
+			                               			<span>정보입력</span>
+			                               		</div>
+			                               		<div class="col-1 top">
+			                               			<i class="fa-solid fa-angle-right"></i>
+			                               		</div>
+			                               		<div class="col-1 wid">
+			                               			<span class="foot"><i class="fa-solid fa-paw"></i></span>
+			                               			<br>
+			                               			<span>가입완료</span>
+			                               		</div> 
+			                               	</div>
+			                            </div>
+			                        </div>
+			                        <br>
+			                        <br>
+			                        <hr class="hr2">
+			                        <div class="mydiv">
+			                        	<br>
+			                        	<br>
+			                        	<img src="/resources/images/xdmin/done.jpg">
+			                        	<br>
+			                        	<span>#Daily Pet 회원 가입을 축하합니다.</span>
+			                        	<br>
+			                        	<span>로그인 후 #Daily Pet의 다양한 기능을 이용해보세요.</span>
+			                        </div>
+									<br>                        
+			                        <div class="mid">
+			                        	<button type="button" class="btn btnHome">홈으로</button>
+			                       		<button type="button" class="btn btnLog">로그인</button>
+			                       	</div>
+								</div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+	</form>	
+	<!-- footer s -->
+    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <!-- footer e -->
+    <!-- footScript s -->
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <!-- footScript e -->
 </body>
 
 </html>

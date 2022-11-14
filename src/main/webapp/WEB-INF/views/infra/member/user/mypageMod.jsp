@@ -1,19 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
-
-<!DOCTYPE html>
-<html lang="ko">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <head>
+<%@include file="../../../common/xdmin/include/head.jsp"%>
+	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
     <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>ë§ì´íì´ì§ ìì </title>
+    <title>마이페이지 수정</title>
     <!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -103,34 +105,34 @@
 		            <div class="navigation">
 		                <div id="navigation">
 		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">í</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a>
+		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
+		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
 		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">ì ê¸°ëë¬¼ ì°¾ê¸°</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">ì êµ­ ì ê¸°ëë¬¼</a></li>
+		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
+		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
 		                            </ul>
 		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">ë´ ì£¼ë³ í¸ììì¤</a>
+		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
 		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">í¸ììì¤ ì°¾ê¸°</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">ë´ ìì½ ì ë³´</a></li>
+		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
+		                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
 		                            </ul>
 		                        </li>
 	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
 					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">ë°ë ¤ëë¬¼ ì¼ê¸°</a></li>
+					                  <li><a href="blog-default.html" title="Blog">반려동물 일기</a></li>
 					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
 					              </ul>
 					          </li> -->
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">ë´ ì£¼ë³ í¸ììì¤</a>
-	<!-- 						ë©ë´êµ¬íx ì¼ë¨ ë§í¬ë§ ìì±						
-								<li><a href="../diaryMypage.html" title="Contact Us">ì¡ììì²©</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">ì¼ê¸° ìì¸</a></li>
-								<li><a href="../diaryForm.html" title="Projects">ì¼ê¸° ì°ê¸°</a></li>
+					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">내 주변 편의시설</a>
+	<!-- 						메뉴구현x 일단 링크만 생성						
+								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
+								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
+								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
 	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">í¼ë§</a> </li> -->
-	                            <li><a href="error.html" title="Error">ë¡ê·¸ì¸</a> </li>
-	                            <li><a href="error.html" title="Error">íìê°ì</a> </li>
+								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
+	                            <li><a href="error.html" title="Error">로그인</a> </li>
+	                            <li><a href="error.html" title="Error">회원가입</a> </li>
 	                        </ul>
 	                    </div> 
 	                </div>
@@ -159,10 +161,10 @@
                     <div class="widget widget-categories" style="text-align: right; background: #fff;">
                         <!-- widget categories -->
                         <!-- widget start -->
-                        <h3 class="widget-title myPage"> ë§ì´íì´ì§ </h3>
+                        <h3 class="widget-title myPage"> 마이페이지 </h3>
                         <ul class="listnone">
-                            <li><a href="#">ë¹ë°ë²í¸ ë³ê²½ </a></li>
-                            <li><a href="#">íìíí´</a></li>
+                            <li><a href="#">비밀번호 변경 </a></li>
+                            <li><a href="#">회원탈퇴</a></li>
                         </ul>
                     </div>
                     <!-- /.widget categories -->
@@ -183,41 +185,41 @@
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <div class="row" >
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì´ë¦</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ìì´ë</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">아이디</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>                      	
                             </div>
                             <div class="row" >
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ëë¤ì</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">닉네임</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">í´ëí°</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">휴대폰</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>                      	
                             </div>
                             <div class="row">
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì°ë½ì²</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">연락처</div>
 								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 									<input type="text" class="form-control">
 								</div>                            	
                             </div>
                             <div class="row">
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì´ë©ì¼</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이메일</div>
 								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 									<input type="text" class="form-control">
 								</div>                            	
                             </div>
                             <div class="row">
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text">ìíì¥ì</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text">위탁장소</div>
 								<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 ge-1" style="padding-right: 0px;">
-									<input type="text" class="form-control" placeholder="ì°í¸ë²í¸">
+									<input type="text" class="form-control" placeholder="우편번호">
 								</div>
 								<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
 									<button type="button" class="Searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -229,13 +231,13 @@
                             <div class="row">
                             	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">&nbsp;</div>
 								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-									<input type="text" class="form-control" placeholder="ëë¡ëªì£¼ì">
+									<input type="text" class="form-control" placeholder="도로명주소">
 								</div>                            	
                             </div>
                             <div class="row">
                             	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">&nbsp;</div>
 								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-									<input type="text" class="form-control" placeholder="ìì¸ì£¼ì">
+									<input type="text" class="form-control" placeholder="상세주소">
 								</div>                            	
                             </div>
                             <hr>
@@ -256,34 +258,34 @@
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <div class="row" >
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì§ì¬ì´ë¦</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">집사이름</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì±ë³</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">성별</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>                      	
                             </div>
                             <div class="row" >
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì´ë¦</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ëì´</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">나이</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<input type="text" class="form-control">
 								</div>                      	
                             </div>
                             <div class="row" >
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì¹©</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">칩</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<select class="form-control">
 										<option></option>
 										<option></option>
 									</select>
 								</div>
-								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">ì ì¢</div>
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">접종</div>
 								<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 									<select class="form-control">
 										<option></option>
@@ -292,7 +294,7 @@
 								</div>                      	
                             </div>
                             <div class="row">
-                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">íì¢</div>
+                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">품종</div>
 								<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 									<input type="text" class="form-control">
 								</div>                            	
@@ -305,8 +307,8 @@
             <div class="row">
             	<div class="col" style="display: flex; justify-content: flex-end; margin-right: 20px;">
             		<div class="btn-group">
-            		<button type="button" class="otherbtn">ëª©ë¡ì¼ë¡</button>
-            		<button type="button" class="otherbtn">ì ì¥íê¸°</button>
+            		<button type="button" class="otherbtn">목록으로</button>
+            		<button type="button" class="otherbtn">저장하기</button>
             		</div>
             	</div>
             </div>
@@ -383,13 +385,13 @@
     <script src="../js/navigation.js" type="text/javascript"></script>
     <script type="text/javascript">
     
-	//ì£¼ì¸ì´ë¯¸ì§ ë¯¸ë¦¬ë³´ê¸°
+	//주인이미지 미리보기
     $("#fileM").on("change", function(e) {
 		var tmp = e.target.files[0];
 	    var img = URL.createObjectURL(tmp);
 	    $("#imageM").attr("src", img);
 	});
-  	//ë°ë ¤ëë¬¼ ì´ë¯¸ì§ ë¯¸ë¦¬ë³´ê¸°
+  	//반려동물 이미지 미리보기
     $("#fileP").on("change", function(e) {
 		var tmp = e.target.files[0];
 	    var img = URL.createObjectURL(tmp);

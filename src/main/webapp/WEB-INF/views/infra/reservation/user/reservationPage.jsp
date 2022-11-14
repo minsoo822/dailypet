@@ -49,7 +49,22 @@
 		background-color: white;
 		color: #372d2b;
 	}
-
+	.changebtn {
+		border: 1px solid #372d2b;
+    	background: #f3f0eb;
+    	color: #372d2b;
+    	text-align: center;
+    	width: 130px;
+    	height: 50px;
+    	border-radius: 10px;
+    	font-size: 13pt;
+    	font-weight: bold;
+	}
+	.changebtn:hover {
+		background: #372d2b;
+    	color: #f3f0eb;
+    	cursor: pointer;
+	}
 </style>
 
 <body>
@@ -111,8 +126,8 @@
 				                    <div class="buttongroup">
 				                    	<div class="col-md-2" id="cbtn">
 					                        <div class="form-group">
-					                        	<a href="reservationForm.html">
-					                        		<button type="button" id="changebtn" class="btn btn-default">내용 변경</button>
+					                        	<a href="/reservation/reservationForm">
+					                        		<button type="button" id="" class="btn changebtn">내용 변경</button>
 					                        	</a>
 					                        </div>
 					                    </div>

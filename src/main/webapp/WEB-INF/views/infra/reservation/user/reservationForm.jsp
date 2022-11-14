@@ -12,30 +12,66 @@
 
 	<style type="text/css">
 	
-		.form-control {
-			color: black;
-		}
-		
-		.form-select {
-			height: 50px;
-			font-size: 13px;
-			text-align: center;
-			border: 1px solid #e2dcdb;
-		}
-		
-		.form-control, .form-select {
-			border-radius: 6px;
-		}
-		
-		#cbtn {
-			margin-top: 20px;
-		}
-		
-		#btnReturn {
-			background-color: white;
-			color: #372d2b;
-		}
+	.form-control {
+		color: black;
+	}
 	
+	.form-select {
+		height: 50px;
+		font-size: 13px;
+		text-align: center;
+		border: 1px solid #e2dcdb;
+	}
+	
+	.form-control, .form-select {
+		border-radius: 6px;
+	}
+	
+	#cbtn {
+		margin-top: 20px;
+	}
+	
+	#btnReturn {
+		/* background-color: white;
+		color: #372d2b; */
+		border: 1px solid #efefef;
+    	background: #f3f0eb;
+    	color: #372d2b;
+    	text-align: center;
+    	width: 70px;
+    	height: 50px;
+    	border-radius: 10px;
+    	font-size: 13pt;
+    	font-weight: bold;
+	}
+		
+	.okBtn {
+    	border: 1px solid #efefef;
+    	background: #f3f0eb;
+    	color: #372d2b;
+    	text-align: center;
+    	width: 100px;
+    	height: 50px;
+    	border-radius: 10px;
+    	font-size: 13pt;
+    	font-weight: bold;
+    }
+    .okBtn:hover, #btnReturn:hover {
+    	background: #372d2b;
+    	color: #f3f0eb;
+    	cursor: pointer;
+    }
+    .cancleBtn {
+    	border: 1px solid #efefef;
+    	background: #f3f0eb;
+    	color: #372d2b;
+    	text-align: center;
+    	width: 50px;
+    	height: 50px;
+    	border-radius: 10px;
+    	font-size: 13pt;
+    	font-weight: bold;
+    }
 	</style>
 
 	<title>내 예약 정보</title>
@@ -100,14 +136,14 @@
 				                    	<div class="col-md-2" id="cbtn">
 					                        <div class="form-group">
 					                        	<a href="reservationPage">
-					                        		<button type="button" id="btnChange" class="btn btn-default">변경 완료</button>
+					                        		<button type="button" id="btnChange" class="btn okBtn">변경 완료</button>
 					                        	</a>
 					                        </div>
 					                    </div>
 					                    <div class="col-md-1" id="cbtn">
 					                        <div class="form-group">
 					                        	<a href="reservationPage">
-					                            	<button type="button" id="btnReturn" class="btn btn-default">취소</button>
+					                            	<button type="button" id="btnReturn" class="btn cancleBtn">취소</button>
 					                            </a>
 					                        </div>
 					                    </div>

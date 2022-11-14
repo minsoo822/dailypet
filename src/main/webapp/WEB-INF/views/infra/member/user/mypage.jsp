@@ -81,152 +81,154 @@
     <!-- herder s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <div class="totalContent">
-	    <div class="content">
-	        <div class="container" style="min-width: 1320px;">
-	            <div class="row">
-	            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	                    <div class="widget widget-categories" style="text-align: right; background: #fff;">
-	                        <!-- widget categories -->
-	                        <!-- widget start -->
-	                        <h3 class="widget-title myPage"> 마이페이지 </h3>
-	                        <ul class="listnone">
-	                            <li><a href="#">비밀번호 변경 </a></li>
-	                            <li><a href="#">회원탈퇴</a></li>
-	                        </ul>
-	                    </div>
-	                    <!-- /.widget categories -->
-	                </div>
-	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-	                    <div class="row">
-	                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-	                            <div class="post-block">
-	                                <!-- post block -->
-	                                <div class="post-img">
-	                                    <a href="#"><img src="/resources/images/findpet/ain.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
-	                                </div>
-	                                <!-- /.post block -->
-	                            </div>
-	                        </div>
-	                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-	                            <div class="row" >
-	                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										유아인
+    <form id="mypageForm" method="post">
+	    <div class="totalContent">
+		    <div class="content">
+		        <div class="container" style="min-width: 1320px;">
+		            <div class="row">
+		            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+		                    <div class="widget widget-categories" style="text-align: right; background: #fff;">
+		                        <!-- widget categories -->
+		                        <!-- widget start -->
+		                        <h3 class="widget-title myPage"> 마이페이지 </h3>
+		                        <ul class="listnone">
+		                            <li><a href="/member/changePW">비밀번호 변경 </a></li>
+		                            <li><a href="/member/memberDel1">회원탈퇴</a></li>
+		                        </ul>
+		                    </div>
+		                    <!-- /.widget categories -->
+		                </div>
+		                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+		                    <div class="row">
+		                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		                            <div class="post-block">
+		                                <!-- post block -->
+		                                <div class="post-img">
+		                                    <a href="#"><img src="/resources/images/findpet/ain.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
+		                                </div>
+		                                <!-- /.post block -->
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		                            <div class="row" >
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											유아인
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">아이디</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											ainjjang
+										</div>                      	
+		                            </div>
+		                            <div class="row" >
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">닉네임</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											uain
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">???</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											???
+										</div>                      	
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">핸드폰번호</div>
+										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+											010 - 4500 - 2482
+										</div>                            	
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">이메일</div>
+										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+											ainjjang@naver.com
+										</div>                            	
+		                            </div>
+		                            <div class="row">
+										<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text text">주소</div>
+										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ge-1 contents" style="padding-right: 0px;">
+											124-5
+										</div>
 									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">아이디</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										ainjjang
-									</div>                      	
-	                            </div>
-	                            <div class="row" >
-	                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">닉네임</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										uain
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">???</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										???
-									</div>                      	
-	                            </div>
-	                            <div class="row">
-	                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">핸드폰번호</div>
-									<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-										010 - 4500 - 2482
-									</div>                            	
-	                            </div>
-	                            <div class="row">
-	                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">이메일</div>
-									<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-										ainjjang@naver.com
-									</div>                            	
-	                            </div>
-	                            <div class="row">
-									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text text">주소</div>
-									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ge-1 contents" style="padding-right: 0px;">
-										124-5
-									</div>
-								</div>
-	                            <div class="row">
-	                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
-									<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-										강남구 대치3동 234
-									</div>                            	
-	                            </div>
-	                            <div class="row">
-	                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
-									<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-										신라호텔 스위트룸
-									</div>                            	
-	                            </div>
-	                            <hr>
-	                        </div>
-	                    </div>
-	                    <div class="row">
-	                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-	                            <div class="post-block">
-	                                <!-- post block -->
-	                                <div class="post-img" style="width: 212px; height: 250px;">
-	                                    <a href="#"><img src="/resources/images/findpet/zz.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
-	                                </div>
-	                                <!-- /.post block -->
-	                            </div>
-	                        </div>
-	                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-	                            <div class="row" >
-	                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">집사이름</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										유아인
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">성별</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										남아
-									</div>                      	
-	                            </div>
-	                            <div class="row" >
-	                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										삐약이
-									</div>
-									<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">나이</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-										1살
-									</div>                      	
-	                            </div>
-	                            <div class="row">
-	                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">품종</div>
-									<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-										뼝아리
-									</div>                            	
-	                            </div>
-	                            <div class="row">
-	                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">칩</div>
-									<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-										칩
-									</div>                            	
-	                            </div>
-	                            <div class="row">
-	                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">접종</div>
-									<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-										접종
-									</div>                            	
-	                            </div>
-	                            <hr>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="row">
-	            	<div class="col" style="display: flex; justify-content: flex-end; margin-right: 20px;">
-	            		<div class="btn-group">
-	            		<!-- <button type="button" class="Searchbtn">버튼</button> -->
-	            		<button type="button" class="Searchbtn" id="modBtn">수정하기</button>
-	            		</div>
-	            	</div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+		                            <div class="row">
+		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
+										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+											강남구 대치3동 234
+										</div>                            	
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
+										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+											신라호텔 스위트룸
+										</div>                            	
+		                            </div>
+		                            <hr>
+		                        </div>
+		                    </div>
+		                    <div class="row">
+		                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		                            <div class="post-block">
+		                                <!-- post block -->
+		                                <div class="post-img" style="width: 212px; height: 250px;">
+		                                    <a href="#"><img src="/resources/images/findpet/zz.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
+		                                </div>
+		                                <!-- /.post block -->
+		                            </div>
+		                        </div>
+		                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		                            <div class="row" >
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">집사이름</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											유아인
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">성별</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											남아
+										</div>                      	
+		                            </div>
+		                            <div class="row" >
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											삐약이
+										</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">나이</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
+											1살
+										</div>                      	
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">품종</div>
+										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
+											뼝아리
+										</div>                            	
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">칩</div>
+										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
+											칩
+										</div>                            	
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">접종</div>
+										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
+											접종
+										</div>                            	
+		                            </div>
+		                            <hr>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		            <div class="row">
+		            	<div class="col" style="display: flex; justify-content: flex-end; margin-right: 20px;">
+		            		<div class="btn-group">
+		            		<!-- <button type="button" class="Searchbtn">버튼</button> -->
+		            		<button type="button" class="Searchbtn" id="modBtn">수정하기</button>
+		            		</div>
+		            	</div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</form>	
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <!-- footer e -->
@@ -235,7 +237,10 @@
     <!-- footScript e -->
     
     <script type="text/javascript">
+    
     	var goUrlMod = "/member/mypageMod"
+    	
+    	var form = $("#mypageForm");
     
 	    $("#modBtn").on("click", function(){
 	    	$(location).attr("href", goUrlMod).submit();

@@ -21,7 +21,7 @@
 			,data: {}
 			,success: function(response) {
 				if(response.rt == "success") {
-					location.href = "/member/login";`
+					location.href = "/member/login";
 				} else {
 					alert("다시 시도해주세요.")
 				}
@@ -36,7 +36,7 @@
 	
 	goMypage = function(key) {
 		seq.attr("value", key);
-		form.attr("action", "/member/mypage").submit();
+		form.attr("action", "/member/myPage").submit();
 	} 
 	
 </script>

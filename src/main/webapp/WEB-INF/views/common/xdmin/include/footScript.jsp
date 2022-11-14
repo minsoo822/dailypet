@@ -37,6 +37,6 @@
 	goMypage = function(key) {
 		seq.attr("value", key);
 		form.attr("action", "/member/mypage").submit();
-	}
+	} 
 	
 </script>

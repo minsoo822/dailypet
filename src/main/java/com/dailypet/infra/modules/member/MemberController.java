@@ -138,7 +138,7 @@ public class MemberController {
 		return "infra/member/user/mypage";
 	}
 	
-	@RequestMapping(value = "mypageMod")
+	@RequestMapping(value = "mypageMod") 
 	public String myPageMod() throws Exception {
 
 		return "infra/member/user/mypageMod";

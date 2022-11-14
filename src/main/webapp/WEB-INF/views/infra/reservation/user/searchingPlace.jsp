@@ -4,24 +4,12 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
-    <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
+	<%@include file="../../../common/xdmin/include/head.jsp"%>
     <title>편의시설 찾기 · 예약</title>
-    <!-- Bootstrap -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
-    <!-- Style -->
-    <link href="/resources/css/style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 
 <style type="text/css">
@@ -68,12 +56,11 @@
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
 .map_wrap {position:relative;width:100%;height:500px;}
-#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:400px;height:50px;margin:10px 0 30px 10px;padding:10px;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
 .bg_white {background:#fff;}
-#menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
 #menu_wrap .option{text-align: center;}
 #menu_wrap .option p {margin:10px 0;}  
-#menu_wrap .option button {margin-left:5px;}
+#menu_wrap .option button {margin-left:5px;color: #fff; background-color: #372d2b;border:1px solid white;border-radius: 6px;width: 60px;height: 30px;}
 #placesList li {list-style: none;}
 #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
 #placesList .item span {display: block;margin-top:4px;}
@@ -106,7 +93,7 @@
 
 
 <body>
-    <!-- herder s -->
+    <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <div class="totalContent">
@@ -134,18 +121,19 @@
 						    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
 						    <div id="menu_wrap" class="bg_white">
 						        <div class="option">
-						            <div>
-				                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
-				                    <button type="submit">검색하기</button> 
-						            </div>
+						        	<div>
+						        		<form onsubmit="searchPlaces(); return false;">
+						                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
+						                    <button type="submit">검색하기</button> 
+						            	</form>
+						        	</div>
 						        </div>
-						        <hr>
-						        <ul id="placesList"></ul>
-						        <div id="pagination"></div>
 						    </div>
 						</div>
 						<br>
-			        	<table class="table table-striped table-hover">
+						<ul id="placesList"></ul>
+						<div id="pagination"></div>
+			        	<!-- <table class="table table-striped table-hover" id="menu_wrap">
 							<thead>
 								<tr>
 									<th scope="col">#</th>
@@ -177,7 +165,7 @@
 									<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
 								</tr>
 							</tbody>
-						</table>
+						</table> -->
 						<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 							<div class="offcanvas-header">
 								<h5 class="offcanvas-title" style="font-size: 20px; margin-left: 35%"><b>플레이스 예약</b></h5>
@@ -253,16 +241,8 @@
     </div>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
-    <!-- footer e -->
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="/resources/js/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/menumaker.js"></script>
-    <script src="/resources/js/navigation.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=fd23c44e522eb4a174fd81bfe4833f36&libraries=services"></script>
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=b2c3303d6ae0328f82f572d94aa8946b&libraries=services"></script>
     
     <script type="text/javascript">
     

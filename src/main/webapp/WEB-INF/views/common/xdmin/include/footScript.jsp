@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
+<!-- 카카도 지도 API -->
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!-- jQuery -->
 <script src="/resources/js/jquery.min.js"></script>
 <!-- etc js -->
@@ -31,5 +33,9 @@
     	seq.attr("value", key);
     	form.attr("action", "/diary/diaryForm").submit();
     }
+	goMypage = function(key) {
+		seq.attr("value", key);
+		form.attr("action", "/member/myPage").submit();
+	}
 	
 </script>

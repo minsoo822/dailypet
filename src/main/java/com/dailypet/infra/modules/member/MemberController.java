@@ -144,4 +144,10 @@ public class MemberController {
 		return "infra/member/user/mypageMod";
 	}
 	
+	@RequestMapping(value = "changePW")
+	public String changePW() throws Exception {
+
+		return "infra/member/user/changePW";
+	}
+	
 }

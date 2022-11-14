@@ -93,7 +93,7 @@
     	background: #f3f0eb;
     	color: #372d2b;
     	text-align: center;
-    	width: 50px;
+    	width: 150px;
     	height: 50px;
     	border-radius: 10px;
     	font-size: 13px;

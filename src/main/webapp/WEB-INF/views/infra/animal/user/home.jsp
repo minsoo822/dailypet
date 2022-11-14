@@ -6,6 +6,8 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="true" %>
 
+<!DOCTYPE html>
+<html lang="ko">
 <head>
 
 <%@include file="../../../common/xdmin/include/head.jsp"%>
@@ -113,9 +115,9 @@
 
 <body>
 
-<%@include file="../../../common/xdmin/include/header.jsp"%>
-
-<form method="post" id="mainForm">
+	<%@include file="../../../common/xdmin/include/header.jsp"%>
+	
+	<form method="post" id="mainForm">
 
 	<input type="hidden" name="ifmmSeq" value="${ sessSeq}">
     

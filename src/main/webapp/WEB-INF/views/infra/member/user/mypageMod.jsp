@@ -6,31 +6,13 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="true" %>
 
+<!DOCTYPE html>
+<html lang="ko">
 <head>
+
+
 <%@include file="../../../common/xdmin/include/head.jsp"%>
 	
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
-    <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <title>마이페이지 수정</title>
-    <!-- Bootstrap -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
-    <!-- Style -->
-    <link href="../css/style.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
     <style type="text/css">
    	/* div {
     	border: 1px solid orange;
@@ -48,6 +30,7 @@
     	margin-left: auto;
     	margin-right: auto;
     }
+    
     .Searchbtn {
     	border: 1px solid #efefef;
     	background: #f3f0eb;
@@ -61,11 +44,13 @@
     	margin-left: auto;
     	margin-right: auto;
    	}
+   	
    	.Searchbtn:hover , .otherbtn:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
     }
+    
     .post-img  {
     	background: gray;
     	width: 220px;
@@ -73,21 +58,26 @@
     	max-width: 100%;
     	max-height: 100%;
     }
+    
     .petImg {
     	max-width: 100%;
     	max-height: 100%;
     }
+    
     .text {
     	padding-top: 10px;
     	padding-left: 15px;
     }
+    
     .form-control {
     	color: #000;
     }
+    
     .myPage {
     	margin-bottom: 30px;
     	font-weight: bold;
     }
+    
     .post-block {
     	margin-bottom: 5px;
     }
@@ -95,65 +85,8 @@
 </head>
 
 <body>
-    <div class="header navbar-fixed-top">
-		<div class="container">
-		    <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="index.html"><img src="../images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		            <div class="navigation">
-		                <div id="navigation">
-		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
-		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
-		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
-		                            </ul>
-		                        </li>
-	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">반려동물 일기</a></li>
-					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-					              </ul>
-					          </li> -->
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">내 주변 편의시설</a>
-	<!-- 						메뉴구현x 일단 링크만 생성						
-								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
-								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
-	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
-	                            <li><a href="error.html" title="Error">로그인</a> </li>
-	                            <li><a href="error.html" title="Error">회원가입</a> </li>
-	                        </ul>
-	                    </div> 
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-    <div class="page-header">
-        <!-- page header -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-caption">
-                        <!-- <h2 class="page-title">Our projects</h2>
-                        <p>Nullam tincidunt quis ligula vitae sollicitudin. Phasellus ut leo ut
-                            <br> purus interdum dapibus quis at arcu scelerisque maximus.</p> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    
     <div class="content">
         <div class="container">
             <div class="row">

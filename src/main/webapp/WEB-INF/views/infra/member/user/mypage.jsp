@@ -74,9 +74,6 @@
     	margin-bottom: 30px;
     	font-weight: bold;
     }
-    .navbar-fixed-top {
-    	min-width: 1320px;
-    }
     </style>
 </head>
 

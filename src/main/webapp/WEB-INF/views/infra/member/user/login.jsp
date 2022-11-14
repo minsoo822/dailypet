@@ -247,7 +247,7 @@
 									  	<label class="form-check-label" for="flexSwitchCheckChecked">&nbsp;자동로그인</label>
 									</div>
 									<div class="col-md-11">
-										<span class="right">비밀번호 찾기</span> 
+										<a href="/member/changePW" style="color: #000;"><span class="right">비밀번호 찾기</span></a> 
 										<span class="right">|</span>
 										<span class="right">아이디 찾기</span>
 										<br>

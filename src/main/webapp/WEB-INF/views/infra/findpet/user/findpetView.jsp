@@ -86,178 +86,171 @@
     <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    
-    <div class="content">
-        <div class="container">
-			<div class="row mb-5">
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-					<div class="post-block">
-						<!-- post block -->
-						<div class="post-img">
-						    <a href="#"><img class="petImg" src="/resources/images/findpet/zz.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive"></a>
+	<div class="totalContent">
+	    <div class="content">
+	        <div class="container">
+				<div class="row mb-5">
+	                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<div class="post-block">
+							<div class="post-img">
+							    <a href="#"><img class="petImg" src="/resources/images/findpet/zz.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive"></a>
+							</div>
 						</div>
-						<!-- /.post block -->
-					</div>
-				</div>	
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							이름
+					</div>	
+	                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" style="width: 650px; margin-left: 30px;">
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								이름
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
+								-
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								품종
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
+								병아리
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-							-
+						<hr>
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								나이
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
+								-
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								성별
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
+								-
+							</div>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							품종
+						<hr>
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								위탁장소
+							</div>
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1 text">
+								12110
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-							병아리
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								&nbsp;
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
+								경기도 남양주시 별내3로 23 (별내동, 미리내마을4-4단지)
+							</div>
 						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							나이
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
+								&nbsp;
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
+								4401동 8501호
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-							-
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
+								발견장소
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
+								4401동 오른쪽 화단
+							</div>
 						</div>
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							성별
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
+								발견일시
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
+								2022-10-22 오후 07:31
+							</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-							-
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								특이사항
+							</div>
+							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
+								발바닥에 검은색 점이있어요
+							</div>
 						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							위탁장소
-						</div>
-						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1 text">
-							12110
-						</div>
-						<!-- <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
-							<button type="button" class="Searchbtn" onclick="sample4_execDaumPostcode()"><i class="fa-solid fa-magnifying-glass"></i></button>
-						</div>
-						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
-							<button type="button" class="Searchbtn" id="address_reset"><i class="fa-solid fa-rotate-left"></i></button>
-						</div> -->
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							&nbsp;
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-							경기도 남양주시 별내3로 23 (별내동, 미리내마을4-4단지)
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
-							&nbsp;
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-							4401동 8501호
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
-							발견장소
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-							4401동 오른쪽 화단
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
-							발견일시
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-							2022-10-22 오후 07:31
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-							특이사항
-						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-							발바닥에 검은색 점이있어요
-						</div>
-					</div>
-                </div>
-			</div>
-			<div class="row">
-				<div class="col" style="display: flex; justify-content: flex-end;">
-					<button type="button" class="btnSave">목록</button>
-					<button type="button" class="btnSave">수정</button>
+	                </div>
 				</div>
-			</div>
-			<hr>
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				    <div class="comment-area">
-				        <div class="row">
-				            <div class=" col-lg-12 col-md-12">
-				                <div class="comment-title">
-				                    <h2>댓글(3)</h2>
-				                </div>
-				                <ul class="comment-list">
-				                    <li>
-				                        <div class="comment-body">
-				                            <div class="comment-author"><img src="/resources/images/findpet/puppy-g12ba81e5a_1920.jpg" alt class="propileImg"></div>
-				                            <div class="comment-info">
-				                                <div class="comment-header">
-				                                    <h3 class="comments-title">키키</h3>
-				                                    <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
-				                                </div>
-				                                <div class="comment-content">
-				                                    <p>빨리 주인을 찾았으면 좋겠네요 ㅠㅠ </p>
-				                                </div>
-				                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
-				                            </div>
-				                        </div>
-				                        <ul class="comment-list childern">
-				                            <li>
-				                                <div class="comment-body">
-				                                    <div class="comment-author"><img src="/resources/images/findpet/dog-g22e2a8936_1280.jpg" alt class="propileImg"></div>
-				                                    <div class="comment-info">
-				                                        <div class="comment-header">
-				                                            <h3 class="comments-title">연탄</h3>
-				                                            <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
-				                                        </div>
-				                                        <div class="comment-content">
-				                                            <p>이렇게 작고 소중한 개나리가.... ㅠㅠ </p>
-				                                        </div>
-				                                        <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
-				                                    </div>
-				                                </div>
-				                            </li>
-				                        </ul>
-				                    </li>
-				                </ul>
-				                <ul class="comment-list">
-				                    <li>
-				                        <div class="comment-body">
-				                            <div class="comment-author"><img src="/resources/images/findpet/maltese-g892b1f5c5_1280.jpg" alt class="propileImg"></div>
-				                            <div class="comment-info">
-				                                <div class="comment-header">
-				                                    <h3 class="comments-title">먼지</h3>
-				                                    <div class="meta"> <span class="meta-date">April 23, 2020</span> </div>
-				                                </div>
-				                                <div class="comment-content">
-				                                    <p>울고있는 소리가 여기까지 들려요 ㅠㅠㅠ  </p>
-				                                </div>
-				                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
-				                            </div>
-				                        </div>
-				                    </li>
-				                </ul>
-				            </div>
-				        </div>
-				    </div>
+				<div class="row">
+					<div class="col" style="display: flex; justify-content: flex-end;">
+						<button type="button" class="btnSave">목록</button>
+						<button type="button" class="btnSave">수정</button>
+					</div>
 				</div>
-			</div>
-        </div>
+				<hr>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					    <div class="comment-area">
+					        <div class="row">
+					            <div class=" col-lg-12 col-md-12">
+					                <div class="comment-title">
+					                    <h2>댓글(3)</h2>
+					                </div>
+					                <ul class="comment-list">
+					                    <li>
+					                        <div class="comment-body">
+					                            <div class="comment-author"><img src="/resources/images/findpet/puppy-g12ba81e5a_1920.jpg" alt class="propileImg"></div>
+					                            <div class="comment-info">
+					                                <div class="comment-header">
+					                                    <h3 class="comments-title">키키</h3>
+					                                    <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
+					                                </div>
+					                                <div class="comment-content">
+					                                    <p>빨리 주인을 찾았으면 좋겠네요 ㅠㅠ </p>
+					                                </div>
+					                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
+					                            </div>
+					                        </div>
+					                        <ul class="comment-list childern">
+					                            <li>
+					                                <div class="comment-body">
+					                                    <div class="comment-author"><img src="/resources/images/findpet/dog-g22e2a8936_1280.jpg" alt class="propileImg"></div>
+					                                    <div class="comment-info">
+					                                        <div class="comment-header">
+					                                            <h3 class="comments-title">연탄</h3>
+					                                            <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
+					                                        </div>
+					                                        <div class="comment-content">
+					                                            <p>이렇게 작고 소중한 개나리가.... ㅠㅠ </p>
+					                                        </div>
+					                                        <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
+					                                    </div>
+					                                </div>
+					                            </li>
+					                        </ul>
+					                    </li>
+					                </ul>
+					                <ul class="comment-list">
+					                    <li>
+					                        <div class="comment-body">
+					                            <div class="comment-author"><img src="/resources/images/findpet/maltese-g892b1f5c5_1280.jpg" alt class="propileImg"></div>
+					                            <div class="comment-info">
+					                                <div class="comment-header">
+					                                    <h3 class="comments-title">먼지</h3>
+					                                    <div class="meta"> <span class="meta-date">April 23, 2020</span> </div>
+					                                </div>
+					                                <div class="comment-content">
+					                                    <p>울고있는 소리가 여기까지 들려요 ㅠㅠㅠ  </p>
+					                                </div>
+					                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
+					                            </div>
+					                        </div>
+					                    </li>
+					                </ul>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+	        </div>
+	    </div>
     </div>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>

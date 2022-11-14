@@ -202,7 +202,6 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
-    
     <script type="text/javascript">
     	
     /* 카카오지도API */

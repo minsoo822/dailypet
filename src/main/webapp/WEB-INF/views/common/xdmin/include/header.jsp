@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <div class="header navbar-fixed-top">
-	<div class="container">
+	<div class="container" style="min-width: 1320px;">
 	    <div class="row">
 	        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 	            <a href="/animal/home"><img src="/resources/images/headerLogo.png" style="width: 195px; height: 50px" alt=""></a>
@@ -11,10 +11,11 @@
 	                <div id="navigation">
 	                    <ul>
 	                        <li class="active"><a href="/animal/home" title="Home">홈</a></li>
-	                        <li class="has-sub"><a href="/findpet/findpetList" title="Service List">유기동물 찾기</a>
+	                        <li class="has-sub"><a href="/findpet/findpetList" title="Service List">전국 유기동물</a>
 	                            <ul>
-	                                <li><a href="/findpet/findpetList" title="Service List">유기동물 찾기</a></li>
 	                                <li><a href="/findpet/findpetList" title="Service Detail">전국 유기동물</a></li>
+	                                <li><a href="/findpet/findpetSearchForm" title="Service List">유기동물 찾기</a></li>
+	                                <li><a href="/findpet/findpetMod" title="Service List">유기동물 등록하기</a></li>
 	                            </ul>
 	                        </li>
 	                        <li class="has-sub"><a href="/reservation/searchingPlace" title="Portfolio">내 주변 편의시설</a>
@@ -38,6 +39,7 @@
 				        	</c:if>
 					        <c:if test="${sessSeq ne null}">
 				        		<li><a href="#" type="button"><c:out value="${sessId }"/>님, 반갑습니다</a></li>
+				        		<li><a href="#" type="button" onclick="goMypage(${sessSeq})">마이페이지</a></li>
 								<li><a href="/member/logoutProc" title="로그아웃" type="button" id="btnLogout">로그아웃</a></li>
 				            </c:if>
                         </ul>

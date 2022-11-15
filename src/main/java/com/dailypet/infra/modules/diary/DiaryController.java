@@ -27,30 +27,28 @@ public class DiaryController {
 	}
 //	일기폼
 	@RequestMapping(value = "diaryForm")
-	public String diaryForm(DiaryVo vo, Model model) throws Exception {
+	public String diaryForm(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession) throws Exception {
 		
+		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
-		System.out.println("item : " + item);
 		
 		return "infra/diary/user/diaryForm";
 	}
-	
 //	일기폼
 	@RequestMapping(value = "diaryInst")
-	public String insertDiary(Diary dto, HttpSession httpSession) throws Exception {
-		
-		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));  
+	public String insertDiary(Diary dto) throws Exception {
+				
+		System.out.println("-----" + dto.getIfmmSeq());
+		System.out.println("-----" + dto.getIfdaContents()); 
 		service.insertDiary(dto);
 		
 		return "redirect:/diary/diaryList";
 	}
-	
-	
 //	일기리스트 디테일
 	@RequestMapping(value = "diaryDetail")
 	public String diaryDetail() throws Exception {
-		
+		 
 		return "infra/diary/user/diaryDetail";
 	}
 //	나의 일기리스트

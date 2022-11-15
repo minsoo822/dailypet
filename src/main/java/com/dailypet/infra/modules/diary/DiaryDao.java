@@ -24,8 +24,7 @@ public class DiaryDao {
 	public Diary selectOne(DiaryVo vo) throws Exception {
 		return sqlSession.selectOne(namespace + ".selectOne", vo);
 	}
+//	일기Inst
 	public int insertDiary(Diary dto) throws Exception { return sqlSession.insert(namespace + ".insertDiary", dto); }
-	public int insertDiaryUploaded(Diary dto) throws Exception { return sqlSession.insert(namespace + ".diaryUploaded", dto); }
-	public int selectLastSeq() throws Exception { return sqlSession.selectOne(namespace + ".selectLastSeq", ""); }
 	
 }

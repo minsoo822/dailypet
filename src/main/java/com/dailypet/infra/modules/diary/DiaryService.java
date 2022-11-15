@@ -6,7 +6,7 @@ public interface DiaryService {
 	
 	public List<Diary> selectList(DiaryVo vo) throws Exception;
 	public Diary selectOne(DiaryVo vo) throws Exception;
-	
+//	일기Inst
 	public int insertDiary(Diary dto) throws Exception;
 	
 }

@@ -30,6 +30,7 @@ public class MemberController {
 	//회원가입
 	@RequestMapping(value="allInst")
 	public String allInst(Member dto) throws Exception {
+		
 		dto.setIfmmEmail(dto.getIfmmEmailID() + MemberServiceImpl.selectOneCachedCode(dto.getIfmmEmailDomain()));
 		
 		service.userInsert(dto);

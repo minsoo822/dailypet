@@ -46,38 +46,4 @@
 		</selectKey>
 	</insert>
 	
-	<!-- <select id="selectLastSeq" resultType="Integer"> 마지막 seq 조회
-		SELECT
-			ifmmSeq
-		FROM member
-		ORDER BY ifmmSeq DESC
-		LIMIT 1
-	</select> -->
-	<!-- <insert id="diaryUploaded">
-		INSERT INTO diaryUploaded (
-			type
-			,defaultNy
-			,sort
-			,path
-			,originalName
-			,uuidName
-			,ext
-			,size
-			,delNy
-			,pseq
-		)
-		VALUES (
-			#{type}
-			,#{defaultNy}
-			,#{sort}
-			,#{path}
-			,#{originalName}
-			,#{uuidName}
-			,#{ext}
-			,#{size}
-			,0
-			,#{pseq}
-		)
-	</insert> -->
-	
 </mapper>	

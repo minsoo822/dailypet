@@ -38,7 +38,7 @@ public class Member extends Base{
 	public Integer ifamChipNY;
 	public Integer ifamVaccinateNY;
 
-	public MultipartFile[] pet_image;
+	public MultipartFile[] user_image;
 	
 	
 	public static List<Member> cachedCodeArrayList = new ArrayList<Member>();
@@ -194,11 +194,11 @@ public class Member extends Base{
 	public void setIfamVaccinateNY(Integer ifamVaccinateNY) {
 		this.ifamVaccinateNY = ifamVaccinateNY;
 	}
-	public MultipartFile[] getPet_image() {
-		return pet_image;
+	public MultipartFile[] getUser_image() {
+		return user_image;
 	}
-	public void setPet_image(MultipartFile[] pet_image) {
-		this.pet_image = pet_image;
+	public void setUser_image(MultipartFile[] user_image) {
+		this.user_image = user_image;
 	}
 	
 }

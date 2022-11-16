@@ -22,37 +22,34 @@ public class MemberServiceImpl implements MemberService{
 	
 	//회원가입
 	public int userInsert(Member dto) throws Exception {
-		return dao.userInsert(dto);
-	}
-	
-	public int animalInsert(Member dto) throws Exception {
-		int animalInsert = dao.animalInsert(dto);
+		int userInsert = dao.userInsert(dto);
 
         int j = 0;
-        for(MultipartFile myFile : dto.getPet_image()) {
+        for(MultipartFile myFile : dto.getUser_image()) {
 
             if(!myFile.isEmpty()) {
                 // postServiceImpl
                 String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
                 
-                UtilUpload.uploadPost1(myFile, pathModule, dto);
+//                		MemberServiceImpl.java  ->	 MemberServiceImpl -> ""  ->	 memberserviceimpl -> 	member
+                UtilUpload.uploadUser(myFile, pathModule, dto);
                     
-                if(myFile.getOriginalFilename().toUpperCase().contains(".MP4") == true ) {
-                    dto.setType(3);
-                } else {
-                    dto.setType(2);
-                }
+                dto.setType(2);
                 dto.setDefaultNy(j == 0 ? 1 : 0);
                 dto.setSort(j+1);
                 dto.setPseq(dto.getIfmmSeq());
 
-                dao.imgInsert(dto);
+                dao.userimgInsert(dto);
                 j++;
             }
         }
-        return animalInsert;
+		return userInsert;
 	}
 	
+	public int animalInsert(Member dto) throws Exception {
+        return dao.animalInsert(dto);
+	}
+//-----------------------------------------------------------------------------------	
 	public static String selectOneCachedCode(String ifmmSeq) throws Exception {
 		String rt = "";
 		for(Member codeRow : Member.cachedCodeArrayList) {

@@ -47,7 +47,7 @@ public class UtilUpload {
 		
 	}
 	
-	public static void uploadPost1 (MultipartFile multipartFile, String className, Member dto) throws Exception {
+	public static void uploadUser (MultipartFile multipartFile, String className, Member dto) throws Exception {
 		String fileName = multipartFile.getOriginalFilename();
 //		컴퓨터에 저장되어있는 파일 이름 담아주기 보리.png
 		String ext = fileName.substring(fileName.lastIndexOf(".") + 1);

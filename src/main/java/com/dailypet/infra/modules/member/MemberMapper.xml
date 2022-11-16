@@ -74,31 +74,9 @@
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
-
-	<insert id="animalInsert">
-		INSERT INTO animal(
-			mm_ifmmSeq
-			, ifamName
-			, ifamAge
-			, ifamKind
-			, ifamGender
-			, ifamChipNY
-			, ifamVaccinateNY
-		)
-		VALUES(
-			#{ifmmSeq}
-			, #{ifamName}
-			, #{ifamAge}
-			, #{ifamKind}
-			, #{ifamGender}
-			, #{ifamChipNY}
-			, #{ifamVaccinateNY}
-		)
-	</insert>
-	
-	<!-- 동물 이미지 인서트 -->
-	<insert id="imgInsert">
-		INSERT INTO petUploaded (
+	<!-- 회원 이미지 인서트 -->
+	<insert id="userimgInsert">
+		INSERT INTO memberUploaded (
 			type
 			,defaultNy
 			,sort
@@ -123,6 +101,54 @@
 			,#{pseq}
 		)
 	</insert>
+
+	<insert id="animalInsert">
+		INSERT INTO animal(
+			mm_ifmmSeq
+			, ifamName
+			, ifamAge
+			, ifamKind
+			, ifamGender
+			, ifamChipNY
+			, ifamVaccinateNY
+		)
+		VALUES(
+			#{ifmmSeq}
+			, #{ifamName}
+			, #{ifamAge}
+			, #{ifamKind}
+			, #{ifamGender}
+			, #{ifamChipNY}
+			, #{ifamVaccinateNY}
+		)
+	</insert>
+	<!-- 동물 이미지 인서트 -->
+	<!-- <insert id="petimgInsert">
+		INSERT INTO petUploaded (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
+		)
+		VALUES (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{pseq}
+		)
+	</insert> -->
 	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)

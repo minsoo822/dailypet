@@ -304,7 +304,7 @@
 										<label class="top4">회원사진 첨부</label>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" id="userfile" name="userImage" type="file" accept=".jpg,.png,.jpeg">
+										<input class="form-control input" id="userfile" name="user_image" type="file" accept=".jpg,.png,.jpeg">
 									</div>
 								</div>
 		                       	<div class="row div2">

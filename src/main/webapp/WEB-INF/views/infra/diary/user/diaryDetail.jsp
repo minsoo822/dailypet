@@ -174,62 +174,71 @@
 		<nav class="icon">
 			<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 			<span style="font-size: 25px"><a href="diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+			<span><div class="profileheader"><a href="diaryMypage"><img src="${item.memberPath }${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
     <div class="content">
     	<div class="container2">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-					<div class="imgdetail">
-						<img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt="">
-					</div>
-                </div>
-               <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-               		<div class="row" style="margin-top: 10px">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-							<div class="profileView">
-								<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
-						   	</div>
+			<div class="row">
+				<c:forEach items="${list }" var="list" varStatus="status">
+					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+						<div class="imgdetail">
+							<img src="${list.diaryPath }${list.diaryuuidName}" class="img-responsive" alt="">
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-					    	<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>jennierubyjerry</b></h5>
-					    </div>
 					</div>
-					<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
-					<div class="row" style="margin-top: 10px">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-							<div class="profileView">
-								<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
-						   	</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-					    	<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>jennierubyjerry</b></h5>
-					    </div>
-					</div>
-					<div class="row" style="margin-top: 10px">
-						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
-						<div class="col"><p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px">내일이 월요일이랜다 너무너무너무 나가기가 싫다 제리랑 놀아야지</p></div>
-					</div>
-					<div class="cardfooter">
-						<div class="service-content">
-							<div class="postbtn">
-								<button type="button" id="like"><span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span></button><button type="button" id="comment"><span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span></button>
+					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<div class="row" style="margin-top: 10px">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+								<div class="profileView">
+									<img src="${list.memberPath}${list.memberuuidName}" class="profilepic" alt="">
+								</div>
 							</div>
-						    <p style="font-size: 13px; margin-top: 5px;"><b>좋아요 9,234개</b></p>
-						    <div class="cardcontent">
-						    	<p style="margin: 10px 0 0 0">view all 365 comments</p>
-						    	<p>21시간 전</p>
-						    </div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
+								<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b><c:out value="${list.ifmmID }"/></b></h5>
+							</div>
 						</div>
-						<hr style="color: lightgray; margin: 3px">
-						<div class="cardcomment">
-					    	<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
-					    	<button type="submit" id="upcomment">게시</button>
-					    </div>
+						<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
+						<div class="row" style="margin-top: 10px">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+								<div class="profileView">
+									<img src="${list.memberPath}${list.memberuuidName}" class="profilepic" alt="">
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
+								<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b><c:out value="${list.ifmmID }"/></b></h5>
+							</div>
+						</div>
+						<div class="row" style="margin-top: 10px">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+							<div class="col">
+								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px"><c:out value="${list.ifdaContents }"></c:out></p>
+							</div>
+						</div>
+						<div class="cardfooter">
+							<div class="service-content">
+								<div class="postbtn">
+									<button type="button" id="like">
+										<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
+									</button>
+									<button type="button" id="comment">
+										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+									</button>
+								</div>
+								<p style="font-size: 13px; margin-top: 5px;"><b>좋아요 9,234개</b></p>
+								<div class="cardcontent">
+									<p style="margin: 10px 0 0 0">view all 365 comments</p>
+									<p>${list.ifdaRegDate }</p>
+								</div>
+							</div>
+							<hr style="color: lightgray; margin: 3px">
+							<div class="cardcomment">
+								<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
+								<button type="submit" id="upcomment">게시</button>
+							</div>
+						</div>
 					</div>
-				</div>
-            </div>
+				</c:forEach>	
+			</div>
 		</div>
     </div>
 	<%@include file="../../../common/xdmin/include/footer.jsp"%>

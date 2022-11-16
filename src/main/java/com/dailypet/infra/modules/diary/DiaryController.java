@@ -45,15 +45,27 @@ public class DiaryController {
 	}
 //	일기리스트 디테일
 	@RequestMapping(value = "diaryDetail")
-	public String diaryDetail() throws Exception {
+	public String diaryDetail(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
+//		회원정보
+		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
+		Diary item = service.selectOne(vo);
+		model.addAttribute("item", item);
+//		회원이 올린사진
+		List<Diary> list = service.mypageDetailList(vo);
+		model.addAttribute("list", list);
 		 
 		return "infra/diary/user/diaryDetail";
 	}
 //	나의 일기리스트
 	@RequestMapping(value = "diaryMypage")
-	public String diaryMypage(DiaryVo vo, Model model) throws Exception {
-//		Diary item = service.selectOne(vo);
-//		model.addAttribute("item", item);
+	public String diaryMypage(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
+//		회원정보
+		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
+		Diary item = service.selectOne(vo);
+		model.addAttribute("item", item);
+//		회원이 올린사진
+		List<Diary> list = service.mypageImageList(vo);
+		model.addAttribute("list", list);
 		
 		return "infra/diary/user/diaryMypage";
 	}

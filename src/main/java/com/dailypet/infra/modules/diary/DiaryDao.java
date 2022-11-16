@@ -24,7 +24,16 @@ public class DiaryDao {
 	public Diary selectOne(DiaryVo vo) throws Exception {
 		return sqlSession.selectOne(namespace + ".selectOne", vo);
 	}
+//-----------------------------------------------------------------------------------	
 //	일기Inst
 	public int insertDiary(Diary dto) throws Exception { return sqlSession.insert(namespace + ".insertDiary", dto); }
 	public int insertPetUpload(Diary dto) { return sqlSession.insert(namespace + ".insertPetUpload" , dto);}
+//-----------------------------------------------------------------------------------
+	public List<Diary> mypageImageList(DiaryVo vo) throws Exception {
+		return sqlSession.selectList(namespace + ".mypageImageList", vo);
+	}
+	public List<Diary> mypageDetailList(DiaryVo vo) throws Exception {
+		return sqlSession.selectList(namespace + ".mypageDetailList", vo);
+	}
+	
 }

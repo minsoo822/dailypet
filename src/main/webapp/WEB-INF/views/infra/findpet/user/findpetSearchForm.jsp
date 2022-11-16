@@ -109,7 +109,7 @@
 		margin-bottom: 50px;
 	}
     .imgs_wrap {
-		background: gray;
+		background: #E9ECEF;
 		height: 200px
 	}
 	.imgs_wrap img {

@@ -208,7 +208,7 @@
 						<div class="row">
 							<div class="col" style="overflow: hidden;" >
 								<div class="service-img" style="width: 500px; margin-left: auto; margin-right: auto;">
-								    <a href="#" class="imghover"><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt=""></a>
+								    <a href="#" class="imghover"><img src="${list.path}${list.uuidName}" class="img-responsive" alt=""></a>
 								</div>
 							</div>
 						</div>

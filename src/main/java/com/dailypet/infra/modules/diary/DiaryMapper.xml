@@ -14,13 +14,17 @@
 			,a.ifdaContents
 			,a.ifdaDelNy
 			,a.ifdaRegDate
-			,a.ifdaModDate
 			,a.mm_ifmmSeq
-            ,b.ifmmID
-            FROM diary a
-            JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
-			WHERE 1=1
-			ORDER BY a.ifdaSeq DESC
+			,b.ifmmID
+			,c.path
+			,c.uuidName
+		FROM diary a
+		JOIN member b 
+		ON a.mm_ifmmSeq = b.ifmmSeq
+		JOIN diaryUploaded c 
+		ON a.mm_ifmmSeq = c.pseq
+		WHERE 1=1
+		ORDER BY a.ifdaSeq DESC
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -46,4 +50,32 @@
 		</selectKey>
 	</insert>
 	
+	<insert id="insertPetUpload">
+		INSERT INTO diaryUploaded (
+			<!-- seq -->
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
+		)
+		VALUES (
+			<!-- #{seq} -->
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{pseq}
+		)
+	</insert>
 </mapper>	

@@ -26,5 +26,5 @@ public class DiaryDao {
 	}
 //	일기Inst
 	public int insertDiary(Diary dto) throws Exception { return sqlSession.insert(namespace + ".insertDiary", dto); }
-	
+	public int insertPetUpload(Diary dto) { return sqlSession.insert(namespace + ".insertPetUpload" , dto);}
 }

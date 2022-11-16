@@ -39,8 +39,6 @@ public class DiaryController {
 	@RequestMapping(value = "diaryInst")
 	public String insertDiary(Diary dto) throws Exception {
 				
-		System.out.println("-----" + dto.getIfmmSeq());
-		System.out.println("-----" + dto.getIfdaContents()); 
 		service.insertDiary(dto);
 		
 		return "redirect:/diary/diaryList";

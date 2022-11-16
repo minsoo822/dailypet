@@ -10,29 +10,10 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-   <title>회원가입</title>
-    <!-- Bootstrap -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
-    <!-- Style -->
-    <link href="/resources/css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=14fe2d656bc6d895e8f38697ffdb1cd4&libraries=services"></script>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-	
+    <!-- meta, link s -->
+    <%@include file="../../../common/xdmin/include/head.jsp"%>
+    <!-- meta, link e -->
+	<title>회원가입</title>
     <style type="text/css">
     	.right{
     		float: right;
@@ -256,7 +237,13 @@
 	    .btn-space{
 		    margin-right: 5px;
 		}
-		
+		.userimgBox {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;	
+			background: #E9ECEF;
+			overflow: hidden;
+		}
     </style>
 </head>
 
@@ -305,6 +292,21 @@
 		                        <br>
 		                        <h3>기본 정보</h3>
 		                        <hr>
+		                       	<div class="row div2 left">
+									<div class="col-lg-6 col-md-6 col-sm-6 top2">
+										<div id="" class="userimgBox">
+											<img src="" id="userImage" style="width: 100%; height: 100%; object-fit:cover;">
+										</div>
+									</div>							
+								</div>	
+								<div class="row div2 left">
+									<div class="col-lg-2 col-md-2 col-sm-2 gray">
+										<label class="top4">회원사진 첨부</label>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-4">
+										<input class="form-control input" id="userfile" name="pet_image" type="file" accept=".jpg,.png,.jpeg">
+									</div>
+								</div>
 		                       	<div class="row div2">
 		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
 		                        		<label class="top4">성명</label>
@@ -435,7 +437,7 @@
 											<label class="top4">이미지 첨부</label>
 										</div>
 										<div class="col-lg-4 col-md-4 col-sm-4">
-											<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">
+											<input class="form-control input" name="pet_image" type="file" accept=".jpg,.png,.jpeg">
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-6 top2">
 											<div id="UploadedImagePreview" class="addScroll">
@@ -769,7 +771,12 @@
 		});
 	});
 	 	 
-	
+	//이미지 미리보기
+    $("#userfile").on("change", function(e) {
+		var tmp = e.target.files[0];
+	    var img = URL.createObjectURL(tmp);
+	    $("#userImage").attr("src", img);
+	});
 </script> 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

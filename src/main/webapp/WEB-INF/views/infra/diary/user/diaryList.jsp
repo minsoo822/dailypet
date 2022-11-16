@@ -192,7 +192,7 @@
 						<div class="row" style="margin-top: 15px; height: 50px;">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 								<div class="profileView">
-									<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
+									<img src="${ist.memberPath }${list.memberuuidName}" class="profilepic" alt="">
 							   	</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -208,7 +208,7 @@
 						<div class="row">
 							<div class="col" style="overflow: hidden;" >
 								<div class="service-img" style="width: 500px; margin-left: auto; margin-right: auto;">
-								    <a href="#" class="imghover"><img src="${list.path}${list.uuidName}" class="img-responsive" alt=""></a>
+								    <a href="#" class="imghover"><img src="${list.diaryPath}${list.diaryuuidName}" class="img-responsive" alt=""></a>
 								</div>
 							</div>
 						</div>

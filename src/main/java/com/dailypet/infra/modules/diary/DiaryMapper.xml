@@ -15,11 +15,16 @@
 		    , a.ifdaRegDate
 			, a.mm_ifmmSeq 
 		    , b.ifmmID
-		    , c.path
-			, c.uuidName
+		    <!-- 일기이미지 -->
+		    , c.path	AS diaryPath
+			, c.uuidName	AS diaryuuidName
+            <!-- 일기 올린사람 이미지 -->
+            , d.path	AS memberPath
+            , d.uuidName	AS memberuuidName
 		FROM diary a
 		JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
 		JOIN diaryUploaded c ON c.pseq = a.mm_ifmmSeq
+        JOIN memberUploaded d ON d.pseq = a.mm_ifmmSeq
 		WHERE 1=1
 		AND a.ifdaSeq = c.seq
 		ORDER BY a.ifdaSeq DESC
@@ -27,8 +32,12 @@
 	
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-			*
-		FROM member 
+			a.*
+			,b.path
+			,b.uuidName
+		FROM member a
+		JOIN memberUploaded b
+		ON a.ifmmSeq = b.pseq
 		WHERE 1=1
 		<!-- 프로필사진조인 -->
 		AND ifmmSeq = #{ifmmSeq}

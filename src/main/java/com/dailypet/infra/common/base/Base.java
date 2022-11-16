@@ -17,6 +17,10 @@ public class Base {
 	private String pseq;
 	
 	
+	private String diaryPath;
+	private String diaryuuidName;
+	private String memberPath;
+	private String memberuuidName;
 //--------------------------------------------------------------------------------------	
 	public String getSeq() {
 		return seq;
@@ -83,6 +87,37 @@ public class Base {
 	}
 	public void setPseq(String pseq) {
 		this.pseq = pseq;
+	}
+	
+	
+	
+	
+	
+	
+	
+	public String getDiaryPath() {
+		return diaryPath;
+	}
+	public void setDiaryPath(String diaryPath) {
+		this.diaryPath = diaryPath;
+	}
+	public String getDiaryuuidName() {
+		return diaryuuidName;
+	}
+	public void setDiaryuuidName(String diaryuuidName) {
+		this.diaryuuidName = diaryuuidName;
+	}
+	public String getMemberPath() {
+		return memberPath;
+	}
+	public void setMemberPath(String memberPath) {
+		this.memberPath = memberPath;
+	}
+	public String getMemberuuidName() {
+		return memberuuidName;
+	}
+	public void setMemberuuidName(String memberuuidName) {
+		this.memberuuidName = memberuuidName;
 	}
 	
 }

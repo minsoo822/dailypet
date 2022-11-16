@@ -42,6 +42,7 @@
 	
 	.form-control, .form-select {
 		border-radius: 6px;
+		color: black;
 	}
 	
 	.col-3 p {
@@ -173,6 +174,14 @@
 							</div>
 							<br>
 							<div class="offcanvas-body">
+								<div class="row">
+									<div class="col-3">
+										<p>예약장소</p>
+									</div>
+									<div class="col-9">
+										<input class="form-control" type="text" id="ifrsPlace" name="ifrsPlace">
+									</div>
+								</div>
 								<div class="row">
 									<div class="col-3">
 										<p>고객명</p>
@@ -368,7 +377,7 @@
 		
 		    var el = document.createElement('li'),
 		    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-		                '<div class="info">' +
+		                '<div class="info" id="rv" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
 		                '   <h5>' + places.place_name + '</h5>';
 		
 		    if (places.road_address_name) {

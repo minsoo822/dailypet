@@ -96,6 +96,34 @@
 		)
 	</insert>
 	
+	<!-- 동물 이미지 인서트 -->
+	<insert id="imgInsert">
+		INSERT INTO petUploaded (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
+		)
+		VALUES (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{pseq}
+		)
+	</insert>
+	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*)
 	</select>

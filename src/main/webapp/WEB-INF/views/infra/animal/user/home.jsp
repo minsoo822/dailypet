@@ -177,7 +177,7 @@
 			            <div class="row">
 			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 			                    <div class="project-img mb30">
-			                        <a href="/findpet/findpetList" class="imghover"><img src="/resources/images/xdmin/lonelydog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+			                        <a href="/findpet/findpetList"><img src="/resources/images/xdmin/lonelydog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 			                    </div>
 			                </div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -218,7 +218,7 @@
 			                </div>
 			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 			                    <div class="project-img mb30">
-			                        <a href="/reservation/searchingPlace" class="imghover"><img src="/resources/images/xdmin/walk.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+			                        <a href="/reservation/searchingPlace"><img src="/resources/images/xdmin/walk.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 			                    </div>
 			                </div>
 			            </div>
@@ -241,7 +241,7 @@
 			            <div class="row" id="scroll_move3">
 			            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 			                    <div class="project-img mb30">
-			                        <a href="/diary/diaryMypage" class="imghover"><img src="/resources/images/xdmin/diary.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+			                        <a href="/diary/diaryMypage"><img src="/resources/images/xdmin/diary.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 			                    </div>
 			                </div>
 			                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">

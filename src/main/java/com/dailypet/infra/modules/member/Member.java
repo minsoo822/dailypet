@@ -3,6 +3,8 @@ package com.dailypet.infra.modules.member;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.dailypet.infra.common.base.Base;
 
 public class Member extends Base{
@@ -36,6 +38,8 @@ public class Member extends Base{
 	public Integer ifamChipNY;
 	public Integer ifamVaccinateNY;
 
+	public MultipartFile[] pet_image;
+	
 	
 	public static List<Member> cachedCodeArrayList = new ArrayList<Member>();
 
@@ -190,6 +194,11 @@ public class Member extends Base{
 	public void setIfamVaccinateNY(Integer ifamVaccinateNY) {
 		this.ifamVaccinateNY = ifamVaccinateNY;
 	}
-	
+	public MultipartFile[] getPet_image() {
+		return pet_image;
+	}
+	public void setPet_image(MultipartFile[] pet_image) {
+		this.pet_image = pet_image;
+	}
 	
 }

@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.dailypet.infra.common.util.UtilSecurity;
+import com.dailypet.infra.common.util.UtilUpload;
 
 @Service
 public class MemberServiceImpl implements MemberService{
@@ -24,7 +26,31 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	public int animalInsert(Member dto) throws Exception {
-		return dao.animalInsert(dto);
+		int animalInsert = dao.animalInsert(dto);
+
+        int j = 0;
+        for(MultipartFile myFile : dto.getPet_image()) {
+
+            if(!myFile.isEmpty()) {
+                // postServiceImpl
+                String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
+                
+                UtilUpload.uploadPost1(myFile, pathModule, dto);
+                    
+                if(myFile.getOriginalFilename().toUpperCase().contains(".MP4") == true ) {
+                    dto.setType(3);
+                } else {
+                    dto.setType(2);
+                }
+                dto.setDefaultNy(j == 0 ? 1 : 0);
+                dto.setSort(j+1);
+                dto.setPseq(dto.getIfmmSeq());
+
+                dao.imgInsert(dto);
+                j++;
+            }
+        }
+        return animalInsert;
 	}
 	
 	public static String selectOneCachedCode(String ifmmSeq) throws Exception {

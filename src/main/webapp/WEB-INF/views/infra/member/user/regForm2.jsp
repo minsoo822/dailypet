@@ -531,6 +531,9 @@
 	<script type="text/javascript">
 	/* 반려동물 등록 */
 	var count_pet = 0;	
+	var gender_pet = 1;
+	var chip_pet = 1;
+	var vac_pet = 1;
 	
 	function addPet() {
 	 
@@ -578,12 +581,12 @@
 	tmp += '<label class="top4">성별</label>';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-4 col-md-4 col-sm-4 top2">';
-	tmp += '<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1">';
-	tmp += '<label class="form-check-label" for="inlineRadio4">남아</label> &nbsp; &nbsp;';
-	tmp += '<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2">';
-	tmp += '<label class="form-check-label" for="inlineRadio5">여아</label> &nbsp;&nbsp;';
-	tmp += '<input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3">';
-	tmp += '<label class="form-check-label" for="inlineRadio5">중성화</label>';
+	tmp += '<input class="form-check-input" type="radio" name="ifamGender' + gender_pet + '" id="gender1" value="9">';
+	tmp += '<label class="form-check-label" for="gender1">남아</label> &nbsp; &nbsp;';
+	tmp += '<input class="form-check-input" type="radio" name="ifamGender' + gender_pet + '" id="gender2" value="10">';
+	tmp += '<label class="form-check-label" for="gender2">여아</label> &nbsp;&nbsp;';
+	tmp += '<input class="form-check-input" type="radio" name="ifamGender' + gender_pet + '" id="gender3" value="11">';
+	tmp += '<label class="form-check-label" for="gender3">중성화</label>';
 	tmp += '</div>';
 	tmp += '</div>';
 	tmp += '<hr>';
@@ -592,19 +595,19 @@
 	tmp += '<label class="top4">칩 여부</label>';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-4 col-md-4 col-sm-4 top2">';
-	tmp += '<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio4" value="option4">';
-	tmp += '<label class="form-check-label" for="inlineRadio4">예</label> &nbsp; &nbsp;';
-	tmp += '<input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio5" value="option5">';
-	tmp += '<label class="form-check-label" for="inlineRadio5">아니오</label>';
+	tmp += '<input class="form-check-input" type="radio" name="ifamChipNY' + chip_pet + '" id="chip1" value="1">';
+	tmp += '<label class="form-check-label" for="chip1">예</label> &nbsp; &nbsp;';
+	tmp += '<input class="form-check-input" type="radio" name="ifamChipNY' + chip_pet + '" id="chip2" value="0">';
+	tmp += '<label class="form-check-label" for="chip2">아니오</label>';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-2 col-md-2 col-sm-2 gray">';
 	tmp += '<label class="top4">접종 여부</label>';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-4 col-md-4 col-sm-4 top2">';
-	tmp += '<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio4" value="option4">';
-	tmp += '<label class="form-check-label" for="inlineRadio4">예</label> &nbsp; &nbsp;';
-	tmp += '<input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio5" value="option5">';
-	tmp += '<label class="form-check-label" for="inlineRadio5">아니오</label>';
+	tmp += '<input class="form-check-input" type="radio" name="ifamVaccinateNY' + vac_pet + '" id="vac1" value="1">';
+	tmp += '<label class="form-check-label" for="vac1">예</label> &nbsp; &nbsp;';
+	tmp += '<input class="form-check-input" type="radio" name="ifamVaccinateNY' + vac_pet + '" id="vac2" value="0">';
+	tmp += '<label class="form-check-label" for="vac2">아니오</label>';
 	tmp += '</div>';
 	tmp += '</div>';
 	tmp += '<hr class="hr1">';
@@ -613,8 +616,10 @@
 	tmp += '</div>';
 	tmp += '<br>'	
 	
-	
 	count_pet += 1; 
+	gender_pet += 1;
+	chip_pet += 1;
+	vac_pet += 1;
 	
 	$("#petPoint").append(tmp);
 	

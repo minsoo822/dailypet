@@ -30,16 +30,42 @@
 		ORDER BY a.ifdaSeq DESC
 	</select>
 	
+	<select id="mypageImageList" resultMap="resultMapObj">
+		SELECT
+			seq
+			,path		AS diaryPath
+			,uuidName	AS diaryuuidName
+		FROM diaryUploaded
+		WHERE 1=1
+		AND pseq = #{ifmmSeq}
+	</select>
+	<select id="mypageDetailList" resultMap="resultMapObj">
+	   	SELECT
+			  a.ifdaSeq
+			, a.mm_ifmmSeq
+	        , d.ifmmID
+			, a.ifdaContents
+			, a.ifdaRegDate
+	        , b.path		AS diaryPath
+	        , b.uuidName	AS diaryuuidName
+	        , c.path		AS memberPath
+	        , c.uuidName	AS memberuuidName
+	    FROM diary a
+	    JOIN diaryUploaded b ON a.mm_ifmmSeq = b.pseq
+	    JOIN memberUploaded c ON a.mm_ifmmSeq = c.pseq
+	    JOIN member d ON a.mm_ifmmSeq = d.ifmmSeq
+	    WHERE a.ifdaSeq = b.seq
+	    AND a.mm_ifmmSeq = #{ifmmSeq}
+	</select>
+	
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			a.*
-			,b.path
-			,b.uuidName
+			,b.path			AS memberPath
+			,b.uuidName		AS memberuuidName
 		FROM member a
-		JOIN memberUploaded b
-		ON a.ifmmSeq = b.pseq
+		JOIN memberUploaded b ON a.ifmmSeq = b.pseq
 		WHERE 1=1
-		<!-- 프로필사진조인 -->
 		AND ifmmSeq = #{ifmmSeq}
 	</select>
 	

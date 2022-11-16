@@ -104,7 +104,7 @@
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage.html"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 	    <div class="content">
@@ -114,7 +114,7 @@
 	    			</div>
 	    			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    				<div class="profile mb10">
-	    					<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
+	    					<img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt="">
 	    				</div>
 	    			</div>
 	    			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
@@ -122,7 +122,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
 	    					<div class="col-lg-4 col-md-4 col-sm-4">
-	    						<h2>jennierubyjerry</h2>
+	    						<h2><c:out value="${item.ifmmID }"/></h2>
 	    					</div>
 	    					<div class="col-lg-4 col-md-4 col-sm-4">
 	    						<button type="button" id="followbtn">팔로우</button>
@@ -146,7 +146,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4><b>김제니</b></h4>
+	    						<h4><b><c:out value="${item.ifmmName }"/></b></h4>
 	    					</div>
 	    				</div>
 	    				<div class="row" style="margin-top: 10px">
@@ -164,25 +164,19 @@
 	    		<hr style="border: 1px solid lightgray; width: 1150px">
 	    	</div>
 	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-	                    <div class="project-img mb30">
-	                        <a href="/diary/DiaryList" ><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-	                    <div class="project-img mb30">
-	                        <a href="diaryDetail.html" ><img src="/resources/images/IMG_0309.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-	                    <div class="project-img mb30">
-	                        <a href="diaryDetail.html" ><img src="/resources/images/IMG_6216.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	            </div>
+		            <div class="row">
+		        		<c:forEach items="${list }" var="list" varStatus="status">
+			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			                    <div class="project-img mb30">
+			                        <a href="#" >
+			                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="Interior Design Website Templates Free Download">
+		                        	</a>
+			                    </div>
+			                </div>
+						</c:forEach>
+		            </div>
 	            <!-- pagination s -->
-				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
+				<%-- <%@include file="../../../common/xdmin/include/pagination.jsp"%> --%>
 				<!-- pagination e -->
 	        </div>
 	    </div>

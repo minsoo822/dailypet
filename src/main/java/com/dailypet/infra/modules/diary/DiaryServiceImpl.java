@@ -52,6 +52,14 @@ public class DiaryServiceImpl implements DiaryService{
         }
         return insertDiary;
 	}
+	@Override
+	public List<Diary> mypageImageList(DiaryVo vo) throws Exception {
+		return dao.mypageImageList(vo);
+	}
+	@Override
+	public List<Diary> mypageDetailList(DiaryVo vo) throws Exception {
+		return dao.mypageDetailList(vo);
+	}
 	
 	
 	

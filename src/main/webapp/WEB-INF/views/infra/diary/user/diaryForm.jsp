@@ -167,6 +167,16 @@
 	.box{
 		border-color: black;
 	}
+	img {
+		max-width: 100%;
+		max-height: 100%;
+		
+	}
+	.imgPreview {
+		width:560px;
+		height: 450px;
+		padding-left: 5px; 
+	}
 </style>
 
 <body>

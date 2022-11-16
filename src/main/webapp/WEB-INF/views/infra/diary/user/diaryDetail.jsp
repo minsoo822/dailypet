@@ -6,8 +6,7 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="true" %>
 
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
     <!-- meta,link s -->
@@ -53,7 +52,7 @@
 	    object-fit: cover;
 	}
 	
-	.col-lg-5, .col-md-5 {
+	.col-lg-5 {
 		padding: 0px;
 	}
 	
@@ -112,7 +111,7 @@
 	}
 	
 	.cardcontent {
-		margin-top: -20px;
+		margin-top: 10px;
 	}
 	
 	.row {
@@ -124,9 +123,18 @@
 		padding: 0;
 	}
 	
+	#idbox {
+		padding: 7.5px;
+	}
+	
 	.col-lg-5 {
 		position: relative;
 		height: 500px;
+	}
+	
+	.cardcontent p {
+		font-size: 11px; 
+		color: lightgray;
 	}
 		
 	.cardfooter {
@@ -158,15 +166,15 @@
 </style>
 
 <body>
-    <!-- herder s -->
+    <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <!-- /.page header -->
     <div class="diaryheader">
 		<nav class="icon">
-			<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
-			<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage.html"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+			<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
+			<span style="font-size: 25px"><a href="diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
+			<span><div class="profileheader"><a href="diaryMypage"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
     <div class="content">
@@ -184,8 +192,8 @@
 								<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
 						   	</div>
 						</div>
-						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">	
-					    	<h5 id="userid" style="margin: 10px 0 0 -15px; font-size: 13px"><b>jennierubyjerry</b></h5>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
+					    	<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>jennierubyjerry</b></h5>
 					    </div>
 					</div>
 					<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
@@ -195,20 +203,26 @@
 								<img src="/resources/images/jennieprofile.jpg" class="profilepic" alt="">
 						   	</div>
 						</div>
-						<h5 id="userid" style="margin: 10px 5px 0 5px; font-size: 13px; display: inline"><b>jennierubyjerry</b></h5><h5 style="margin-top: 10px; font-size: 13px; display: inline">오늘은 일요일🥰🥰 제리랑 놀기</h5>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
+					    	<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>jennierubyjerry</b></h5>
+					    </div>
+					</div>
+					<div class="row" style="margin-top: 10px">
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+						<div class="col"><p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px">내일이 월요일이랜다 너무너무너무 나가기가 싫다 제리랑 놀아야지</p></div>
 					</div>
 					<div class="cardfooter">
 						<div class="service-content">
 							<div class="postbtn">
 								<button type="button" id="like"><span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span></button><button type="button" id="comment"><span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span></button>
 							</div>
-						    <p><b>좋아요 9,234개</b></p>
+						    <p style="font-size: 13px; margin-top: 5px;"><b>좋아요 9,234개</b></p>
 						    <div class="cardcontent">
-						    	<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline"><b>jennierubyjerry</b></h5><p style="font-size: 13px; display: inline;">오늘은 일요일!!! 제리랑 놀기</p>
-						    	<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
-						    	<p style="font-size: 11px; color: lightgray">21시간 전</p>
+						    	<p style="margin: 10px 0 0 0">view all 365 comments</p>
+						    	<p>21시간 전</p>
 						    </div>
 						</div>
+						<hr style="color: lightgray; margin: 3px">
 						<div class="cardcomment">
 					    	<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
 					    	<button type="submit" id="upcomment">게시</button>

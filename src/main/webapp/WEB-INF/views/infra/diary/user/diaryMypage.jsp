@@ -167,31 +167,23 @@
 	            <div class="row">
 	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 	                    <div class="project-img mb30">
-	                        <a href="/diary/DiaryList" class="imghover"><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+	                        <a href="/diary/DiaryList" ><img src="/resources/images/IMG_0308.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 	                    </div>
 	                </div>
 	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 	                    <div class="project-img mb30">
-	                        <a href="diaryDetail.html" class="imghover"><img src="/resources/images/IMG_0309.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+	                        <a href="diaryDetail.html" ><img src="/resources/images/IMG_0309.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 	                    </div>
 	                </div>
 	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-	                    <div class="project-img imghover mb30">
-	                        <a href="diaryDetail.html" class="imghover"><img src="/resources/images/IMG_6216.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+	                    <div class="project-img mb30">
+	                        <a href="diaryDetail.html" ><img src="/resources/images/IMG_6216.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 	                    </div>
 	                </div>
 	            </div>
-	            <div class="row">
-	                <div class="st-pagination">
-	                    <ul class="pagination">
-	                        <li><a href="#">Previous</a></li>
-	                        <li><a href="#" class="active">1</a></li>
-	                        <li><a href="#">2</a></li>
-	                        <li><a href="#">3</a></li>
-	                        <li><a href="#">Next</a></li>
-	                    </ul>
-	                </div>
-	            </div>
+	            <!-- pagination s -->
+				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
+				<!-- pagination e -->
 	        </div>
 	    </div>
 	    <!-- footer s -->

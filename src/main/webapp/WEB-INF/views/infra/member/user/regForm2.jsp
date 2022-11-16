@@ -304,7 +304,7 @@
 										<label class="top4">회원사진 첨부</label>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										<input class="form-control input" id="userfile" name="pet_image" type="file" accept=".jpg,.png,.jpeg">
+										<input class="form-control input" id="userfile" name="userImage" type="file" accept=".jpg,.png,.jpeg">
 									</div>
 								</div>
 		                       	<div class="row div2">
@@ -437,13 +437,11 @@
 											<label class="top4">이미지 첨부</label>
 										</div>
 										<div class="col-lg-4 col-md-4 col-sm-4">
-											<input class="form-control input" name="pet_image" type="file" accept=".jpg,.png,.jpeg">
+											<input class="form-control input" id="petfile" name="petImage" type="file" accept=".jpg,.png,.jpeg">
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-6 top2">
 											<div id="UploadedImagePreview" class="addScroll">
-												<c:forEach items="${imageUpload}" var="imageUpload" varStatus="status">
-													<img src="${imageUpload.path }${imageUpload.uuidName}" id="img">
-												</c:forEach>
+												<img src="" id="petImage" style="height: 180px;">
 											</div>
 										</div>							
 									</div>
@@ -776,6 +774,12 @@
 		var tmp = e.target.files[0];
 	    var img = URL.createObjectURL(tmp);
 	    $("#userImage").attr("src", img);
+	});
+	
+    $("#petfile").on("change", function(e) {
+		var tmp = e.target.files[0];
+	    var img = URL.createObjectURL(tmp);
+	    $("#petImage").attr("src", img);
 	});
 </script> 
 

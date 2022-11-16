@@ -2,10 +2,23 @@ package com.dailypet.infra.modules.diary;
 
 public class DiaryVo {
 	
+	private String seq;
 	private String ifdaSeq;
 	private String ifmmSeq;
 	
 	private String mm_ifmmSeq;
+
+	
+	
+	
+	
+	public String getSeq() {
+		return seq;
+	}
+
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
 
 	public String getIfdaSeq() {
 		return ifdaSeq;

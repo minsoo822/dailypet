@@ -190,7 +190,7 @@
 		<nav class="icon">
 			<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 			<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.path}${item.uuidName}" class="profilepic" alt=""></a></div></span>
+			<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
     <div class="content">
@@ -216,7 +216,7 @@
                     <div class="row">
 						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 							<div class="profileView">
-								<img src="${item.path}${item.uuidName}" class="profilepic" alt="">
+								<img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt="">
 						   	</div>
 						</div>
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

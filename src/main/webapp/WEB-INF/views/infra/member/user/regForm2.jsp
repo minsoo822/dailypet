@@ -543,13 +543,11 @@
 	tmp += '<label class="top4">이미지 첨부</label>';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-4 col-md-4 col-sm-4">';
-	tmp += '<input class="form-control input" name="MultipartFile" type="file" multiple="multiple" accept=".jpg,.png,.jpeg">';
+	tmp += '<input class="form-control input" id="petfile" name="petImage" type="file" accept=".jpg,.png,.jpeg">';
 	tmp += '</div>';
 	tmp += '<div class="col-lg-6 col-md-6 col-sm-6 top2">';
 	tmp += '<div id="UploadedImagePreview" class="addScroll">';
-	tmp += '<c:forEach items="${imageUpload}" var="imageUpload" varStatus="status">';
-	tmp += '<img src="${imageUpload.path }${imageUpload.uuidName}" id="img">';
-	tmp += '</c:forEach>';
+	tmp += '<img src="" id="petImage" style="height: 180px;">';
 	tmp += '</div>';
 	tmp += '</div>';
 	tmp += '</div>';

@@ -192,7 +192,7 @@
 						<div class="row" style="margin-top: 15px; height: 50px;">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 								<div class="profileView">
-									<img src="${ist.memberPath }${list.memberuuidName}" class="profilepic" alt="">
+									<img src="${list.memberPath }${list.memberuuidName}" class="profilepic" alt="">
 							   	</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">

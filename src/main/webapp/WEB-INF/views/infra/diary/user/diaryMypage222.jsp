@@ -116,7 +116,7 @@
         border-radius: 10px;
         border: 1px solid rgba(255, 255, 255, 0.18);
         width: 800px;
-        height: 600px;
+        height: 550px;
         position: relative;
         padding: 10px;
     }
@@ -134,9 +134,79 @@
     }
 /* ------------------------------------------------------------------------ */
 	
+	.col-lg-5 {
+		padding: 0px;
+	}
 	
+	button {
+		background-color: white;;
+		border: none;
+	}
 	
+	#like, #comment {
+		margin-right: 10px;
+	}
 	
+	.service-content > * {
+		margin-left: 10px;
+	}
+	
+	.postbtn {
+		margin: -20px 0 0 10px;
+	}
+	
+	.cardcontent {
+		margin-top: 10px;
+	}
+	
+	.row {
+		margin: 0;
+		padding: 0;
+	}
+	
+	div.col-lg-7 {
+		padding: 0;
+	}
+	
+	#idbox {
+		padding: 7.5px;
+	}
+	
+	.col-lg-5 {
+		position: relative;
+		height: 500px;
+	}
+	
+	.cardcontent p {
+		font-size: 11px; 
+		color: lightgray;
+	}
+		
+	.cardfooter {
+		position: absolute;
+	    bottom: 0;
+	}
+	
+	.cardfooter .form-control {
+		margin-bottom: 2px;
+		padding: 0 15px;
+	}
+	
+	#writecomm {
+		width: 280px;
+		padding: 8px;
+		display: inline;
+		border: none;
+	}
+	
+	#upcomment {
+		color: brown;
+		background-color: none;
+		border: none;
+		font-size: 14px;
+		font-weight: bold;
+		display: inline;
+	}
 	
 	
 	
@@ -158,6 +228,7 @@
 <body>
 	<form method="post" id="mainForm">
 		<input type="hidden" name="ifmmSeq" value="${vo.ifmmSeq }">
+		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
 	    <%@include file="../../../common/xdmin/include/header.jsp"%>
 	    <!-- header e -->
@@ -175,7 +246,7 @@
 			<div class="modal_window">
 				<div class="modal_title">
 	                <div class="modal_title_side"></div>
-	                	<div> 새 게시물 </div>
+	                	<div style="margin-bottom: 7px"> 게시물 상세 </div>
 	                <div class="modal_title_side">
 	                    <span id="close_modal" class="material-icons-outlined">
 	                        <i class="fa-solid fa-xmark"></i>
@@ -185,14 +256,14 @@
             	<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
-							<img src="/resources/images/findpet/700.jsp" class="img-responsive" alt="">
+							<img src="/resources/images/findpet/700.jpg" class="img-responsive" alt="">
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="row" style="margin-top: 10px">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 								<div class="profileView">
-									<img src="/resources/images/findpet/700.jsp" class="profilepic" alt="">
+									<img src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
@@ -203,7 +274,7 @@
 						<div class="row" style="margin-top: 10px">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 								<div class="profileView">
-									<img src="/resources/images/findpet/700.jsp" class="profilepic" alt="">
+									<img src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
@@ -307,7 +378,7 @@
 			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			                    <div class="project-img mb30">
 			                        <a href="#" >
-			                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="Interior Design Website Templates Free Download">
+			                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
 		                        	</a>
 			                    </div>
 			                </div>

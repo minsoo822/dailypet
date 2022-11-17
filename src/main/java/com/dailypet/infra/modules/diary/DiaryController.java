@@ -19,7 +19,12 @@ public class DiaryController {
 	
 	/* 일기리스트 */
 	@RequestMapping(value = "diaryList")
-	public String selectList(@ModelAttribute("vo") DiaryVo vo, Model model) throws Exception {
+	public String selectList(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession) throws Exception {
+		
+		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
+		Diary item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		
 		List<Diary> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		

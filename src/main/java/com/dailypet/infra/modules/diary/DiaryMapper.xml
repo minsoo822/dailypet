@@ -32,10 +32,12 @@
 	
 	<select id="mypageImageList" resultMap="resultMapObj">
 		SELECT
-			seq
-			,path		AS diaryPath
-			,uuidName	AS diaryuuidName
-		FROM diaryUploaded
+			a.seq
+			,a.path		AS diaryPath
+			,a.uuidName	AS diaryuuidName
+			,b.ifdaSeq
+		FROM diaryUploaded a
+		JOIN diary b ON a.seq = b.ifdaSeq
 		WHERE 1=1
 		AND pseq = #{ifmmSeq}
 	</select>

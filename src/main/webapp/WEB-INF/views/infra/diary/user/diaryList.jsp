@@ -173,7 +173,7 @@
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage"><img src="/resources/images/jennieprofile.jpg" class="profilepic" alt=""></a></div></span>
+				<span><div class="profileheader"><a href="diaryMypage"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 		<!-- <div class="diaryheader">
@@ -206,7 +206,7 @@
 						<!-- 상단바 e -->
 						<!-- 일기 사진 s -->
 						<div class="row">
-							<div class="col" style="overflow: hidden;" >
+							<div class="col" style="overflow: hidden; padding-left: 0px; padding-right: 0px;" >
 								<div class="service-img" style="width: 500px; margin-left: auto; margin-right: auto;">
 								    <a href="#" class="imghover"><img src="${list.diaryPath}${list.diaryuuidName}" class="img-responsive" alt=""></a>
 								</div>

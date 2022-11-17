@@ -21,7 +21,7 @@ public class Base {
 	private String diaryuuidName;
 	private String memberPath;
 	private String memberuuidName;
-	private String mm_ifmmSeq;
+	private String ifmmSeq;
 //--------------------------------------------------------------------------------------	
 	
 	public String getSeq() {
@@ -114,11 +114,10 @@ public class Base {
 	public void setMemberuuidName(String memberuuidName) {
 		this.memberuuidName = memberuuidName;
 	}
-	public String getMm_ifmmSeq() {
-		return mm_ifmmSeq;
+	public String getIfmmSeq() {
+		return ifmmSeq;
 	}
-	public void setMm_ifmmSeq(String mm_ifmmSeq) {
-		this.mm_ifmmSeq = mm_ifmmSeq;
+	public void setIfmmSeq(String ifmmSeq) {
+		this.ifmmSeq = ifmmSeq;
 	}
-	
 }

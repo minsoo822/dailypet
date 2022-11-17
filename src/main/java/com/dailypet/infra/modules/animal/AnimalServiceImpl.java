@@ -31,34 +31,12 @@ public class AnimalServiceImpl implements AnimalService{
                 dto.setSort(j+1);
                 dto.setPseq(dto.getIfamSeq());
 
-                dao.petimgInsert(dto);
+                dao.animalInsert(dto);
                 j++;
             }
         }
 		return animalInsert;
 	}
 	
-	@Override
-	public int petimgInsert(Animal dto) throws Exception {
-		
-        int j = 0;
-        for(MultipartFile myFile : dto.getPet_image()) {
-
-            if(!myFile.isEmpty()) {
-                // postServiceImpl
-                String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
-                UtilUpload.uploadPet(myFile, pathModule, dto);
-
-                dto.setType(2);
-                dto.setDefaultNy(j == 0 ? 1 : 0);
-                dto.setSort(j+1);
-                dto.setPseq(dto.getIfamSeq());
-
-                dao.petimgInsert(dto);
-                j++;
-            }
-        }
-		return 0;
-	}
 	
 }

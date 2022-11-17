@@ -19,7 +19,4 @@ public class AnimalDao {
 		return sqlSession.insert(namespace + ".animalInsert", dto);
 	}
 	
-	public int petimgInsert(Animal dto) {
-		return sqlSession.insert(namespace + ".petimgInsert", dto);
-	}
 }

@@ -40,7 +40,6 @@ public class MemberController {
 		
 		service.userInsert(dto);
 		service1.animalInsert(dto1);
-		service1.petimgInsert(dto1);
 		
 		return "infra/member/user/regDone";
 	}

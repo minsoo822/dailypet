@@ -17,6 +17,7 @@
 </head>
 
 <style type="text/css">
+
 	.container2 {
 		margin: 6% 10%;
 	} 
@@ -36,6 +37,10 @@
 	
 	.imghover {
 		overflow: hidden;
+	}
+	
+	img.img-responsive {
+		margin: 0;
 	}
 	
 	.img-responsive {
@@ -141,12 +146,17 @@
     }
 /* ------------------------------------------------------------------------ */
 	
+	#thumbList .col-lg-4 {
+		margin: 18px 10px;
+		max-width: 380px;
+	}
+	
 	.col-lg-5 {
 		padding: 0px;
 	}
 	
 	button {
-		background-color: white;;
+		background-color: white;
 		border: none;
 	}
 	
@@ -363,19 +373,19 @@
 	    		<br>
 	    		<hr style="border: 1px solid lightgray; width: 1150px; margin-left: auto; margin-right: auto;">
 	    	</div>
-	        <div class="container">
-		            <div class="row">
-		        		<c:forEach items="${list }" var="list" varStatus="status">
-			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" onclick="goDiaryDeatil(${list.ifdaSeq})" >
-			                    <div class="project-img mb30" style="width: 430px;">
-		                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
-			                    </div>
-			                </div>
-						</c:forEach>
-		            </div>
-	            <!-- pagination s -->
-				<%-- <%@include file="../../../common/xdmin/include/pagination.jsp"%> --%>
-				<!-- pagination e -->
+	        <div class="container" id="thumbList">
+	            <div class="row" style="margin-left: 50px">
+	        		<c:forEach items="${list }" var="list" varStatus="status">
+		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" onclick="goDiaryDetail(${list.ifdaSeq})" >
+		                    <div class="postthumb" style="max-width: 360px; max-height: 304px">
+	                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
+		                    </div>
+		                </div>
+					</c:forEach>
+	            </div>
+            <!-- pagination s -->
+			<%-- <%@include file="../../../common/xdmin/include/pagination.jsp"%> --%>
+			<!-- pagination e -->
 	        </div>
 	    </div>
 	    <!-- footer s -->

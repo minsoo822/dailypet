@@ -6,8 +6,7 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="true" %>
 
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
     <!-- meta,link s -->
@@ -17,15 +16,38 @@
 </head>
 
 <style type="text/css">
+
 	.container2 {
 		margin: 6% 10%;
-	} 
+	}
+	
+	.container3 {
+		margin: 5% 15% 0 25%;
+		width: 800px;
+		height: 500px;
+		border: 1px solid lightgray;
+	}
+	
+	.imgdetail {
+		overflow: hidden;
+	}
 	
 	.profile {
 		width: 180px;
 	    height: 180px; 
 	    border-radius: 70%;
 	    overflow: hidden;
+	}
+	
+	.profileView {
+		width: 30px;
+	    height: 30px; 
+	    border-radius: 70%;
+	    overflow: hidden;
+	}
+	
+	#userid {
+		display: inline;
 	}
 	
 	.profilepic {
@@ -52,6 +74,10 @@
 		border: 1px solid gray;
 		border-radius: 4px;
 		font-weight: bold;
+	}
+	
+	.col-lg-5 {
+		padding: 0px;
 	}
 	
 	.diaryheader {
@@ -90,7 +116,72 @@
 		margin-bottom: 10px;
 		color: black;
 	}
-
+	
+	#like, #comment {
+		margin-right: 10px;
+	}
+	
+	.service-content > * {
+		margin-left: 10px;
+	}
+	
+	.postbtn {
+		margin: -20px 0 0 10px;
+	}
+	
+	.cardcontent {
+		margin-top: 10px;
+	}
+	
+	.row {
+		margin: 0;
+		padding: 0;
+	}
+	
+	div.col-lg-7 {
+		padding: 0;
+	}
+	
+	#idbox {
+		padding: 7.5px;
+	}
+	
+	.col-lg-5 {
+		position: relative;
+		height: 500px;
+	}
+	
+	.cardcontent p {
+		font-size: 11px; 
+		color: lightgray;
+	}
+		
+	.cardfooter {
+		position: absolute;
+	    bottom: 0;
+	}
+	
+	.cardfooter .form-control {
+		margin-bottom: 2px;
+		padding: 0 15px;
+	}
+	
+	#writecomm {
+		width: 280px;
+		padding: 8px;
+		display: inline;
+		border: none;
+	}
+	
+	#upcomment {
+		color: brown;
+		background-color: none;
+		border: none;
+		font-size: 14px;
+		font-weight: bold;
+		display: inline;
+	}
+	
 </style>
 
 <body>
@@ -163,21 +254,95 @@
 	    		<br>
 	    		<hr style="border: 1px solid lightgray; width: 1150px">
 	    	</div>
-	        <div class="container">
-		            <div class="row">
-		        		<c:forEach items="${list }" var="list" varStatus="status">
-			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-			                    <div class="project-img mb30">
-			                        <a href="#" >
-			                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="Interior Design Website Templates Free Download">
-		                        	</a>
-			                    </div>
-			                </div>
-						</c:forEach>
-		            </div>
-	            <!-- pagination s -->
-				<%-- <%@include file="../../../common/xdmin/include/pagination.jsp"%> --%>
-				<!-- pagination e -->
+	        <div class="container2">
+	            <div class="row">
+	        		<c:forEach items="${list }" var="list" varStatus="status">
+		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+		                    <div class="project-img mb30">
+                        		<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" id="thumbimg" alt="" data-toggle="modal">
+		                    </div>
+		                </div>
+					</c:forEach>
+	            </div>
+	            <!-- Modal -->
+				<div class="modal fade" id="postModal" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+							</div>
+							<div class="modal-body">
+								<div class="content">
+							    	<div class="container3">
+										<div class="row">
+											<c:forEach items="${list }" var="list" varStatus="status">
+												<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+													<div class="imgdetail">
+														<img src="${list.diaryPath }${list.diaryuuidName}" class="img-responsive" alt="">
+													</div>
+												</div>
+												<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+													<div class="row" style="margin-top: 10px">
+														<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+															<div class="profileView">
+																<img src="${list.memberPath}${list.memberuuidName}" class="profilepic" alt="">
+															</div>
+														</div>
+														<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
+															<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b><c:out value="${list.ifmmID }"/></b></h5>
+														</div>
+													</div>
+													<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
+													<div class="row" style="margin-top: 10px">
+														<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+															<div class="profileView">
+																<img src="${list.memberPath}${list.memberuuidName}" class="profilepic" alt="">
+															</div>
+														</div>
+														<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
+															<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b><c:out value="${list.ifmmID }"/></b></h5>
+														</div>
+													</div>
+													<div class="row" style="margin-top: 10px">
+														<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+														<div class="col">
+															<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px"><c:out value="${list.ifdaContents }"></c:out></p>
+														</div>
+													</div>
+													<div class="cardfooter">
+														<div class="service-content">
+															<div class="postbtn">
+																<button type="button" id="like">
+																	<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
+																</button>
+																<button type="button" id="comment">
+																	<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+																</button>
+															</div>
+															<p style="font-size: 13px; margin-top: 5px;"><b>좋아요 9,234개</b></p>
+															<div class="cardcontent">
+																<p style="margin: 10px 0 0 0">view all 365 comments</p>
+																<p>${list.ifdaRegDate }</p>
+															</div>
+														</div>
+														<hr style="color: lightgray; margin: 3px">
+														<div class="cardcomment">
+															<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
+															<button type="submit" id="upcomment">게시</button>
+														</div>
+													</div>
+												</div>
+											</c:forEach>	
+										</div>
+									</div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+            <!-- pagination s -->
+			<%-- <%@include file="../../../common/xdmin/include/pagination.jsp"%> --%>
+			<!-- pagination e -->
 	        </div>
 	    </div>
 	    <!-- footer s -->
@@ -187,6 +352,15 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    
+    <script type="text/javascript">
+    	
+    	$("#thumbimg").click(function() {
+    		$("#postModal").modal();
+    	});
+    	
+    </script>
+    
 </body>
 
 </html>

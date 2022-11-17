@@ -30,16 +30,18 @@ public class Member extends Base{
 	public Integer ifmmDelNy;
 	
 	//동물 등록
-	public String mm_ifmmSeq;
-	public String ifamName;
-	public Integer ifamAge;
-	public String ifamKind;
-	public Integer ifamGender;
-	public Integer ifamChipNY;
-	public Integer ifamVaccinateNY;
+//	public String mm_ifmmSeq;
+//	public String ifamName;
+//	public Integer ifamAge;
+//	public String ifamKind;
+//	public Integer ifamGender;
+//	public Integer ifamChipNY;
+//	public Integer ifamVaccinateNY;
 
+	//이미지등록
 	public MultipartFile[] user_image;
-	
+//	public MultipartFile[] pet_image;
+
 	
 	public static List<Member> cachedCodeArrayList = new ArrayList<Member>();
 
@@ -152,53 +154,59 @@ public class Member extends Base{
 	public void setIfmmDelNy(Integer ifmmDelNy) {
 		this.ifmmDelNy = ifmmDelNy;
 	}
-	public String getMm_ifmmSeq() {
-		return mm_ifmmSeq;
-	}
-	public void setMm_ifmmSeq(String mm_ifmmSeq) {
-		this.mm_ifmmSeq = mm_ifmmSeq;
-	}
-	public String getIfamName() {
-		return ifamName;
-	}
-	public void setIfamName(String ifamName) {
-		this.ifamName = ifamName;
-	}
-	public Integer getIfamAge() {
-		return ifamAge;
-	}
-	public void setIfamAge(Integer ifamAge) {
-		this.ifamAge = ifamAge;
-	}
-	public String getIfamKind() {
-		return ifamKind;
-	}
-	public void setIfamKind(String ifamKind) {
-		this.ifamKind = ifamKind;
-	}
-	public Integer getIfamGender() {
-		return ifamGender;
-	}
-	public void setIfamGender(Integer ifamGender) {
-		this.ifamGender = ifamGender;
-	}
-	public Integer getIfamChipNY() {
-		return ifamChipNY;
-	}
-	public void setIfamChipNY(Integer ifamChipNY) {
-		this.ifamChipNY = ifamChipNY;
-	}
-	public Integer getIfamVaccinateNY() {
-		return ifamVaccinateNY;
-	}
-	public void setIfamVaccinateNY(Integer ifamVaccinateNY) {
-		this.ifamVaccinateNY = ifamVaccinateNY;
-	}
+//	public String getMm_ifmmSeq() {
+//		return mm_ifmmSeq;
+//	}
+//	public void setMm_ifmmSeq(String mm_ifmmSeq) {
+//		this.mm_ifmmSeq = mm_ifmmSeq;
+//	}
+//	public String getIfamName() {
+//		return ifamName;
+//	}
+//	public void setIfamName(String ifamName) {
+//		this.ifamName = ifamName;
+//	}
+//	public Integer getIfamAge() {
+//		return ifamAge;
+//	}
+//	public void setIfamAge(Integer ifamAge) {
+//		this.ifamAge = ifamAge;
+//	}
+//	public String getIfamKind() {
+//		return ifamKind;
+//	}
+//	public void setIfamKind(String ifamKind) {
+//		this.ifamKind = ifamKind;
+//	}
+//	public Integer getIfamGender() {
+//		return ifamGender;
+//	}
+//	public void setIfamGender(Integer ifamGender) {
+//		this.ifamGender = ifamGender;
+//	}
+//	public Integer getIfamChipNY() {
+//		return ifamChipNY;
+//	}
+//	public void setIfamChipNY(Integer ifamChipNY) {
+//		this.ifamChipNY = ifamChipNY;
+//	}
+//	public Integer getIfamVaccinateNY() {
+//		return ifamVaccinateNY;
+//	}
+//	public void setIfamVaccinateNY(Integer ifamVaccinateNY) {
+//		this.ifamVaccinateNY = ifamVaccinateNY;
+//	}
 	public MultipartFile[] getUser_image() {
 		return user_image;
 	}
 	public void setUser_image(MultipartFile[] user_image) {
 		this.user_image = user_image;
 	}
+//	public MultipartFile[] getPet_image() {
+//		return pet_image;
+//	}
+//	public void setPet_image(MultipartFile[] pet_image) {
+//		this.pet_image = pet_image;
+//	}
 	
 }

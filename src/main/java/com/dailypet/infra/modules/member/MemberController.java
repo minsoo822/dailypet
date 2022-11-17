@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dailypet.infra.common.constants.Constants;
 import com.dailypet.infra.common.util.UtilCookie;
+import com.dailypet.infra.modules.animal.Animal;
+import com.dailypet.infra.modules.animal.AnimalServiceImpl;
 
 
 @Controller
@@ -20,7 +22,10 @@ public class MemberController {
 	
 	@Autowired
 	MemberServiceImpl service;
-
+	
+	@Autowired
+	AnimalServiceImpl service1;
+	
 	@RequestMapping(value = "login")
 	public String login() throws Exception {
 
@@ -29,12 +34,13 @@ public class MemberController {
 	
 	//회원가입
 	@RequestMapping(value="allInst")
-	public String allInst(Member dto) throws Exception {
+	public String allInst(Member dto, Animal dto1) throws Exception {
 		
 		dto.setIfmmEmail(dto.getIfmmEmailID() + MemberServiceImpl.selectOneCachedCode(dto.getIfmmEmailDomain()));
 		
 		service.userInsert(dto);
-		service.animalInsert(dto);
+		service1.animalInsert(dto1);
+		service1.petimgInsert(dto1);
 		
 		return "infra/member/user/regDone";
 	}

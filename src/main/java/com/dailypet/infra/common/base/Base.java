@@ -21,7 +21,9 @@ public class Base {
 	private String diaryuuidName;
 	private String memberPath;
 	private String memberuuidName;
+	private String mm_ifmmSeq;
 //--------------------------------------------------------------------------------------	
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -88,13 +90,6 @@ public class Base {
 	public void setPseq(String pseq) {
 		this.pseq = pseq;
 	}
-	
-	
-	
-	
-	
-	
-	
 	public String getDiaryPath() {
 		return diaryPath;
 	}
@@ -118,6 +113,12 @@ public class Base {
 	}
 	public void setMemberuuidName(String memberuuidName) {
 		this.memberuuidName = memberuuidName;
+	}
+	public String getMm_ifmmSeq() {
+		return mm_ifmmSeq;
+	}
+	public void setMm_ifmmSeq(String mm_ifmmSeq) {
+		this.mm_ifmmSeq = mm_ifmmSeq;
 	}
 	
 }

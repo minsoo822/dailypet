@@ -48,13 +48,10 @@ public class MemberDao {
 		return sqlSession.insert(namespace + ".userInsert", dto);
 	}
 	
-	public int animalInsert(Member dto) {
-		return sqlSession.insert(namespace + ".animalInsert", dto);
-	}
-	
 	public int userimgInsert(Member dto) { 
 		return sqlSession.insert(namespace + ".userimgInsert" , dto);
 	}
+	
 //----------------------------------------------------------------------------------------	
 	//아이디 중복 체크
 	public int selectOneCheckId(Member dto) {
@@ -74,4 +71,5 @@ public class MemberDao {
 	public Member selectOneID(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneID", dto);
 	}
+
 }

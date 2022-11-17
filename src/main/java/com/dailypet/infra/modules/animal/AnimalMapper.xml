@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailypet.infra.modules.animal.AnimalMapper">
+	
+	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.animal.Animal"></resultMap>
+
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT 
+			a.ifamSeq
+			, a.ifamName
+			, a.ifamAge
+			, a.ifamKind
+			, a.ifamGender
+			, a.ifamChipNY
+			, a.ifamVaccinateNY
+			, b.ifmmSeq
+		FROM animal a
+		JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
+		WHERE 1=1
+		ORDER BY a.ifamSeq DESC;
+	</select>
+	
+	<!-- 애완동물 -->
+	<insert id="animalInsert">
+		INSERT INTO animal(
+			mm_ifmmSeq
+			, ifamName
+			, ifamAge
+			, ifamKind
+			, ifamGender
+			, ifamChipNY
+			, ifamVaccinateNY
+		)
+		VALUES(
+			#{ifmmSeq}
+			, #{ifamName}
+			, #{ifamAge}
+			, #{ifamKind}
+			, #{ifamGender}
+			, #{ifamChipNY}
+			, #{ifamVaccinateNY}
+		)
+	</insert>
+	
+	<!-- 동물 이미지 인서트 -->
+	<insert id="petimgInsert">
+		INSERT INTO petUploaded (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
+		)
+		VALUES (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{pseq}
+		)
+	</insert>
+	
+</mapper>

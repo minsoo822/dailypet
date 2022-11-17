@@ -21,6 +21,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	//회원가입
+	@Override
 	public int userInsert(Member dto) throws Exception {
 		int userInsert = dao.userInsert(dto);
 
@@ -34,7 +35,7 @@ public class MemberServiceImpl implements MemberService{
 //                		MemberServiceImpl.java  ->	 MemberServiceImpl -> ""  ->	 memberserviceimpl -> 	member
                 UtilUpload.uploadUser(myFile, pathModule, dto);
                     
-                dto.setType(2);
+                dto.setType(1);
                 dto.setDefaultNy(j == 0 ? 1 : 0);
                 dto.setSort(j+1);
                 dto.setPseq(dto.getIfmmSeq());
@@ -46,9 +47,6 @@ public class MemberServiceImpl implements MemberService{
 		return userInsert;
 	}
 	
-	public int animalInsert(Member dto) throws Exception {
-        return dao.animalInsert(dto);
-	}
 //-----------------------------------------------------------------------------------	
 	public static String selectOneCachedCode(String ifmmSeq) throws Exception {
 		String rt = "";
@@ -86,4 +84,5 @@ public class MemberServiceImpl implements MemberService{
 	public int selectOneCheckNick(Member dto) throws Exception {
 		return dao.selectOneCheckNick(dto);
 	}
+
 }

@@ -1,24 +1,23 @@
 package com.dailypet.infra.modules.animal;
 
+
 import org.springframework.web.multipart.MultipartFile;
 
 import com.dailypet.infra.common.base.Base;
 
 public class Animal extends Base{
 
-	private String ifamSeq;
-	private Integer ifamGender;
-	private String ifamName;
-	private Integer ifamAge;
-	private String ifamKind;
-	private Integer ifamChipNY;
-	private Integer ifamVaccinateNY;
+	public String ifamSeq;
+	public Integer ifamGender;
+	public String ifamName;
+	public Integer ifamAge;
+	public String ifamKind;
+	public Integer ifamChipNY;
+	public Integer ifamVaccinateNY;
 //-----------------------------------------------------
-	//이미지등록
 	public MultipartFile[] pet_image;
-//-----------------------------------------------------	
 	
-	private Integer mm_ifmmSeq;
+	
 	public String getIfamSeq() {
 		return ifamSeq;
 	}
@@ -61,19 +60,12 @@ public class Animal extends Base{
 	public void setIfamVaccinateNY(Integer ifamVaccinateNY) {
 		this.ifamVaccinateNY = ifamVaccinateNY;
 	}
-	public Integer getMm_ifmmSeq() {
-		return mm_ifmmSeq;
-	}
-	public void setMm_ifmmSeq(Integer mm_ifmmSeq) {
-		this.mm_ifmmSeq = mm_ifmmSeq;
-	}
 	public MultipartFile[] getPet_image() {
 		return pet_image;
 	}
 	public void setPet_image(MultipartFile[] pet_image) {
 		this.pet_image = pet_image;
 	}
-	
-	
+
 	
 }

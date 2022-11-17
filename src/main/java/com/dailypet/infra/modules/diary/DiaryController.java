@@ -17,7 +17,7 @@ public class DiaryController {
 	@Autowired
 	DiaryServiceImpl service;
 	
-//	일기리스트
+	/* 일기리스트 */
 	@RequestMapping(value = "diaryList")
 	public String selectList(@ModelAttribute("vo") DiaryVo vo, Model model) throws Exception {
 		List<Diary> list = service.selectList(vo);
@@ -25,7 +25,8 @@ public class DiaryController {
 		
 		return "infra/diary/user/diaryList";
 	}
-//	일기폼
+	
+	/* 일기폼 */
 	@RequestMapping(value = "diaryForm")
 	public String diaryForm(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession) throws Exception {
 		
@@ -35,7 +36,8 @@ public class DiaryController {
 		
 		return "infra/diary/user/diaryForm";
 	}
-//	일기폼
+	
+	/* 일기폼 */
 	@RequestMapping(value = "diaryInst")
 	public String insertDiary(Diary dto) throws Exception {
 				
@@ -43,7 +45,8 @@ public class DiaryController {
 		
 		return "redirect:/diary/diaryList";
 	}
-//	일기리스트 디테일
+	
+	/* 일기리스트 디테일 */
 	@RequestMapping(value = "diaryDetail")
 	public String diaryDetail(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
 //		회원정보
@@ -56,7 +59,8 @@ public class DiaryController {
 		 
 		return "infra/diary/user/diaryDetail";
 	}
-//	나의 일기리스트
+	
+	/* 나의 일기리스트 */
 	@RequestMapping(value = "diaryMypage")
 	public String diaryMypage(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
 //		회원정보
@@ -83,5 +87,18 @@ public class DiaryController {
 		model.addAttribute("list", list);
 		
 		return "infra/diary/user/diaryMypage222";
+	}
+	
+	@RequestMapping(value = "diaryMypagePrac")
+	public String diaryMypagePrac(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
+//		회원정보
+		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
+		Diary item = service.selectOne(vo);
+		model.addAttribute("item", item);
+//		회원이 올린사진
+		List<Diary> list = service.mypageImageList(vo);
+		model.addAttribute("list", list);
+		
+		return "infra/diary/user/diaryMypagePrac";
 	}
 }

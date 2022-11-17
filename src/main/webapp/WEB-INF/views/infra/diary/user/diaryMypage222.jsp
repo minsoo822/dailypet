@@ -90,6 +90,13 @@
 		margin-bottom: 10px;
 		color: black;
 	}
+	.img-responsive {
+		margin: 0px;
+		height: 450px;
+	}
+	.img-responsive img {
+		width: 100%;
+	}
 /* -------------------------------------------------------------------------- */	
     .modal_overlay {
     	z-index: 999;
@@ -209,20 +216,6 @@
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 </style>
 
 <body>
@@ -240,20 +233,19 @@
 				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
-		
-		
+		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
 			<div class="modal_window">
 				<div class="modal_title">
-	                <div class="modal_title_side"></div>
-	                	<div style="margin-bottom: 7px"> 게시물 상세 </div>
-	                <div class="modal_title_side">
-	                    <span id="close_modal" class="material-icons-outlined">
-	                        <i class="fa-solid fa-xmark"></i>
-	                    </span>
-	                </div>
-            	</div>
-            	<div class="modal_body row">
+					<div class="modal_title_side"></div>
+					<div style="margin-bottom: 7px"> 게시물 상세 </div>
+					<div class="modal_title_side">
+						<span id="close_modal" class="material-icons-outlined">
+							<i class="fa-solid fa-xmark"></i>
+						</span>
+					</div>
+				</div>
+				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
 							<img src="/resources/images/findpet/700.jpg" class="img-responsive" alt="">
@@ -313,8 +305,7 @@
 				</div>
 			</div>
 		</div>
-		
-		
+		<!-- Modal e -->
 	    <div class="content">
 	    	<div class="container2">
 	    		<div class="row">
@@ -370,16 +361,14 @@
 	    			</div>
 	    		</div>
 	    		<br>
-	    		<hr style="border: 1px solid lightgray; width: 1150px">
+	    		<hr style="border: 1px solid lightgray; width: 1150px; margin-left: auto; margin-right: auto;">
 	    	</div>
 	        <div class="container">
 		            <div class="row">
 		        		<c:forEach items="${list }" var="list" varStatus="status">
-			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-			                    <div class="project-img mb30">
-			                        <a href="#" >
-			                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
-		                        	</a>
+			                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" onclick="goDiaryDeatil(${list.ifdaSeq})" >
+			                    <div class="project-img mb30" style="width: 430px;">
+		                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
 			                    </div>
 			                </div>
 						</c:forEach>
@@ -417,7 +406,7 @@
 			      modal.style.display = "none";
 			      document.body.style.overflowY = "visible";
 			});
-    
+    	
     </script>
 </body>
 

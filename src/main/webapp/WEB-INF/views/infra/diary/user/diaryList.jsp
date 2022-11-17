@@ -32,7 +32,7 @@
 		height: auto;
 		border: 1px solid lightgray;
 		border-radius: 2px;
-		margin-bottom: 100px;
+		margin-bottom: 50px;
 	}
 	
 	.service-profile {

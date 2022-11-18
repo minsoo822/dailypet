@@ -21,6 +21,6 @@ public class AnimalDao {
 	}
 	
 	public String selectLastSeq(Animal dto) {
-		return sqlSession.selectOne(namespace + ".selectLastSeq", dto);
+		return sqlSession.selectOne(namespace + ".memberLastSeq", dto);
 	}
 }

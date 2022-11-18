@@ -16,6 +16,7 @@ public class AnimalServiceImpl implements AnimalService{
 	public int animalInsert(Animal dto) throws Exception {
 		
 		dto.setIfmmSeq(dao.selectLastSeq(dto));
+		System.out.println("-------Impl" + dto.getIfmmSeq());
 		int animalInsert = dao.animalInsert(dto);
 		
         int j = 0;

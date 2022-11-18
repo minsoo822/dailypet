@@ -279,20 +279,10 @@
 							</div>
 						</div>
 						<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
-						<!-- <div class="row" style="margin-top: 10px">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-								<div class="modalprofile">
-									<img id="userImg" src="" class="profilepic" alt="">
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-								<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>아이디</b></h5>
-							</div>
-						</div> -->
+						
 						<div class="row" style="margin-top: 10px">
-							<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div> -->
 							<div class="col">
-								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px">내용</p>
+								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px" id="postContents"></p>
 							</div>
 						</div>
 						<div class="cardfooter">
@@ -308,7 +298,7 @@
 								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 0개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
-									<p>날짜</p>
+									<p id="postRegDate"></p>
 								</div>
 							</div>
 							<hr style="color: lightgray; margin: 3px">
@@ -470,8 +460,6 @@
 	 	// 모달 닫기 코드
 	    const buttonCloseModal = document.getElementById("close_modal");
 	    		
- 				  buttonCloseModal.style.cursor = "pointer";
-			
     		  buttonCloseModal.addEventListener("click", e => {
 			      modal.style.display = "none";
 			      document.body.style.overflowY = "visible";
@@ -491,7 +479,10 @@
 					
 					$("#postImg").attr("src",result.diaryImg);
 					$("#userImg").attr("src",result.userImg);
-					$("#userID").attr(result.userID);
+					$("#userID").html(result.userID);
+					$("#userID").html(result.userID);
+					$("#postContents").html(result.diaryContents);
+					$("#postRegDate").html(result.regDate);
 					//좋아요 카운트
 					//게시물 정보 
 					//게시자 정보

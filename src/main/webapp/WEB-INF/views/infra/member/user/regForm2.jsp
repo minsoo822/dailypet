@@ -437,7 +437,7 @@
 											<label class="top4">이미지 첨부</label>
 										</div>
 										<div class="col-lg-4 col-md-4 col-sm-4">
-											<input class="form-control input" id="petfile" name="petImage" type="file" accept=".jpg,.png,.jpeg">
+											<input class="form-control input" id="petfile" name="pet_image" type="file" accept=".jpg,.png,.jpeg">
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-6 top2">
 											<div id="UploadedImagePreview" class="addScroll">

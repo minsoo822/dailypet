@@ -28,7 +28,12 @@
 	    border-radius: 70%;
 	    overflow: hidden;
 	}
-	
+	.modalprofile {
+		width: 30px;
+	    height: 30px; 
+	    border-radius: 70%;
+	    overflow: hidden;
+	}
 	.profilepic {
 		width: 100%;
 	    height: 100%;
@@ -265,27 +270,27 @@
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="row" style="margin-top: 10px">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-								<div class="profileView">
-									<img src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
+								<div class="modalprofile">
+									<img id="userImg" src="" class="profilepic" alt="">
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-								<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>아이디</b></h5>
+								<h5 style="margin-left: -15px; font-size: 12px"><b id="userID"> </b></h5>
 							</div>
 						</div>
 						<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
-						<div class="row" style="margin-top: 10px">
+						<!-- <div class="row" style="margin-top: 10px">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-								<div class="profileView">
-									<img src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
+								<div class="modalprofile">
+									<img id="userImg" src="" class="profilepic" alt="">
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
 								<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>아이디</b></h5>
 							</div>
-						</div>
+						</div> -->
 						<div class="row" style="margin-top: 10px">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+							<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div> -->
 							<div class="col">
 								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px">내용</p>
 							</div>
@@ -300,7 +305,7 @@
 										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 9,234개</b></p> 
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 0개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p>날짜</p>
@@ -378,12 +383,11 @@
 	            <div class="row" style="margin-left: 50px">
 	        		<c:forEach items="${list }" var="list" varStatus="status">
 		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-		                    <div class="postthumb" style="max-width: 360px; max-height: 304px">
+		                    <div class="postthumb" style="max-width: 360px; max-height: 304px" id="add_feed">
 		                    	<a href="javascript:goDiaryDetail(${list.ifdaSeq})">
 		                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
 		                    	</a>
 		                    </div>
-		                    <button id="add_feed" type="button" id="followbtn">모달</button>
 		                </div>
 					</c:forEach>
 	            </div>
@@ -486,6 +490,8 @@
 				success:function (result) {
 					
 					$("#postImg").attr("src",result.diaryImg);
+					$("#userImg").attr("src",result.userImg);
+					$("#userID").attr(result.userID);
 					//좋아요 카운트
 					//게시물 정보 
 					//게시자 정보

@@ -230,7 +230,8 @@
 
 <body>
 	<form method="post" id="mainForm">
-		<input type="hidden" name="ifmmSeq" value="${vo.ifmmSeq }">
+		<input type="hidden" id="ifdiSeq" name="ifdiSeq" value="">
+		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
 	    <%@include file="../../../common/xdmin/include/header.jsp"%>
@@ -299,7 +300,7 @@
 										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b>좋아요 9,234개</b></p>
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 9,234개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p>날짜</p>
@@ -335,7 +336,7 @@
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
 	    						<button type="button" id="followbtn">팔로우</button>
-	    						<button id="add_feed" type="button" id="followbtn">모달</button>
+	    						
 	    					</div>
 	    				</div>
 	    				<br>
@@ -343,7 +344,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>게시물 <b>0</b></h4>
+	    						<h4>게시물 <b><c:out value="${item.diaryPostCount }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    						<h4>팔로워 <b>0</b></h4>
@@ -363,7 +364,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 	    					</div>
 	    					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-	    						<h4>허제리 : 안녕하세용</h4>
+	    						<h4><c:out value="${item.ifmmIntrodution }"/></h4>
 	    					</div>
 	    				</div>
 	    			</div>
@@ -376,10 +377,13 @@
 	        <div class="container" id="thumbList">
 	            <div class="row" style="margin-left: 50px">
 	        		<c:forEach items="${list }" var="list" varStatus="status">
-		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" onclick="goDiaryDetail(${list.ifdaSeq})" >
+		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		                    <div class="postthumb" style="max-width: 360px; max-height: 304px">
-	                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
+		                    	<a href="javascript:goDiaryDetail(${list.ifdaSeq})">
+		                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
+		                    	</a>
 		                    </div>
+		                    <button id="add_feed" type="button" id="followbtn">모달</button>
 		                </div>
 					</c:forEach>
 	            </div>
@@ -406,7 +410,7 @@
 		        
 				document.body.style.overflowY = "hidden"; // 스크롤 없애기
 	        
-			});
+			}); 
 	 	// 모달 닫기 코드
 	    const buttonCloseModal = document.getElementById("close_modal");
 	    		
@@ -416,7 +420,44 @@
 			      modal.style.display = "none";
 			      document.body.style.overflowY = "visible";
 			});
-    	
+    		  
+		goDiaryDetail = function(ifdaSeq) {
+		
+		
+			$ajax({
+				url: '/diary/getPost',
+				type: 'POST',
+				datetype: 'JSON',
+				date: {
+					ifdiSeq : $("#ifdiSeq").val(),
+					mm_ifmmSeq : $("#mm_ifmmSeq").val(),
+				},
+				success:function (result) {
+					$("#liked").html("좋아요 2개");
+				},
+				error:function(){
+					alert("ajax errer...");
+				}
+			})	
+		}
+		  
+ 		 /* goDiaryDetail = function(ifdaSeq) {
+  			1.아작스문 작성
+  			2.게시물 시퀀스를 넘긴다
+  			3.컨트롤러에서 게시물정보를 가지고온다
+  			4.내가만든 모달창에 이미지 src를 가져온 정보로 바꿔준다.
+  			5.모달을 보여준다.
+  		}  
+      	
+  		var seq = $("#ifdaSeq")
+  		var form = $("#mainForm")
+  		
+
+  		goDiaryDetail = function(ifdaSeq) {
+  			seq.attr("value", ifdaSeq);
+  			form.attr("action", "").submit();
+  		} */
+    		  
     </script>
 </body>
 

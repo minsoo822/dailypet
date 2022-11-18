@@ -3,7 +3,9 @@
 <!-- 카카도 지도 API -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <!-- jQuery -->
-<script src="/resources/js/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>	
 <!-- etc js -->
 <script src="/resources/js/bootstrap.min.js"></script>
 <script src="/resources/js/menumaker.js"></script>

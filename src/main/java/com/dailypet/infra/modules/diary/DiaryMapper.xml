@@ -62,11 +62,17 @@
 	
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-			a.*
+			mm.*
 			,b.path			AS memberPath
 			,b.uuidName		AS memberuuidName
-		FROM member a
-		JOIN memberUploaded b ON a.ifmmSeq = b.pseq
+			,(
+				SELECT
+					count(*)
+				FROM diary di
+				WHERE di.mm_ifmmSeq = mm.ifmmSeq	
+			)	AS diaryPostCount
+		FROM member mm
+		JOIN memberUploaded b ON mm.ifmmSeq = b.pseq
 		WHERE 1=1
 		AND ifmmSeq = #{ifmmSeq}
 	</select>
@@ -113,4 +119,24 @@
 			,#{pseq}
 		)
 	</insert>
+	
+	<select id="selectOnePost" resultMap="resultMapObj">
+		SELECT
+			di.*
+	        ,mm.ifmmID
+	        ,diup.path		AS diPath
+	        ,diup.uuidName	AS diuuidName
+	        ,mmup.path		AS mmPath
+	        ,mmup.uuidName	AS mmuuidName
+		FROM diary di
+	    JOIN diaryUploaded diup
+	    ON di.mm_ifmmSeq = diup.pseq
+		JOIN memberUploaded mmup
+	    ON di.mm_ifmmSeq = mmup.pseq
+	    JOIN member mm
+	    ON di.mm_ifmmSeq = mm.ifmmSeq
+	    WHERE di.ifdaSeq = diup.seq
+	    AND di.ifdaSeq = #{ifdaSeq}
+	</select>
+	
 </mapper>	

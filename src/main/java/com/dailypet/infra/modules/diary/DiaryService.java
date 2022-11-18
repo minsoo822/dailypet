@@ -11,4 +11,5 @@ public interface DiaryService {
 	
 	public List<Diary> mypageImageList(DiaryVo vo) throws Exception;
 	public List<Diary> mypageDetailList(DiaryVo vo) throws Exception;
+	public Diary selectOnePost(Diary dto)throws Exception;
 }

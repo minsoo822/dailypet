@@ -230,7 +230,8 @@
 
 <body>
 	<form method="post" id="mainForm">
-		<input type="hidden" name="ifmmSeq" value="${vo.ifmmSeq }">
+		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
+		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
 	    <%@include file="../../../common/xdmin/include/header.jsp"%>
@@ -258,7 +259,7 @@
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
-							<img src="/resources/images/findpet/700.jpg" class="img-responsive" alt="">
+							<img id="postImg" src="" class="img-responsive" alt="">
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
@@ -293,13 +294,13 @@
 							<div class="service-content">
 								<div class="postbtn">
 									<button type="button" id="like">
-										<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
+										<span class="heart" style="font-size: 25px"><i id="likedBtn" onclick="liked()" class="fa-regular fa-heart"></i></span>
 									</button>
 									<button type="button" id="comment">
 										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b>좋아요 9,234개</b></p>
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 9,234개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p>날짜</p>
@@ -335,7 +336,7 @@
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
 	    						<button type="button" id="followbtn">팔로우</button>
-	    						<button id="add_feed" type="button" id="followbtn">모달</button>
+	    						
 	    					</div>
 	    				</div>
 	    				<br>
@@ -343,7 +344,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>게시물 <b>0</b></h4>
+	    						<h4>게시물 <b><c:out value="${item.diaryPostCount }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    						<h4>팔로워 <b>0</b></h4>
@@ -363,7 +364,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 	    					</div>
 	    					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-	    						<h4>허제리 : 안녕하세용</h4>
+	    						<h4></h4>
 	    					</div>
 	    				</div>
 	    			</div>
@@ -376,10 +377,13 @@
 	        <div class="container" id="thumbList">
 	            <div class="row" style="margin-left: 50px">
 	        		<c:forEach items="${list }" var="list" varStatus="status">
-		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" onclick="goDiaryDetail(${list.ifdaSeq})" >
+		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		                    <div class="postthumb" style="max-width: 360px; max-height: 304px">
-	                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
+		                    	<a href="javascript:goDiaryDetail(${list.ifdaSeq})">
+		                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
+		                    	</a>
 		                    </div>
+		                    <button id="add_feed" type="button" id="followbtn">모달</button>
 		                </div>
 					</c:forEach>
 	            </div>
@@ -396,6 +400,58 @@
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
     <script type="text/javascript">
+    	
+    	liked = function(){
+    		
+    		var likedBtn = $("#likedBtn");
+    		var likedUrl ="";
+    		
+    		if(likedBtn.hasClass('fa-regular'))
+    		{
+    			//https://webstudynote.tistory.com/95
+    			//채워주고
+    			//빨간색으로
+    			likedBtn.removeClass('fa-regular');
+    			likedBtn.addClass('fa-solid');
+    			
+    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD
+    			likedBtn.css("color",'red');
+    			likedUrl = "/diary/addLiked";
+    			
+    			//좋아요 count 숫자 변경 
+    		}
+    		else
+    		{
+    			//비워주고
+    			//검정색으로
+    			likedBtn.removeClass('fa-solid');
+    			likedBtn.addClass('fa-regular');
+    			likedBtn.css("color",'black');
+
+    			likedUrl = "/diary/removeLiked";
+    			
+    			//좋아요 count 숫자 변경
+    		}
+    		
+    		$.ajax({
+    			url: likedUrl
+    			,type: 'POST'
+    			,dataType: 'json'
+    			,data: {
+    				//게시물 seq
+    				//누가 눌렀는지 seq
+    			}
+    			,success:function(result){
+    				
+    			}
+    			,error:function(){
+    				alert("ajax error..!");
+    			}
+    			
+    		});
+    		
+    	}
+    
 		// 모달 띄우기 코드
     	const modal = document.getElementById("modal_add_feed");
 	    const buttonAddFeed = document.getElementById("add_feed");
@@ -406,7 +462,7 @@
 		        
 				document.body.style.overflowY = "hidden"; // 스크롤 없애기
 	        
-			});
+			}); 
 	 	// 모달 닫기 코드
 	    const buttonCloseModal = document.getElementById("close_modal");
 	    		
@@ -416,7 +472,60 @@
 			      modal.style.display = "none";
 			      document.body.style.overflowY = "visible";
 			});
-    	
+    		  
+		goDiaryDetail = function(ifdaSeq) {
+		
+		
+			$.ajax({
+				url: '/diary/getPost',
+				type: 'POST',
+				datatype: 'json',
+				data: {
+					ifdaSeq : ifdaSeq 
+				},
+				success:function (result) {
+					
+					$("#postImg").attr("src",result.diaryImg);
+					//좋아요 카운트
+					//게시물 정보 
+					//게시자 정보
+					
+					// 게시물 한개당 + For문 
+					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
+						//댓글정보
+						//댓글작성자 닉네임 이미지
+					
+					
+					
+					
+					modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌 
+			    	modal.style.display = "flex";
+			        
+					document.body.style.overflowY = "hidden"; // 스크롤 없애기
+				},
+				error:function(){
+					alert("ajax errer...");
+				}
+			});	
+		}
+		  
+ 		 /* goDiaryDetail = function(ifdaSeq) {
+  			1.아작스문 작성
+  			2.게시물 시퀀스를 넘긴다
+  			3.컨트롤러에서 게시물정보를 가지고온다
+  			4.내가만든 모달창에 이미지 src를 가져온 정보로 바꿔준다.
+  			5.모달을 보여준다.
+  		}  
+      	
+  		var seq = $("#ifdaSeq")
+  		var form = $("#mainForm")
+  		
+
+  		goDiaryDetail = function(ifdaSeq) {
+  			seq.attr("value", ifdaSeq);
+  			form.attr("action", "").submit();
+  		} */
+    		  
     </script>
 </body>
 

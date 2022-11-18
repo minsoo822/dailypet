@@ -14,9 +14,15 @@ public class Diary extends Base{
 	private String ifdaRegDate;
 	private String ifdaModDate;
 	private String ifmmID;
+	private Integer diaryPostCount;
+	private String ifmmIntrodution;
 	
 	private MultipartFile[] diary_image;
 	
+	private String diPath;
+	private String diuuidName;
+	private String mmPath;
+	private String mmuuidName;
 //------------------------------------------------------
 	 
 	 private String ifmmName;
@@ -190,6 +196,42 @@ public class Diary extends Base{
 	}
 	public void setIfmmDelNy(Integer ifmmDelNy) {
 		this.ifmmDelNy = ifmmDelNy;
+	}
+	public String getDiPath() {
+		return diPath;
+	}
+	public void setDiPath(String diPath) {
+		this.diPath = diPath;
+	}
+	public String getDiuuidName() {
+		return diuuidName;
+	}
+	public void setDiuuidName(String diuuidName) {
+		this.diuuidName = diuuidName;
+	}
+	public String getMmPath() {
+		return mmPath;
+	}
+	public void setMmPath(String mmPath) {
+		this.mmPath = mmPath;
+	}
+	public String getMmuuidName() {
+		return mmuuidName;
+	}
+	public void setMmuuidName(String mmuuidName) {
+		this.mmuuidName = mmuuidName;
+	}
+	public Integer getDiaryPostCount() {
+		return diaryPostCount;
+	}
+	public void setDiaryPostCount(Integer diaryPostCount) {
+		this.diaryPostCount = diaryPostCount;
+	}
+	public String getIfmmIntrodution() {
+		return ifmmIntrodution;
+	}
+	public void setIfmmIntrodution(String ifmmIntrodution) {
+		this.ifmmIntrodution = ifmmIntrodution;
 	}
 	
 	

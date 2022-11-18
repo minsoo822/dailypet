@@ -36,4 +36,5 @@ public class DiaryDao {
 		return sqlSession.selectList(namespace + ".mypageDetailList", vo);
 	}
 	
+	public Diary selectOnePost(Diary dto) { return sqlSession.selectOne(namespace + ".selectOnePost", dto); }
 }

@@ -60,6 +60,11 @@ public class DiaryServiceImpl implements DiaryService{
 	public List<Diary> mypageDetailList(DiaryVo vo) throws Exception {
 		return dao.mypageDetailList(vo);
 	}
+	@Override
+	public Diary selectOnePost(Diary dto) throws Exception {
+		return dao.selectOnePost(dto);
+	}
+	
 	
 	
 	

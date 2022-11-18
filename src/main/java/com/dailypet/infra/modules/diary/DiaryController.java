@@ -1,6 +1,8 @@
 package com.dailypet.infra.modules.diary;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/diary/")
@@ -79,7 +82,7 @@ public class DiaryController {
 		return "infra/diary/user/diaryMypage";
 	}
 	
-//------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------
 //	나의 일기리스트
 	@RequestMapping(value = "diaryMypage222")
 	public String diaryMypage222(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
@@ -106,4 +109,48 @@ public class DiaryController {
 		
 		return "infra/diary/user/diaryMypagePrac";
 	}
+//-------------------------------------------------------------------------------
+	@ResponseBody
+	@RequestMapping(value = "getPost")
+	public Map<String, Object> getPost(HttpSession httpSession, Diary dto, Model model) throws Exception {
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		
+		Diary item = service.selectOnePost(dto);
+		
+		result.put("userImg" ,item.getMmPath() + item.getMmuuidName());
+		result.put("diaryImg" ,item.getDiPath() + item.getDiuuidName());
+		result.put("userID" ,item.getIfmmID());
+		result.put("diaryContents" ,item.getIfdaContents());
+		result.put("regDate" ,item.getIfdaRegDate());
+		
+		return result;
+	}
+	
+//	@ResponseBody
+//	@RequestMapping(value = "addLiked")
+//	public Map<String,Object> addLiked(Diary dto) throws Exception{
+//		
+//		Map<String,Object> result = new HashMap<String,Object>();
+//		
+//		service.addLiked(dto);
+//		
+//		return result;
+//	}
+//	
+//	
+//	
+//
+//	@ResponseBody
+//	@RequestMapping(value = "removeLiked")
+//	public Map<String,Object> removeLiked(Diary dto) throws Exception{
+//		
+//		Map<String,Object> result = new HashMap<String,Object>();
+//		
+//		service.removeLiked(dto);
+//		
+//		return result;
+//	}
+	
+	
 }

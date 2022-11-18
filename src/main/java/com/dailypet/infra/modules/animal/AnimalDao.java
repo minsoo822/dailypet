@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 public class AnimalDao {
 
@@ -19,4 +20,7 @@ public class AnimalDao {
 		return sqlSession.insert(namespace + ".animalInsert", dto);
 	}
 	
+	public String selectLastSeq(Animal dto) {
+		return sqlSession.selectOne(namespace + ".selectLastSeq", dto);
+	}
 }

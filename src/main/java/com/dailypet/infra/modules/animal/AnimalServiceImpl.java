@@ -14,8 +14,10 @@ public class AnimalServiceImpl implements AnimalService{
 	
 	@Override
 	public int animalInsert(Animal dto) throws Exception {
+		
+		dto.setIfmmSeq(dao.selectLastSeq(dto));
 		int animalInsert = dao.animalInsert(dto);
-
+		
         int j = 0;
         for(MultipartFile myFile : dto.getPet_image()) {
 

@@ -74,4 +74,12 @@
 		)
 	</insert>
 	
+	<select id="memberLastSeq" resultType="String">
+		SELECT
+			ifmmSeq
+		FROM member
+		ORDER BY ifmmSeq DESC
+		LIMIT 1
+	</select>
+	
 </mapper>

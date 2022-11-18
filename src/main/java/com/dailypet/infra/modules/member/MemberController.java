@@ -39,7 +39,6 @@ public class MemberController {
 		dto.setIfmmEmail(dto.getIfmmEmailID() + MemberServiceImpl.selectOneCachedCode(dto.getIfmmEmailDomain()));
 		
 		service.userInsert(dto);
-		System.out.println("-----------------------" + dto1.getIfmmSeq());
 		service1.animalInsert(dto1);
 		
 		return "infra/member/user/regDone";

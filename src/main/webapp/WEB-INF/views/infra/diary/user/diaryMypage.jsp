@@ -20,6 +20,7 @@
 
 	.container2 {
 		margin: 6% 10%;
+		margin-bottom: 30px;
 	} 
 	
 	.profile {

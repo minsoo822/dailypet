@@ -149,6 +149,20 @@
         flex: 0 0 40px;
         text-align: center;
     }
+    .imgdetail {
+    	width: 440px;
+    	height: 495px;
+    	background: black;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    }
+    .img-responsive2 {
+    	object-fit: cover;
+    	max-width: 100%;
+    	max-height: 100%;
+    }
+    
 /* ------------------------------------------------------------------------ */
 	
 	#thumbList .col-lg-4 {
@@ -264,7 +278,7 @@
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
-							<img id="postImg" src="" class="img-responsive" alt="">
+							<img id="postImg" src="" class="img-responsive2" alt="">
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">

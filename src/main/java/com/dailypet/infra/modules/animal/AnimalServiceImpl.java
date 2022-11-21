@@ -25,7 +25,7 @@ public class AnimalServiceImpl implements AnimalService{
 	public int petimgInsert(Animal dto) throws Exception {
 		
 		//여기부터 파일
-        String seq = dao.selectLastSeq(dto); //seq 자동으로 부여되기때문
+        String seq = dao.petLastSeq(dto); //seq 자동으로 부여되기때문
 
         int j = 0;
         for(MultipartFile myFile : dto.getPet_image()) {

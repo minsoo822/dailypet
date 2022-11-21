@@ -82,4 +82,12 @@
 		LIMIT 1
 	</select>
 	
+	<select id="petLastSeq" resultType="String">
+		SELECT
+			ifamSeq
+		FROM animal
+		ORDER BY ifamSeq DESC
+		LIMIT 1
+	</select>
+	
 </mapper>

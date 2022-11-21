@@ -47,11 +47,12 @@ public class MemberDao {
 	public int userInsert(Member dto) {
 		return sqlSession.insert(namespace + ".userInsert", dto);
 	}
-	
 	public int userimgInsert(Member dto) { 
 		return sqlSession.insert(namespace + ".userimgInsert" , dto);
 	}
-	
+	//회원정보수정
+	public int userUpdate(Member dto) { return sqlSession.update(namespace + ".userUpdate", dto); }
+	public int userImgUpdate(Member dto) { return sqlSession.update(namespace + ".userImgUpdate" , dto); }
 //----------------------------------------------------------------------------------------	
 	//아이디 중복 체크
 	public int selectOneCheckId(Member dto) {

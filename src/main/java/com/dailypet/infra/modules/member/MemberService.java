@@ -9,6 +9,8 @@ public interface MemberService {
 
 	//회원가입
 	public int userInsert(Member dto) throws Exception;
+	//회원정보 수정
+	public int userUpdate(Member dto) throws Exception;
 	
 	//아이디 중복 체크
 	public int selectOneCheckId(Member dto) throws Exception;

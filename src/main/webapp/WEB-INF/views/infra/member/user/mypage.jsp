@@ -105,7 +105,7 @@
 		                            <div class="post-block">
 		                                <!-- post block -->
 		                                <div class="post-img">
-		                                    <a href="#"><img src="/resources/images/findpet/ain.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
+		                                    <a href="#"><img src="${item.mmPath }${item.mmuuidName}" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
 		                                </div>
 		                                <!-- /.post block -->
 		                            </div>
@@ -114,17 +114,17 @@
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											유아인
+											<c:out value="${item.ifmmName }"/>
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">아이디</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											ainjjang
+											<c:out value="${item.ifmmID }"/>
 										</div>                      	
 		                            </div>
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">닉네임</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											uain
+											<c:out value="${item.ifmmNickname }"/>
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">???</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
@@ -134,31 +134,31 @@
 		                            <div class="row">
 		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">핸드폰번호</div>
 										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-											010 - 4500 - 2482
+											<c:out value="${item.ifmmTel }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">이메일</div>
 										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-											ainjjang@naver.com
+											<c:out value="${item.ifmmEmail }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
 										<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text text">주소</div>
 										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ge-1 contents" style="padding-right: 0px;">
-											124-5
+											<c:out value="${item.ifmmAddr1 }"/>
 										</div>
 									</div>
 		                            <div class="row">
 		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
 										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-											강남구 대치3동 234
+											<c:out value="${item.ifmmAddr3 }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
 										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-											신라호텔 스위트룸
+											<c:out value="${item.ifmmAddr2 }"/>
 										</div>                            	
 		                            </div>
 		                            <hr>
@@ -169,7 +169,7 @@
 		                            <div class="post-block">
 		                                <!-- post block -->
 		                                <div class="post-img" style="width: 212px; height: 250px;">
-		                                    <a href="#"><img src="/resources/images/findpet/zz.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
+		                                    <a href="#"><img src="${item.petPath}${item.petuuidName}" alt="Interior Design Website Templates Free Download" class="img-responsive" style="max-width: 100%; height: 100%;"></a>
 		                                </div>
 		                                <!-- /.post block -->
 		                            </div>
@@ -178,39 +178,39 @@
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">집사이름</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											유아인
+											<c:out value="${item.ifmmName }"/>
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">성별</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											남아
+											<c:out value="${item.ifamGender }"/>
 										</div>                      	
 		                            </div>
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											삐약이
+											<c:out value="${item.ifamName }"/>
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">나이</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											1살
+											<c:out value="${item.ifamAge }"/>살
 										</div>                      	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">품종</div>
 										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-											뼝아리
+											<c:out value="${item.ifamKind }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">칩</div>
 										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-											칩
+											<c:out value="${item.ifamChipNY }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">접종</div>
 										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-											접종
+											<c:out value="${item.ifamVaccinateNY }"/>
 										</div>                            	
 		                            </div>
 		                            <hr>
@@ -244,7 +244,7 @@
     	var form = $("#mypageForm");
     
 	    $("#modBtn").on("click", function(){
-	    	$(location).attr("href", goUrlMod).submit();
+	    	form.attr("action", goUrlMod).submit();
 		});
     	
     </script>

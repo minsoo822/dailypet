@@ -153,9 +153,20 @@ public class MemberController {
 		return "infra/member/user/mypage";
 	}
 	@RequestMapping(value = "mypageMod") 
-	public String myPageMod() throws Exception {
+	public String myPageMod(MemberVo vo, Model model) throws Exception {
+		
+		Member selectMypage = service.selectMypage(vo);
+		model.addAttribute("item", selectMypage);
 
 		return "infra/member/user/mypageMod";
+	}
+	@RequestMapping(value = "allUpdt") 
+	public String allUpdt(MemberVo vo, Member dto,HttpSession httpSession) throws Exception {
+		
+		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
+		int memberUpdt = service.userUpdate(dto);
+
+		return "redirect:/member/myPage";
 	}
 	@RequestMapping(value = "changePW")
 	public String changePW() throws Exception {

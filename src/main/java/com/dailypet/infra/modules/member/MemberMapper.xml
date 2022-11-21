@@ -189,5 +189,38 @@
         WHERE 1=1
         AND mm.ifmmSeq = #{ifmmSeq}
 	</select>
+	<update id="userUpdate">
+		UPDATE member
+		SET
+			  ifmmName			=	#{ifmmName}
+			, ifmmZipcode		=	#{ifmmZipcode}
+			, ifmmAddr1			=	#{ifmmAddr1}
+			, ifmmAddr2			=	#{ifmmAddr2}
+			, ifmmAddr3			=	#{ifmmAddr3}
+			, ifmmNickname		=	#{ifmmNickname}
+			, ifmmTelecom		=	#{ifmmTelecom}
+			, ifmmTel			=	#{ifmmTel}
+			, ifmmEmailID		=	#{ifmmEmailID}
+			, ifmmEmailDomain	=	#{ifmmEmailDomain}
+			, ifmmIntroduction	=	#{ifmmIntroduction}
+			, ifmmModDate		=	now()
+		WHERE 1=1
+		AND ifmmSeq = #{ifmmSeq}
+	</update>
+	<update id="userImgUpdate">
+		UPDATE memberUploaded
+		SET	
+			type			= #{type}
+			,defaultNy		= #{defaultNy}
+			,sort			= #{sort}
+			,path			= #{path}
+			,originalName	= #{originalName}
+			,uuidName		= #{uuidName}
+			,ext			= #{ext}
+			,size			= #{size}
+			,delNy			= 0
+		WHERE 1=1
+		AND pseq = #{ifmmSeq}	
+	</update>
 	
 </mapper>

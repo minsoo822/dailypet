@@ -71,9 +71,9 @@
     	max-height: 100%;
     }
     
-    .petImg {
-    	max-width: 100%;
-    	max-height: 100%;
+    .post-img img {
+    	width: 100%;
+    	height: 100%;
     }
     
     .text {
@@ -100,8 +100,9 @@
     <!-- herder s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <form method="post" id="modForm">
-    <input type="hidden" name="ifmmSeq" value="${ sessSeq}">
+    <form method="post" id="modForm" enctype="multipart/form-data">
+    <input type="hidden" name="ifmmSeq" value="${dto.ifmmSeq}">
+    <input type="hidden" name="ifamSeq" value="${item.ifamSeq }">
 	    <div class="totalContent">
 		    <div class="content">
 		        <div class="container">
@@ -124,7 +125,7 @@
 		                            <div class="post-block">
 		                                <!-- post block -->
 		                                <div class="post-img">
-		                                    <img src="" class="petImg" id="imageM">
+		                                    <img src="${item.mmPath }${item.mmuuidName}" class="petImg" id="imageM">
 		                                </div>
 		                                <!-- /.post block -->
 		                            </div>
@@ -136,58 +137,74 @@
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifmmName" value="${item.ifmmName }">
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">아이디</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">닉네임</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifmmNickname" value="${item.ifmmNickname }">
 										</div>                      	
 		                            </div>
 		                            <div class="row" >
-		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">닉네임</div>
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">통신사</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<select class="form-control" name="ifmmTelecom">
+												<option value="1" <c:if test="${item.ifmmTelecom eq 1 }">selected</c:if>>SKT</option>
+												<option value="2" <c:if test="${item.ifmmTelecom eq 2 }">selected</c:if>>KT</option>
+												<option value="3" <c:if test="${item.ifmmTelecom eq 3 }">selected</c:if>>LG</option>
+											</select>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">휴대폰</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">연락처</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifmmTel" value="${item.ifmmTel }">
 										</div>                      	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">연락처</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-											<input type="text" class="form-control">
-										</div>                            	
-		                            </div>
-		                            <div class="row">
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이메일</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-											<input type="text" class="form-control">
-										</div>                            	
+										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+											<input type="text" class="form-control" name="ifmmEmail" value="${item.ifmmEmailID }">
+										</div>     
+										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+											<select class="form-control" name="ifmmEmailDomain">
+												<option value="4" <c:if test="${item.ifmmEmailDomain eq 4 }">selected</c:if>>naver.com</option>
+												<option value="5" <c:if test="${item.ifmmEmailDomain eq 5 }">selected</c:if>>gmail.com</option>
+												<option value="6" <c:if test="${item.ifmmEmailDomain eq 6 }">selected</c:if>>hanmail.net</option>
+												<option value="7" <c:if test="${item.ifmmEmailDomain eq 7 }">selected</c:if>>nate.com</option>
+												<option value="8" <c:if test="${item.ifmmEmailDomain eq 8 }">selected</c:if>>daum.com</option>
+											</select>
+										</div>                       	
 		                            </div>
 		                            <div class="row">
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text">위탁장소</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text">주소</div>
 										<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 ge-1" style="padding-right: 0px;">
-											<input type="text" class="form-control" placeholder="우편번호">
+											<input readonly type="text" class="form-control" placeholder="우편번호" name="ifmmZipcode" id="ifmmZipcode" value="${item.ifmmZipcode }">
 										</div>
 										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
-											<button type="button" class="Searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+											<button type="button" class="Searchbtn" id="addrButton"><i class="fa-solid fa-magnifying-glass"></i></button>
 										</div>
 										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="margin-left: 10px;">
-											<button type="button" class="Searchbtn"><i class="fa-solid fa-rotate-left"></i></button>
+											<button type="button" class="Searchbtn" id="clearButton"><i class="fa-solid fa-rotate-left"></i></button>
 										</div>
 									</div>
 		                            <div class="row">
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">&nbsp;</div>
-										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-											<input type="text" class="form-control" placeholder="도로명주소">
-										</div>                            	
+										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+											<input readonly type="text" class="form-control" placeholder="주소" id="ifmmAddr1" name="ifmmAddr1" value="${item.ifmmAddr1 }">
+										</div>         
+										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+											<input readonly type="text" class="form-control" placeholder="참고항목" id="ifmmAddr3" name="ifmmAddr3" value="${item.ifmmAddr3 }">
+										</div>                   	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">&nbsp;</div>
 										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-											<input type="text" class="form-control" placeholder="상세주소">
+											<input type="text" class="form-control" placeholder="상세주소" id="ifmmAddr2" name="ifmmAddr2" value="${item.ifmmAddr2 }">
 										</div>                            	
+		                            </div>
+		                            <div class="row">
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">자기소개</div>
+										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-5">
+											<input type="text" class="form-control" name="ifmmIntroduction" value="${item.ifmmIntroduction }">
+										</div>     
 		                            </div>
 		                            <hr>
 		                        </div>
@@ -197,7 +214,7 @@
 		                            <div class="post-block">
 		                                <!-- post block -->
 		                                <div class="post-img">
-		                                    <img src="" class="petImg" id="imageP">
+		                                    <img src="${item.petPath}${item.petuuidName}" class="petImg" id="imageP">
 		                                </div>
 		                                <!-- /.post block -->
 		                            </div>
@@ -209,43 +226,43 @@
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">집사이름</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifmmName" value="${item.ifmmName }">
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">성별</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifamGender" value="${item.ifamGender }">
 										</div>                      	
 		                            </div>
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이름</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifamName" value="${item.ifamName }">
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">나이</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifamAge" value="${item.ifamAge }">
 										</div>                      	
 		                            </div>
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">칩</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<select class="form-control">
-												<option></option>
-												<option></option>
+											<select class="form-control" name="ifamChipNY">
+												<option value="1" <c:if test="${item.ifamChipNY eq 1}">selected</c:if>>Y</option>
+												<option value="0" <c:if test="${item.ifamChipNY eq 0}">selected</c:if>>N</option>
 											</select>
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">접종</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<select class="form-control">
-												<option></option>
-												<option></option>
+											<select class="form-control" name="ifamVaccinateNY">
+												<option value="1" <c:if test="${item.ifamVaccinateNY eq 1}">selected</c:if>>Y</option>
+												<option value="0" <c:if test="${item.ifamVaccinateNY eq 0}">selected</c:if>>N</option>
 											</select>
 										</div>                      	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">품종</div>
 										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-											<input type="text" class="form-control">
+											<input type="text" class="form-control" name="ifamKind" value="${item.ifamKind }">
 										</div>                            	
 		                            </div>
 		                            <hr>
@@ -257,7 +274,7 @@
 		            	<div class="col" style="display: flex; justify-content: flex-end; margin-right: 20px;">
 		            		<div class="btn-group">
 		            		<button type="button" class="otherbtn">목록으로</button>
-		            		<button type="button" class="otherbtn">저장하기</button>
+		            		<button type="button" class="otherbtn" id="saveBtn">저장하기</button>
 		            		</div>
 		            	</div>
 		            </div>
@@ -273,19 +290,78 @@
     <!-- footScript e -->
 	
     <script type="text/javascript">
-		//주인이미지 미리보기
-	    $("#fileM").on("change", function(e) {
-			var tmp = e.target.files[0];
-		    var img = URL.createObjectURL(tmp);
-		    $("#imageM").attr("src", img);
-		});
-		
-	  	//반려동물 이미지 미리보기
-	    $("#fileP").on("change", function(e) {
-			var tmp = e.target.files[0];
-		    var img = URL.createObjectURL(tmp);
-		    $("#imageP").attr("src", img);
-		});
+    
+    var allUpdt = "/member/allUpdt";
+    
+    var form = $("#modForm");
+    
+    $("#saveBtn").on("click", function(){
+    	form.attr("action", allUpdt).submit();
+    });	
+    
+    
+    //주소검색
+    $("#addrButton").on("click", function(){
+		openZipSearch();
+	});
+	function openZipSearch() {
+	    new daum.Postcode({
+	          oncomplete: function(data) {
+        	    var addr = '';
+	  		    var extraAddr = '';
+
+				if (data.userSelectedType === 'R') { 
+	                  addr = data.roadAddress;
+	              } else { 
+	                  addr = data.jibunAddress;
+	              }
+
+	              if(data.userSelectedType === 'R'){
+	                  if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                      extraAddr += data.bname;
+	                  }
+	                  if(data.buildingName !== '' && data.apartment === 'Y'){
+	                      extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                  }
+	                  if(extraAddr !== ''){
+	                      extraAddr = ' (' + extraAddr + ')';
+	                  }
+	                  document.getElementById("ifmmAddr3").value = extraAddr;
+	              
+	              } else {
+	                  document.getElementById("ifmmAddr3").value = '';
+	              }
+
+	              document.getElementById('ifmmZipcode').value = data.zonecode;
+	              document.getElementById("ifmmAddr1").value = addr;
+	              $("#ifmmAddr2").val('');
+	              document.getElementById("ifmmAddr2").focus();
+	              
+				}
+	    
+	    }).open();
+	}
+	//주소리셋
+	$("#clearButton").on("click", function(){
+		$("#ifmmZipcode").val('');
+		$("#ifmmAddr1").val('');
+		$("#ifmmAddr2").val('');
+		$("#ifmmAddr3").val('');
+	});
+    
+	//주인이미지 미리보기
+    $("#fileM").on("change", function(e) {
+		var tmp = e.target.files[0];
+	    var img = URL.createObjectURL(tmp);
+	    $("#imageM").attr("src", img);
+	});
+	
+  	//반려동물 이미지 미리보기
+    $("#fileP").on("change", function(e) {
+		var tmp = e.target.files[0];
+	    var img = URL.createObjectURL(tmp);
+	    $("#imageP").attr("src", img);
+	});
     </script>
     
 </body>

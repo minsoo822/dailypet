@@ -47,8 +47,35 @@ public class MemberServiceImpl implements MemberService{
         }
 		return userInsert;
 	}
-	
-//-----------------------------------------------------------------------------------	
+	//회원정보 수정
+	@Override
+	public int userUpdate(Member dto) throws Exception {
+		int userUpdate = dao.userUpdate(dto);
+		
+		int j = 0;
+        for(MultipartFile myFile : dto.getUser_image()) {
+
+            if(!myFile.isEmpty()) {
+                // postServiceImpl
+                String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
+                
+//                      MemberServiceImpl.java  ->   MemberServiceImpl -> ""  ->     memberserviceimpl ->   member
+                 
+                UtilUpload.uploadUser(myFile, pathModule, dto);
+
+                dto.setType(2);
+                dto.setDefaultNy(1);
+                dto.setSort(j+1);
+                dto.setPseq(dto.getIfmmSeq());
+
+                dao.userImgUpdate(dto);
+                j++;
+            }
+        }
+		
+		return userUpdate;
+	}
+	//-----------------------------------------------------------------------------------	
 	public static String selectOneCachedCode(String ifmmSeq) throws Exception {
 		String rt = "";
 		for(Member codeRow : Member.cachedCodeArrayList) {

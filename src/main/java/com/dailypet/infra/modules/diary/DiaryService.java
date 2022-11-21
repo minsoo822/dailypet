@@ -14,7 +14,7 @@ public interface DiaryService {
 	public Diary selectOnePost(Diary dto)throws Exception;
 	
 //	댓글
-	public int insertComent(Diary dto) throws Exception;
-	public Diary comentOne(Diary dto) throws Exception;
+	public int insertComment(Diary dto) throws Exception;
+	public Diary commentOne(Diary dto) throws Exception;
 	
 }

@@ -421,9 +421,8 @@
 			      document.body.style.overflowY = "visible";
 			});
     		  
+    		  
 		goDiaryDetail = function(ifdaSeq) {
-		
-		
 			$ajax({
 				url: '/diary/getPost',
 				type: 'POST',

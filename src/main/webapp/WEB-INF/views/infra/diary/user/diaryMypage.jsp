@@ -245,7 +245,6 @@
 		display: inline;
 	}
 	
-	
 </style>
 
 <body>
@@ -303,7 +302,7 @@
 						</div>
 						<hr style="color: lightgray; margin-top: 25px; margin-bottom: 15px;">
 						<div class="row">
-							<div class="col" id="coment_area">
+							<div class="col" id="comment_area">
 								<!-- 댓글 s -->
 								<div class="row">
 									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
@@ -348,8 +347,8 @@
 							</div>
 							<hr style="color: lightgray; margin: 3px">
 							<div class="cardcomment">
-								<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
-								<button type="button" id="upcomment" onclick="upcomment()">게시</button>
+								<input class="form-control" id="writecomm" type="text" name="ifcmContent" placeholder="댓글 달기...">
+								<button type="submit" id="upcomment" onclick="upcomment();">게시</button>
 							</div>
 						</div>
 					</div>
@@ -393,14 +392,12 @@
 	    						<h4>팔로잉 <b>0</b></h4>
 	    					</div>
 	    				</div>
-	    				<div class="row" style="margin-top: 10px">
+	    				<div class="row" style="margin-top: 10px; margin-left: 126px;">
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
-	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4><b><c:out value="${item.ifmmName }"/></b></h4>
-	    					</div>
+    						<h4><b><c:out value="${item.ifmmIntroduction }"/></b></h4>
 	    				</div>
-	    				<div class="row" style="margin-top: 10px">
+	    				<div class="row" style="margin-top: 10px;">
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 	    					</div>
 	    					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
@@ -415,10 +412,10 @@
 	    		<hr style="border: 1px solid lightgray; width: 1150px; margin-left: auto; margin-right: auto;">
 	    	</div>
 	        <div class="container" id="thumbList">
-	            <div class="row" style="margin-left: 50px">
+	            <div class="row" style="margin-left: 50px;">
 	        		<c:forEach items="${list }" var="list" varStatus="status">
 		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-		                    <div class="postthumb" style="max-width: 360px; max-height: 304px" id="add_feed">
+		                    <div class="postthumb" style="max-width: 360px; max-height: 304px;" id="add_feed">
 		                    	<a href="javascript:goDiaryDetail(${list.ifdaSeq})">
 		                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
 		                    	</a>
@@ -493,17 +490,15 @@
     	
     	
     	/* 댓글 s */
-/*     	upcomment = function() {
-    		
+		function upcomment() {
     		$.ajax({
-    			url: "/diary/inserComent",
+    			url: "/diary/insertComment",
     			type: "POST",
     			datatype: "json",
-    			date: {
-    				
+    			data: {
     				ifdaSeq : $("#ifdaSeq")
     			},
-    			success:function(result) {
+    			success: function(result) {
     				var txt = "";
     				
     				txt += '<div class="row">';
@@ -525,19 +520,20 @@
     				txt += '</div>';
     				txt += '</div>';
     				txt += '<div class="col">';
-    				txt += '<b style="font-weight: 0;">'+ result.coment +'</b>';
+    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
     				txt += '</div>';
     				txt += '</div>';
     			
-    				$("#coment_area").prepend(txt);
+    				$("#comment_area").prepend(txt);
     				$("#writecomm").val("");
     			},
     			error:function(){
     				alert("ajax error..!");
     			}
     		});
-    	} */
+    	} 
     	/* 댓글 e */
+    	
 		// 모달 띄우기 코드
     	const modal = document.getElementById("modal_add_feed");
 	    const buttonAddFeed = document.getElementById("add_feed");
@@ -557,9 +553,8 @@
 			      document.body.style.overflowY = "visible";
 			});
     		  
+    		  
 		goDiaryDetail = function(ifdaSeq) {
-		
-		
 			$.ajax({
 				url: '/diary/getPost',
 				type: 'POST',

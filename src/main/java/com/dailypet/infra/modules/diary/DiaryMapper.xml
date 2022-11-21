@@ -65,12 +65,6 @@
 			mm.*
 			,b.path			AS memberPath
 			,b.uuidName		AS memberuuidName
-			,(
-				SELECT
-					count(*)
-				FROM diary di
-				WHERE di.mm_ifmmSeq = mm.ifmmSeq	
-			)	AS diaryPostCount
 		FROM member mm
 		JOIN memberUploaded b ON mm.ifmmSeq = b.pseq
 		WHERE 1=1
@@ -128,10 +122,6 @@
 	        ,diup.uuidName	AS diuuidName
 	        ,mmup.path		AS mmPath
 	        ,mmup.uuidName	AS mmuuidName
-	        ,(
-        		SELECT
-        		COUNT
-	        )
 		FROM diary di
 	    JOIN diaryUploaded diup
 	    ON di.mm_ifmmSeq = diup.pseq
@@ -142,8 +132,9 @@
 	    WHERE di.ifdaSeq = diup.seq
 	    AND di.ifdaSeq = #{ifdaSeq}
 	</select>
+	
 	<!-- 댓글 s -->
-	<select id="comentList">
+	<select id="commentList">
 		SELECT
 	    	ifcmContent
 	       , ifcmRegDate
@@ -158,8 +149,8 @@
 	    WHERE co.da_ifdaSeq = #{ifdaSeq}
 	</select>
 	
-	<insert id="insertComent">
-		INSERT INTO coment (
+	<insert id="insertComment">
+		INSERT INTO comment (
 			ifcmContent
 			,ifcmRegDate
 			,ifcmDelNy
@@ -173,9 +164,9 @@
 			,#{ifdaSeq}
 			,#{ifmmSeq}
 		)
-		
 	</insert>
-	<select id="comentOne" resultMap="resultMapObj">
+	
+	<select id="commentOne" resultMap="resultMapObj">
 		SELECT
 			mm.ifmmID
 			,mmup.path		AS mmPath

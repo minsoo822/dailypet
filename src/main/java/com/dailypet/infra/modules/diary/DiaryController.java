@@ -129,17 +129,17 @@ public class DiaryController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "inserComent")
-	public Map<String, Object> insertComent(Diary dto) throws Exception {
+	@RequestMapping(value = "insertComment")
+	public Map<String, Object> insertComment(Diary dto) throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
 		
-		int insertComent = service.insertComent(dto);
+		int insertComment = service.insertComment(dto);
 		
-		Diary comentItem = service.comentOne(dto);
+		Diary commentItem = service.commentOne(dto);
 		dto.setIfdaSeq(dto.getIfdaSeq());
-		result.put("coUserImg", comentItem.getMmPath() + comentItem.getMmuuidName());
-		result.put("coUserid", comentItem.getIfmmID());
-		result.put("coment", comentItem.getIfdaContents());
+		result.put("coUserImg", commentItem.getMmPath() + commentItem.getMmuuidName());
+		result.put("coUserid", commentItem.getIfmmID());
+		result.put("comment", commentItem.getIfdaContents());
 		return result;
 	}
 	

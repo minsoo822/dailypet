@@ -490,7 +490,7 @@
     	
     	
     	/* 댓글 s */
-		function upcomment() {
+		upcomment = function() {
     		$.ajax({
     			url: "/diary/insertComment",
     			type: "POST",

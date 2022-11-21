@@ -155,7 +155,7 @@
 										<p>예약장소</p>
 									</div>
 									<div class="col-9" id="offcol">
-										<h6 id="ifrsPlace" name="ifrsPlace"></h6>
+										<h6 id="ifrsPlace" name="ifrsPlace">sss</h6>
 									</div>
 								</div>
 								<div class="row">
@@ -163,7 +163,7 @@
 										<p>위치</p>
 									</div>
 									<div class="col-9" id="offcol">
-										<h6 id="ifrsPlace" name="ifrsLocation"></h6>
+										<h6 id="ifrsLocation" name="ifrsLocation"></h6>
 									</div>
 								</div>
 								<div class="row">
@@ -369,7 +369,7 @@
 		
 		    var el = document.createElement('li'),
 		    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-		                '<div class="info" id="rv" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
+		                '<div class="info" onclick="rv2()" id="rv" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
 		                '   <h5 id="placeName">' + places.place_name + '</h5>';
 		
 		    if (places.road_address_name) {
@@ -468,7 +468,7 @@
 	
 	<script type="text/javascript">
 	
-		$('#rv').on('click', function() { 
+		/* $('#rv').on('click', function() { 
 		  
 			alert("ㅎㅇ");
 			//현재 row의 정보 가져오기 
@@ -481,13 +481,31 @@
 			//전화번호 input 값 가져오기
 			var Ptel = thisRow.find('#placeTel').val();
 			
-			alert(Pname + ", " + Paddr + ", " Ptel)
+			alert(Pname + ", " + Paddr + ", " + Ptel);
 			
 			$("#ifrsPlace").val(Pname);
 			$("#ifrsLocation").val(Paddr);
 			$("#ifrsTel").val(Ptel);
 		  
-		})
+		}) */
+		rv2 = function() {
+			//현재 row의 정보 가져오기 
+			var thisRow = $(this).closest('#rv'); 
+		  
+			//이름 input 값 가져오기
+			var Pname = thisRow.find('#placeName').val();
+			//주소 input 값 가져오기
+			var Paddr = thisRow.find('#addressName').val();
+			//전화번호 input 값 가져오기
+			var Ptel = thisRow.find('#placeTel').val();
+			
+			alert(Pname + ", " + Paddr + ", " + Ptel);
+			
+			$("#ifrsPlace").val(Pname);
+			$("#ifrsLocation").val(Paddr);
+			$("#ifrsTel").val(Ptel);
+		  
+		}
 	
 	</script>
 	

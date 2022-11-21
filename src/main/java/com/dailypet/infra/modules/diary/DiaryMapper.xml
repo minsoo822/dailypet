@@ -175,7 +175,7 @@
         JOIN memberUploaded mmup
         ON mm.ifmmSeq = mmup.pseq
 		WHERE 1=1
-        AND mmup.pseq = #{ifmmSeq}
+        AND mmup.pseq = 41
 	</select>
 	<!-- 댓글 e -->
 </mapper>	

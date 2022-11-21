@@ -229,7 +229,7 @@
 		padding: 0 15px;
 	}
 	
-	#writecomm {
+	.writecomm {
 		width: 280px;
 		padding: 8px;
 		display: inline;
@@ -347,7 +347,7 @@
 							</div>
 							<hr style="color: lightgray; margin: 3px">
 							<div class="cardcomment">
-								<input class="form-control" id="writecomm" type="text" name="ifcmContent" placeholder="댓글 달기...">
+								<input type="text" class="form-control" class="writecomm" id="writecomm" name="ifcmContent" placeholder="댓글 달기...">
 								<button type="submit" class="upcomment" id="upcomment">게시</button>
 							</div>
 						</div>
@@ -436,6 +436,8 @@
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
     <script type="text/javascript">
+    	var form = $("#mainForm");
+    	var seq = $("input:hidden[name=ifdaSeq]");
     	
     	liked = function(){
     		

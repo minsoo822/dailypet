@@ -369,7 +369,7 @@
 		
 		    var el = document.createElement('li'),
 		    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-		                '<div class="info" onclick="rv2()" id="rv" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
+		                '<div class="info" onclick="rv2()" id="rv2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
 		                '   <h5 id="placeName">' + places.place_name + '</h5>';
 		
 		    if (places.road_address_name) {
@@ -490,7 +490,7 @@
 		}) */
 		rv2 = function() {
 			//현재 row의 정보 가져오기 
-			var thisRow = $(this).closest('#rv'); 
+			var thisRow = $(this).closest('#rv2'); 
 		  
 			//이름 input 값 가져오기
 			var Pname = thisRow.find('#placeName').val();

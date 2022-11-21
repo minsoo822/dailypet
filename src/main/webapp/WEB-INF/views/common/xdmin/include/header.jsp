@@ -37,7 +37,7 @@
 		        				<li><a href="/member/regForm1" type" title="회원가입">회원가입</a></li>
 				        	</c:if>
 					        <c:if test="${sessSeq ne null}">
-				        		<li><a href="#" type="button"><c:out value="${sessId }"/>님, 반갑습니다</a></li>
+				        		<li><a href="#" type="button"><c:out value="${sessId }"/>님, 반갑습니다 :)</a></li>
 				        		<li><a href="#" type="button" onclick="goMypage(${sessSeq})">마이페이지</a></li>
 								<li><a href="/member/logoutProc" title="로그아웃" type="button" id="btnLogout">로그아웃</a></li>
 				            </c:if>

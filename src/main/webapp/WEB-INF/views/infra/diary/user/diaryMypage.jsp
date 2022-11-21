@@ -249,7 +249,7 @@
 
 <body>
 	<form method="post" id="mainForm">
-		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${ifdaSeq }">
+		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
 		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
@@ -348,7 +348,7 @@
 							<hr style="color: lightgray; margin: 3px">
 							<div class="cardcomment">
 								<input type="text" class="form-control" class="writecomm" id="writecomm" name="ifcmContent" placeholder="댓글 달기...">
-								<button type="submit" class="upcomment" id="upcomment">게시</button>
+								<button type="button" class="upcomment" id="upcomment">게시</button>
 							</div>
 						</div>
 					</div>
@@ -497,9 +497,6 @@
     			url: "/diary/insertComment",
     			type: "POST",
     			datatype: "json",
-    			data: {
-    				ifdaSeq : $("#ifdaSeq").val()
-    			},
     			success: function(result) {
     				var txt = "";
     				

@@ -40,7 +40,6 @@ public class Member extends Base{
 
 	//이미지등록
 	public MultipartFile[] user_image;
-//	public MultipartFile[] pet_image;
 
 	
 	public static List<Member> cachedCodeArrayList = new ArrayList<Member>();

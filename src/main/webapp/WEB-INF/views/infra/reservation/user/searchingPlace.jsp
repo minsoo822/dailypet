@@ -53,6 +53,12 @@
 		margin-top: 20px;
 		text-align: center;
 	}
+	
+	#offcol {
+		height: 50px;
+		padding: 6px 12px;
+		margin: 0 0 15px;
+	}
 
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
@@ -100,7 +106,7 @@
     <div class="totalContent">
 	    <div class="content">
 	        <div class="container">
-	            <div class="row">
+	            <!-- <div class="row">
 	            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 	                    <ul class="nav flex-column nav-pills me-3">
 	                    	<li class="nav-item">
@@ -117,14 +123,15 @@
 							</li>
 						</ul>
 					</div>
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">	
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"> -->
+						<h4>예약시스템은 지역별 동물병원, 애견호텔/미용실/유치원만 가능합니다.</h4>
 	                    <div class="map_wrap">
 						    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
 						    <div id="menu_wrap" class="bg_white">
 						        <div class="option">
 						        	<div>
 						        		<form onsubmit="searchPlaces(); return false;">
-						                    키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15"> 
+						                    키워드 : <input type="text" value="강남 동물병원" placeholder="지역명+편의시설" id="keyword" size="15"> 
 						                    <button type="submit">검색하기</button> 
 						            	</form>
 						        	</div>
@@ -132,41 +139,10 @@
 						    </div>
 						</div>
 						<br>
+						<h6>* 검색목록에서 원하시는 장소를 클릭하시면 예약페이지로 이동합니다.</h6>
+						<br>
 						<ul id="placesList"></ul>
 						<div id="pagination"></div>
-			        	<!-- <table class="table table-striped table-hover" id="menu_wrap">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">상호명</th>
-									<th scope="col">위치</th>
-									<th scope="col">전화번호</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th scope="row">1</th>
-									<td>로우앤슬로우</td>
-									<td>서울 용산구 보광로 126</td>
-									<td>02-793-2268</td>
-									<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
-								</tr>
-								<tr>
-									<th scope="row">2</th>
-									<td>바토스 이태원점</td>
-									<td>서울 용산구 이태원로 15길 1</td>
-									<td>02-797-8226</td>
-									<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
-								</tr>
-								<tr>
-									<th scope="row">3</th>
-									<td>명동교자 이태원점</td>
-									<td>서울 용산구 녹사평대로 136</td>
-									<td>02-790-7300</td>
-									<td><button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">예약 바로가기</button></td>
-								</tr>
-							</tbody>
-						</table> -->
 						<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
 							<div class="offcanvas-header">
 								<h5 class="offcanvas-title" style="font-size: 20px; margin-left: 35%"><b>플레이스 예약</b></h5>
@@ -178,8 +154,24 @@
 									<div class="col-3">
 										<p>예약장소</p>
 									</div>
-									<div class="col-9">
-										<input class="form-control" type="text" id="ifrsPlace" name="ifrsPlace">
+									<div class="col-9" id="offcol">
+										<h6 id="ifrsPlace" name="ifrsPlace"></h6>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-3">
+										<p>위치</p>
+									</div>
+									<div class="col-9" id="offcol">
+										<h6 id="ifrsPlace" name="ifrsLocation"></h6>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-3">
+										<p>전화번호</p>
+									</div>
+									<div class="col-9" id="offcol">
+										<h6 id="ifrsTel" name="ifrsTel"></h6>
 									</div>
 								</div>
 								<div class="row">
@@ -243,8 +235,8 @@
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
+					<!-- </div>
+				</div> -->
 	        </div>
 	    </div>
     </div>
@@ -260,7 +252,7 @@
 		
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = {
-		        center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+		        center: new kakao.maps.LatLng(37.50913572075989, 127.04447225668967), // 지도의 중심좌표
 		        level: 3 // 지도의 확대 레벨
 		    };  
 		
@@ -378,16 +370,16 @@
 		    var el = document.createElement('li'),
 		    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
 		                '<div class="info" id="rv" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
-		                '   <h5>' + places.place_name + '</h5>';
+		                '   <h5 id="placeName">' + places.place_name + '</h5>';
 		
 		    if (places.road_address_name) {
 		        itemStr += '    <span>' + places.road_address_name + '</span>' +
-		                    '   <span class="jibun gray">' +  places.address_name  + '</span>';
+		                    '   <span class="jibun gray" id="addressName">' +  places.address_name  + '</span>';
 		    } else {
-		        itemStr += '    <span>' +  places.address_name  + '</span>'; 
+		        itemStr += '    <span id="addressName">' +  places.address_name  + '</span>'; 
 		    }
 		                 
-		      itemStr += '  <span class="tel">' + places.phone  + '</span>' +
+		      itemStr += '  <span class="tel" id="placeTel">' + places.phone  + '</span>' +
 		                '</div>';           
 		
 		    el.innerHTML = itemStr;
@@ -471,6 +463,32 @@
 		        el.removeChild (el.lastChild);
 		    }
 		}
+		 
+	</script>
+	
+	<script type="text/javascript">
+	
+		$('#rv').on('click', function() { 
+		  
+			alert("ㅎㅇ");
+			//현재 row의 정보 가져오기 
+			var thisRow = $(this).closest('#rv'); 
+		  
+			//이름 input 값 가져오기
+			var Pname = thisRow.find('#placeName').val();
+			//주소 input 값 가져오기
+			var Paddr = thisRow.find('#addressName').val();
+			//전화번호 input 값 가져오기
+			var Ptel = thisRow.find('#placeTel').val();
+			
+			alert(Pname + ", " + Paddr + ", " Ptel)
+			
+			$("#ifrsPlace").val(Pname);
+			$("#ifrsLocation").val(Paddr);
+			$("#ifrsTel").val(Ptel);
+		  
+		})
+	
 	</script>
 	
 </body>

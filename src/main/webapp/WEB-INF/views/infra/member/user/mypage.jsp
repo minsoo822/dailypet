@@ -82,6 +82,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form id="mypageForm" method="post">
+    <input type="hidden" name="ifmmSeq" value="${sessSeq }">
 	    <div class="totalContent">
 		    <div class="content">
 		        <div class="container" style="min-width: 1320px;">

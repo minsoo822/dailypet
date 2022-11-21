@@ -170,4 +170,24 @@
 			ifmmNickname = #{ifmmNickname}
 	</select>
 	
+	<!-- 마이페이지 -->
+	<select id="selectMypage" resultMap="resultMapObj">
+		SELECT 
+			mm.*
+			,mmup.path		AS mmPath
+			,mmup.uuidName	AS mmuuidName
+            ,pet.*
+            ,petup.path		AS petPath
+            ,petup.uuidName	AS petuuidName
+		FROM member mm
+		JOIN memberUploaded mmup
+		ON mm.ifmmSeq = mmup.pseq
+        JOIN animal pet
+        ON mm.ifmmSeq = pet.mm_ifmmSeq
+        JOIN petUploaded petup
+        ON pet.ifamSeq = petup.pseq
+        WHERE 1=1
+        AND mm.ifmmSeq = #{ifmmSeq}
+	</select>
+	
 </mapper>

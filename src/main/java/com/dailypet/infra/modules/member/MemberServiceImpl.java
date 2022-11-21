@@ -85,5 +85,10 @@ public class MemberServiceImpl implements MemberService{
 	public int selectOneCheckNick(Member dto) throws Exception {
 		return dao.selectOneCheckNick(dto);
 	}
+	@Override
+	public Member selectMypage(MemberVo vo) throws Exception {
+		return dao.selectMypage(vo);
+	}
+	
 
 }

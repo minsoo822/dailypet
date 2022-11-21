@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -144,7 +145,10 @@ public class MemberController {
 		return "infra/member/user/memberDel2";
 	}
 	@RequestMapping(value = "myPage")
-	public String myPage() throws Exception {
+	public String myPage(MemberVo vo, Model model) throws Exception {
+		
+		Member selectMypage = service.selectMypage(vo);
+		model.addAttribute("item", selectMypage);
 
 		return "infra/member/user/mypage";
 	}

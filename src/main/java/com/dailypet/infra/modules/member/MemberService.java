@@ -5,6 +5,7 @@ import java.util.List;
 public interface MemberService {
 	
 	public List<Member> selectList(MemberVo vo) throws Exception;
+	public Member selectMypage(MemberVo vo) throws Exception;
 
 	//회원가입
 	public int userInsert(Member dto) throws Exception;

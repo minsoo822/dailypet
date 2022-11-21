@@ -24,6 +24,7 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public int userInsert(Member dto) throws Exception {
 		int userInsert = dao.userInsert(dto);
+		dto.setIfmmPW(UtilSecurity.encryptSha256(dto.getIfmmPW())); 
 
         int j = 0;
         for(MultipartFile myFile : dto.getUser_image()) {

@@ -23,27 +23,31 @@ public class Diary extends Base{
 	private String diuuidName;
 	private String mmPath;
 	private String mmuuidName;
+	
 //------------------------------------------------------
 	 
-	 private String ifmmName;
-	 private String ifmmZipcode;
-	 private String ifmmAddr1;
-	 private String ifmmAddr2;
-	 private String ifmmAddr3;
-	 private String ifmmPW;
-	 private String ifmmNickname;
-	 private Integer ifmmTelecom;
-	 private String ifmmTel;
-	 private String ifmmEmail;
-	 private String ifmmEmailID;
-	 private Integer ifmmEmailDomain;
-	 private String ifmmIntroduction;
-	 private String ifmmRegDate;
-	 private String ifmmModDate;
-	 private Integer ifmmDelNy;
+	private String ifmmName;
+	private String ifmmZipcode;
+	private String ifmmAddr1;
+	private String ifmmAddr2;
+	private String ifmmAddr3;
+	private String ifmmPW;
+	private String ifmmNickname;
+	private Integer ifmmTelecom;
+	private String ifmmTel;
+	private String ifmmEmail;
+	private String ifmmEmailID;
+	private Integer ifmmEmailDomain;
+	private String ifmmIntroduction;
+	private String ifmmRegDate;
+	private String ifmmModDate;
+	private Integer ifmmDelNy;
 	 
 //------------------------------------------------------	 
 	 
+	private String ifcmContent;
+	
+//------------------------------------------------------	
 	 
 	public String getIfdaSeq() {
 		return ifdaSeq;
@@ -233,7 +237,10 @@ public class Diary extends Base{
 	public void setIfmmIntrodution(String ifmmIntrodution) {
 		this.ifmmIntrodution = ifmmIntrodution;
 	}
-	
-	
-	
+	public String getIfcmContent() {
+		return ifcmContent;
+	}
+	public void setIfcmContent(String ifcmContent) {
+		this.ifcmContent = ifcmContent;
+	}
 }

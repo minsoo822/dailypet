@@ -136,6 +136,7 @@ public class DiaryController {
 		int insertComment = service.insertComment(dto);
 		
 		Diary commentItem = service.commentOne(dto);
+		dto.setIfdaSeq(dto.getIfdaSeq());
 		result.put("coUserImg", commentItem.getMmPath() + commentItem.getMmuuidName());
 		result.put("coUserid", commentItem.getIfmmID());
 		result.put("comment", commentItem.getIfdaContents());

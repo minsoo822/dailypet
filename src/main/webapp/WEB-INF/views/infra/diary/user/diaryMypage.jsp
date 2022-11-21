@@ -236,7 +236,7 @@
 		border: none;
 	}
 	
-	#upcomment {
+	.upcomment {
 		color: brown;
 		background-color: none;
 		border: none;
@@ -249,7 +249,7 @@
 
 <body>
 	<form method="post" id="mainForm">
-		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
+		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${ifdaSeq }">
 		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
@@ -348,7 +348,7 @@
 							<hr style="color: lightgray; margin: 3px">
 							<div class="cardcomment">
 								<input class="form-control" id="writecomm" type="text" name="ifcmContent" placeholder="댓글 달기...">
-								<button type="submit" id="upcomment" onclick="upcomment();">게시</button>
+								<button type="submit" class="upcomment" id="upcomment">게시</button>
 							</div>
 						</div>
 					</div>
@@ -490,13 +490,13 @@
     	
     	
     	/* 댓글 s */
-		upcomment = function() {
+		$("#upcomment").on("click", function() {
     		$.ajax({
     			url: "/diary/insertComment",
     			type: "POST",
     			datatype: "json",
     			data: {
-    				ifdaSeq : $("#ifdaSeq")
+    				ifdaSeq : $("#ifdaSeq").val()
     			},
     			success: function(result) {
     				var txt = "";
@@ -531,7 +531,7 @@
     				alert("ajax error..!");
     			}
     		});
-    	} 
+    	});
     	/* 댓글 e */
     	
 		// 모달 띄우기 코드

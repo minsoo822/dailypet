@@ -71,7 +71,7 @@ public class DiaryServiceImpl implements DiaryService{
 	}
 	@Override
 	public Diary commentOne(Diary dto) throws Exception {
-		return commentOne(dto);
+		return dao.commentOne(dto);
 	}
 	
 }

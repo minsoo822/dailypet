@@ -161,8 +161,8 @@
 			#{ifcmContent}
 			,now()
 			,0
-			,#{ifdaSeq}
-			,#{ifmmSeq}
+			,6
+			,41
 		)
 	</insert>
 	

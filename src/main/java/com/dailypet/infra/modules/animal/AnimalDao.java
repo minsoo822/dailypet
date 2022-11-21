@@ -21,7 +21,7 @@ public class AnimalDao {
 	}
 	
 	public int petimgInsert(Animal dto) {
-		return sqlSession.selectOne(namespace + ".petimgInsert", dto);
+		return sqlSession.insert(namespace + ".petimgInsert", dto);
 	}
 	
 	public String selectLastSeq(Animal dto) {

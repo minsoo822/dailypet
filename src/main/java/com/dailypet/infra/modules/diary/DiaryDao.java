@@ -37,4 +37,9 @@ public class DiaryDao {
 	}
 	
 	public Diary selectOnePost(Diary dto) { return sqlSession.selectOne(namespace + ".selectOnePost", dto); }
+	
+//	댓글
+	public int insertComent(Diary dto) { return sqlSession.insert(namespace + ".insertComent", dto); }
+	public Diary comentOne(Diary dto) { return sqlSession.selectOne(namespace + ".comentOne", dto); }
+	
 }

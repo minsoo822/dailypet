@@ -3,6 +3,7 @@ package com.dailypet.infra.modules.diary;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpSession;
 
@@ -124,6 +125,21 @@ public class DiaryController {
 		result.put("diaryContents" ,item.getIfdaContents());
 		result.put("regDate" ,item.getIfdaRegDate());
 		
+		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "inserComent")
+	public Map<String, Object> insertComent(Diary dto) throws Exception {
+		Map<String, Object> result = new HashMap<String, Object>();
+		
+		int insertComent = service.insertComent(dto);
+		
+		Diary comentItem = service.comentOne(dto);
+		dto.setIfdaSeq(dto.getIfdaSeq());
+		result.put("coUserImg", comentItem.getMmPath() + comentItem.getMmuuidName());
+		result.put("coUserid", comentItem.getIfmmID());
+		result.put("coment", comentItem.getIfdaContents());
 		return result;
 	}
 	

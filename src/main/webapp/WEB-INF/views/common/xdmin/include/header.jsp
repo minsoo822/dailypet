@@ -28,7 +28,6 @@
 				          		<ul>
 				          			<li><a href="/diary/diaryForm" title="Projects">일기 쓰기</a></li>
 				          			<li><a href="/diary/diaryList" title="Projects">일기 목록</a></li>
-				          			<li><a href="/diary/diaryDetail" title="Projects">일기 상세</a></li>
 				          			<li><a href="/diary/diaryMypage" title="Projects">일기 육아수첩 마이피드</a></li>
 				          		</ul>
 			          		</li>

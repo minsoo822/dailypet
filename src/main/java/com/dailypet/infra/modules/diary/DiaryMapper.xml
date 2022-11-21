@@ -119,7 +119,7 @@
 			,#{pseq}
 		)
 	</insert>
-	
+	<!-- 게시물상세 -->
 	<select id="selectOnePost" resultMap="resultMapObj">
 		SELECT
 			di.*
@@ -138,5 +138,51 @@
 	    WHERE di.ifdaSeq = diup.seq
 	    AND di.ifdaSeq = #{ifdaSeq}
 	</select>
+	<!-- 댓글 s -->
+	<select id="comentList">
+		SELECT
+	    	ifcmContent
+	       , ifcmRegDate
+	       , ifmmID
+	       , path		AS mmPath
+	       , uuidName	AS mmuuidName
+	    FROM comment co
+	    JOIN member mm
+	    ON co.mm_ifmmSeq = mm.ifmmSeq
+	    JOIN memberUploaded mmup
+	    ON mm.ifmmSeq = mmup.pseq
+	    WHERE co.da_ifdaSeq = #{ifdaSeq}
+	</select>
 	
+	<insert id="insertComent">
+		INSERT INTO coment (
+			ifcmContent
+			,ifcmRegDate
+			,ifcmDelNy
+			,da_ifdaSeq
+			,mm_ifmmSeq
+		) 
+		VALUE (
+			#{ifcmContent}
+			,now()
+			,0
+			,#{ifdaSeq}
+			,#{ifmmSeq}
+		)
+		<!-- <selectKey resultType="String" keyProperty="ifdaSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey> -->
+	</insert>
+	<select id="comentOne" resultMap="resultMapObj">
+		SELECT
+			mm.ifmmID
+			,mmup.path		AS mmPath
+			,mmup.uuidName	AS mmuuidName
+		FROM member mm
+        JOIN memberUploaded mmup
+        ON mm.ifmmSeq = mmup.pseq
+		WHERE 1=1
+        AND mmup.pseq = #{ifmmSeq}
+	</select>
+	<!-- 댓글 e -->
 </mapper>	

@@ -12,4 +12,9 @@ public interface DiaryService {
 	public List<Diary> mypageImageList(DiaryVo vo) throws Exception;
 	public List<Diary> mypageDetailList(DiaryVo vo) throws Exception;
 	public Diary selectOnePost(Diary dto)throws Exception;
+	
+//	댓글
+	public int insertComent(Diary dto) throws Exception;
+	public Diary comentOne(Diary dto) throws Exception;
+	
 }

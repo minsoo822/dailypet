@@ -158,7 +158,7 @@
 	}
 	
 	#commSubmit {
-		margin-left: 5px;
+		margin-left: 30px;
 		display: inline;
 	}
 	
@@ -200,7 +200,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">&nbsp;</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" style="vertical-align: middle">
-									<button type="button" id="delpost"><i class="fa-regular fa-trash-can fa-lg"></i></button>
+									<button style="margin-left: 25px;" type="button" id="delpost"><i class="fa-regular fa-trash-can fa-lg"></i></button>
 							</div>
 						</div>
 						<!-- 상단바 e -->

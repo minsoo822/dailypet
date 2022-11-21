@@ -72,4 +72,8 @@ public class MemberDao {
 		return sqlSession.selectOne(namespace + ".selectOneID", dto);
 	}
 
+	public int memberLastSeq(Member dto) {
+		return sqlSession.selectOne(namespace + ".memberLastSeq", dto);
+	}
+	
 }

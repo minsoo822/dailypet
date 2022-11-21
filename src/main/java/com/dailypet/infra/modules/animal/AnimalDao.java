@@ -20,7 +20,12 @@ public class AnimalDao {
 		return sqlSession.insert(namespace + ".animalInsert", dto);
 	}
 	
-	public String selectLastSeq(Animal dto) {
-		return sqlSession.selectOne(namespace + ".memberLastSeq", dto);
+	public int petimgInsert(Animal dto) {
+		return sqlSession.selectOne(namespace + ".petimgInsert", dto);
 	}
+	
+	public String selectLastSeq(Animal dto) {
+		return sqlSession.selectOne(namespace + ".selectLastSeq", dto);
+	}
+	
 }

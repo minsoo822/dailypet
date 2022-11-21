@@ -18,27 +18,33 @@ public class AnimalServiceImpl implements AnimalService{
 		dto.setIfmmSeq(dao.selectLastSeq(dto));
 		int animalInsert = dao.animalInsert(dto);
 		
+		return animalInsert;
+	}
+	
+	@Override
+	public int petimgInsert(Animal dto) throws Exception {
+		
+		//여기부터 파일
+        String seq = dao.selectLastSeq(dto); //seq 자동으로 부여되기때문
+
         int j = 0;
         for(MultipartFile myFile : dto.getPet_image()) {
 
             if(!myFile.isEmpty()) {
                 // postServiceImpl
                 String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
-                
-//                		MemberServiceImpl.java  ->	 MemberServiceImpl -> ""  ->	 memberserviceimpl -> 	member
                 UtilUpload.uploadPet(myFile, pathModule, dto);
-                    
-                dto.setType(2);
+
+                dto.setType(1);
                 dto.setDefaultNy(j == 0 ? 1 : 0);
                 dto.setSort(j+1);
-                dto.setPseq(dto.getIfamSeq());
+                dto.setPseq(seq+"");
 
-                dao.animalInsert(dto);
+                dao.petimgInsert(dto);
                 j++;
             }
         }
-		return animalInsert;
+		return 0;
 	}
-	
 	
 }

@@ -24,9 +24,6 @@ public class CommentController {
 		
 		Comment commentItem = service.commentOne(dto);
 		dto.setIfcmSeq(dto.getIfcmSeq());
-//		result.put("coUserImg", commentItem.getMmPath() + commentItem.getMmuuidName());
-//		result.put("coUserid", commentItem.getIfmmID());
-//		result.put("comment", commentItem.getIfdaContents());
 		return result;
 	}
 	

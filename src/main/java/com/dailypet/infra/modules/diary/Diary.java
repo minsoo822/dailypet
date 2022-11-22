@@ -45,10 +45,6 @@ public class Diary extends Base{
 	 
 //------------------------------------------------------	 
 	 
-	private String ifcmContent;
-	
-//------------------------------------------------------	
-	 
 	public String getIfdaSeq() {
 		return ifdaSeq;
 	}
@@ -236,11 +232,5 @@ public class Diary extends Base{
 	}
 	public void setIfmmIntrodution(String ifmmIntrodution) {
 		this.ifmmIntrodution = ifmmIntrodution;
-	}
-	public String getIfcmContent() {
-		return ifcmContent;
-	}
-	public void setIfcmContent(String ifcmContent) {
-		this.ifcmContent = ifcmContent;
 	}
 }

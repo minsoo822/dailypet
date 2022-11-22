@@ -50,8 +50,9 @@ public class MemberServiceImpl implements MemberService{
 	//회원정보 수정
 	@Override
 	public int userUpdate(Member dto) throws Exception {
-		int userUpdate = dao.userUpdate(dto);
 		
+		int userUpdate = dao.userUpdate(dto);
+		System.out.println("--------------------serviceImg" + dto.getUser_image());
 		int j = 0;
         for(MultipartFile myFile : dto.getUser_image()) {
 
@@ -75,7 +76,7 @@ public class MemberServiceImpl implements MemberService{
 		
 		return userUpdate;
 	}
-	//-----------------------------------------------------------------------------------	
+//-----------------------------------------------------------------------------------	
 	public static String selectOneCachedCode(String ifmmSeq) throws Exception {
 		String rt = "";
 		for(Member codeRow : Member.cachedCodeArrayList) {

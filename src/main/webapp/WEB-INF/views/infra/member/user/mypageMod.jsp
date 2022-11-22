@@ -101,7 +101,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form method="post" id="modForm" enctype="multipart/form-data">
-    <input type="hidden" name="ifmmSeq" value="${dto.ifmmSeq}">
+    <input type="hidden" name="ifmmSeq" value="${item.ifmmSeq}">
     <input type="hidden" name="ifamSeq" value="${item.ifamSeq }">
 	    <div class="totalContent">
 		    <div class="content">
@@ -123,14 +123,12 @@
 		                    <div class="row">
 		                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		                            <div class="post-block">
-		                                <!-- post block -->
 		                                <div class="post-img">
-		                                    <img src="${item.mmPath }${item.mmuuidName}" class="petImg" id="imageM">
+		                                    <img src="${item.mmPath }${item.mmuuidName}" name="" class="petImg" id="imageM">
 		                                </div>
-		                                <!-- /.post block -->
 		                            </div>
 		                            <div>
-		                            	<input type="file" id="fileM" class="form-control" style="width: 220px; height: 30px;">
+		                            	<input type="file" id="fileM" class="form-control" name="user_image" style="width: 220px; height: 30px;">
 		                            </div>
 		                        </div>
 		                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -161,7 +159,7 @@
 		                            <div class="row">
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이메일</div>
 										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-											<input type="text" class="form-control" name="ifmmEmail" value="${item.ifmmEmailID }">
+											<input type="text" class="form-control" name="ifmmEmailID" value="${item.ifmmEmailID }">
 										</div>     
 										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
 											<select class="form-control" name="ifmmEmailDomain">
@@ -226,7 +224,7 @@
 		                            <div class="row" >
 		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">집사이름</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-											<input type="text" class="form-control" name="ifmmName" value="${item.ifmmName }">
+											<input type="text" class="form-control" name="" value="${item.ifmmName }">
 										</div>
 										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">성별</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

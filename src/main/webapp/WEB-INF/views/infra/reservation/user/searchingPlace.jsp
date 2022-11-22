@@ -155,7 +155,7 @@
 										<p>예약장소</p>
 									</div>
 									<div class="col-9" id="offcol">
-										<h6 id="ifrsPlace" name="ifrsPlace">sss</h6>
+										<h6 id="ifrsPlace" name="ifrsPlace"></h6>
 									</div>
 								</div>
 								<div class="row">
@@ -369,7 +369,7 @@
 		
 		    var el = document.createElement('li'),
 		    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-		                '<div class="info" onclick="rv2()" id="rv2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
+		                '<div class="info" onclick="openRV()" id="rv" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
 		                '   <h5 id="placeName">' + places.place_name + '</h5>';
 		
 		    if (places.road_address_name) {
@@ -488,6 +488,19 @@
 			$("#ifrsTel").val(Ptel);
 		  
 		}) */
+		
+		function openRV() {
+			var Pname = places.place_name;
+			var Paddr = places.road_address_name;
+			var Ptel = places.phone;
+			
+			alert(Pname + ", " + Paddr + ", " + Ptel);
+			
+			$("#ifrsPlace").val(Pname);
+			$("#ifrsLocation").val(Paddr);
+			$("#ifrsTel").val(Ptel);
+		}
+/* 		
 		rv2 = function() {
 			//현재 row의 정보 가져오기 
 			var thisRow = $(this).closest('#rv2'); 
@@ -506,7 +519,7 @@
 			$("#ifrsTel").val(Ptel);
 		  
 		}
-	
+*/	
 	</script>
 	
 </body>

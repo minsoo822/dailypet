@@ -147,7 +147,10 @@ public class MemberController {
 		return "infra/member/user/memberDel2";
 	}
 	@RequestMapping(value = "myPage")
-	public String myPage(MemberVo vo, Model model) throws Exception {
+	public String myPage(MemberVo vo, Model model, HttpSession httpSession) throws Exception {
+		
+		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
+		vo.setIfmmSeq(ifmmSeq);
 		
 		Member selectMypage = service.selectMypage(vo);
 		model.addAttribute("item", selectMypage);
@@ -155,7 +158,10 @@ public class MemberController {
 		return "infra/member/user/mypage";
 	}
 	@RequestMapping(value = "mypageMod") 
-	public String myPageMod(MemberVo vo, Model model) throws Exception {
+	public String myPageMod(MemberVo vo, Model model, HttpSession httpSession) throws Exception {
+		
+		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
+		vo.setIfmmSeq(ifmmSeq);
 		
 		Member selectMypage = service.selectMypage(vo);
 		model.addAttribute("item", selectMypage);

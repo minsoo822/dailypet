@@ -6,7 +6,9 @@ import org.springframework.web.multipart.MultipartFile;
 import com.dailypet.infra.common.base.Base;
 
 public class Animal extends Base{
-
+	
+	private String ifmmSeq;
+	
 	public String ifamSeq;
 	public Integer ifamGender;
 	public String ifamName;
@@ -66,6 +68,12 @@ public class Animal extends Base{
 	public void setPet_image(MultipartFile[] pet_image) {
 		this.pet_image = pet_image;
 	}
-
+	public String getIfmmSeq() {
+		return ifmmSeq;
+	}
+	public void setIfmmSeq(String ifmmSeq) {
+		this.ifmmSeq = ifmmSeq;
+	}
+	
 	
 }

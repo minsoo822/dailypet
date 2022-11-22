@@ -90,4 +90,32 @@
 		LIMIT 1
 	</select>
 	
+	<update id="petUpdate">
+		UPDATE animal
+		SET
+			 ifamGender	= #{ifamGender}
+			,ifamName	= #{ifamName}
+			,ifamAge	= #{ifamAge}
+			,ifamKind	= #{ifamKind}
+			,ifamChipNY	= #{ifamChipNY}
+			,mm_ifmmSeq	= #{ifmmSeq}
+		WHERE 1=1
+		AND ifamSeq =#{ifamSeq}
+	</update>
+	<update id="petImgUpdate">
+		UPDATE petUploaded
+		SET	
+			type			= #{type}
+			,defaultNy		= #{defaultNy}
+			,sort			= #{sort}
+			,path			= #{path}
+			,originalName	= #{originalName}
+			,uuidName		= #{uuidName}
+			,ext			= #{ext}
+			,size			= #{size}
+			,delNy			= 0
+		WHERE 1=1
+		AND pseq = #{ifamSeq}
+	</update>
+	
 </mapper>

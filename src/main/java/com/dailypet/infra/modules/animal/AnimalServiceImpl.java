@@ -46,5 +46,30 @@ public class AnimalServiceImpl implements AnimalService{
         }
 		return 0;
 	}
+	//펫정보수정
+
+	@Override
+	public int petUpdate(Animal dto) throws Exception {
+		int petUpdate = dao.petUpdate(dto);
+		
+		int j = 0;
+        for(MultipartFile myFile : dto.getPet_image()) {
+
+            if(!myFile.isEmpty()) {
+                // postServiceImpl
+                String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
+                UtilUpload.uploadPet(myFile, pathModule, dto);
+
+                dto.setType(1);
+                dto.setDefaultNy(j == 0 ? 1 : 0);
+                dto.setSort(j+1);
+                dto.setPseq(dto.getIfamSeq());
+
+                dao.petImgUpdate(dto);
+                j++;
+            }
+        }
+		return petUpdate;
+	}
 	
 }

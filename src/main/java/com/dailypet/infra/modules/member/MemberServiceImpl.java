@@ -52,7 +52,6 @@ public class MemberServiceImpl implements MemberService{
 	public int userUpdate(Member dto) throws Exception {
 		
 		int userUpdate = dao.userUpdate(dto);
-		System.out.println("--------------------serviceImg" + dto.getUser_image());
 		int j = 0;
         for(MultipartFile myFile : dto.getUser_image()) {
 

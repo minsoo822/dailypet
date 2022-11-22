@@ -31,4 +31,8 @@ public class AnimalDao {
 	public String petLastSeq(Animal dto) {
 		return sqlSession.selectOne(namespace + ".petLastSeq", dto);
 	}
+	//펫정보수정
+	public int petUpdate(Animal dto) { return sqlSession.update(namespace + ".petUpdate", dto); }
+	public int petImgUpdate(Animal dto) { return sqlSession.update(namespace + ".petImgUpdate", dto); }
+	
 }

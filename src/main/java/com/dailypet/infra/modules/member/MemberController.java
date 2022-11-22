@@ -169,9 +169,10 @@ public class MemberController {
 		return "infra/member/user/mypageMod";
 	}
 	@RequestMapping(value = "allUpdt") 
-	public String allUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+	public String allUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, Animal dto1, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		
 		int memberUpdt = service.userUpdate(dto);
+		int petUpdt = service1.petUpdate(dto1);
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		return "redirect:/member/myPage";

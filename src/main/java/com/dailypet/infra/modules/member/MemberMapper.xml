@@ -189,6 +189,7 @@
         WHERE 1=1
         AND mm.ifmmSeq = #{ifmmSeq}
 	</select>
+	
 	<update id="userUpdate">
 		UPDATE member
 		SET
@@ -200,7 +201,14 @@
 			, ifmmNickname		=	#{ifmmNickname}
 			, ifmmTelecom		=	#{ifmmTelecom}
 			, ifmmTel			=	#{ifmmTel}
-			, ifmmEmail			=   #{ifmmEmail}
+			, ifmmEmail			=   CONCAT(#{ifmmEmailID},
+									<choose>
+										<when test="ifmmEmailDomain eq 4">'@naver.com')</when>
+										<when test="ifmmEmailDomain eq 5">'@gmail.com')</when>
+										<when test="ifmmEmailDomain eq 6">'@hanmail.com')</when>
+										<when test="ifmmEmailDomain eq 7">'@nate.com')</when>
+										<when test="ifmmEmailDomain eq 8">'@daum.net')</when>
+									</choose>
 			, ifmmEmailID		=	#{ifmmEmailID}
 			, ifmmEmailDomain	=	#{ifmmEmailDomain}
 			, ifmmIntroduction	=	#{ifmmIntroduction}
@@ -208,6 +216,7 @@
 		WHERE 1=1
 		AND ifmmSeq = #{ifmmSeq}
 	</update>
+	
 	<update id="userImgUpdate">
 		UPDATE memberUploaded
 		SET	

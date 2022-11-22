@@ -4,8 +4,53 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.dailypet.infra.modules.Comment.CommentMapper">
+<mapper namespace="com.dailypet.infra.modules.comment.CommentMapper">
 
-	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.Comment.Comment"></resultMap>
+	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.comment.Comment"></resultMap>
 
+	<!-- 댓글 s -->
+	<select id="commentList" resultMap="resultMapObj"> 
+		SELECT
+	    	ifcmContent
+	       , ifcmRegDate
+	       , ifmmID
+	       , path		AS mmPath
+	       , uuidName	AS mmuuidName
+	    FROM comment co
+	    JOIN member mm
+	    ON co.mm_ifmmSeq = mm.ifmmSeq
+	    JOIN memberUploaded mmup
+	    ON mm.ifmmSeq = mmup.pseq
+	    WHERE co.da_ifdaSeq = #{ifdaSeq}
+	</select>
+	
+	<select id="commentOne" resultMap="resultMapObj">
+		SELECT
+			mm.ifmmID
+			,mmup.path		AS mmPath
+			,mmup.uuidName	AS mmuuidName
+		FROM member mm
+        JOIN memberUploaded mmup
+        ON mm.ifmmSeq = mmup.pseq
+		WHERE 1=1
+        AND mmup.pseq = 41
+	</select>
+	<!-- 댓글 e -->
+	
+	<insert id="commentInst">
+		INSERT INTO comment (
+			ifcmContent
+			,ifcmRegDate
+			,ifcmDelNy
+			,da_ifdaSeq
+			,mm_ifmmSeq
+		) 
+		VALUE (
+			#{ifcmContent}
+			,now()
+			,0
+			,6
+			,41
+		)
+	</insert>
 </mapper>

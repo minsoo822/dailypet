@@ -64,14 +64,5 @@ public class DiaryServiceImpl implements DiaryService{
 	public Diary selectOnePost(Diary dto) throws Exception {
 		return dao.selectOnePost(dto);
 	}
-//	댓글
-	@Override
-	public int insertComment(Diary dto) throws Exception {
-		return dao.insertComment(dto);
-	}
-	@Override
-	public Diary commentOne(Diary dto) throws Exception {
-		return dao.commentOne(dto);
-	}
 	
 }

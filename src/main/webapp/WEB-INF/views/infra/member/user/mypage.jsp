@@ -240,7 +240,8 @@
     <script type="text/javascript">
     
     	var goUrlMod = "/member/mypageMod"
-    	
+   		
+    	var seq = $("input:hidden[name=ifmmSeq]");
     	var form = $("#mypageForm");
     
 	    $("#modBtn").on("click", function(){

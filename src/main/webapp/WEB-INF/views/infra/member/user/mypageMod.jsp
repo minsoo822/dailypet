@@ -217,7 +217,7 @@
 		                                <!-- /.post block -->
 		                            </div>
 		                            <div>
-		                            	<input type="file" id="fileP" class="form-control" style="width: 220px; height: 30px;">
+		                            	<input type="file" id="fileP" class="form-control" name="pet_image" style="width: 220px; height: 30px;">
 		                            </div>
 		                        </div>
 		                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -291,6 +291,7 @@
     
     var allUpdt = "/member/allUpdt";
     
+    var seq = $("input:hidden[name=ifmmSeq]");
     var form = $("#modForm");
     
     $("#saveBtn").on("click", function(){

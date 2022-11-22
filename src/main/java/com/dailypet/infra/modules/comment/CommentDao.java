@@ -12,7 +12,7 @@ public class CommentDao {
 	@Resource(name="sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.dailypet.infra.modules.Comment.CommentMapper";
+	private static String namespace = "com.dailypet.infra.modules.comment.CommentMapper";
 	
 //	댓글
 	public int commentInst(Comment dto) { 

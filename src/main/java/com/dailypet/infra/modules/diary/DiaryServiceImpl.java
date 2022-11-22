@@ -18,11 +18,13 @@ public class DiaryServiceImpl implements DiaryService{
 	public List<Diary> selectList(DiaryVo vo) throws Exception {
 		return dao.selectList(vo);
 	}
+	
 	@Override
 	public Diary selectOne(DiaryVo vo) throws Exception {
 		return dao.selectOne(vo);
 	}
-//	일기Inst
+	
+	// 일기 Inst
 	@Override
 	public int insertDiary(Diary dto) throws Exception {
 		int insertDiary = dao.insertDiary(dto);
@@ -52,14 +54,28 @@ public class DiaryServiceImpl implements DiaryService{
         }
         return insertDiary;
 	}
+	
+	// 게시물 좋아요
+	@Override
+	public void addLiked(Diary dto) throws Exception {
+		dao.addLiked(dto);
+	}
+
+	@Override
+	public void removeLiked(Diary dto) throws Exception {
+		dao.removeLiked(dto);
+	}
+	
 	@Override
 	public List<Diary> mypageImageList(DiaryVo vo) throws Exception {
 		return dao.mypageImageList(vo);
 	}
+	
 	@Override
 	public List<Diary> mypageDetailList(DiaryVo vo) throws Exception {
 		return dao.mypageDetailList(vo);
 	}
+	
 	@Override
 	public Diary selectOnePost(Diary dto) throws Exception {
 		return dao.selectOnePost(dto);

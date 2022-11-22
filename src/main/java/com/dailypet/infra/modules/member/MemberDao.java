@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class MemberDao {
 
-
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
@@ -43,17 +42,26 @@ public class MemberDao {
 	}
 	
 //----------------------------------------------------------------------------------------	
+	
 	//회원가입
 	public int userInsert(Member dto) {
 		return sqlSession.insert(namespace + ".userInsert", dto);
 	}
+	
 	public int userimgInsert(Member dto) { 
 		return sqlSession.insert(namespace + ".userimgInsert" , dto);
 	}
+	
 	//회원정보수정
-	public int userUpdate(Member dto) { return sqlSession.update(namespace + ".userUpdate", dto); }
-	public int userImgUpdate(Member dto) { return sqlSession.update(namespace + ".userImgUpdate" , dto); }
+	public int userUpdate(Member dto) { 
+		return sqlSession.update(namespace + ".userUpdate", dto); 
+	}
+	public int userImgUpdate(Member dto) { 
+		return sqlSession.update(namespace + ".userImgUpdate" , dto); 
+	}
+	
 //----------------------------------------------------------------------------------------	
+	
 	//아이디 중복 체크
 	public int selectOneCheckId(Member dto) {
 		return sqlSession.selectOne(namespace + ".selectOneCheckId", dto);

@@ -452,7 +452,7 @@
     			likedBtn.removeClass('fa-regular');
     			likedBtn.addClass('fa-solid');
     			
-    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD
+    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
     			likedBtn.css("color",'red');
     			likedUrl = "/diary/addLiked";
     			
@@ -544,14 +544,14 @@
 				document.body.style.overflowY = "hidden"; // 스크롤 없애기
 	        
 			}); 
+		
 	 	// 모달 닫기 코드
 	    const buttonCloseModal = document.getElementById("close_modal");
 	    		
-    		  buttonCloseModal.addEventListener("click", e => {
-			      modal.style.display = "none";
-			      document.body.style.overflowY = "visible";
-			});
-    		  
+		buttonCloseModal.addEventListener("click", e => {
+			modal.style.display = "none";
+			document.body.style.overflowY = "visible";
+		});
     		  
 		goDiaryDetail = function(ifdaSeq) {
 			$.ajax({

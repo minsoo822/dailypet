@@ -9,7 +9,7 @@ public class CommentServiceImpl implements CommentService{
 	@Autowired
 	CommentDao dao;
 	
-//	댓글
+	// 댓글
 	@Override
 	public int commentInst(Comment dto) throws Exception {
 		return dao.commentInst(dto);

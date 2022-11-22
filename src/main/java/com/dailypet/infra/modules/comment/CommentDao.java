@@ -14,13 +14,13 @@ public class CommentDao {
 	
 	private static String namespace = "com.dailypet.infra.modules.comment.CommentMapper";
 	
-//	댓글
+	// 댓글
 	public int commentInst(Comment dto) { 
 		return sqlSession.insert(namespace + ".commentInst", dto); 
 	}
 	
 	public Comment commentOne(Comment dto) { 
 		return sqlSession.selectOne(namespace + ".commentOne", dto);
-		}
+	}
 	
 }

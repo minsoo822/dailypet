@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailypet.infra.modules.findpet.FindpetMapper">
+
+<resultMap id="resultMapObj" type="com.dailypet.infra.modules.findpet.Findpet"></resultMap>
+
+
+<!-- <select id="selectList" resultMap="resultMapObj">
+	SELECT
+		iffpName
+		,iffpBreed
+		,iffpGender
+		,iffpAnimalShelter
+		,iffpSpotPlace
+		,iffpSpotDate
+		,iffpCharacteristic
+		,iffpDelNY
+		,iffpRegDate
+	FROM findpet	
+	WHERE 1=1
+	AND iffpSeq = #{iffpSeq}
+	ORDER BY iffpSeq DESC
+</select> -->
+	<insert id="findPetInst">
+		INSERT INTO findpet (
+			iffpName
+			,iffpBrred
+			,iffpGender
+			,iffpAnimalShelterzipCode
+			,iffpAnimalShelter1
+			,iffpAnimalShelter2
+			,iffpSpotPlace
+			,iffpSpotDate
+			,iffpCharacteristic
+			,iffpDelNY
+			,iffpRegDate
+			,mm_ifmmSeq
+		)
+		VALUE (
+			#{iffpName}
+			,#{iffpBrred}
+			,#{iffpGender}
+			,#{iffpAnimalShelterzipCode}
+			,#{iffpAnimalShelter1}
+			,#{iffpAnimalShelter2}
+			,#{iffpSpotPlace}
+			,#{iffpSpotDate}
+			,#{iffpCharacteristic}
+			,0
+			,now()
+			,#{ifmmSeq}
+		)
+		<selectKey resultType="String" keyProperty="iffpSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	<insert id="findPetImgInst">
+		INSERT INTO abandonedUploaded (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
+		)
+		VALUES (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{pseq}
+		)
+	</insert>
+
+	
+</mapper>	

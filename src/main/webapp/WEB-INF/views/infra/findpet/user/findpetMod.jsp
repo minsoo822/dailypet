@@ -83,6 +83,8 @@
 	<!-- herder s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
+    <form method="post" id="findModForm" enctype="multipart/form-data">
+    <input type="hidden" name="ifmmSeq" value="${dto.ifmmSeq }">
     <div class="totalContent">
 	    <div class="content">
 	        <div class="container">
@@ -189,13 +191,14 @@
 				<div class="row">
 					<div class="col" style="display: flex; justify-content: flex-end;">
 						<button type="button" class="btnSave">취소</button>
-						<button type="button" class="btnSave">저장</button>
+						<button type="button" class="btnSave" id="saveBtn">저장</button>
 					</div>
 				</div>
 				<hr>
 	        </div>
 	    </div>
 	</div>
+	</form>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <!-- footer e -->
@@ -203,6 +206,12 @@
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
     <script type="text/javascript">
+    
+    var 
+    
+    $("#saveBtn").on("click", function(){
+    	form
+    });
     	
     /* 카카오지도API */
   	function sample4_execDaumPostcode() {

@@ -200,6 +200,7 @@
 			, ifmmNickname		=	#{ifmmNickname}
 			, ifmmTelecom		=	#{ifmmTelecom}
 			, ifmmTel			=	#{ifmmTel}
+			, ifmmEmail			=   #{ifmmEmail}
 			, ifmmEmailID		=	#{ifmmEmailID}
 			, ifmmEmailDomain	=	#{ifmmEmailDomain}
 			, ifmmIntroduction	=	#{ifmmIntroduction}

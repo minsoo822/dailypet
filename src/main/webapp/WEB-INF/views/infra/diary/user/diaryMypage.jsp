@@ -494,7 +494,7 @@
     	/* 댓글 s */
 		$("#upcomment").on("click", function() {
     		$.ajax({
-    			url: "/diary/insertComment",
+    			url: "/comment/commentInst",
     			type: "POST",
     			datatype: "json",
     			success: function(result) {

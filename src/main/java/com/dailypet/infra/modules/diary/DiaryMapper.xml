@@ -41,6 +41,7 @@
 		WHERE 1=1
 		AND pseq = #{ifmmSeq}
 	</select>
+	
 	<select id="mypageDetailList" resultMap="resultMapObj">
 	   	SELECT
 			  a.ifdaSeq

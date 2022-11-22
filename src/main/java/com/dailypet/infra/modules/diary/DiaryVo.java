@@ -9,9 +9,6 @@ public class DiaryVo {
 	private String mm_ifmmSeq;
 
 	
-	
-	
-	
 	public String getSeq() {
 		return seq;
 	}

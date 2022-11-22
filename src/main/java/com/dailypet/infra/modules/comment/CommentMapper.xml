@@ -45,7 +45,7 @@
 			,da_ifdaSeq
 			,mm_ifmmSeq
 		) 
-		VALUE (
+		VALUES (
 			#{ifcmContent}
 			,now()
 			,0

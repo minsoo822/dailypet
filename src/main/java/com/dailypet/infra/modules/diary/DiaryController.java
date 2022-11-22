@@ -20,7 +20,7 @@ public class DiaryController {
 	@Autowired
 	DiaryServiceImpl service;
 	
-	/* 일기리스트 */
+	// 일기리스트 
 	@RequestMapping(value = "diaryList")
 	public String selectList(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession) throws Exception {
 		
@@ -34,7 +34,7 @@ public class DiaryController {
 		return "infra/diary/user/diaryList";
 	}
 	
-	/* 일기폼 */
+	// 일기폼 
 	@RequestMapping(value = "diaryForm")
 	public String diaryForm(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession) throws Exception {
 		
@@ -45,7 +45,7 @@ public class DiaryController {
 		return "infra/diary/user/diaryForm";
 	}
 	
-	/* 일기폼 */
+	// 일기폼 inst
 	@RequestMapping(value = "diaryInst")
 	public String insertDiary(Diary dto) throws Exception {
 				
@@ -54,28 +54,32 @@ public class DiaryController {
 		return "redirect:/diary/diaryList";
 	}
 	
-	/* 일기리스트 디테일 */
+	// 일기리스트 디테일 
 	@RequestMapping(value = "diaryDetail")
 	public String diaryDetail(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
-//		회원정보
+	
+		// 회원정보
 		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
-//		회원이 올린사진
+		
+		// 회원이 올린사진
 		List<Diary> list = service.mypageDetailList(vo);
 		model.addAttribute("list", list);
 		 
 		return "infra/diary/user/diaryDetail";
 	}
 	
-	/* 나의 일기리스트 */
+	// 나의 일기리스트 
 	@RequestMapping(value = "diaryMypage")
 	public String diaryMypage(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
-//		회원정보
+		
+		// 회원정보
 		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
-//		회원이 올린사진
+		
+		// 회원이 올린사진
 		List<Diary> list = service.mypageImageList(vo);
 		model.addAttribute("list", list);
 		
@@ -83,14 +87,17 @@ public class DiaryController {
 	}
 	
 //--------------------------------------------------------------------------------------------------------------------------
-//	나의 일기리스트
+	
+	//나의 일기리스트
 	@RequestMapping(value = "diaryMypage222")
 	public String diaryMypage222(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
-//		회원정보
+		
+		// 회원정보
 		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
-//		회원이 올린사진
+		
+		//회원이 올린사진
 		List<Diary> list = service.mypageImageList(vo);
 		model.addAttribute("list", list);
 		
@@ -99,17 +106,21 @@ public class DiaryController {
 	
 	@RequestMapping(value = "diaryMypagePrac")
 	public String diaryMypagePrac(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
-//		회원정보
+		
+		// 회원정보
 		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
-//		회원이 올린사진
+		
+		// 회원이 올린사진
 		List<Diary> list = service.mypageImageList(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/diary/user/diaryMypagePrac";
 	}
+	
 //-------------------------------------------------------------------------------
+	
 	@ResponseBody
 	@RequestMapping(value = "getPost")
 	public Map<String, Object> getPost(HttpSession httpSession, Diary dto, Model model) throws Exception {
@@ -124,33 +135,31 @@ public class DiaryController {
 		result.put("diaryContents" ,item.getIfdaContents());
 		result.put("regDate" ,item.getIfdaRegDate());
 		
+		
 		return result;
 	}
 	
-//	@ResponseBody
-//	@RequestMapping(value = "addLiked")
-//	public Map<String,Object> addLiked(Diary dto) throws Exception{
-//		
-//		Map<String,Object> result = new HashMap<String,Object>();
-//		
-//		service.addLiked(dto);
-//		
-//		return result;
-//	}
-//	
-//	
-//	
-//
-//	@ResponseBody
-//	@RequestMapping(value = "removeLiked")
-//	public Map<String,Object> removeLiked(Diary dto) throws Exception{
-//		
-//		Map<String,Object> result = new HashMap<String,Object>();
-//		
-//		service.removeLiked(dto);
-//		
-//		return result;
-//	}
-	
+	// 게시물 좋아요 구현
+	@ResponseBody
+	@RequestMapping(value = "addLiked")
+	public Map<String,Object> addLiked(Diary dto) throws Exception{
+		
+		Map<String,Object> result = new HashMap<String,Object>();
+				
+		service.addLiked(dto);
+		
+		return result;
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "removeLiked")
+	public Map<String,Object> removeLiked(Diary dto) throws Exception{
+		
+		Map<String,Object> result = new HashMap<String,Object>();
+		
+		service.removeLiked(dto);
+		
+		return result;
+	}
  
 }

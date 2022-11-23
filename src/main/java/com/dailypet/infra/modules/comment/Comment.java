@@ -5,6 +5,7 @@ import com.dailypet.infra.common.base.Base;
 public class Comment extends Base{
 
 	private Integer ifcmSeq;
+	private Integer type;
 	private String ifcmContent;
 	private String ifcmRegDate;
 	private Integer ifcmDelNy;
@@ -16,6 +17,12 @@ public class Comment extends Base{
 	}
 	public void setIfcmSeq(Integer ifcmSeq) {
 		this.ifcmSeq = ifcmSeq;
+	}
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
 	}
 	public String getIfcmContent() {
 		return ifcmContent;

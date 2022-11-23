@@ -19,7 +19,6 @@
 		JOIN abandonedUploaded findup
 		ON find.iffpSeq = findup.pseq
 		WHERE 1=1
-		AND findup.pseq = #{iffpSeq}
 		ORDER BY find.iffpSeq DESC
 	</select>
 	

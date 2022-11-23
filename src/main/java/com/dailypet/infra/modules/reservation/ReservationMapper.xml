@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailypet.infra.modules.reservation.ReservationMapper">
+
+	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.reservation.Reservation"></resultMap>
+	
+	<!-- 예약할때 회원이름, 연락처 고정값 -->
+	<select id="selectDefault" resultMap="resultMapObj">
+		SELECT
+			ifmmSeq
+			, ifmmName
+			, ifmmTel
+		FROM member
+		WHERE 1=1
+			AND ifmmSeq = #{ifmmSeq}
+	</select>
+	
+	<!-- 예약정보입력 -->
+	<insert id="insertRV">
+		INSERT INTO reservation (
+			ifrsPlace
+			, ifrsLocation
+			, ifrsTel
+			, ifrsPetName
+			, ifrsPurpose
+			, ifrsHopeDate
+			, ifrsRequest
+			, ifrsRegDate
+			, ifrsDelNy
+		)
+		VALUES (
+			#{ifrsPlace}
+			, #{ifrsLocation}
+			, #{ifrsTel}
+			, #{ifrsPetName}
+			, #{ifrsPurpose}
+			, #{ifrsHopeDate}
+			, #{ifrsRequest}
+			, now()
+			, 0
+		)
+		<selectKey resultType="String" keyProperty="ifrsSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
+	<!-- 예약 정보 -->
+	<select id="selectInfo">
+		SELECT
+			a.*
+			, b.ifmmName
+			, b.ifmmTel
+		FROM reservation a
+		LEFT JOIN member b 
+		ON a.member_seq = b.ifmmSeq
+		WHERE ifrsSeq = #{ifrsSeq}
+	</select>
+	
+	<!-- 예약 정보수정 -->
+	<update id="changeInfo">
+		UPDATE reservation
+		SET
+			ifrsPetName = #{ifrsPetName}
+			, ifrsPurpose = #{ifrsPurpose}
+			, ifrsHopeDate = #{ifrsHopeDate}
+			, ifrsRequest = #{ifrsRequest}
+			, ifrsPurpose = now()
+		WHERE ifrsSeq = #{ifrsSeq}
+	</update>
+	
+	<!-- 예약 취소 -->
+	<delete id="deleteInfo">
+		DELETE FROM reservation
+		WHERE ifrsSeq = #{ifrsSeq}
+	</delete>
+	
+</mapper>

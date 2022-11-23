@@ -81,6 +81,69 @@
 			,#{pseq}
 		)
 	</insert>
-
+	<select id="commentList" resultMap="resultMapObj">
+		SELECT
+			mm.ifmmID
+		    ,mmup.path
+		    ,mmup.uuidName
+		    ,co.ifcmContent
+		    ,co.ifcmRegDate
+		FROM member mm
+		JOIN memberUploaded mmup
+		ON mm.ifmmSeq = mmup.pseq
+		JOIN comment co
+		ON mm.ifmmSeq = co.mm_ifmmSeq
+		WHERE 1=1
+		AND co.type = 1
+		AND co.fp_iffpSeq = #{iffpSeq}
+	
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+		     find.*
+		    ,findup.path
+		    ,findup.uuidName
+		    ,(	
+		    	SELECT
+		    		COUNT(*)
+		    	FROM comment co
+		    	WHERE find.iffpSeq = co.fp_iffpSeq
+		    )	AS commentcount
+	    FROM findpet find
+	    JOIN abandonedUploaded findup
+	    ON find.iffpSeq = findup.pseq 
+	    WHERE 1=1
+	    AND iffpSeq = #{iffpSeq}
+	</select>
+	<insert id="comentInst">
+		INSERT INTO comment (
+			mm_ifmmSeq
+			,ifcmContent
+			,type
+			,ifcmRegDate
+			,fp_iffpSeq
+			,ifcmDelNy
+		)
+		VALUE(
+			#{ifmmSeq}
+			,#{ifcmContent}
+			, 1
+			, now()
+			,#{iffpSeq}
+			,0
+		)
+	</insert>
+	<select id="comentOne" resultMap="resultMapObj">
+		SELECT
+			mm.ifmmID	AS writer
+			,mmup.path
+			,mmup.uuidName
+		FROM member mm
+		JOIN  memberUploaded mmup  
+		ON mm.ifmmSeq = mmup.pseq  
+		WHERE 1=1
+		AND mm.ifmmSeq = #{ifmmSeq}
+	</select>
 	
 </mapper>	

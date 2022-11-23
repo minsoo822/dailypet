@@ -54,7 +54,7 @@
     	color: #f3f0eb;
     	cursor: pointer;
     }
-    .btnSave {
+    .btnStyle {
     	border: 1px solid #efefef;
     	background: #f3f0eb;
     	color: #372d2b;
@@ -67,7 +67,7 @@
     	margin-top: 30px;
     	margin-right: 20px;
     }
-    .btnSave:hover {
+    .btnStyle:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
@@ -86,6 +86,9 @@
     <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
+    <form method="post" id="findpetViewForm">
+    <input type="hidden" id="iffpSeq" name="iffpSeq" value="${item.iffpSeq }">
+    <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${sessSeq }">
 	<div class="totalContent">
 	    <div class="content">
 	        <div class="container">
@@ -93,7 +96,7 @@
 	                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="post-block">
 							<div class="post-img">
-							    <a href="#"><img class="petImg" src="/resources/images/findpet/zz.jpg" alt="Interior Design Website Templates Free Download" class="img-responsive"></a>
+							    <a href="#"><img class="petImg" src="${item.path }${item.uuidName}" alt="Interior Design Website Templates Free Download" class="img-responsive"></a>
 							</div>
 						</div>
 					</div>	
@@ -102,29 +105,29 @@
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
 								이름
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-								-
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">
+								<c:out value="${item.iffpName }"/>
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
 								품종
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-								병아리
+							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">
+								<c:out value="${item.iffpBrred }"/>
 							</div>
 						</div>
 						<hr>
 						<div class="row">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-								나이
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-								-
-							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
 								성별
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">
-								-
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">
+								<c:out value="${item.iffpGender }"/>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								특징
+							</div>
+							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">
+								<c:out value="${item.iffpCharacteristic }"/>
 							</div>
 						</div>
 						<hr>
@@ -133,7 +136,7 @@
 								위탁장소
 							</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1 text">
-								12110
+								<c:out value="${item.iffpAnimalShelterzipCode }"/>
 							</div>
 						</div>
 						<div class="row">
@@ -141,7 +144,7 @@
 								&nbsp;
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-								경기도 남양주시 별내3로 23 (별내동, 미리내마을4-4단지)
+								<c:out value="${item.iffpAnimalShelter1 }"/>
 							</div>
 						</div>
 						<div class="row">
@@ -149,7 +152,7 @@
 								&nbsp;
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-								4401동 8501호
+								<c:out value="${item.iffpAnimalShelter2 }"/>
 							</div>
 						</div>
 						<div class="row">
@@ -157,7 +160,7 @@
 								발견장소
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-								4401동 오른쪽 화단
+								<c:out value="${item.iffpSpotPlace }"/>
 							</div>
 						</div>
 						<div class="row">
@@ -165,93 +168,96 @@
 								발견일시
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-								2022-10-22 오후 07:31
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-								특이사항
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
-								발바닥에 검은색 점이있어요
+								<c:out value="${item.iffpSpotDate }"/>
 							</div>
 						</div>
 	                </div>
 				</div>
 				<div class="row">
 					<div class="col" style="display: flex; justify-content: flex-end;">
-						<button type="button" class="btnSave">목록</button>
-						<button type="button" class="btnSave">수정</button>
+						<button type="button" class="btnStyle">목록</button>
+						<button type="button" class="btnStyle">수정</button>
 					</div>
 				</div>
 				<hr>
 				<div class="row">
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+						<input type="text" class="form-control" name="ifcmContent" id="ifcmContent" placeholder="댓글달기">
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+						<button type="button" class="btnStyle" id="comentSave" style="margin-top: 0px;">등록</button>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					    <div class="comment-area">
-					        <div class="row">
-					            <div class=" col-lg-12 col-md-12">
-					                <div class="comment-title">
-					                    <h2>댓글(3)</h2>
-					                </div>
+		                <div class="comment-title">
+		                    <h2>댓글(<c:out value="${item.commentcount }"/>)</h2>
+		                </div>
+				        <div class="row">
+				            <div class=" col-lg-12 col-md-12" id="comment-area">
+				            	<!-- 댓글 s -->
+				            	<c:forEach items="${commentList }" var="commentList" varStatus="status">
 					                <ul class="comment-list">
 					                    <li>
 					                        <div class="comment-body">
-					                            <div class="comment-author"><img src="/resources/images/findpet/puppy-g12ba81e5a_1920.jpg" alt class="propileImg"></div>
+					                            <div class="comment-author"><img src="${commentList.path }${commentList.uuidName}" alt class="propileImg"></div>
 					                            <div class="comment-info">
 					                                <div class="comment-header">
-					                                    <h3 class="comments-title">키키</h3>
-					                                    <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
+					                                    <h3 class="comments-title"><c:out value="${commentList.ifmmID }"/></h3>
+					                                    <div class="meta"> <span class="meta-date"><c:out value="${commentList.ifcmRegDate }"/></span> </div>
 					                                </div>
 					                                <div class="comment-content">
-					                                    <p>빨리 주인을 찾았으면 좋겠네요 ㅠㅠ </p>
-					                                </div>
-					                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
-					                            </div>
-					                        </div>
-					                        <ul class="comment-list childern">
-					                            <li>
-					                                <div class="comment-body">
-					                                    <div class="comment-author"><img src="/resources/images/findpet/dog-g22e2a8936_1280.jpg" alt class="propileImg"></div>
-					                                    <div class="comment-info">
-					                                        <div class="comment-header">
-					                                            <h3 class="comments-title">연탄</h3>
-					                                            <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
-					                                        </div>
-					                                        <div class="comment-content">
-					                                            <p>이렇게 작고 소중한 개나리가.... ㅠㅠ </p>
-					                                        </div>
-					                                        <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
-					                                    </div>
-					                                </div>
-					                            </li>
-					                        </ul>
-					                    </li>
-					                </ul>
-					                <ul class="comment-list">
-					                    <li>
-					                        <div class="comment-body">
-					                            <div class="comment-author"><img src="/resources/images/findpet/maltese-g892b1f5c5_1280.jpg" alt class="propileImg"></div>
-					                            <div class="comment-info">
-					                                <div class="comment-header">
-					                                    <h3 class="comments-title">먼지</h3>
-					                                    <div class="meta"> <span class="meta-date">April 23, 2020</span> </div>
-					                                </div>
-					                                <div class="comment-content">
-					                                    <p>울고있는 소리가 여기까지 들려요 ㅠㅠㅠ  </p>
+					                                    <p><c:out value="${commentList.ifcmContent }"/></p>
 					                                </div>
 					                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
 					                            </div>
 					                        </div>
 					                    </li>
 					                </ul>
-					            </div>
-					        </div>
-					    </div>
+				                </c:forEach>
+				                <!-- 댓글 e -->
+				                <ul class="comment-list">
+				                    <li>
+				                        <div class="comment-body">
+				                            <div class="comment-author"><img src="/resources/images/findpet/puppy-g12ba81e5a_1920.jpg" alt class="propileImg"></div>
+				                            <div class="comment-info">
+				                                <div class="comment-header">
+				                                    <h3 class="comments-title">키키</h3>
+				                                    <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
+				                                </div>
+				                                <div class="comment-content">
+				                                    <p>빨리 주인을 찾았으면 좋겠네요 ㅠㅠ </p>
+				                                </div>
+				                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
+				                            </div>
+				                        </div>
+				                        <ul class="comment-list childern">
+				                            <li>
+				                                <div class="comment-body">
+				                                    <div class="comment-author"><img src="/resources/images/findpet/dog-g22e2a8936_1280.jpg" alt class="propileImg"></div>
+				                                    <div class="comment-info">
+				                                        <div class="comment-header">
+				                                            <h3 class="comments-title">연탄</h3>
+				                                            <div class="meta"> <span class="meta-date">April 24, 2020</span> </div>
+				                                        </div>
+				                                        <div class="comment-content">
+				                                            <p>이렇게 작고 소중한 개나리가.... ㅠㅠ </p>
+				                                        </div>
+				                                        <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
+				                                    </div>
+				                                </div>
+				                            </li>
+				                        </ul>
+				                    </li>
+				                </ul>
+				            </div>
+				        </div>
 					</div>
 				</div>
 	        </div>
 	    </div>
     </div>
+    </form>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <!-- footer e -->
@@ -302,6 +308,59 @@
 		$("#address").val('');
 		$("#address_detail").val('');
 	})
+	
+	$("#comentSave").on("click", function() {
+		
+		$.ajax({
+			url: '/findpet/comentInst',
+			type: 'POST',
+			datatype: 'json',
+			data: {
+				iffpSeq : $("#iffpSeq").val(),
+				ifcmContent : $("#ifcmContent").val(),
+				ifmmSeq : $("#ifmmSeq").val(),
+			},
+			success:function(result){
+				
+				var txt = "";
+				
+				txt +='<ul class="comment-list">';
+				txt +='<li>';
+				txt +='<div class="comment-body">';
+				txt +='<div class="comment-author"><img src="'+ result.img +'" alt class="propileImg"></div>';
+				txt +='<div class="comment-info">';
+				txt +='<div class="comment-header">';
+				txt +='<h3 class="comments-title">'+ result.writer +'</h3>';
+				txt +='<div class="meta"> <span class="meta-date">방금전</span> </div>';
+				txt +='</div>';
+				txt +='<div class="comment-content">';
+				txt +='<p>'+ result.comment +'</p>';
+				txt +='</div>';
+				txt +='<div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>';
+				txt +='</div>';
+				txt +='</div>';
+				txt +='</li>';
+				txt +='</ul>';
+				
+				$("#comment-area").prepend(txt);
+				$("#ifcmContent").val("");
+			},
+			error:function(){
+				alert("ajax error..!");
+				
+			}
+		})
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
     </script>
     

@@ -69,7 +69,8 @@
 	<!-- header s -->
    	<%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-	<form action="" id="searchForm">
+	<form id="searchForm" method="post">
+	<input type="hidden" name="iffpSeq" value="${vo.iffpSeq }">
 		<div class="totalContent">
 	   		 <div class="container">
 			    <div class="row">
@@ -145,32 +146,10 @@
 		            	<c:forEach items="${list }" var="list" varStatus="status">
 			                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 			                    <div class="project-img mb30">
-			                        <a href="findpetView.html" class="imghover"><img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+			                        <a href="javascript:goView(${list.iffpSeq })" class="imghover"><img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 			                    </div>
 			                </div>
 		                </c:forEach>
-		            </div>
-		            <div class="row">
-		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-		                    <div class="project-img mb30">
-		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/galina-bugorra.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-		                    </div>
-		                </div>
-		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-		                    <div class="project-img mb30">
-		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/gogog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-		                    </div>
-		                </div>
-		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-		                    <div class="project-img mb30">
-		                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/hiena.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-		                    </div>
-		                </div>
-		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-		                    <div class="project-img imghover mb30">
-		                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/miAcat.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-		                    </div>
-		                </div>
 		            </div>
 		            <!-- pagination s -->
 					<%@include file="../../../common/xdmin/include/pagination.jsp"%>
@@ -191,6 +170,11 @@
     
 	    var goUrlList = "/findpet/findpetSearchForm";
 	    var goUrlForm = "/findpet/findpetMod";
+	    var goUrlView = "/findpet/findpetView";
+	    
+	    
+	    var seq = $("input:hidden[name=iffpSeq]");
+	    var form = $("#searchForm");
 	    
 	    $("#searchGo").on("click", function(){
 	    	$(location).attr("href", goUrlList).submit();
@@ -199,6 +183,11 @@
 	    $("#formGo").on("click", function(){
 	    	$(location).attr("href", goUrlForm).submit();
 		});
+	    
+	    goView = function(iffpSeq) {
+	    	seq.attr("value", iffpSeq);
+	    	form.attr("action", goUrlView).submit();
+	    } 
 	    
     </script>
     

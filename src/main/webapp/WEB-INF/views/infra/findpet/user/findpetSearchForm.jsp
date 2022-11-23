@@ -216,71 +216,14 @@
 	    <div class="content" style="padding-top: 50px;">
 	        <div class="container">
 	            <div class="row">
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="findpetView.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/zz.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/coco.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/dog2.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img imghover mb30">
-	                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/fox.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/galina-bugorra.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/gogog.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/hiena.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img imghover mb30">
-	                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/miAcat.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/mm.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/siba.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img mb30">
-	                        <a href="service-detail.html" class="imghover"><img class="imgsize" src="/resources/images/findpet/sudal.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-	                    <div class="project-img imghover mb30">
-	                        <a href="service-detail.html"><img class="imgsize" src="/resources/images/findpet/taiger.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-	                    </div>
-	                </div>
-	            </div>
+		            	<c:forEach items="${list }" var="list" varStatus="status">
+			                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			                    <div class="project-img mb30">
+			                        <a href="javascript:goView(${list.iffpSeq })" class="imghover"><img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+			                    </div>
+			                </div>
+		                </c:forEach>
+		            </div>
 	            <!-- pagination s -->
 				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 				<!-- pagination e -->

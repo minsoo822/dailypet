@@ -125,7 +125,7 @@
 								<input type="text" class="form-control" name="iffpGender" placeholder="모르신다면 적지않으셔도 무방합니다">
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
-								특이사항
+								특징
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<input type="text" class="form-control" name="iffpCharacteristic" placeholder="간단한 특징이라도 있다면 작성해주세요">

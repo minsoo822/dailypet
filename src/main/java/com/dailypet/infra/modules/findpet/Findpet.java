@@ -8,6 +8,12 @@ public class Findpet extends Base{
 	
 	private String ifmmSeq;
 	private String iffpSeq;
+	private String mm_ifmmSeq;
+	
+	private String writer;
+	private String ifmmID;
+	private String ifcmRegDate;
+	private String commentcount;
 	
 	private String iffpName;
 	private String iffpBrred;
@@ -23,6 +29,7 @@ public class Findpet extends Base{
 	
 	private MultipartFile[] findpet_img;
 	
+	private String ifcmContent;
 	
 	
 	public String getIfmmSeq() {
@@ -36,6 +43,12 @@ public class Findpet extends Base{
 	}
 	public void setIffpSeq(String iffpSeq) {
 		this.iffpSeq = iffpSeq;
+	}
+	public String getMm_ifmmSeq() {
+		return mm_ifmmSeq;
+	}
+	public void setMm_ifmmSeq(String mm_ifmmSeq) {
+		this.mm_ifmmSeq = mm_ifmmSeq;
 	}
 	public String getIffpName() {
 		return iffpName;
@@ -109,7 +122,37 @@ public class Findpet extends Base{
 	public void setFindpet_img(MultipartFile[] findpet_img) {
 		this.findpet_img = findpet_img;
 	}
-	
+	public String getIfcmContent() {
+		return ifcmContent;
+	}
+	public void setIfcmContent(String ifcmContent) {
+		this.ifcmContent = ifcmContent;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getIfmmID() {
+		return ifmmID;
+	}
+	public void setIfmmID(String ifmmID) {
+		this.ifmmID = ifmmID;
+	}
+	public String getIfcmRegDate() {
+		return ifcmRegDate;
+	}
+	public void setIfcmRegDate(String ifcmRegDate) {
+		this.ifcmRegDate = ifcmRegDate;
+	}
+	public String getCommentcount() {
+		return commentcount;
+	}
+	public void setCommentcount(String commentcount) {
+		this.commentcount = commentcount;
+	}
+
 	
 	
 

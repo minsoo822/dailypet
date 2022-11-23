@@ -18,6 +18,10 @@ public class FindpetServiceImpl implements FindpetService{
 	public List<Findpet> selectList(FindpetVo vo) throws Exception {
 		return dao.selectList(vo);
 	}
+	@Override
+	public Findpet selectOne(FindpetVo vo) throws Exception {
+		return dao.selectOne(vo);
+	}
 
 	@Override
 	public int findPetInst(Findpet dto) throws Exception {
@@ -44,6 +48,21 @@ public class FindpetServiceImpl implements FindpetService{
 		
 		return findPetInst;
 	}
+	
+	//댓글
+	@Override
+	public int comentInst(Findpet dto) throws Exception {
+		return dao.comentInst(dto);
+	}
+	@Override
+	public Findpet comentOne(Findpet dto) throws Exception {
+		return dao.comentOne(dto);
+	}
+	@Override
+	public List<Findpet> commentList(FindpetVo vo) throws Exception {
+		return dao.commentList(vo);
+	}
+	
 	
 	
 }

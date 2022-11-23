@@ -179,15 +179,7 @@
 										<p>고객명</p>
 									</div>
 									<div class="col-9">
-										<input class="form-control" type="text" id="name" name="name">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>예약자명</p>
-									</div>
-									<div class="col-9">
-										<input class="form-control" type="text" id="petname" name="petname">
+										<c:out value="${user.ifmmName }"/>
 									</div>
 								</div>
 								<div class="row">
@@ -195,13 +187,15 @@
 										<p>연락처</p>
 									</div>
 									<div class="col-9">
-										<select class="form-select" name="telecom" id="telecom" style="width: 28%; display: inline">
-											<option selected>::통신사::</option>
-											<option value="1">SKT</option>
-											<option value="2">KT</option>
-											<option value="3">LG</option>
-										</select>
-										<input class="form-control" type="text" id="phone" name="phone" placeholder="ex. 010-1234-5678" style="width: 70%; display: inline">
+										<c:out value="${user.ifmmTel }"/>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-3">
+										<p>예약자명</p>
+									</div>
+									<div class="col-9">
+										<input class="form-control" type="text" id="petname" name="ifrsPetName">
 									</div>
 								</div>
 								<div class="row">
@@ -209,7 +203,7 @@
 										<p>방문 목적</p>
 									</div>
 									<div class="col-9">
-										<input class="form-control" type="text" id="purpose" name="purpose" placeholder="간략하게 적어주세요.">
+										<input class="form-control" type="text" id="purpose" name="ifrsPurpose" placeholder="간략하게 적어주세요.">
 									</div>
 								</div>
 								<div class="row">
@@ -217,7 +211,7 @@
 										<p>예약 날짜</p>
 									</div>
 									<div class="col-9">
-										<input class="form-control" type="datetime-local" id="hopedate" name="hopedate">
+										<input class="form-control" type="datetime-local" id="hopedate" name="ifrsHopeDate">
 									</div>
 								</div>
 								<div class="row">
@@ -225,7 +219,7 @@
 										<p>요청사항</p>
 									</div>
 									<div class="col-9">
-										<input class="form-control" type="text" placeholder="간략하게 적어주세요.">
+										<input class="form-control" type="text" name="ifrsRequest" placeholder="간략하게 적어주세요.">
 									</div>
 								</div>
 								<div class="gobooking">

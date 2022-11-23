@@ -21,7 +21,16 @@
 		WHERE 1=1
 		ORDER BY find.iffpSeq DESC
 	</select>
-	
+	<select id="findpetOne" resultMap="resultMapObj">
+		SELECT
+			  find.*
+			 ,findup.path
+			 ,findup.uuidName
+		FROM findpet find
+		JOIN abandonedUploaded findup
+		ON find.iffpSeq = findup.pseq
+		WHERE find.iffpSeq = #{iffpSeq}
+	</select>
 	<insert id="findPetInst">
 		INSERT INTO findpet (
 			iffpName
@@ -114,7 +123,7 @@
 	    JOIN abandonedUploaded findup
 	    ON find.iffpSeq = findup.pseq 
 	    WHERE 1=1
-	    AND iffpSeq = #{iffpSeq}
+	    AND find.iffpSeq = #{iffpSeq}
 	</select>
 	<insert id="comentInst">
 		INSERT INTO comment (

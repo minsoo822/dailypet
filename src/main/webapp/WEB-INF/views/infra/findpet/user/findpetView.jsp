@@ -175,8 +175,8 @@
 				</div>
 				<div class="row">
 					<div class="col" style="display: flex; justify-content: flex-end;">
-						<button type="button" class="btnStyle">목록</button>
-						<button type="button" class="btnStyle">수정</button>
+						<button type="button" class="btnStyle" id="backBtn">목록</button>
+						<button type="button" class="btnStyle" id="modBtn">수정</button>
 					</div>
 				</div>
 				<hr>
@@ -209,14 +209,14 @@
 					                                <div class="comment-content">
 					                                    <p><c:out value="${commentList.ifcmContent }"/></p>
 					                                </div>
-					                                <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>
+					                                <!-- <div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div> -->
 					                            </div>
 					                        </div>
 					                    </li>
 					                </ul>
 				                </c:forEach>
 				                <!-- 댓글 e -->
-				                <ul class="comment-list">
+				                <!-- <ul class="comment-list">
 				                    <li>
 				                        <div class="comment-body">
 				                            <div class="comment-author"><img src="/resources/images/findpet/puppy-g12ba81e5a_1920.jpg" alt class="propileImg"></div>
@@ -249,7 +249,7 @@
 				                            </li>
 				                        </ul>
 				                    </li>
-				                </ul>
+				                </ul> -->
 				            </div>
 				        </div>
 					</div>
@@ -266,7 +266,20 @@
     <!-- footScript e -->
     
     <script type="text/javascript">
-    	
+    
+    
+    var form = $("#findpetViewForm");
+
+	//목록으로 돌아가기
+	$("#backBtn").on("click", function(){
+		form.attr("action", "/findpet/findpetList").submit();
+	});
+	//수정하기
+	$("#modBtn").on("click", function(){
+		form.attr("action", "/findpet/findpetMod").submit();
+	});
+	
+	
     /* 카카오지도API */
   	function sample4_execDaumPostcode() {
         new daum.Postcode({
@@ -308,7 +321,7 @@
 		$("#address").val('');
 		$("#address_detail").val('');
 	})
-	
+	//댓글
 	$("#comentSave").on("click", function() {
 		
 		$.ajax({
@@ -351,7 +364,6 @@
 			}
 		})
 	});
-	
 	
 	
 	

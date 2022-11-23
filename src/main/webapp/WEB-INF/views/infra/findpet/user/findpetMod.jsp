@@ -84,6 +84,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form method="post" id="findModForm" enctype="multipart/form-data">
+    <input type="hidden" name="iffpSeq" value="${item.iffpSeq }">
     <input type="hidden" name="ifmmSeq" value="${sessSeq}">
     <div class="totalContent">
 	    <div class="content">
@@ -92,7 +93,7 @@
 	                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="row">
 							<div class="col">
-							    <img class="petImg" src="" id="image">
+							    <img class="petImg" src="${item.path }${item.uuidName}" id="image">
 							</div>
 						</div>	
 						<div class="row">
@@ -107,13 +108,13 @@
 								이름
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" name="iffpName" placeholder="목걸이등에 이름이 있다면 적어주세요">
+								<input type="text" class="form-control" name="iffpName" value="${item.iffpName }" placeholder="목걸이등에 이름이 있다면 적어주세요">
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
 								품종
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" name="iffpBrred" placeholder="모르신다면 적지않으셔도 무방합니다">
+								<input type="text" class="form-control" name="iffpBrred" value="${item.iffpBrred }" placeholder="모르신다면 적지않으셔도 무방합니다">
 							</div>
 						</div>
 						<hr>
@@ -122,13 +123,13 @@
 								성별
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" name="iffpGender" placeholder="모르신다면 적지않으셔도 무방합니다">
+								<input type="text" class="form-control" name="iffpGender" value="${item.iffpGender }" placeholder="모르신다면 적지않으셔도 무방합니다">
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
 								특징
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" name="iffpCharacteristic" placeholder="간단한 특징이라도 있다면 작성해주세요">
+								<input type="text" class="form-control" name="iffpCharacteristic" value="${item.iffpCharacteristic }" placeholder="간단한 특징이라도 있다면 작성해주세요">
 							</div>
 						</div>
 						<hr>
@@ -137,7 +138,7 @@
 								위탁장소
 							</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1">
-								<input type="text" class="form-control" name="iffpAnimalShelterzipCode" readonly placeholder="우편번호" id="zip_code">
+								<input type="text" class="form-control" name="iffpAnimalShelterzipCode" value="${item.iffpAnimalShelterzipCode }" readonly placeholder="우편번호" id="zip_code">
 							</div>
 							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
 								<button type="button" class="Searchbtn" onclick="sample4_execDaumPostcode()"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -151,7 +152,7 @@
 								&nbsp;
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input type="text" class="form-control" name="iffpAnimalShelter1" readonly placeholder="도로명 주소" id="address">
+								<input type="text" class="form-control" name="iffpAnimalShelter1" value="${item.iffpAnimalShelter1 }" readonly placeholder="도로명 주소" id="address">
 							</div>
 						</div>
 						<div class="row">
@@ -159,7 +160,7 @@
 								&nbsp;
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input type="text" class="form-control" name="iffpAnimalShelter2" placeholder="상세 주소" id="address_detail">
+								<input type="text" class="form-control" name="iffpAnimalShelter2" value="${item.iffpAnimalShelter2 }" placeholder="상세 주소" id="address_detail">
 							</div>
 						</div>
 						<div class="row">
@@ -167,7 +168,7 @@
 								발견장소
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input type="text" class="form-control" name="iffpSpotPlace" placeholder="정확한 장소를 입력해주세요.">
+								<input type="text" class="form-control" name="iffpSpotPlace" value="${item.iffpSpotPlace }" placeholder="정확한 장소를 입력해주세요.">
 							</div>
 						</div>
 						<div class="row">
@@ -175,7 +176,7 @@
 								발견일시
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input class="form-control" type="datetime-local" name="iffpSpotDate" id="hopedate" name="hopedate">
+								<input class="form-control" type="datetime-local" name="iffpSpotDate" value="${item.iffpSpotDate }" id="hopedate" name="hopedate">
 							</div>
 						</div>
 	                </div>

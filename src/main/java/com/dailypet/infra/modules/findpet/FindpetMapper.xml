@@ -9,22 +9,20 @@
 <resultMap id="resultMapObj" type="com.dailypet.infra.modules.findpet.Findpet"></resultMap>
 
 
-<!-- <select id="selectList" resultMap="resultMapObj">
-	SELECT
-		iffpName
-		,iffpBreed
-		,iffpGender
-		,iffpAnimalShelter
-		,iffpSpotPlace
-		,iffpSpotDate
-		,iffpCharacteristic
-		,iffpDelNY
-		,iffpRegDate
-	FROM findpet	
-	WHERE 1=1
-	AND iffpSeq = #{iffpSeq}
-	ORDER BY iffpSeq DESC
-</select> -->
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			 find.iffpSeq
+		    ,find.iffpName
+		    ,findup.path
+		    ,findup.uuidName
+		FROM findpet find
+		JOIN abandonedUploaded findup
+		ON find.iffpSeq = findup.pseq
+		WHERE 1=1
+		AND findup.pseq = #{iffpSeq}
+		ORDER BY find.iffpSeq DESC
+	</select>
+	
 	<insert id="findPetInst">
 		INSERT INTO findpet (
 			iffpName

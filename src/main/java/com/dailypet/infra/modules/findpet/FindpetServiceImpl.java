@@ -35,7 +35,7 @@ public class FindpetServiceImpl implements FindpetService{
                 dto.setType(1);
                 dto.setDefaultNy(j == 0 ? 1 : 0);
                 dto.setSort(j+1);
-                dto.setPseq(dto.getIfmmSeq());
+                dto.setPseq(dto.getIffpSeq());
 
                 dao.findPetImgInst(dto);
                 j++;

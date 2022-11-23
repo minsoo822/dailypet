@@ -7,11 +7,14 @@ import com.dailypet.infra.common.base.Base;
 public class Findpet extends Base{
 	
 	private String ifmmSeq;
+	private String iffpSeq;
 	
 	private String iffpName;
 	private String iffpBrred;
-	private Integer iffpGender;
-	private String iffpAnimalShelter;
+	private String iffpGender;
+	private String iffpAnimalShelterzipCode;
+	private String iffpAnimalShelter1;
+	private String iffpAnimalShelter2;
 	private String iffpSpotPlace;
 	private String iffpSpotDate;
 	private String iffpCharacteristic;
@@ -28,6 +31,12 @@ public class Findpet extends Base{
 	public void setIfmmSeq(String ifmmSeq) {
 		this.ifmmSeq = ifmmSeq;
 	}
+	public String getIffpSeq() {
+		return iffpSeq;
+	}
+	public void setIffpSeq(String iffpSeq) {
+		this.iffpSeq = iffpSeq;
+	}
 	public String getIffpName() {
 		return iffpName;
 	}
@@ -40,17 +49,29 @@ public class Findpet extends Base{
 	public void setIffpBrred(String iffpBrred) {
 		this.iffpBrred = iffpBrred;
 	}
-	public Integer getIffpGender() {
+	public String getIffpGender() {
 		return iffpGender;
 	}
-	public void setIffpGender(Integer iffpGender) {
+	public void setIffpGender(String iffpGender) {
 		this.iffpGender = iffpGender;
 	}
-	public String getIffpAnimalShelter() {
-		return iffpAnimalShelter;
+	public String getIffpAnimalShelterzipCode() {
+		return iffpAnimalShelterzipCode;
 	}
-	public void setIffpAnimalShelter(String iffpAnimalShelter) {
-		this.iffpAnimalShelter = iffpAnimalShelter;
+	public void setIffpAnimalShelterzipCode(String iffpAnimalShelterzipCode) {
+		this.iffpAnimalShelterzipCode = iffpAnimalShelterzipCode;
+	}
+	public String getIffpAnimalShelter1() {
+		return iffpAnimalShelter1;
+	}
+	public void setIffpAnimalShelter1(String iffpAnimalShelter1) {
+		this.iffpAnimalShelter1 = iffpAnimalShelter1;
+	}
+	public String getIffpAnimalShelter2() {
+		return iffpAnimalShelter2;
+	}
+	public void setIffpAnimalShelter2(String iffpAnimalShelter2) {
+		this.iffpAnimalShelter2 = iffpAnimalShelter2;
 	}
 	public String getIffpSpotPlace() {
 		return iffpSpotPlace;

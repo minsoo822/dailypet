@@ -233,4 +233,12 @@
 		AND pseq = #{ifmmSeq}	
 	</update>
 	
+	<update id="memberDel">
+		UPDATE member
+		SET 
+			ifmmDelNy = 1
+		WHERE 
+			ifmmSeq = #{seq}
+	</update>
+	
 </mapper>

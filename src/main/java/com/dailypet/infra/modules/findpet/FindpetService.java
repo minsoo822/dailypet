@@ -11,7 +11,7 @@ public interface FindpetService {
 	
 	//댓글
 	public List<Findpet> commentList(FindpetVo vo) throws Exception;
-	public int comentInst(Findpet dto) throws Exception;
-	public Findpet comentOne(Findpet dto) throws Exception;
+	public int commentInst(Findpet dto) throws Exception;
+	public Findpet commentOne(Findpet dto) throws Exception;
 
 }

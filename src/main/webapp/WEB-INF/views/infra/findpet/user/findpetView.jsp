@@ -24,7 +24,7 @@
 		max-height: 100%;
 		max-width: 100%;
 	}
-	.propileImg {
+	.profileImg {
 		width: 80px;
 		height: 80px;
 		max-height: 100%;
@@ -185,7 +185,7 @@
 						<input type="text" class="form-control" name="ifcmContent" id="ifcmContent" placeholder="댓글달기">
 					</div>
 					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-						<button type="button" class="btnStyle" id="comentSave" style="margin-top: 0px;">등록</button>
+						<button type="button" class="btnStyle" id="commentSave" style="margin-top: 0px;">등록</button>
 					</div>
 				</div>
 				<div class="row">
@@ -200,7 +200,7 @@
 					                <ul class="comment-list">
 					                    <li>
 					                        <div class="comment-body">
-					                            <div class="comment-author"><img src="${commentList.path }${commentList.uuidName}" alt class="propileImg"></div>
+					                            <div class="comment-author"><img src="${commentList.path }${commentList.uuidName}" alt class="profileImg"></div>
 					                            <div class="comment-info">
 					                                <div class="comment-header">
 					                                    <h3 class="comments-title"><c:out value="${commentList.ifmmID }"/></h3>
@@ -219,7 +219,7 @@
 				                <!-- <ul class="comment-list">
 				                    <li>
 				                        <div class="comment-body">
-				                            <div class="comment-author"><img src="/resources/images/findpet/puppy-g12ba81e5a_1920.jpg" alt class="propileImg"></div>
+				                            <div class="comment-author"><img src="/resources/images/findpet/puppy-g12ba81e5a_1920.jpg" alt class="profileImg"></div>
 				                            <div class="comment-info">
 				                                <div class="comment-header">
 				                                    <h3 class="comments-title">키키</h3>
@@ -234,7 +234,7 @@
 				                        <ul class="comment-list childern">
 				                            <li>
 				                                <div class="comment-body">
-				                                    <div class="comment-author"><img src="/resources/images/findpet/dog-g22e2a8936_1280.jpg" alt class="propileImg"></div>
+				                                    <div class="comment-author"><img src="/resources/images/findpet/dog-g22e2a8936_1280.jpg" alt class="profileImg"></div>
 				                                    <div class="comment-info">
 				                                        <div class="comment-header">
 				                                            <h3 class="comments-title">연탄</h3>
@@ -322,10 +322,10 @@
 		$("#address_detail").val('');
 	})
 	//댓글
-	$("#comentSave").on("click", function() {
+	$("#commentSave").on("click", function() {
 		
 		$.ajax({
-			url: '/findpet/comentInst',
+			url: '/findpet/commentInst',
 			type: 'POST',
 			datatype: 'json',
 			data: {
@@ -340,7 +340,7 @@
 				txt +='<ul class="comment-list">';
 				txt +='<li>';
 				txt +='<div class="comment-body">';
-				txt +='<div class="comment-author"><img src="'+ result.img +'" alt class="propileImg"></div>';
+				txt +='<div class="comment-author"><img src="'+ result.img +'" alt class="profileImg"></div>';
 				txt +='<div class="comment-info">';
 				txt +='<div class="comment-header">';
 				txt +='<h3 class="comments-title">'+ result.writer +'</h3>';

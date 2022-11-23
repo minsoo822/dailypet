@@ -40,16 +40,16 @@ public class FindpetController {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "comentInst")
-	public Map<String, Object> comentInst(Findpet dto) throws Exception {
+	@RequestMapping(value = "commentInst")
+	public Map<String, Object> commentInst(Findpet dto) throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
 		
-		int comentInst = service.comentInst(dto);
+		int commentInst = service.commentInst(dto);
 		
-		Findpet comentItem = service.comentOne(dto);
+		Findpet commentItem = service.commentOne(dto);
 		
-		result.put("img", comentItem.getPath() + comentItem.getUuidName());
-		result.put("writer", comentItem.getWriter());
+		result.put("img", commentItem.getPath() + commentItem.getUuidName());
+		result.put("writer", commentItem.getWriter());
 		result.put("comment", dto.getIfcmContent());
 		return result;
 	}

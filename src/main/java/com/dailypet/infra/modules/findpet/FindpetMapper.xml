@@ -125,7 +125,7 @@
 	    WHERE 1=1
 	    AND find.iffpSeq = #{iffpSeq}
 	</select>
-	<insert id="comentInst">
+	<insert id="commentInst">
 		INSERT INTO comment (
 			mm_ifmmSeq
 			,ifcmContent
@@ -143,7 +143,7 @@
 			,0
 		)
 	</insert>
-	<select id="comentOne" resultMap="resultMapObj">
+	<select id="commentOne" resultMap="resultMapObj">
 		SELECT
 			mm.ifmmID	AS writer
 			,mmup.path

@@ -51,12 +51,12 @@ public class FindpetServiceImpl implements FindpetService{
 	
 	//댓글
 	@Override
-	public int comentInst(Findpet dto) throws Exception {
-		return dao.comentInst(dto);
+	public int commentInst(Findpet dto) throws Exception {
+		return dao.commentInst(dto);
 	}
 	@Override
-	public Findpet comentOne(Findpet dto) throws Exception {
-		return dao.comentOne(dto);
+	public Findpet commentOne(Findpet dto) throws Exception {
+		return dao.commentOne(dto);
 	}
 	@Override
 	public List<Findpet> commentList(FindpetVo vo) throws Exception {

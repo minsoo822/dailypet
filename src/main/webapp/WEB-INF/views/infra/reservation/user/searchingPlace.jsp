@@ -155,7 +155,7 @@
 										<p>예약장소</p>
 									</div>
 									<div class="col-9" id="offcol">
-										<h6 id="ifrsPlace" name="ifrsPlace"></h6>
+										<span id="ifrsPlace" name="ifrsPlace"></span>
 									</div>
 								</div>
 								<div class="row">
@@ -163,7 +163,7 @@
 										<p>위치</p>
 									</div>
 									<div class="col-9" id="offcol">
-										<h6 id="ifrsLocation" name="ifrsLocation"></h6>
+										<span id="ifrsLocation" name="ifrsLocation"></span>
 									</div>
 								</div>
 								<div class="row">
@@ -171,7 +171,7 @@
 										<p>전화번호</p>
 									</div>
 									<div class="col-9" id="offcol">
-										<h6 id="ifrsTel" name="ifrsTel"></h6>
+										<span id="ifrsTel" name="ifrsTel"></span>
 									</div>
 								</div>
 								<div class="row">
@@ -366,10 +366,9 @@
 		
 		// 검색결과 항목을 Element로 반환하는 함수입니다
 		function getListItem(index, places) {
-		
 		    var el = document.createElement('li'),
 		    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-		                '<div class="info" onclick="openRV()" id="rv" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
+		                '<div class="info" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
 		                '   <h5 id="placeName">' + places.place_name + '</h5>';
 		
 		    if (places.road_address_name) {
@@ -384,6 +383,19 @@
 		
 		    el.innerHTML = itemStr;
 		    el.className = 'item';
+		    el.id='rv';
+		    el.onclick = function () {
+		    	
+				var Pname = $("#placeName").text();
+				var Paddr = $("#addressName").text();
+				var Ptel = $("#placeTel").text();
+				
+//				alert(Pname + ", " + Paddr + ", " + Ptel);
+				
+				$("#ifrsPlace").html(Pname);
+				$("#ifrsLocation").html(Paddr);
+				$("#ifrsTel").html(Ptel);
+			}
 		
 		    return el;
 		}
@@ -467,39 +479,20 @@
 	</script>
 	
 	<script type="text/javascript">
-	
-		/* $('#rv').on('click', function() { 
-		  
-			alert("ㅎㅇ");
-			//현재 row의 정보 가져오기 
-			var thisRow = $(this).closest('#rv'); 
-		  
-			//이름 input 값 가져오기
-			var Pname = thisRow.find('#placeName').val();
-			//주소 input 값 가져오기
-			var Paddr = thisRow.find('#addressName').val();
-			//전화번호 input 값 가져오기
-			var Ptel = thisRow.find('#placeTel').val();
-			
-			alert(Pname + ", " + Paddr + ", " + Ptel);
-			
-			$("#ifrsPlace").val(Pname);
-			$("#ifrsLocation").val(Paddr);
-			$("#ifrsTel").val(Ptel);
-		  
-		}) */
-		
+
+	/*	 		
 		function openRV() {
-			var Pname = places.place_name;
-			var Paddr = places.road_address_name;
-			var Ptel = places.phone;
+			var Pname = $("#placeName").text();
+			var Paddr = $("#addressName").text();
+			var Ptel = $("#placeTel").text();
 			
-			alert(Pname + ", " + Paddr + ", " + Ptel);
+//			alert(Pname + ", " + Paddr + ", " + Ptel);
 			
-			$("#ifrsPlace").val(Pname);
-			$("#ifrsLocation").val(Paddr);
-			$("#ifrsTel").val(Ptel);
+			$("#ifrsPlace").html(Pname);
+			$("#ifrsLocation").html(Paddr);
+			$("#ifrsTel").html(Ptel);
 		}
+*/		
 /* 		
 		rv2 = function() {
 			//현재 row의 정보 가져오기 

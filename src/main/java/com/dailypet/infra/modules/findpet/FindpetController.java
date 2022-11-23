@@ -55,8 +55,9 @@ public class FindpetController {
 	}
 	
 	@RequestMapping(value = "findpetMod")
-	public String findpetMod() throws Exception {
-		
+	public String findpetMod(FindpetVo vo, Model model) throws Exception {
+		Findpet item = service.selectOne(vo);
+		model.addAttribute("item", item);
 		return "infra/findpet/user/findpetMod";
 	}
 	

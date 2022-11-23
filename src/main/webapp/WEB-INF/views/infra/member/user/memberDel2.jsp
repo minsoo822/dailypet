@@ -88,15 +88,15 @@
 	    	padding: 10px 10px;
 	    }
 		.btnStyle {
-    	border: 1px solid #372d2b;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 80px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13pt;
-    	font-weight: bold;
+	    	border: 1px solid #372d2b;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 80px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13pt;
+	    	font-weight: bold;
 	    }
 	    .btnStyle:hover {
 	    	background: #372d2b;

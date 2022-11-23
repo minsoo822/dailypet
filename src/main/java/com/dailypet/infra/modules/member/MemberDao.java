@@ -52,12 +52,18 @@ public class MemberDao {
 		return sqlSession.insert(namespace + ".userimgInsert" , dto);
 	}
 	
-	//회원정보수정
+	//회원 정보 수정
 	public int userUpdate(Member dto) { 
 		return sqlSession.update(namespace + ".userUpdate", dto); 
 	}
+	
 	public int userImgUpdate(Member dto) { 
 		return sqlSession.update(namespace + ".userImgUpdate" , dto); 
+	}
+	
+	//회원 탈퇴
+	public int memberDel(Member dto) {
+		return sqlSession.update(namespace + ".memberDel", dto);
 	}
 	
 //----------------------------------------------------------------------------------------	

@@ -66,6 +66,12 @@
 			mm.*
 			,b.path			AS memberPath
 			,b.uuidName		AS memberuuidName
+			,(
+				SELECT
+					COUNT(*)
+				FROM diary di
+				WHERE mm.ifmmSeq = di.mm_ifmmSeq
+			)	AS postCount
 		FROM member mm
 		JOIN memberUploaded b ON mm.ifmmSeq = b.pseq
 		WHERE 1=1

@@ -35,7 +35,7 @@ public class MemberController {
 		return "infra/member/user/login";
 	}
 	
-	//회원가입
+	// 회원가입
 	@RequestMapping(value="allInst")
 	public String allInst(Member dto, Animal dto1) throws Exception {
 		
@@ -46,6 +46,16 @@ public class MemberController {
 		service1.petimgInsert(dto1);
 		
 		return "infra/member/user/regDone";
+	}
+	
+	// 회원 탈퇴
+	@ResponseBody
+	@RequestMapping(value = "memberDel")
+	public String memberDel(MemberVo vo, Member dto, HttpSession httpSession,RedirectAttributes redirectAttributes) throws Exception {
+		service.memberDel(dto);
+		redirectAttributes.addFlashAttribute("vo", vo);
+		httpSession.invalidate();
+		return "infra/member/user/memberDel2";
 	}
 	
 	// 로그인
@@ -134,13 +144,20 @@ public class MemberController {
 	public String regDone() throws Exception {
 
 		return "infra/member/user/regDone";
-	}
+	} 
 	
 	@RequestMapping(value = "memberDel1")
-	public String memberDel1() throws Exception {
+	public String memberDel1(@ModelAttribute("vo") MemberVo vo, Model model, HttpSession httpSession) throws Exception {
 
+		String seq = (String) httpSession.getAttribute("sessSeq");
+		vo.setIfmmSeq(seq);
+		
+		Member result = service.selectOne(vo);
+		model.addAttribute("de", result);
+		
 		return "infra/member/user/memberDel1";
 	}
+	
 	@RequestMapping(value = "memberDel2")
 	public String memberDel2() throws Exception {
 
@@ -177,6 +194,7 @@ public class MemberController {
 		redirectAttributes.addFlashAttribute("vo", vo);
 		return "redirect:/member/myPage";
 	}
+	
 	@RequestMapping(value = "changePW")
 	public String changePW() throws Exception {
 

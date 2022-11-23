@@ -47,6 +47,7 @@ public class MemberServiceImpl implements MemberService{
         }
 		return userInsert;
 	}
+	
 	//회원정보 수정
 	@Override
 	public int userUpdate(Member dto) throws Exception {
@@ -75,6 +76,12 @@ public class MemberServiceImpl implements MemberService{
 		
 		return userUpdate;
 	}
+	
+	// 회원 탈퇴
+	public int memberDel(Member dto) throws Exception {
+		return dao.memberDel(dto);
+	}
+	
 //-----------------------------------------------------------------------------------	
 	public static String selectOneCachedCode(String ifmmSeq) throws Exception {
 		String rt = "";
@@ -112,10 +119,17 @@ public class MemberServiceImpl implements MemberService{
 	public int selectOneCheckNick(Member dto) throws Exception {
 		return dao.selectOneCheckNick(dto);
 	}
+	
 	@Override
 	public Member selectMypage(MemberVo vo) throws Exception {
 		return dao.selectMypage(vo);
 	}
 	
+	@Override
+	public Member selectOne(MemberVo vo) throws Exception {
+		Member result = dao.selectOne(vo);
+		System.out.println("service result: " + result);
+		return result;
+	}
 
 }

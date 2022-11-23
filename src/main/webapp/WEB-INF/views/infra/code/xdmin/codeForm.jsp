@@ -93,7 +93,7 @@
     	background-color: #fcfcfc;
     }
     
-    .btn {
+    .btnGroup .btn {
     	padding: 10px 10px;
     	width: 38px;
     	margin: 0 5px;
@@ -187,6 +187,16 @@
 	.form-select {
 		width: 325px;
 	}
+	
+	.btn-close{
+    	background-color: transparent;
+    	border-color: transparent;
+    	margin-left: 480px;
+    }
+    
+    .modal-header{
+   		display: inline-flex;
+    }
 	 
 </style>
 
@@ -286,22 +296,24 @@
 						</div>
 						<hr class="hr1">
 						<br>
-						<button type="button" class="btn btn-secondary" id="btnList"><i class="fa-solid fa-list"></i></button>
-						<button type="button" class="btn btn-dark right" id="btnSubmit"><i class="fa-solid fa-check"></i></button>
-						<button type="button" class="btn btn-danger right" data-toggle="modal" data-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
-						<button type="button" class="btn btn-outline-danger right" data-toggle="modal" data-target="#ueleteModal"><i class="fa-solid fa-x"></i></button>
-						<button type="button" class="btn btn-warning right" id="btnReset" data-toggle="modal" data-target="#resetModal"><i class="fa-solid fa-rotate-left"></i></button>
+						<div class="btnGroup">
+							<button type="button" class="btn btn-secondary" id="btnList"><i class="fa-solid fa-list"></i></button>
+							<button type="button" class="btn btn-dark right" id="btnSubmit"><i class="fa-solid fa-check"></i></button>
+							<button type="button" class="btn btn-danger right" data-toggle="modal" data-target="#deleteModal"><i class="fa-solid fa-trash"></i></button>
+							<button type="button" class="btn btn-outline-danger right" data-toggle="modal" data-target="#ueleteModal"><i class="fa-solid fa-x"></i></button>
+							<button type="button" class="btn btn-warning right" id="btnReset" data-toggle="modal" data-target="#resetModal"><i class="fa-solid fa-rotate-left"></i></button>
+						</div>
 
 						<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="deleteModalLabel">내용 취소</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+										<h5 class="modal-title" id="deleteModalLabel" data-dismiss="modal">내용 취소</h5>
+										<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
 									</div>
 									<div class="modal-body">해당 데이터를 삭제하시겠습니까?</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
 										<button type="button" class="btn btn-secondary" id="btnDelete">삭제</button>
 									</div>
 								</div>
@@ -311,12 +323,12 @@
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="ueleteModalLabel">내용 취소</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										<h5 class="modal-title" id="ueleteModalLabel" data-dismiss="modal">내용 취소</h5>
+										<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
 									</div>
 									<div class="modal-body">해당 데이터를 비활성화하시겠습니까?</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
 										<button type="button" class="btn btn-secondary" id="btnUelete">삭제</button>
 									</div>
 								</div>
@@ -326,12 +338,12 @@
 							<div class="modal-dialog">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="resetModalLabel">내용 취소</h5>
-										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										<h5 class="modal-title" id="resetModalLabel" data-dismiss="modal">내용 취소</h5>
+										<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
 									</div>
 									<div class="modal-body">입력한 데이터를 모두 삭제하시겠습니까?</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+										<button type="button" class="btn btn-secondary">취소</button>
 										<button type="button" class="btn btn-secondary" id="btnReset">삭제</button>
 									</div>
 								</div>

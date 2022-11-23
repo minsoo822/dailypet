@@ -84,7 +84,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form method="post" id="findModForm" enctype="multipart/form-data">
-    <input type="hidden" name="ifmmSeq" value="${dto.ifmmSeq }">
+    <input type="hidden" name="ifmmSeq" value="${sessSeq}">
     <div class="totalContent">
 	    <div class="content">
 	        <div class="container">
@@ -97,7 +97,7 @@
 						</div>	
 						<div class="row">
 							<div class="col">
-								<input type="file" id="file" class="form-control" style="width: 446px;">
+								<input type="file" id="file" class="form-control" name="findpet_img" style="width: 446px;">
 							</div>
 						</div>	
 					</div>	
@@ -107,28 +107,28 @@
 								이름
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" placeholder="">
+								<input type="text" class="form-control" name="iffpName" placeholder="목걸이등에 이름이 있다면 적어주세요">
 							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
 								품종
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" placeholder="">
+								<input type="text" class="form-control" name="iffpBrred" placeholder="모르신다면 적지않으셔도 무방합니다">
 							</div>
 						</div>
 						<hr>
 						<div class="row">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-								나이
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" placeholder="">
-							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
 								성별
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" placeholder="">
+								<input type="text" class="form-control" name="iffpGender" placeholder="모르신다면 적지않으셔도 무방합니다">
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
+								특이사항
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<input type="text" class="form-control" name="iffpCharacteristic" placeholder="간단한 특징이라도 있다면 작성해주세요">
 							</div>
 						</div>
 						<hr>
@@ -137,7 +137,7 @@
 								위탁장소
 							</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1">
-								<input type="text" class="form-control" placeholder="우편번호" id="zip_code">
+								<input type="text" class="form-control" name="iffpAnimalShelterzipCode" readonly placeholder="우편번호" id="zip_code">
 							</div>
 							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
 								<button type="button" class="Searchbtn" onclick="sample4_execDaumPostcode()"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -151,7 +151,7 @@
 								&nbsp;
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input type="text" class="form-control" placeholder="도로명 주소" id="address">
+								<input type="text" class="form-control" name="iffpAnimalShelter1" readonly placeholder="도로명 주소" id="address">
 							</div>
 						</div>
 						<div class="row">
@@ -159,7 +159,7 @@
 								&nbsp;
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input type="text" class="form-control" placeholder="상세 주소" id="address_detail">
+								<input type="text" class="form-control" name="iffpAnimalShelter2" placeholder="상세 주소" id="address_detail">
 							</div>
 						</div>
 						<div class="row">
@@ -167,7 +167,7 @@
 								발견장소
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input type="text" class="form-control" placeholder="정확한 장소를 입력해주세요.">
+								<input type="text" class="form-control" name="iffpSpotPlace" placeholder="정확한 장소를 입력해주세요.">
 							</div>
 						</div>
 						<div class="row">
@@ -175,22 +175,14 @@
 								발견일시
 							</div>
 							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input class="form-control" type="datetime-local" id="hopedate" name="hopedate">
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-								특이사항
-							</div>
-							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-								<input type="text" class="form-control">
+								<input class="form-control" type="datetime-local" name="iffpSpotDate" id="hopedate" name="hopedate">
 							</div>
 						</div>
 	                </div>
 				</div>
 				<div class="row">
 					<div class="col" style="display: flex; justify-content: flex-end;">
-						<button type="button" class="btnSave">취소</button>
+						<button type="button" class="btnSave" id="backBtn">취소</button>
 						<button type="button" class="btnSave" id="saveBtn">저장</button>
 					</div>
 				</div>
@@ -207,10 +199,16 @@
     <!-- footScript e -->
     <script type="text/javascript">
     
-    var 
+    var findpetInst = "/findpet/findpetInst";
+    var findpetList = "/findpet/findpetList";
+    
+    var form = $("#findModForm")
     
     $("#saveBtn").on("click", function(){
-    	form
+    	form.attr("action", findpetInst).submit();
+    });
+    $("#backBtn").on("click", function(){
+    	form.attr("action", findpetList).submit();
     });
     	
     /* 카카오지도API */

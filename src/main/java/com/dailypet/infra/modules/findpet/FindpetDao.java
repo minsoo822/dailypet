@@ -23,6 +23,9 @@ public class FindpetDao {
 	//등록
 	public int findPetInst(Findpet dto) throws Exception { return sqlSession.insert(namespace + ".findPetInst", dto); }
 	public int findPetImgInst(Findpet dto) throws Exception { return sqlSession.insert(namespace + ".findPetImgInst", dto); }
+	//수정
+	public int findPetUpdt(Findpet dto) throws Exception { return sqlSession.insert(namespace + ".findPetUpdt", dto); }
+	public int findPetImgUpdt(Findpet dto) throws Exception { return sqlSession.insert(namespace + ".findPetImgUpdt", dto); }
 	//댓글
 	public List<Findpet> commentList(FindpetVo vo) throws Exception { return sqlSession.selectList(namespace + ".commentList", vo); }
 	public int commentInst(Findpet dto) throws Exception { return sqlSession.insert(namespace + ".commentInst", dto); }

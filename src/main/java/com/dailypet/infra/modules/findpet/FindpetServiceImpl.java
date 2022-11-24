@@ -48,7 +48,33 @@ public class FindpetServiceImpl implements FindpetService{
 		
 		return findPetInst;
 	}
-	
+	@Override
+	public int findPetUpdt(Findpet dto) throws Exception {
+		int findPetUpdt = dao.findPetUpdt(dto);
+		int j = 0;
+        for(MultipartFile myFile : dto.getFindpet_img()) {
+
+            if(!myFile.isEmpty()) {
+                // postServiceImpl
+                String pathModule = this.getClass().getSimpleName().toString().toLowerCase().replace("serviceimpl", "");
+                
+//                		MemberServiceImpl.java  ->	 MemberServiceImpl -> ""  ->	 memberserviceimpl -> 	member
+                UtilUpload.uploadFindpet(myFile, pathModule, dto);
+                    
+                dto.setType(1);
+                dto.setDefaultNy(j == 0 ? 1 : 0);
+                dto.setSort(j+1);
+                dto.setPseq(dto.getIffpSeq());
+
+                dao.findPetImgUpdt(dto);
+                j++;
+            }
+        }
+		
+		
+		
+		return findPetUpdt;
+	}
 	//댓글
 	@Override
 	public int commentInst(Findpet dto) throws Exception {

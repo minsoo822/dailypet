@@ -1,10 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>	
+	<style type="text/css">
+		.header{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		
+		.navigation {
+			margin-top: 23px;
+		}
+		
+		img{
+			display: inline;
+		}
+	</style>
+</head>
+<body>
 <div class="header navbar-fixed-top">
 	<div class="container" style="min-width: 1320px;">
 	    <div class="row">
 	        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-	            <a href="/animal/home"><img src="/resources/images/headerLogo.png" style="width: 195px; height: 50px" alt=""></a>
+	            <a href="/animal/home"><img src="/resources/images/logo.jpg" style="width: 131px; height: 87px;"><img src="/resources/images/logo2.jpg" style="width: 180px; height: 80px;"></a>
 	        </div>
 	        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
 	            <div class="navigation">
@@ -48,3 +67,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>

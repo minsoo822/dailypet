@@ -10,7 +10,7 @@
 		}
 		
 		.navigation {
-			margin-top: 23px;
+			margin-top: 22px;
 		}
 		
 		img{

@@ -103,137 +103,142 @@
     <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <div class="totalContent">
-	    <div class="content">
-	        <div class="container">
-	            <!-- <div class="row">
-	            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-	                    <ul class="nav flex-column nav-pills me-3">
-	                    	<li class="nav-item">
-								<button class="nav-link active" type="button" aria-current="page" href="#">병원</button>
-							</li>
-							<li class="nav-item">
-								<button class="nav-link" type="button" href="#">호텔</button>
-							</li>
-							<li class="nav-item">
-								<button class="nav-link" type="button" href="#">미용실</button>
-							</li>
-							<li class="nav-item">
-								<button class="nav-link" type="button" href="#">유치원</button>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"> -->
-						<h4>예약시스템은 지역별 동물병원, 애견호텔/미용실/유치원만 가능합니다.</h4>
-	                    <div class="map_wrap">
-						    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
-						    <div id="menu_wrap" class="bg_white">
-						        <div class="option">
-						        	<div>
-						        		<form onsubmit="searchPlaces(); return false;">
-						                    키워드 : <input type="text" value="강남 동물병원" placeholder="지역명+편의시설" id="keyword" size="15"> 
-						                    <button type="submit">검색하기</button> 
-						            	</form>
-						        	</div>
-						        </div>
-						    </div>
+    <form id="form" name="formRV" method="post">
+    	<input type="hidden" name="ifmmSeq" value="${user.ifmmSeq}">
+	    <div class="totalContent">
+		    <div class="content">
+		        <div class="container">
+		            <!-- <div class="row">
+		            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+		                    <ul class="nav flex-column nav-pills me-3">
+		                    	<li class="nav-item">
+									<button class="nav-link active" type="button" aria-current="page" href="#">병원</button>
+								</li>
+								<li class="nav-item">
+									<button class="nav-link" type="button" href="#">호텔</button>
+								</li>
+								<li class="nav-item">
+									<button class="nav-link" type="button" href="#">미용실</button>
+								</li>
+								<li class="nav-item">
+									<button class="nav-link" type="button" href="#">유치원</button>
+								</li>
+							</ul>
 						</div>
-						<br>
-						<h6>* 검색목록에서 원하시는 장소를 클릭하시면 예약페이지로 이동합니다.</h6>
-						<br>
-						<ul id="placesList"></ul>
-						<div id="pagination"></div>
-						<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-							<div class="offcanvas-header">
-								<h5 class="offcanvas-title" style="font-size: 20px; margin-left: 35%"><b>플레이스 예약</b></h5>
-								<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"> -->
+							<h4>예약시스템은 지역별 동물병원, 애견호텔/미용실/유치원만 가능합니다.</h4>
+		                    <div class="map_wrap">
+							    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
+							    <div id="menu_wrap" class="bg_white">
+							        <div class="option">
+							        	<div>
+							        		<form onsubmit="searchPlaces(); return false;">
+							                    키워드 : <input type="text" value="강남 동물병원" placeholder="지역명+편의시설" id="keyword" size="15"> 
+							                    <button type="submit">검색하기</button> 
+							            	</form>
+							        	</div>
+							        </div>
+							    </div>
 							</div>
 							<br>
-							<div class="offcanvas-body">
-								<div class="row">
-									<div class="col-3">
-										<p>예약장소</p>
-									</div>
-									<div class="col-9" id="offcol">
-										<span id="ifrsPlace" name="ifrsPlace"></span>
-									</div>
+							<h6>* 검색목록에서 원하시는 장소를 클릭하시면 예약페이지로 이동합니다.</h6>
+							<br>
+							<ul id="placesList"></ul>
+							<div id="pagination"></div>
+							<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+								<div class="offcanvas-header">
+									<h5 class="offcanvas-title" style="font-size: 20px; margin-left: 35%"><b>플레이스 예약</b></h5>
+									<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>위치</p>
+								<br>
+								<div class="offcanvas-body">
+									<span >예약은 본인 명의로만 가능합니다.</span>
+									<br>
+									<span style="font-size: 13px">- 성함과 연락처에 변동사항이 있을 경우 요청사항에 기재바랍니다.</span>
+									<br><br>
+									<div class="row">
+										<div class="col-3">
+											<p>예약장소</p>
+										</div>
+										<div class="col-9" id="offcol">
+											<span id="ifrsPlace" name="ifrsPlace"></span>
+										</div>
 									</div>
-									<div class="col-9" id="offcol">
-										<span id="ifrsLocation" name="ifrsLocation"></span>
+									<div class="row">
+										<div class="col-3">
+											<p>위치</p>
+										</div>
+										<div class="col-9" id="offcol">
+											<span id="ifrsLocation" name="ifrsLocation"></span>
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>전화번호</p>
+									<div class="row">
+										<div class="col-3">
+											<p>전화번호</p>
+										</div>
+										<div class="col-9" id="offcol">
+											<span id="ifrsTel" name="ifrsTel"></span>
+										</div>
 									</div>
-									<div class="col-9" id="offcol">
-										<span id="ifrsTel" name="ifrsTel"></span>
+									<div class="row">
+										<div class="col-3">
+											<p>고객명</p>
+										</div>
+										<div class="col-9" id="offcol">
+											<c:out value="${user.ifmmName }"/>
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>고객명</p>
+									<div class="row">
+										<div class="col-3">
+											<p>연락처</p>
+										</div>
+										<div class="col-9" id="offcol">
+											<c:out value="${user.ifmmTel }"/>
+										</div>
 									</div>
-									<div class="col-9">
-										<c:out value="${user.ifmmName }"/>
+									<div class="row">
+										<div class="col-3">
+											<p>예약자명</p>
+										</div>
+										<div class="col-9">
+											<input class="form-control" type="text" id="petname" name="ifrsPetName" placeholder="동물이름을 적어주세요.">
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>연락처</p>
+									<div class="row">
+										<div class="col-3">
+											<p>방문 목적</p>
+										</div>
+										<div class="col-9">
+											<input class="form-control" type="text" id="purpose" name="ifrsPurpose" placeholder="간략하게 적어주세요.">
+										</div>
 									</div>
-									<div class="col-9">
-										<c:out value="${user.ifmmTel }"/>
+									<div class="row">
+										<div class="col-3">
+											<p>예약 날짜</p>
+										</div>
+										<div class="col-9">
+											<input class="form-control" type="datetime-local" id="hopedate" name="ifrsHopeDate">
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>예약자명</p>
+									<div class="row">
+										<div class="col-3">
+											<p>요청사항</p>
+										</div>
+										<div class="col-9">
+											<input class="form-control" type="text" name="ifrsRequest" placeholder="간략하게 적어주세요.">
+										</div>
 									</div>
-									<div class="col-9">
-										<input class="form-control" type="text" id="petname" name="ifrsPetName">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>방문 목적</p>
-									</div>
-									<div class="col-9">
-										<input class="form-control" type="text" id="purpose" name="ifrsPurpose" placeholder="간략하게 적어주세요.">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>예약 날짜</p>
-									</div>
-									<div class="col-9">
-										<input class="form-control" type="datetime-local" id="hopedate" name="ifrsHopeDate">
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-3">
-										<p>요청사항</p>
-									</div>
-									<div class="col-9">
-										<input class="form-control" type="text" name="ifrsRequest" placeholder="간략하게 적어주세요.">
-									</div>
-								</div>
-								<div class="gobooking">
-									<a href="reservationPage.html">
+									<div class="gobooking">
 										<button class="btn btn-secondary" type="button" id="bookingbtn">예약하기</button>
-									</a>
+									</div>
 								</div>
 							</div>
-						</div>
-					<!-- </div>
-				</div> -->
-	        </div>
+						<!-- </div>
+					</div> -->
+		        </div>
+		    </div>
 	    </div>
-    </div>
+    </form>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
@@ -363,27 +368,27 @@
 		    var el = document.createElement('li'),
 		    itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
 		                '<div class="info" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">' +
-		                '   <h5 id="placeName">' + places.place_name + '</h5>';
+		                '   <h5 id="placeName'+index+'">' + places.place_name + '</h5>';
 		
 		    if (places.road_address_name) {
 		        itemStr += '    <span>' + places.road_address_name + '</span>' +
-		                    '   <span class="jibun gray" id="addressName">' +  places.address_name  + '</span>';
+		                    '   <span class="jibun gray" id="addressName'+index+'">' +  places.address_name  + '</span>'; 
 		    } else {
-		        itemStr += '    <span id="addressName">' +  places.address_name  + '</span>'; 
+		        itemStr += '    <span id="addressName'+index+'">' +  places.address_name  + '</span>'; 
 		    }
 		                 
-		      itemStr += '  <span class="tel" id="placeTel">' + places.phone  + '</span>' +
+		      itemStr += '  <span class="tel" id="placeTel'+index+'">' + places.phone  + '</span>' +
 		                '</div>';           
-		
+			
 		    el.innerHTML = itemStr;
 		    el.className = 'item';
 		    el.id='rv';
-		    el.onclick = function () {
+		    el.onclick = function () { 
 		    	
-				var Pname = $("#placeName").text();
-				var Paddr = $("#addressName").text();
-				var Ptel = $("#placeTel").text();
-				
+				var Pname = $("#placeName"+index).text();
+				var Paddr = $("#addressName"+index).text();
+				var Ptel = $("#placeTel"+index).text();
+				 
 //				alert(Pname + ", " + Paddr + ", " + Ptel);
 				
 				$("#ifrsPlace").html(Pname);
@@ -473,6 +478,16 @@
 	</script>
 	
 	<script type="text/javascript">
+	
+		var goUrlInst = "/reservation/infoInst";
+		
+		var seq = $("input:hidden[name=ifmmSeq]");
+		
+		var form = $("form[name=formRV]");
+		
+		$("#bookingbtn").on("click", function(){
+	   		form.attr("action", goUrlInst).submit();
+		});
 
 	/*	 		
 		function openRV() {

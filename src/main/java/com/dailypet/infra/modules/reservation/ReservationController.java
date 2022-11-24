@@ -16,7 +16,7 @@ public class ReservationController {
 	ReservationServiceImpl service;
 	
 	@RequestMapping(value = "reservationPage")
-	public String reservationPage(ReservationVo vo, Model model, RedirectAttributes redirectAttributes, HttpSession httpSession) throws Exception {
+	public String reservationPage(ReservationVo vo, Model model, HttpSession httpSession) throws Exception {
 		
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
@@ -28,7 +28,7 @@ public class ReservationController {
 	}
 	
 	@RequestMapping(value = "reservationForm")
-	public String reservationForm(ReservationVo vo, Reservation dto, Model model, RedirectAttributes redirectAttributes, HttpSession httpSession) throws Exception {
+	public String reservationForm(ReservationVo vo, Reservation dto, Model model, HttpSession httpSession) throws Exception {
 		
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
@@ -38,21 +38,54 @@ public class ReservationController {
 		
 		service.changeInfo(dto);
 		vo.setIfrsSeq(dto.getIfrsSeq());
-		redirectAttributes.addFlashAttribute("vo", vo);
 		
 		return "infra/reservation/user/reservationForm";
 	}
 	
+	@RequestMapping(value = "infoInst")
+	public String infoInst(Reservation dto) throws Exception {
+		
+//		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
+//		vo.setIfmmSeq(ifmmSeq);
+		
+		service.insertRV(dto);
+		
+//		vo.setIfrsSeq(dto.getIfrsSeq());
+		
+		return "infra/reservation/user/reservationPage";
+	}
+	
 	@RequestMapping(value = "searchingPlace")
-	public String searchingPlace(Reservation dto, ReservationVo vo, Model model, HttpSession httpSession) throws Exception {
+	public String searchingPlace(ReservationVo vo, Model model, HttpSession httpSession) throws Exception {
+		
+		vo.setIfmmSeq((String) httpSession.getAttribute("sessSeq"));
+		
+		Reservation result = service.selectOne(vo);
+		model.addAttribute("user", result);
+		
+		return "infra/reservation/user/searchingPlace";
+	}
+	
+	@RequestMapping(value = "changeInfo")
+	public String changeInfo(Reservation dto, ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
 		
-		int selectDefault = service.selectDefault(dto);
-		model.addAttribute("user", selectDefault);
+		service.changeInfo(dto);
 		
-		return "infra/reservation/user/searchingPlace";
+		return "redirect:/reservation/reservationPage";
+	}
+	
+	@RequestMapping(value = "deleteInfo")
+	public String deleteInfo(Reservation dto, ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+		
+		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
+		vo.setIfmmSeq(ifmmSeq);
+		
+		service.deleteInfo(dto);
+		
+		return "redirect:/reservation/searchingPlace";
 	}
 
 }

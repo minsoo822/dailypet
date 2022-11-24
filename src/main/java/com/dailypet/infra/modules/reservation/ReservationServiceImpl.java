@@ -10,8 +10,8 @@ public class ReservationServiceImpl implements ReservationService {
 	ReservationDao dao;
 	
 	@Override
-	public int selectDefault(Reservation dto) throws Exception {
-		return dao.selectDefault(dto);
+	public Reservation selectOne(ReservationVo vo) throws Exception {
+		return dao.selectOne(vo);
 	}
 	
 	@Override

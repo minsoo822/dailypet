@@ -4,7 +4,7 @@ public class Reservation {
 
 	//예약테이블
 	private String ifrsSeq;
-	private Integer member_seq;
+	private String member_seq;
 	private String ifrsPlace;
 	private String ifrsLocation;
 	private String ifrsTel;
@@ -26,10 +26,10 @@ public class Reservation {
 	public void setIfrsSeq(String ifrsSeq) {
 		this.ifrsSeq = ifrsSeq;
 	}
-	public Integer getMember_seq() {
+	public String getMember_seq() {
 		return member_seq;
 	}
-	public void setMember_seq(Integer member_seq) {
+	public void setMember_seq(String member_seq) {
 		this.member_seq = member_seq;
 	}
 	public String getIfrsPlace() {

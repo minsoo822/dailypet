@@ -169,6 +169,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form method="post" id="diaryForm">
+    <input type="hidden" name="ifdaSeq">
 		<div class="diaryheader">
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
@@ -190,7 +191,7 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<!-- 상단바 s -->
 						<div class="row" style="margin-top: 15px; height: 50px;">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" onclick="goUser(${list.ifmmSeq})" style="cursor: pointer;">
 								<div class="profileView">
 									<img src="${list.memberPath }${list.memberuuidName}" class="profilepic" alt="">
 							   	</div>
@@ -258,7 +259,12 @@
     <!-- footScript e -->
     <script type="text/javascript">
     	
-		var ifdaSeq = $("input:hidden[name=ifdaSeq]");
+	var ifdaSeq = $("input:hidden[name=ifdaSeq]");
+	var form = $("#diaryForm")
+	
+	goUser = function(ifmmSeq) {
+		form.attr("action" ,"/diary/diaryMypage").submit();
+	}
 	
     </script>
     

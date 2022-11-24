@@ -13,7 +13,7 @@
 			a.ifdaSeq
 		    , a.ifdaContents
 		    , a.ifdaRegDate
-			, a.mm_ifmmSeq 
+			, b.ifmmSeq
 		    , b.ifmmID
 		    <!-- 일기이미지 -->
 		    , c.path	AS diaryPath

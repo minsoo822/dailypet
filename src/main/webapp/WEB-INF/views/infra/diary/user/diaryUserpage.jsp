@@ -241,7 +241,7 @@
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
+				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${me.memberPath}${me.memberuuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 		<!-- Modal s -->
@@ -318,6 +318,7 @@
 		</div>
 		<!-- Modal e -->
 	    <div class="content">
+	    	
 	    	<div class="container2">
 	    		<div class="row">
 	    			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -344,7 +345,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>게시물 <b><c:out value="${item.diaryPostCount }"/></b></h4>
+	    						<h4>게시물 <b></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    						<h4>팔로워 <b>0</b></h4>

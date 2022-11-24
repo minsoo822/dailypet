@@ -201,12 +201,18 @@
     <script type="text/javascript">
     
     var findpetInst = "/findpet/findpetInst";
+    var findpetUpdt = "/findpet/findpetUpdt";
     var findpetList = "/findpet/findpetList";
     
+    var iffpSeq = $("input:hidden[name=iffpSeq]")
     var form = $("#findModForm")
     
     $("#saveBtn").on("click", function(){
-    	form.attr("action", findpetInst).submit();
+    	if(iffpSeq.val() == "0" || iffpSeq.val() == "") {
+	    	form.attr("action", findpetInst).submit();
+    	} else {
+    		form.attr("action", findpetUpdt).submit();
+    	}
     });
     $("#backBtn").on("click", function(){
     	form.attr("action", findpetList).submit();

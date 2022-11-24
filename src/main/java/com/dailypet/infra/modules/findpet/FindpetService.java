@@ -8,6 +8,7 @@ public interface FindpetService {
 	public Findpet selectOne(FindpetVo vo) throws Exception;
 	
 	public int findPetInst(Findpet dto) throws Exception;
+	public int findPetUpdt(Findpet dto) throws Exception;
 	
 	//댓글
 	public List<Findpet> commentList(FindpetVo vo) throws Exception;

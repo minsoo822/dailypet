@@ -69,7 +69,14 @@ public class FindpetController {
 		
 		return "redirect:/findpet/findpetList";
 	}
-	
+	@RequestMapping(value = "findpetUpdt")
+	public String findpetUpdt(Findpet dto, HttpSession httpSession) throws Exception {
+		
+		dto.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
+		service.findPetUpdt(dto);
+		
+		return "redirect:/findpet/findpetList";
+	}
 	@RequestMapping(value = "findpetSearchForm")
 	public String findpetSearchForm(FindpetVo vo, Model model) throws Exception {
 

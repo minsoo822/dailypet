@@ -176,7 +176,7 @@
 				<span style="font-size: 25px"><a href="diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
 				<span><div class="profileheader"><a href="diaryMypage"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
-		</div>
+		</div> 
 		<!-- <div class="diaryheader">
 			<ul class="nav">
 				<li><a><i class="fa-sharp fa-solid fa-house"></i></a></li>

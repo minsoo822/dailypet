@@ -374,7 +374,7 @@
 	    						<h2><c:out value="${item.ifmmID }"/></h2>
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
-	    						<button type="button" id="followbtn">팔로우</button>
+	    						<!-- <button type="button" id="followbtn">팔로우</button> -->
 	    						
 	    					</div>
 	    				</div>

@@ -4,150 +4,92 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
-    <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
     <title>코드 리스트</title>
-    <!-- Bootstrap -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- Style -->
-    <link href="/resources/css/style.css" rel="stylesheet">
+    <%@include file="../../../common/xdmin/include/head.jsp"%>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     
     <style type="text/css">
     
-    .category {
-    	text-align: left;
-    	height: 500px;
-    	background: white;
-    	border: none;
-    }
-    
-    .listtitle {
-    	font-weight: bold;
-    	font-size: 19px;
-    }
-    
-    .listmenu {
-    	margin-left: 15px;
-    }
-    
-    .searchBox {
-    	max-width: 100%;
-    	background: gray;
-    	height: 200px;
-    	padding: 37px 20px;
-    }
-    .form-control {
-    	color: black;
-    }
-    .searchBtn, .resetBtn {
-    	border: 1px solid #efefef;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 50px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13pt;
-    	font-weight: bold;
-    }
-    .searchBtn:hover, .resetBtn:hover {
-    	background: #372d2b;
-    	color: #f3f0eb;
-    	cursor: pointer;
-    }
-    .post-block {
-    	margin-top: 30px;
-    }
-    
-    .in:hover {
-    	cursor: pointer;
-    	background-color: #372d2b;
-    }
-    
-    #rowNum {
-    	max-width: 100px;
-    }
-    
-    th, td {
-    	text-align: center;
-    }
-    
-    .pagination>.active>a {
-    	background-color: #808080;
-    	border-color: #808080;
-    }
-    
-    .pagination>li>a {
-    	color: #808080;
-    }
+	    .category {
+	    	text-align: left;
+	    	height: 500px;
+	    	background: white;
+	    	border: none;
+	    }
+	    
+	    .listtitle {
+	    	font-weight: bold;
+	    	font-size: 19px;
+	    }
+	    
+	    .listmenu {
+	    	margin-left: 15px;
+	    }
+	    
+	    .searchBox {
+	    	max-width: 100%;
+	    	background: gray;
+	    	height: 200px;
+	    	padding: 37px 20px;
+	    }
+	    .form-control {
+	    	color: black;
+	    }
+	    .searchBtn, .resetBtn {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 50px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13pt;
+	    	font-weight: bold;
+	    }
+	    .searchBtn:hover, .resetBtn:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    .post-block {
+	    	margin-top: 30px;
+	    }
+	    
+	    .in:hover {
+	    	cursor: pointer;
+	    	background-color: #372d2b;
+	    }
+	    
+	    #rowNum {
+	    	max-width: 100px;
+	    }
+	    
+	    th, td {
+	    	text-align: center;
+	    }
+	    
+	    .pagination>.active>a {
+	    	background-color: #808080;
+	    	border-color: #808080;
+	    }
+	    
+	    .pagination>li>a {
+	    	color: #808080;
+	    }
     
     </style>
     
 </head>
 
 <body>
-	<!-- 헤더 s -->
-    <div class="header navbar-fixed-top">
-		<div class="container">
-		    <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-		        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-		            <div class="navigation">
-		                <div id="navigation">
-		                    <ul>
-		                        <li class="active"><a href="index.html" title="Home">홈</a></li>
-		                        <li class="has-sub"><a href="service-list.html" title="Service List">유기동물 찾기</a>
-		                            <ul>
-		                                <li><a href="service-list.html" title="Service List">유기동물 찾기</a></li>
-		                                <li><a href="service-detail.html" title="Service Detail">전국 유기동물</a></li>
-		                            </ul>
-		                        </li>
-		                        <li class="has-sub"><a href="../searchingPlace.html" title="Portfolio">내 주변 편의시설</a>
-		                            <ul>
-		                                <li><a href="../searchingPlace.html" title="Projects">편의시설 찾기</a></li>
-		                                <li><a href="../reservationForm.html" title="Projects Detail">내 예약 정보</a></li>
-		                            </ul>
-		                        </li>
-	                      <!--  <li class="has-sub"><a href="blog-default.html" title="Blog ">News</a>
-					              <ul>
-					                  <li><a href="blog-default.html" title="Blog">반려동물 일기</a></li>
-					                  <li><a href="blog-single.html" title="Blog Single ">Blog Single</a></li>
-					              </ul>
-					          </li> -->
-					          	<li class="has-sub"><a href="../diaryList.html" title="Portfolio">내 주변 편의시설</a>
-	<!-- 						메뉴구현x 일단 링크만 생성						
-								<li><a href="../diaryMypage.html" title="Contact Us">육아수첩</a> </li>
-								<li><a href="../diaryDetail.html" title="Projects">일기 상세</a></li>
-								<li><a href="../diaryForm.html" title="Projects">일기 쓰기</a></li>
-	-->							
-								<!-- <li><a href="testimonial.html" title="Testimonial">피망</a> </li> -->
-	                            <li><a href="error.html" title="Error">로그인</a> </li>
-	                            <li><a href="error.html" title="Error">회원가입</a> </li>
-	                        </ul>
-	                    </div> 
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
+    <!-- header s -->
+    <%@include file="../../../common/xdmin/include/header.jsp"%>
+    <!-- header e -->
 	<div class="totalContent">
 	    <div class="content">
 	        <div class="container">
@@ -331,69 +273,8 @@
 	        </div>
 	    </div>
     </div>
-    <div class="footer">
-        <!-- footer-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">About us</h3>
-                        <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- social block -->
-                        <h3 class="widget-title">Our Address</h3>
-                        <p>1309 Roosevelt Wilson Lane
-                            <br> Colton, CA 92324</p>
-                    </div>
-                    <!-- /.social block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">e-mail Us</h3>
-                        <p>info@yourwebsitedomain.com</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">Call us</h3>
-                        <p>180-874-5234</p>
-                        <p>180-752-3957</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.footer-->
-    <div class="tiny-footer">
-        <!-- tiny footer block -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="copyright-content">
-                     Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     
     <script type="text/javascript">
     

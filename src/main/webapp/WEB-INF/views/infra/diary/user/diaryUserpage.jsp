@@ -232,6 +232,7 @@
 	<form method="post" id="mainForm">
 		<input type="hidden" id="ifdiSeq" name="ifdiSeq" value="">
 		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
+		<input type="hidden" name="ifmmSeq" value="${you.ifmmSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
 	    <%@include file="../../../common/xdmin/include/header.jsp"%>

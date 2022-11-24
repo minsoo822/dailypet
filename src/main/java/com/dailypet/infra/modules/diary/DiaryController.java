@@ -96,6 +96,9 @@ public class DiaryController {
 		Diary meitem = service.selectOne(vo);
 		model.addAttribute("me", meitem);
 		
+		
+		Diary youitem = service.selectOne(vo);
+		model.addAttribute("you", youitem);
 		//회원이 올린사진
 		List<Diary> list = service.mypageImageList(vo);
 		model.addAttribute("list", list);

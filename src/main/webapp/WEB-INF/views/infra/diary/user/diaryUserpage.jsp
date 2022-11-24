@@ -250,8 +250,8 @@
 <body>
 	<form method="post" id="mainForm">
 		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
-		<input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${sessSeq }">
-		<input type="hidden" id="" name="loginUser" value="${item.ifmmSeq }">
+		<input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
+		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
 	    <%@include file="../../../common/xdmin/include/header.jsp"%>

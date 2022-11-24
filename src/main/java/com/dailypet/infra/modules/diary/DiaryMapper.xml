@@ -60,7 +60,7 @@
 	    WHERE a.ifdaSeq = b.seq
 	    AND a.mm_ifmmSeq = #{ifmmSeq}
 	</select>
-	<select id="selectOneImg">
+	<select id="selectOneImg" resultMap="resultMapObj"> 
 		SELECT
 			mm.ifmmSeq
 		    ,mm.ifmmID

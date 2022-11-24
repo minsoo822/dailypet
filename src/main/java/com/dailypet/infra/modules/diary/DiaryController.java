@@ -93,7 +93,7 @@ public class DiaryController {
 	public String diaryUserpage(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
 		
 		// 회원정보
-		Diary me = service.selectOne(vo);
+		Diary me = service.selectOneImg(vo);
 		model.addAttribute("me", me);
 		
 		Diary item = service.selectOne(vo);

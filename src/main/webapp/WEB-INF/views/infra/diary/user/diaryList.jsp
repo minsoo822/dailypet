@@ -170,6 +170,7 @@
     <!-- header e -->
     <form method="post" id="diaryForm">
     <input type="hidden" name="ifdaSeq">
+    <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
 		<div class="diaryheader">
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>

@@ -13,12 +13,18 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dailypet.infra.modules.follow.Follow;
+import com.dailypet.infra.modules.follow.FollowServiceImpl;
+
 @Controller
 @RequestMapping(value = "/diary/")
 public class DiaryController {
 	
 	@Autowired
 	DiaryServiceImpl service;
+	
+	@Autowired
+	FollowServiceImpl serviceFollow;
 	
 	// 일기리스트 
 	@RequestMapping(value = "diaryList")
@@ -85,12 +91,9 @@ public class DiaryController {
 		
 		return "infra/diary/user/diaryMypage";
 	}
-	
-//--------------------------------------------------------------------------------------------------------------------------
-	
 	//
 	@RequestMapping(value = "diaryUserpage")
-	public String diaryUserpage(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
+	public String diaryUserpage(@ModelAttribute("vo") DiaryVo vo, Follow dto, Model model, HttpSession httpSession ) throws Exception {
 		
 		// 회원정보
 		vo.setLoginUser((String)httpSession.getAttribute("sessSeq"));
@@ -107,6 +110,7 @@ public class DiaryController {
 		return "infra/diary/user/diaryUserpage";
 	}
 	
+//--------------------------------------------------------------------------------------------------------------------------
 	@RequestMapping(value = "diaryMypagePrac")
 	public String diaryMypagePrac(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
 		

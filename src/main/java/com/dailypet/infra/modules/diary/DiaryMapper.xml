@@ -83,6 +83,12 @@
 				FROM diary di
 				WHERE mm.ifmmSeq = di.mm_ifmmSeq
 			)	AS postCount
+			,(
+				SELECT
+					COUNT(*)
+				FROM follow fw
+				WHERE mm.ifmmSeq = fw.iffwFollow
+			)	AS Follow
 		FROM member mm
 		JOIN memberUploaded b ON mm.ifmmSeq = b.pseq
 		WHERE 1=1

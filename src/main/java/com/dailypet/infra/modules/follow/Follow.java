@@ -7,6 +7,7 @@ public class Follow {
 	private Integer iffwFollow;
 	private Integer iffwFollower;
 	
+	
 	public Integer getIffwSeq() {
 		return iffwSeq;
 	}

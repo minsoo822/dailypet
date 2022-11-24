@@ -18,6 +18,34 @@
 			,#{iffwFollower}
 		)
 	</insert>
+	<delete id="delete">
 	
+		DELETE FROM follow
+		WHERE iffwFollow = #{iffwFollow}
+		AND iffwFollower = #{iffwFollower} 
+	
+	</delete>
+	
+	<select id="selectChkFollow" resultType="Integer">
+		
+		SELECT
+			COUNT(*)
+		FROM follow
+		WHERE iffwFollower = #{iffwFollower}
+		AND iffwFollow = #{iffwFollow}
+		
+	</select>
+	
+	<select id="selectCountFollowed" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*)
+		FROM follow
+		WHERE iffwFollow = #{target}
+	</select>
+	
+	<select id="selectCountFollowing" resultType="Integer" parameterType="Integer">
+		SELECT COUNT(*)
+		FROM follow
+		WHERE iffwFollower = #{target}
+	</select>
 	
 </mapper>	

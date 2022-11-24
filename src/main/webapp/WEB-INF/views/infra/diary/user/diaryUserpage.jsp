@@ -375,7 +375,7 @@
 	    						<h2><c:out value="${item.ifmmID }"/></h2>
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
-	    						<button type="button" id="followbtn">팔로우</button>
+	    						<button type="button" id="followbtn" onclick="follow(this)">팔로우</button>
 	    						
 	    					</div>
 	    				</div>
@@ -387,10 +387,10 @@
 	    						<h4>게시물 <b><c:out value="${item.postCount }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>팔로워 <b>0</b></h4>
+	    						<h4>팔로워 <b id="countFollower">0</b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>팔로잉 <b>0</b></h4>
+	    						<h4>팔로잉 <b id="countFollow">0</b></h4>
 	    					</div>
 	    				</div>
 	    				<div class="row" style="margin-top: 10px; margin-left: 126px;">
@@ -592,7 +592,55 @@
 				}
 			});	
 		}
-		  
+		
+		follow = function(my) {
+			switch (my.textContent) {
+			case '팔로우':
+				{
+					$.ajax({
+						url: '/insertFollow'
+						,type: 'POST'
+						,datatype: 'json'
+						,data: {
+							iffwFollow : $("#ifmmSeq").val()
+							,iffwFollower : ${sessSeq}
+						},
+						seccess:function(result){
+							$("#countFollower").html(result.followCount);
+						},
+						error:function(){
+							alert(" 팔로우 ajax error...")
+						}
+					});
+					
+					my.textContent = '팔로우 ✔';
+					break;
+				}
+			case '팔로우 ✔':
+				{
+					$.ajax({
+						
+						url: '/deleteFollow'
+						,type: 'POST'
+						,datatype: 'json'
+						,data: {
+							fwFollow : $('#shOption').val()
+							,fwFollower : ${sessSeq}
+						},
+						success:function(result){ 
+							$("#countFollower").html(result.followCount); 
+						},
+						error:function(){
+							alert("팔로우 ✔ ajax error...!");
+						}
+						
+					});
+				
+					my.textContent = '팔로우';
+					break;
+				}
+			}
+		};
  		 /* goDiaryDetail = function(ifdaSeq) {
   			1.아작스문 작성
   			2.게시물 시퀀스를 넘긴다

@@ -77,98 +77,84 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq">
+    	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${list.ifrsSeq} }">
+    	<input type="hidden" id="member_seq" name="member_seq" value="${sessSeq} }">
 		<div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
 		        	<div class="bg-light pinside30">
 					    <div class="row">
 					        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					            <h1><b>나의 예약 정보</b></h1>
-				                <div class="row">
-				                    <div class="col-md-6">
-				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifmmName">고객명</label>
-			                                <p>여기에</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifamName">예약자명</label>
-			                                <p>value값을</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifmmPhone">연락처</label><br>
-											<p style="width: 77%; display: inline">불러</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="textarea">예약 희망 날짜</label>
-				                            <p>옵니다</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifrsLocation">위치</label>
-			                                <p>~</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifrsPlace">예약 장소</label>
-			                                <p>!</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifrsPurpose">예약 목적</label>
-			                                <p>얍</p>
-				                        </div>
-				                    </div>
-				                    <div class="col-md-6">
-				                        <div class="form-group">
-				                            <label class="control-label" for="ifrsRequest">요청사항</label>
-				                            <p>짜잔</p>
-				                        </div>
-				                    </div>
-				                    <div class="buttongroup">
-					                    <div class="row justify-content-center">
-					                    	<!-- 예약 삭제 버튼(모달까지) -->
-					                    	<div class="col-md-2" id="cbtn">
-						                        <div class="form-group">
-					                        		<button type="button" class="btn btnDelete" data-toggle="modal" data-target="#deleteModal">예약 취소</button>
-						                        </div>
-						                    </div>
-						                    <div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title" id="deleteModalLabel">예약 취소</h5>
-															<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-														</div>
-														<div class="modal-body">입력한 데이터를 모두 삭제하시겠습니까?</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-															<button type="button" class="btn btn-secondary" id="btnDel">삭제</button>
-														</div>
-													</div>
-												</div>
-											</div>
-											<!-- 예약 삭제 버튼(모달까지) -->
-					                    	<div class="col-md-2" id="cbtn">
-						                        <div class="form-group">
-						                        	<a href="/reservation/reservationForm">
-						                        		<button type="button" id="" class="btn changebtn">내용 변경</button>
-						                        	</a>
-						                        </div>
-						                    </div>
-					                    </div>
+								<div class="row">
+									<div class="col">
+										<table class="table table-striped">
+											<tr>
+												<th><input class="form-check-input" type="checkbox" name="check" id="allcheck"></th>
+												<th>#</th>
+												<th>예약장소</th>
+												<th>위치</th>
+												<th>전화번호</th>
+												<th>예약자명</th>
+												<th>예약목적</th>
+												<th>예약희망날짜</th>
+												<th>요청사항</th>
+												<th>신청일</th>
+											</tr>
+											<tr>
+												<c:choose>
+													<c:when test="${fn:length(list) eq 0 }">
+														<td>데이터가 존재하지 않습니다</td>
+													</c:when>
+													<c:otherwise>	
+														<c:forEach items="${list}" var="list" varStatus="status">
+															<tr onclick="goForm(${list.ifrsSeq })" class="in">
+																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifcdSeq }"/>"></td>
+																<td><c:out value="${list.ifrsSeq }"/></td>
+																<td>
+																	<c:out value="${list.ifrsPlace }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifrsLocation }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifrsTel }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifrsPetName }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifrsPurpose }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifrsHopeDate }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifrsRequest }"/>
+																</td>
+																<td>
+																	<c:out value="${list.ifrsRegDate }"/>
+																</td>
+															</tr>
+														</c:forEach>
+													</c:otherwise>
+												</c:choose>
+											</tr>
+										</table>
 									</div>
-				                </div>
-					        </div>
+								</div>
+							</div>
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row" style="margin-top: 20px;">
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+										<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
+										<button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+								    </div>
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
+										<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
+										<a href="/code/codeForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
+									</div>
+								</div>
+							</div>
 					    </div>
 					</div>
 		        </div>
@@ -180,7 +166,32 @@
     
     <script type="text/javascript">
     	
+	    $(document).ready(function() {
+			$("#allcheck").click(function() {
+				if($("#allcheck").is(":checked")) $("input[name=check]").prop("checked", true);
+				else $("input[name=check]").prop("checked", false);
+			});
+		
+			$("input[name=check]").click(function() {
+				var total = $("input[name=check]").length;
+				var checked = $("input[name=check]:checked").length;
+		
+				if(total != checked) $("#allcheck").prop("checked", false);
+				else $("#allcheck").prop("checked", true); 
+			});
+		});
+	    
+	</script>
+	
+    <script type="text/javascript">
+    
 	    var ifrsSeq = $("#ifrsSeq");
+	    var ifmmSeq = ${"#ifmmSeq"};
+	    
+	    goForm = function(key) {
+			ifrsSeq.attr("value", key);
+			form.attr("action", goUrlForm).submit();
+		}
 		
 		var form = $("form[name=reserform]");
 //		var formVo = $("form[name=formVo]");

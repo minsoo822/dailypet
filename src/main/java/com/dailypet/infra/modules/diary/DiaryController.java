@@ -59,7 +59,6 @@ public class DiaryController {
 	public String diaryDetail(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
 	
 		// 회원정보
-		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		

@@ -261,7 +261,7 @@
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${me.memberPath}${me.memberuuidName }" class="profilepic" alt=""></a></div></span>
+				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${me.path}${me.uuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 		<!-- Modal s -->

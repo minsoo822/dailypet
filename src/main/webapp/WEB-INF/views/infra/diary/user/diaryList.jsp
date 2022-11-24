@@ -170,6 +170,7 @@
     <!-- header e -->
     <form method="post" id="diaryForm">
     <input type="hidden" name="ifdaSeq">
+    <input type="hidden" name="ifmmSeq">
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
 		<div class="diaryheader">
 			<nav class="icon">
@@ -192,7 +193,7 @@
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<!-- 상단바 s -->
 						<div class="row" style="margin-top: 15px; height: 50px;">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" onclick="goUser(${list.ifmmSeq})" style="cursor: pointer;">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" onclick="javascript:goUser(${list.ifmmSeq})" style="cursor: pointer;">
 								<div class="profileView">
 									<img src="${list.memberPath }${list.memberuuidName}" class="profilepic" alt="">
 							   	</div>
@@ -261,9 +262,11 @@
     <script type="text/javascript">
     	
 	var ifdaSeq = $("input:hidden[name=ifdaSeq]");
+	var ifmmSeq = $("input:hidden[name=ifmmSeq]")
 	var form = $("#diaryForm")
 	
-	goUser = function(ifmmSeq) {
+	goUser = function(key) {
+		ifmmSeq.attr("value", key);
 		form.attr("action" ,"/diary/diaryUserpage").submit();
 	}
 	

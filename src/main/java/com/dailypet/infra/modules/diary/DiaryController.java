@@ -93,6 +93,7 @@ public class DiaryController {
 	public String diaryUserpage(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
 		
 		// 회원정보
+		vo.setLoginUser((String)httpSession.getAttribute("sessSeq"));
 		Diary me = service.selectOneImg(vo);
 		model.addAttribute("me", me);
 		

@@ -92,13 +92,12 @@ public class DiaryController {
 	@RequestMapping(value = "diaryUserpage")
 	public String diaryUserpage(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
 		
-		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
-		Diary meitem = service.selectOne(vo);
-		model.addAttribute("me", meitem);
+		// 회원정보
+		Diary me = service.selectOne(vo);
+		model.addAttribute("me", me);
 		
-		//프로필 이미지 클릭한 유저의 정보
-		Diary youitem = service.selectOne(vo);
-		model.addAttribute("you", youitem);
+		Diary item = service.selectOne(vo);
+		model.addAttribute("item", item);
 		
 		//회원이 올린사진
 		List<Diary> list = service.mypageImageList(vo);

@@ -7,7 +7,7 @@ public class DiaryVo {
 	private String ifmmSeq;
 	
 	private String mm_ifmmSeq;
-
+	private String loginUser;
 	
 	public String getSeq() {
 		return seq;
@@ -39,6 +39,14 @@ public class DiaryVo {
 
 	public void setMm_ifmmSeq(String mm_ifmmSeq) {
 		this.mm_ifmmSeq = mm_ifmmSeq;
+	}
+
+	public String getLoginUser() {
+		return loginUser;
+	}
+
+	public void setLoginUser(String loginUser) {
+		this.loginUser = loginUser;
 	}
 	
 	

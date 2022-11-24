@@ -20,6 +20,7 @@
 
 	.container2 {
 		margin: 6% 10%;
+		margin-bottom: 30px;
 	} 
 	
 	.profile {
@@ -28,7 +29,12 @@
 	    border-radius: 70%;
 	    overflow: hidden;
 	}
-	
+	.modalprofile {
+		width: 30px;
+	    height: 30px; 
+	    border-radius: 70%;
+	    overflow: hidden;
+	}
 	.profilepic {
 		width: 100%;
 	    height: 100%;
@@ -144,6 +150,20 @@
         flex: 0 0 40px;
         text-align: center;
     }
+    .imgdetail {
+    	width: 440px;
+    	height: 495px;
+    	background: black;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    }
+    .img-responsive2 {
+    	object-fit: cover;
+    	max-width: 100%;
+    	max-height: 100%;
+    }
+    
 /* ------------------------------------------------------------------------ */
 	
 	#thumbList .col-lg-4 {
@@ -209,14 +229,14 @@
 		padding: 0 15px;
 	}
 	
-	#writecomm {
+	.writecomm {
 		width: 280px;
 		padding: 8px;
 		display: inline;
 		border: none;
 	}
 	
-	#upcomment {
+	.upcomment {
 		color: brown;
 		background-color: none;
 		border: none;
@@ -225,14 +245,13 @@
 		display: inline;
 	}
 	
-	
 </style>
 
 <body>
 	<form method="post" id="mainForm">
-		<input type="hidden" id="ifdiSeq" name="ifdiSeq" value="">
-		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
-		<input type="hidden" name="ifmmSeq" value="${you.ifmmSeq }">
+		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
+		<input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${sessSeq }">
+		<input type="hidden" id="" name="loginUser" value="${item.ifmmSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
 	    <!-- herder s -->
 	    <%@include file="../../../common/xdmin/include/header.jsp"%>
@@ -247,6 +266,7 @@
 		</div>
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
+		<input type="hidden" id="ifdaSeq" value="${dto.ifdaSeq }">
 			<div class="modal_window">
 				<div class="modal_title">
 					<div class="modal_title_side"></div>
@@ -260,57 +280,76 @@
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
-							<img src="/resources/images/findpet/700.jpg" class="img-responsive" alt="">
+							<img id="postImg" src="" class="img-responsive2" alt="">
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="row" style="margin-top: 10px">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-								<div class="profileView">
-									<img src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
+								<div class="modalprofile">
+									<img id="userImg" src="" class="profilepic" alt="">
 								</div>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-								<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>아이디</b></h5>
+								<h5 style="margin-left: -15px; font-size: 12px"><b id="userID"> </b></h5>
 							</div>
 						</div>
 						<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
+						
 						<div class="row" style="margin-top: 10px">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-								<div class="profileView">
-									<img src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-								<h5 id="userid" style="margin-left: -15px; font-size: 12px"><b>아이디</b></h5>
+							<div class="col">
+								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px" id="postContents"></p>
 							</div>
 						</div>
-						<div class="row" style="margin-top: 10px">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
-							<div class="col">
-								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px">내용</p>
+						<hr style="color: lightgray; margin-top: 25px; margin-bottom: 15px;">
+						<div class="row">
+							<div class="col" id="comment_area">
+								<!-- 댓글 s -->
+								<div class="row">
+									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
+										<div class="modalprofile">
+											<img id="" src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
+										</div>
+									</div>
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	
+										<div class="row">
+											<div class=col>
+												<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">haha</b></h5>
+											</div>
+										</div>
+										<div class="row">
+											<div class=col>
+												<h5 style="font-size: 5px;"><b id="">2022-11-20 06:06:06</b></h5>
+											</div>
+										</div>
+									</div>
+									<div class="col">
+										<b style="font-weight: 0;">귀엽다!!</b>
+									</div>
+								</div>
+								<!-- 댓글 e -->
 							</div>
 						</div>
 						<div class="cardfooter">
 							<div class="service-content">
 								<div class="postbtn">
 									<button type="button" id="like">
-										<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
+										<span class="heart" style="font-size: 25px"><i id="likedBtn" onclick="liked()" class="fa-regular fa-heart"></i></span>
 									</button>
 									<button type="button" id="comment">
 										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 9,234개</b></p> 
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 0개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
-									<p>날짜</p>
+									<p id="postRegDate"></p>
 								</div>
 							</div>
 							<hr style="color: lightgray; margin: 3px">
 							<div class="cardcomment">
-								<input class="form-control" id="writecomm" type="text" placeholder="댓글 달기...">
-								<button type="submit" id="upcomment">게시</button>
+								<input type="text" class="form-control" class="writecomm" id="writecomm" name="ifcmContent" placeholder="댓글 달기...">
+								<button type="button" class="upcomment" id="upcomment">게시</button>
 							</div>
 						</div>
 					</div>
@@ -319,7 +358,6 @@
 		</div>
 		<!-- Modal e -->
 	    <div class="content">
-	    	
 	    	<div class="container2">
 	    		<div class="row">
 	    			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -346,7 +384,7 @@
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>게시물 <b></b></h4>
+	    						<h4>게시물 <b><c:out value="${item.postCount }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    						<h4>팔로워 <b>0</b></h4>
@@ -355,18 +393,16 @@
 	    						<h4>팔로잉 <b>0</b></h4>
 	    					</div>
 	    				</div>
-	    				<div class="row" style="margin-top: 10px">
+	    				<div class="row" style="margin-top: 10px; margin-left: 126px;">
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
-	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4><b><c:out value="${item.ifmmName }"/></b></h4>
-	    					</div>
+    						<h4><b><c:out value="${item.ifmmIntroduction }"/></b></h4>
 	    				</div>
-	    				<div class="row" style="margin-top: 10px">
+	    				<div class="row" style="margin-top: 10px;">
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 	    					</div>
 	    					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-	    						<h4><c:out value="${item.ifmmIntrodution }"/></h4>
+	    						<h4></h4>
 	    					</div>
 	    				</div>
 	    			</div>
@@ -377,15 +413,14 @@
 	    		<hr style="border: 1px solid lightgray; width: 1150px; margin-left: auto; margin-right: auto;">
 	    	</div>
 	        <div class="container" id="thumbList">
-	            <div class="row" style="margin-left: 50px">
+	            <div class="row" style="margin-left: 50px;">
 	        		<c:forEach items="${list }" var="list" varStatus="status">
 		                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-		                    <div class="postthumb" style="max-width: 360px; max-height: 304px">
+		                    <div class="postthumb" style="max-width: 360px; max-height: 304px;" id="add_feed">
 		                    	<a href="javascript:goDiaryDetail(${list.ifdaSeq})">
 		                        	<img src="${list.diaryPath }${list.diaryuuidName }" class="img-responsive" alt="">
 		                    	</a>
 		                    </div>
-		                    <button id="add_feed" type="button" id="followbtn">모달</button>
 		                </div>
 					</c:forEach>
 	            </div>
@@ -402,6 +437,103 @@
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
     <script type="text/javascript">
+    	var form = $("#mainForm");
+    	var seq = $("input:hidden[name=ifdaSeq]");
+    	
+    	liked = function(){
+    		
+    		var likedBtn = $("#likedBtn");
+    		var likedUrl ="";
+    		
+    		if(likedBtn.hasClass('fa-regular'))
+    		{
+    			//https://webstudynote.tistory.com/95
+    			//채워주고
+    			//빨간색으로
+    			likedBtn.removeClass('fa-regular');
+    			likedBtn.addClass('fa-solid');
+    			
+    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
+    			likedBtn.css("color",'red');
+    			likedUrl = "/diary/addLiked";
+    			
+    			//좋아요 count 숫자 변경 
+    		}
+    		else
+    		{
+    			//비워주고
+    			//검정색으로
+    			likedBtn.removeClass('fa-solid');
+    			likedBtn.addClass('fa-regular');
+    			likedBtn.css("color",'black');
+
+    			likedUrl = "/diary/removeLiked";
+    			
+    			//좋아요 count 숫자 변경
+    		}
+    		
+    		$.ajax({
+    			url: likedUrl
+    			,type: 'POST'
+    			,dataType: 'json'
+    			,data: {
+    				//게시물 seq
+    				//누가 눌렀는지 seq
+    			}
+    			,success:function(result){
+    				
+    			}
+    			,error:function(){
+    				alert("ajax error..!");
+    			}
+    			
+    		});
+    		
+    	}
+    	
+    	
+    	/* 댓글 s */
+		$("#upcomment").on("click", function() {
+    		$.ajax({
+    			url: "/comment/commentInst",
+    			type: "POST",
+    			datatype: "json",
+    			success: function(result) {
+    				var txt = "";
+    				
+    				txt += '<div class="row">';
+    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
+    				txt += '<div class="modalprofile">';
+    				txt += '<img id="" src="'+ result.coUserImg +'" class="profilepic" alt="">';
+    				txt += '</div>';
+    				txt += '</div>';
+    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
+    				txt += '<div class="row">';
+    				txt += '<div class=col>';
+    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.coUserid +'</b></h5>';
+    				txt += '</div>';
+    				txt += '</div>';
+    				txt += '<div class="row">';
+    				txt += '<div class=col>';
+    				txt += '<h5 style="font-size: 5px;"><b>방금전</b></h5>';
+    				txt += '</div>';
+    				txt += '</div>';
+    				txt += '</div>';
+    				txt += '<div class="col">';
+    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
+    				txt += '</div>';
+    				txt += '</div>';
+    			
+    				$("#comment_area").prepend(txt);
+    				$("#writecomm").val("");
+    			},
+    			error:function(){
+    				alert("ajax error..!");
+    			}
+    		});
+    	});
+    	/* 댓글 e */
+    	
 		// 모달 띄우기 코드
     	const modal = document.getElementById("modal_add_feed");
 	    const buttonAddFeed = document.getElementById("add_feed");
@@ -413,33 +545,52 @@
 				document.body.style.overflowY = "hidden"; // 스크롤 없애기
 	        
 			}); 
+		
 	 	// 모달 닫기 코드
 	    const buttonCloseModal = document.getElementById("close_modal");
 	    		
- 				  buttonCloseModal.style.cursor = "pointer";
-			
-    		  buttonCloseModal.addEventListener("click", e => {
-			      modal.style.display = "none";
-			      document.body.style.overflowY = "visible";
-			});
-    		  
+		buttonCloseModal.addEventListener("click", e => {
+			modal.style.display = "none";
+			document.body.style.overflowY = "visible";
+		});
     		  
 		goDiaryDetail = function(ifdaSeq) {
-			$ajax({
+			$.ajax({
 				url: '/diary/getPost',
 				type: 'POST',
-				datetype: 'JSON',
-				date: {
-					ifdiSeq : $("#ifdiSeq").val(),
-					mm_ifmmSeq : $("#mm_ifmmSeq").val(),
+				datatype: 'json',
+				data: {
+					ifdaSeq : ifdaSeq 
 				},
 				success:function (result) {
-					$("#liked").html("좋아요 2개");
+					
+					$("#postImg").attr("src",result.diaryImg);
+					$("#userImg").attr("src",result.userImg);
+					$("#userID").html(result.userID);
+					$("#userID").html(result.userID);
+					$("#postContents").html(result.diaryContents);
+					$("#postRegDate").html(result.regDate);
+					//좋아요 카운트
+					//게시물 정보 
+					//게시자 정보
+					
+					// 게시물 한개당 + For문 
+					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
+						//댓글정보
+						//댓글작성자 닉네임 이미지
+					
+					
+					
+					
+					modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌 
+			    	modal.style.display = "flex";
+			        
+					document.body.style.overflowY = "hidden"; // 스크롤 없애기
 				},
 				error:function(){
 					alert("ajax errer...");
 				}
-			})	
+			});	
 		}
 		  
  		 /* goDiaryDetail = function(ifdaSeq) {

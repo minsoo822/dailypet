@@ -24,7 +24,9 @@ public class DiaryDao {
 	public Diary selectOne(DiaryVo vo) throws Exception {
 		return sqlSession.selectOne(namespace + ".selectOne", vo);
 	}
-	
+	public Diary selectOneImg(DiaryVo vo) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectOneImg", vo);
+	}
 //-----------------------------------------------------------------------------------	
 	
 	// 일기 Inst

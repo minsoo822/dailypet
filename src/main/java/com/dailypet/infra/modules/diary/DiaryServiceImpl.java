@@ -23,7 +23,12 @@ public class DiaryServiceImpl implements DiaryService{
 	public Diary selectOne(DiaryVo vo) throws Exception {
 		return dao.selectOne(vo);
 	}
-	
+	@Override
+	public Diary selectOneImg(DiaryVo vo) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectOneImg(vo);
+	}
+
 	// 일기 Inst
 	@Override
 	public int insertDiary(Diary dto) throws Exception {

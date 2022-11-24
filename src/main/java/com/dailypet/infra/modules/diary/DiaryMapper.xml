@@ -60,7 +60,18 @@
 	    WHERE a.ifdaSeq = b.seq
 	    AND a.mm_ifmmSeq = #{ifmmSeq}
 	</select>
-	
+	<select id="selectOneImg">
+		SELECT
+			mm.ifmmSeq
+		    ,mm.ifmmID
+		    ,mmup.path
+		    ,mmup.uuidName
+		FROM member mm
+		JOIN memberUploaded mmup
+		ON mm.ifmmSeq = mmup.pseq
+		WHERE 1=1
+		AND ifmmSeq = #{loginUser}
+	</select>
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			mm.*

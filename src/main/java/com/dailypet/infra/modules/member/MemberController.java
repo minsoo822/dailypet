@@ -49,7 +49,6 @@ public class MemberController {
 	}
 	
 	// 회원 탈퇴
-	@ResponseBody
 	@RequestMapping(value = "memberDel")
 	public String memberDel(MemberVo vo, Member dto, HttpSession httpSession,RedirectAttributes redirectAttributes) throws Exception {
 		service.memberDel(dto);

@@ -229,6 +229,7 @@
 			,ext			= #{ext}
 			,size			= #{size}
 			,delNy			= 0
+			
 		WHERE 1=1
 		AND pseq = #{ifmmSeq}	
 	</update>

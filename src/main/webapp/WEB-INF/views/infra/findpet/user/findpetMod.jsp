@@ -165,9 +165,18 @@
 						</div>
 						<div class="row">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
-								발견장소
+								발견지역
 							</div>
-							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+								<select class="form-control">
+									<option></option>
+								</select>
+								<%-- <input type="text" class="form-control" name="iffpName" value="${item.iffpName }" placeholder="목걸이등에 이름이 있다면 적어주세요"> --%>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
+								발경장소
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<input type="text" class="form-control" name="iffpSpotPlace" value="${item.iffpSpotPlace }" placeholder="정확한 장소를 입력해주세요.">
 							</div>
 						</div>

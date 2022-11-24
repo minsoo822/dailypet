@@ -375,8 +375,14 @@
 	    						<h2><c:out value="${item.ifmmID }"/></h2>
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
-	    						<button type="button" id="followbtn" onclick="follow(this)">팔로우</button>
-	    						
+	    						<c:choose>
+		    						<c:when test="${ }">
+		    							<button type="button" id="followbtn" onclick="follow(this)">팔로우</button>
+		    						</c:when>
+	    							<c:otherwise>
+	    								<button type="button" id="followbtn" onclick="follow(this)">팔로우 ✔</button>
+	    							</c:otherwise>
+	    						</c:choose>
 	    					</div>
 	    				</div>
 	    				<br>
@@ -387,7 +393,7 @@
 	    						<h4>게시물 <b><c:out value="${item.postCount }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>팔로워 <b id="countFollower">0</b></h4>
+	    						<h4>팔로워 <b id="countFollower"><c:out value="${item.follow }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    						<h4>팔로잉 <b id="countFollow">0</b></h4>
@@ -605,8 +611,8 @@
 							iffwFollow : $("#ifmmSeq").val()
 							,iffwFollower : ${sessSeq}
 						},
-						seccess:function(result){
-							$("#countFollower").html(result.followCount);
+						success:function(result){ 
+							$("#countFollower").html(result.followCount); 
 						},
 						error:function(){
 							alert(" 팔로우 ajax error...")
@@ -624,8 +630,8 @@
 						,type: 'POST'
 						,datatype: 'json'
 						,data: {
-							fwFollow : $('#shOption').val()
-							,fwFollower : ${sessSeq}
+							iffwFollow : $('#ifmmSeq').val()
+							,iffwFollower : ${sessSeq}
 						},
 						success:function(result){ 
 							$("#countFollower").html(result.followCount); 

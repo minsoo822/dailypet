@@ -9,6 +9,7 @@ public class Findpet extends Base{
 	private String ifmmSeq;
 	private String iffpSeq;
 	private String mm_ifmmSeq;
+	private Integer iffpSpotLocation;
 	
 	private String writer;
 	private String ifmmID;
@@ -152,7 +153,13 @@ public class Findpet extends Base{
 	public void setCommentcount(String commentcount) {
 		this.commentcount = commentcount;
 	}
-
+	public Integer getIffpSpotLocation() {
+		return iffpSpotLocation;
+	}
+	public void setIffpSpotLocation(Integer iffpSpotLocation) {
+		this.iffpSpotLocation = iffpSpotLocation;
+	}
+	
 	
 	
 

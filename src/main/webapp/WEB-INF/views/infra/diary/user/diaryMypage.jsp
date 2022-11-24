@@ -386,7 +386,7 @@
 	    						<h4>게시물 <b><c:out value="${item.postCount }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>팔로워 <b>0</b></h4>
+	    						<h4>팔로워 <b><c:out value="${item.follow }"/></b></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    						<h4>팔로잉 <b>0</b></h4>

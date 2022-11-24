@@ -171,6 +171,7 @@
     <form method="post" id="diaryForm">
     <input type="hidden" name="ifdaSeq">
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
+    <input type="hidden" id="sessSeq" value="${sessSeq }">
 		<div class="diaryheader">
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
@@ -260,13 +261,18 @@
     <!-- footScript e -->
     <script type="text/javascript">
     	
+    var sessSeq = $("#sessSeq").val();
 	var ifdaSeq = $("input:hidden[name=ifdaSeq]");
-	var ifmmSeq = $("input:hidden[name=ifmmSeq]")
+	var ifmmSeq = $("input:hidden[name=ifmmSeq]");
 	var form = $("#diaryForm")
 	
 	goUser = function(key) {
-		ifmmSeq.attr("value", key);
-		form.attr("action" ,"/diary/diaryUserpage").submit();
+		if(key == sessSeq ) {
+			form.attr("action", "/diary/diaryMypage").submit();	
+		} else {
+			ifmmSeq.attr("value", key);
+			form.attr("action" ,"/diary/diaryUserpage").submit();
+		}
 	}
 	
     </script>

@@ -88,7 +88,7 @@
 					COUNT(*)
 				FROM follow fw
 				WHERE mm.ifmmSeq = fw.iffwFollow
-			)	AS Follow
+			)	AS follow
 		FROM member mm
 		JOIN memberUploaded b ON mm.ifmmSeq = b.pseq
 		WHERE 1=1

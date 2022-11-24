@@ -180,9 +180,9 @@
 										  	<label class="form-check-label" for="flexSwitchCheckChecked">&nbsp;자동로그인</label>
 										</div>
 										<div class="col-md-11">
-											<a href="/member/changePW" style="color: #000;"><span class="right">비밀번호 찾기</span></a> 
+											<a href="/member/findPW" style="color: #000;"><span class="right">비밀번호 찾기</span></a> 
 											<span class="right">|</span>
-											<span class="right">아이디 찾기</span>
+											<a href="/member/findID" style="color: #000;"><span class="right">아이디 찾기</span></a>
 											<br>
 											<br>
 											<br> 
@@ -226,7 +226,7 @@
 	                            <br> 에이프로스퀘어 3층
 	                        </address>
 	                        <address>
-	                            <span class="text-caps">studio:</span> <strong>02-0000-0000</strong>
+	                            <span class="text-caps">studio:</span> <strong>02-000-0000</strong>
 	                            <br>
 	                            <span class="text-caps">Mobile:</span> <strong>02-0000-0000</strong>
 	                        </address>
@@ -243,35 +243,28 @@
 	<%@include file="../../../common/xdmin/include/footScript.jsp"%>
     
     <script type="text/javascript">
-	
-	$("#btnLogin").on("click", function(){
-		/* if(validation() == false) return false; */
-		$.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			/* ,dataType:"json" */
-			,url: "/member/loginProc"
-			/* ,data : $("#formLogin").serialize() */
-			,data : { "ifmmID" : $("#ifmmID").val(), "ifmmPW" : $("#ifmmPW").val()}
-			,success: function(response) {
-				if(response.rt == "success") {
-					location.href = "/animal/home";     
-				} else if($("#ifmmID").val() == "" || $("#ifmmPW").val() == "") {
-					alert("아이디와 비밀번호를 입력해주세요.");
-				} else{
-					alert("아이디 또는 비밀번호를 잘못 입력했습니다. 다시 입력해주세요.");
+		$("#btnLogin").on("click", function(){
+			/* if(validation() == false) return false; */
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/member/loginProc"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "ifmmID" : $("#ifmmID").val(), "ifmmPW" : $("#ifmmPW").val()}
+				,success: function(response) {
+					if(response.rt == "success") {
+						location.href = "/animal/home";     
+					} else if($("#ifmmID").val() == "" || $("#ifmmPW").val() == "") {
+						alert("아이디와 비밀번호를 입력해주세요.");
+					} else{
+						alert("아이디 또는 비밀번호를 잘못 입력했습니다. 다시 입력해주세요.");
+					}
 				}
-			}
+			});
 		});
-	});
-	
 	</script>
     
-    
-    <script src="https://kit.fontawesome.com/d843c66cc1.js" crossorigin="anonymous"></script>
- 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-
 </body>
-
 </html>

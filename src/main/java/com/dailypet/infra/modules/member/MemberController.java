@@ -145,6 +145,18 @@ public class MemberController {
 		return "infra/member/user/regDone";
 	} 
 	
+	@RequestMapping(value = "findID")
+	public String findID() throws Exception {
+
+		return "infra/member/user/findID";
+	}
+	
+	@RequestMapping(value = "findPW")
+	public String findPW() throws Exception {
+
+		return "infra/member/user/findPW";
+	}
+	
 	@RequestMapping(value = "memberDel1")
 	public String memberDel1(@ModelAttribute("vo") MemberVo vo, Model model, HttpSession httpSession) throws Exception {
 

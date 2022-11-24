@@ -185,8 +185,8 @@
 			</ul>
 		</div> -->
 	    <div class="content">
-				<div class="container" style="margin-left: auto; margin-right: auto; width: 500px; margin-top: 5%;">
-			<c:forEach items="${list }" var="list" varStatus="status">
+			<div class="container" style="margin-left: auto; margin-right: auto; width: 500px; margin-top: 5%;">
+				<c:forEach items="${list }" var="list" varStatus="status">
 					<div class="row box">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<!-- 상단바 s -->
@@ -263,7 +263,7 @@
 	var form = $("#diaryForm")
 	
 	goUser = function(ifmmSeq) {
-		form.attr("action" ,"/diary/diaryMypage").submit();
+		form.attr("action" ,"/diary/diaryUserpage").submit();
 	}
 	
     </script>

@@ -8,21 +8,43 @@
 
 	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.reservation.Reservation"></resultMap>
 	
-	<!-- 예약할때 회원이름, 연락처 고정값 -->
-	<select id="selectDefault" resultMap="resultMapObj">
+	<!-- <select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, b.ifmmSeq
+			, b.ifmmName
+			, b.ifmmTel
+		FROM reservation a
+		JOIN member b ON a.member_seq = b.ifmmSeq
+		WHERE 
+	</select> -->
+	
+	<!-- <select id="selectList" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, b.ifmmSeq
+			, b.ifmmName
+			, b.ifmmTel
+		FROM reservation a
+		JOIN member b ON a.member_seq = b.ifmmSeq
+		WHERE a.member_seq = b.ifmmSeq
+	</select> -->
+	
+	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			ifmmSeq
 			, ifmmName
 			, ifmmTel
 		FROM member
 		WHERE 1=1
-			AND ifmmSeq = #{ifmmSeq}
+		AND ifmmSeq = #{ifmmSeq}	
 	</select>
 	
 	<!-- 예약정보입력 -->
 	<insert id="insertRV">
 		INSERT INTO reservation (
 			ifrsPlace
+			, member_seq
 			, ifrsLocation
 			, ifrsTel
 			, ifrsPetName
@@ -34,6 +56,7 @@
 		)
 		VALUES (
 			#{ifrsPlace}
+			, #{ifmmSeq}
 			, #{ifrsLocation}
 			, #{ifrsTel}
 			, #{ifrsPetName}
@@ -49,7 +72,7 @@
 	</insert>
 	
 	<!-- 예약 정보 -->
-	<select id="selectInfo">
+	<select id="selectInfo" resultMap="resultMapObj">
 		SELECT
 			a.*
 			, b.ifmmName
@@ -57,7 +80,8 @@
 		FROM reservation a
 		LEFT JOIN member b 
 		ON a.member_seq = b.ifmmSeq
-		WHERE ifrsSeq = #{ifrsSeq}
+		WHERE a.ifrsSeq = #{ifrsSeq}
+		AND a.member_seq = #{ifmmSeq}
 	</select>
 	
 	<!-- 예약 정보수정 -->

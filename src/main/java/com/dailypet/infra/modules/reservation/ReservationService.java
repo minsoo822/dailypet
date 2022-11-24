@@ -2,9 +2,8 @@ package com.dailypet.infra.modules.reservation;
 
 public interface ReservationService {
 
-	//예약자 회원정보
-	public int selectDefault(Reservation dto) throws Exception;
-
+	public Reservation selectOne(ReservationVo vo) throws Exception;
+	
 	//예약정보 입력
 	public int insertRV(Reservation dto) throws Exception;
 	

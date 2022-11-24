@@ -24,6 +24,7 @@ public class Findpet extends Base{
 	private String iffpAnimalShelter2;
 	private String iffpSpotPlace;
 	private String iffpSpotDate;
+	private Integer iffpSpotLocation;
 	private String iffpCharacteristic;
 	private Integer iffpDelNY;
 	private String iffpRegDate;
@@ -98,6 +99,12 @@ public class Findpet extends Base{
 	}
 	public void setIffpSpotDate(String iffpSpotDate) {
 		this.iffpSpotDate = iffpSpotDate;
+	}
+	public Integer getIffpSpotLocation() {
+		return iffpSpotLocation;
+	}
+	public void setIffpSpotLocation(Integer iffpSpotLocation) {
+		this.iffpSpotLocation = iffpSpotLocation;
 	}
 	public String getIffpCharacteristic() {
 		return iffpCharacteristic;

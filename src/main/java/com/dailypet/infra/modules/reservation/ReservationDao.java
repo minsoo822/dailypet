@@ -15,8 +15,8 @@ public class ReservationDao {
 	
 	private static String namespace = "com.dailypet.infra.modules.reservation.ReservationMapper";
 	
-	public int selectDefault(Reservation dto) throws Exception {
-		return sqlSession.selectOne(namespace + ".selectDefault", dto);
+	public Reservation selectOne(ReservationVo vo) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectOne", vo);
 	}
 	
 	public int insertRV(Reservation dto) throws Exception {

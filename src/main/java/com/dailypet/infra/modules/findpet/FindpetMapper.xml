@@ -21,6 +21,7 @@
 		WHERE 1=1
 		ORDER BY find.iffpSeq DESC
 	</select>
+	
 	<select id="findpetOne" resultMap="resultMapObj">
 		SELECT
 			  find.*
@@ -31,6 +32,7 @@
 		ON find.iffpSeq = findup.pseq
 		WHERE find.iffpSeq = #{iffpSeq}
 	</select>
+	
 	<insert id="findPetInst">
 		INSERT INTO findpet (
 			iffpName
@@ -41,6 +43,7 @@
 			,iffpAnimalShelter2
 			,iffpSpotPlace
 			,iffpSpotDate
+			,iffpSpotLocation
 			,iffpCharacteristic
 			,iffpDelNY
 			,iffpRegDate
@@ -55,6 +58,7 @@
 			,#{iffpAnimalShelter2}
 			,#{iffpSpotPlace}
 			,#{iffpSpotDate}
+			,#{iffpSpotLocation}
 			,#{iffpCharacteristic}
 			,0
 			,now()
@@ -64,6 +68,7 @@
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
+	
 	<update id="findPetUpdt">
 		UPDATE findpet
 		SET
@@ -75,11 +80,13 @@
 			,iffpAnimalShelter2			= #{iffpAnimalShelter2}
 			,iffpSpotPlace				= #{iffpSpotPlace}
 			,iffpSpotDate				= #{iffpSpotDate}
+			,iffpSpotLocation			= #{iffpSpotLocation}
 			,iffpDelNY					= 0
 			,iffpModDate				= now()
 		WHERE 1=1
 		AND iffpSeq = #{iffpSeq}
 	</update>
+	
 	<update id="findPetImgUpdt">
 		UPDATE abandonedUploaded
 		SET	
@@ -95,6 +102,7 @@
 		WHERE 1=1
 		AND pseq = #{iffpSeq}	
 	</update>
+	
 	<insert id="findPetImgInst">
 		INSERT INTO abandonedUploaded (
 			type
@@ -121,6 +129,7 @@
 			,#{pseq}
 		)
 	</insert>
+	
 	<select id="commentList" resultMap="resultMapObj">
 		SELECT
 			mm.ifmmID
@@ -156,6 +165,7 @@
 	    WHERE 1=1
 	    AND find.iffpSeq = #{iffpSeq}
 	</select>
+	
 	<insert id="commentInst">
 		INSERT INTO comment (
 			mm_ifmmSeq
@@ -174,6 +184,7 @@
 			,0
 		)
 	</insert>
+	
 	<select id="commentOne" resultMap="resultMapObj">
 		SELECT
 			mm.ifmmID	AS writer

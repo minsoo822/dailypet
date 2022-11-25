@@ -103,44 +103,46 @@
     <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <form id="form" name="formRV" method="post">
-    	<input type="hidden" name="ifmmSeq" value="${user.ifmmSeq}">
-	    <div class="totalContent">
-		    <div class="content">
-		        <div class="container">
-		            <!-- <div class="row">
-		            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-		                    <ul class="nav flex-column nav-pills me-3">
-		                    	<li class="nav-item">
-									<button class="nav-link active" type="button" aria-current="page" href="#">병원</button>
-								</li>
-								<li class="nav-item">
-									<button class="nav-link" type="button" href="#">호텔</button>
-								</li>
-								<li class="nav-item">
-									<button class="nav-link" type="button" href="#">미용실</button>
-								</li>
-								<li class="nav-item">
-									<button class="nav-link" type="button" href="#">유치원</button>
-								</li>
-							</ul>
+    <div class="totalContent">
+	    <div class="content">
+	        <div class="container">
+	            <!-- <div class="row">
+	            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+	                    <ul class="nav flex-column nav-pills me-3">
+	                    	<li class="nav-item">
+								<button class="nav-link active" type="button" aria-current="page" href="#">병원</button>
+							</li>
+							<li class="nav-item">
+								<button class="nav-link" type="button" href="#">호텔</button>
+							</li>
+							<li class="nav-item">
+								<button class="nav-link" type="button" href="#">미용실</button>
+							</li>
+							<li class="nav-item">
+								<button class="nav-link" type="button" href="#">유치원</button>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"> -->
+						<h4>예약시스템은 지역별 동물병원, 애견호텔/미용실/유치원만 가능합니다.</h4>
+	                    <div class="map_wrap">
+						    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
+						    <div id="menu_wrap" class="bg_white">
+						        <div class="option">
+						        	<div>
+						        		<form onsubmit="searchPlaces(); return false;">
+						                    키워드 : <input type="text" value="강남 동물병원" placeholder="지역명+편의시설" id="keyword" size="15"> 
+						                    <button type="submit">검색하기</button> 
+						            	</form>
+						        	</div>
+						        </div>
+						    </div>
 						</div>
-						<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10"> -->
-							<h4>예약시스템은 지역별 동물병원, 애견호텔/미용실/유치원만 가능합니다.</h4>
-		                    <div class="map_wrap">
-							    <div id="map" style="width:100%; height:100%; position:relative; overflow:hidden;"></div>
-							    <div id="menu_wrap" class="bg_white">
-							        <div class="option">
-							        	<div>
-							        		<form onsubmit="searchPlaces(); return false;">
-							                    키워드 : <input type="text" value="강남 동물병원" placeholder="지역명+편의시설" id="keyword" size="15"> 
-							                    <button type="submit">검색하기</button> 
-							            	</form>
-							        	</div>
-							        </div>
-							    </div>
-							</div>
-							<br>
+						<br>
+						<form id="form" name="formRV" method="post">
+					    	<input type="hidden" name="ifmmSeq" value="${user.ifmmSeq}">
+					    	<input type="hidden" name="ifmmName" value="${user.ifmmName}">
+					    	<input type="hidden" name="ifmmTel" value="${user.ifmmTel}">
 							<h6>* 검색목록에서 원하시는 장소를 클릭하시면 예약페이지로 이동합니다.</h6>
 							<br>
 							<ul id="placesList"></ul>
@@ -233,12 +235,12 @@
 									</div>
 								</div>
 							</div>
-						<!-- </div>
-					</div> -->
-		        </div>
-		    </div>
+						</form>
+					<!-- </div>
+				</div> -->
+	        </div>
 	    </div>
-    </form>
+    </div>
     <!-- footer s -->
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>

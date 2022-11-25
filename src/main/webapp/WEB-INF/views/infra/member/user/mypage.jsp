@@ -67,7 +67,6 @@
     .contents {
     	padding-top: 10px;
     	padding-left: 40px;
-    	font-size: 15pt;
     	font-weight: bold;
     }
     .myPage {
@@ -126,15 +125,15 @@
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
 											<c:out value="${item.ifmmNickname }"/>
 										</div>
-										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">???</div>
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">연락처</div>
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 contents">
-											???
+											<c:out value="${item.ifmmTel }"/>
 										</div>                      	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">핸드폰번호</div>
+		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">소개글</div>
 										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
-											<c:out value="${item.ifmmTel }"/>
+											<c:out value="${item.ifmmIntroduction }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">

@@ -264,6 +264,7 @@
     var sessSeq = $("#sessSeq").val();
 	var ifdaSeq = $("input:hidden[name=ifdaSeq]");
 	var ifmmSeq = $("input:hidden[name=ifmmSeq]");
+	var seq = $("input:hidden[name=ifmmSeq]");
 	var form = $("#diaryForm")
 	
 	goUser = function(key) {

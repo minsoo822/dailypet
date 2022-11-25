@@ -99,6 +99,8 @@ public class DiaryController {
 		vo.setLoginUser((String)httpSession.getAttribute("sessSeq"));
 		Diary me = service.selectOneImg(vo);
 		model.addAttribute("me", me);
+		Diary followCheck = service.selectCheckFollow(vo);
+		model.addAttribute("follow", followCheck);
 		
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);

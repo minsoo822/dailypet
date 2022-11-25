@@ -28,6 +28,11 @@ public class DiaryServiceImpl implements DiaryService{
 		// TODO Auto-generated method stub
 		return dao.selectOneImg(vo);
 	}
+	@Override
+	public Diary selectCheckFollow(DiaryVo vo) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectCheckFollow(vo);
+	}
 
 	// 일기 Inst
 	@Override

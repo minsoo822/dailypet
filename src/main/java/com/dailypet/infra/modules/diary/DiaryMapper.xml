@@ -72,6 +72,16 @@
 		WHERE 1=1
 		AND ifmmSeq = #{loginUser}
 	</select>
+	<select id="selectCheckFollow" resultMap="resultMapObj"> 
+		SELECT
+	    	fw.iffwNy
+		FROM follow fw
+	    JOIN member mm
+	    ON mm.ifmmSeq = fw.iffwFollower
+	    WHERE 1=1
+	    AND fw.iffwFollow = #{ifmmSeq}		
+	    AND fw.iffwFollower = #{loginUser} 
+	</select>
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			mm.*

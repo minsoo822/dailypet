@@ -9,6 +9,7 @@ public class Follow {
 	private Integer iffwNy;
 	
 	
+	
 	public Integer getIffwSeq() {
 		return iffwSeq;
 	}

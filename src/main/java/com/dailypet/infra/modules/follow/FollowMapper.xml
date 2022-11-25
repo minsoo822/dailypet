@@ -26,7 +26,7 @@
 	
 	</delete>
 	
-	<select id="selectChkFollow" resultType="String">
+	<select id="selectChkFollow" resultType="Integer">
 		
 		SELECT
 			COUNT(*)

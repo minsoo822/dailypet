@@ -376,11 +376,11 @@
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
 	    						<c:choose>
-		    						<c:when test="${ }">
-		    							<button type="button" id="followbtn" onclick="follow(this)">팔로우</button>
+		    						<c:when test="${me.follow eq 1 }">
+	    								<button type="button" id="followbtn" onclick="follow(this)">팔로우 ✔</button>
 		    						</c:when>
 	    							<c:otherwise>
-	    								<button type="button" id="followbtn" onclick="follow(this)">팔로우 ✔</button>
+		    							<button type="button" id="followbtn" onclick="follow(this)">팔로우</button>
 	    							</c:otherwise>
 	    						</c:choose>
 	    					</div>
@@ -396,7 +396,7 @@
 	    						<h4>팔로워 <b id="countFollower"><c:out value="${item.follow }"/></b></h4>
 	    					</div>
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-	    						<h4>팔로잉 <b id="countFollow">0</b></h4>
+	    						<h4>팔로잉 <b id="countFollow"><c:out value="${item.follower }"/></b></h4>
 	    					</div>
 	    				</div>
 	    				<div class="row" style="margin-top: 10px; margin-left: 126px;">

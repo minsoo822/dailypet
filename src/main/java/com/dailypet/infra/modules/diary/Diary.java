@@ -16,6 +16,7 @@ public class Diary extends Base {
 	private String ifmmID;
 	private Integer postCount;
 	private Integer follow;
+	private Integer follower;
 	private String ifmmIntrodution;
 
 	private MultipartFile[] diary_image;
@@ -300,6 +301,14 @@ public class Diary extends Base {
 
 	public void setFollow(Integer follow) {
 		this.follow = follow;
+	}
+
+	public Integer getFollower() {
+		return follower;
+	}
+
+	public void setFollower(Integer follower) {
+		this.follower = follower;
 	}
 
 }

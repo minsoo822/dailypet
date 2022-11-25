@@ -89,6 +89,12 @@
 				FROM follow fw
 				WHERE mm.ifmmSeq = fw.iffwFollow
 			)	AS follow
+			,(
+				SELECT
+					COUNT(*)
+				FROM follow fw
+				WHERE mm.ifmmSeq = fw.iffwFollower
+			) 	AS follower
 		FROM member mm
 		JOIN memberUploaded b ON mm.ifmmSeq = b.pseq
 		WHERE 1=1

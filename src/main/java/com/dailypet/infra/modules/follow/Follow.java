@@ -6,7 +6,7 @@ public class Follow {
 
 	private Integer iffwFollow;
 	private Integer iffwFollower;
-	
+	private Integer iffwNy;
 	
 	
 	public Integer getIffwSeq() {
@@ -31,6 +31,14 @@ public class Follow {
 
 	public void setIffwFollower(Integer iffwFollower) {
 		this.iffwFollower = iffwFollower;
+	}
+
+	public Integer getIffwNy() {
+		return iffwNy;
+	}
+
+	public void setIffwNy(Integer iffwNy) {
+		this.iffwNy = iffwNy;
 	}
 	
 	

@@ -268,9 +268,9 @@
 	
 	goUser = function(key) {
 		if(key == sessSeq ) {
-			form.attr("action", "/diary/diaryMypage").submit();	
+			form.attr("action", "/diary/diaryMypage").submit();	 //똑같아 그래서 하나의 컨트롤러에 내 정보로 갈땐 vo.seq == null 인상태로 다른사람 정보는 vo.seq = N 
 		} else {
-			ifmmSeq.attr("value", key);
+			ifmmSeq.val(key);
 			form.attr("action" ,"/diary/diaryUserpage").submit();
 		}
 	}

@@ -44,8 +44,17 @@ public class Diary extends Base {
 	private String ifmmRegDate;
 	private String ifmmModDate;
 	private Integer ifmmDelNy;
+	private Integer iffwNy;
 
 //------------------------------------------------------	 
+	
+	public Integer getIffwNy() {
+		return iffwNy;
+	}
+
+	public void setIffwNy(Integer iffwNy) {
+		this.iffwNy = iffwNy;
+	}
 
 	public String getIfdaSeq() {
 		return ifdaSeq;

@@ -78,6 +78,7 @@
 		FROM follow fw
 	    JOIN member mm
 	    ON mm.ifmmSeq = fw.iffwFollower
+	    <!--  조인 빼도 될듯합니다람쥐 -->
 	    WHERE 1=1
 	    AND fw.iffwFollow = #{ifmmSeq}		
 	    AND fw.iffwFollower = #{loginUser} 

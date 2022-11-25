@@ -100,7 +100,10 @@ public class DiaryController {
 		Diary me = service.selectOneImg(vo);
 		model.addAttribute("me", me);
 		Diary followCheck = service.selectCheckFollow(vo);
-		model.addAttribute("follow", followCheck);
+//		if(serviceFollow.selectChkFollow(Integer.parseInt(vo.getIfmmSeq()), (Integer)httpSession.getAttribute("sessSeq")) == 1) {
+//			model.addAttribute("follow", followCheck);
+//			System.out.println("이사람 팔로우 했네");
+//		}
 		
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);

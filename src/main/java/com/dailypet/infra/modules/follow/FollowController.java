@@ -25,6 +25,7 @@ public class FollowController {
 		result.putIfAbsent("followCount", count);
 		return result;
 	}
+	
 	@ResponseBody
 	@RequestMapping(value = "/deleteFollow")
 	public Map<String, Object> deleteFollow(Follow dto) throws Exception {

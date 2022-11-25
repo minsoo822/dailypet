@@ -24,7 +24,7 @@
 	}
 	
 	.bg-light {
-		width: 1000px;
+		width: 1500px;
 		background-color: #f8f9fa !important;
 	}
 	.buttongroup {
@@ -33,6 +33,7 @@
 	
 	.form-control, .form-select {
 		border-radius: 6px;
+		
 	}
 	
 	#cbtn {
@@ -77,8 +78,8 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${list.ifrsSeq} }">
-    	<input type="hidden" id="member_seq" name="member_seq" value="${sessSeq} }">
+    	<input type="hidden" name="ifrsSeq">
+    	<input type="hidden" id="ifmmSeq" value="${sessSeq} }">
 		<div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
@@ -100,7 +101,7 @@
 												<th>요청사항</th>
 												<th>신청일</th>
 											</tr>
-											<tr>
+											<tr onclick="goForm(${list.ifrsSeq })" class="in">
 												<c:choose>
 													<c:when test="${fn:length(list) eq 0 }">
 														<td>데이터가 존재하지 않습니다</td>
@@ -108,7 +109,7 @@
 													<c:otherwise>	
 														<c:forEach items="${list}" var="list" varStatus="status">
 															<tr onclick="goForm(${list.ifrsSeq })" class="in">
-																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifcdSeq }"/>"></td>
+																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifrsSeq }"/>"></td>
 																<td><c:out value="${list.ifrsSeq }"/></td>
 																<td>
 																	<c:out value="${list.ifrsPlace }"/>
@@ -151,7 +152,7 @@
 								    </div>
 									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
 										<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
-										<a href="/code/codeForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
+										<a href="/reservation/reservationView"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
 									</div>
 								</div>
 							</div>
@@ -186,7 +187,9 @@
     <script type="text/javascript">
     
 	    var ifrsSeq = $("#ifrsSeq");
-	    var ifmmSeq = ${"#ifmmSeq"};
+	    var ifmmSeq = $("#ifmmSeq");
+	    
+	    var goUrlForm = "/reservation/reservationView";
 	    
 	    goForm = function(key) {
 			ifrsSeq.attr("value", key);
@@ -196,7 +199,7 @@
 		var form = $("form[name=reserform]");
 //		var formVo = $("form[name=formVo]");
 		
-    	var goUrlDele = "/reservation/reserDele";
+    	var goUrlDele = "/reservation/deleteInfo";
     
 	    /* $("#btnDel").on("click", function(){
 			formVo.attr("action", goUrlDele).submit();

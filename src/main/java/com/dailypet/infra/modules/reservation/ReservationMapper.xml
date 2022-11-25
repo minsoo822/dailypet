@@ -8,7 +8,7 @@
 
 	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.reservation.Reservation"></resultMap>
 	
-	<!-- <select id="selectOne" resultMap="resultMapObj">
+	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			a.*
 			, b.ifmmSeq
@@ -16,19 +16,8 @@
 			, b.ifmmTel
 		FROM reservation a
 		JOIN member b ON a.member_seq = b.ifmmSeq
-		WHERE 
-	</select> -->
-	
-	<!-- <select id="selectList" resultMap="resultMapObj">
-		SELECT
-			a.*
-			, b.ifmmSeq
-			, b.ifmmName
-			, b.ifmmTel
-		FROM reservation a
-		JOIN member b ON a.member_seq = b.ifmmSeq
-		WHERE a.member_seq = b.ifmmSeq
-	</select> -->
+		WHERE a.member_seq = #{ifmmSeq}
+	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
@@ -36,8 +25,22 @@
 			, ifmmName
 			, ifmmTel
 		FROM member
+		WHERE 1=1 
+		AND ifmmSeq = #{ifmmSeq}
+	</select>
+	
+	<select id="selectDefault" resultMap="resultMapObj">
+		SELECT
+			b.ifrsSeq
+			, b.member_seq
+			, a.ifmmSeq
+			, a.ifmmName
+			, a.ifmmTel
+		FROM member a
+		JOIN reservation b ON b.member_seq = a.ifmmSeq
 		WHERE 1=1
-		AND ifmmSeq = #{ifmmSeq}	
+		AND ifmmSeq = #{ifmmSeq}
+		AND b.ifrsSeq = #{ifrsSeq}
 	</select>
 	
 	<!-- 예약정보입력 -->
@@ -80,7 +83,7 @@
 		FROM reservation a
 		LEFT JOIN member b 
 		ON a.member_seq = b.ifmmSeq
-		WHERE a.ifrsSeq = #{ifrsSeq}
+		WHERE 1=1
 		AND a.member_seq = #{ifmmSeq}
 	</select>
 	

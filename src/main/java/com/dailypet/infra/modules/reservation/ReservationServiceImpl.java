@@ -1,5 +1,7 @@
 package com.dailypet.infra.modules.reservation;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +12,18 @@ public class ReservationServiceImpl implements ReservationService {
 	ReservationDao dao;
 	
 	@Override
+	public List<Reservation> selectList(ReservationVo vo) throws Exception {
+		return dao.selectList(vo);
+	}
+	
+	@Override
 	public Reservation selectOne(ReservationVo vo) throws Exception {
 		return dao.selectOne(vo);
+	}
+	
+	@Override
+	public Reservation selectDefault(ReservationVo vo) throws Exception {
+		return dao.selectDefault(vo);
 	}
 	
 	@Override

@@ -1,5 +1,7 @@
 package com.dailypet.infra.modules.reservation;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
@@ -15,8 +17,16 @@ public class ReservationDao {
 	
 	private static String namespace = "com.dailypet.infra.modules.reservation.ReservationMapper";
 	
+	public List<Reservation> selectList(ReservationVo vo) { 
+		return sqlSession.selectList(namespace + ".selectList", vo);
+	}
+	
 	public Reservation selectOne(ReservationVo vo) throws Exception {
 		return sqlSession.selectOne(namespace + ".selectOne", vo);
+	}
+	
+	public Reservation selectDefault(ReservationVo vo) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectDefault", vo);
 	}
 	
 	public int insertRV(Reservation dto) throws Exception {

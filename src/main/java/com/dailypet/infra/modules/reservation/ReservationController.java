@@ -1,10 +1,13 @@
 package com.dailypet.infra.modules.reservation;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -21,10 +24,22 @@ public class ReservationController {
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
 		
-		Reservation selectInfo = service.selectInfo(vo);
-		model.addAttribute("info", selectInfo);
+		List<Reservation> list = service.selectList(vo);
+		model.addAttribute("list", list);
 		
 		return "infra/reservation/user/reservationPage";
+	}
+	
+	@RequestMapping(value = "reservationView")
+	public String reservationView(ReservationVo vo, Model model, HttpSession httpSession) throws Exception {
+		
+		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
+		vo.setIfmmSeq(ifmmSeq);
+		
+		Reservation info = service.selectOne(vo);
+		model.addAttribute("info", info);
+		
+		return "infra/reservation/user/reservationView";
 	}
 	
 	@RequestMapping(value = "reservationForm")
@@ -33,11 +48,8 @@ public class ReservationController {
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
 		
-		Reservation selectInfo = service.selectInfo(vo);
-		model.addAttribute("info", selectInfo);
-		
-		service.changeInfo(dto);
-		vo.setIfrsSeq(dto.getIfrsSeq());
+		Reservation info = service.selectOne(vo);
+		model.addAttribute("info", info);
 		
 		return "infra/reservation/user/reservationForm";
 	}
@@ -60,30 +72,38 @@ public class ReservationController {
 		
 		vo.setIfmmSeq((String) httpSession.getAttribute("sessSeq"));
 		
+		System.out.println("vo.getIfmmName() : " +vo.getIfmmName());
+		System.out.println("vo.getIfmmTel() : " +vo.getIfmmTel());
+		
 		Reservation result = service.selectOne(vo);
 		model.addAttribute("user", result);
 		
 		return "infra/reservation/user/searchingPlace";
 	}
 	
+	@SuppressWarnings(value = { "all" })
 	@RequestMapping(value = "changeInfo")
-	public String changeInfo(Reservation dto, ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+	public String changeInfo(Reservation dto, @ModelAttribute("vo") ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
 		
 		service.changeInfo(dto);
 		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
 		return "redirect:/reservation/reservationPage";
 	}
 	
 	@RequestMapping(value = "deleteInfo")
-	public String deleteInfo(Reservation dto, ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+	public String deleteInfo(Reservation dto, @ModelAttribute("vo") ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
 		
 		service.deleteInfo(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
 		
 		return "redirect:/reservation/searchingPlace";
 	}

@@ -6,6 +6,8 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="true" %>
 
+<!-- https://beomsu.notion.site/0-1-code-0922ee528abf4481bf7b798031202237 -->
+
 <head>
     <%@include file="../../../common/xdmin/include/head.jsp"%>
     <title>유기동물 등록</title>
@@ -17,6 +19,7 @@
 	.form-control {
 		color: black;
 	}
+	
 	.petImg {
 		background: #f3f0eb;
 		width: 446px;
@@ -24,18 +27,21 @@
 		max-height: 100%;
 		max-width: 100%;
 	}
+	
 	.propileImg {
 		width: 80px;
 		height: 80px;
 		max-height: 100%;
 		max-width: 100%;
 	}
+	
 	.text {
 		text-align: left;
 		font-size: 13pt;
 		font-weight: bold;
 		margin-top: 14px;
 	}
+	
 	.Searchbtn {
     	border: 1px solid #efefef;
     	background: #f3f0eb;
@@ -49,11 +55,13 @@
     	margin-left: auto;
     	margin-right: auto;
    	}
+   	
    	.Searchbtn:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
     }
+    
     .btnSave {
     	border: 1px solid #efefef;
     	background: #f3f0eb;
@@ -67,13 +75,20 @@
     	margin-top: 30px;
     	margin-right: 20px;
     }
+    
     .btnSave:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
     }
+    
     .form-control {
     	color: #000;
+    }
+    
+    .form-select{
+    	height: 50px;
+    	font-size: 12px;
     }
 	</style>
 </head>
@@ -114,7 +129,13 @@
 								품종
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" name="iffpBrred" value="${item.iffpBrred }" placeholder="모르신다면 적지않으셔도 무방합니다">
+								<%-- <input type="text" class="form-control" name="iffpBreed" value="${item.iffpBreed }" placeholder="모르신다면 적지않으셔도 무방합니다"> --%>
+								<select class="form-select" name="iffpBreed">
+									<option value="" hidden selected>::품종::</option>
+									<c:forEach items="${list}" var="list" varStatus="status">
+										<option value="<c:out value="${list.ifcdSeq}"/>" <c:if test="${list.ifcdSeq eq item.iffpBreed }"> selected</c:if>><c:out value="${list.ifcdName }"/></option>
+									</c:forEach>
+								</select>
 							</div>
 						</div>
 						<hr>

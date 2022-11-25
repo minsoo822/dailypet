@@ -15,4 +15,6 @@ public interface FindpetService {
 	public int commentInst(Findpet dto) throws Exception;
 	public Findpet commentOne(Findpet dto) throws Exception;
 
+	//유기동물 등록 시 품종 추가
+	public List<Findpet> BreedAdd(FindpetVo vo) throws Exception;
 }

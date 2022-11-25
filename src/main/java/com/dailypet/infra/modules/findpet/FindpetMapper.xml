@@ -36,7 +36,7 @@
 	<insert id="findPetInst">
 		INSERT INTO findpet (
 			iffpName
-			,iffpBrred
+			,iffpBreed
 			,iffpGender
 			,iffpAnimalShelterzipCode
 			,iffpAnimalShelter1
@@ -51,7 +51,7 @@
 		)
 		VALUE (
 			#{iffpName}
-			,#{iffpBrred}
+			,#{iffpBreed}
 			,#{iffpGender}
 			,#{iffpAnimalShelterzipCode}
 			,#{iffpAnimalShelter1}
@@ -73,7 +73,7 @@
 		UPDATE findpet
 		SET
 			 iffpName					= #{iffpName}
-			,iffpBrred					= #{iffpBrred}
+			,iffpBreed					= #{iffpBreed}
 			,iffpGender					= #{iffpGender}
 			,iffpAnimalShelterzipCode	= #{iffpAnimalShelterzipCode}
 			,iffpAnimalShelter1			= #{iffpAnimalShelter1}
@@ -197,4 +197,15 @@
 		AND mm.ifmmSeq = #{ifmmSeq}
 	</select>
 	
+	<!-- 유기동물 등록 시 품종 추가 -->
+	<select id="BreedAdd" resultMap="resultMapObj">
+		SELECT
+			a.ifcdSeq
+			, a.ifcdName
+		FROM
+			code a
+		JOIN codegroup b ON b.ifcgSeq = a.cg_ifcgSeq
+		WHERE 1=1
+		AND b.ifcgSeq = 5
+	</select>
 </mapper>	

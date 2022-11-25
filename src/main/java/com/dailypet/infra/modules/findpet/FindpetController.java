@@ -58,6 +58,10 @@ public class FindpetController {
 	public String findpetMod(FindpetVo vo, Model model) throws Exception {
 		Findpet item = service.selectOne(vo);
 		model.addAttribute("item", item);
+		
+		List<Findpet> list = service.BreedAdd(vo);
+		model.addAttribute("list", list);
+		
 		return "infra/findpet/user/findpetMod";
 	}
 	
@@ -69,6 +73,7 @@ public class FindpetController {
 		
 		return "redirect:/findpet/findpetList";
 	}
+	
 	@RequestMapping(value = "findpetUpdt")
 	public String findpetUpdt(Findpet dto, HttpSession httpSession) throws Exception {
 		
@@ -77,6 +82,7 @@ public class FindpetController {
 		
 		return "redirect:/findpet/findpetList";
 	}
+	
 	@RequestMapping(value = "findpetSearchForm")
 	public String findpetSearchForm(FindpetVo vo, Model model) throws Exception {
 
@@ -85,7 +91,6 @@ public class FindpetController {
 		
 		return "infra/findpet/user/findpetSearchForm";
 	}
-	
 	
 
 }

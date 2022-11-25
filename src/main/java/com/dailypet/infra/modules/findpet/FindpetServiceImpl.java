@@ -18,6 +18,7 @@ public class FindpetServiceImpl implements FindpetService{
 	public List<Findpet> selectList(FindpetVo vo) throws Exception {
 		return dao.selectList(vo);
 	}
+	
 	@Override
 	public Findpet selectOne(FindpetVo vo) throws Exception {
 		return dao.selectOne(vo);
@@ -48,6 +49,7 @@ public class FindpetServiceImpl implements FindpetService{
 		
 		return findPetInst;
 	}
+	
 	@Override
 	public int findPetUpdt(Findpet dto) throws Exception {
 		int findPetUpdt = dao.findPetUpdt(dto);
@@ -75,20 +77,27 @@ public class FindpetServiceImpl implements FindpetService{
 		
 		return findPetUpdt;
 	}
+	
 	//댓글
 	@Override
 	public int commentInst(Findpet dto) throws Exception {
 		return dao.commentInst(dto);
 	}
+	
 	@Override
 	public Findpet commentOne(Findpet dto) throws Exception {
 		return dao.commentOne(dto);
 	}
+	
 	@Override
 	public List<Findpet> commentList(FindpetVo vo) throws Exception {
 		return dao.commentList(vo);
 	}
 	
 	
-	
+	// 유기동물 등록 시 품종 추가
+	public List<Findpet> BreedAdd(FindpetVo vo) throws Exception{
+		return dao.BreedAdd(vo);
+	}
 }
+

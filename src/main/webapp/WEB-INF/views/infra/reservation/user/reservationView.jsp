@@ -77,8 +77,8 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${info.ifrsSeq} }">
-    	<input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${info.ifmmSeq} }">
+    	<input type="hidden" id="ifrsSeq" value="${info.ifrsSeq} }">
+    	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq} }">
 		<div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
@@ -182,7 +182,7 @@
     <script type="text/javascript">
     	
 	    var ifrsSeq = $("#ifrsSeq");
-	    var ifmmSeq = ${"#ifmmSeq"};
+	    var ifmmSeq = $("#ifmmSeq");
 		
 		var form = $("form[name=reserform]");
 //		var formVo = $("form[name=formVo]");

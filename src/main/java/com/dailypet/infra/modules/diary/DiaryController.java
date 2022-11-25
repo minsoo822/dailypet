@@ -103,10 +103,10 @@ public class DiaryController {
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
-//		int count = serviceFollow.selectChkFollow(Integer.parseInt(vo.getIfmmSeq()), (Integer)httpSession.getAttribute("sessSeq"));
-//			if(count == 1) {
-//				model.addAttribute("IsFollow", 1);
-//			}
+		int count = serviceFollow.selectChkFollow(Integer.parseInt(vo.getIfmmSeq()), (Integer)httpSession.getAttribute("sessSeq"));
+			if(count == 1) {
+				model.addAttribute("IsFollow", 1);
+			}
 		//회원이 올린사진
 		List<Diary> list = service.mypageImageList(vo);
 		model.addAttribute("list", list);

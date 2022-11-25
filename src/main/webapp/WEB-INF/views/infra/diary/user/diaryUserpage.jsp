@@ -376,7 +376,7 @@
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
 	    						<c:choose>
-		    						<c:when test="${me.follow eq 1 }">
+		    						<c:when test="${IsFollow eq 1 }">
 	    								<button type="button" id="followbtn" onclick="follow(this)">팔로우 ✔</button>
 		    						</c:when>
 	    							<c:otherwise>

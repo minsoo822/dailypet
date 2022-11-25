@@ -29,6 +29,7 @@
 		AND ifmmSeq = #{ifmmSeq}
 	</select>
 	
+<!-- 	
 	<select id="selectDefault" resultMap="resultMapObj">
 		SELECT
 			b.ifrsSeq
@@ -42,6 +43,7 @@
 		AND ifmmSeq = #{ifmmSeq}
 		AND b.ifrsSeq = #{ifrsSeq}
 	</select>
+-->	
 	
 	<!-- 예약정보입력 -->
 	<insert id="insertRV">
@@ -95,8 +97,9 @@
 			, ifrsPurpose = #{ifrsPurpose}
 			, ifrsHopeDate = #{ifrsHopeDate}
 			, ifrsRequest = #{ifrsRequest}
-			, ifrsPurpose = now()
-		WHERE ifrsSeq = #{ifrsSeq}
+			, ifrsPurpose = #{ifrsPurpose}
+		WHERE 1=1
+		AND ifrsSeq = #{ifrsSeq}
 	</update>
 	
 	<!-- 예약 취소 -->

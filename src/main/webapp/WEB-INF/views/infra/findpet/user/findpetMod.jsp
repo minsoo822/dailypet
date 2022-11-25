@@ -168,8 +168,26 @@
 								발견지역
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<select class="form-control">
-									<option></option>
+								<select class="form-control" name="iffpSpotLocation">
+									<option value="12" selected hidden>선택</option>
+									<option value="12">전국</option>
+									<option value="13">서울</option>
+									<option value="14">경기</option>
+									<option value="15">인천</option>
+									<option value="16">부산</option>
+									<option value="17">대구</option>
+									<option value="18">대전</option>
+									<option value="19">전남</option>
+									<option value="20">경남</option>
+									<option value="21">충남</option>
+									<option value="22">광주</option>
+									<option value="23">울산</option>
+									<option value="24">경북</option>
+									<option value="25">전북</option>
+									<option value="26">충북</option>
+									<option value="27">강원</option>
+									<option value="28">제주</option>
+									<option value="29">세종</option>
 								</select>
 								<%-- <input type="text" class="form-control" name="iffpName" value="${item.iffpName }" placeholder="목걸이등에 이름이 있다면 적어주세요"> --%>
 							</div>

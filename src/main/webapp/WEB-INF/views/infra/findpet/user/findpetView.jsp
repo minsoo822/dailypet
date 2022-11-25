@@ -156,10 +156,16 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+								발견지역
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">
+								<c:out value="${item.iffpSpotLocation }"/>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
 								발견장소
 							</div>
-							<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 text">
+							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">
 								<c:out value="${item.iffpSpotPlace }"/>
 							</div>
 						</div>

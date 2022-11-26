@@ -4,201 +4,189 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
-    <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
+    <%@include file="../../../common/xdmin/include/head.jsp"%>
     <title>반려동물 리스트</title>
-    <!-- Bootstrap -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,600i,700" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
-    <!-- Style -->
-    <link href="/resources/css/style.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+	<style type="text/css">
+	
+		.navbar-fixed-top {
+			background-color: black;
+			margin-bottom: 100px;
+		}
+		
+		.content {
+			margin-top: 5%;
+		}
+		
+		.right{
+	   		float: right;
+	   	} 
+	   	
+	   	.foot{
+	   		font-size: 60px;
+	   	}
+	   	
+	   	.reg{
+	   		text-align: center;
+	  		}
+	  		
+		.arrow{
+			font-size: 15px;
+			margin-bottom: 10px;   			
+		}
+	 		
+		.wid{
+			width: 120px;
+		}
+	  		
+		.div1 {
+		    display: flex;
+		    justify-content: center;
+		}
+		
+		.div2 {
+		    display: flex;
+			margin-left: 30px;
+		}
+		
+		.foot{
+			font-size: 50px;
+		}
+		
+		.top{	
+			margin-top: 20px;
+		}
+	
+		.top2{
+			margin-top: 10px;
+		}
+		
+		.foot2{
+			color: #b5b5b5; 
+			font-size: 50px;
+		} 
+		
+		#mydiv {
+	        height: 300px;
+	        overflow: scroll;
+	        background-color: #fcfcfc;
+	    }
+	    
+	    #mydiv2 {
+	    	background-color: #fcfcfc;
+	    }
+	    
+	    .btnGroup .btn {
+	    	padding: 10px 10px;
+	    	width: 38px;
+	    	margin: 0 5px;
+	    }
+	    
+	    .gray {
+	    	background-color: #e2e2e2;
+	    	font-size: 16px;
+	    	text-align: center;
+	    	width: 150px;
+	    	height: 35px;
+	    	margin-top: 6px;
+	    }
+	
+		hr{
+			margin-top: 5px;
+			margin-bottom: 3px;
+		}
+		
+		hr1{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		
+		.form-control{
+			color: black;
+		}
+		
+		select{
+			width: 370px;
+	    	height: 35px;	
+	   	    border: 1px solid #e2dcdb;
+			font-size: 14px;
+			margin-top: 5px;
+		}
+		
+		.top3{
+			margin-top: 6px;
+		}
+		
+		.top4{
+			margin-top: 4px;
+		}
+		
+		label{
+			font-size: 14px;
+			font-weight: nomal;
+		}
+		
+		.input{
+			height: 35px;
+			margin-top: 6px;
+		}
+		
+		.form-check{
+			margin-top: 10px;
+		}
+		
+		.addScroll{
+			overflow-y:auto;
+			background-color:#E9ECEF;
+			width: 475px;
+			height: 180px;
+		}
+		
+		.btn-secondary {
+			background-color: #6C757D;
+			color: white;
+		}
+		
+		.btn-dark {
+			background-color: black;
+			color: white;
+		}
+		
+		.btn-danger, #btnDelete {
+			background-color: #DC3545;
+			color: white;
+		}
+		
+		.btn-outline-danger, #btnUelete {
+			background-color: white;
+			color: #DC3545;
+		}
+		
+		.btn-warning, #btnReset {
+			background-color: #FFC107;
+			color: white;
+		}
+		
+		.form-select {
+			width: 325px;
+		}
+		
+		.btn-close{
+	    	background-color: transparent;
+	    	border-color: transparent;
+	    	margin-left: 480px;
+	    }
+	    
+	    .modal-header{
+	   		display: inline-flex;
+	    }
+		 
+	</style>
 </head>
-
-<style type="text/css">
-
-	.navbar-fixed-top {
-		background-color: black;
-		margin-bottom: 100px;
-	}
-	
-	.content {
-		margin-top: 5%;
-	}
-	
-	.right{
-   		float: right;
-   	} 
-   	
-   	.foot{
-   		font-size: 60px;
-   	}
-   	
-   	.reg{
-   		text-align: center;
-  		}
-  		
-	.arrow{
-		font-size: 15px;
-		margin-bottom: 10px;   			
-	}
- 		
-	.wid{
-		width: 120px;
-	}
-  		
-	.div1 {
-	    display: flex;
-	    justify-content: center;
-	}
-	
-	.div2 {
-	    display: flex;
-		margin-left: 30px;
-	}
-	
-	.foot{
-		font-size: 50px;
-	}
-	
-	.top{	
-		margin-top: 20px;
-	}
-
-	.top2{
-		margin-top: 10px;
-	}
-	
-	.foot2{
-		color: #b5b5b5; 
-		font-size: 50px;
-	} 
-	
-	#mydiv {
-        height: 300px;
-        overflow: scroll;
-        background-color: #fcfcfc;
-    }
-    
-    #mydiv2 {
-    	background-color: #fcfcfc;
-    }
-    
-    .btnGroup .btn {
-    	padding: 10px 10px;
-    	width: 38px;
-    	margin: 0 5px;
-    }
-    
-    .gray {
-    	background-color: #e2e2e2;
-    	font-size: 16px;
-    	text-align: center;
-    	width: 150px;
-    	height: 35px;
-    	margin-top: 6px;
-    }
-
-	hr{
-		margin-top: 5px;
-		margin-bottom: 3px;
-	}
-	
-	hr1{
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-	
-	.form-control{
-		color: black;
-	}
-	
-	select{
-		width: 370px;
-    	height: 35px;	
-   	    border: 1px solid #e2dcdb;
-		font-size: 14px;
-		margin-top: 5px;
-	}
-	
-	.top3{
-		margin-top: 6px;
-	}
-	
-	.top4{
-		margin-top: 4px;
-	}
-	
-	label{
-		font-size: 14px;
-		font-weight: nomal;
-	}
-	
-	.input{
-		height: 35px;
-		margin-top: 6px;
-	}
-	
-	.form-check{
-		margin-top: 10px;
-	}
-	
-	.addScroll{
-		overflow-y:auto;
-		background-color:#E9ECEF;
-		width: 475px;
-		height: 180px;
-	}
-	
-	.btn-secondary {
-		background-color: #6C757D;
-		color: white;
-	}
-	
-	.btn-dark {
-		background-color: black;
-		color: white;
-	}
-	
-	.btn-danger, #btnDelete {
-		background-color: #DC3545;
-		color: white;
-	}
-	
-	.btn-outline-danger, #btnUelete {
-		background-color: white;
-		color: #DC3545;
-	}
-	
-	.btn-warning, #btnReset {
-		background-color: #FFC107;
-		color: white;
-	}
-	
-	.form-select {
-		width: 325px;
-	}
-	
-	.btn-close{
-    	background-color: transparent;
-    	border-color: transparent;
-    	margin-left: 480px;
-    }
-    
-    .modal-header{
-   		display: inline-flex;
-    }
-	 
-</style>
 
 <body>
 
@@ -263,11 +251,11 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
 								<select class="form-select" name="cg_ifcgSeq">
-							<option value="">::코드그룹명::</option>
-							<c:forEach items="${add}" var="add" varStatus="status">
-								<option value="<c:out value="${add.ifcgSeq}"/>" <c:if test="${add.ifcgSeq eq item.cg_ifcgSeq }"> selected</c:if>><c:out value="${add.ifcgName }"/></option>
-							</c:forEach>
-						</select>
+									<option value="">::코드그룹명::</option>
+									<c:forEach items="${add}" var="add" varStatus="status">
+										<option value="<c:out value="${add.ifcgSeq}"/>" <c:if test="${add.ifcgSeq eq item.cg_ifcgSeq }"> selected</c:if>><c:out value="${add.ifcgName }"/></option>
+									</c:forEach>
+								</select>
 							</div>
 						</div>
 						<hr>
@@ -361,71 +349,13 @@
 	<%@include file="codeVo.jsp"%>		<!-- #-> -->
 	<!-- *Vo.jsp e -->
 	</form>
-    <div class="footer">
-        <!-- footer-->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <h3 class="widget-title">About us</h3>
-                        <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- social block -->
-                        <h3 class="widget-title">Our Address</h3>
-                        <p>1309 Roosevelt Wilson Lane
-                            <br> Colton, CA 92324</p>
-                    </div>
-                    <!-- /.social block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">e-mail Us</h3>
-                        <p>info@yourwebsitedomain.com</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                    <div class="footer-widget">
-                        <!-- newsletter block -->
-                        <h3 class="widget-title">Call us</h3>
-                        <p>180-874-5234</p>
-                        <p>180-752-3957</p>
-                    </div>
-                    <!-- newsletter block -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="tiny-footer">
-        <!-- tiny footer block -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-                    <div class="copyright-content">
-                      Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="footer-social">
-                        <ul class="listnone">
-                            <li> <a href="#"><i class="fa fa-facebook-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-twitter-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-google-plus-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-youtube-square"></i></a> </li>
-                            <li> <a href="#"><i class="fa fa-pinterest-square"></i></a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- footer s -->
+    <%@include file="../../../common/xdmin/include/footer.jsp"%>
+    <!-- footer e -->
+    <!-- footScript s -->
+    <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    <!-- footScript e -->
    
-    <!-- /.footer-->
-	
 	<script type="text/javascript">
 	
 		var goUrlList = "/code/codeList";

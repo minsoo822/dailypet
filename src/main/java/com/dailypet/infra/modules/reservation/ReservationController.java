@@ -66,7 +66,7 @@ public class ReservationController {
 		
 //		vo.setIfrsSeq(dto.getIfrsSeq());
 		
-		return "infra/reservation/user/reservationPage";
+		return "redirect:/reservation/reservationPage";
 	}
 	
 	@RequestMapping(value = "searchingPlace")
@@ -94,7 +94,7 @@ public class ReservationController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/reservation/reservationPage";
+		return "redirect:/reservation/reservationView";
 	}
 	
 	@RequestMapping(value = "deleteInfo")
@@ -107,7 +107,7 @@ public class ReservationController {
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		
-		return "redirect:/reservation/searchingPlace";
+		return "redirect:/reservation/reservationPage";
 	}
 
 }

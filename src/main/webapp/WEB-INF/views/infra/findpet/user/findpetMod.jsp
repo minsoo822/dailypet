@@ -131,8 +131,8 @@
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<%-- <input type="text" class="form-control" name="iffpBreed" value="${item.iffpBreed }" placeholder="모르신다면 적지않으셔도 무방합니다"> --%>
 								<select class="form-select" name="iffpBreed">
-									<option value="" hidden selected>::품종::</option>
-									<c:forEach items="${listB}" var="listBreed" varStatus="status">
+									<option value="">::품종::</option>
+									<c:forEach items="${listB}" var="listB" varStatus="status">
 										<option value="<c:out value="${listB.ifcdSeq}"/>" <c:if test="${listB.ifcdSeq eq item.iffpBreed }"> selected</c:if>><c:out value="${listB.ifcdName }"/></option>
 									</c:forEach>
 								</select>
@@ -213,7 +213,7 @@
 								<%-- <input type="text" class="form-control" name="iffpName" value="${item.iffpName }" placeholder="목걸이등에 이름이 있다면 적어주세요"> --%>
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
-								발경장소
+								발견장소
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<input type="text" class="form-control" name="iffpSpotPlace" value="${item.iffpSpotPlace }" placeholder="정확한 장소를 입력해주세요.">

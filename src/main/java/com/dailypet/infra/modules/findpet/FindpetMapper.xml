@@ -14,6 +14,7 @@
 		SELECT
 			 find.iffpSeq
 		    ,find.iffpName
+		    ,find.iffpBreed
 		    ,findup.path
 		    ,findup.uuidName
 		FROM findpet find
@@ -212,8 +213,9 @@
 		SELECT
 			a.ifcdSeq
 			, a.ifcdName
-		FROM
-			code a
+			, a.cg_ifcgSeq
+			, b.ifcgSeq
+		FROM code a
 		JOIN codegroup b ON b.ifcgSeq = a.cg_ifcgSeq
 		WHERE 1=1
 		AND b.ifcgSeq = 5

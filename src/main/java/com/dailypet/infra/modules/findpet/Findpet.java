@@ -32,6 +32,10 @@ public class Findpet extends Base{
 	
 	private String ifcmContent;
 	
+	private String ifcdSeq;
+	private String ifcgSeq;
+	private String ifcdName;
+	
 	
 	public String getIfmmSeq() {
 		return ifmmSeq;
@@ -158,6 +162,24 @@ public class Findpet extends Base{
 	}
 	public void setIffpSpotLocation(Integer iffpSpotLocation) {
 		this.iffpSpotLocation = iffpSpotLocation;
+	}
+	public String getIfcdSeq() {
+		return ifcdSeq;
+	}
+	public void setIfcdSeq(String ifcdSeq) {
+		this.ifcdSeq = ifcdSeq;
+	}
+	public String getIfcgSeq() {
+		return ifcgSeq;
+	}
+	public void setIfcgSeq(String ifcgSeq) {
+		this.ifcgSeq = ifcgSeq;
+	}
+	public String getIfcdName() {
+		return ifcdName;
+	}
+	public void setIfcdName(String ifcdName) {
+		this.ifcdName = ifcdName;
 	}
 
 	

@@ -85,8 +85,8 @@
 		FROM reservation a
 		LEFT JOIN member b 
 		ON a.member_seq = b.ifmmSeq
-		WHERE 1=1
-		AND a.member_seq = #{ifmmSeq}
+		WHERE a.member_seq = #{ifmmSeq}
+		AND a.ifrsSeq = #{ifrsSeq}
 	</select>
 	
 	<!-- 예약 정보수정 -->

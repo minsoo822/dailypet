@@ -97,7 +97,7 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifamName">예약자명</label>
-			                                <p><c:out value="${info.ifrsPetName}" /></p>
+			                                <p><c:out value="${meInfo.ifrsPetName}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
@@ -109,31 +109,31 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="textarea">예약 희망 날짜</label>
-				                            <p><c:out value="${info.ifrsHopeDate}" /></p>
+				                            <p><c:out value="${meInfo.ifrsHopeDate}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsLocation">위치</label>
-			                                <p><c:out value="${info.ifrsLocation}" /></p>
+			                                <p><c:out value="${meInfo.ifrsLocation}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPlace">예약 장소</label>
-			                                <p><c:out value="${info.ifrsPlace}" /></p>
+			                                <p><c:out value="${meInfo.ifrsPlace}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPurpose">예약 목적</label>
-			                                <p><c:out value="${info.ifrsPurpose}" /></p>
+			                                <p><c:out value="${meInfo.ifrsPurpose}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group">
 				                            <label class="control-label" for="ifrsRequest">요청사항</label>
-				                            <p><c:out value="${info.ifrsRequest}" /></p>
+				                            <p><c:out value="${meInfo.ifrsRequest}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="buttongroup">

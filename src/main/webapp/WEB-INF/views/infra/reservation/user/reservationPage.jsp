@@ -71,6 +71,10 @@
     	font-size: 13pt;
     	font-weight: bold;
 	}
+	
+	.in{
+		cursor: pointer;
+	}
 </style>
 
 <body>
@@ -78,7 +82,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form method="post" name="reserform">
-    	<!-- <input type="hidden" name="ifrsSeq"> -->
+    	<input type="hidden" name="ifrsSeq">
     	<%-- <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${list.ifmmSeq }"> --%>
     	<input type="hidden" id="sessSeq" value="${sessSeq }">
 		<div class="totalContent">
@@ -102,7 +106,8 @@
 												<th>요청사항</th>
 												<th>신청일</th>
 											</tr>
-											<tr onclick="goForm(${list.ifrsSeq })" class="in">
+											<tr>
+											<!-- <tr> -->
 												<c:choose>
 													<c:when test="${fn:length(list) eq 0 }">
 														<td>데이터가 존재하지 않습니다</td>
@@ -110,9 +115,10 @@
 													<c:otherwise>	
 														<c:forEach items="${list}" var="list" varStatus="status">
 															<%-- <tr onclick="goForm(${list.ifrsSeq })" class="in"> --%>
-															<tr>
+															<tr onclick="goForm(${list.ifrsSeq })" class="in">
 																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifrsSeq }"/>"></td>
 																<td>
+																	<%-- <a href="javascript:goForm(<c:out value="${list.ifrsSeq }"/>)"><c:out value="${list.ifrsSeq  }"/></a> --%>
 																	<c:out value="${list.ifrsSeq }"/>
 																</td>
 																<td>

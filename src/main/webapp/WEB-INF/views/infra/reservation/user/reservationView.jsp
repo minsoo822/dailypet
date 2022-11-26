@@ -51,7 +51,7 @@
     	width: 130px;
     	height: 50px;
     	border-radius: 10px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
 	}
 	.changebtn:hover {
@@ -59,6 +59,7 @@
     	color: #f3f0eb;
     	cursor: pointer;
 	}
+	
 	.btnDelete {
 		border: 1px solid #efefef;
     	background: #CC3333;
@@ -67,7 +68,7 @@
     	width: 130px;
     	height: 50px;
     	border-radius: 10px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
 	}
 </style>
@@ -77,8 +78,8 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq" value="${info.ifrsSeq} }">
-    	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq} }">
+    	<input type="hidden" id="ifrsSeq" value="${info.ifrsSeq}">
+    	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq}">
 		<div class="totalContent">
 		    <div class="content">
 		        <div class="container2">

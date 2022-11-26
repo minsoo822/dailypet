@@ -161,7 +161,26 @@
 		margin-left: 30px;
 		display: inline;
 	}
-	
+	.cmprofileView {
+		padding-left:0px;
+		padding-right:0px;
+		width: 40px;
+	    height: 40px;
+	    border-radius: 70%;
+	    overflow: hidden;
+	    display: inline-block; 
+		position: relative;
+		top: 10px;
+	}
+	#cmList {
+		display: none;
+	}
+	.cmId {
+		font-size: 8pt;
+	}
+	.cmTime {
+		font-size: 5pt;
+	} 
 </style>
 
 <body>
@@ -176,7 +195,7 @@
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
+				<span><div class="profileheader"><a href="#"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div> 
 		<!-- <div class="diaryheader">
@@ -237,7 +256,27 @@
 								</h5>
 								<p style="font-size: 13px; display: inline;"><c:out value="${list.ifdaContents }"/></p>
 								<p style="font-size: 11px; color: lightgray">2022/22/22</p>
-								<p style="font-size: 13px; color: lightgray">view all 365 comments</p>
+								<a onclick="openCm(${list.ifdaSeq})"><p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm">댓글보기</p></a>
+									<div class="row mt-2 mb-2" id="cmList">
+										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">
+											<img src="${list.memberPath }${list.memberuuidName}" class="profilepic" alt="">
+										</div>
+										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+											<div class="row">
+												<div class="col-2 cmId">
+													아이디
+												</div>
+												<div class="col cmTime">
+													0000-00-00 00:00:00
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													귀엽다!
+												</div>
+											</div>
+										</div>
+									</div>
 							</div>
 							<!-- contents e -->
 						</div>
@@ -275,6 +314,24 @@
 			form.attr("action" ,"/diary/diaryUserpage").submit();
 		}
 	}
+	
+	function openCm(key){
+		ifdaSeq.val(key);
+        let status = $('#cmList').css('display');
+       if (status == 'block') {
+            $('#cmList').hide();
+            $('#cm').text('댓글보기');
+
+       } else {
+            $('#cmList').show();
+            $('#cm').text('댓글 숨기기');
+
+       }
+    }
+
+	
+	
+	
 	
     </script>
     

@@ -26,14 +26,14 @@
 	
 	<select id="commentOne" resultMap="resultMapObj">
 		SELECT
-			mm.ifmmID
-			,mmup.path		AS mmPath
-			,mmup.uuidName	AS mmuuidName
+			mm.ifmmID	AS writer
+			,mmup.path
+			,mmup.uuidName
 		FROM member mm
         JOIN memberUploaded mmup
         ON mm.ifmmSeq = mmup.pseq
 		WHERE 1=1
-        AND mmup.pseq = 41
+        AND mm.ifmmSeq = #{ifmmSeq}
 	</select>
 	<!-- 댓글 e -->
 	
@@ -57,6 +57,7 @@
 		)
 		<selectKey resultType="String" keyProperty="ifcmSeq" order="AFTER">
 			SELECT last_insert_id()
-		</selectKey>
+		</selectKey>	
 	</insert>
+	
 </mapper>

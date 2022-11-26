@@ -11,6 +11,7 @@ public class Comment extends Base{
 	private Integer ifcmDelNy;
 	private Integer da_ifdaSeq;
 	private Integer mm_ifmmSeq;
+	private String writer;
 	
 	private Integer ifdaSeq;
 	private Integer sessSeq;
@@ -68,6 +69,12 @@ public class Comment extends Base{
 	}
 	public void setSessSeq(Integer sessSeq) {
 		this.sessSeq = sessSeq;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 	
 }

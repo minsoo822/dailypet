@@ -169,12 +169,17 @@ public class DiaryController {
 		return result;
 	}
 	@ResponseBody
-	@RequestMapping(value="addComment")
+	@RequestMapping(value="drListComment")
 	public Map<String, Object> addComment(Comment dto) throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
 		
-		serviceComment.commentInst(dto);
+		int commentInst = serviceComment.commentInst(dto);
 		
+		Comment commentItem = serviceComment.commentOne(dto);
+		
+		result.put("img", commentItem.getPath() + commentItem.getUuidName());
+		result.put("writer", commentItem.getWriter());
+		result.put("comment", dto.getIfcmContent());
 		return result;
 	}
 //-------------------------------------------------------------------------------

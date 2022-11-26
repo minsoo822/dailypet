@@ -150,7 +150,7 @@
 		padding: 0;
 	}
 	
-	#commentForm {
+	.commentForm {
 		width: 400px;
 		border: none;
 		margin: 0;
@@ -172,9 +172,9 @@
 		position: relative;
 		top: 10px;
 	}
-	#cmList {
+	/* #cmList {
 		display: none;
-	}
+	} */
 	.cmId {
 		font-size: 8pt;
 	}
@@ -208,7 +208,7 @@
 	    <div class="content">
 			<div class="container" style="margin-left: auto; margin-right: auto; width: 500px; margin-top: 5%;">
 				<c:forEach items="${list }" var="list" varStatus="status">
-					<div class="row box">
+					<div class="row box" id="ifdaSeq" name="ifdaSeq" value="${list.ifdaSeq }">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<!-- 상단바 s -->
 						<div class="row" style="margin-top: 15px; height: 50px;">
@@ -256,23 +256,27 @@
 								</h5>
 								<p style="font-size: 13px; display: inline;"><c:out value="${list.ifdaContents }"/></p>
 								<p style="font-size: 11px; color: lightgray">2022/22/22</p>
-								<a onclick="openCm(${list.ifdaSeq})"><p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm">댓글보기</p></a>
+								<a onclick="openCm(${list.ifdaSeq})" ><p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm">댓글보기</p></a>
 									<div class="row mt-2 mb-2" id="cmList">
-										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">
-											<img src="${list.memberPath }${list.memberuuidName}" class="profilepic" alt="">
-										</div>
-										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-											<div class="row">
-												<div class="col-2 cmId">
-													아이디
+										<div class="row">
+											<div class="col">
+												<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">
+													<img src="${list.memberPath }${list.memberuuidName}" class="profilepic" alt="">
 												</div>
-												<div class="col cmTime">
-													0000-00-00 00:00:00
-												</div>
-											</div>
-											<div class="row">
-												<div class="col">
-													귀엽다!
+												<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+													<div class="row">
+														<div class="col-2 cmId">
+															아이디
+														</div>
+														<div class="col cmTime">
+															0000-00-00 00:00:00
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															귀엽다!
+														</div>
+													</div>
 												</div>
 											</div>
 										</div>
@@ -283,7 +287,7 @@
 						<!-- Coment s -->
 						<div class="cardcomment" style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px;">
 							<div class="commentBox">
-						  	 	<input class="form-control" type="text" placeholder="댓글 달기" id="commentForm" name="ifcmContent">
+						  	 	<input class="form-control commentForm" type="text" placeholder="댓글 달기" name="ifcmContent" id="ifcmContent">
 						  	 	<button id="commSubmit"><i class="fa-regular fa-paper-plane"></i></button>
 						   	</div>
 					   </div>
@@ -328,6 +332,44 @@
        }
     }
 	
+	$("#commSubmit").on("click", function(){
+		$.ajax({
+			url: '/diary/drListComment',
+			type: 'POST',
+			datatype: 'json',
+			data: {
+				ifdaSeq : $("#ifdaSeq").val(),
+				ifcmContent: $("#ifcmContent").val(),
+				ifmmSeq: $("#ifmmSeq").val(),	
+			},
+			success:function(result){
+				var txt = "";
+				
+				txt +='<div class="row">';
+				txt +='<div class="col">';
+				txt +='<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">';
+				txt +='<img src="'+ result.img +'" class="profilepic" alt="">';
+				txt +='</div>';
+				txt +='<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+				txt +='<div class="row">';
+				txt +='<div class="col-2 cmId">'+ result.writer +'</div>';
+				txt +='<div class="col cmTime">방금전</div>';
+				txt +='</div>';
+				txt +='<div class="row">';
+				txt +='<div class="col">'+ result.comment +'</div>';
+				txt +='</div>';
+				txt +='</div>';
+				txt +='</div>';
+				txt +='</div>';
+				
+				$("cmList").prepend(txt);
+				$("#ifcmContent").val("");
+			},
+			error:function(){
+				alert("ajax erroe..!");
+			}
+		})
+	});
 	
 	
     </script>

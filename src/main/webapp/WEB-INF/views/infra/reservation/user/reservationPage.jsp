@@ -77,9 +77,10 @@
     <!-- header s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <form id="form" name="reserform" method="post">
-    	<input type="hidden" name="ifrsSeq">
-    	<input type="hidden" id="ifmmSeq" value="${sessSeq} }">
+    <form method="post" name="reserform">
+    	<!-- <input type="hidden" name="ifrsSeq"> -->
+    	<%-- <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${list.ifmmSeq }"> --%>
+    	<input type="hidden" id="sessSeq" value="${sessSeq }">
 		<div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
@@ -108,9 +109,12 @@
 													</c:when>
 													<c:otherwise>	
 														<c:forEach items="${list}" var="list" varStatus="status">
-															<tr onclick="goForm(${list.ifrsSeq })" class="in">
+															<%-- <tr onclick="goForm(${list.ifrsSeq })" class="in"> --%>
+															<tr>
 																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifrsSeq }"/>"></td>
-																<td><c:out value="${list.ifrsSeq }"/></td>
+																<td>
+																	<c:out value="${list.ifrsSeq }"/>
+																</td>
 																<td>
 																	<c:out value="${list.ifrsPlace }"/>
 																</td>

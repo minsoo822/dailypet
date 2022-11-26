@@ -102,6 +102,13 @@ public class FindpetServiceImpl implements FindpetService{
 	public List<Findpet> BreedAdd(FindpetVo vo) throws Exception{
 		return dao.BreedAdd(vo);
 	}
+	
+	//페이징
+	@Override
+	public int selectOneCount(FindpetVo vo) throws Exception {
+		return dao.selectOneCount(vo);
+	}
+		
 
 }
 

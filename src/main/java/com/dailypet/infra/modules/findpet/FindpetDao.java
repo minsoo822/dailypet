@@ -60,5 +60,9 @@ public class FindpetDao {
 		return sqlSession.selectList(namespace + ".BreedAdd", vo);
 	}
 	
+	//페이징
+	public int selectOneCount(FindpetVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOneCount" , vo);
+	}
 	
 }

@@ -19,8 +19,13 @@ public class FindpetController {
 	@Autowired
 	FindpetServiceImpl service;
 	
+	public void setSearchAndPaging(FindpetVo vo) throws Exception {
+		vo.setParamsPaging(service.selectOneCount(vo));
+	}
+	
 	@RequestMapping(value = "findpetList")
-	public String findpetList(FindpetVo vo, Model model) throws Exception {
+	public String findpetList(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
+		setSearchAndPaging(vo);
 		
 		List<Findpet> selectList = service.selectList(vo);
 		model.addAttribute("list", selectList);

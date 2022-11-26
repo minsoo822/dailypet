@@ -140,7 +140,7 @@
 					   	<div class="mb30"><span class="awesome"><i class="fa-solid fa-magnifying-glass"></i></span></div>
 					    <div class="">
 					        <h2><b>유기동물 찾기</b></h2>
-					        <p>소중한 두번째 가족을 찾고 계신가요?</p>
+					        <p>소중한 두번째 가족을 잃어버리셨나요?</p>
 					    </div>
 					</div>
 	            </a>
@@ -192,8 +192,7 @@
 	                    <div class="testimonial-block bg-light pinside30">
 	                        <div class="quote-left"> <i class="fa fa-quote-left"></i> </div>
 	                        <div class="testimonial-content">
-	                            <p>설명</p>
-	                            <div class="testimonial-info"> <span class="testimonial-name">- Ruby Burns</span> <span class="testimonial-meta">Market research analyst</span> </div>
+	                            <p>잃어버린 반려동물을 찾고계신가요?</p>
 	                        </div>
 	                    </div>
 	                </div>
@@ -221,7 +220,6 @@
 	                        <div class="quote-left"> <i class="fa fa-quote-left"></i> </div>
 	                        <div class="testimonial-content">
 	                            <p>ff and pupils. Both projects have been well managed, within budget and worth every penny of our investment.We greatly look forward to working with him and his team again in the future.”</p>
-	                            <div class="testimonial-info"> <span class="testimonial-name">- Ruby Burns</span> <span class="testimonial-meta">Market research analyst</span> </div>
 	                        </div>
 	                    </div>
 	                </div>
@@ -259,7 +257,6 @@
 	                        <div class="quote-left"> <i class="fa fa-quote-left"></i> </div>
 	                        <div class="testimonial-content">
 	                            <p>설명</p>
-	                            <div class="testimonial-info"> <span class="testimonial-name">- Ruby Burns</span> <span class="testimonial-meta">Market research analyst</span> </div>
 	                        </div>
 	                    </div>
 	                </div>

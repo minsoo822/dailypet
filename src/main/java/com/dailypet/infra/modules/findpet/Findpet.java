@@ -16,7 +16,7 @@ public class Findpet extends Base{
 	private String commentcount;
 	
 	private String iffpName;
-	private String iffpBrred;
+	private Integer iffpBreed;
 	private String iffpGender;
 	private String iffpAnimalShelterzipCode;
 	private String iffpAnimalShelter1;
@@ -57,11 +57,11 @@ public class Findpet extends Base{
 	public void setIffpName(String iffpName) {
 		this.iffpName = iffpName;
 	}
-	public String getIffpBrred() {
-		return iffpBrred;
+	public Integer getIffpBreed() {
+		return iffpBreed;
 	}
-	public void setIffpBrred(String iffpBrred) {
-		this.iffpBrred = iffpBrred;
+	public void setIffpBreed(Integer iffpBreed) {
+		this.iffpBreed = iffpBreed;
 	}
 	public String getIffpGender() {
 		return iffpGender;

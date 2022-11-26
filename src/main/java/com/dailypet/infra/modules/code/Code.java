@@ -1,5 +1,8 @@
 package com.dailypet.infra.modules.code;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Code {
 
 	private String ifcdSeq;
@@ -11,6 +14,9 @@ public class Code {
 	private Integer cg_ifcgSeq;
 	private Integer ifcgSeq;
 	private String ifcgName;
+	
+//	for cache
+	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
 	
 	public String getIfcdSeq() {
 		return ifcdSeq;

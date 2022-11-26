@@ -59,8 +59,8 @@ public class FindpetController {
 		Findpet item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
-		List<Findpet> list = service.BreedAdd(vo);
-		model.addAttribute("list", list);
+		List<Findpet> listB = service.BreedAdd(vo);
+		model.addAttribute("listB", listB);
 		
 		return "infra/findpet/user/findpetMod";
 	}

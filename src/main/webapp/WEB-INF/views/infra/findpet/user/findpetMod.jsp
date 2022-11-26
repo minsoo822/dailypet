@@ -132,8 +132,8 @@
 								<%-- <input type="text" class="form-control" name="iffpBreed" value="${item.iffpBreed }" placeholder="모르신다면 적지않으셔도 무방합니다"> --%>
 								<select class="form-select" name="iffpBreed">
 									<option value="" hidden selected>::품종::</option>
-									<c:forEach items="${list}" var="list" varStatus="status">
-										<option value="<c:out value="${list.ifcdSeq}"/>" <c:if test="${list.ifcdSeq eq item.iffpBreed }"> selected</c:if>><c:out value="${list.ifcdName }"/></option>
+									<c:forEach items="${listB}" var="listBreed" varStatus="status">
+										<option value="<c:out value="${listB.ifcdSeq}"/>" <c:if test="${listB.ifcdSeq eq item.iffpBreed }"> selected</c:if>><c:out value="${listB.ifcdName }"/></option>
 									</c:forEach>
 								</select>
 							</div>

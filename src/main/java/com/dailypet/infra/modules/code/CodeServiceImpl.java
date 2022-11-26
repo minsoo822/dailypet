@@ -1,9 +1,13 @@
 package com.dailypet.infra.modules.code;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class CodeServiceImpl implements CodeService{
@@ -51,5 +55,23 @@ public class CodeServiceImpl implements CodeService{
 		return dao.delete(vo);
 	}
 
+	@PostConstruct
+	public void selectListCachedCodeArrayList() throws Exception {
+		List<Code> codeListFromDb = (ArrayList<Code>) dao.selectListCachedCodeArrayList();
+		Code.cachedCodeArrayList.clear(); 
+		Code.cachedCodeArrayList.addAll(codeListFromDb);
+		System.out.println("cachedCodeArrayList: " + Code.cachedCodeArrayList.size() + " chached !");
+	}
 	
+	public static String selectOneCachedCode(int code) throws Exception {
+		String rt = "";
+		for(Code codeRow : Code.cachedCodeArrayList) {
+			if (codeRow.getIfcdSeq().equals(Integer.toString(code))) {
+				rt = codeRow.getIfcdName();
+			} else {
+				// by pass
+			}
+		}
+		return rt;
+	}  
 }

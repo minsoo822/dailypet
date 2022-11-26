@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
 public class FindpetDao {
 	
@@ -58,4 +59,6 @@ public class FindpetDao {
 	public List<Findpet> BreedAdd(FindpetVo vo) {
 		return sqlSession.selectList(namespace + ".BreedAdd", vo);
 	}
+	
+	
 }

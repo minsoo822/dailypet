@@ -188,7 +188,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form method="post" id="diaryForm">
-    <input type="hidden" name="ifdaSeq">
+    <!-- <input type="hidden" name="ifdaSeq"> -->
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 		<div class="diaryheader">
@@ -284,14 +284,14 @@
 							</div>
 							<!-- contents e -->
 						</div>
-						<!-- Coment s -->
+						<!-- Comment s -->
 						<div class="cardcomment" style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px;">
 							<div class="commentBox">
 						  	 	<input class="form-control commentForm" type="text" placeholder="댓글 달기" name="ifcmContent" id="ifcmContent">
 						  	 	<button id="commSubmit"><i class="fa-regular fa-paper-plane"></i></button>
 						   	</div>
 					   </div>
-					   <!-- Coment e -->
+					   <!-- Comment e -->
 						</div>
 					</div>
 				</c:forEach>	

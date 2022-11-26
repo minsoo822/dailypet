@@ -1,6 +1,8 @@
 package com.dailypet.infra.modules.findpet;
 
-public class FindpetVo {
+import com.dailypet.infra.common.base.BaseVo;
+
+public class FindpetVo extends BaseVo{
 	
 	private String iffpSeq;
 	

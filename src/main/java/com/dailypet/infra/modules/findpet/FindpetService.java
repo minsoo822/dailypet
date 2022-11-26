@@ -17,4 +17,6 @@ public interface FindpetService {
 
 	//유기동물 등록 시 품종 추가
 	public List<Findpet> BreedAdd(FindpetVo vo) throws Exception;
+	//페이징
+	public int selectOneCount(FindpetVo vo) throws Exception;
 }

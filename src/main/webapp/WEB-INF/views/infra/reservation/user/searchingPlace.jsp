@@ -172,7 +172,8 @@
 											<p>예약장소</p>
 										</div>
 										<div class="col-9" id="offcol">
-											<span id="ifrsPlace" name="ifrsPlace"></span>
+											<span id="ifrsPlace"></span>
+											<input type="hidden" id="ifrsPlace" name="ifrsPlace">
 										</div>
 									</div>
 									<div class="row">
@@ -180,7 +181,8 @@
 											<p>위치</p>
 										</div>
 										<div class="col-9" id="offcol">
-											<span id="ifrsLocation" name="ifrsLocation"></span>
+											<span id="ifrsLocation"></span>
+											<input type="hidden" id="ifrsLocation" name="ifrsLocation">
 										</div>
 									</div>
 									<div class="row">
@@ -188,7 +190,8 @@
 											<p>전화번호</p>
 										</div>
 										<div class="col-9" id="offcol">
-											<span id="ifrsTel" name="ifrsTel"></span>
+											<span id="ifrsTel"></span>
+											<input type="hidden" id="ifrsTel" name="ifrsTel">
 										</div>
 									</div>
 									<div class="row">

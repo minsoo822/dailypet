@@ -12,6 +12,9 @@ public class Comment extends Base{
 	private Integer da_ifdaSeq;
 	private Integer mm_ifmmSeq;
 	
+	private Integer ifdaSeq;
+	private Integer sessSeq;
+	
 	public Integer getIfcmSeq() {
 		return ifcmSeq;
 	}
@@ -53,6 +56,18 @@ public class Comment extends Base{
 	}
 	public void setMm_ifmmSeq(Integer mm_ifmmSeq) {
 		this.mm_ifmmSeq = mm_ifmmSeq;
+	}
+	public Integer getIfdaSeq() {
+		return ifdaSeq;
+	}
+	public void setIfdaSeq(Integer ifdaSeq) {
+		this.ifdaSeq = ifdaSeq;
+	}
+	public Integer getSessSeq() {
+		return sessSeq;
+	}
+	public void setSessSeq(Integer sessSeq) {
+		this.sessSeq = sessSeq;
 	}
 	
 }

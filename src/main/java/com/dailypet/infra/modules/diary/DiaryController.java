@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dailypet.infra.modules.comment.Comment;
+import com.dailypet.infra.modules.comment.CommentServiceImpl;
 import com.dailypet.infra.modules.follow.Follow;
 import com.dailypet.infra.modules.follow.FollowServiceImpl;
 
@@ -26,6 +28,9 @@ public class DiaryController {
 	@Autowired
 	FollowServiceImpl serviceFollow;
 	
+	@Autowired
+	CommentServiceImpl serviceComment;
+	
 	// 일기리스트 
 	@RequestMapping(value = "diaryList")
 	public String selectList(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession) throws Exception {
@@ -36,6 +41,7 @@ public class DiaryController {
 		
 		List<Diary> list = service.selectList(vo);
 		model.addAttribute("list", list);
+		
 		
 		return "infra/diary/user/diaryList";
 	}
@@ -162,7 +168,15 @@ public class DiaryController {
 		
 		return result;
 	}
-	
+	@ResponseBody
+	@RequestMapping(value="addComment")
+	public Map<String, Object> addComment(Comment dto) throws Exception {
+		Map<String, Object> result = new HashMap<String, Object>();
+		
+		serviceComment.commentInst(dto);
+		
+		return result;
+	}
 //-------------------------------------------------------------------------------
 	@RequestMapping(value = "diaryMypagePrac")
 	public String diaryMypagePrac(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {
@@ -178,6 +192,6 @@ public class DiaryController {
 		
 		return "infra/diary/user/diaryMypagePrac";
 	}
-	
+
  
 }

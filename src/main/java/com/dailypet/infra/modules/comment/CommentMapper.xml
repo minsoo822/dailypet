@@ -37,20 +37,23 @@
 	</select>
 	<!-- 댓글 e -->
 	
+	<!-- 일기댓글인서트 -->
 	<insert id="commentInst">
 		INSERT INTO comment (
-			ifcmContent
+			type
+			,ifcmContent
 			,ifcmRegDate
 			,ifcmDelNy
 			,da_ifdaSeq
 			,mm_ifmmSeq
 		) 
 		VALUES (
-			#{ifcmContent}
+			2
+			,#{ifcmContent}
 			,now()
 			,0
-			,6
-			,41
+			,#{ifdaSeq}
+			,#{ifmmSeq}
 		)
 		<selectKey resultType="String" keyProperty="ifcmSeq" order="AFTER">
 			SELECT last_insert_id()

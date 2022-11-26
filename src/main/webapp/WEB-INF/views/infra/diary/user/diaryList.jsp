@@ -190,7 +190,7 @@
     <form method="post" id="diaryForm">
     <input type="hidden" name="ifdaSeq">
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
-    <input type="hidden" id="sessSeq" value="${sessSeq }">
+    <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
 		<div class="diaryheader">
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
@@ -283,7 +283,7 @@
 						<!-- Coment s -->
 						<div class="cardcomment" style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px;">
 							<div class="commentBox">
-						  	 	<input class="form-control" type="text" placeholder="댓글 달기" id="commentForm">
+						  	 	<input class="form-control" type="text" placeholder="댓글 달기" id="commentForm" name="ifcmContent">
 						  	 	<button id="commSubmit"><i class="fa-regular fa-paper-plane"></i></button>
 						   	</div>
 					   </div>
@@ -314,7 +314,6 @@
 			form.attr("action" ,"/diary/diaryUserpage").submit();
 		}
 	}
-	
 	function openCm(key){
 		ifdaSeq.val(key);
         let status = $('#cmList').css('display');
@@ -328,8 +327,6 @@
 
        }
     }
-
-	
 	
 	
 	

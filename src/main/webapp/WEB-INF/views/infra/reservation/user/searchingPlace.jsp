@@ -59,6 +59,15 @@
 		padding: 6px 12px;
 		margin: 0 0 15px;
 	}
+	
+	.offcanvas-body {
+		overflow-y: auto;
+		height: 100%;
+	}
+	
+	.offcanvas-body::-webkit-scrollbar {
+	    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+	}
 
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
@@ -154,7 +163,7 @@
 								</div>
 								<br>
 								<div class="offcanvas-body">
-									<span >예약은 본인 명의로만 가능합니다.</span>
+									<span>예약은 본인 명의로만 가능합니다.</span>
 									<br>
 									<span style="font-size: 13px">- 성함과 연락처에 변동사항이 있을 경우 요청사항에 기재바랍니다.</span>
 									<br><br>
@@ -393,9 +402,13 @@
 				 
 //				alert(Pname + ", " + Paddr + ", " + Ptel);
 				
-				$("#ifrsPlace").html(Pname);
-				$("#ifrsLocation").html(Paddr);
-				$("#ifrsTel").html(Ptel);
+				$("#ifrsPlace").text(Pname);
+				$("#ifrsLocation").text(Paddr);
+				$("#ifrsTel").text(Ptel);
+				
+				$("#ifrsPlace").val(Pname);
+				$("#ifrsLocation").val(Paddr);
+				$("#ifrsTel").val(Ptel);
 			}
 		
 		    return el;

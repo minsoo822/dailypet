@@ -180,10 +180,18 @@
 	                </div>
 				</div>
 				<div class="row">
-					<div class="col" style="display: flex; justify-content: flex-end;">
-						<button type="button" class="btnStyle" id="backBtn">목록</button>
-						<button type="button" class="btnStyle" id="modBtn">수정</button>
-					</div>
+					<c:if test="${item.mm_ifmmSeq eq sessSeq }">
+						<div class="col" style="display: flex; justify-content: flex-end;">
+							<button type="button" class="btnStyle" id="backBtn">목록</button>
+							<button type="button" class="btnStyle" id="modBtn">수정</button>
+						</div>
+					</c:if>
+					<c:if test="${item.mm_ifmmSeq ne sessSeq }">
+						<div class="col" style="display: flex; justify-content: flex-end;">
+							<button type="button" class="btnStyle" id="backBtn">목록</button>
+							<button type="button" class="btnStyle" id="goChat" style="width: 90px;">채팅하기</button>
+						</div>
+					</c:if>
 				</div>
 				<hr>
 				<div class="row">

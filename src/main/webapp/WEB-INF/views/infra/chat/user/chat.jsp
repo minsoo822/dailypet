@@ -4,12 +4,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
 
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-	<title>Chat Tutorial</title>
+	<title>관리자와 채팅</title>
 	
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -278,7 +279,7 @@
 		                                        <div class="chat_product_info">
 																								<!-- 아래 mmNickName  도 본인의 dto field에 맞게 수정 -->
 		                                            <span class="status"><c:out value="${list.ifmmNickname }"/></span>
-					                                 			<p>TEST TEXT FIELD</p>
+					                                 			<p></p>
 		                                        </div>
 		                                    </div>
 		                                </li>
@@ -509,7 +510,6 @@
 								txt+='<span class="status">';
 								txt+=result.newChat.name;
 								txt+='</span>';
-								txt+='<p>TEST TEXT FIELD</p>';
 								txt+='</div>';
 								txt+='</div>';
 								txt+='</li>';

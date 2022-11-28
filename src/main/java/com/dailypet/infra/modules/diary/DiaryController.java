@@ -169,7 +169,7 @@ public class DiaryController {
 		return result;
 	}
 	@ResponseBody
-	@RequestMapping(value="drListComment")
+	@RequestMapping(value="drListCmInst")
 	public Map<String, Object> addComment(Comment dto) throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
 		

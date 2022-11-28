@@ -203,13 +203,21 @@
 		                            <div class="row">
 		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">칩</div>
 										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-											<c:out value="${item.ifamChipNY }"/>
+											<%-- <c:out value="${item.ifamChipNY }"/> --%>
+											<c:choose>
+												<c:when test="${list.ifamChipNY eq 0 }">N</c:when>
+												<c:otherwise>Y</c:otherwise>
+											</c:choose>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
 		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">접종</div>
 										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
-											<c:out value="${item.ifamVaccinateNY }"/>
+											<%-- <c:out value="${item.ifamVaccinateNY }"/> --%>
+											<c:choose>
+												<c:when test="${list.ifamVaccinateNY eq 0 }">N</c:when>
+												<c:otherwise>Y</c:otherwise>
+											</c:choose>
 										</div>                            	
 		                            </div>
 		                            <hr>

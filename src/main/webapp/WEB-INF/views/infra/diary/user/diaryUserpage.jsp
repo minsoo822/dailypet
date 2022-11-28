@@ -249,7 +249,6 @@
 
 <body>
 	<form method="post" id="mainForm">
-		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
 		<input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
 		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
 		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
@@ -266,7 +265,8 @@
 		</div>
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
-		<input type="hidden" id="ifdaSeq" value="${dto.ifdaSeq }">
+		<input type="hidden" id="ifdaSeq" value="">
+		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
 			<div class="modal_window">
 				<div class="modal_title">
 					<div class="modal_title_side"></div>
@@ -334,13 +334,13 @@
 							<div class="service-content">
 								<div class="postbtn">
 									<button type="button" id="like">
-										<span class="heart" style="font-size: 25px"><i id="likedBtn" onclick="liked()" class="fa-regular fa-heart"></i></span>
+										<span class="heart" style="font-size: 25px"><i id="likedBtn" style="color: rgb(0, 0, 0);" onclick="liked()" class="fa-regular fa-heart"></i></span>
 									</button>
 									<button type="button" id="comment">
 										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 0개</b></p> 
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 <b id="postlikeCount"></b>개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p id="postRegDate"></p>
@@ -448,34 +448,14 @@
     	
     	liked = function(){
     		
-    		var likedBtn = $("#likedBtn");
     		var likedUrl ="";
-    		
-    		if(likedBtn.hasClass('fa-regular'))
-    		{
-    			//https://webstudynote.tistory.com/95
-    			//채워주고
-    			//빨간색으로
-    			likedBtn.removeClass('fa-regular');
-    			likedBtn.addClass('fa-solid');
-    			
-    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
-    			likedBtn.css("color",'red');
+    		var likedBtn = $("#likedBtn");
+    		var status = $("#likedBtn").css('color');
+   		
+    		if(status == "rgb(0, 0, 0)") {
     			likedUrl = "/diary/addLiked";
-    			
-    			//좋아요 count 숫자 변경 
-    		}
-    		else
-    		{
-    			//비워주고
-    			//검정색으로
-    			likedBtn.removeClass('fa-solid');
-    			likedBtn.addClass('fa-regular');
-    			likedBtn.css("color",'black');
-
+    		} else {
     			likedUrl = "/diary/removeLiked";
-    			
-    			//좋아요 count 숫자 변경
     		}
     		
     		$.ajax({
@@ -484,18 +464,39 @@
     			,dataType: 'json'
     			,data: {
     				//게시물 seq
+    				ifdaSeq : $("#ifdaSeq").val()
     				//누가 눌렀는지 seq
-    			}
-    			,success:function(result){
-    				
-    			}
-    			,error:function(){
+    				,loginUser : $("#loginUser").val()
+    			},
+    			success:function(result){
+    				if(result.list != null){
+	    				//좋아요 count 숫자 변경 
+	        			$("#postlikeCount").html(result.list.length);
+    					
+	    				if(status == "rgb(0, 0, 0)"){
+			    			//https://webstudynote.tistory.com/95
+			    			//채워주고
+			    			//빨간색으로
+			    			likedBtn.removeClass('fa-regular');
+			    			likedBtn.addClass('fa-solid');
+			    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
+			    			likedBtn.css("color",'red');
+	    				} else {
+	    					//비워주고
+	    	    			//검정색으로
+	    	    			likedBtn.removeClass('fa-solid');
+	    	    			likedBtn.addClass('fa-regular');
+	    	    			likedBtn.css("color",'black');
+	    				}
+    				}
+    			},
+    			error:function(){
     				alert("ajax error..!");
     			}
     			
     		});
     		
-    	}
+    	};
     	
     	
     	/* 댓글 s */
@@ -569,14 +570,14 @@
 					ifdaSeq : ifdaSeq 
 				},
 				success:function (result) {
-					
+					$("#ifdaSeq").attr("value", result.ifdaSeq);
 					$("#postImg").attr("src",result.diaryImg);
 					$("#userImg").attr("src",result.userImg);
-					$("#userID").html(result.userID);
 					$("#userID").html(result.userID);
 					$("#postContents").html(result.diaryContents);
 					$("#postRegDate").html(result.regDate);
 					//좋아요 카운트
+					$("#postlikeCount").html(result.likeCount);
 					//게시물 정보 
 					//게시자 정보
 					

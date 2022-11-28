@@ -161,6 +161,12 @@
 	        ,diup.uuidName	AS diuuidName
 	        ,mmup.path		AS mmPath
 	        ,mmup.uuidName	AS mmuuidName
+	        ,(
+	        	SELECT
+	        		COUNT(*)
+	        	FROM likebtn li	
+	        	WHERE li.postSeq = di.ifdaSeq
+	        )	AS likeCount
 		FROM diary di
 	    JOIN diaryUploaded diup
 	    ON di.mm_ifmmSeq = diup.pseq

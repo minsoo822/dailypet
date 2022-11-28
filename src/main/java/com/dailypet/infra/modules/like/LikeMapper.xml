@@ -1,0 +1,47 @@
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailypet.infra.modules.like.LikeMapper">
+
+	<resultMap id="resultObj" type="com.dailypet.infra.modules.like.Like"></resultMap>
+
+
+	<insert id="diaryLikeInst">
+		INSERT INTO likebtn (
+			clickUser
+			,postSeq
+			,clickDate
+			,likeType
+		)
+		VALUE (
+			#{loginUser}
+			,#{ifdaSeq}
+			,now()
+			,1
+		)	
+	</insert>
+	<delete id="diaryLikeDel">
+		DELETE
+		FROM likebtn
+		WHERE clickUser = #{loginUser}
+		AND postSeq = #{ifdaSeq}
+		AND likeType = 1
+	</delete>
+	
+	<select id="likeCount"  resultType="Integer">
+		SELECT
+	    	COUNT( * )
+	    FROM likebtn 
+	    WHERE 1=1
+	    	AND postSeq = #{ifdaSeq}
+	</select>
+	<select id="selectList" resultMap="resultObj">
+		SELECT
+			*
+		FROM likebtn
+		WHERE 1=1
+		AND postSeq = #{ifdaSeq}
+		AND likeType = 1
+	</select>
+</mapper>	

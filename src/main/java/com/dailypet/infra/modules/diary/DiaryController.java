@@ -17,6 +17,8 @@ import com.dailypet.infra.modules.comment.Comment;
 import com.dailypet.infra.modules.comment.CommentServiceImpl;
 import com.dailypet.infra.modules.follow.Follow;
 import com.dailypet.infra.modules.follow.FollowServiceImpl;
+import com.dailypet.infra.modules.like.Like;
+import com.dailypet.infra.modules.like.LikeServiceImpl;
 
 @Controller
 @RequestMapping(value = "/diary/")
@@ -30,6 +32,9 @@ public class DiaryController {
 	
 	@Autowired
 	CommentServiceImpl serviceComment;
+	
+	@Autowired
+	LikeServiceImpl serviceLike;
 	
 	// 일기리스트 
 	@RequestMapping(value = "diaryList")
@@ -133,15 +138,16 @@ public class DiaryController {
 	public Map<String, Object> getPost(HttpSession httpSession, Diary dto, Model model) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
-		
+
 		Diary item = service.selectOnePost(dto);
 		
+		result.put("ifdaSeq" ,item.getIfdaSeq());
 		result.put("userImg" ,item.getMmPath() + item.getMmuuidName());
 		result.put("diaryImg" ,item.getDiPath() + item.getDiuuidName());
 		result.put("userID" ,item.getIfmmID());
 		result.put("diaryContents" ,item.getIfdaContents());
 		result.put("regDate" ,item.getIfdaRegDate());
-		
+		result.put("likeCount", item.getLikeCount());
 		
 		return result;
 	}
@@ -149,23 +155,33 @@ public class DiaryController {
 	// 게시물 좋아요 구현
 	@ResponseBody
 	@RequestMapping(value = "addLiked")
-	public Map<String,Object> addLiked(Diary dto) throws Exception{
+	public Map<String,Object> addLiked(Like dto) throws Exception{
 		
 		Map<String,Object> result = new HashMap<String,Object>();
 				
-		service.addLiked(dto);
+		serviceLike.diaryLikeInst(dto);
 		
+//		int likecount = serviceLike.likeCount(dto);
+		List<Like> list = serviceLike.selectList(dto);
+		
+//		result.put("likeCount", likecount);
+		result.put("list", list);
 		return result;
 	}
-
+	
 	@ResponseBody
 	@RequestMapping(value = "removeLiked")
-	public Map<String,Object> removeLiked(Diary dto) throws Exception{
+	public Map<String,Object> removeLiked(Like dto) throws Exception{
 		
 		Map<String,Object> result = new HashMap<String,Object>();
 		
-		service.removeLiked(dto);
+		serviceLike.diaryLikeDel(dto);
 		
+//		int likecount = serviceLike.likeCount(dto);
+		List<Like> list = serviceLike.selectList(dto);
+		
+//		result.put("likeCount", likecount);
+		result.put("list", list);
 		return result;
 	}
 	@ResponseBody

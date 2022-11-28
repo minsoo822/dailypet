@@ -84,7 +84,7 @@
 			, b.ifmmTel
 		FROM reservation a
 		LEFT JOIN member b 
-		ON a.member_seq = b.ifmmSeq
+		ON a.member_seq = b.ifmmSeq 
 		WHERE a.member_seq = #{ifmmSeq}
 		AND a.ifrsSeq = #{ifrsSeq}
 	</select>

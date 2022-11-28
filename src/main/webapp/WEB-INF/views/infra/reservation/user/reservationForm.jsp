@@ -93,13 +93,13 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq" value="${meInfo.ifrsSeq}">
+    	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${resv.ifrsSeq}">
     	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq}">
-    	<input type="hidden" id="ifrsPetName" value="${meInfo.ifrsPetName}">
-    	<input type="hidden" id="ifrsPlace" value="${meInfo.ifrsPlace}">
-    	<input type="hidden" id="ifrsLocation" value="${meInfo.ifrsLocation}">
-    	<input type="hidden" id="ifrsPurpose" value="${meInfo.ifrsPurpose}">
-    	<input type="hidden" id="ifrsRequest" value="${meInfo.ifrsRequest}">
+    	<input type="hidden" id="ifrsPetName" name="ifrsPetName" value="${resv.ifrsPetName}">
+    	<input type="hidden" id="ifrsPlace" name="ifrsPlace" value="${resv.ifrsPlace}">
+    	<input type="hidden" id="ifrsLocation" name="ifrsLocation" value="${resv.ifrsLocation}">
+    	<input type="hidden" id="ifrsPurpose" name="ifrsPurpose" value="${resv.ifrsPurpose}">
+    	<input type="hidden" id="ifrsRequest" name="ifrsRequest" value="${resv.ifrsRequest}">
 	    <div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
@@ -117,7 +117,7 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPetName">예약자명</label>
-			                                <input type="text" class="form-control" id="ifrsPetName" name="ifrsPetName" value="<c:out value="${meInfo.ifrsPetName}" />">
+			                                <input type="text" class="form-control" id="ifrsPetName" name="ifrsPetName" value="<c:out value="${resv.ifrsPetName}" />">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
@@ -135,25 +135,25 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsLocation">위치</label>
-			                                <input type="text" class="form-control" id="ifrsLocation" name="ifrsLocation" value="<c:out value="${meInfo.ifrsLocation}" />" readonly>
+			                                <input type="text" class="form-control" id="ifrsLocation" name="ifrsLocation" value="<c:out value="${resv.ifrsLocation}" />" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPlace">예약 장소</label>
-			                                <input type="text" class="form-control" id="ifrsPlace" name="ifrsPlace" value="<c:out value="${meInfo.ifrsPlace}" />" readonly>
+			                                <input type="text" class="form-control" id="ifrsPlace" name="ifrsPlace" value="<c:out value="${resv.ifrsPlace}" />" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPurpose">예약 목적</label>
-			                                <input type="text" class="form-control" id="ifrsPurpose" name="ifrsPurpose" value="<c:out value="${meInfo.ifrsPurpose}" />">
+			                                <input type="text" class="form-control" id="ifrsPurpose" name="ifrsPurpose" value="<c:out value="${resv.ifrsPurpose}" />">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group">
 				                            <label class="control-label" for="ifrsRequest">요청사항</label>
-				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3" value="<c:out value="${meInfo.ifrsRequest}" />"></textarea>
+				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3" value="<c:out value="${resv.ifrsRequest}" />"></textarea>
 				                        </div>
 				                    </div>
 				                    <div class="buttongroup">

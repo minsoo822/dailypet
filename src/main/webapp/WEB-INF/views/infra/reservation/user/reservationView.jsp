@@ -78,8 +78,8 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq" value="${meInfo.ifrsSeq}">
-    	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq}">
+    	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${meInfo.ifrsSeq}">
+    	<input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${info.ifmmSeq}">
 		<div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
@@ -167,7 +167,7 @@
 											<!-- 예약 삭제 버튼(모달까지) -->
 					                    	<div class="col-md-2" id="cbtn">
 						                        <div class="form-group">
-					                        		<button type="button" id="changebtn" class="btn changebtn" onclick="javascript:goForm(${meInfo.ifrsSeq })">내용 변경</button>
+					                        		<button type="button" class="btn changebtn" onclick="javascript:goForm(${meInfo.ifrsSeq })">내용 변경</button>
 						                        </div>
 						                    </div>
 					                    </div>
@@ -191,15 +191,15 @@
 		var form = $("form[name=reserform]");
 //		var formVo = $("form[name=formVo]");
 		
-		goForm = function(key) {
-			ifrsSeq.attr("value", key);
-			form.attr("action", goUrlForm).submit();
-		}
-		
 		var goUrlList = "/reservation/reservationPage";
 		var goUrlForm = "/reservation/reservationForm";
     	var goUrlDele = "/reservation/reserDele";
     	
+		goForm = function(key) {
+			ifrsSeq.attr("value", key); 
+			form.attr("action", goUrlForm).submit();
+		}
+		
     	/* $("#changebtn").on("click", function(ifrsSeq){
     		form.attr("action", goUrlForm).submit();
 		}); */

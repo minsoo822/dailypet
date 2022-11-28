@@ -52,8 +52,9 @@ public class ReservationController {
 		
 		Reservation info = service.selectOne(vo);
 		model.addAttribute("info", info);
-		Reservation meInfo = service.selectInfo(vo);
-		model.addAttribute("meInfo", meInfo);
+		
+		Reservation resv = service.selectInfo(vo);
+		model.addAttribute("resv", resv);
 		
 		return "infra/reservation/user/reservationForm";
 	}

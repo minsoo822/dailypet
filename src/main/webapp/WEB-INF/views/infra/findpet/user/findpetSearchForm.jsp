@@ -285,10 +285,9 @@
    	});
 	
     
-    var goUrlChat = "/chat/chat"
     
     $("#chat").on("click", function(){
-   		form.attr("action", goUrlChat).submit();
+    	location.href = "/chat/";
 	}); 
     
     </script>

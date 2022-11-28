@@ -13,76 +13,76 @@
     
 	<style type="text/css">
 	
-	.form-control {
-		color: black;
-	}
-	
-	.container2 {
-		display: flex;
-		justify-content : center;
-	}
-	
-	.bg-light {
-		width: 1000px;
-		background-color: #f8f9fa !important; 
-	}
-/* 	
-	.form-select {
-		height: 50px;
-		font-size: 13px;
-		text-align: center;
-		border: 1px solid #e2dcdb;
-	}
- */	
-	.form-control, .form-select {
-		border-radius: 6px;
-	}
-	
-	#cbtn {
-		margin-top: 20px;
-	}
-	
-	#btnReturn {
-		/* background-color: white;
-		color: #372d2b; */
-		border: 1px solid #efefef;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 100px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13pt;
-    	font-weight: bold;
-	}
+		.form-control {
+			color: black;
+		}
 		
-	.okBtn {
-    	border: 1px solid #372d2b;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 130px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13pt;
-    	font-weight: bold;
-    }
-    .okBtn:hover, #btnReturn:hover {
-    	background: #372d2b;
-    	color: #f3f0eb;
-    	cursor: pointer;
-    }
-    .cancelBtn {
-    	border: 1px solid #efefef;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 50px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13pt;
-    	font-weight: bold;
-    }
+		.container2 {
+			display: flex;
+			justify-content : center;
+		}
+		
+		.bg-light {
+			width: 1000px;
+			background-color: #f8f9fa !important; 
+		}
+	/* 	
+		.form-select {
+			height: 50px;
+			font-size: 13px;
+			text-align: center;
+			border: 1px solid #e2dcdb;
+		}
+	 */	
+		.form-control, .form-select {
+			border-radius: 6px;
+		}
+		
+		#cbtn {
+			margin-top: 20px;
+		}
+		
+		#btnReturn {
+			/* background-color: white;
+			color: #372d2b; */
+			border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 100px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+		}
+			
+		.okBtn {
+	    	border: 1px solid #372d2b;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 130px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    .okBtn:hover, #btnReturn:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    .cancelBtn {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 50px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
 	</style>
 
 	<title>내 예약 정보</title>
@@ -92,67 +92,68 @@
 
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     
-    <div class="totalContent">
-	    <div class="content">
-	        <div class="container2">
-	        	<div class="bg-light pinside30">
-				    <div class="row">
-				        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				            <h1><b>나의 예약 정보</b></h1>
-				            <form method="post" id="reserForm">
+    <form id="form" name="reserform" method="post">
+    	<input type="hidden" id="ifrsSeq" value="${meInfo.ifrsSeq}">
+    	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq}">
+    	<input type="hidden" id="ifrsPetName" value="${meInfo.ifrsPetName}">
+    	<input type="hidden" id="ifrsPlace" value="${meInfo.ifrsPlace}">
+    	<input type="hidden" id="ifrsLocation" value="${meInfo.ifrsLocation}">
+    	<input type="hidden" id="ifrsPurpose" value="${meInfo.ifrsPurpose}">
+    	<input type="hidden" id="ifrsRequest" value="${meInfo.ifrsRequest}">
+	    <div class="totalContent">
+		    <div class="content">
+		        <div class="container2">
+		        	<div class="bg-light pinside30">
+					    <div class="row">
+					        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					            <h1><b>나의 예약 정보</b></h1>
 				                <div class="row">
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="name">고객명</label>
-			                                <input type="text" class="form-control" id="ifmmName" name="ifmmName">
+				                            <label class="control-label" for="ifmmName">고객명</label>
+			                                <input type="text" class="form-control" id="ifmmName" name="ifmmName" value="<c:out value="${info.ifmmName}" />" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="petname">예약자명</label>
-			                                <input type="text" class="form-control" id="ifamName" name="ifamName">
+				                            <label class="control-label" for="ifrsPetName">예약자명</label>
+			                                <input type="text" class="form-control" id="ifrsPetName" name="ifrsPetName" value="<c:out value="${meInfo.ifrsPetName}" />">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="phone">연락처</label><br>
-			                                <!-- <select class="form-select" name="ifmmTelecom" id="ifmmTelecom" style="width: 15%; display: inline">
-												<option selected>::통신사::</option>
-												<option value="1">SKT</option>
-												<option value="2">KT</option>
-												<option value="3">LG</option>
-											</select> -->
-											<input class="form-control" type="text" id="ifmmPhone" name="ifmmPhone">
+				                            <label class="control-label" for="ifmmTel">연락처</label><br>
+											<input class="form-control" type="text" id="ifmmTel" name="ifmmTel" value="<c:out value="${info.ifmmTel}" />" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group">
-				                            <label class="control-label" for="textarea">예약 희망 날짜</label>
+				                            <label class="control-label" for="ifrsHopeDate">예약 희망 날짜</label>
 				                            <input class="form-control" type="datetime-local" id="ifrsHopeDate" name="ifrsHopeDate">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsLocation">위치</label>
-			                                <input type="text" class="form-control" id="ifrsLocation" name="ifrsLocation" readonly>
+			                                <input type="text" class="form-control" id="ifrsLocation" name="ifrsLocation" value="<c:out value="${meInfo.ifrsLocation}" />" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPlace">예약 장소</label>
-			                                <input type="text" class="form-control" id="ifrsPlace" name="ifrsPlace" readonly>
+			                                <input type="text" class="form-control" id="ifrsPlace" name="ifrsPlace" value="<c:out value="${meInfo.ifrsPlace}" />" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="purpose">예약 목적</label>
-			                                <input type="text" class="form-control" id="ifrsPurpose" name="ifrsPurpose">
+				                            <label class="control-label" for="ifrsPurpose">예약 목적</label>
+			                                <input type="text" class="form-control" id="ifrsPurpose" name="ifrsPurpose" value="<c:out value="${meInfo.ifrsPurpose}" />">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group">
-				                            <label class="control-label" for="textarea">요청사항</label>
-				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3" placeholder=""></textarea>
+				                            <label class="control-label" for="ifrsRequest">요청사항</label>
+				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3" value="<c:out value="${meInfo.ifrsRequest}" />"></textarea>
 				                        </div>
 				                    </div>
 				                    <div class="buttongroup">
@@ -172,17 +173,30 @@
 					                    </div>
 				                    </div>
 				                </div>
-							</form>
-				        </div>
-				    </div>
-				</div>
-	        </div>
+					        </div>
+					    </div>
+					</div>
+		        </div>
+		    </div>
 	    </div>
-    </div>
+	</form>
     
   	<%@include file="../../../common/xdmin/include/footer.jsp"%>
-    
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
+    
+    <script type="text/javascript">
+    
+    	var ifrsSeq = $("#ifrsSeq");
+    
+    	var form = $("form[name=reserform]");
+    	
+    	var goUrlUpdt = "/reservation/changeInfo";
+   	 
+    	$("#btnChange").on("click", function(){
+       		form.attr("action", goUrlUpdt).submit();
+    	});
+    
+    </script>
 </body>
 
 </html>

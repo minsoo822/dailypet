@@ -78,7 +78,7 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq" value="${info.ifrsSeq}">
+    	<input type="hidden" id="ifrsSeq" value="${meInfo.ifrsSeq}">
     	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq}">
 		<div class="totalContent">
 		    <div class="content">
@@ -96,19 +96,19 @@
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifamName">예약자명</label>
+				                            <label class="control-label" for="ifrsPetName">예약자명</label>
 			                                <p><c:out value="${meInfo.ifrsPetName}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="ifmmPhone">연락처</label><br>
+				                            <label class="control-label" for="ifmmTel">연락처</label><br>
 											<p><c:out value="${info.ifmmTel}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
-				                            <label class="control-label" for="textarea">예약 희망 날짜</label>
+				                            <label class="control-label" for="ifrsHopeDate">예약 희망 날짜</label>
 				                            <p><c:out value="${meInfo.ifrsHopeDate}" /></p>
 				                        </div>
 				                    </div>
@@ -137,6 +137,11 @@
 				                        </div>
 				                    </div>
 				                    <div class="buttongroup">
+				                    	<div class="col-md-1" id="cbtn">
+					                        <div class="form-group">
+				                        		<button type="button" id="listbtn" class="btn listbtn"><i class="fa-solid fa-list-ul fa-2x"></i></button>
+					                        </div>
+					                    </div>
 					                    <div class="row justify-content-center">
 					                    	<!-- 예약 삭제 버튼(모달까지) -->
 					                    	<div class="col-md-2" id="cbtn">
@@ -162,9 +167,7 @@
 											<!-- 예약 삭제 버튼(모달까지) -->
 					                    	<div class="col-md-2" id="cbtn">
 						                        <div class="form-group">
-						                        	<a href="/reservation/reservationForm">
-						                        		<button type="button" id="" class="btn changebtn">내용 변경</button>
-						                        	</a>
+					                        		<button type="button" id="changebtn" class="btn changebtn" onclick="javascript:goForm(${meInfo.ifrsSeq })">내용 변경</button>
 						                        </div>
 						                    </div>
 					                    </div>
@@ -188,7 +191,22 @@
 		var form = $("form[name=reserform]");
 //		var formVo = $("form[name=formVo]");
 		
+		goForm = function(key) {
+			ifrsSeq.attr("value", key);
+			form.attr("action", goUrlForm).submit();
+		}
+		
+		var goUrlList = "/reservation/reservationPage";
+		var goUrlForm = "/reservation/reservationForm";
     	var goUrlDele = "/reservation/reserDele";
+    	
+    	/* $("#changebtn").on("click", function(ifrsSeq){
+    		form.attr("action", goUrlForm).submit();
+		}); */
+    	
+    	$("#listbtn").on("click", function(){
+    		$(location).attr("href", goUrlList).submit();
+		});
     
 	    /* $("#btnDel").on("click", function(){
 			formVo.attr("action", goUrlDele).submit();

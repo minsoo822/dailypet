@@ -173,7 +173,7 @@
 										</div>
 										<div class="col-9" id="offcol">
 											<span id="ifrsPlace"></span>
-											<input type="hidden" id="ifrsPlace" name="ifrsPlace">
+											<input type="hidden" id="rsPlace" name="ifrsPlace" value="">
 										</div>
 									</div>
 									<div class="row">
@@ -182,7 +182,7 @@
 										</div>
 										<div class="col-9" id="offcol">
 											<span id="ifrsLocation"></span>
-											<input type="hidden" id="ifrsLocation" name="ifrsLocation">
+											<input type="hidden" id="rsLocation" name="ifrsLocation" value="">
 										</div>
 									</div>
 									<div class="row">
@@ -191,7 +191,7 @@
 										</div>
 										<div class="col-9" id="offcol">
 											<span id="ifrsTel"></span>
-											<input type="hidden" id="ifrsTel" name="ifrsTel">
+											<input type="hidden" id="rsTel" name="ifrsTel" value="">
 										</div>
 									</div>
 									<div class="row">
@@ -409,9 +409,10 @@
 				$("#ifrsLocation").text(Paddr);
 				$("#ifrsTel").text(Ptel);
 				
-				$("#ifrsPlace").val(Pname);
-				$("#ifrsLocation").val(Paddr);
-				$("#ifrsTel").val(Ptel);
+				$('input[id=rsPlace]').attr('value',Pname);
+				$('input[id=rsLocation]').attr('value',Paddr);
+				$('input[id=rsTel]').attr('value',Ptel);
+				
 			}
 		
 		    return el;

@@ -120,6 +120,13 @@
 		padding: 20px 0px 0px 40px;
 	}
     /* 이미지 프리뷰 e */
+    .btn{
+    	border: 0px;
+    	background-color: white;
+		color: black;
+		float: right;
+		padding: 0px;
+    }
     </style>
     
 </head>
@@ -227,6 +234,8 @@
 	            <!-- pagination s -->
 				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 				<!-- pagination e -->
+				<br>
+				<button type="button" class="btn" id="chat">관리자와 채팅하기</button>
 	        </div>
 	    </div>
     </div>
@@ -271,12 +280,17 @@
     }
     
     $("#input_imgs").on('change',function(){
-    	  var fileName = $("#input_imgs").val();
-    	  $(".upload-name").val(fileName);
-    	});
+   	  var fileName = $("#input_imgs").val();
+   	  $(".upload-name").val(fileName);
+   	});
+	
+    
+    var goUrlChat = "/chat/chat"
+    
+    $("#chat").on("click", function(){
+   		form.attr("action", goUrlChat).submit();
+	}); 
     
     </script>
-    
 </body>
-
 </html>

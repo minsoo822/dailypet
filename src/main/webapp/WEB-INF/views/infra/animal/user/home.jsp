@@ -241,7 +241,7 @@
 	                <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
 	                    <div class="mb60 text-center section-title">
 	                        <!-- section title start-->
-	                        <h1>유기동물 찾기</h1>
+	                        <h1>육아수첩</h1>
 	                    </div>
 	                    <!-- /.section title start-->
 	                </div>
@@ -249,7 +249,7 @@
 	            <div class="row">
 	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 	                    <div class="project-img mb30">
-	                        <a href="/findpet/findpetList"><img src="/resources/images/xdmin/diary.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+	                        <a href="/diary/diaryList"><img src="/resources/images/xdmin/diary.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 	                    </div>
 	                </div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
@@ -263,7 +263,7 @@
 	            </div>
 	            <br>
 	            <div class="row">
-	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="/findpet/findpetList" class="btn btnGo">바로가기</a></div>
+	                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"><a href="/diary/diaryList" class="btn btnGo">바로가기</a></div>
 	            </div>
 	        </div>
 	    </div>

@@ -34,11 +34,13 @@
     	max-width: 100%;
     	max-height: 100%;
     }
+    
     .Search {
     	margin-top: 50px; 
     	display: flex; 
     	justify-content: end;
     }
+    
     .Reserbtn {
     	border: 1px solid #efefef;
     	background: #f3f0eb;
@@ -47,26 +49,30 @@
     	width: 50px;
     	height: 50px;
     	border-radius: 10px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
     }
+    
     .Reserbtn:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
     }
+    
     .contents {
     	margin-bottom: 30px;
     	color: red;
-    	font-size: 10pt;
+    	font-size: 12px;
     	font-weight: bold;
     	width: 50%;
-    	text-align: center;
+    	margin-left: 97px;
     }
+    
     /* inputfile 커스텀 s */
     .filebox {
     	text-align: center;
     }
+    
     .filebox .upload-name {
 	    display: inline-block;
 	    height: 40px;
@@ -76,25 +82,28 @@
 	    width: 70%;
 	    color: #999999;
 	}
+	
     .filebox label {
 	    display: inline-block;
-	    padding: 15px 15px;
+	    padding: 12px 10px;
 	    vertical-align: middle;
 	    background: #f3f0eb;
     	color: #372d2b;
 	    width: 50px;
     	height: 50px;
     	border-radius: 10px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
 	    margin-left: 10px;
 	    margin-bottom: 5px;
 	}
+	
 	.filebox label:hover {
     	background: #372d2b;
     	color: #f3f0eb;
     	cursor: pointer;
     }
+    
     .filebox input[type="file"] {
 	    position: absolute;
 	    width: 0;
@@ -103,15 +112,18 @@
 	    overflow: hidden;
 	    border: 0;
 	}
+	
 	/* inputfile 커스텀 e */
 	/* 이미지 프리뷰 s */
 	.preview {
 		margin-bottom: 50px;
 	}
+	
     .imgs_wrap {
 		background: #E9ECEF;
-		height: 200px
+		height: 200px;
 	}
+	
 	.imgs_wrap img {
 		height: 180px;
 		width: 180px;
@@ -119,13 +131,19 @@
 		max-height: 100%;
 		padding: 20px 0px 0px 40px;
 	}
+	
     /* 이미지 프리뷰 e */
+    
     .btn{
     	border: 0px;
     	background-color: white;
 		color: black;
 		float: right;
 		padding: 0px;
+    }
+    
+    .down{
+    	margin-top: 5px;
     }
     </style>
     
@@ -141,7 +159,7 @@
 			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 			    	<div class="filebox">
 					    <input type="text" class="upload-name" value="첨부파일" placeholder="첨부파일">
-					    <label for="input_imgs"><i class="fa-solid fa-magnifying-glass"></i></label> 
+					    <label for="input_imgs" class="down"><i class="fa-solid fa-magnifying-glass"></i></label> 
 	    				<button class="Reserbtn" id="reset"><i class="fa-solid fa-rotate-left"></i></button>
 					    <input type="file" id="input_imgs" multiple />
 					</div>
@@ -159,6 +177,10 @@
 					</div>
 		    	</div>
 		    </div>
+		    <div class="row">
+			    <button type="button" onclick="init()">시작</button>
+				<button type="button" onclick="predict()">찾아보기</button>
+			</div>
 		    <div class="row">
 			    <div class="col">
 				   	<ul class="nav nav-tabs">
@@ -245,51 +267,83 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+   
     <script type="text/javascript">
-
-    $("#file").on('change',function(){
-    	  var fileName = $("#file").val();
-    	  $(".upload-name").val(fileName);
-    	});
-    
-    var sel_files = [];
-
-    $(document).ready(function() {
-        $("#input_imgs").on("change", handleImgsFilesSelect);
-    }); 
-
-    function handleImgsFilesSelect(e) {
-        var files = e.target.files;
-        var filesArr = Array.prototype.slice.call(files);
-
-        filesArr.forEach(function(f) {
-            if(!f.type.match("image.*")) {
-                alert("확장자는 이미지 확장자만 가능합니다.");
-                return;
-            }
-
-            sel_files.push(f);
-
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                var img_html = "<img src=\"" + e.target.result + "\" />";
-                $(".imgs_wrap").append(img_html);
-            }
-            reader.readAsDataURL(f);
-        });
-    }
-    
-    $("#input_imgs").on('change',function(){
-   	  var fileName = $("#input_imgs").val();
-   	  $(".upload-name").val(fileName);
-   	});
+	    $("#file").on('change',function(){
+	    	  var fileName = $("#file").val();
+	    	  $(".upload-name").val(fileName);
+	    	});
+	    
+	    var sel_files = [];
 	
-    
-    
-    $("#chat").on("click", function(){
-    	location.href = "/chat/";
-	}); 
-    
+	    $(document).ready(function() {
+	        $("#input_imgs").on("change", handleImgsFilesSelect);
+	    }); 
+	
+	    function handleImgsFilesSelect(e) {
+	        var files = e.target.files;
+	        var filesArr = Array.prototype.slice.call(files);
+	
+	        filesArr.forEach(function(f) {
+	            if(!f.type.match("image.*")) {
+	                alert("확장자는 이미지 확장자만 가능합니다.");
+	                return;
+	            }
+	
+	            sel_files.push(f);
+	
+	            var reader = new FileReader();
+	            reader.onload = function(e) {
+	                var img_html = "<img src=\"" + e.target.result + "\" />";
+	                $(".imgs_wrap").append(img_html);
+	            }
+	            reader.readAsDataURL(f);
+	        });
+	    }
+	    
+	    $("#input_imgs").on('change',function(){
+	   	  var fileName = $("#input_imgs").val();
+	   	  $(".upload-name").val(fileName);
+	   	});
+	    
+	    $("#chat").on("click", function(){
+	    	location.href = "/chat/";
+		}); 
+	    
+	    
+	    //이미지 찾기
+     	const URL = "https://teachablemachine.withgoogle.com/models/3SWU0cqiQ/";
+
+	    let model, labelContainer, maxPredictions;
+	    
+	    async function init() {
+	        const modelURL = URL + "model.json";
+	        const metadataURL = URL + "metadata.json";
+	
+	        model = await tmImage.load(modelURL, metadataURL);
+	        maxPredictions = model.getTotalClasses();
+	
+	        labelContainer = document.getElementById("label-container");
+	        for (let i = 0; i < maxPredictions; i++) { // and class labels
+	            labelContainer.appendChild(document.createElement("div"));
+	        }
+	    }
+	    
+	    async function predict() {
+	    	var image = document.getElementById("upload-image");
+	    	const prediction = await model.predict(image, false);
+
+	    	for (let i = 0; i < maxPredictions; i++) {
+	            const classPrediction =
+	                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+	            labelContainer.childNodes[i].innerHTML = classPrediction;
+	        }
+	    }
+	    
     </script>
 </body>
 </html>

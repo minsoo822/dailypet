@@ -112,7 +112,7 @@
 								품종
 							</div>
 							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">
-								<c:out value="${item.iffpBrred }"/>
+								<c:out value="${item.iffpBreed }"/>
 							</div>
 						</div>
 						<hr>

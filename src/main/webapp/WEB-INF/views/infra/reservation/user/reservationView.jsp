@@ -91,7 +91,7 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifmmName">고객명</label>
-			                                <p><c:out value="${info.ifmmName}" /></p>
+			                                <p><c:out value="${meInfo.ifmmName}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
@@ -103,7 +103,7 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifmmTel">연락처</label><br>
-											<p><c:out value="${info.ifmmTel}" /></p>
+											<p><c:out value="${meInfo.ifmmTel}" /></p>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">

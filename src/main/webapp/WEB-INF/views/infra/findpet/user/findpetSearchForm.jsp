@@ -420,7 +420,8 @@
 				</li>
 			</ul>
 			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade show active" id="koreaTab" role="tabpanel" aria-labelledby="korea-tab" tabindex="0"></div>
+				<div class="tab-pane fade show active" id="koreaTab" role="tabpanel" aria-labelledby="korea-tab" tabindex="0">
+				</div>
 				<div class="tab-pane fade" id="seoulTab" role="tabpanel" aria-labelledby="seoul-tab" tabindex="0"></div>
 				<div class="tab-pane fade" id="gyeonggiTab" role="tabpanel" aria-labelledby="gyeonggi-tab" tabindex="0"></div>
 				<div class="tab-pane fade" id="incheonTab" role="tabpanel" aria-labelledby="incheon-tab" tabindex="0"></div>
@@ -442,15 +443,17 @@
 	    </div>
 	    <div class="content" style="padding-top: 50px;">
 	        <div class="container">
-	            <div class="row">
-		            	<c:forEach items="${list }" var="list" varStatus="status">
-			                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-			                    <div class="project-img mb30">
-			                        <a href="javascript:goView(${list.iffpSeq })" class="imghover"><img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
-			                    </div>
-			                </div>
-		                </c:forEach>
-		            </div>
+	        	<div class="row">
+	            	<c:forEach items="${list }" var="list" varStatus="status">
+		                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+		                    <div class="project-img mb30">
+		                        <a href="javascript:goView(${list.iffpSeq })" class="imghover">
+		                        	<img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="">
+		                        </a>
+		                    </div>
+		                </div>
+	                </c:forEach>
+	            </div>
 	            <!-- pagination s -->
 				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 				<!-- pagination e -->
@@ -507,7 +510,13 @@
 	   	  var fileName = $("#input_imgs").val();
 	   	  $(".upload-name").val(fileName);
 	   	}); */
-	    
+	   	
+	   	var goUrlView = "/findpet/findpetView";
+	   	
+	   	goView = function() {
+			form.attr("action", goUrlView).submit();
+		}
+	   	
 	    $("#chat").on("click", function(){
 	    	location.href = "/chat/";
 		}); 

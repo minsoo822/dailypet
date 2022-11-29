@@ -67,11 +67,13 @@
 	    	font-size: 13px;
 	    	font-weight: bold;
 	    }
+	    
 	    .okBtn:hover, #btnReturn:hover {
 	    	background: #372d2b;
 	    	color: #f3f0eb;
 	    	cursor: pointer;
 	    }
+	    
 	    .cancelBtn {
 	    	border: 1px solid #efefef;
 	    	background: #f3f0eb;
@@ -93,10 +95,10 @@
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     
     <form id="form" name="reserform" method="post">
-    	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${resv.ifrsSeq}">
+    	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${meInfo.ifrsSeq}">
     	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq}">
-    	<input type="hidden" id="ifrsPlace" name="ifrsPlace" value="${resv.ifrsPlace}">
-    	<input type="hidden" id="ifrsLocation" name="ifrsLocation" value="${resv.ifrsLocation}">
+    	<input type="hidden" id="ifrsPlace" name="ifrsPlace" value="${meInfo.ifrsPlace}">
+    	<input type="hidden" id="ifrsLocation" name="ifrsLocation" value="${meInfo.ifrsLocation}">
 	    <div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
@@ -108,55 +110,57 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifmmName">고객명</label>
-			                                <input type="text" class="form-control" id="ifmmName" name="ifmmName" value="<c:out value="${info.ifmmName}" />" readonly>
+			                                <input type="text" class="form-control" id="ifmmName" name="ifmmName" value="${info.ifmmName}" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPetName">예약자명</label>
-			                                <input type="text" class="form-control" id="ifrsPetName" name="ifrsPetName" value="<c:out value="${resv.ifrsPetName}" />">
+			                                <input type="text" class="form-control" id="ifrsPetName" name="ifrsPetName" value="${meInfo.ifrsPetName}">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifmmTel">연락처</label><br>
-											<input class="form-control" type="text" id="ifmmTel" name="ifmmTel" value="<c:out value="${info.ifmmTel}" />" readonly>
+											<input class="form-control" type="text" id="ifmmTel" name="ifmmTel" value="${info.ifmmTel}" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group">
 				                            <label class="control-label" for="ifrsHopeDate">예약 희망 날짜</label>
-				                            <input class="form-control" type="datetime-local" id="ifrsHopeDate" name="ifrsHopeDate" value="<c:out value="${resv.ifrsHopeDate}" />">
+				                            <input class="form-control" type="datetime-local" id="ifrsHopeDate" name="ifrsHopeDate" value="${meInfo.ifrsHopeDate}">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsLocation">위치</label>
-			                                <input type="text" class="form-control" id="ifrsLocation" name="ifrsLocation" value="<c:out value="${resv.ifrsLocation}" />" readonly>
+			                                <input type="text" class="form-control" id="ifrsLocation" name="ifrsLocation" value="${meInfo.ifrsLocation}" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPlace">예약 장소</label>
-			                                <input type="text" class="form-control" id="ifrsPlace" name="ifrsPlace" value="<c:out value="${resv.ifrsPlace}" />" readonly>
+			                                <input type="text" class="form-control" id="ifrsPlace" name="ifrsPlace" value="${meInfo.ifrsPlace}" readonly>
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group has-feedback">
 				                            <label class="control-label" for="ifrsPurpose">예약 목적</label>
-			                                <input type="text" class="form-control" id="ifrsPurpose" name="ifrsPurpose" value="<c:out value="${resv.ifrsPurpose}" />">
+			                                <input type="text" class="form-control" id="ifrsPurpose" name="ifrsPurpose" value="${meInfo.ifrsPurpose}">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">
 				                        <div class="form-group">
 				                            <label class="control-label" for="ifrsRequest">요청사항</label>
-				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3" value="<c:out value="${resv.ifrsRequest}" />"></textarea>
+				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3">
+				                            	<c:out value="${meInfo.ifrsRequest}"></c:out>
+				                            </textarea>
 				                        </div>
 				                    </div>
 				                    <div class="buttongroup">
 				                    	<div class="col-md-2" id="cbtn">
 					                        <div class="form-group">
-				                        		<button type="button" id="btnChange" class="btn okBtn" onclick="javascript:goView(${resv.ifrsSeq})"/>변경 완료</button>
+				                        		<button type="button" id="btnChange" class="btn okBtn" onclick="javascript:goView(${meInfo.ifrsSeq})"/>변경 완료</button>
 					                        </div>
 					                    </div>
 					                    <div class="col-md-2" id="cbtn">

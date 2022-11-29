@@ -337,7 +337,7 @@
 										<span class="heart" style="font-size: 25px"><i id="likedBtn" style="color: rgb(0, 0, 0);" onclick="liked()" class="fa-regular fa-heart"></i></span>
 									</button>
 									<button type="button" id="comment">
-										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o" onclick="commentBtn()"></i></span>
 									</button>
 								</div>
 								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 <b id="postlikeCount"></b>개</b></p> 
@@ -647,6 +647,10 @@
 					break;
 				}
 			}
+		};
+		
+		commentBtn = function() {
+			$("#writecomm").focus();
 		};
  		 /* goDiaryDetail = function(ifdaSeq) {
   			1.아작스문 작성

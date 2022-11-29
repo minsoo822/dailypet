@@ -97,9 +97,7 @@
 			, ifrsPurpose = #{ifrsPurpose}
 			, ifrsHopeDate = #{ifrsHopeDate}
 			, ifrsRequest = #{ifrsRequest}
-			, ifrsPurpose = #{ifrsPurpose}
-		WHERE 1=1
-		AND ifrsSeq = #{ifrsSeq}
+		WHERE ifrsSeq = #{ifrsSeq}
 	</update>
 	
 	<!-- 예약 취소 -->

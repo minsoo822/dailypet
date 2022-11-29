@@ -129,7 +129,7 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group">
 				                            <label class="control-label" for="ifrsHopeDate">예약 희망 날짜</label>
-				                            <input class="form-control" type="datetime-local" id="ifrsHopeDate" name="ifrsHopeDate">
+				                            <input class="form-control" type="datetime-local" id="ifrsHopeDate" name="ifrsHopeDate" value="<c:out value="${resv.ifrsHopeDate}" />">
 				                        </div>
 				                    </div>
 				                    <div class="col-md-6">

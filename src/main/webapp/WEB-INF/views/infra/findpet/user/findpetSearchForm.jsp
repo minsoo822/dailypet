@@ -19,132 +19,250 @@
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
     <!-- Style -->
     <link href="/resources/css/style.css" rel="stylesheet">
-   <title>유기동물 검색</title>
+    
+   	<title>유기동물 검색</title>
      
     <style type="text/css">
-    /* div {
-    	border: 1px solid orange;
-    } */
-    .imgsize {
-    	width: 258px;
-    	height: 218px;
-    	max-width: 100%;
-    	max-height: 100%;
-    }
-    
-    .Search {
-    	margin-top: 50px; 
-    	display: flex; 
-    	justify-content: end;
-    }
-    
-    .Reserbtn {
-    	border: 1px solid #efefef;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 50px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13px;
-    	font-weight: bold;
-    }
-    
-    .Reserbtn:hover {
-    	background: #372d2b;
-    	color: #f3f0eb;
-    	cursor: pointer;
-    }
-    
-    .contents {
-    	margin-bottom: 30px;
-    	color: red;
-    	font-size: 12px;
-    	font-weight: bold;
-    	width: 50%;
-    	margin-left: 97px;
-    }
-    
-    /* inputfile 커스텀 s */
-    .filebox {
-    	text-align: center;
-    }
-    
-    .filebox .upload-name {
-	    display: inline-block;
-	    height: 40px;
-	    padding: 0 10px;
-	    vertical-align: middle;
-	    border: 1px solid #dddddd;
-	    width: 70%;
-	    color: #999999;
-	}
-	
-    .filebox label {
-	    display: inline-block;
-	    padding: 12px 10px;
-	    vertical-align: middle;
-	    background: #f3f0eb;
-    	color: #372d2b;
-	    width: 50px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13px;
-    	font-weight: bold;
-	    margin-left: 10px;
-	    margin-bottom: 5px;
-	}
-	
-	.filebox label:hover {
-    	background: #372d2b;
-    	color: #f3f0eb;
-    	cursor: pointer;
-    }
-    
-    .filebox input[type="file"] {
-	    position: absolute;
-	    width: 0;
-	    height: 0;
-	    padding: 0;
-	    overflow: hidden;
-	    border: 0;
-	}
-	
-	/* inputfile 커스텀 e */
-	/* 이미지 프리뷰 s */
-	.preview {
-		margin-bottom: 50px;
-	}
-	
-    .imgs_wrap {
-		background: #E9ECEF;
-		height: 200px;
-	}
-	
-	.imgs_wrap img {
-		height: 180px;
-		width: 180px;
-		max-width: 100%;
-		max-height: 100%;
-		padding: 20px 0px 0px 40px;
-	}
-	
-    /* 이미지 프리뷰 e */
-    
-    .btn{
-    	border: 0px;
-    	background-color: white;
-		color: black;
-		float: right;
-		padding: 0px;
-    }
-    
-    .down{
-    	margin-top: 5px;
-    }
+	    .imgsize {
+	    	width: 258px;
+	    	height: 218px;
+	    	max-width: 100%;
+	    	max-height: 100%;
+	    }
+	    
+	    .Search {
+	    	margin-top: 50px; 
+	    	display: flex; 
+	    	justify-content: end;
+	    }
+	    
+	    .Reserbtn {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 50px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    }
+	    
+	    .Reserbtn:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    
+	    .contents {
+	    	color: red;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    	width: 50%;
+	    	margin-left: 190px;
+	    }
+	    
+	    .contentss {
+	    	color: red;
+	    	font-size: 17px;
+	    	font-weight: bold;
+	    	width: 50%;
+	    	margin-left: 190px;
+	    }
+	    
+	    /* inputfile 커스텀 s */
+	   /*  .filebox {
+	    	text-align: center;
+	    }
+	    
+	    .filebox .upload-name {
+		    display: inline-block;
+		    height: 40px;
+		    padding: 0 10px;
+		    vertical-align: middle;
+		    border: 1px solid #dddddd;
+		    width: 70%;
+		    color: #999999;
+		}
+		
+	    .filebox label {
+		    display: inline-block;
+		    padding: 12px 10px;
+		    vertical-align: middle;
+		    background: #f3f0eb;
+	    	color: #372d2b;
+		    width: 50px;
+	    	height: 50px;
+	    	border-radius: 10px; 
+	    	font-size: 13px;
+	    	font-weight: bold;
+		    margin-left: 10px;
+		    margin-bottom: 5px;
+		}
+		
+		.filebox label:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    
+	    .filebox input[type="file"] {
+		    position: absolute;
+		    width: 0;
+		    height: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    border: 0;
+		} */
+		/* inputfile 커스텀 e */
+		
+		/* 이미지 프리뷰 s */
+		/* .preview {
+			margin-bottom: 50px;
+		}
+		
+	    .imgs_wrap {
+			background: #E9ECEF;
+			height: 200px;
+		}
+		
+		.imgs_wrap img {
+			height: 180px;
+			width: 180px;
+			max-width: 100%;
+			max-height: 100%;
+			padding: 20px 0px 0px 40px;
+		} */
+	    /* 이미지 프리뷰 e */
+	    
+	    .btn{
+	    	border: 0px;
+	    	background-color: white;
+			color: black;
+			float: right;
+			padding: 0px;
+	    }
+	    
+	    .down{
+	    	margin-top: 5px;
+	    } 
+	    
+	    /* 이미지 첨부 */
+	    .file-upload {
+		    background-color: #ffffff;
+		    width: 800px;
+		    margin: 0 auto;
+		    padding: 20px;
+		}
+		
+		.file-upload-btn {
+		    width: 100%;
+		    margin: 0;
+		    color: #372d2b;
+		    background: #f3f0eb;
+		    border: none;
+		    padding: 10px;
+		    border-radius: 4px;
+		    transition: all .2s ease;
+		    outline: none;
+		    text-transform: uppercase;
+		    font-weight: 700;
+		}
+		
+		.file-upload-btn:hover {
+		    background: #372d2b;
+		    color: #ffffff;
+		    transition: all .2s ease;
+		    cursor: pointer;
+		}
+		
+		.file-upload-btn:active {
+		    border: 0;
+		    transition: all .2s ease;
+		}
+		
+		.file-upload-content {
+		    display: none;
+		    text-align: center;
+		}
+		
+		.file-upload-input {
+		    position: absolute;
+		    margin: 0;
+		    padding: 0;
+		    width: 100%;
+		    height: 100%;
+		    outline: none;
+		    opacity: 0;
+		    cursor: pointer;
+		}
+		
+		.image-upload-wrap {
+		    margin-top: 20px;
+		    border: 4px dashed #c3b9b6;
+		    position: relative;
+		}
+		
+		.image-dropping,
+		.image-upload-wrap:hover {
+		    background-color: #ffffff;
+		    border: 4px dashed #372d2b;
+		}
+		
+		.image-title-wrap {
+		    padding: 0 15px 15px 15px;
+		    color: #222;
+		}
+		
+		.drag-text {
+		    text-align: center;
+		}
+		
+		.drag-text h3 {
+		    font-weight: 100;
+		    text-transform: uppercase;
+		    color: #3d423f;
+		    padding: 60px 0;
+		}
+		
+		.file-upload-image {
+		    max-height: 200px;
+		    max-width: 200px;
+		    margin: auto;
+		    padding: 20px;
+		}
+		
+		.remove-image {
+		    width: 200px;
+		    margin: 0;
+		    color: #fff;
+		    background: #cd4535;
+		    border: none;
+		    padding: 5px;
+		    border-radius: 4px;
+		    transition: all .2s ease;
+		    outline: none;
+		    text-transform: uppercase;
+		    font-size: 14px;
+		}
+		
+		.remove-image:hover {
+		    background: #c13b2a;
+		    color: #ffffff;
+		    transition: all .2s ease;
+		    cursor: pointer;
+		}
+		
+		.remove-image:active {
+		    border: 0; 
+		    transition: all .2s ease;
+		}
+		
+		.button{
+			margin-left: 815px;
+		}
     </style>
     
 </head>
@@ -155,32 +273,62 @@
     <!-- header e -->
     <div class="totalContent">
     	<div class="container">
-		    <div class="row Search">
+		    <!-- <div class="row Search">
 			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 			    	<div class="filebox">
 					    <input type="text" class="upload-name" value="첨부파일" placeholder="첨부파일">
-					    <label for="input_imgs" class="down"><i class="fa-solid fa-magnifying-glass"></i></label> 
+					    <label for="input_imgs" class="down"><i class="fa-solid fa-magnifying-glass"></i></label>
 	    				<button class="Reserbtn" id="reset"><i class="fa-solid fa-rotate-left"></i></button>
 					    <input type="file" id="input_imgs" multiple />
 					</div>
 		    	</div>
-		    </div>
-		    <div class="row contents">
-			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				   <span>보다 정확한 결과를 위해 선명한 사진으로 올려주세요.</span>
-		    	</div>
-		    </div>
-		    <div class="row preview">
+		    </div> -->
+		    <!-- <div class="row preview">
 			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		    		<div class="imgs_wrap">
-						<!-- <img> -->
+						<img>
+						<button type="button" onclick="init()">시작</button>
+						<button type="button" onclick="predict()">찾아보기</button>
 					</div>
 		    	</div>
+		    </div> -->
+		  	<br>
+		  	<br>
+		  	<div class="row">
+		  		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contentss">
+				   <span>사용 방법: Start -> 파일 첨부 -> Predict</span>
+		    	</div>
+			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contents">
+				   <span>보다 정확한 결과를 위해 얼굴이 잘 보이는 선명한 사진으로 올려주세요. (한 장만 업로드 해주세요.)</span>
+		    	</div>
+	   		</div>
+		  	<!-- 이미지 업로드 코드 -->
+		    <div class="file-upload">
+		        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+		        <div class="image-upload-wrap">
+		            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+		            <div class="drag-text">
+		                <h3>Drag and drop a file or select add Image</h3>
+		            </div>
+		        </div>
+		        <div class="file-upload-content">
+		            <!-- <img class="file-upload-image" src="#" alt="your image" /> -->
+		            <img class="file-upload-image" id="upload-image" src="#" alt="your image" />
+		            <div class="image-title-wrap">
+		                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+		            </div>
+		        </div>
 		    </div>
-		    <div class="row">
-			    <button type="button" onclick="init()">시작</button>
-				<button type="button" onclick="predict()">찾아보기</button>
-			</div>
+		    <div class="row button">
+		    	<button type="button" class="left" onclick="init()">Start</button>
+			    <button type="button" class="left" onclick="predict()">Predict
+
+				</button>
+		    </div>
+		    <br>
+		    <br>
+		    <div id="label-container"></div>
+    
 		    <div class="row">
 			    <div class="col">
 				   	<ul class="nav nav-tabs">
@@ -273,7 +421,7 @@
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
    
     <script type="text/javascript">
-	    $("#file").on('change',function(){
+	   /*  $("#file").on('change',function(){
 	    	  var fileName = $("#file").val();
 	    	  $(".upload-name").val(fileName);
 	    	});
@@ -312,38 +460,153 @@
 	    
 	    $("#chat").on("click", function(){
 	    	location.href = "/chat/";
-		}); 
+		});  */
 	    
 	    
 	    //이미지 찾기
-     	const URL = "https://teachablemachine.withgoogle.com/models/3SWU0cqiQ/";
-
+	    const URL = "https://teachablemachine.withgoogle.com/models/3SWU0cqiQ/";
+	
 	    let model, labelContainer, maxPredictions;
-	    
+	
+	    // Load the image model and setup the webcam
 	    async function init() {
 	        const modelURL = URL + "model.json";
 	        const metadataURL = URL + "metadata.json";
 	
+	        // load the model and metadata
+	        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+	        // or files from your local hard drive
+	        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
 	        model = await tmImage.load(modelURL, metadataURL);
 	        maxPredictions = model.getTotalClasses();
 	
+	        // append elements to the DOM
 	        labelContainer = document.getElementById("label-container");
 	        for (let i = 0; i < maxPredictions; i++) { // and class labels
 	            labelContainer.appendChild(document.createElement("div"));
 	        }
 	    }
-	    
+	
+	    // run the webcam image through the image model
 	    async function predict() {
 	    	var image = document.getElementById("upload-image");
 	    	const prediction = await model.predict(image, false);
-
-	    	for (let i = 0; i < maxPredictions; i++) {
+	        // predict can take in an image, video or canvas html element
+	        
+	       /*  $("#mySpinner").hide();
+	        $("#mySpinner").show(); */
+	        
+	        for (let i = 0; i < maxPredictions; i++) {
 	            const classPrediction =
 	                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
 	            labelContainer.childNodes[i].innerHTML = classPrediction;
 	        }
+	       /*  $("#mySpinner").hide(); */
+	    }
+	
+	    // 이미지 업로드 JavaScript 코드
+	    function readFile(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+	
+	            reader.onload = function (e) {
+	                var htmlPreview =
+	                    '<img width="200" src="' + e.target.result + '" />' +
+	                    '<p>' + input.files[0].name + '</p>';
+	                var wrapperZone = $(input).parent();
+	                var previewZone = $(input).parent().parent().find('.preview-zone');
+	                var boxZone = $(input).parent().parent().find('.preview-zone').find('.box').find('.box-body');
+	
+	                wrapperZone.removeClass('dragover');
+	                previewZone.removeClass('hidden');
+	                boxZone.empty();
+	                boxZone.append(htmlPreview);
+	            };
+	
+	            reader.readAsDataURL(input.files[0]);
+	        }
+	    }
+	
+	    function reset(e) {
+	        e.wrap('<form>').closest('form').get(0).reset();
+	        e.unwrap();
+	    }
+	
+	    $(".dropzone").change(function () {
+	        readFile(this);
+	    });
+	
+	    $('.dropzone-wrapper').on('dragover', function (e) {
+	        e.preventDefault();
+	        e.stopPropagation();
+	        $(this).addClass('dragover');
+	    });
+	
+	    $('.dropzone-wrapper').on('dragleave', function (e) {
+	        e.preventDefault();
+	        e.stopPropagation();
+	        $(this).removeClass('dragover');
+	    });
+	
+	    $('.remove-preview').on('click', function () {
+	        var boxZone = $(this).parents('.preview-zone').find('.box-body');
+	        var previewZone = $(this).parents('.preview-zone');
+	        var dropzone = $(this).parents('.form-group').find('.dropzone');
+	        boxZone.empty();
+	        previewZone.addClass('hidden');
+	        reset(dropzone);
+	    });
+	
+	    function readURL(input) {
+	        if (input.files && input.files[0]) {
+	            var reader = new FileReader();
+	            reader.onload = function (e) {
+	                $('.image-upload-wrap').hide();
+	                $('.file-upload-image').attr('src', e.target.result);
+	                $('.file-upload-content').show();
+	                $('.image-title').html(input.files[0].name);
+	            };
+	            reader.readAsDataURL(input.files[0]);
+	        } else {
+	            removeUpload();
+	        }
+	    }
+	
+	    function readURL(input) {
+	        if (input.files && input.files[0]) {
+	
+	            var reader = new FileReader();
+	
+	            reader.onload = function (e) {
+	                $('.image-upload-wrap').hide();
+	
+	                $('.file-upload-image').attr('src', e.target.result);
+	                $('.file-upload-content').show();
+	
+	                $('.image-title').html(input.files[0].name);
+	            };
+	
+	            reader.readAsDataURL(input.files[0]);
+	
+	        } else {
+	            removeUpload();
+	        }
+	    }
+	
+	    function removeUpload() {
+	        $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+	        $('.file-upload-content').hide();
+	        $('.image-upload-wrap').show();
 	    }
 	    
+	    $('.image-upload-wrap').bind('dragover', function () {
+	        $('.image-upload-wrap').addClass('image-dropping');
+	    });
+	    
+	    $('.image-upload-wrap').bind('dragleave', function () {
+	        $('.image-upload-wrap').removeClass('image-dropping');
+	    });  	
     </script>
+    
 </body>
 </html>

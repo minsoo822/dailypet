@@ -147,27 +147,27 @@
 					                    	<div class="col-md-2" id="cbtn">
 						                        <div class="form-group">
 					                        		<button type="button" class="btn btnDelete" data-toggle="modal" data-target="#deleteModal">예약 취소</button>
-						                        </div>
-						                    </div>
-						                    <div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-												<div class="modal-dialog">
-													<div class="modal-content">
-														<div class="modal-header">
-															<h5 class="modal-title" id="deleteModalLabel">예약 취소</h5>
-															<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-														</div>
-														<div class="modal-body">입력한 데이터를 모두 삭제하시겠습니까?</div>
-														<div class="modal-footer">
-															<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-															<button type="button" class="btn btn-secondary" id="btnDel">삭제</button>
+						                        	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title" id="deleteModalLabel" data-dismiss="modal">예약 취소</h5>
+																	<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+																</div>
+																<div class="modal-body">해당 예약을 삭제하시겠습니까? 삭제 시 복구는 불가합니다.</div>
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+																	<button type="button" class="btn btn-secondary" id="btnDel">삭제</button>
+																</div>
+															</div>
 														</div>
 													</div>
-												</div>
-											</div>
+						                        </div>
+						                    </div>
 											<!-- 예약 삭제 버튼(모달까지) -->
 					                    	<div class="col-md-2" id="cbtn">
 						                        <div class="form-group">
-					                        		<button type="button" class="btn changebtn" onclick="javascript:goForm(${meInfo.ifrsSeq })">내용 변경</button>
+					                        		<button type="button" class="btn changebtn">내용 변경</button>
 						                        </div>
 						                    </div>
 					                    </div>
@@ -193,7 +193,7 @@
 		
 		var goUrlList = "/reservation/reservationPage";
 		var goUrlForm = "/reservation/reservationForm";
-    	var goUrlDele = "/reservation/reserDele";
+    	var goUrlDele = "/reservation/deleteInfo";
     	
 		goForm = function(key) {
 			ifrsSeq.attr("value", key); 
@@ -208,9 +208,9 @@
     		$(location).attr("href", goUrlList).submit();
 		});
     
-	    /* $("#btnDel").on("click", function(){
-			formVo.attr("action", goUrlDele).submit();
-		}); */
+	    $("#btnDel").on("click", function(){
+			form.attr("action", goUrlDele).submit();
+		});
     
     </script>
     

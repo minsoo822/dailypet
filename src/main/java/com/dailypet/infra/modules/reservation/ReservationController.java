@@ -86,18 +86,15 @@ public class ReservationController {
 		return "infra/reservation/user/searchingPlace";
 	}
 	
-	@SuppressWarnings(value = { "all" })
 	@RequestMapping(value = "changeInfo")
-	public String changeInfo(Reservation dto, @ModelAttribute("vo") ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+	public String changeInfo(Reservation dto, ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		
 		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
 		vo.setIfmmSeq(ifmmSeq);
 		
 		service.changeInfo(dto);
 		
-		redirectAttributes.addFlashAttribute("vo", vo);
-		
-		return "redirect:/reservation/reservationView";
+		return "infra/reservation/user/reservationView";
 	}
 	
 	@RequestMapping(value = "deleteInfo")

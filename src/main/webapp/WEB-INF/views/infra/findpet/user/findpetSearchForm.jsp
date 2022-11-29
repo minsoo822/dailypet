@@ -506,11 +506,11 @@
 	    $("#input_imgs").on('change',function(){
 	   	  var fileName = $("#input_imgs").val();
 	   	  $(".upload-name").val(fileName);
-	   	});
+	   	}); */
 	    
 	    $("#chat").on("click", function(){
 	    	location.href = "/chat/";
-		});  */
+		}); 
 	    
 	    
 	    //이미지 찾기

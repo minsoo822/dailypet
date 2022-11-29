@@ -172,9 +172,6 @@
 		position: relative;
 		top: 10px;
 	}
-	#cmList {
-		display: none;
-	}
 	.cmId {
 		font-size: 8pt;
 	}
@@ -258,10 +255,10 @@
 								<p style="font-size: 11px; color: lightgray">2022/22/22</p>
 							<!-- contents e -->
 								<!-- Comment s -->
-								<a onclick="openCm${status.count}(${list.ifdaSeq})" >
-									<p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm">댓글보기</p>
+								<a onclick="openCm(${list.ifdaSeq})" >
+									<p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm${list.ifdaSeq}">댓글보기</p>
 								</a>
-								<div class="row mt-2 mb-2" id="cmList">
+								<div class="row mt-2 mb-2" id="cmList${list.ifdaSeq}" style="display: none;">
 									<div class="row">
 										<div class="col">
 											<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">
@@ -324,17 +321,32 @@
 	}
 	//댓글펼치고접기
 	function openCm(key){
-		ifdaSeq.val(key);
-        let status = $('#cmList').css('display');
-       if (status == 'block') {
-            $('#cmList').hide();
-            $('#cm').text('댓글보기');
+		
+	   let status = $('#cmList'+key).css('display');
+       if (status == 'flex') {
+            $('#cmList'+key).hide();
+            $('#cm'+key).text('댓글보기');
 
        } else {
-            $('#cmList').show();
-            $('#cm').text('댓글 숨기기');
+            $('#cmList'+key).show();
+            $('#cm'+key).text('댓글 숨기기');
 
        }
+	 /* var cmList = $("#cmList");	
+		var cm = $("#cm");
+		var cmListIndex = cmList.index();
+		var cmIndex = cmList.index();
+		
+		let status = cmListIndex.css('display');
+	       if (status == 'block') {
+	    	   cmListIndex.hide();
+	    	   cmIndex.text('댓글보기');
+
+	       } else {
+	    	   cmListIndex.show();
+	    	   cmIndex.text('댓글 숨기기');
+
+	       } */
     }
 	$("#commSubmit").on("click", function(){
 		$.ajax({

@@ -457,8 +457,8 @@
 	            <!-- pagination s -->
 				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 				<!-- pagination e -->
-				<br>
-				<button type="button" class="btn" id="chat">관리자와 채팅하기</button>
+				<!-- <br>
+				<button type="button" class="btn" id="chat">관리자와 채팅하기</button> -->
 	        </div>
 	    </div>
     </div>

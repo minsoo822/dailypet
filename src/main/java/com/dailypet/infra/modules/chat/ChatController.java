@@ -46,4 +46,14 @@ public class ChatController {
 		
 		return result;
 	}
+	
+	@RequestMapping(value="instChat")
+	public String instChat(HttpSession httpSession,Chat dto) throws Exception {
+		
+		
+		Chat newChat = service.createChat(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()),dto.getCuMember());
+		List<Chat> list = service.selectChatListFromOne(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()));
+		
+		return "infra/chat/user/chat";
+	}
 }

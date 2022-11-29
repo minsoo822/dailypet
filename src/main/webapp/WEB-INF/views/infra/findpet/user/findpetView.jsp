@@ -88,6 +88,7 @@
     <!-- header e -->
     <form method="post" id="findpetViewForm">
     <input type="hidden" id="iffpSeq" name="iffpSeq" value="${item.iffpSeq }">
+    <input type="hidden" id="cuMember" name="cuMember" value="${item.mm_ifmmSeq }">
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${sessSeq }">
 	<div class="totalContent">
 	    <div class="content">
@@ -189,7 +190,7 @@
 					<c:if test="${item.mm_ifmmSeq ne sessSeq }">
 						<div class="col" style="display: flex; justify-content: flex-end;">
 							<button type="button" class="btnStyle" id="backBtn">목록</button>
-							<button type="button" class="btnStyle" id="goChat" style="width: 90px;">채팅하기</button>
+							<button type="button" class="btnStyle" onclick="goChat(${item.mm_ifmmSeq})" style="width: 90px;">채팅하기</button>
 						</div>
 					</c:if>
 				</div>
@@ -283,6 +284,7 @@
     
     
     var form = $("#findpetViewForm");
+    var cuMember = $("#cuMember")
 
 	//목록으로 돌아가기
 	$("#backBtn").on("click", function(){
@@ -293,6 +295,10 @@
 		form.attr("action", "/findpet/findpetMod").submit();
 	});
 	
+	goChat = function(key){
+		cuMember.val(key);
+		form.attr("action", "/chat/instChat").submit();
+	}
 	
     /* 카카오지도API */
   	function sample4_execDaumPostcode() {

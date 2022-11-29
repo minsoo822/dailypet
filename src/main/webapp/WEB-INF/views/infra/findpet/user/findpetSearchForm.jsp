@@ -342,8 +342,6 @@
 				   <span>보다 정확한 결과를 위해 얼굴이 잘 보이는 선명한 사진으로 올려주세요. (한 장만 업로드 해주세요.)</span>
 		    	</div>
 	   		</div>
-		  	<br>
-		  	<br>
 		  	<!-- 이미지 업로드 코드 -->
 		    <div class="file-upload">
 		        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>

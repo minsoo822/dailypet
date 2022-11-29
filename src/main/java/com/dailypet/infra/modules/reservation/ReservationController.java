@@ -87,14 +87,14 @@ public class ReservationController {
 	}
 	
 	@RequestMapping(value = "changeInfo")
-	public String changeInfo(Reservation dto, ReservationVo vo, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
-		
-		String ifmmSeq = (String) httpSession.getAttribute("sessSeq");
-		vo.setIfmmSeq(ifmmSeq);
+	public String changeInfo(Model model ,Reservation dto, ReservationVo vo, HttpSession httpSession) throws Exception {
 		
 		service.changeInfo(dto);
+		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
+		Reservation meInfo = service.selectInfo(vo);
+		model.addAttribute("meInfo", meInfo);
 		
-		return "redirect:/reservation/reservationView";
+		return "infra/reservation/user/reservationView";
 	}
 	
 	@RequestMapping(value = "deleteInfo")

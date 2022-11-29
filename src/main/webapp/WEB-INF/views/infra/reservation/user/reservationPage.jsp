@@ -110,7 +110,7 @@
 											<!-- <tr> -->
 												<c:choose>
 													<c:when test="${fn:length(list) eq 0 }">
-														<td>데이터가 존재하지 않습니다</td>
+														<td colspan="10" style="text-align: center;">데이터가 존재하지 않습니다</td>
 													</c:when>
 													<c:otherwise>	
 														<c:forEach items="${list}" var="list" varStatus="status">

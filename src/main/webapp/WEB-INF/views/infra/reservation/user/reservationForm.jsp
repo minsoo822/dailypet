@@ -152,9 +152,7 @@
 				                    <div class="col-md-6">
 				                        <div class="form-group">
 				                            <label class="control-label" for="ifrsRequest">요청사항</label>
-				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3">
-				                            	<c:out value="${meInfo.ifrsRequest}"></c:out>
-				                            </textarea>
+				                            <textarea class="form-control" id="ifrsRequest" name="ifrsRequest" rows="3"><c:out value="${meInfo.ifrsRequest}"></c:out></textarea>
 				                        </div>
 				                    </div>
 				                    <div class="buttongroup">

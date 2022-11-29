@@ -55,7 +55,7 @@
 			,#{ifdaSeq}
 			,#{ifmmSeq}
 		)
-		<selectKey resultType="String" keyProperty="ifcmSeq" order="AFTER">
+		<selectKey resultType="Integer" keyProperty="ifcmSeq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>	
 	</insert>

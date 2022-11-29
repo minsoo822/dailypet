@@ -12,12 +12,6 @@
     <title>반려동물 리스트</title>
 
 	<style type="text/css">
-	
-		.navbar-fixed-top {
-			background-color: black;
-			margin-bottom: 100px;
-		}
-		
 		.content {
 			margin-top: 5%;
 		}
@@ -189,16 +183,9 @@
 </head>
 
 <body>
-
-	<div class="header navbar-fixed-top header-collapse">
-		<div class="container">
-		    <div class="row">
-		        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		            <a href="index.html"><img src="/resources/images/logo.png" alt="Interior Design Website Templates Free Download"></a>
-		        </div>
-	        </div>
-	    </div>
-	</div>
+	
+	<%@include file="../../../common/xdmin/include/header.jsp"%>
+	
     <!-- /.page header -->
     <form id="form" name="codeform" method="post">
     <input type="hidden" id="ifcdSeq" value="${item.ifcdSeq}">

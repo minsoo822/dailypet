@@ -161,6 +161,7 @@
 		margin-left: 30px;
 		display: inline;
 	}
+	
 	.cmprofileView {
 		padding-left:0px;
 		padding-right:0px;
@@ -172,9 +173,11 @@
 		position: relative;
 		top: 10px;
 	}
+	
 	.cmId {
 		font-size: 8pt;
 	}
+	
 	.cmTime {
 		font-size: 5pt;
 	} 
@@ -188,6 +191,7 @@
     <!-- <input type="hidden" name="ifdaSeq"> -->
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    
 		<div class="diaryheader">
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
@@ -348,15 +352,16 @@
 
 	       } */
     }
+	
 	$("#commSubmit").on("click", function(){
 		$.ajax({
 			url: '/diary/drListCmInst',
 			type: 'POST',
 			datatype: 'json',
 			data: {
-				ifdaSeq : $("#ifdaSeq").val(),
+				da_ifdaSeq : $("#ifdaSeq").val(),
 				ifcmContent: $("#ifcmContent").val(),
-				ifmmSeq: $("#ifmmSeq").val(),	
+				ifmmSeq: $("#ifmmSeq").val()
 			},
 			success:function(result){
 				var txt = "";
@@ -382,12 +387,10 @@
 				$("#ifcmContent").val("");
 			},
 			error:function(){
-				alert("ajax erroe..!");
+				alert("ajax error..!");
 			}
 		})
 	});
-	
-	
     </script>
     
 </body>

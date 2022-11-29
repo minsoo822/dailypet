@@ -58,6 +58,12 @@ public class Comment extends Base{
 	public void setMm_ifmmSeq(Integer mm_ifmmSeq) {
 		this.mm_ifmmSeq = mm_ifmmSeq;
 	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
 	public Integer getIfdaSeq() {
 		return ifdaSeq;
 	}
@@ -69,12 +75,6 @@ public class Comment extends Base{
 	}
 	public void setSessSeq(Integer sessSeq) {
 		this.sessSeq = sessSeq;
-	}
-	public String getWriter() {
-		return writer;
-	}
-	public void setWriter(String writer) {
-		this.writer = writer;
 	}
 	
 }

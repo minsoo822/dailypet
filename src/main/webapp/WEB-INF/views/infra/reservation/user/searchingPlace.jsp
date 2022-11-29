@@ -68,6 +68,9 @@
 	.offcanvas-body::-webkit-scrollbar {
 	    display: none; /* 크롬, 사파리, 오페라, 엣지 */
 	}
+	.offcanvas {
+		overflow: scroll;
+	}
 
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}

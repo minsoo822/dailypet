@@ -342,39 +342,8 @@
 				   <span>보다 정확한 결과를 위해 얼굴이 잘 보이는 선명한 사진으로 올려주세요. (한 장만 업로드 해주세요.)</span>
 		    	</div>
 	   		</div>
-		  	<!-- 이미지 업로드 코드 -->
-		    <div class="file-upload">
-		        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
-		        <div class="image-upload-wrap">
-		            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-		            <div class="drag-text">
-		                <h3>Drag and drop a file or select add Image</h3>
-		            </div>
-		        </div>
-		        <div class="file-upload-content">
-		            <!-- <img class="file-upload-image" src="#" alt="your image" /> -->
-		            <img class="file-upload-image" id="upload-image" src="#" alt="your image" />
-		            <div class="image-title-wrap">
-		                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-		            </div>
-		        </div>
-		    </div>
-		    <div class="row" style="float: right">
-		    	<button type="button" class="left" onclick="init()">Start</button>
-			    <button type="button" class="left" onclick="predict()">Predict</button>
-		    </div>
-		    		    	</div>
-		    </div> -->
 		  	<br>
 		  	<br>
-		  	<div class="row">
-		  		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contentss">
-				   <span>사용 방법: Start -> 파일 첨부 -> Predict</span>
-		    	</div>
-			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contents">
-				   <span>보다 정확한 결과를 위해 얼굴이 잘 보이는 선명한 사진으로 올려주세요. (한 장만 업로드 해주세요.)</span>
-		    	</div>
-	   		</div>
 		  	<!-- 이미지 업로드 코드 -->
 		    <div class="file-upload">
 		        <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>

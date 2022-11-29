@@ -44,7 +44,7 @@
     	width: 45px;
     	height: 50px;
     	border-radius: 6px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
     	margin-left: auto;
     	margin-right: auto;
@@ -62,7 +62,7 @@
     	width: 55px;
     	height: 50px;
     	border-radius: 6px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
     	margin-top: 30px;
     	margin-right: 20px;
@@ -74,7 +74,7 @@
     }
     .textbtm {
     	text-align: left;
-		font-size: 13pt;
+		font-size: 13px;
 		font-weight: bold;
 		margin-top: 14px;
     	margin-bottom: 20px;
@@ -206,7 +206,7 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		                <div class="comment-title">
-		                    <h2>댓글(<c:out value="${item.commentcount }"/>)</h2>
+		                    <h3>댓글(<c:out value="${item.commentcount }"/>)</h3>
 		                </div>
 				        <div class="row">
 				            <div class=" col-lg-12 col-md-12" id="comment-area">
@@ -218,7 +218,7 @@
 					                            <div class="comment-author"><img src="${commentList.path }${commentList.uuidName}" alt class="profileImg"></div>
 					                            <div class="comment-info">
 					                                <div class="comment-header">
-					                                    <h3 class="comments-title"><c:out value="${commentList.ifmmID }"/></h3>
+					                                    <h4 class="comments-title"><c:out value="${commentList.ifmmID }"/></h4>
 					                                    <div class="meta"> <span class="meta-date"><c:out value="${commentList.ifcmRegDate }"/></span> </div>
 					                                </div>
 					                                <div class="comment-content">
@@ -281,121 +281,107 @@
     <!-- footScript e -->
     
     <script type="text/javascript">
-    
-    
-    var form = $("#findpetViewForm");
-    var cuMember = $("#cuMember")
-
-	//목록으로 돌아가기
-	$("#backBtn").on("click", function(){
-		form.attr("action", "/findpet/findpetList").submit();
-	});
-	//수정하기
-	$("#modBtn").on("click", function(){
-		form.attr("action", "/findpet/findpetMod").submit();
-	});
+	    var form = $("#findpetViewForm");
+	    var cuMember = $("#cuMember")
 	
-	goChat = function(key){
-		cuMember.val(key);
-		form.attr("action", "/chat/instChat").submit();
-	}
-	
-    /* 카카오지도API */
-  	function sample4_execDaumPostcode() {
-        new daum.Postcode({
-            oncomplete: function(data) {
-                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
-                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
-                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
-                var roadAddr = data.roadAddress; // 도로명 주소 변수
-                var extraRoadAddr = ''; // 참고 항목 변수
-
-                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
-                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
-                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
-                    extraRoadAddr += data.bname;
-                }
-                // 건물명이 있고, 공동주택일 경우 추가한다.
-                if(data.buildingName !== '' && data.apartment === 'Y'){
-                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
-                }
-                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
-                if(extraRoadAddr !== ''){
-                    extraRoadAddr = ' (' + extraRoadAddr + ')';
-                }
-
-                // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                document.getElementById('zip_code').value = data.zonecode;
-                document.getElementById("address").value = roadAddr;
-                // 커서를 상세주소로 이동한다
-                document.getElementById('address_detail').focus();
-                
-            }
-        }).open();
-    }
-	
-	//주소 리셋
-	$("#address_reset").on("click", function() {
-		$("#zip_code").val('');
-		$("#address").val('');
-		$("#address_detail").val('');
-	})
-	//댓글
-	$("#commentSave").on("click", function() {
+		//목록으로 돌아가기
+		$("#backBtn").on("click", function(){
+			form.attr("action", "/findpet/findpetList").submit();
+		});
+		//수정하기
+		$("#modBtn").on("click", function(){
+			form.attr("action", "/findpet/findpetMod").submit();
+		});
 		
-		$.ajax({
-			url: '/findpet/commentInst',
-			type: 'POST',
-			datatype: 'json',
-			data: {
-				iffpSeq : $("#iffpSeq").val(),
-				ifcmContent : $("#ifcmContent").val(),
-				ifmmSeq : $("#ifmmSeq").val(),
-			},
-			success:function(result){
-				
-				var txt = "";
-				
-				txt +='<ul class="comment-list">';
-				txt +='<li>';
-				txt +='<div class="comment-body">';
-				txt +='<div class="comment-author"><img src="'+ result.img +'" alt class="profileImg"></div>';
-				txt +='<div class="comment-info">';
-				txt +='<div class="comment-header">';
-				txt +='<h3 class="comments-title">'+ result.writer +'</h3>';
-				txt +='<div class="meta"> <span class="meta-date">방금전</span> </div>';
-				txt +='</div>';
-				txt +='<div class="comment-content">';
-				txt +='<p>'+ result.comment +'</p>';
-				txt +='</div>';
-				txt +='<div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>';
-				txt +='</div>';
-				txt +='</div>';
-				txt +='</li>';
-				txt +='</ul>';
-				
-				$("#comment-area").prepend(txt);
-				$("#ifcmContent").val("");
-			},
-			error:function(){
-				alert("ajax error..!");
-				
-			}
+		goChat = function(key){
+			cuMember.val(key);
+			form.attr("action", "/chat/instChat").submit();
+		}
+		
+	    /* 카카오지도API */
+	  	function sample4_execDaumPostcode() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+	
+	                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var roadAddr = data.roadAddress; // 도로명 주소 변수
+	                var extraRoadAddr = ''; // 참고 항목 변수
+	
+	                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                    extraRoadAddr += data.bname;
+	                }
+	                // 건물명이 있고, 공동주택일 경우 추가한다.
+	                if(data.buildingName !== '' && data.apartment === 'Y'){
+	                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                }
+	                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                if(extraRoadAddr !== ''){
+	                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+	                }
+	
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('zip_code').value = data.zonecode;
+	                document.getElementById("address").value = roadAddr;
+	                // 커서를 상세주소로 이동한다
+	                document.getElementById('address_detail').focus();
+	                
+	            }
+	        }).open();
+	    }
+		
+		//주소 리셋
+		$("#address_reset").on("click", function() {
+			$("#zip_code").val('');
+			$("#address").val('');
+			$("#address_detail").val('');
 		})
-	});
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		//댓글
+		$("#commentSave").on("click", function() {
+			
+			$.ajax({
+				url: '/findpet/commentInst',
+				type: 'POST',
+				datatype: 'json',
+				data: {
+					iffpSeq : $("#iffpSeq").val(),
+					ifcmContent : $("#ifcmContent").val(),
+					ifmmSeq : $("#ifmmSeq").val(),
+				},
+				success:function(result){
+					
+					var txt = "";
+					
+					txt +='<ul class="comment-list">';
+					txt +='<li>';
+					txt +='<div class="comment-body">';
+					txt +='<div class="comment-author"><img src="'+ result.img +'" alt class="profileImg"></div>';
+					txt +='<div class="comment-info">';
+					txt +='<div class="comment-header">';
+					txt +='<h3 class="comments-title">'+ result.writer +'</h3>';
+					txt +='<div class="meta"> <span class="meta-date">방금전</span> </div>';
+					txt +='</div>';
+					txt +='<div class="comment-content">';
+					txt +='<p>'+ result.comment +'</p>';
+					txt +='</div>';
+					txt +='<div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>';
+					txt +='</div>';
+					txt +='</div>';
+					txt +='</li>';
+					txt +='</ul>';
+					
+					$("#comment-area").prepend(txt);
+					$("#ifcmContent").val("");
+				},
+				error:function(){
+					alert("ajax error..!");
+					
+				}
+			})
+		});
     </script>
-    
 </body>
-
 </html>

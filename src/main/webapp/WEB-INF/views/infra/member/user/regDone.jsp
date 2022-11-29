@@ -223,8 +223,8 @@
 			                        </div>
 									<br>                        
 			                        <div class="mid">
-			                        	<button type="button" class="btn btnHome">홈으로</button>
-			                       		<button type="button" class="btn btnLog">로그인</button>
+			                        	<button type="button" class="btn" id="btnHome">홈으로</button>
+			                       		<button type="button" class="btn" id="btnLog">로그인</button>
 			                       	</div>
 								</div>
 			                </div>
@@ -240,6 +240,19 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    
+    <script type="text/javascript">
+    	goUrlHome = "/animal/home";
+    	goUrlLog = "/member/login";
+    	
+	    $("#btnHome").on("click", function(){
+	    	$(location).attr("href", goUrlHome).submit();
+		});
+	    
+	    $("#btnLog").on("click", function(){
+	    	$(location).attr("href", goUrlLog).submit();
+		});
+    </script>
 </body>
 
 </html>

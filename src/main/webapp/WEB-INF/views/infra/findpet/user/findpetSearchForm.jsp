@@ -6,15 +6,11 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="true" %>
 
-<!DOCTYPE html>
 <html>
 <head>
   	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
-    <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
     <!-- Bootstrap -->
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -260,9 +256,50 @@
 		    transition: all .2s ease;
 		}
 		
-		.button{
-			margin-left: 815px;
+		.nav-tabs {
+		    border-bottom: 1px solid #ddd;
 		}
+		
+		.nav {
+		    padding-left: 0;
+		    margin-bottom: 0;
+		    list-style: none;
+		}
+		
+		.nav-tabs>li {
+		    float: left;
+		    margin-bottom: -1px;
+		}
+		
+		.nav>li {
+		    position: relative;
+		    display: block;
+		}
+		
+		.nav-tabs>li>.active {
+		    margin-right: 2px;
+		    line-height: 1.42857143;
+		    border: 1px solid transparent;
+		    border-radius: 4px 4px 0 0;
+		    background-color: #C9AF96 !important;
+		    color: white !important;
+		}
+		
+		.nav-tabs>li>.nav-link {
+		    margin-right: 2px;
+		    line-height: 1.42857143;
+		    border: 1px solid transparent;
+		    border-radius: 4px 4px 0 0;
+		    color: #aa9144;
+		}
+		
+		.nav>li>.nav-link {
+		    position: relative;
+		    background-color: transparent;
+		    display: block;
+		    padding: 10px 15px;
+		}
+		
     </style>
     
 </head>
@@ -319,77 +356,90 @@
 		            </div>
 		        </div>
 		    </div>
-		    <div class="row button">
+		    <div class="row" style="float: right">
 		    	<button type="button" class="left" onclick="init()">Start</button>
-			    <button type="button" class="left" onclick="predict()">Predict
-
-				</button>
+			    <button type="button" class="left" onclick="predict()">Predict</button>
 		    </div>
 		    <br>
 		    <br>
 		    <div id="label-container"></div>
-    
-		    <div class="row">
-			    <div class="col">
-				   	<ul class="nav nav-tabs">
-					  <li class="nav-item">
-					    <a class="nav-link active" aria-current="page" href="#">전국</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">서울</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">경기</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">인천</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">부산</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">대구</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">대전</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">전남</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">경남</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">충남</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">광주</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">울산</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">경북</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">전북</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">충북</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">강원</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">제주</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link" href="#">세종</a>
-					</ul>
-				</div>
-			</div>
+			<ul class="nav nav-tabs" id="myTab" role="tablist" style="width: 1158.2px">
+				<li class="nav-item" role="presentation">
+					<button class="nav-link active" id="korea-tab" data-bs-toggle="tab" data-bs-target="#koreaTab" type="button" role="tab" aria-controls="koreaTab" aria-selected="true">전국</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="seoul-tab" data-bs-toggle="tab" data-bs-target="#seoulTab" type="button" role="tab" aria-controls="seoulTab" aria-selected="false">서울</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="gyeonggi-tab" data-bs-toggle="tab" data-bs-target="#gyeonggiTab" type="button" role="tab" aria-controls="gyeonggiTab" aria-selected="false">경기</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="incheon-tab" data-bs-toggle="tab" data-bs-target="#incheonTab" type="button" role="tab" aria-controls="incheonTab" aria-selected="false">인천</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="gangwon-tab" data-bs-toggle="tab" data-bs-target="#gangwonTab" type="button" role="tab" aria-controls="gangwonTab" aria-selected="false">강원</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="busan-tab" data-bs-toggle="tab" data-bs-target="#busanTab" type="button" role="tab" aria-controls="busanTab" aria-selected="false">부산</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="daegu-tab" data-bs-toggle="tab" data-bs-target="#daeguTab" type="button" role="tab" aria-controls="daeguTab" aria-selected="false">대구</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="daejeon-tab" data-bs-toggle="tab" data-bs-target="#daejeonTab" type="button" role="tab" aria-controls="daejeonTab" aria-selected="false">대전</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="gwangju-tab" data-bs-toggle="tab" data-bs-target="#gwangjuTab" type="button" role="tab" aria-controls="gwangjuTab" aria-selected="false">광주</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="ulsan-tab" data-bs-toggle="tab" data-bs-target="#ulsanTab" type="button" role="tab" aria-controls="ulsanTab" aria-selected="false">울산</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="sejong-tab" data-bs-toggle="tab" data-bs-target="#sejongTab" type="button" role="tab" aria-controls="sejongTab" aria-selected="false">세종</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="chungbuk-tab" data-bs-toggle="tab" data-bs-target="#chungbukTab" type="button" role="tab" aria-controls="chungbukTab" aria-selected="false">충북</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="chungnam-tab" data-bs-toggle="tab" data-bs-target="#chungnamTab" type="button" role="tab" aria-controls="chungnamTab" aria-selected="false">충남</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="gyeongbuk-tab" data-bs-toggle="tab" data-bs-target="#gyeongbukTab" type="button" role="tab" aria-controls="gyeongbukTab" aria-selected="false">경북</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="gyeongnam-tab" data-bs-toggle="tab" data-bs-target="#gyeongnamTab" type="button" role="tab" aria-controls="gyeongnamTab" aria-selected="false">경남</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="jeonbuk-tab" data-bs-toggle="tab" data-bs-target="#jeonbukTab" type="button" role="tab" aria-controls="jeonbukTab" aria-selected="false">전북</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="jeonnam-tab" data-bs-toggle="tab" data-bs-target="#jeonnamTab" type="button" role="tab" aria-controls="jeonnamTab" aria-selected="false">전남</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="jeju-tab" data-bs-toggle="tab" data-bs-target="#jejuTab" type="button" role="tab" aria-controls="jejuTab" aria-selected="false">제주</button>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="koreaTab" role="tabpanel" aria-labelledby="korea-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="seoulTab" role="tabpanel" aria-labelledby="seoul-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="gyeonggiTab" role="tabpanel" aria-labelledby="gyeonggi-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="incheonTab" role="tabpanel" aria-labelledby="incheon-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="gangwonTab" role="tabpanel" aria-labelledby="gangwon-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="busanTab" role="tabpanel" aria-labelledby="busan-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="daeguTab" role="tabpanel" aria-labelledby="daegu-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="daejeonTab" role="tabpanel" aria-labelledby="daejeon-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="gwangjuTab" role="tabpanel" aria-labelledby="gwangju-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="ulsanTab" role="tabpanel" aria-labelledby="ulsan-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="sejongTab" role="tabpanel" aria-labelledby="sejong-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="chungbukTab" role="tabpanel" aria-labelledby="chungbuk-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="chungnamTab" role="tabpanel" aria-labelledby="chungnam-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="gyeongbukTab" role="tabpanel" aria-labelledby="gyeongbuk-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="gyeongnamTab" role="tabpanel" aria-labelledby="gyeongnam-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="jeonbukTab" role="tabpanel" aria-labelledby="jeonbuk-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="jeonnamTab" role="tabpanel" aria-labelledby="jeonnam-tab" tabindex="0"></div>
+				<div class="tab-pane fade" id="jejuTab" role="tabpanel" aria-labelledby="jeju-tab" tabindex="0"></div>
+			</div>		
 	    </div>
-	    <!-- /.page header -->
 	    <div class="content" style="padding-top: 50px;">
 	        <div class="container">
 	            <div class="row">
@@ -419,7 +469,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-   
+		    
     <script type="text/javascript">
 	   /*  $("#file").on('change',function(){
 	    	  var fileName = $("#file").val();
@@ -451,7 +501,7 @@
 	            }
 	            reader.readAsDataURL(f);
 	        });
-	    } 
+	    }
 	    
 	    $("#input_imgs").on('change',function(){
 	   	  var fileName = $("#input_imgs").val();

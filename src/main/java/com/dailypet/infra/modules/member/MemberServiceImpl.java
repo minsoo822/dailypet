@@ -23,8 +23,8 @@ public class MemberServiceImpl implements MemberService{
 	//회원가입
 	@Override
 	public int userInsert(Member dto) throws Exception {
-		int userInsert = dao.userInsert(dto);
 		dto.setIfmmPW(UtilSecurity.encryptSha256(dto.getIfmmPW()));  
+		int userInsert = dao.userInsert(dto);
 
         int j = 0;
         for(MultipartFile myFile : dto.getUser_image()) {
@@ -51,6 +51,7 @@ public class MemberServiceImpl implements MemberService{
 	//회원정보 수정
 	@Override
 	public int userUpdate(Member dto) throws Exception {
+		dto.setIfmmPW(UtilSecurity.encryptSha256(dto.getIfmmPW()));  
 		
 		int userUpdate = dao.userUpdate(dto);
 		int j = 0;

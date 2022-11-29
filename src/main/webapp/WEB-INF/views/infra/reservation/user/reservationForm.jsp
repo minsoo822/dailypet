@@ -95,11 +95,8 @@
     <form id="form" name="reserform" method="post">
     	<input type="hidden" id="ifrsSeq" name="ifrsSeq" value="${resv.ifrsSeq}">
     	<input type="hidden" id="ifmmSeq" value="${info.ifmmSeq}">
-    	<input type="hidden" id="ifrsPetName" name="ifrsPetName" value="${resv.ifrsPetName}">
     	<input type="hidden" id="ifrsPlace" name="ifrsPlace" value="${resv.ifrsPlace}">
     	<input type="hidden" id="ifrsLocation" name="ifrsLocation" value="${resv.ifrsLocation}">
-    	<input type="hidden" id="ifrsPurpose" name="ifrsPurpose" value="${resv.ifrsPurpose}">
-    	<input type="hidden" id="ifrsRequest" name="ifrsRequest" value="${resv.ifrsRequest}">
 	    <div class="totalContent">
 		    <div class="content">
 		        <div class="container2">
@@ -159,9 +156,7 @@
 				                    <div class="buttongroup">
 				                    	<div class="col-md-2" id="cbtn">
 					                        <div class="form-group">
-					                        	<a href="reservationPage">
-					                        		<button type="button" id="btnChange" class="btn okBtn">변경 완료</button>
-					                        	</a>
+				                        		<button type="button" id="btnChange" class="btn okBtn" onclick="javascript:goView(${resv.ifrsSeq})"/>변경 완료</button>
 					                        </div>
 					                    </div>
 					                    <div class="col-md-2" id="cbtn">
@@ -191,10 +186,15 @@
     	var form = $("form[name=reserform]");
     	
     	var goUrlUpdt = "/reservation/changeInfo";
-   	 
-    	$("#btnChange").on("click", function(){
+    	
+		goView = function(key) {
+			ifrsSeq.attr("value", key); 
+			form.attr("action", goUrlUpdt).submit();
+		}
+    	
+    	/* $("#btnChange").on("click", function(){
        		form.attr("action", goUrlUpdt).submit();
-    	});
+    	}); */
     
     </script>
 </body>

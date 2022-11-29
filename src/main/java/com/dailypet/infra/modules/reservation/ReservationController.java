@@ -94,7 +94,7 @@ public class ReservationController {
 		
 		service.changeInfo(dto);
 		
-		return "infra/reservation/user/reservationView";
+		return "redirect:/reservation/reservationView";
 	}
 	
 	@RequestMapping(value = "deleteInfo")

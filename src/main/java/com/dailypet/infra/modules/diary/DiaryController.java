@@ -189,7 +189,7 @@ public class DiaryController {
 	public Map<String, Object> addComment(Comment dto) throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
 		
-		int commentInst = serviceComment.commentInst(dto);
+		serviceComment.commentInst(dto);
 		
 		Comment commentItem = serviceComment.commentOne(dto);
 		

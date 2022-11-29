@@ -51,7 +51,6 @@ public class MemberServiceImpl implements MemberService{
 	//회원정보 수정
 	@Override
 	public int userUpdate(Member dto) throws Exception {
-		dto.setIfmmPW(UtilSecurity.encryptSha256(dto.getIfmmPW()));  
 		
 		int userUpdate = dao.userUpdate(dto);
 		int j = 0;

@@ -167,7 +167,7 @@
 											<!-- 예약 삭제 버튼(모달까지) -->
 					                    	<div class="col-md-2" id="cbtn">
 						                        <div class="form-group">
-					                        		<button type="button" class="btn changebtn">내용 변경</button>
+					                        		<button type="button" class="btn changebtn" onclick="javascript:goForm(${meInfo.ifrsSeq})"/>내용 변경</button>
 						                        </div>
 						                    </div>
 					                    </div>

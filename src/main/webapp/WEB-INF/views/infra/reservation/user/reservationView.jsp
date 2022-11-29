@@ -71,6 +71,56 @@
     	font-size: 13px;
     	font-weight: bold;
 	}
+/* -------------------------------------------------------------- */
+	.modal_overlay {
+    	z-index: 999;
+        width: 100%;
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal_window {
+		z-index: 999;
+        background: white;
+        backdrop-filter: blur(13.5px);
+        -webkit-backdrop-filter: blur(13.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        text-align: center;
+        width: 550px;
+        height: 300px;
+        position: relative;
+        bottom: 750px;
+       
+    }
+     .modal_title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 10px;
+        ma
+    }
+	.modal_body {
+		width: 500px;
+		height: 170px;
+		margin: auto;
+		padding-top: 70px;
+	}
+	.modal_footer {
+		width: 300px;
+		margin: auto;
+		display: flex;
+		justify-content: space-between;
+	}
+    .modal_title_side{
+        flex: 0 0 40px;
+        text-align: center;
+    }	
 </style>
 
 <body>
@@ -146,22 +196,7 @@
 					                    	<!-- 예약 삭제 버튼(모달까지) -->
 					                    	<div class="col-md-2" id="cbtn">
 						                        <div class="form-group">
-					                        		<button type="button" class="btn btnDelete" data-toggle="modal" data-target="#deleteModal">예약 취소</button>
-						                        	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
-														<div class="modal-dialog">
-															<div class="modal-content">
-																<div class="modal-header">
-																	<h5 class="modal-title" id="deleteModalLabel" data-dismiss="modal">예약 취소</h5>
-																	<button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
-																</div>
-																<div class="modal-body">해당 예약을 삭제하시겠습니까? 삭제 시 복구는 불가합니다.</div>
-																<div class="modal-footer">
-																	<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
-																	<button type="button" class="btn btn-secondary" id="btnDel">삭제</button>
-																</div>
-															</div>
-														</div>
-													</div>
+					                        		<button type="button" class="btn btnDelete" id="add_feed">예약 취소</button>
 						                        </div>
 						                    </div>
 											<!-- 예약 삭제 버튼(모달까지) -->
@@ -179,6 +214,28 @@
 		        </div>
 		    </div>
 	    </div>
+		<!-- Modal s -->
+		<div id="modal_add_feed" class="modal_overlay">
+			<div class="modal_window">
+				<div class="modal_title">
+					<div class="modal_title_side"></div>
+					<div style="margin-bottom: 7px"> 예약 취소 </div>
+					<div class="modal_title_side">
+						<span id="close_modal" class="material-icons-outlined">
+							<i class="fa-solid fa-xmark"></i>
+						</span>
+					</div>
+				</div>
+				<div class="modal_body">
+					해당 예약을 삭제하시겠습니까? 삭제 시 복구는 불가합니다.
+				</div>
+				<div class="modal_footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+					<button type="button" class="btn btn-danger" id="btnDel">삭제</button>
+				</div>
+			</div>
+		</div>
+		<!-- Modal e -->
 	</form>
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
@@ -211,7 +268,25 @@
 	    $("#btnDel").on("click", function(){
 			form.attr("action", goUrlDele).submit();
 		});
-    
+	 // 모달 띄우기 코드
+    	const modal = document.getElementById("modal_add_feed");
+	    const buttonAddFeed = document.getElementById("add_feed");
+	   
+			buttonAddFeed.addEventListener("click", e => {
+				modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌 
+		    	modal.style.display = "flex";
+		        
+				document.body.style.overflowY = "hidden"; // 스크롤 없애기
+	        
+			}); 
+		
+	 	// 모달 닫기 코드
+	    const buttonCloseModal = document.getElementById("close_modal");
+	    		
+		buttonCloseModal.addEventListener("click", e => {
+			modal.style.display = "none";
+			document.body.style.overflowY = "visible";
+		});
     </script>
     
 </body>

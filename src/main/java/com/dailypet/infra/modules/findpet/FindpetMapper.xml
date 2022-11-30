@@ -220,4 +220,176 @@
 		WHERE 1=1
 		AND b.ifcgSeq = 5
 	</select>
+	
+	<!-- 지역별 탭 -->
+	<select id="selectSeoul" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 13
+	</select>
+	<select id="selectGyeonggi" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 14
+	</select>
+	<select id="selectIncheon" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 15
+	</select>
+	<select id="selectGangwon" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 16
+	</select>
+	<select id="selectBusan" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 17
+	</select>
+	<select id="selectDaegu" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 18
+	</select>
+	<select id="selectDaejeon" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 19
+	</select>
+	<select id="selectGwangju" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 20
+	</select>
+	<select id="selectUlsan" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 21
+	</select>
+	<select id="selectSejong" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 22
+	</select>
+	<select id="selectChungbuk" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 23
+	</select>
+	<select id="selectChungnam" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 24
+	</select>
+	<select id="selectGyeongbuk" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 25
+	</select>
+	<select id="selectGyeongnam" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 26
+	</select>
+	<select id="selectJeonbuk" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 27
+	</select>
+	<select id="selectJeonnam" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 28
+	</select>
+	<select id="selectJeju" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+		AND a.iffpSpotLocation = 29
+	</select>
 </mapper>	

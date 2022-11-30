@@ -144,7 +144,7 @@
 								성별
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<input type="text" class="form-control" name="iffpGender" value="${item.iffpGender }" placeholder="모르신다면 적지않으셔도 무방합니다">
+								<input type="text" class="form-control" name="iffpGender" value="${item.iffpGender }" placeholder="(ex.남아, 여아, 모름)">
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text text-center">
 								특징
@@ -161,7 +161,7 @@
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1">
 								<input type="text" class="form-control" name="iffpAnimalShelterzipCode" value="${item.iffpAnimalShelterzipCode }" readonly placeholder="우편번호" id="zip_code">
 							</div>
-							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
 								<button type="button" class="Searchbtn" onclick="sample4_execDaumPostcode()"><i class="fa-solid fa-magnifying-glass"></i></button>
 							</div>
 							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="padding: 0px 0px;">
@@ -190,7 +190,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<select class="form-control" name="iffpSpotLocation">
-									<option value="12" selected hidden>선택</option>
+									<option value="12" selected hidden>:: 선택 ::</option>
 									<option value="12">전국</option>
 									<option value="13">서울</option>
 									<option value="14">경기</option>

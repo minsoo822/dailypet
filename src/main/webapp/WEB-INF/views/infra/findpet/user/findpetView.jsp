@@ -12,73 +12,72 @@
     <title>유기동물 검색 결과</title>
 	
 	<style type="text/css">
-	/* div {
-		border: 1px solid orange;
-	} */	
-	.form-control {
-		color: black;
-	}
-	.petImg {
-		width: 446px;
-		height: 550px;
-		max-height: 100%;
-		max-width: 100%;
-	}
-	.profileImg {
-		width: 80px;
-		height: 80px;
-		max-height: 100%;
-		max-width: 100%;
-	}
-	.text {
-		text-align: left;
-		font-size: 13pt;
-		font-weight: bold;
-		margin-top: 14px;
-	}
-	.Searchbtn {
-    	border: 1px solid #efefef;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 45px;
-    	height: 50px;
-    	border-radius: 6px;
-    	font-size: 13px;
-    	font-weight: bold;
-    	margin-left: auto;
-    	margin-right: auto;
-   	}
-   	.Searchbtn:hover {
-    	background: #372d2b;
-    	color: #f3f0eb;
-    	cursor: pointer;
-    }
-    .btnStyle {
-    	border: 1px solid #efefef;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 55px;
-    	height: 50px;
-    	border-radius: 6px;
-    	font-size: 13px;
-    	font-weight: bold;
-    	margin-top: 30px;
-    	margin-right: 20px;
-    }
-    .btnStyle:hover {
-    	background: #372d2b;
-    	color: #f3f0eb;
-    	cursor: pointer;
-    }
-    .textbtm {
-    	text-align: left;
-		font-size: 13px;
-		font-weight: bold;
-		margin-top: 14px;
-    	margin-bottom: 20px;
-    }
+		/* div {
+			border: 1px solid orange;
+		} */	
+		.form-control {
+			color: black;
+		}
+		.petImg {
+			width: 446px;
+			height: 550px;
+			max-height: 100%;
+			max-width: 100%;
+		}
+		.profileImg {
+			width: 80px;
+			height: 80px;
+			max-height: 100%;
+			max-width: 100%;
+		}
+		.text {
+			text-align: left;
+			font-size: 17px;
+			margin-top: 14px;
+		}
+		.Searchbtn {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 45px;
+	    	height: 50px;
+	    	border-radius: 6px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    	margin-left: auto;
+	    	margin-right: auto;
+	   	}
+	   	.Searchbtn:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    .btnStyle {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 55px;
+	    	height: 50px;
+	    	border-radius: 6px;
+	    	font-size: 13px;
+	    	font-weight: bold;
+	    	margin-top: 30px;
+	    	margin-right: 20px;
+	    }
+	    .btnStyle:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    .textbtm {
+	    	text-align: left;
+			font-size: 17px;
+			font-weight: bold;
+			margin-top: 14px;
+	    	margin-bottom: 20px;
+	    }
 	</style>
 </head>
 
@@ -103,13 +102,13 @@
 					</div>	
 	                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12" style="width: 650px; margin-left: 30px;">
 						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								이름
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">
 								<c:out value="${item.iffpName }"/>
 							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								품종
 							</div>
 							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">
@@ -118,13 +117,13 @@
 						</div>
 						<hr>
 						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								성별
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">
 								<c:out value="${item.iffpGender }"/>
 							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								특징
 							</div>
 							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">
@@ -133,7 +132,7 @@
 						</div>
 						<hr>
 						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								위탁장소
 							</div>
 							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ge-1 text">
@@ -157,13 +156,13 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								발견지역
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">
 								<c:out value="${item.iffpSpotLocation }"/>
 							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								발견장소
 							</div>
 							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">

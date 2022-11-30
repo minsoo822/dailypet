@@ -362,7 +362,7 @@
 		    </div>
 		    <br>
 		    <br>
-		    <div id="label-container"></div>
+		    <div id="label-container" style="display:none;"></div>
 			<ul class="nav nav-tabs" id="myTab" role="tablist" style="width: 1158.2px">
 				<li class="nav-item" role="presentation">
 					<button class="nav-link active" id="korea-tab" data-bs-toggle="tab" data-bs-target="#koreaTab" type="button" role="tab" aria-controls="koreaTab" aria-selected="true">전국</button>
@@ -474,6 +474,12 @@
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		    
     <script type="text/javascript">
+    	var animal = [];
+    	var result = [];
+    	var name;
+    	var percent;
+    	
+    	
 	   /*  $("#file").on('change',function(){
 	    	  var fileName = $("#file").val();
 	    	  $(".upload-name").val(fileName);
@@ -540,10 +546,16 @@
 	        maxPredictions = model.getTotalClasses();
 	
 	        // append elements to the DOM
+	        
 	        labelContainer = document.getElementById("label-container");
+        	      
 	        for (let i = 0; i < maxPredictions; i++) { // and class labels
 	            labelContainer.appendChild(document.createElement("div"));
-	        }
+	        } // 출력
+
+    		console.log(animal);
+    		console.log(result);
+	        
 	    }
 	
 	    // run the webcam image through the image model
@@ -556,10 +568,12 @@
 	        $("#mySpinner").show(); */
 	        
 	        for (let i = 0; i < maxPredictions; i++) {
-	            const classPrediction =
-	                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+	        	animal[i] = prediction[i].className;
+	        	result[i] = prediction[i].probability.toFixed(2);
+	        	
+	            const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
 	            labelContainer.childNodes[i].innerHTML = classPrediction;
-	        }
+	        } // 출력 형식
 	       /*  $("#mySpinner").hide(); */
 	    }
 	
@@ -664,7 +678,9 @@
 	    
 	    $('.image-upload-wrap').bind('dragleave', function () {
 	        $('.image-upload-wrap').removeClass('image-dropping');
-	    });  	
+	    });  
+	    
+	    
     </script>
     
 </body>

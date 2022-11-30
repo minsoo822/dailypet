@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<jsp:useBean id="CodeServiceImpl" class="com.dailypet.infra.modules.code.CodeServiceImpl"/>
 <%@ page session="true" %>
 
 <html>
@@ -89,6 +90,8 @@
     <input type="hidden" id="iffpSeq" name="iffpSeq" value="${item.iffpSeq }">
     <input type="hidden" id="cuMember" name="cuMember" value="${item.mm_ifmmSeq }">
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${sessSeq }">
+	<c:set var="listCodeBreed" value="${CodeServiceImpl.selectListCachedCode(5) }"/>
+   	<c:set var="listCodeSpotLocation" value="${CodeServiceImpl.selectListCachedCode(4) }"/>
 	<div class="totalContent">
 	    <div class="content">
 	        <div class="container">
@@ -112,7 +115,9 @@
 								품종
 							</div>
 							<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 text">
-								<c:out value="${item.iffpBreed }"/>
+								<c:forEach items="${listCodeBreed }" var="listBreed" varStatus="status">
+									<c:if test="${item.iffpBreed eq listBreed.ifcdSeq}"><c:out value="${listBreed.ifcdName }"/></c:if>	
+								</c:forEach>
 							</div>
 						</div>
 						<hr>
@@ -160,7 +165,9 @@
 								발견지역
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">
-								<c:out value="${item.iffpSpotLocation }"/>
+								<c:forEach items="${listCodeSpotLocation }" var="listSpotLocation" varStatus="status">
+									<c:if test="${item.iffpSpotLocation eq listSpotLocation.ifcdSeq}"><c:out value="${listSpotLocation.ifcdName }"/></c:if>	
+								</c:forEach>
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								발견장소

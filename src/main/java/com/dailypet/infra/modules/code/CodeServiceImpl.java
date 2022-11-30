@@ -62,11 +62,22 @@ public class CodeServiceImpl implements CodeService{
 		Code.cachedCodeArrayList.addAll(codeListFromDb);
 		System.out.println("cachedCodeArrayList: " + Code.cachedCodeArrayList.size() + " chached !");
 	}
-	
-	public static String selectOneCachedCode(int code) throws Exception {
+    public static List<Code> selectListCachedCode(int cg_ifcgSeq) throws Exception {
+        
+        List<Code> rt = new ArrayList<Code>();
+        for(Code codeRow : Code.cachedCodeArrayList) {
+            if (codeRow.getCg_ifcgSeq().equals(cg_ifcgSeq)) {
+                rt.add(codeRow);
+            } else {
+                // by pass
+            }
+        }
+        return rt;
+    }	
+	public static String selectOneCachedCode(String code) throws Exception {
 		String rt = "";
 		for(Code codeRow : Code.cachedCodeArrayList) {
-			if (codeRow.getIfcdSeq().equals(Integer.toString(code))) {
+			if (codeRow.getIfcdSeq().equals(code)) {
 				rt = codeRow.getIfcdName();
 			} else {
 				// by pass

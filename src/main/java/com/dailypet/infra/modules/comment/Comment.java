@@ -15,6 +15,9 @@ public class Comment extends Base{
 	
 	private Integer ifdaSeq;
 	private Integer sessSeq;
+	private String mmPath;
+	private String mmuuidName;
+	private String ifmmID;
 	
 	public Integer getIfcmSeq() {
 		return ifcmSeq;
@@ -75,6 +78,24 @@ public class Comment extends Base{
 	}
 	public void setSessSeq(Integer sessSeq) {
 		this.sessSeq = sessSeq;
+	}
+	public String getMmPath() {
+		return mmPath;
+	}
+	public void setMmPath(String mmPath) {
+		this.mmPath = mmPath;
+	}
+	public String getMmuuidName() {
+		return mmuuidName;
+	}
+	public void setMmuuidName(String mmuuidName) {
+		this.mmuuidName = mmuuidName;
+	}
+	public String getIfmmID() {
+		return ifmmID;
+	}
+	public void setIfmmID(String ifmmID) {
+		this.ifmmID = ifmmID;
 	}
 	
 }

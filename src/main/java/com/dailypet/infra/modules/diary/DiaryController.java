@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.dailypet.infra.modules.comment.Comment;
 import com.dailypet.infra.modules.comment.CommentServiceImpl;
+import com.dailypet.infra.modules.comment.CommentVo;
 import com.dailypet.infra.modules.follow.Follow;
 import com.dailypet.infra.modules.follow.FollowServiceImpl;
 import com.dailypet.infra.modules.like.Like;
@@ -38,7 +39,7 @@ public class DiaryController {
 	
 	// 일기리스트 
 	@RequestMapping(value = "diaryList")
-	public String selectList(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession) throws Exception {
+	public String selectList(@ModelAttribute("vo") DiaryVo vo, CommentVo cmvo, Model model, HttpSession httpSession) throws Exception {
 		
 		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
@@ -47,6 +48,8 @@ public class DiaryController {
 		List<Diary> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
+		List<Comment> cmList = serviceComment.commentList(cmvo);
+		model.addAttribute("cmList", cmList);
 		
 		return "infra/diary/user/diaryList";
 	}
@@ -188,7 +191,6 @@ public class DiaryController {
 	@RequestMapping(value="drListCmInst")
 	public Map<String, Object> addComment(Comment dto) throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
-		
 		serviceComment.commentInst(dto);
 		
 		Comment commentItem = serviceComment.commentOne(dto);

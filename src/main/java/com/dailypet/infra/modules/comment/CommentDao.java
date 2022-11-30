@@ -1,5 +1,7 @@
 package com.dailypet.infra.modules.comment;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
@@ -13,6 +15,10 @@ public class CommentDao {
 	private SqlSession sqlSession;
 	
 	private static String namespace = "com.dailypet.infra.modules.comment.CommentMapper";
+	
+	public List<Comment> commentList(CommentVo vo) throws Exception {
+		return sqlSession.selectList(namespace + ".commentList", vo);
+	}
 	
 	// 댓글
 	public int commentInst(Comment dto) { 

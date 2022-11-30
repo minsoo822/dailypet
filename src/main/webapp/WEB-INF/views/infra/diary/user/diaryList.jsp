@@ -191,6 +191,7 @@
     <!-- <input type="hidden" name="ifdaSeq"> -->
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
     <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
     
 		<div class="diaryheader">
 			<nav class="icon">
@@ -209,7 +210,7 @@
 	    <div class="content">
 			<div class="container" style="margin-left: auto; margin-right: auto; width: 500px; margin-top: 5%;">
 				<c:forEach items="${list }" var="list" varStatus="status">
-					<div class="row box" id="ifdaSeq" name="ifdaSeq" value="${list.ifdaSeq }">
+					<div class="row box">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<!-- 상단바 s -->
 						<div class="row" style="margin-top: 15px; height: 50px;">
@@ -263,28 +264,30 @@
 									<p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm${list.ifdaSeq}">댓글보기</p>
 								</a>
 								<div class="row mt-2 mb-2" id="cmList${list.ifdaSeq}" style="display: none;">
-									<div class="row">
-										<div class="col">
-											<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">
-												<img src="${list.memberPath }${list.memberuuidName}" class="profilepic" alt="">
-											</div>
-											<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-												<div class="row">
-													<div class="col-2 cmId">
-														아이디
-													</div>
-													<div class="col cmTime">
-														0000-00-00 00:00:00
-													</div>
+									<c:forEach items="${cmList }" var="cmList" varStatus="status">
+										<div class="row">
+											<div class="col">
+												<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">
+													<img src="${cmList.mmPath }${cmList.mmuuidName}" class="profilepic" alt="">
 												</div>
-												<div class="row">
-													<div class="col">
-														귀엽다!
+												<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+													<div class="row">
+														<div class="col-2 cmId">
+															<c:out value="${cmList.ifmmID }"></c:out>
+														</div>
+														<div class="col cmTime">
+															<c:out value="${cmList.ifcmRegDate }"></c:out>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col">
+															<c:out value="${cmList.ifcmContent }"></c:out>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
+									</c:forEach>
 								</div>
 								<!-- Comment e -->
 							</div>
@@ -293,7 +296,7 @@
 						<div class="cardcomment" style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px;">
 							<div class="commentBox">
 						  	 	<input class="form-control commentForm" type="text" placeholder="댓글 달기" name="ifcmContent" id="ifcmContent">
-						  	 	<button id="commSubmit"><i class="fa-regular fa-paper-plane"></i></button>
+						  	 	<button onclick="commSubmit(${list.ifdaSeq})"><i class="fa-regular fa-paper-plane"></i></button>
 						   	</div>
 					   </div>
 					   <!-- Comment e -->
@@ -310,8 +313,8 @@
     <script type="text/javascript">
     	
     var sessSeq = $("#sessSeq").val();
-	var ifdaSeq = $("input:hidden[name=ifdaSeq]");
-	var ifmmSeq = $("input:hidden[name=ifmmSeq]");
+    var ifdaSeq = $("input:hidden[name=ifdaSeq]");
+    var ifmmSeq = $("input:hidden[name=ifmmSeq]");
 	var seq = $("input:hidden[name=ifmmSeq]");
 	var form = $("#diaryForm")
 	
@@ -353,13 +356,13 @@
 	       } */
     }
 	
-	$("#commSubmit").on("click", function(){
+	commSubmit = function(key){
 		$.ajax({
 			url: '/diary/drListCmInst',
 			type: 'POST',
 			datatype: 'json',
 			data: {
-				da_ifdaSeq : $("#ifdaSeq").val(),
+				ifdaSeq : key,
 				ifcmContent: $("#ifcmContent").val(),
 				ifmmSeq: $("#ifmmSeq").val()
 			},
@@ -390,7 +393,7 @@
 				alert("ajax error..!");
 			}
 		})
-	});
+	};
     </script>
     
 </body>

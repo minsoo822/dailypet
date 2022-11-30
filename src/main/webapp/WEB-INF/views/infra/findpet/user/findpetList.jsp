@@ -9,19 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="Are you interior design company and looking for startup your website. Download Free Interior Design Website Templates for you suitable to you.">
-    <meta name="keywords" content="interior design, furniture, exterior furniture, furniture company, bootstrap interior design website templates, interior design & furniture website templates">
-    <!-- Bootstrap -->
-    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/15c84217dd.js" crossorigin="anonymous"></script>
-    <!-- Style -->
-    <link href="/resources/css/style.css" rel="stylesheet">
+    <%@include file="../../../common/xdmin/include/head.jsp"%>
     <title>유기동물 리스트</title>
     
     <style type="text/css">
@@ -99,6 +87,10 @@
 		    background-color: transparent;
 		    display: block;
 		    padding: 10px 15px;
+		}
+		
+		.fade {
+			opacity: 100;
 		}
     </style>
     
@@ -181,11 +173,11 @@
 						<div class="content" style="padding-top: 50px;">
 					        <div class="container">
 					            <div class="row">
-					            	<c:forEach items="${list }" var="list" varStatus="status">
+					            	<c:forEach items="${selectKorea }" var="selectKorea" varStatus="status">
 						                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 						                    <div class="project-img mb30">
-						                        <a href="javascript:goView(${list.iffpSeq })" class="imghover">
-						                        	<img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="">
+						                        <a href="javascript:goView(${selectKorea.iffpSeq })" class="imghover">
+						                        	<img class="imgsize" src="${selectKorea.path }${selectKorea.uuidName}" class="img-responsive" alt="">
 						                        </a>
 						                    </div>
 						                </div>
@@ -211,9 +203,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -231,9 +220,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -251,9 +237,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -271,9 +254,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -291,9 +271,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -311,9 +288,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -331,9 +305,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -351,9 +322,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -371,9 +339,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -391,9 +356,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -411,9 +373,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -431,9 +390,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -451,9 +407,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -471,9 +424,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -491,9 +441,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -511,9 +458,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>
@@ -531,9 +475,6 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
 		    			</div>
 					</div>

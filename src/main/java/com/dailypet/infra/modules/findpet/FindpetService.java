@@ -21,6 +21,7 @@ public interface FindpetService {
 	public int selectOneCount(FindpetVo vo) throws Exception;
 	
 	//지역 탭
+	public List<Findpet> selectKorea(FindpetVo vo) throws Exception;
 	public List<Findpet> selectSeoul(FindpetVo vo) throws Exception;
 	public List<Findpet> selectGyeonggi(FindpetVo vo) throws Exception;
 	public List<Findpet> selectIncheon(FindpetVo vo) throws Exception;

@@ -31,6 +31,8 @@ public class FindpetController {
 		List<Findpet> selectList = service.selectList(vo);
 		model.addAttribute("list", selectList);
 		
+		List<Findpet> selectKorea = service.selectKorea(vo); 
+		model.addAttribute("selectKorea", selectKorea);
 		List<Findpet> selectSeoul = service.selectSeoul(vo); 
 		model.addAttribute("selectSeoul", selectSeoul);
 		List<Findpet> selectGyeonggi = service.selectGyeonggi(vo); 

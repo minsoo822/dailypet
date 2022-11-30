@@ -222,6 +222,15 @@
 	</select>
 	
 	<!-- 지역별 탭 -->
+	<select id="selectKorea" resultMap="resultMapObj">
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+		AND c.defaultNY = 1 
+	</select>
 	<select id="selectSeoul" resultMap="resultMapObj">
 		SELECT
 			a.*

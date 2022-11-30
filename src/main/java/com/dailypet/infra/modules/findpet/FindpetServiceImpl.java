@@ -107,6 +107,10 @@ public class FindpetServiceImpl implements FindpetService{
 	
 	//지역 탭
 	@Override
+	public List<Findpet> selectKorea(FindpetVo vo) throws Exception {
+		return dao.selectKorea(vo);
+	}
+	@Override
 	public List<Findpet> selectSeoul(FindpetVo vo) throws Exception {
 		return dao.selectSeoul(vo);
 	}

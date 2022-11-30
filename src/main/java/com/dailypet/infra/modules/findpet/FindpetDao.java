@@ -66,6 +66,9 @@ public class FindpetDao {
 	}
 	
 	//지역 탭
+	public List<Findpet> selectKorea(FindpetVo vo) throws Exception { 
+		return sqlSession.selectList(namespace + ".selectKorea", vo); 
+	}
 	public List<Findpet> selectSeoul(FindpetVo vo) throws Exception { 
 		return sqlSession.selectList(namespace + ".selectSeoul", vo); 
 	}

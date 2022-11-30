@@ -66,6 +66,8 @@
     <!-- header e -->
 	<form id="searchForm" method="post">
 	<input type="hidden" name="iffpSeq" value="${vo.iffpSeq }">
+	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		<div class="totalContent">
 	   		 <div class="container">
 			    <div class="row">
@@ -163,16 +165,17 @@
     
     <script type="text/javascript">
     
-	    var goUrlList = "/findpet/findpetSearchForm";
+	    var goUrlSearchList = "/findpet/findpetSearchForm";
 	    var goUrlForm = "/findpet/findpetMod";
 	    var goUrlView = "/findpet/findpetView";
+	    var goUrlList = "/findpet/findpetList";
 	    
 	    
 	    var seq = $("input:hidden[name=iffpSeq]");
 	    var form = $("#searchForm");
 	    
 	    $("#searchGo").on("click", function(){
-	    	$(location).attr("href", goUrlList).submit();
+	    	$(location).attr("href", goUrlSearchList).submit();
 		});
 	
 	    $("#formGo").on("click", function(){
@@ -183,7 +186,10 @@
 	    	seq.attr("value", iffpSeq);
 	    	form.attr("action", goUrlView).submit();
 	    } 
-	    
+	    goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action",goUrlList).submit();
+		}
     </script>
     
 </body>

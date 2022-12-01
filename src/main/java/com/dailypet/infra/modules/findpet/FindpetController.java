@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
 @Controller
 @RequestMapping(value = "/findpet/")
 public class FindpetController {
@@ -26,10 +27,14 @@ public class FindpetController {
 	
 	@RequestMapping(value = "findpetList")
 	public String findpetList(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
-		setSearchAndPaging(vo);
+		int count = service.selectOneCount(vo);
 		
-		List<Findpet> selectList = service.selectList(vo);
-		model.addAttribute("list", selectList);
+		vo.setParamsPaging(count);
+		
+		if(count != 0) {
+			List<Findpet> selectList = service.selectList(vo);
+			model.addAttribute("list", selectList);
+		}
 		
 		List<Findpet> selectKorea = service.selectKorea(vo); 
 		model.addAttribute("selectKorea", selectKorea);

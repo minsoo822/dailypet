@@ -221,16 +221,14 @@
 					<div class="modal_title_side"></div>
 					<div style="margin-bottom: 7px"> 예약 취소 </div>
 					<div class="modal_title_side">
-						<span id="close_modal" class="material-icons-outlined">
-							<i class="fa-solid fa-xmark"></i>
-						</span>
+						
 					</div>
 				</div>
 				<div class="modal_body">
 					해당 예약을 삭제하시겠습니까? 삭제 시 복구는 불가합니다.
 				</div>
 				<div class="modal_footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+					<button type="button" class="btn btn-secondary" id="close_modal" data-dismiss="modal">취소</button>
 					<button type="button" class="btn btn-danger" id="btnDel">삭제</button>
 				</div>
 			</div>

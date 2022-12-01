@@ -1,8 +1,9 @@
 package com.dailypet.infra.modules.findpet;
 
+import com.dailypet.infra.common.base.BaseVo;
 import com.dailypet.infra.common.constants.Constants;
 
-public class FindpetVo {
+public class FindpetVo extends BaseVo{
 	
 	private String iffpSeq;
 	
@@ -10,6 +11,7 @@ public class FindpetVo {
 	private Integer ifcgSeq;
 	private String ifcdName;
 	private Integer iffpSpotLocation;
+	private String iffpBreed;
 	
 //	paging
 	private int thisPage = 1;									// 현재 페이지
@@ -229,6 +231,16 @@ public class FindpetVo {
 
 	public void setIffpSpotLocation(Integer iffpSpotLocation) {
 		this.iffpSpotLocation = iffpSpotLocation;
+	}
+
+
+	public String getIffpBreed() {
+		return iffpBreed;
+	}
+
+
+	public void setIffpBreed(String iffpBreed) {
+		this.iffpBreed = iffpBreed;
 	}
 	
 }

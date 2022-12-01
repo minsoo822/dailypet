@@ -189,10 +189,6 @@ public class FindpetController {
 		List<Code> codeList = serviceCode.categoriList(cdvo);
 		model.addAttribute("codeList", codeList);
 		
-		List<Findpet> selectList = service.selectList(vo);
-		model.addAttribute("list", selectList);
-		
-		
 		List<Findpet> list = service.selectKorea(vo);
 		model.addAttribute("categorylist", list);
 		

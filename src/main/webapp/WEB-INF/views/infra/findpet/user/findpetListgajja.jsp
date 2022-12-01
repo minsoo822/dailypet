@@ -115,7 +115,7 @@
 				<ul class="nav nav-tabs">
 					<c:forEach items="${codeList }" var="item" varStatus="status" begin="11" end="28" step="1">
 					  <li class="nav-item">
-					    <a class="nav-link" id="category${item.ifcdSeq}" name="crArea" onclick="area(${item.ifcdSeq})" value="${item.ifcdSeq }"  aria-current="page" href="#"><c:out value="${item.ifcdName }" /></a>
+					    <a class="nav-link" id="category${item.ifcdSeq}" name="crArea${item.ifcdSeq}" onclick="area(${item.ifcdSeq})" value="${item.ifcdSeq }"  aria-current="page" href="#"><c:out value="${item.ifcdName }" /></a>
 					  </li>
 					</c:forEach>
 				</ul>
@@ -178,13 +178,17 @@
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",goUrlList).submit();
 		}
-	    area = function() {
-	    		$("#asdfq").addClass('active');
-	    		//name="category" 
-	    		for(name= category 수만큼 돌려){
-	    			전부 removeClass('active');
-	    		}
-	    		내가 클릭한 이 태그에 addClass('active');
+	    
+	    
+	    area = function(key) {
+    		//$("#asdfq").addClass('active');
+    		//name="category" 
+    		for(var i=11; i<28; i++){
+    			$('a[name*="crArea"]' ).removeClass('active');
+    			/* category.removeClass('active'); */
+    		}
+    		//내가 클릭한 이 태그에 addClass('active');
+    		$("#category"+key).addClass('active');
 	    };
     </script>
     

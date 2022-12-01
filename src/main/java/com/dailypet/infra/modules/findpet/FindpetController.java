@@ -37,7 +37,7 @@ public class FindpetController {
 		
 		setSearchAndPaging(vo);
 		
-		List<Code> codeList = serviceCode.selectList(cdvo);
+		List<Code> codeList = serviceCode.categoriList(cdvo);
 		model.addAttribute("codeList", codeList);
 		
 		List<Findpet> selectList = service.selectList(vo);

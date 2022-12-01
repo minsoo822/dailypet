@@ -112,11 +112,16 @@
 			    		<button class="Searchbtn" type="button" id="formGo" style="margin-left: 20px;"><i class="fa-regular fa-plus"></i></button>
 			    	</div>
 			    </div>
-			    <ul>
-					<c:forEach items="${codeList }" var="item" varStatus="status">
-						<c:out value="${item.ifcdName }" />
+				<ul class="nav nav-tabs">
+					<c:forEach items="${codeList }" var="item" varStatus="status" begin="11" end="28" step="1">
+					  <li class="nav-item">
+					    <a class="nav-link" id="asdfq${item.ifcdSeq}" onclick="area(${item.ifcdSeq})" value="${item.ifcdSeq }"  aria-current="page" href="#"><c:out value="${item.ifcdName }" /></a>
+					  </li>
 					</c:forEach>
 				</ul>
+				  <!-- <li class="nav-item">
+				    <a class="nav-link" href="#">Link</a>
+				  </li> -->
 				<div class="content" style="padding-top: 50px;">
 			        <div class="container">
 			            <div class="row">
@@ -173,6 +178,9 @@
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",goUrlList).submit();
 		}
+	    area = function(key) {
+	    	$("#asdfq"+key).addClass('active');
+	    };
     </script>
     
 </body>

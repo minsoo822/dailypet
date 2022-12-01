@@ -187,7 +187,7 @@ public class FindpetController {
 	@RequestMapping(value = "findpetListgajja")
 	public String findpetListgajja(@ModelAttribute("vo") FindpetVo vo, CodeVo cdvo , Model model) throws Exception {
 		
-		setSearchAndPaging(vo);
+//		setSearchAndPaging(vo);
 		
 		List<Code> codeList = serviceCode.selectList(cdvo);
 		model.addAttribute("codeList", codeList);

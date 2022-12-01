@@ -188,6 +188,9 @@
     			/* category.removeClass('active'); */
     		}
     		//내가 클릭한 이 태그에 addClass('active');
+    		
+    		// ajax(txt = html 태그 넣고  어쩌구.html(txt))로 할것인가 submit(새페이지 불러오고 대신 선택했던 지역탭에 addClass('active'))으로 할것인가 
+    		
     		$("#category"+key).addClass('active');
 	    };
     </script>

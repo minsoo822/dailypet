@@ -102,6 +102,7 @@
     <!-- header e -->
 	<form id="searchForm" method="post">
 	<input type="hidden" name="iffpSeq" value="${vo.iffpSeq }">
+	<input type="hidden" name="iffpSpotLocation" id="iffpSpotLocation" value="">
 	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		<div class="totalContent">
@@ -113,9 +114,9 @@
 			    	</div>
 			    </div>
 				<ul class="nav nav-tabs">
-					<c:forEach items="${codeList }" var="item" varStatus="status" begin="11" end="28" step="1">
+					<c:forEach items="${codeList }" var="item" varStatus="status" begin="0" end="17" step="1">
 					  <li class="nav-item">
-					    <a class="nav-link" id="category${item.ifcdSeq}" name="crArea${item.ifcdSeq}" onclick="area(${item.ifcdSeq})" value="${item.ifcdSeq }"  aria-current="page" href="#"><c:out value="${item.ifcdName }" /></a>
+					    <a class="nav-link" id="category${item.ifcdSeq}" name="crArea${item.ifcdSeq}" onclick="area(${item.ifcdSeq})" aria-current="page" href="#"><c:out value="${item.ifcdName }" /></a>
 					  </li>
 					</c:forEach>
 				</ul>
@@ -125,7 +126,7 @@
 				<div class="content" style="padding-top: 50px;">
 			        <div class="container">
 			            <div class="row">
-			            	<c:forEach items="${list }" var="list" varStatus="status">
+			            	<c:forEach items="${categorylist }" var="list" varStatus="status">
 				                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 				                    <div class="project-img mb30">
 				                        <a href="javascript:goView(${list.iffpSeq })" class="imghover">
@@ -158,7 +159,7 @@
 	    var goUrlView = "/findpet/findpetView";
 	    var goUrlList = "/findpet/findpetList";
 	    
-	    
+	    var iffpSpotLocation = $("input:hidden[name=iffpSpotLocation]");
 	    var seq = $("input:hidden[name=iffpSeq]");
 	    var form = $("#searchForm");
 	    
@@ -190,9 +191,21 @@
     		//내가 클릭한 이 태그에 addClass('active');
     		
     		// ajax(txt = html 태그 넣고  어쩌구.html(txt))로 할것인가 submit(새페이지 불러오고 대신 선택했던 지역탭에 addClass('active'))으로 할것인가 
+			iffpSpotLocation.val(key)
+    		form.attr("action" , "/findpet/findpetListgajja").submit();
     		
     		$("#category"+key).addClass('active');
 	    };
+	    /*
+	    area = function(key) {
+	    	var crArea = document.getElementsByName('crArea');
+	    	
+	    	for(var i=0; i<crArea.length; i++){
+	    		crArea[i].classList.remove("active");
+	    	}
+	    	$("#category"+key).addClass('active');
+	    };
+	    */
     </script>
     
 </body>

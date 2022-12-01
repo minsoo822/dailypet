@@ -9,7 +9,7 @@ public class FindpetVo {
 	private Integer ifcdSeq;
 	private Integer ifcgSeq;
 	private String ifcdName;
-	
+	private Integer iffpSpotLocation;
 	
 //	paging
 	private int thisPage = 1;									// 현재 페이지
@@ -219,6 +219,16 @@ public class FindpetVo {
 
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
+	}
+
+
+	public Integer getIffpSpotLocation() {
+		return iffpSpotLocation;
+	}
+
+
+	public void setIffpSpotLocation(Integer iffpSpotLocation) {
+		this.iffpSpotLocation = iffpSpotLocation;
 	}
 	
 }

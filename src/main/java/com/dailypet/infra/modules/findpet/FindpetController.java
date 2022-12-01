@@ -34,14 +34,11 @@ public class FindpetController {
 	
 	@RequestMapping(value = "findpetList")
 	public String findpetList(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
-		int count = service.selectOneCount(vo);
 		
-		vo.setParamsPaging(count);
+		setSearchAndPaging(vo);
 		
-		if(count != 0) {
-			List<Findpet> selectList = service.selectList(vo);
-			model.addAttribute("list", selectList);
-		}
+		List<Findpet> selectList = service.selectList(vo);
+		model.addAttribute("list", selectList);
 		
 		List<Findpet> selectKorea = service.selectKorea(vo); 
 		model.addAttribute("selectKorea", selectKorea);
@@ -189,13 +186,19 @@ public class FindpetController {
 		
 		setSearchAndPaging(vo);
 		
-		List<Code> codeList = serviceCode.selectList(cdvo);
+		List<Code> codeList = serviceCode.categoriList(cdvo);
 		model.addAttribute("codeList", codeList);
 		
 		List<Findpet> selectList = service.selectList(vo);
 		model.addAttribute("list", selectList);
 		
+		
+		List<Findpet> list = service.selectKorea(vo);
+		model.addAttribute("categorylist", list);
+		
+		
 		return "infra/findpet/user/findpetListgajja";
 	}
+	
 
 }

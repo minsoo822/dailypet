@@ -184,7 +184,7 @@
 					                </c:forEach>
 					            </div>
 					        </div>
-				            <!-- pagination s -->
+					         <!-- pagination s -->
 							<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 							<!-- pagination e -->
 		    			</div>
@@ -204,9 +204,6 @@
 					                </c:forEach>
 					            </div>
 					        </div>
-					        <!-- pagination s -->
-							<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-							<!-- pagination e -->
 		    			</div>
 					</div>
 					<div class="tab-pane fade" id="gyeonggiTab" role="tabpanel" aria-labelledby="gyeonggi-tab" tabindex="0">

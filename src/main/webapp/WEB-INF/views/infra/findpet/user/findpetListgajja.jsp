@@ -112,61 +112,10 @@
 			    		<button class="Searchbtn" type="button" id="formGo" style="margin-left: 20px;"><i class="fa-regular fa-plus"></i></button>
 			    	</div>
 			    </div>
-				<ul class="nav nav-tabs" id="myTab" role="tablist" style="width: 1158.2px">
-					<li class="nav-item" role="presentation">
-						<button class="nav-link active" id="korea-tab" data-bs-toggle="tab" data-bs-target="#koreaTab" type="button" role="tab" aria-controls="koreaTab" aria-selected="true">전국</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="seoul-tab" data-bs-toggle="tab" data-bs-target="#seoulTab" type="button" role="tab" aria-controls="seoulTab" aria-selected="false">서울</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="gyeonggi-tab" data-bs-toggle="tab" data-bs-target="#gyeonggiTab" type="button" role="tab" aria-controls="gyeonggiTab" aria-selected="false">경기</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="incheon-tab" data-bs-toggle="tab" data-bs-target="#incheonTab" type="button" role="tab" aria-controls="incheonTab" aria-selected="false">인천</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="gangwon-tab" data-bs-toggle="tab" data-bs-target="#gangwonTab" type="button" role="tab" aria-controls="gangwonTab" aria-selected="false">강원</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="busan-tab" data-bs-toggle="tab" data-bs-target="#busanTab" type="button" role="tab" aria-controls="busanTab" aria-selected="false">부산</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="daegu-tab" data-bs-toggle="tab" data-bs-target="#daeguTab" type="button" role="tab" aria-controls="daeguTab" aria-selected="false">대구</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="daejeon-tab" data-bs-toggle="tab" data-bs-target="#daejeonTab" type="button" role="tab" aria-controls="daejeonTab" aria-selected="false">대전</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="gwangju-tab" data-bs-toggle="tab" data-bs-target="#gwangjuTab" type="button" role="tab" aria-controls="gwangjuTab" aria-selected="false">광주</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="ulsan-tab" data-bs-toggle="tab" data-bs-target="#ulsanTab" type="button" role="tab" aria-controls="ulsanTab" aria-selected="false">울산</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="sejong-tab" data-bs-toggle="tab" data-bs-target="#sejongTab" type="button" role="tab" aria-controls="sejongTab" aria-selected="false">세종</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="chungbuk-tab" data-bs-toggle="tab" data-bs-target="#chungbukTab" type="button" role="tab" aria-controls="chungbukTab" aria-selected="false">충북</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="chungnam-tab" data-bs-toggle="tab" data-bs-target="#chungnamTab" type="button" role="tab" aria-controls="chungnamTab" aria-selected="false">충남</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="gyeongbuk-tab" data-bs-toggle="tab" data-bs-target="#gyeongbukTab" type="button" role="tab" aria-controls="gyeongbukTab" aria-selected="false">경북</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="gyeongnam-tab" data-bs-toggle="tab" data-bs-target="#gyeongnamTab" type="button" role="tab" aria-controls="gyeongnamTab" aria-selected="false">경남</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="jeonbuk-tab" data-bs-toggle="tab" data-bs-target="#jeonbukTab" type="button" role="tab" aria-controls="jeonbukTab" aria-selected="false">전북</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="jeonnam-tab" data-bs-toggle="tab" data-bs-target="#jeonnamTab" type="button" role="tab" aria-controls="jeonnamTab" aria-selected="false">전남</button>
-					</li>
-					<li class="nav-item" role="presentation">
-						<button class="nav-link" id="jeju-tab" data-bs-toggle="tab" data-bs-target="#jejuTab" type="button" role="tab" aria-controls="jejuTab" aria-selected="false">제주</button>
-					</li>
+			    <ul>
+					<c:forEach items="${codeList }" var="item" varStatus="status">
+						<c:out value="${item.ifcdName }" />
+					</c:forEach>
 				</ul>
 				<div class="content" style="padding-top: 50px;">
 			        <div class="container">

@@ -106,7 +106,7 @@
 	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		<div class="totalContent">
-	   		 <div class="container" style="width: 1140px;">
+	   		 <div class="container" style="width: 1175px;">
 			    <div class="row">
 				    <div class="col Search">
 			    		<button class="Searchbtn" type="button" id="searchGo"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>

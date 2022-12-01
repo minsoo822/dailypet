@@ -192,7 +192,7 @@
 	                    <div class="testimonial-block bg-light pinside30">
 	                        <div class="quote-left"> <i class="fa fa-quote-left"></i> </div>
 	                        <div class="testimonial-content">
-	                            <p>잃어버린 반려동물을 찾고계신가요?</p>
+	                            <p>잃어버린 반려동물을 찾고계신가요? </p>
 	                        </div>
 	                    </div>
 	                </div>

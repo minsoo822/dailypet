@@ -13,6 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.dailypet.infra.modules.code.Code;
+import com.dailypet.infra.modules.code.CodeServiceImpl;
+import com.dailypet.infra.modules.code.CodeVo;
+
 
 @Controller
 @RequestMapping(value = "/findpet/")
@@ -20,6 +24,9 @@ public class FindpetController {
 	
 	@Autowired
 	FindpetServiceImpl service;
+	
+	@Autowired
+	CodeServiceImpl serviceCode;
 	
 	public void setSearchAndPaging(FindpetVo vo) throws Exception {
 		vo.setParamsPaging(service.selectOneCount(vo));
@@ -176,6 +183,18 @@ public class FindpetController {
 		
 		return "infra/findpet/user/findpetSearchForm";
 	}
-	
+//-------------------------------------------------------------------------------------------
+	@RequestMapping(value = "findpetListgajja")
+	public String findpetListgajja(@ModelAttribute("vo") FindpetVo vo, CodeVo cdvo , Model model) throws Exception {
+		
+		setSearchAndPaging(vo);
+		
+		List<Code> codeList = serviceCode.selectList(cdvo);
+		
+		List<Findpet> selectList = service.selectList(vo);
+		model.addAttribute("list", selectList);
+		
+		return "infra/findpet/user/findpetListgajja";
+	}
 
 }

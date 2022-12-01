@@ -49,10 +49,13 @@ public class CodeDao {
 	public int delete(CodeVo vo) {
 		return sqlSession.delete(namespace + ".delete", vo);
 	}
+	public List<Code> categoriList(CodeVo vo) throws Exception {
+		return sqlSession.selectList(namespace + ".categoriList", vo);
+	}
 	
 	// for cache
 	public List<Code> selectListCachedCodeArrayList(){ 
-		return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null); 
+		return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", ""); 
 	}
 	
 }

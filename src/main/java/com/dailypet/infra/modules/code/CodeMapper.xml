@@ -28,7 +28,7 @@
 	</sql>
 		
 	<select id="selectList" resultMap="resultMapObj">
-		<!-- <include refid="Base.selectListUpperForMysql" /> -->
+		<include refid="Base.selectListUpperForMysql" />
 			SELECT
 				a.ifcdSeq
 				,b.ifcgName
@@ -39,9 +39,14 @@
 			    ,a.ifcdDelNy
 			    ,a.cg_ifcgSeq
 		<include refid="selectCommon" />
-		<!-- 	<include refid="Base.selectListLowerForMysql" /> -->
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
-	
+	<select id="categoriList" resultMap="resultMapObj">
+		SELECT
+    		*
+	    FROM code
+	    WHERE cg_ifcgSeq = 4
+	</select>
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			a.*

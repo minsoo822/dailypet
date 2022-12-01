@@ -84,5 +84,12 @@ public class CodeServiceImpl implements CodeService{
 			}
 		}
 		return rt;
+	}
+
+	@Override
+	public List<Code> categoriList(CodeVo vo) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.categoriList(vo);
 	}  
+	
 }

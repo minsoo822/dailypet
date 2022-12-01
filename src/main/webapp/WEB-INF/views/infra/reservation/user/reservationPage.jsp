@@ -154,7 +154,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 								<div class="row" style="margin-top: 20px;">
 									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 										<button type="button" class="btn btn-warning"><i class="fa-solid fa-trash-can"></i></button>
@@ -165,7 +165,7 @@
 										<a href="/reservation/reservationView"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
 									</div>
 								</div>
-							</div>
+							</div> -->
 					    </div>
 					</div>
 		        </div>

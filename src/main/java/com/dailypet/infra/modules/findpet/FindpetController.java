@@ -101,13 +101,14 @@ public class FindpetController {
 		return "redirect:/findpet/findpetList";
 	}
 	
-	@RequestMapping(value = "findpetSearchForm")
-	public String findpetSearchForm(FindpetVo vo, Model model) throws Exception {
-
-		setSearchAndPaging(vo);
+	@ResponseBody
+	@RequestMapping(value = "findpetResult")
+	public Map<String, Object> findpetResult(FindpetVo vo) throws Exception{
+		
+		Map<String, Object> result = new HashMap<String, Object>(); 
 		
 		//가져온 클래스 명을 ifcdSeq로 변환
-		vo.setIffpBreed("");
+		vo.setIffpBreed(vo.getIffpBreed());
 		if(vo.getIffpBreed() != null) {
 			for(Code item : CodeServiceImpl.selectListCachedCode(5)) {
 				if(item.getIfcdName().equals(vo.getIffpBreed())) {
@@ -117,6 +118,17 @@ public class FindpetController {
 			}
 		}
 		System.err.println(vo.getIffpBreed());
+		
+		//신범수 service is nothing 여기에 서비스 추가하세요 어린이, mapper
+		/* result.put("petList",); */
+		
+		return result;
+	}
+	
+	@RequestMapping(value = "findpetSearchForm")
+	public String findpetSearchForm(FindpetVo vo, Model model) throws Exception {
+
+		setSearchAndPaging(vo);
 		
 		List<Findpet> selectList = service.selectList(vo);
 		model.addAttribute("list", selectList);

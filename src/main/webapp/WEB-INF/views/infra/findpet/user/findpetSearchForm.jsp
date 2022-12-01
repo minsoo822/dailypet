@@ -22,282 +22,282 @@
 <title>유기동물 검색</title>
 
 <style type="text/css">
-.imgsize {
-	width: 258px;
-	height: 218px;
-	max-width: 100%;
-	max-height: 100%;
-}
-
-.Search {
-	margin-top: 50px;
-	display: flex;
-	justify-content: end;
-}
-
-.Reserbtn {
-	border: 1px solid #efefef;
-	background: #f3f0eb;
-	color: #372d2b;
-	text-align: center;
-	width: 50px;
-	height: 50px;
-	border-radius: 10px;
-	font-size: 13px;
-	font-weight: bold;
-}
-
-.Reserbtn:hover {
-	background: #372d2b;
-	color: #f3f0eb;
-	cursor: pointer;
-}
-
-.contents {
-	color: red;
-	font-size: 13px;
-	font-weight: bold;
-	width: 50%;
-	margin-left: 190px;
-}
-
-.contentss {
-	color: red;
-	font-size: 17px;
-	font-weight: bold;
-	width: 50%;
-	margin-left: 190px;
-}
-
-/* inputfile 커스텀 s */
-/*  .filebox {
-	    	text-align: center;
-	    }
-	    
-	    .filebox .upload-name {
-		    display: inline-block;
-		    height: 40px;
-		    padding: 0 10px;
-		    vertical-align: middle;
-		    border: 1px solid #dddddd;
-		    width: 70%;
-		    color: #999999;
-		}
-		
-	    .filebox label {
-		    display: inline-block;
-		    padding: 12px 10px;
-		    vertical-align: middle;
-		    background: #f3f0eb;
-	    	color: #372d2b;
-		    width: 50px;
-	    	height: 50px;
-	    	border-radius: 10px; 
-	    	font-size: 13px;
-	    	font-weight: bold;
-		    margin-left: 10px;
-		    margin-bottom: 5px;
-		}
-		
-		.filebox label:hover {
-	    	background: #372d2b;
-	    	color: #f3f0eb;
-	    	cursor: pointer;
-	    }
-	    
-	    .filebox input[type="file"] {
-		    position: absolute;
-		    width: 0;
-		    height: 0;
-		    padding: 0;
-		    overflow: hidden;
-		    border: 0;
-		} */
-/* inputfile 커스텀 e */
-
-/* 이미지 프리뷰 s */
-/* .preview {
-			margin-bottom: 50px;
-		}
-		
-	    .imgs_wrap {
-			background: #E9ECEF;
-			height: 200px;
-		}
-		
-		.imgs_wrap img {
-			height: 180px;
-			width: 180px;
-			max-width: 100%;
-			max-height: 100%;
-			padding: 20px 0px 0px 40px;
-		} */
-/* 이미지 프리뷰 e */
-.btn {
-	border: 0px;
-	background-color: white;
-	color: black;
-	float: right;
-	padding: 0px;
-}
-
-.down {
-	margin-top: 5px;
-}
-
-/* 이미지 첨부 */
-.file-upload {
-	background-color: #ffffff;
-	width: 800px;
-	margin: 0 auto;
-	padding: 20px;
-}
-
-.file-upload-btn {
-	width: 100%;
-	margin: 0;
-	color: #372d2b;
-	background: #f3f0eb;
-	border: none;
-	padding: 10px;
-	border-radius: 4px;
-	transition: all .2s ease;
-	outline: none;
-	text-transform: uppercase;
-	font-weight: 700;
-}
-
-.file-upload-btn:hover {
-	background: #372d2b;
-	color: #ffffff;
-	transition: all .2s ease;
-	cursor: pointer;
-}
-
-.file-upload-btn:active {
-	border: 0;
-	transition: all .2s ease;
-}
-
-.file-upload-content {
-	display: none;
-	text-align: center;
-}
-
-.file-upload-input {
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	outline: none;
-	opacity: 0;
-	cursor: pointer;
-}
-
-.image-upload-wrap {
-	margin-top: 20px;
-	border: 4px dashed #c3b9b6;
-	position: relative;
-}
-
-.image-dropping, .image-upload-wrap:hover {
-	background-color: #ffffff;
-	border: 4px dashed #372d2b;
-}
-
-.image-title-wrap {
-	padding: 0 15px 15px 15px;
-	color: #222;
-}
-
-.drag-text {
-	text-align: center;
-}
-
-.drag-text h3 {
-	font-weight: 100;
-	text-transform: uppercase;
-	color: #3d423f;
-	padding: 60px 0;
-}
-
-.file-upload-image {
-	max-height: 200px;
-	max-width: 200px;
-	margin: auto;
-	padding: 20px;
-}
-
-.remove-image {
-	width: 200px;
-	margin: 0;
-	color: #fff;
-	background: #cd4535;
-	border: none;
-	padding: 5px;
-	border-radius: 4px;
-	transition: all .2s ease;
-	outline: none;
-	text-transform: uppercase;
-	font-size: 14px;
-}
-
-.remove-image:hover {
-	background: #c13b2a;
-	color: #ffffff;
-	transition: all .2s ease;
-	cursor: pointer;
-}
-
-.remove-image:active {
-	border: 0;
-	transition: all .2s ease;
-}
-
-.nav-tabs {
-	border-bottom: 1px solid #ddd;
-}
-
-.nav {
-	padding-left: 0;
-	margin-bottom: 0;
-	list-style: none;
-}
-
-.nav-tabs>li {
-	float: left;
-	margin-bottom: -1px;
-}
-
-.nav>li {
-	position: relative;
-	display: block;
-}
-
-.nav-tabs>li>.active {
-	margin-right: 2px;
-	line-height: 1.42857143;
-	border: 1px solid transparent;
-	border-radius: 4px 4px 0 0;
-	background-color: #C9AF96 !important;
-	color: white !important;
-}
-
-.nav-tabs>li>.nav-link {
-	margin-right: 2px;
-	line-height: 1.42857143;
-	border: 1px solid transparent;
-	border-radius: 4px 4px 0 0;
-	color: #aa9144;
-}
-
-.nav>li>.nav-link {
-	position: relative;
-	background-color: transparent;
-	display: block;
-	padding: 10px 15px;
-}
+	.imgsize {
+		width: 258px;
+		height: 218px;
+		max-width: 100%;
+		max-height: 100%;
+	}
+	
+	.Search {
+		margin-top: 50px;
+		display: flex;
+		justify-content: end;
+	}
+	
+	.Reserbtn {
+		border: 1px solid #efefef;
+		background: #f3f0eb;
+		color: #372d2b;
+		text-align: center;
+		width: 50px;
+		height: 50px;
+		border-radius: 10px;
+		font-size: 13px;
+		font-weight: bold;
+	}
+	
+	.Reserbtn:hover {
+		background: #372d2b;
+		color: #f3f0eb;
+		cursor: pointer;
+	}
+	
+	.contents {
+		color: red;
+		font-size: 13px;
+		font-weight: bold;
+		width: 50%;
+		margin-left: 190px;
+	}
+	
+	.contentss {
+		color: red;
+		font-size: 17px;
+		font-weight: bold;
+		width: 50%;
+		margin-left: 190px;
+	}
+	
+	/* inputfile 커스텀 s */
+	/*  .filebox {
+		    	text-align: center;
+		    }
+		    
+		    .filebox .upload-name {
+			    display: inline-block;
+			    height: 40px;
+			    padding: 0 10px;
+			    vertical-align: middle;
+			    border: 1px solid #dddddd;
+			    width: 70%;
+			    color: #999999;
+			}
+			
+		    .filebox label {
+			    display: inline-block;
+			    padding: 12px 10px;
+			    vertical-align: middle;
+			    background: #f3f0eb;
+		    	color: #372d2b;
+			    width: 50px;
+		    	height: 50px;
+		    	border-radius: 10px; 
+		    	font-size: 13px;
+		    	font-weight: bold;
+			    margin-left: 10px;
+			    margin-bottom: 5px;
+			}
+			
+			.filebox label:hover {
+		    	background: #372d2b;
+		    	color: #f3f0eb;
+		    	cursor: pointer;
+		    }
+		    
+		    .filebox input[type="file"] {
+			    position: absolute;
+			    width: 0;
+			    height: 0;
+			    padding: 0;
+			    overflow: hidden;
+			    border: 0;
+			} */
+	/* inputfile 커스텀 e */
+	
+	/* 이미지 프리뷰 s */
+	/* .preview {
+				margin-bottom: 50px;
+			}
+			
+		    .imgs_wrap {
+				background: #E9ECEF;
+				height: 200px;
+			}
+			
+			.imgs_wrap img {
+				height: 180px;
+				width: 180px;
+				max-width: 100%;
+				max-height: 100%;
+				padding: 20px 0px 0px 40px;
+			} */
+	/* 이미지 프리뷰 e */
+	.btn {
+		border: 0px;
+		background-color: white;
+		color: black;
+		float: right;
+		padding: 0px;
+	}
+	
+	.down {
+		margin-top: 5px;
+	}
+	
+	/* 이미지 첨부 */
+	.file-upload {
+		background-color: #ffffff;
+		width: 800px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+	
+	.file-upload-btn {
+		width: 100%;
+		margin: 0;
+		color: #372d2b;
+		background: #f3f0eb;
+		border: none;
+		padding: 10px;
+		border-radius: 4px;
+		transition: all .2s ease;
+		outline: none;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	
+	.file-upload-btn:hover {
+		background: #372d2b;
+		color: #ffffff;
+		transition: all .2s ease;
+		cursor: pointer;
+	}
+	
+	.file-upload-btn:active {
+		border: 0;
+		transition: all .2s ease;
+	}
+	
+	.file-upload-content {
+		display: none;
+		text-align: center;
+	}
+	
+	.file-upload-input {
+		position: absolute;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		outline: none;
+		opacity: 0;
+		cursor: pointer;
+	}
+	
+	.image-upload-wrap {
+		margin-top: 20px;
+		border: 4px dashed #c3b9b6;
+		position: relative;
+	}
+	
+	.image-dropping, .image-upload-wrap:hover {
+		background-color: #ffffff;
+		border: 4px dashed #372d2b;
+	}
+	
+	.image-title-wrap {
+		padding: 0 15px 15px 15px;
+		color: #222;
+	}
+	
+	.drag-text {
+		text-align: center;
+	}
+	
+	.drag-text h3 {
+		font-weight: 100;
+		text-transform: uppercase;
+		color: #3d423f;
+		padding: 60px 0;
+	}
+	
+	.file-upload-image {
+		max-height: 200px;
+		max-width: 200px;
+		margin: auto;
+		padding: 20px;
+	}
+	
+	.remove-image {
+		width: 200px;
+		margin: 0;
+		color: #fff;
+		background: #cd4535;
+		border: none;
+		padding: 5px;
+		border-radius: 4px;
+		transition: all .2s ease;
+		outline: none;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+	
+	.remove-image:hover {
+		background: #c13b2a;
+		color: #ffffff;
+		transition: all .2s ease;
+		cursor: pointer;
+	}
+	
+	.remove-image:active {
+		border: 0;
+		transition: all .2s ease;
+	}
+	
+	.nav-tabs {
+		border-bottom: 1px solid #ddd;
+	}
+	
+	.nav {
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+	
+	.nav-tabs>li {
+		float: left;
+		margin-bottom: -1px;
+	}
+	
+	.nav>li {
+		position: relative;
+		display: block;
+	}
+	
+	.nav-tabs>li>.active {
+		margin-right: 2px;
+		line-height: 1.42857143;
+		border: 1px solid transparent;
+		border-radius: 4px 4px 0 0;
+		background-color: #C9AF96 !important;
+		color: white !important;
+	}
+	
+	.nav-tabs>li>.nav-link {
+		margin-right: 2px;
+		line-height: 1.42857143;
+		border: 1px solid transparent;
+		border-radius: 4px 4px 0 0;
+		color: #aa9144;
+	}
+	
+	.nav>li>.nav-link {
+		position: relative;
+		background-color: transparent;
+		display: block;
+		padding: 10px 15px;
+	}
 </style>
 
 </head>
@@ -501,7 +501,7 @@
 		</div>
 		<div class="content" style="padding-top: 50px;">
 			<div class="container">
-				<div class="row">
+				<div class="row" id="petListArea">
 					<c:forEach items="${list }" var="list" varStatus="status">
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 							<div class="project-img mb30">
@@ -664,13 +664,33 @@
 				async: true
 				,cach: false
 				,method: "post"
-				,url: "/findpet/findpetSearchForm"
+				,url: "/findpet/findpetResult"
+				,dataType: 'json'
 				,data: {
-					/* name = finalAnimal */ 
+					iffpBreed : finalAnimal 
 				} 
 				,success: function(response){
 					location.href= "/findpet/findpetSearchForm";
-					//카카오에서 제공하는 url로 바로 이동
+					
+					for(var i = 0; response.petList.length; i ++){
+						var txt="";
+						
+						txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">';
+						txt += '<div class="project-img mb30">';
+						txt += '<a href="javascript:goView(';
+						txt += response.petList[i].iffpSeq;
+						txt += ')" class="imghover">';
+						txt += '<img class="imgsize" src="';
+						txt += response.petList[i].path + response.petList[i].uuidname;
+						txt += '"';
+						txt += 'class="img-responsive" alt="">';
+						txt += '</a>';
+						txt += '</div>';
+						txt += '</div>';
+					}
+					
+					$("#petListArea").html(txt);
+					//신범수 이대로 넘기면 vo에 텅 사실 그냥 버튼 누러서 오는 기본페이지 불러오는 곳
 				}
 				,error : function(){ 
 					alert("ajax error..");

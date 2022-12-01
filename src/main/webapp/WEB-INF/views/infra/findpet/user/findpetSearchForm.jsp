@@ -536,10 +536,15 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 	<script type="text/javascript">
-    	var animal = [];
-    	var result = [];
-    	var name; //animal 배열에서 받아온 클래스명
-    	var percent = 0; //result 배열에서 받아온 퍼센트 
+    	
+    	
+    	/* const M = 3, N = 4;        // 참고 2차원은 여기에서 관련이 없습니다.
+    	 
+    	var arr = [];
+    	for (var i = 0; i < M; i++) {
+    	     arr[i] = [];
+    	} */
+    
     	
 	   /*  $("#file").on('change',function(){
 	    	  var fileName = $("#file").val();
@@ -613,10 +618,14 @@
 	            labelContainer.appendChild(document.createElement("div"));
 	        } // 출력
 	        
-	        console.log(animal);
-    		console.log(result);
 	    }
-	
+	    
+	    var animal = [];
+    	var result = [];
+    	var temp = [];
+    	var finalAnimal = "";
+    	var finalValue;
+    	
 	    // run the webcam image through the image model
 	    async function predict() {
 	    	var image = document.getElementById("upload-image");
@@ -628,6 +637,7 @@
 	        
 	        for (let i = 0; i < maxPredictions; i++) {
 	        	animal[i] = prediction[i].className;
+	        	temp[i] = prediction[i].probability.toFixed(2);
 	        	result[i] = prediction[i].probability.toFixed(2);
 	        	
 	            const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
@@ -635,8 +645,37 @@
 	            
 	        } // 출력 형식
 	        
+	        result.sort(); // 
+	        finalValue = result[result.length - 1];  // 배열의 마지막 값 출력
+
+	        for(var i = 0; i < temp.length; i ++){
+	        	if(temp[i] === finalValue){
+	        		finalAnimal = animal[i];
+	        		break;
+	        	}
+	        }        
+	        
+	        console.log("이 친구의 품종은" + " " + finalAnimal);
+	        console.log(finalValue);
 	       	/* const percent = Math.max.apply(null, result); */
-	       /*  $("#mySpinner").hide(); */
+	        /*  $("#mySpinner").hide(); */
+	       
+	        $.ajax({
+				async: true
+				,cach: false
+				,method: "post"  //s
+				,url: "/findpet/findpetSearchForm"
+				,data: {
+					name = finalAnimal;
+				}
+				,success: function(response){
+					location.href= "/findpet/findpetSearchForm";
+					//카카오에서 제공하는 url로 바로 이동
+				}
+				,error : function(){
+					alert("ajax error..");
+				}
+			});
 	    }
 	
 	    // 이미지 업로드 JavaScript 코드
@@ -741,8 +780,6 @@
 	    $('.image-upload-wrap').bind('dragleave', function () {
 	        $('.image-upload-wrap').removeClass('image-dropping');
 	    });  
-	    
-	    
     </script>
 
 </body>

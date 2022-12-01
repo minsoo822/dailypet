@@ -177,5 +177,10 @@
 	    WHERE di.ifdaSeq = diup.seq
 	    AND di.ifdaSeq = #{ifdaSeq}
 	</select>
+	<delete id="diaryDel">
+	
+		DELETE FROM diary
+		WHERE ifdaSeq = #{ifdaSeq}
+	</delete>
 	
 </mapper>	

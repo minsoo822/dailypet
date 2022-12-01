@@ -40,7 +40,10 @@ public class DiaryDao {
 	public int insertPetUpload(Diary dto) { 
 		return sqlSession.insert(namespace + ".insertPetUpload" , dto);
 	}
-	
+//-----------------------------------------------------------------------------------
+	public int diaryDel(Diary dto) throws Exception {
+		return sqlSession.delete(namespace + ".diaryDel", dto); 
+	}
 //-----------------------------------------------------------------------------------
 
 	public List<Diary> mypageImageList(DiaryVo vo) throws Exception {

@@ -330,10 +330,10 @@
 			form.attr("action" ,"/diary/diaryUserpage").submit();
 		}
 	};
-	/* delPost = function(key) {
+	delPost = function(key) {
 		ifdaSeq.val(key);
-		form.attr("action", )
-	}; */
+		form.attr("action", "/diary/diaryDel").submit();
+	};
 		
 	//댓글펼치고접기
 	function openCm(key){
@@ -348,22 +348,7 @@
             $('#cm'+key).text('댓글 숨기기');
 
        }
-	 /* var cmList = $("#cmList");	
-		var cm = $("#cm");
-		var cmListIndex = cmList.index();
-		var cmIndex = cmList.index();
-		
-		let status = cmListIndex.css('display');
-	       if (status == 'block') {
-	    	   cmListIndex.hide();
-	    	   cmIndex.text('댓글보기');
-
-	       } else {
-	    	   cmListIndex.show();
-	    	   cmIndex.text('댓글 숨기기');
-
-	       } */
-    }
+    };
 	
 	commSubmit = function(key){
 		$.ajax({

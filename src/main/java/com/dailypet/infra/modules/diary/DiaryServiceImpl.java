@@ -64,7 +64,12 @@ public class DiaryServiceImpl implements DiaryService{
         }
         return insertDiary;
 	}
-	
+	@Override
+	public int diaryDel(Diary dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.diaryDel(dto);
+	}
+
 	// 게시물 좋아요
 	@Override
 	public void addLiked(Diary dto) throws Exception {

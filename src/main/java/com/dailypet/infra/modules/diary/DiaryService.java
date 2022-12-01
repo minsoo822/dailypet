@@ -9,6 +9,7 @@ public interface DiaryService {
 	
 	// 일기 Inst
 	public int insertDiary(Diary dto) throws Exception;
+	public int diaryDel(Diary dto) throws Exception;
 	
 	public List<Diary> mypageImageList(DiaryVo vo) throws Exception;
 	public List<Diary> mypageDetailList(DiaryVo vo) throws Exception;

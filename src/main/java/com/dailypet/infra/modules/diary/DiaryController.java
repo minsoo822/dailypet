@@ -65,7 +65,7 @@ public class DiaryController {
 		return "infra/diary/user/diaryForm";
 	}
 	
-	// 일기폼 inst
+	// 일기Inst
 	@RequestMapping(value = "diaryInst")
 	public String insertDiary(Diary dto) throws Exception {
 				
@@ -73,7 +73,12 @@ public class DiaryController {
 		
 		return "redirect:/diary/diaryList";
 	}
-	
+	//일기Del
+	@RequestMapping(value = "diaryDel")
+	public String diaryDel(Diary dto) throws Exception {
+		service.diaryDel(dto);
+		return "redirect:/diary/diaryList";
+	}
 	// 일기리스트 디테일 
 	@RequestMapping(value = "diaryDetail")
 	public String diaryDetail(@ModelAttribute("vo") DiaryVo vo, Model model, HttpSession httpSession ) throws Exception {

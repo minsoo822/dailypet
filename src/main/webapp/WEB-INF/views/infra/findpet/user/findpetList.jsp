@@ -105,7 +105,7 @@
 	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 		<div class="totalContent">
-	   		 <div class="container">
+	   		 <div class="container" style="width: 1140px;">
 			    <div class="row">
 				    <div class="col Search">
 			    		<button class="Searchbtn" type="button" id="searchGo"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
@@ -183,10 +183,10 @@
 						                </div>
 					                </c:forEach>
 					            </div>
-					            <!-- pagination s -->
-								<%@include file="../../../common/xdmin/include/pagination.jsp"%>
-								<!-- pagination e -->
 					        </div>
+				            <!-- pagination s -->
+							<%@include file="../../../common/xdmin/include/pagination.jsp"%>
+							<!-- pagination e -->
 		    			</div>
 					</div>
 					<div class="tab-pane fade" id="seoulTab" role="tabpanel" aria-labelledby="seoul-tab" tabindex="0">
@@ -204,6 +204,9 @@
 					                </c:forEach>
 					            </div>
 					        </div>
+					        <!-- pagination s -->
+							<%@include file="../../../common/xdmin/include/pagination.jsp"%>
+							<!-- pagination e -->
 		    			</div>
 					</div>
 					<div class="tab-pane fade" id="gyeonggiTab" role="tabpanel" aria-labelledby="gyeonggi-tab" tabindex="0">

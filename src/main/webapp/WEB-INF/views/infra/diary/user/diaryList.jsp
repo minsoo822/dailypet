@@ -224,7 +224,11 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">&nbsp;</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" style="vertical-align: middle">
-									<button style="margin-left: 25px;" type="button" id="delpost"><i class="fa-regular fa-trash-can fa-lg"></i></button>
+								<c:if test="${list.ifmmSeq eq sessSeq }">
+									<button style="margin-left: 25px;" type="button" onclick="delPost(${list.ifdaSeq})"><i class="fa-regular fa-trash-can fa-lg"></i></button>
+								</c:if><c:if test="${list.ifmmSeq ne sessSeq }">
+								
+								</c:if>
 							</div>
 						</div>
 						<!-- 상단바 e -->
@@ -325,7 +329,12 @@
 			ifmmSeq.val(key);
 			form.attr("action" ,"/diary/diaryUserpage").submit();
 		}
-	}
+	};
+	/* delPost = function(key) {
+		ifdaSeq.val(key);
+		form.attr("action", )
+	}; */
+		
 	//댓글펼치고접기
 	function openCm(key){
 		

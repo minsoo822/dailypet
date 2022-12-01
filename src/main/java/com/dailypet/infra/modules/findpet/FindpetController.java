@@ -147,20 +147,5 @@ public class FindpetController {
 		return "infra/findpet/user/findpetSearchForm";
 	}
 //-------------------------------------------------------------------------------------------
-	@RequestMapping(value = "findpetList")
-	public String findpetListgajja(@ModelAttribute("vo") FindpetVo vo, CodeVo cdvo , Model model) throws Exception {
-		
-		setSearchAndPaging(vo);
-		
-		List<Code> codeList = serviceCode.categoriList(cdvo);
-		model.addAttribute("codeList", codeList);
-		
-		List<Findpet> list = service.selectKorea(vo);
-		model.addAttribute("categorylist", list);
-		
-		
-		return "infra/findpet/user/findpetListgajja";
-	}
-	
 
 }

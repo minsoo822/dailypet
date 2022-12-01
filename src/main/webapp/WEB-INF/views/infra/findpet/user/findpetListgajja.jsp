@@ -125,11 +125,11 @@
 				<div class="content" style="padding-top: 50px;">
 			        <div class="container">
 			            <div class="row">
-			            	<c:forEach items="${selectKorea }" var="selectKorea" varStatus="status">
+			            	<c:forEach items="${list }" var="list" varStatus="status">
 				                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 				                    <div class="project-img mb30">
-				                        <a href="javascript:goView(${selectKorea.iffpSeq })" class="imghover">
-				                        	<img class="imgsize" src="${selectKorea.path }${selectKorea.uuidName}" class="img-responsive" alt="">
+				                        <a href="javascript:goView(${list.iffpSeq })" class="imghover">
+				                        	<img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="">
 				                        </a>
 				                    </div>
 				                </div>

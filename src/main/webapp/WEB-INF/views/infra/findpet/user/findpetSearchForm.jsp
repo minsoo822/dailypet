@@ -663,16 +663,16 @@
 	        $.ajax({
 				async: true
 				,cach: false
-				,method: "post"  //s
+				,method: "post"
 				,url: "/findpet/findpetSearchForm"
 				,data: {
-					name = finalAnimal;
+					/* name = finalAnimal */ 
 				}
 				,success: function(response){
 					location.href= "/findpet/findpetSearchForm";
 					//카카오에서 제공하는 url로 바로 이동
 				}
-				,error : function(){
+				,error : function(){ 
 					alert("ajax error..");
 				}
 			});

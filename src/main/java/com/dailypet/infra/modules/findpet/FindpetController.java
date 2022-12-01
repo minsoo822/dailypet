@@ -31,18 +31,17 @@ public class FindpetController {
 	public void setSearchAndPaging(FindpetVo vo) throws Exception {
 		vo.setParamsPaging(service.selectOneCount(vo));
 	}
+	
 	@RequestMapping(value = "findpetList")
-	public String findpetList(@ModelAttribute("vo") FindpetVo vo, CodeVo cdvo , Model model) throws Exception {
+	public String findpetList(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
+		int count = service.selectOneCount(vo);
 		
-		setSearchAndPaging(vo);
+		vo.setParamsPaging(count);
 		
-		List<Code> codeList = serviceCode.categoriList(cdvo);
-		model.addAttribute("codeList", codeList);
-		
-		List<Findpet> list = service.selectKorea(vo);
-		model.addAttribute("categorylist", list);
-		
-		
+		if(count != 0) {
+			List<Findpet> selectList = service.selectList(vo);
+			model.addAttribute("list", selectList);
+		}
 		return "infra/findpet/user/findpetList";
 	}
 	
@@ -106,46 +105,74 @@ public class FindpetController {
 
 		setSearchAndPaging(vo);
 		
+		//가져온 클래스 명을 ifcdSeq로 변환
+		vo.setIffpBreed("");
+		if(vo.getIffpBreed() != null) {
+			for(Code item : CodeServiceImpl.selectListCachedCode(5)) {
+				if(item.getIfcdName().equals(vo.getIffpBreed())) {
+					vo.setIffpBreed(item.getIfcdSeq()); 
+					break; 
+				}
+			}
+		}
+		System.err.println(vo.getIffpBreed());
+		
 		List<Findpet> selectList = service.selectList(vo);
 		model.addAttribute("list", selectList);
-		
-//		List<Findpet> selectSeoul = service.selectSeoul(vo); 
-//		model.addAttribute("selectSeoul", selectSeoul);
-//		List<Findpet> selectGyeonggi = service.selectGyeonggi(vo); 
-//		model.addAttribute("selectGyeonggi", selectGyeonggi);
-//		List<Findpet> selectIncheon = service.selectIncheon(vo); 
-//		model.addAttribute("selectIncheon", selectIncheon);
-//		List<Findpet> selectGangwon = service.selectGangwon(vo); 
-//		model.addAttribute("selectGangwon", selectGangwon);
-//		List<Findpet> selectBusan = service.selectBusan(vo); 
-//		model.addAttribute("selectBusan", selectBusan);
-//		List<Findpet> selectDaegu = service.selectDaegu(vo); 
-//		model.addAttribute("selectDaegu", selectDaegu);
-//		List<Findpet> selectDaejeon = service.selectDaejeon(vo); 
-//		model.addAttribute("selectDaejeon", selectDaejeon);
-//		List<Findpet> selectGwangju = service.selectGwangju(vo); 
-//		model.addAttribute("selectGwangju", selectGwangju);
-//		List<Findpet> selectUlsan = service.selectUlsan(vo); 
-//		model.addAttribute("selectUlsan", selectUlsan);
-//		List<Findpet> selectSejong = service.selectSejong(vo); 
-//		model.addAttribute("selectSejong", selectSejong);
-//		List<Findpet> selectChungbuk = service.selectChungbuk(vo); 
-//		model.addAttribute("selectChungbuk", selectChungbuk);
-//		List<Findpet> selectChungnam = service.selectChungnam(vo); 
-//		model.addAttribute("selectChungnam", selectChungnam);
-//		List<Findpet> selectGyeongbuk = service.selectGyeongbuk(vo); 
-//		model.addAttribute("selectGyeongbuk", selectGyeongbuk);
-//		List<Findpet> selectGyeongnam = service.selectGyeongnam(vo); 
-//		model.addAttribute("selectGyeongnam", selectGyeongnam);
-//		List<Findpet> selectJeonbuk = service.selectJeonbuk(vo); 
-//		model.addAttribute("selectJeonbuk", selectJeonbuk);
-//		List<Findpet> selectJeonnam = service.selectJeonnam(vo); 
-//		model.addAttribute("selectJeonnam", selectJeonnam);
-//		List<Findpet> selectJeju = service.selectJeju(vo); 
-//		model.addAttribute("selectJeju", selectJeju);
+		 
+		/*
+		List<Findpet> selectSeoul = service.selectSeoul(vo); 
+		model.addAttribute("selectSeoul", selectSeoul);
+		List<Findpet> selectGyeonggi = service.selectGyeonggi(vo); 
+		model.addAttribute("selectGyeonggi", selectGyeonggi);
+		List<Findpet> selectIncheon = service.selectIncheon(vo); 
+		model.addAttribute("selectIncheon", selectIncheon);
+		List<Findpet> selectGangwon = service.selectGangwon(vo); 
+		model.addAttribute("selectGangwon", selectGangwon);
+		List<Findpet> selectBusan = service.selectBusan(vo); 
+		model.addAttribute("selectBusan", selectBusan);
+		List<Findpet> selectDaegu = service.selectDaegu(vo); 
+		model.addAttribute("selectDaegu", selectDaegu);
+		List<Findpet> selectDaejeon = service.selectDaejeon(vo); 
+		model.addAttribute("selectDaejeon", selectDaejeon);
+		List<Findpet> selectGwangju = service.selectGwangju(vo); 
+		model.addAttribute("selectGwangju", selectGwangju);
+		List<Findpet> selectUlsan = service.selectUlsan(vo); 
+		model.addAttribute("selectUlsan", selectUlsan);
+		List<Findpet> selectSejong = service.selectSejong(vo); 
+		model.addAttribute("selectSejong", selectSejong);
+		List<Findpet> selectChungbuk = service.selectChungbuk(vo); 
+		model.addAttribute("selectChungbuk", selectChungbuk);
+		List<Findpet> selectChungnam = service.selectChungnam(vo); 
+		model.addAttribute("selectChungnam", selectChungnam);
+		List<Findpet> selectGyeongbuk = service.selectGyeongbuk(vo); 
+		model.addAttribute("selectGyeongbuk", selectGyeongbuk);
+		List<Findpet> selectGyeongnam = service.selectGyeongnam(vo); 
+		model.addAttribute("selectGyeongnam", selectGyeongnam);
+		List<Findpet> selectJeonbuk = service.selectJeonbuk(vo); 
+		model.addAttribute("selectJeonbuk", selectJeonbuk);
+		List<Findpet> selectJeonnam = service.selectJeonnam(vo); 
+		model.addAttribute("selectJeonnam", selectJeonnam);
+		List<Findpet> selectJeju = service.selectJeju(vo); 
+		model.addAttribute("selectJeju", selectJeju);
+		김재이 사형
+		*/
 		
 		return "infra/findpet/user/findpetSearchForm";
 	}
 //-------------------------------------------------------------------------------------------
+	@RequestMapping(value = "findpetListgajja")
+	public String findpetListgajja(@ModelAttribute("vo") FindpetVo vo, CodeVo cdvo , Model model) throws Exception {
+		
+		setSearchAndPaging(vo);
+		
+		List<Code> codeList = serviceCode.selectList(cdvo);
+		model.addAttribute("codeList", codeList);
+		
+		List<Findpet> selectList = service.selectList(vo);
+		model.addAttribute("list", selectList);
+		
+		return "infra/findpet/user/findpetListgajja";
+	}
 
 }

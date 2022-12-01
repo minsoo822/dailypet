@@ -118,7 +118,7 @@
 					  <li class="nav-item">
 					    <a class="nav-link" id="category${item.ifcdSeq}" name="crArea${item.ifcdSeq}" onclick="area(${item.ifcdSeq})" aria-current="page" href="#"><c:out value="${item.ifcdName }" /></a>
 					  </li>
-					</c:forEach>
+					</c:forEach> 
 				</ul>
 				  <!-- <li class="nav-item">
 				    <a class="nav-link" href="#">Link</a>
@@ -132,7 +132,7 @@
 				                        <a href="javascript:goView(${list.iffpSeq })" class="imghover">
 				                        	<img class="imgsize" src="${list.path }${list.uuidName}" class="img-responsive" alt="">
 				                        </a>
-				                    </div>
+				                    </div> 
 				                </div>
 			                </c:forEach>
 			            </div>

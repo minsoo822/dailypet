@@ -75,7 +75,8 @@ public class DiaryController {
 	}
 	//일기Del
 	@RequestMapping(value = "diaryDel")
-	public String diaryDel(Diary dto) throws Exception {
+	public String diaryDel(Diary dto, Comment cmdto) throws Exception {
+		serviceComment.commentDel(cmdto);
 		service.diaryDel(dto);
 		return "redirect:/diary/diaryList";
 	}

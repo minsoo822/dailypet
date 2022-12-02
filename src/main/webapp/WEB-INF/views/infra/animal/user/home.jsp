@@ -112,7 +112,7 @@
     	width: 420px;
     	height: 235px;
     }
-    
+     
     .awesome{
     	font-size: 55px;
     	color: #A39492;
@@ -129,7 +129,7 @@
 	
 <form method="post" id="mainForm">
 	<input type="hidden" name="ifmmSeq" value="${sessSeq}">
-    <img src="/resources/images/xdmin/pet.jpg" style="width: 100%">
+    <img src="/resources/images/xdmin/back.jpg" style="width: 100%">
     <br>
     <br>
     <div class="container">
@@ -185,15 +185,15 @@
 	            <div class="row">
 	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 	                    <div class="project-img mb30">
-	                        <a href="/findpet/findpetList"><img src="/resources/images/xdmin/reservation.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
+	                        <a href="/findpet/findpetList"><img src="/resources/images/xdmin/list.jpg" class="img-responsive" alt="Interior Design Website Templates Free Download"></a>
 	                    </div>
 	                </div>
 					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 	                    <div class="testimonial-block bg-light pinside30">
 	                        <div class="quote-left"> <i class="fa fa-quote-left"></i> </div>
 	                        <div class="testimonial-content">
-	                            <p>잃어버린 반려동물을 찾고계신가요? </p>
-	                        </div>
+	                            <p>잃어버린 반려동물을 찾고계신가요? <br>사진을 이용해서 소중한 반려동물의 정보가 등록되어 있는지 확인해보세요.</p>
+	                        </div> 
 	                    </div>
 	                </div>
 	            </div>
@@ -219,7 +219,7 @@
 	                    <div class="testimonial-block bg-white pinside30">
 	                        <div class="quote-left"> <i class="fa fa-quote-left"></i> </div>
 	                        <div class="testimonial-content">
-	                            <p>ff and pupils. Both projects have been well managed, within budget and worth every penny of our investment.We greatly look forward to working with him and his team again in the future.”</p>
+	                            <p>동물병원, 애견호텔/미용실/유치원 검색과 예약을 한번에! <br> 내 주변 반려동물을 위한 편의시설들을 확인해보세요.</p>
 	                        </div>
 	                    </div>
 	                </div>
@@ -256,7 +256,7 @@
 	                    <div class="testimonial-block bg-light pinside30">
 	                        <div class="quote-left"> <i class="fa fa-quote-left"></i> </div>
 	                        <div class="testimonial-content">
-	                            <p>설명</p>
+	                            <p>하루하루 달라지는 반려동물의 모습을 잊지 않도록 기록해보세요. <br> 내 반려일기와 더불어 다른 사람들의 반려일기도 보실 수 있습니다.</p>
 	                        </div>
 	                    </div>
 	                </div>

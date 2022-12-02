@@ -7,15 +7,15 @@
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div class="footer-widget">
                   <h3 class="widget-title">About us</h3>
-                  <p>Phasellus hendrerit mauris vitae odio suscip pimus donec consequat cursus viverra varius natoque penatibus magnis dis parturient.</p>
+                  <p>ezenAcademy</p>
               </div>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div class="footer-widget">
                   <!-- social block -->
                   <h3 class="widget-title">Our Address</h3>
-                  <p>1309 Roosevelt Wilson Lane
-                      <br> Colton, CA 92324</p>
+                  <p>서울 서초구 서초대로 77길 55
+                      <br>(에이프로스퀘어) 3층</p>
               </div>
               <!-- /.social block -->
           </div>
@@ -23,7 +23,7 @@
               <div class="footer-widget">
                   <!-- newsletter block -->
                   <h3 class="widget-title">e-mail Us</h3>
-                  <p>info@yourwebsitedomain.com</p>
+                  <p>ezenIt@ezen.com</p>
               </div>
               <!-- newsletter block -->
           </div>

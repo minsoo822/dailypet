@@ -32,7 +32,7 @@ public class HomeController {
 
 			model.addAttribute("serverTime", formattedDate );
 
-			return "home";
+			return "/infra/animal/user/index";
 		}
 	//해당 코드들을 추가하고 import 필요 slf4j.Logger 와 util.Date import
 

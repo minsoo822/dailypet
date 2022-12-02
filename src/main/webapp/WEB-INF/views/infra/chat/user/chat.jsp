@@ -20,6 +20,9 @@
 		div	{
 			/* border: solid 1px orange; */
 		}
+		.main {
+			margin-top: 50px;
+		}
 	    .card {
             height: 700px;
             border-radius: 15px !important;
@@ -49,7 +52,10 @@
             border-top: 0 !important;
             background: #1F2122;
         }
-
+		.card-body {
+			border-top-left-radius : 3%;
+			border-top-right-radius : 3%;
+		}
         .container {
             align-content: center;
         }
@@ -181,7 +187,7 @@
             margin-bottom: auto;
             margin-right: 10px;
             border-radius: 25px;
-            background-color: #E75E8D;
+            background-color: #C1A68F;
             color: white;
             padding: 10px;
             position: relative;
@@ -252,15 +258,15 @@
         <div class="page-content">
         	<form id="mainForm" method="POST">
         		<input type="hidden" id="selectedRoom">
-	        	<div class="row justify-content-center h-100">
+	        	<div class="row main justify-content-center h-75">
 	                <div class="col-md-4 col-xl-3 chat">
 	                    <div class="card mb-sm-3 mb-md-0 contacts_card">
-	                        <div class="card-header">
+	                        <!-- <div class="card-header">
 	                            <div class="input-group">
 									<input type="text" placeholder="add ChatUser Seq..." id="cuMember" name="cuMember" class="form-control search">
 	                                <span class="input-group-text search_btn" onclick="addChat()"><i class="fa-solid fa-plus"></i></span>
 	                            </div>
-	                        </div>
+	                        </div> -->
 	                        <div class="card-body contacts_body">
 	                            <ui class="contacts" id="chatList">
 	                            
@@ -300,7 +306,6 @@
 	                        </div>
 	                        <div class="card-footer">
 	                            <div class="input-group">
-	                                <span class="input-group-text attach_btn"><i class="fas fa-paperclip"></i></span>
 	                                <textarea id="chatMessage" class="form-control type_msg"
 	                                    placeholder="Type your message..."></textarea>
 	                                <span class="input-group-text send_btn" id="sendBtn"><i class="fas fa-location-arrow"></i></span>
@@ -477,7 +482,7 @@
 
         };
 
-		addChat = function(){
+		/* addChat = function(){
 			
 					$.ajax({
 						url: '/chat/insChat'
@@ -523,7 +528,7 @@
 						}
 					});
 			
-				}
+				} */
     </script>
 </body>
 </html>

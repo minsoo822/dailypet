@@ -299,12 +299,12 @@
 						<!-- Comment s -->
 						<div class="cardcomment" style="margin-bottom: 20px; margin-left: 5px; margin-right: 5px;">
 							<div class="commentBox">
-						  	 	<input class="form-control commentForm" type="text" placeholder="댓글 달기" name="ifcmContent" id="ifcmContent">
+						  	 	<input class="form-control commentForm" type="text" placeholder="댓글 달기" name="ifcmContent" id="ifcmContent${list.ifdaSeq}">
 						  	 	<button onclick="commSubmit(${list.ifdaSeq})"><i class="fa-regular fa-paper-plane"></i></button>
 						   	</div>
 					   </div>
 					   <!-- Comment e -->
-						</div>
+						</div> 
 					</div>
 				</c:forEach>	
 			</div>

@@ -26,6 +26,25 @@
 		<include refid="Base.selectListLowerForMysql" />
 		
 	</select>
+	<!-- 지역별 탭 -->
+	<select id="selectKorea" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+		SELECT
+			a.*
+			, c.*
+		FROM findpet a
+			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
+		WHERE 1=1
+			<choose>
+				<when test="iffpSpotLocation != 12 and iffpSpotLocation != null">
+					AND a.iffpSpotLocation = #{iffpSpotLocation}
+				</when>
+			</choose>
+		<!-- ORDER BY a.iffpSeq DESC -->
+		<include refid="Base.orderByLimitForMysql" />
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
+	
 	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT 
@@ -220,25 +239,6 @@
 		JOIN codegroup b ON b.ifcgSeq = a.cg_ifcgSeq
 		WHERE 1=1
 		AND b.ifcgSeq = 5
-	</select>
-	
-	<!-- 지역별 탭 -->
-	<select id="selectKorea" resultMap="resultMapObj">
-		<include refid="Base.selectListUpperForMysql" />
-		SELECT
-			a.*
-			, c.*
-		FROM findpet a
-			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
-		WHERE 1=1
-			<choose>
-				<when test="iffpSpotLocation != 12 and iffpSpotLocation != null">
-					AND a.iffpSpotLocation = #{iffpSpotLocation}
-				</when>
-			</choose>
-		<!-- ORDER BY a.iffpSeq DESC -->
-		<include refid="Base.orderByLimitForMysql" />
-		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<!-- 유기동물 찾기 결과 -->

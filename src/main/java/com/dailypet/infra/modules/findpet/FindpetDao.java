@@ -70,4 +70,5 @@ public class FindpetDao {
 		return sqlSession.selectList(namespace + ".selectKorea", vo); 
 	}
 	
+	
 }

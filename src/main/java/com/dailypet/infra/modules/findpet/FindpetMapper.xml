@@ -7,8 +7,6 @@
 <mapper namespace="com.dailypet.infra.modules.findpet.FindpetMapper">
 
 <resultMap id="resultMapObj" type="com.dailypet.infra.modules.findpet.Findpet"></resultMap>
-	
-	
 
 	<select id="selectList" resultMap="resultMapObj">
 		<include refid="Base.selectListUpperForMysql" />
@@ -239,4 +237,7 @@
 			</choose>
 		<!-- ORDER BY a.iffpSeq DESC -->
 	</select>
+	
+	<!-- 유기동물 찾기 결과 -->
+	
 </mapper>	

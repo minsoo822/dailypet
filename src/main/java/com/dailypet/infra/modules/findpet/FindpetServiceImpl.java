@@ -110,6 +110,7 @@ public class FindpetServiceImpl implements FindpetService{
 	public List<Findpet> selectKorea(FindpetVo vo) throws Exception {
 		return dao.selectKorea(vo);
 	}
+	
 }
 
 

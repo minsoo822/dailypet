@@ -129,12 +129,15 @@ public class FindpetController {
 	}
 	
 	@RequestMapping(value = "findpetSearchForm")
-	public String findpetSearchForm(FindpetVo vo, Model model) throws Exception {
+	public String findpetSearchForm(@ModelAttribute("vo") FindpetVo vo, CodeVo cdvo , Model model) throws Exception {
 
 		setSearchAndPaging(vo);
 		
-		List<Findpet> selectList = service.selectList(vo);
-		model.addAttribute("list", selectList);
+		List<Code> codeList = serviceCode.categoriList(cdvo);
+		model.addAttribute("codeList", codeList);
+		
+		List<Findpet> categorylist = service.selectKorea(vo);
+		model.addAttribute("categorylist", categorylist);
 		 
 		return "infra/findpet/user/findpetSearchForm";
 	}

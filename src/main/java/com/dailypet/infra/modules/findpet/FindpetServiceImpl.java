@@ -111,6 +111,12 @@ public class FindpetServiceImpl implements FindpetService{
 		return dao.selectKorea(vo);
 	}
 	
+	//유기동물 찾기 결과
+	@Override
+	public List<Findpet> findpetResult(FindpetVo vo) throws Exception {
+		return dao.findpetResult(vo);
+	}
+	
 }
 
 

@@ -23,4 +23,7 @@ public interface FindpetService {
 	//지역 탭
 	public List<Findpet> selectKorea(FindpetVo vo) throws Exception;
 	
+	//유기동물 찾기 결과
+	public List<Findpet> findpetResult(FindpetVo vo) throws Exception;
+	
 }

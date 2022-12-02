@@ -70,5 +70,10 @@ public class FindpetDao {
 		return sqlSession.selectList(namespace + ".selectKorea", vo); 
 	}
 	
+	//유기동물 찾기 결과
+	public List<Findpet> findpetResult(FindpetVo vo) throws Exception {
+		return sqlSession.selectList(namespace + ".findpetResult", vo);
+	}
+	
 	
 }

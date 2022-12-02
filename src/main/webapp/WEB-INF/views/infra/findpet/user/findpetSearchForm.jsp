@@ -670,8 +670,6 @@
 					iffpBreed : finalAnimal 
 				} 
 				,success: function(response){
-					location.href= "/findpet/findpetSearchForm";
-					
 					for(var i = 0; response.petList.length; i ++){
 						var txt="";
 						

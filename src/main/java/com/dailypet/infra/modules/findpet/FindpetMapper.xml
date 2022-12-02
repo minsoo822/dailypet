@@ -239,5 +239,19 @@
 	</select>
 	
 	<!-- 유기동물 찾기 결과 -->
+	<select id="findpetResult" resultMap="resultMapObj">
+		SELECT
+			 f.iffpSeq
+		    ,f.iffpName
+		    ,f.iffpBreed
+		    ,f.iffpSpotLocation
+		    ,u.path
+		    ,u.uuidName
+		FROM findpet f
+		JOIN abandonedUploaded u
+		ON f.iffpSeq = u.pseq
+		WHERE 1=1
+		AND f.iffpBreed = ${iffpBreed}
+	</select>
 	
 </mapper>	

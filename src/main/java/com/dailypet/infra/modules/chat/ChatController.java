@@ -53,6 +53,7 @@ public class ChatController {
 		int Count = service.selectCountChat(dto);
 		System.out.println("Count : " + Count);
 		
+		//기존 채팅방이 존재하지 않을때만 채팅방 생성
 		if(Count == 0 ) {
 			service.createChat(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()),dto.getCuMember());
 		}

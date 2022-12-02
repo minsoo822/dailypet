@@ -593,8 +593,8 @@
 					iffpBreed : finalAnimal 
 				} 
 				,success: function(response){
+					var txt="";
 					for(var i=0; i<response.petList.length; i++){
-						var txt="";
 							txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">';
 							txt += '<div class="project-img mb30">';
 							txt += '<a href="javascript:goView(';
@@ -608,8 +608,8 @@
 							txt += '</div>';
 							txt += '</div>';
 							
-							$("#petListArea").html(txt);
 					}
+					$("#petListArea").html(txt);
 					
 					//location.href ="/findpet/findpetSearchForm"
 					//이대로 넘기면 vo에 텅 사실 그냥 버튼 눌러서 오는 기본페이지 불러오는 곳

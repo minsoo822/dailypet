@@ -9,7 +9,7 @@
 <html>
 <head>
     <%@include file="../../../common/xdmin/include/head.jsp"%>
-    <title>반려동물 리스트</title>
+    <title>코드 등록 및 수정</title>
 
 	<style type="text/css">
 		.content {

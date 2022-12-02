@@ -201,7 +201,6 @@
 										<table class="table table-striped">
 											<tr>
 												<th><input class="form-check-input" type="checkbox" name="check" id="allcheck"></th>
-												<th>#</th>
 												<th>Seq</th>
 												<th>코드그룹이름</th>
 												<th>코드이름</th>
@@ -212,7 +211,7 @@
 											<tr>
 												<c:choose>
 													<c:when test="${fn:length(list) eq 0 }">
-														<td>데이터가 존재하지 않습니다</td>
+														<td colspan="7">데이터가 존재하지 않습니다</td>
 													</c:when>
 													<c:otherwise>	
 														<c:forEach items="${list}" var="list" varStatus="status">
@@ -342,10 +341,6 @@
 		});
     
     </script>
-    
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/resources/js/bootstrap.min.js"></script>
     <script src="/resources/js/menumaker.js"></script>
     <script src="/resources/js/navigation.js" type="text/javascript"></script>

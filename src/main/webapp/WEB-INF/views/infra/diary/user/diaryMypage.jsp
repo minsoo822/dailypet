@@ -229,11 +229,12 @@
 		padding: 0 15px;
 	}
 	
-	.writecomm {
+	#writecomm {
 		width: 280px;
 		padding: 8px;
 		display: inline;
 		border: none;
+		height: 40px;
 	}
 	
 	.upcomment {

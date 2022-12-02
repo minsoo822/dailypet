@@ -108,7 +108,7 @@ public class FindpetController {
 		
 		Map<String, Object> result = new HashMap<String, Object>(); 
 		
-		//가져온 클래스 명을 ifcdSeq로 변환
+		//가져온 클래스 명을 ifcdSeq로 변환 s
 		vo.setIffpBreed(vo.getIffpBreed());
 		if(vo.getIffpBreed() != null) {
 			for(Code item : CodeServiceImpl.selectListCachedCode(5)) {
@@ -119,8 +119,11 @@ public class FindpetController {
 			}
 		}
 		System.err.println(vo.getIffpBreed());
+		//e
 		
-		result.put("petList", "success"); 
+		List<Findpet> listFindPet = service.findpetResult(vo);
+		result.put("petList", listFindPet); 
+		//petList라는 이름으로 불러옴 -> jsp에서 사용 
 		
 		return result;
 	}

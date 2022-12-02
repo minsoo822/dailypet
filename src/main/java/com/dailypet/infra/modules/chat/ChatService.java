@@ -8,5 +8,5 @@ public interface ChatService {
 	public List<Chat> selectChatListFromOne(Integer seq) throws Exception;
 	public Chat createChat(int chatUserA, int chatUserB) throws Exception;
 	
-	public int slectCountChat(Chat dto) throws Exception;
+	public int selectCountChat(Chat dto) throws Exception;
 }

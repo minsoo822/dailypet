@@ -579,9 +579,6 @@
 						//댓글정보
 						//댓글작성자 닉네임 이미지
 					
-					
-					
-					
 					modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌 
 			    	modal.style.display = "flex";
 			        

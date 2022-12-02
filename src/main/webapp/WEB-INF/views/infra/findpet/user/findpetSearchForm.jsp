@@ -22,7 +22,7 @@
 <title>유기동물 검색</title>
 
 <style type="text/css">
-	.imgsize {
+	#imgsize {
 		width: 258px;
 		height: 218px;
 		max-width: 100%;
@@ -506,8 +506,7 @@
 						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 							<div class="project-img mb30">
 								<a href="javascript:goView(${list.iffpSeq })" class="imghover">
-									<img class="imgsize" src="${list.path }${list.uuidName}"
-									class="img-responsive" alt="">
+									<img id="imgsize" src="${list.path }${list.uuidName}" class="img-responsive">
 								</a>
 							</div>
 						</div>
@@ -536,8 +535,6 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 	<script type="text/javascript">
-    	
-    	
     	/* const M = 3, N = 4;        // 참고 2차원은 여기에서 관련이 없습니다.
     	 
     	var arr = [];
@@ -545,7 +542,6 @@
     	     arr[i] = [];
     	} */
     
-    	
 	   /*  $("#file").on('change',function(){
 	    	  var fileName = $("#file").val();
 	    	  $(".upload-name").val(fileName);
@@ -648,7 +644,7 @@
 	        result.sort(); // 
 	        finalValue = result[result.length - 1];  // 배열의 마지막 값 출력
 
-	        for(var i = 0; i < temp.length; i ++){
+	        for(var i=0; i<temp.length; i++){
 	        	if(temp[i] === finalValue){
 	        		finalAnimal = animal[i];
 	        		break;
@@ -670,25 +666,26 @@
 					iffpBreed : finalAnimal 
 				} 
 				,success: function(response){
-					for(var i = 0; response.petList.length; i ++){
+					for(var i=0; i<response.petList.length; i ++){
 						var txt="";
-						
-						txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">';
-						txt += '<div class="project-img mb30">';
-						txt += '<a href="javascript:goView(';
-						txt += response.petList[i].iffpSeq;
-						txt += ')" class="imghover">';
-						txt += '<img class="imgsize" src="';
-						txt += response.petList[i].path + response.petList[i].uuidname;
-						txt += '"';
-						txt += 'class="img-responsive" alt="">';
-						txt += '</a>';
-						txt += '</div>';
-						txt += '</div>';
+							txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">';
+							txt += '<div class="project-img mb30">';
+							txt += '<a href="javascript:goView(';
+							txt += response.petList[i].iffpSeq;
+							txt += ')" class="imghover">';
+							txt += '<img id="imgsize" src="';
+							txt += response.petList[i].path + response.petList[i].uuidName;
+							txt += '"';
+							txt += 'class="img-responsive">';
+							txt += '</a>';
+							txt += '</div>';
+							txt += '</div>';
+							
+							$("#petListArea").html(txt);
 					}
 					
-					$("#petListArea").html(txt);
-					//신범수 이대로 넘기면 vo에 텅 사실 그냥 버튼 누러서 오는 기본페이지 불러오는 곳
+					//location.href ="/findpet/findpetSearchForm"
+					//이대로 넘기면 vo에 텅 사실 그냥 버튼 눌러서 오는 기본페이지 불러오는 곳
 				}
 				,error : function(){ 
 					alert("ajax error..");

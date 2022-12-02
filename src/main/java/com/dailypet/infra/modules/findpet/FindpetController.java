@@ -101,6 +101,7 @@ public class FindpetController {
 		return "redirect:/findpet/findpetList";
 	}
 	
+	//유기동뭄 찾기 결과
 	@ResponseBody
 	@RequestMapping(value = "findpetResult")
 	public Map<String, Object> findpetResult(FindpetVo vo) throws Exception{
@@ -119,8 +120,7 @@ public class FindpetController {
 		}
 		System.err.println(vo.getIffpBreed());
 		
-		//신범수 service is nothing 여기에 서비스 추가하세요 어린이, mapper
-		/* result.put("petList",); */
+		result.put("petList", "success"); 
 		
 		return result;
 	}

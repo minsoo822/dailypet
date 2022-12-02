@@ -51,6 +51,11 @@
 			COUNT(*)
 		FROM findpet
 		WHERE 1=1	
+			<choose>
+				<when test="iffpSpotLocation != 12 and iffpSpotLocation != null">
+					AND iffpSpotLocation = #{iffpSpotLocation}
+				</when>
+			</choose>
 	</select>
 	
 	<select id="findpetOne" resultMap="resultMapObj">

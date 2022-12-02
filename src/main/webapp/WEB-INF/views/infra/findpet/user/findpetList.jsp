@@ -137,7 +137,7 @@
 			                </c:forEach>
 			            </div>
 			        </div>
-			         <!-- pagination s -->
+					<!-- pagination s -->
 					<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 					<!-- pagination e -->
     			</div>

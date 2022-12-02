@@ -224,6 +224,7 @@
 	
 	<!-- 지역별 탭 -->
 	<select id="selectKorea" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
 		SELECT
 			a.*
 			, c.*
@@ -236,6 +237,8 @@
 				</when>
 			</choose>
 		<!-- ORDER BY a.iffpSeq DESC -->
+		<include refid="Base.orderByLimitForMysql" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<!-- 유기동물 찾기 결과 -->

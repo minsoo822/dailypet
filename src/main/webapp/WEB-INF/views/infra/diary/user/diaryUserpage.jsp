@@ -17,7 +17,6 @@
 </head>
 
 <style type="text/css">
-
 	.container2 {
 		margin: 6% 10%;
 		margin-bottom: 30px;
@@ -29,12 +28,14 @@
 	    border-radius: 70%;
 	    overflow: hidden;
 	}
+	
 	.modalprofile {
 		width: 30px;
 	    height: 30px; 
 	    border-radius: 70%;
 	    overflow: hidden;
 	}
+	
 	.profilepic {
 		width: 100%;
 	    height: 100%;
@@ -101,10 +102,12 @@
 		margin-bottom: 10px;
 		color: black;
 	}
+	
 	.img-responsive {
 		margin: 0px;
 		height: 450px;
 	}
+	
 	.img-responsive img {
 		width: 100%;
 	}
@@ -150,6 +153,7 @@
         flex: 0 0 40px;
         text-align: center;
     }
+    
     .imgdetail {
     	width: 440px;
     	height: 495px;
@@ -158,6 +162,7 @@
     	justify-content: center;
     	align-items: center;
     }
+    
     .img-responsive2 {
     	object-fit: cover;
     	max-width: 100%;

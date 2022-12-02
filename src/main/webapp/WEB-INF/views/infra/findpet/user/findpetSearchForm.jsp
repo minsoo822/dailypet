@@ -50,7 +50,7 @@
 			font-size: 13px;
 			font-weight: bold;
 			width: 50%;
-			margin-left: 190px;
+			margin: auto;
 		}
 		
 		.contentss {
@@ -336,12 +336,8 @@
 		    </div> -->
 			<br> <br>
 			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contentss">
-					<span>사용 방법: Start -> 파일 첨부 -> Predict</span>
-				</div>
 				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contents">
-					<span>보다 정확한 결과를 위해 얼굴이 잘 보이는 선명한 사진으로 올려주세요. (한 장만 업로드
-						해주세요.)</span>
+					<span>보다 정확한 결과를 위해 얼굴이 잘 보이는 선명한 사진으로 올려주세요. (한 장만 업로드 해주세요.)</span>
 				</div>
 			</div>
 			<!-- 이미지 업로드 코드 -->
@@ -384,7 +380,7 @@
 			</ul>
 			<div class="content" style="padding-top: 50px;">
 		        <div class="container">
-		            <div class="row">
+		            <div class="row" id="petListArea">
 		            	<c:forEach items="${categorylist }" var="categorylist" varStatus="status">
 			                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 			                    <div class="project-img mb30">
@@ -469,49 +465,6 @@
 		}); */
 	    
 	</script>
-    	<!-- const M = 3, N = 4;        // 참고 2차원은 여기에서 관련이 없습니다.
-    	 
-    	var arr = [];
-    	for (var i = 0; i < M; i++) {
-    	     arr[i] = [];
-    	}
-    
-	   $("#file").on('change',function(){
-	   	  var fileName = $("#file").val();
-	   	  $(".upload-name").val(fileName);
-    	});
-	    
-	    var sel_files = [];
-	
-	    $(document).ready(function() {
-	        $("#input_imgs").on("change", handleImgsFilesSelect);
-	    }); 
-	
-	    function handleImgsFilesSelect(e) {
-	        var files = e.target.files;
-	        var filesArr = Array.prototype.slice.call(files);
-	
-	        filesArr.forEach(function(f) {
-	            if(!f.type.match("image.*")) {
-	                alert("확장자는 이미지 확장자만 가능합니다.");
-	                return;
-	            }
-	
-	            sel_files.push(f);
-	
-	            var reader = new FileReader();
-	            reader.onload = function(e) {
-	                var img_html = "<img src=\"" + e.target.result + "\" />";
-	                $(".imgs_wrap").append(img_html);
-	            }
-	            reader.readAsDataURL(f);
-	        });
-	    }
-	    
-	    $("#input_imgs").on('change',function(){
-	   	  var fileName = $("#input_imgs").val();
-	   	  $(".upload-name").val(fileName);
-	   	}); -->
 	   	
 	<script type="text/javascript">
 	    

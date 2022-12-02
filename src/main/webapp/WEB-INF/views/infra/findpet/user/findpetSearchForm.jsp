@@ -9,65 +9,57 @@
 
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Bootstrap -->
-<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-<!-- Font Awesome -->
-<link href="/resources/css/font-awesome.min.css" rel="stylesheet">
-<!-- Style -->
-<link href="/resources/css/style.css" rel="stylesheet">
+	<%@include file="../../../common/xdmin/include/head.jsp"%>
+	<title>유기동물 검색</title>
 
-<title>유기동물 검색</title>
-
-<style type="text/css">
-	#imgsize {
-		width: 258px;
-		height: 218px;
-		max-width: 100%;
-		max-height: 100%;
-	}
+	<style type="text/css">
 	
-	.Search {
-		margin-top: 50px;
-		display: flex;
-		justify-content: end;
-	}
-	
-	.Reserbtn {
-		border: 1px solid #efefef;
-		background: #f3f0eb;
-		color: #372d2b;
-		text-align: center;
-		width: 50px;
-		height: 50px;
-		border-radius: 10px;
-		font-size: 13px;
-		font-weight: bold;
-	}
-	
-	.Reserbtn:hover {
-		background: #372d2b;
-		color: #f3f0eb;
-		cursor: pointer;
-	}
-	
-	.contents {
-		color: red;
-		font-size: 13px;
-		font-weight: bold;
-		width: 50%;
-		margin-left: 190px;
-	}
-	
-	.contentss {
-		color: red;
-		font-size: 17px;
-		font-weight: bold;
-		width: 50%;
-		margin-left: 190px;
-	}
+		#imgsize {
+			width: 258px;
+			height: 218px;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		
+		.Search {
+			margin-top: 50px;
+			display: flex;
+			justify-content: end;
+		}
+		
+		.Reserbtn {
+			border: 1px solid #efefef;
+			background: #f3f0eb;
+			color: #372d2b;
+			text-align: center;
+			width: 50px;
+			height: 50px;
+			border-radius: 10px;
+			font-size: 13px;
+			font-weight: bold;
+		}
+		
+		.Reserbtn:hover {
+			background: #372d2b;
+			color: #f3f0eb;
+			cursor: pointer;
+		}
+		
+		.contents {
+			color: red;
+			font-size: 13px;
+			font-weight: bold;
+			width: 50%;
+			margin-left: 190px;
+		}
+		
+		.contentss {
+			color: red;
+			font-size: 17px;
+			font-weight: bold;
+			width: 50%;
+			margin-left: 190px;
+		}
 	
 	/* inputfile 커스텀 s */
 	/*  .filebox {
@@ -139,6 +131,12 @@
 		color: black;
 		float: right;
 		padding: 0px;
+	}
+	
+	.left {
+		background-color: #F0F0F0;
+		border: 1px solid black;
+		width: 75px;
 	}
 	
 	.down {
@@ -256,47 +254,51 @@
 	}
 	
 	.nav-tabs {
-		border-bottom: 1px solid #ddd;
+	    border-bottom: 1px solid #ddd;
 	}
 	
 	.nav {
-		padding-left: 0;
-		margin-bottom: 0;
-		list-style: none;
+	    padding-left: 0;
+	    margin-bottom: 0;
+	    list-style: none;
 	}
 	
 	.nav-tabs>li {
-		float: left;
-		margin-bottom: -1px;
+	    float: left;
+	    margin-bottom: -1px;
 	}
 	
 	.nav>li {
-		position: relative;
-		display: block;
+	    position: relative;
+	    display: block;
 	}
 	
 	.nav-tabs>li>.active {
-		margin-right: 2px;
-		line-height: 1.42857143;
-		border: 1px solid transparent;
-		border-radius: 4px 4px 0 0;
-		background-color: #C9AF96 !important;
-		color: white !important;
+	    margin-right: 2px;
+	    line-height: 1.42857143;
+	    border: 1px solid transparent;
+	    border-radius: 4px 4px 0 0;
+	    background-color: #C9AF96 !important;
+	    color: white !important;
 	}
 	
 	.nav-tabs>li>.nav-link {
-		margin-right: 2px;
-		line-height: 1.42857143;
-		border: 1px solid transparent;
-		border-radius: 4px 4px 0 0;
-		color: #aa9144;
+	    margin-right: 2px;
+	    line-height: 1.42857143;
+	    border: 1px solid transparent;
+	    border-radius: 4px 4px 0 0;
+	    color: #aa9144;
 	}
 	
 	.nav>li>.nav-link {
-		position: relative;
-		background-color: transparent;
-		display: block;
-		padding: 10px 15px;
+	    position: relative;
+	    background-color: transparent;
+	    display: block;
+	    padding: 10px 15px;
+	}
+	
+	.fade {
+		opacity: 100;
 	}
 </style>
 
@@ -306,8 +308,13 @@
 	<!-- header s -->
 	<%@include file="../../../common/xdmin/include/header.jsp"%>
 	<!-- header e -->
+	<form id="searchForm" method="post">
+	<input type="hidden" name="iffpSeq" value="${vo.iffpSeq }">
+	<input type="hidden" name="iffpSpotLocation" id="iffpSpotLocation" value="">
+	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+	<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 	<div class="totalContent">
-		<div class="container">
+		<div class="container" style="width: 1175px;">
 			<!-- <div class="row Search">
 			    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 			    	<div class="filebox">
@@ -339,10 +346,9 @@
 			</div>
 			<!-- 이미지 업로드 코드 -->
 			<div class="file-upload">
-				<button class="file-upload-btn" type="button"
-					onclick="$('.file-upload-input').trigger( 'click' )">Add
-					Image</button>
-				<div class="image-upload-wrap">
+				<button class="file-upload-btn" type="button" id="start"
+					onclick="init()">시작하기</button>
+				<div class="image-upload-wrap" id="uploadBox">
 					<input class="file-upload-input" type='file'
 						onchange="readURL(this);" accept="image/*" />
 					<div class="drag-text">
@@ -360,166 +366,43 @@
 						</button>
 					</div>
 				</div>
+				<br>
+				<button class="file-upload-btn" type="button" id="searching"
+					onclick="predict()">검색하기</button>
 			</div>
-			<div class="row" style="float: right">
-				<button type="button" class="left" onclick="init()">Start</button>
+			<!-- <div class="row" style="float: right">
 				<button type="button" class="left" onclick="predict()">Predict</button>
-			</div>
-			<br> <br>
+			</div> -->
+			<br><br>
 			<div id="label-container" style="display: none;"></div>
-			<ul class="nav nav-tabs" id="myTab" role="tablist"
-				style="width: 1158.2px">
-				<li class="nav-item" role="presentation">
-					<button class="nav-link active" id="korea-tab" data-bs-toggle="tab"
-						data-bs-target="#koreaTab" type="button" role="tab"
-						aria-controls="koreaTab" aria-selected="true">전국</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="seoul-tab" data-bs-toggle="tab"
-						data-bs-target="#seoulTab" type="button" role="tab"
-						aria-controls="seoulTab" aria-selected="false">서울</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="gyeonggi-tab" data-bs-toggle="tab"
-						data-bs-target="#gyeonggiTab" type="button" role="tab"
-						aria-controls="gyeonggiTab" aria-selected="false">경기</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="incheon-tab" data-bs-toggle="tab"
-						data-bs-target="#incheonTab" type="button" role="tab"
-						aria-controls="incheonTab" aria-selected="false">인천</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="gangwon-tab" data-bs-toggle="tab"
-						data-bs-target="#gangwonTab" type="button" role="tab"
-						aria-controls="gangwonTab" aria-selected="false">강원</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="busan-tab" data-bs-toggle="tab"
-						data-bs-target="#busanTab" type="button" role="tab"
-						aria-controls="busanTab" aria-selected="false">부산</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="daegu-tab" data-bs-toggle="tab"
-						data-bs-target="#daeguTab" type="button" role="tab"
-						aria-controls="daeguTab" aria-selected="false">대구</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="daejeon-tab" data-bs-toggle="tab"
-						data-bs-target="#daejeonTab" type="button" role="tab"
-						aria-controls="daejeonTab" aria-selected="false">대전</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="gwangju-tab" data-bs-toggle="tab"
-						data-bs-target="#gwangjuTab" type="button" role="tab"
-						aria-controls="gwangjuTab" aria-selected="false">광주</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="ulsan-tab" data-bs-toggle="tab"
-						data-bs-target="#ulsanTab" type="button" role="tab"
-						aria-controls="ulsanTab" aria-selected="false">울산</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="sejong-tab" data-bs-toggle="tab"
-						data-bs-target="#sejongTab" type="button" role="tab"
-						aria-controls="sejongTab" aria-selected="false">세종</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="chungbuk-tab" data-bs-toggle="tab"
-						data-bs-target="#chungbukTab" type="button" role="tab"
-						aria-controls="chungbukTab" aria-selected="false">충북</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="chungnam-tab" data-bs-toggle="tab"
-						data-bs-target="#chungnamTab" type="button" role="tab"
-						aria-controls="chungnamTab" aria-selected="false">충남</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="gyeongbuk-tab" data-bs-toggle="tab"
-						data-bs-target="#gyeongbukTab" type="button" role="tab"
-						aria-controls="gyeongbukTab" aria-selected="false">경북</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="gyeongnam-tab" data-bs-toggle="tab"
-						data-bs-target="#gyeongnamTab" type="button" role="tab"
-						aria-controls="gyeongnamTab" aria-selected="false">경남</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="jeonbuk-tab" data-bs-toggle="tab"
-						data-bs-target="#jeonbukTab" type="button" role="tab"
-						aria-controls="jeonbukTab" aria-selected="false">전북</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="jeonnam-tab" data-bs-toggle="tab"
-						data-bs-target="#jeonnamTab" type="button" role="tab"
-						aria-controls="jeonnamTab" aria-selected="false">전남</button>
-				</li>
-				<li class="nav-item" role="presentation">
-					<button class="nav-link" id="jeju-tab" data-bs-toggle="tab"
-						data-bs-target="#jejuTab" type="button" role="tab"
-						aria-controls="jejuTab" aria-selected="false">제주</button>
-				</li>
+			<ul class="nav nav-tabs">
+				<c:forEach items="${codeList }" var="item" varStatus="status" begin="0" end="17" step="1">
+					<li class="nav-item">
+						<a class="nav-link" id="category${item.ifcdSeq}" name="crArea${item.ifcdSeq}" onclick="area(${item.ifcdSeq})" aria-current="page" href="#"><c:out value="${item.ifcdName }" /></a>
+					</li>
+				</c:forEach> 
 			</ul>
-			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade show active" id="koreaTab" role="tabpanel"
-					aria-labelledby="korea-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="seoulTab" role="tabpanel"
-					aria-labelledby="seoul-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="gyeonggiTab" role="tabpanel"
-					aria-labelledby="gyeonggi-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="incheonTab" role="tabpanel"
-					aria-labelledby="incheon-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="gangwonTab" role="tabpanel"
-					aria-labelledby="gangwon-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="busanTab" role="tabpanel"
-					aria-labelledby="busan-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="daeguTab" role="tabpanel"
-					aria-labelledby="daegu-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="daejeonTab" role="tabpanel"
-					aria-labelledby="daejeon-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="gwangjuTab" role="tabpanel"
-					aria-labelledby="gwangju-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="ulsanTab" role="tabpanel"
-					aria-labelledby="ulsan-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="sejongTab" role="tabpanel"
-					aria-labelledby="sejong-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="chungbukTab" role="tabpanel"
-					aria-labelledby="chungbuk-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="chungnamTab" role="tabpanel"
-					aria-labelledby="chungnam-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="gyeongbukTab" role="tabpanel"
-					aria-labelledby="gyeongbuk-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="gyeongnamTab" role="tabpanel"
-					aria-labelledby="gyeongnam-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="jeonbukTab" role="tabpanel"
-					aria-labelledby="jeonbuk-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="jeonnamTab" role="tabpanel"
-					aria-labelledby="jeonnam-tab" tabindex="0"></div>
-				<div class="tab-pane fade" id="jejuTab" role="tabpanel"
-					aria-labelledby="jeju-tab" tabindex="0"></div>
-			</div>
-		</div>
-		<div class="content" style="padding-top: 50px;">
-			<div class="container">
-				<div class="row" id="petListArea">
-					<c:forEach items="${list }" var="list" varStatus="status">
-						<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-							<div class="project-img mb30">
-								<a href="javascript:goView(${list.iffpSeq })" class="imghover">
-									<img id="imgsize" src="${list.path }${list.uuidName}" class="img-responsive">
-								</a>
-							</div>
-						</div>
-					</c:forEach>
-				</div>
+			<div class="content" style="padding-top: 50px;">
+		        <div class="container">
+		            <div class="row">
+		            	<c:forEach items="${categorylist }" var="categorylist" varStatus="status">
+			                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+			                    <div class="project-img mb30">
+			                        <a href="javascript:goView(${categorylist.iffpSeq })" class="imghover">
+			                        	<img id="imgsize" src="${categorylist.path }${categorylist.uuidName}" class="img-responsive" alt="">
+			                        </a>
+			                    </div> 
+			                </div>
+		                </c:forEach>
+		            </div>
+		        </div>
 				<!-- pagination s -->
 				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 				<!-- pagination e -->
-				<!-- <br>
-				<button type="button" class="btn" id="chat">관리자와 채팅하기</button> -->
-			</div>
+   			</div>
 		</div>
 	</div>
+	</form>
 	<!-- footer s -->
 	<%@include file="../../../common/xdmin/include/footer.jsp"%>
 	<!-- footer e -->
@@ -535,17 +418,68 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 	<script type="text/javascript">
-    	/* const M = 3, N = 4;        // 참고 2차원은 여기에서 관련이 없습니다.
+	
+		var iffpSpotLocation = $("input:hidden[name=iffpSpotLocation]");
+	    var seq = $("input:hidden[name=iffpSeq]");
+	    var form = $("#searchForm");
+	    
+	   	var goUrlView = "/findpet/findpetView";
+	   	var goUrlList = "/findpet/findpetSearchForm";
+	   	
+	   	goView = function(iffpSeq) {
+	    	seq.attr("value", iffpSeq);
+	    	form.attr("action", goUrlView).submit();
+	    }
+	   	goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action",goUrlList).submit();
+		}
+	   	
+	    $("#chat").on("click", function(){
+	    	location.href = "/chat/";
+		});
+	    
+	    //지역 탭
+	    area = function(key) {
+    		//$("#asdfq").addClass('active');
+    		//name="category" 
+    		for(var i=11; i<28; i++){
+    			$('a[name*="crArea"]' ).removeClass('active');
+    			/* category.removeClass('active'); */
+    		}
+    		//내가 클릭한 이 태그에 addClass('active');
+    		
+    		// ajax(txt = html 태그 넣고  어쩌구.html(txt))로 할것인가 submit(새페이지 불러오고 대신 선택했던 지역탭에 addClass('active'))으로 할것인가 
+			iffpSpotLocation.val(key)
+    		form.attr("action" , "/findpet/findpetSearchForm").submit();
+    		
+    		$("#category"+key).addClass('active');
+	    };
+	    
+	    $("#uploadBox").hide();
+		$("#searching").hide();
+	    //시작하기 버튼 누르기 전까진 파일첨부, 검색하기 박스 안 뜸
+	    /* $(function(){
+			$("#uploadBox").hide();
+			$("#searching").hide();
+			$("#start").change(function() {
+				$("#uploadBox").show();
+				$("#searching").show();
+			}) 
+		}); */
+	    
+	</script>
+    	<!-- const M = 3, N = 4;        // 참고 2차원은 여기에서 관련이 없습니다.
     	 
     	var arr = [];
     	for (var i = 0; i < M; i++) {
     	     arr[i] = [];
-    	} */
+    	}
     
-	   /*  $("#file").on('change',function(){
-	    	  var fileName = $("#file").val();
-	    	  $(".upload-name").val(fileName);
-	    	});
+	   $("#file").on('change',function(){
+	   	  var fileName = $("#file").val();
+	   	  $(".upload-name").val(fileName);
+    	});
 	    
 	    var sel_files = [];
 	
@@ -577,18 +511,9 @@
 	    $("#input_imgs").on('change',function(){
 	   	  var fileName = $("#input_imgs").val();
 	   	  $(".upload-name").val(fileName);
-	   	}); */
+	   	}); -->
 	   	
-	   	var goUrlView = "/findpet/findpetView";
-	   	
-	   	goView = function() {
-			form.attr("action", goUrlView).submit();
-		}
-	   	
-	    $("#chat").on("click", function(){
-	    	location.href = "/chat/";
-		}); 
-	    
+	<script type="text/javascript">
 	    
 	    //이미지 찾기
 	    const URL = "https://teachablemachine.withgoogle.com/models/3SWU0cqiQ/";
@@ -597,6 +522,8 @@
 	
 	    // Load the image model and setup the webcam
 	    async function init() {
+	    	$("#uploadBox").show();
+			$("#searching").show();
 	        const modelURL = URL + "model.json";
 	        const metadataURL = URL + "metadata.json";
 	
@@ -666,7 +593,7 @@
 					iffpBreed : finalAnimal 
 				} 
 				,success: function(response){
-					for(var i=0; i<response.petList.length; i ++){
+					for(var i=0; i<response.petList.length; i++){
 						var txt="";
 							txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">';
 							txt += '<div class="project-img mb30">';

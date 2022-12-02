@@ -7,30 +7,49 @@
 <mapper namespace="com.dailypet.infra.modules.member.MemberMapper">
 
 	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.member.Member"></resultMap>
-
-	<select id="selectList" resultMap="resultMapObj">
-		SELECT 
-			a.ifmmSeq
-			, a.ifmmName
-			, a.ifmmZipcode
-			, a.ifmmAddr1
-			, a.ifmmAddr2
-			, a.ifmmAddr3
-			, a.ifmmID
-			, a.ifmmPW
-			, a.ifmmNickname
-			, a.ifmmTelecom
-			, a.ifmmTel
-			, a.ifmmEmail
-			, a.ifmmEmailID
-			, a.ifmmEmailDomain
-			, a.ifmmIntroduction
-			, a.ifmmRegDate
-			, a.ifmmModDate
-			, a.ifmmDelNy
+	
+	<sql id = "selectCommon">
 		FROM member a
 		WHERE 1=1
-		ORDER BY a.ifmmSeq DESC;
+		ORDER BY a.ifmmSeq DESC
+		
+		<if test="shDelNy != null and !shDelNy.equals('')">AND a.ifmmDelNy = #{shDelNy}</if>
+		<if test="shUseNy != null and !shUseNy.equals('')">AND a.ifmmUseNy = #{shUseNy}</if>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND a.ifmmRegDate BETWEEN #{shstartDate} AND #{shendDate}</when>
+		</choose>
+		
+		<choose>
+			<when test="shOption == 1">AND a.ifmmName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 2">AND a.ifmmNickname LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3">AND a.ifmmAddr1 LIKE CONCAT('%',#{shValue},'%')</when>
+		</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT 
+				a.ifmmSeq
+				, a.ifmmName
+				, a.ifmmZipcode
+				, a.ifmmAddr1
+				, a.ifmmAddr2
+				, a.ifmmAddr3
+				, a.ifmmID
+				, a.ifmmPW
+				, a.ifmmNickname
+				, a.ifmmTelecom
+				, a.ifmmTel
+				, a.ifmmEmail
+				, a.ifmmEmailID
+				, a.ifmmEmailDomain
+				, a.ifmmIntroduction
+				, a.ifmmRegDate
+				, a.ifmmModDate
+				, a.ifmmDelNy
+			<include refid="selectCommon" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<!-- 회원가입 -->

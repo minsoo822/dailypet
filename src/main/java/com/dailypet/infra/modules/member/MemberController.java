@@ -1,6 +1,7 @@
 package com.dailypet.infra.modules.member;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -18,7 +19,6 @@ import com.dailypet.infra.common.util.UtilCookie;
 import com.dailypet.infra.modules.animal.Animal;
 import com.dailypet.infra.modules.animal.AnimalServiceImpl;
 
-
 @Controller
 @RequestMapping(value = "/member/")
 public class MemberController {
@@ -33,6 +33,34 @@ public class MemberController {
 	public String login() throws Exception {
 
 		return "infra/member/user/login";
+	}
+	
+	public void setSearchAndPaging(MemberVo vo) throws Exception {
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		vo.setShOptionDate(vo.getShOptionDate() == null ? 0 : vo.getShOptionDate());
+	}
+	
+	@RequestMapping(value = "memberList")
+	public String memberList(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		
+		setSearchAndPaging(vo);
+		
+		if(vo.getTotalRows() > 0) {
+			List<Member> list = service.selectList(vo);
+			model.addAttribute("list", list);
+		}
+		
+		return "infra/member/xdmin/memberList";
+	}
+	
+	@RequestMapping(value = "memberForm")
+	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+		
+		Member result = service.selectOne(vo);
+		model.addAttribute("item", result);
+		
+		return "infra/member/xdmin/memberForm";
 	}
 	
 	// 회원가입
@@ -199,8 +227,8 @@ public class MemberController {
 	@RequestMapping(value = "allUpdt") 
 	public String allUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, Animal dto1, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		
-		int memberUpdt = service.userUpdate(dto);
-		int petUpdt = service1.petUpdate(dto1);
+		service.userUpdate(dto);
+		service1.petUpdate(dto1);
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
 		return "redirect:/member/myPage";

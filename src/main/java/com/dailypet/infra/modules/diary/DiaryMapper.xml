@@ -60,6 +60,7 @@
 	    WHERE a.ifdaSeq = b.seq
 	    AND a.mm_ifmmSeq = #{ifmmSeq}
 	</select>
+	
 	<select id="selectOneImg" resultMap="resultMapObj"> 
 		SELECT
 			mm.ifmmSeq
@@ -72,6 +73,7 @@
 		WHERE 1=1
 		AND ifmmSeq = #{loginUser}
 	</select>
+	
 	<select id="selectCheckFollow" resultMap="resultMapObj"> 
 		SELECT
 	    	iffwNy
@@ -80,6 +82,7 @@
 	    AND iffwFollow = #{ifmmSeq}		
 	    AND iffwFollower = #{loginUser} 
 	</select>
+	
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			mm.*
@@ -177,8 +180,8 @@
 	    WHERE di.ifdaSeq = diup.seq
 	    AND di.ifdaSeq = #{ifdaSeq}
 	</select>
-	<delete id="diaryDel">
 	
+	<delete id="diaryDel">
 		DELETE FROM diary
 		WHERE ifdaSeq = #{ifdaSeq}
 	</delete>

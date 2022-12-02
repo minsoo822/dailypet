@@ -49,4 +49,8 @@ public class ChatServiceImpl implements ChatService{
 		
 		return dao.selectOneChat(dto);
 	}
+
+	
+
+
 }

@@ -54,6 +54,6 @@ public class ChatController {
 		Chat newChat = service.createChat(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()),dto.getCuMember());
 		List<Chat> list = service.selectChatListFromOne(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()));
 		
-		return "infra/chat/user/chat";
+		return "redirect:/chat/";
 	}
 }

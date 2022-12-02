@@ -50,9 +50,12 @@ public class ChatController {
 	@RequestMapping(value="instChat")
 	public String instChat(HttpSession httpSession,Chat dto) throws Exception {
 		
+		int Count = service.selectCountChat(dto);
+		System.out.println("Count : " + Count);
 		
-		Chat newChat = service.createChat(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()),dto.getCuMember());
-		List<Chat> list = service.selectChatListFromOne(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()));
+		if(Count == 0 ) {
+			service.createChat(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()),dto.getCuMember());
+		}
 		
 		return "redirect:/chat/";
 	}

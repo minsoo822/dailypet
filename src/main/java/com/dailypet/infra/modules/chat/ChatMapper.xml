@@ -42,7 +42,7 @@
 	
 	</select>
 	
-	<select id="slectCountChat" resultType="Integer">
+	<select id="selectCountChat" resultType="Integer">
 		SELECT 
 			COUNT(*) 
 		FROM chatUser ch

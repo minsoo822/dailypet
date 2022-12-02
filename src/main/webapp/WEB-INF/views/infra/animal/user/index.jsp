@@ -1,14 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ page session="true" %>
+
 <!DOCTYPE HTML>
 <html>
 <head>
 	<meta charset="uTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>home</title>
-	<!-- Boxiocns CDN Link -->
-	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 	<!-- Font Awesome -->
 	<script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
-	<!-- user css -->
+	<!-- user css --> 
 	<link rel="stylesheet" href="/resources/css/adminstyle.css" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- jquery ui CSS -->    
@@ -16,7 +22,7 @@
 
 	<style type="text/css">
 		.background{
-			background-image:url(../images/xdmin/dog.jpg); 
+			background-image:url(/resources/images/xdmin/dog.jpg); 
 			background-attachment: fixed; 
 			background-size: cover;
 		}
@@ -53,7 +59,7 @@
 		}
 		
 		.box{
-			border:1px solid #ffffff; 
+			border:2px solid #ffffff; 
 			background-color: rgba(255,255,255,0.5);
 			padding-top: 15px;
 			padding-bottom: 15px;
@@ -73,10 +79,10 @@
 		
 		.wid{
 			width: 1080px;
-			margin-left: 600px;
+			margin-left: 500px;
 		}
 		
-		.under{
+		a{
 			text-decoration: underline;
 			color: white;
 			font-weight: bold;
@@ -84,6 +90,9 @@
 			cursor: pointer;
 		}
 		
+		a:hover{
+			color: #5c7406;
+		}
 	</style>
 </head>
 
@@ -98,7 +107,7 @@
 		<br>
 		<br>
 		<br>
-		<div class="container wid">
+		<div class="container wid"> 
 			<div class="row mid">
 				<div class="col-lg-4 col-md-4">
 					<div class="container box">
@@ -106,15 +115,15 @@
 					</div>
 					<br>
 					<br>
-					<span class="under">ENTER</span>
+					<a href="/animal/home">ENTER</a>
 				</div>
 				<div class="col-lg-4 col-md-4">
 					<div class="container box">
 						<span class="choose"><center>관리자</center></span>
 					</div>
+					<br> 
 					<br>
-					<br>
-					<span class="under">ENTER</span>
+					<a href="/member/memberList">ENTER</a>
 				</div>
 			</div>
 		</div>

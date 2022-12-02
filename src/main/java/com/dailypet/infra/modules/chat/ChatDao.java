@@ -17,8 +17,6 @@ public class ChatDao {
 	
 	private String namespace = "com.dailypet.infra.modules.chat.ChatMapper";
 	//본인에게 맞는 package 경로로 변경하도록 합니다.
-	
-	public int slectCountChat(Chat dto) { return sqlSession.selectOne(namespace + ".slectCountChat", dto);}
 
 	public List<Chat> selectChatListFromOne(Integer seq) { return sqlSession.selectList(namespace+".selectChatListFromOne", seq);}
 	//현재 로그인 USER의 시퀀스가 연결된 채팅방 리스트를 가져온다.
@@ -32,4 +30,7 @@ public class ChatDao {
 
 	public Chat selectOneChat(Chat dto) { return sqlSession.selectOne(namespace+".selectOneChat", dto);}
 	
+	public int selectCountChat(Chat dto) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectCountChat", dto);
+	}
 }

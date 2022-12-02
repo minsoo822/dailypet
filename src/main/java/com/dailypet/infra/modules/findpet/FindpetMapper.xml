@@ -45,7 +45,6 @@
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
-	
 	<select id="selectOneCount" resultType="Integer">
 		SELECT 
 			COUNT(*)

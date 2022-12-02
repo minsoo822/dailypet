@@ -357,7 +357,7 @@
 			datatype: 'json',
 			data: {
 				ifdaSeq : key,
-				ifcmContent: $("#ifcmContent").val(),
+				ifcmContent: $("#ifcmContent"+key).val(),
 				ifmmSeq: $("#ifmmSeq").val()
 			},
 			success:function(result){

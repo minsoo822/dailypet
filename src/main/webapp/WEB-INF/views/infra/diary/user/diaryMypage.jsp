@@ -110,7 +110,7 @@
 	}
 /* -------------------------------------------------------------------------- */	
     .modal_overlay {
-    	z-index: 999;
+    	z-index: 1999;
         width: 100%;
         height: 100%;
         padding-top: 100px;
@@ -127,17 +127,22 @@
     }
 
     .modal_window {
-		z-index: 999;
+		z-index: 1999;
         background: white;
         backdrop-filter: blur(13.5px);
         -webkit-backdrop-filter: blur(13.5px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        width: 800px;
-        height: 550px;
+        width: 1000px;
+        height: 700px;
         position: relative;
-        padding: 10px;
+        bottom: 70px;
     }
+    .material-icons-outlined {
+		position: relative;
+		bottom: 90px;
+		left: 700px;
+		color:white;
+		font-size: 20pt;		
+	}
      .modal_title{
         display: flex;
         flex-direction: row;
@@ -267,16 +272,10 @@
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
 		<input type="hidden" id="ifdaSeq" value="${dto.ifdaSeq }">
+			<span id="close_modal" class="material-icons-outlined">
+				<i class="fa-solid fa-xmark"></i>
+			</span>
 			<div class="modal_window">
-				<div class="modal_title">
-					<div class="modal_title_side"></div>
-					<div style="margin-bottom: 7px"> 게시물 상세 </div>
-					<div class="modal_title_side">
-						<span id="close_modal" class="material-icons-outlined">
-							<i class="fa-solid fa-xmark"></i>
-						</span>
-					</div>
-				</div>
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">

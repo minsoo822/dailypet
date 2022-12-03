@@ -8,18 +8,94 @@
 
     <resultMap id="resultMapObj" type="com.dailypet.infra.modules.codegroup.CodeGroup"></resultMap>
 	
-	<select id="selectList" resultMap="resultMapObj">
-		SELECT
-			a.ifcgSeq
-			,a.ifcgName
-			,a.ifcgName_eng
-			,a.ifcgModDate
-			,a.ifcgUseNy
-			,a.ifcgDelNy
-			,(select COUNT(aa.cg_ifcgSeq) from code aa WHERE aa.cg_ifcgSeq = a.ifcgSeq ) AS ifcgcodeCount
+	<sql id = "selectCommon">
 		FROM codegroup a
 		WHERE 1=1
+		
+		<if test="shDelNy != null and !shDelNy.equals('')">AND a.ifcgDelNy = #{shDelNy}</if>
+		<if test="shUseNy != null and !shUseNy.equals('')">AND a.ifcgUseNy = #{shUseNy}</if>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND a.ifcgModDate BETWEEN #{shstartDate} AND #{shendDate}</when>
+		</choose>
+		
+		<choose>
+			<when test="shOption == 1">AND a.ifcgName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 2">AND a.ifcgName_eng LIKE CONCAT('%',#{shValue},'%')</when>
+		</choose>
+	</sql>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+				a.ifcgSeq
+				,a.ifcgName
+				,a.ifcgName_eng
+				,a.ifcgModDate
+				,a.ifcgUseNy
+				,a.ifcgDelNy
+				,(select COUNT(aa.cg_ifcgSeq) from code aa WHERE aa.cg_ifcgSeq = a.ifcgSeq ) AS ifcgcodeCount
+			<include refid="selectCommon" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
-
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		<include refid="selectCommon" />
+			AND a.ifcgSeq = #{ifcgSeq}
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM codegroup
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO codegroup (
+			ifcgName
+		    ,ifcgName_eng
+		    ,ifcgModDate
+		    ,ifcgUseNy
+		    ,ifcgDelNy
+		    ,cg_ifcgSeq
+		)
+		VALUES (
+			#{ifcgName}
+			, #{ifcgName_eng}
+			, now()
+			, 1
+			, 0
+			, #{cg_ifcgSeq}
+		)
+		<selectKey resultType="String" keyProperty="ifcgSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+		
+	</insert>
+    
+    <update id="update">
+		UPDATE codegroup
+		SET
+			ifcgName = #{ifcgName}
+			, ifcgName_eng = #{ifcgName_eng}
+			, ifcgModDate = now()
+			, ifcgUseNy = #{ifcgUseNy}
+			, ifcgDelNy = #{ifcgDelNy}
+			, cg_ifcgSeq = #{cg_ifcgSeq}
+		WHERE ifcgSeq = #{ifcgSeq}
+	</update>
+	
+	<update id="uelete">
+		UPDATE codegroup
+		SET
+			ifcgDelNy = 1
+		WHERE ifcgSeq = #{ifcgSeq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM codegroup
+		WHERE ifcgSeq = #{ifcgSeq}
+	</delete>
 
 </mapper>	

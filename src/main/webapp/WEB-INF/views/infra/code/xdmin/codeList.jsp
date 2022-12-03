@@ -217,7 +217,6 @@
 														<c:forEach items="${list}" var="list" varStatus="status">
 															<tr onclick="goForm(${list.ifcdSeq })" class="in">
 																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifcdSeq }"/>"></td>
-																<td>#</td>
 																<td>
 																	<c:out value="${list.ifcdSeq }"/>
 																</td>

@@ -10,7 +10,6 @@ public class CodeGroup {
 	private Integer ifcgDelNy;
 	private Integer ifcgcodeCount;
 	
-	
 	public String getIfcgSeq() {
 		return ifcgSeq;
 	}
@@ -54,7 +53,4 @@ public class CodeGroup {
 		this.ifcgcodeCount = ifcgcodeCount;
 	}
 
-	
-	
-	
 }

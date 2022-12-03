@@ -14,7 +14,6 @@
 		ORDER BY a.ifmmSeq DESC
 		
 		<if test="shDelNy != null and !shDelNy.equals('')">AND a.ifmmDelNy = #{shDelNy}</if>
-		<if test="shUseNy != null and !shUseNy.equals('')">AND a.ifmmUseNy = #{shUseNy}</if>
 		
 		<choose>
 			<when test="shOptionDate == 1">AND a.ifmmRegDate BETWEEN #{shstartDate} AND #{shendDate}</when>
@@ -123,7 +122,10 @@
 	</insert>
 	
 	<select id="selectOneCount" resultType="Integer">
-		SELECT COUNT(*)
+		SELECT 
+			COUNT(*)
+		FROM member
+		WHERE 1=1
 	</select>
 	
 	<select id="selectOne" resultMap ="resultMapObj">

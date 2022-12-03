@@ -211,16 +211,6 @@
                         <hr>
                         <div class="row div2 left">
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
-								<label class="top4">활동여부</label>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4">
-								<select class="form-select" name="ifmmUseNy">
-									<option selected>::선택::</option>
-									<option value="1" <c:if test="${item.ifmmUseNy eq 1}">selected</c:if>>Y</option>
-									<option value="0" <c:if test="${item.ifmmUseNy eq 0}">selected</c:if>>N</option>
-								</select>
-							</div>
-							<div class="col-lg-2 col-md-2 col-sm-2 gray">
 								<label class="top4">탈퇴여부</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">

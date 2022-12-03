@@ -39,7 +39,7 @@ public class DiaryController {
 	
 	// 일기리스트 
 	@RequestMapping(value = "diaryList")
-	public String selectList(@ModelAttribute("vo") DiaryVo vo, CommentVo cmvo, Model model, HttpSession httpSession) throws Exception {
+	public String selectList(@ModelAttribute("vo") DiaryVo vo, CommentVo cmvo, Like lidto, Model model, HttpSession httpSession) throws Exception {
 		
 		vo.setIfmmSeq((String)httpSession.getAttribute("sessSeq"));
 		Diary item = service.selectOne(vo);
@@ -50,6 +50,15 @@ public class DiaryController {
 		
 		List<Comment> cmList = serviceComment.commentList(cmvo);
 		model.addAttribute("cmList", cmList);
+		
+		int count = serviceLike.selectCheckLike(lidto);
+		if(count == 1) {
+			model.addAttribute("like", 1);
+		}
+//		int count = serviceFollow.selectChkFollow(Integer.parseInt(vo.getIfmmSeq()), (Integer)httpSession.getAttribute("sessSeq"));
+//		if(count == 1) {
+//			model.addAttribute("IsFollow", 1);
+//		}
 		
 		return "infra/diary/user/diaryList";
 	}

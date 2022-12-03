@@ -28,5 +28,7 @@ public class LikeDao {
 	public List<Like> selectList(Like dto)throws Exception{
 		return sqlSession.selectList(namespace +".selectList", dto);
 	}
-
+	public int selectCheckLike(Like dto) throws Exception {
+		return sqlSession.selectOne(namespace + ".selectCheckLike", dto);
+	}
 }

@@ -28,7 +28,15 @@
 		AND postSeq = #{ifdaSeq}
 		AND likeType = 1
 	</delete>
-	
+	<select id="selectCheckLike" resultType="Integer">
+		SELECT
+			COUNT( * )
+	    FROM likebtn 
+	    WHERE 1=1
+	    AND clickUser = #{loginUser}
+	    AND postSeq = #{ifdaSeq}
+	    AND likeType = 1
+	</select>
 	<select id="likeCount"  resultType="Integer">
 		SELECT
 	    	COUNT( * )

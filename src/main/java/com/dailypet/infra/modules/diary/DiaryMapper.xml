@@ -21,6 +21,14 @@
             <!-- 일기 올린사람 이미지 -->
             , d.path	AS memberPath
             , d.uuidName	AS memberuuidName
+            <!-- , (
+            	SELECT
+					COUNT( * )
+			    FROM likebtn 
+			    WHERE postSeq = #{ifdaSeq}
+			    AND clickUser = #{loginUser}
+			    AND likeType = 1
+            )	AS LIKECOUNT -->
 		FROM diary a
 		JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
 		JOIN diaryUploaded c ON c.pseq = a.mm_ifmmSeq

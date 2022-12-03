@@ -8,4 +8,5 @@ public interface LikeService {
 	public int diaryLikeDel(Like dto) throws Exception;
 	public int likeCount(Like dto) throws Exception;
 	public List<Like> selectList(Like dto) throws Exception;
+	public int selectCheckLike(Like dto) throws Exception;
 }

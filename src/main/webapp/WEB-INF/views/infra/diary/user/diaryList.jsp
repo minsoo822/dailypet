@@ -190,7 +190,7 @@
     <form method="post" id="diaryForm">
     <!-- <input type="hidden" name="ifdaSeq"> -->
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
-    <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
+    <input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
     <input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
     
 		<div class="diaryheader">
@@ -224,6 +224,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">&nbsp;</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" style="vertical-align: middle">
+								<!-- 삭제버튼 -->
 								<c:if test="${list.ifmmSeq eq sessSeq }">
 									<button style="margin-left: 25px;" type="button" onclick="delPost(${list.ifdaSeq})"><i class="fa-regular fa-trash-can fa-lg"></i></button>
 								</c:if><c:if test="${list.ifmmSeq ne sessSeq }">
@@ -244,9 +245,18 @@
 						<div class="service-content">
 							<!-- 좋아요 댓글 버튼 s -->
 							<div class="postbtn">
-								<button type="button" id="like">
-									<span class="heart" style="font-size: 25px"><i class="fa-regular fa-heart"></i></span>
-								</button>
+								<c:choose>
+									<c:when test="${like ne null }">
+										<button type="button" id="like">
+											<span class="heart" style="font-size: 25px"><i id="likedBtn${list.ifdaSeq}" style="color: rgb(225, 0, 0);" onclick="liked(${list.ifdaSeq})" class="fa-solid fa-heart"></i></span>
+										</button>
+									</c:when>
+									<c:otherwise>
+										<button type="button" id="like">
+											<span class="heart" style="font-size: 25px"><i id="likedBtn${list.ifdaSeq}" style="color: rgb(0, 0, 0);" onclick="liked(${list.ifdaSeq})" class="fa-regular fa-heart"></i></span>
+										</button>
+									</c:otherwise>
+								</c:choose>
 								<button type="button" id="comment">
 									<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
 								</button>
@@ -334,7 +344,61 @@
 		ifdaSeq.val(key);
 		form.attr("action", "/diary/diaryDel").submit();
 	};
+	
+	liked = function(key){
 		
+		var likedUrl ="";
+		var likedBtn = $("#likedBtn"+key);
+		var status = $("#likedBtn"+key).css('color');
+		
+		if(status == "rgb(0, 0, 0)") {
+			likedUrl = "/diary/addLiked";
+		} else {
+			likedUrl = "/diary/removeLiked";
+		}
+		
+		$.ajax({
+			url: likedUrl
+			,type: 'POST'
+			,dataType: 'json'
+			,data: {
+				//게시물 seq
+				ifdaSeq : key
+				//누가 눌렀는지 seq
+				,loginUser : $("#loginUser").val()
+			},
+			success:function(result){
+				if(result.list != null){
+    				//좋아요 count 숫자 변경 
+        			$("#postlikeCount").html(result.list.length);
+					
+    				if(status == "rgb(0, 0, 0)"){
+		    			//https://webstudynote.tistory.com/95
+		    			//채워주고
+		    			//빨간색으로
+		    			likedBtn.removeClass('fa-regular');
+		    			likedBtn.addClass('fa-solid');
+		    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
+		    			likedBtn.css("color",'red');
+    				} else {
+    					//비워주고
+    	    			//검정색으로
+    	    			likedBtn.removeClass('fa-solid');
+    	    			likedBtn.addClass('fa-regular');
+    	    			likedBtn.css("color",'black');
+    				}
+				}
+			},
+			error:function(){
+				alert("ajax error..!");
+			}
+			
+		});
+		
+	};
+	
+	
+	
 	//댓글펼치고접기
 	function openCm(key){
 		

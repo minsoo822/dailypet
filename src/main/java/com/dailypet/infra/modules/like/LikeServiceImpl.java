@@ -32,6 +32,12 @@ public class LikeServiceImpl implements LikeService{
 		// TODO Auto-generated method stub
 		return dao.selectList(dto);
 	}
+
+	@Override
+	public int selectCheckLike(Like dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectCheckLike(dto);
+	}
 	
 	
 	

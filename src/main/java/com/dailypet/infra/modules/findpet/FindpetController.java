@@ -101,7 +101,7 @@ public class FindpetController {
 		return "redirect:/findpet/findpetList";
 	}
 	
-	//유기동뭄 찾기 결과
+	//유기동물 찾기 결과
 	@ResponseBody
 	@RequestMapping(value = "findpetResult")
 	public Map<String, Object> findpetResult(FindpetVo vo) throws Exception{

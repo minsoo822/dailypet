@@ -352,11 +352,9 @@
 				</div>
 				<div class="file-upload-content">
 					<!-- <img class="file-upload-image" src="#" alt="your image" /> -->
-					<img class="file-upload-image" id="upload-image" src="#"
-						alt="your image" />
+					<img class="file-upload-image" id="upload-image" src="#" alt="your image" />
 					<div class="image-title-wrap">
-						<button type="button" onclick="removeUpload()"
-							class="remove-image">
+						<button type="button" onclick="removeUpload()" class="remove-image">
 							Remove <span class="image-title">Uploaded Image</span>
 						</button>
 					</div>
@@ -384,7 +382,7 @@
 			                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
 			                    <div class="project-img mb30">
 			                        <a href="javascript:goView(${categorylist.iffpSeq })" class="imghover">
-			                        	<img id="imgsize" src="${categorylist.path }${categorylist.uuidName}" class="img-responsive" alt="">
+			                        	<img id="imgsize" src="${categorylist.path }${categorylist.uuidName}" class="img-responsive">
 			                        </a>
 			                    </div> 
 			                </div>
@@ -405,12 +403,9 @@
 	<%@include file="../../../common/xdmin/include/footScript.jsp"%>
 	<!-- footScript e -->
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-	<script class="jsbin"
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+	<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 
 	<script type="text/javascript">
 	
@@ -462,67 +457,65 @@
 				$("#searching").show();
 			}) 
 		}); */
-	    
 	</script>
 	   	
 	<script type="text/javascript">
-	    
 	    //이미지 찾기
 	    const URL = "https://teachablemachine.withgoogle.com/models/3SWU0cqiQ/";
 	
 	    let model, labelContainer, maxPredictions;
 	
-	    // Load the image model and setup the webcam
+	    //예측 준비
 	    async function init() {
 	    	$("#uploadBox").show();
 			$("#searching").show();   
+			
+			//Teachable Machine에서 학습시켰던 model.json, metadata.json을 초기값으로 설정
 	        const modelURL = URL + "model.json";
 	        const metadataURL = URL + "metadata.json";
 	
-	        // load the model and metadata
-	        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-	        // or files from your local hard drive
-	        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+	        //model이라는 변수에 model.json, metadata.json이 load 되도록 선언
 	        model = await tmImage.load(modelURL, metadataURL);
-	        maxPredictions = model.getTotalClasses();
+	        maxPredictions = model.getTotalClasses(); //앞서 지정한 모든 클래스를 불러오는 작업
 	
-	        // append elements to the DOM
+	        //결과 창
 	        labelContainer = document.getElementById("label-container");
         	      
 	        for (let i = 0; i < maxPredictions; i++) { // and class labels
 	            labelContainer.appendChild(document.createElement("div"));
-	        } // 출력
-	        
+	        } //클래스 개수 만큼 반복문 실행, div를 추가하여 결과 출력
 	    }
 	    
-	    var animal = [];
-    	var result = [];
-    	var temp = [];
-    	var finalAnimal = "";
-    	var finalValue;
+		//가장 퍼센트가 높은 데이터만 사용할 것이기 때문에 코드 추가 
+	    var animal = []; //클래스 명을 담아줄 배열 선언
+    	var result = []; //결과 퍼센트 값을 담아줄 배열 선언
+    	var temp = []; //임의 배열 
+    	var finalAnimal; //최종 결과의 클래스 명을 담아줄 객체
+    	var finalValue; //최종 결과의 퍼센트 값을 담아줄 객체
     	
-	    // run the webcam image through the image model
+	    //예측 결과 실행
 	    async function predict() {
+    		//웹캠 대신 이미지를 사용하기 위해 이미지를 불러오도록 설정
 	    	var image = document.getElementById("upload-image");
 	    	const prediction = await model.predict(image, false);
-	        // predict can take in an image, video or canvas html element
 	        
 	       /*  $("#mySpinner").hide();
 	        $("#mySpinner").show(); */
 	        
 	        for (let i = 0; i < maxPredictions; i++) {
 	        	animal[i] = prediction[i].className;
-	        	temp[i] = prediction[i].probability.toFixed(2);
+	        	temp[i] = prediction[i].probability.toFixed(2); //toFixed : 결과를 소수점 두번째자리까지 출력
 	        	result[i] = prediction[i].probability.toFixed(2);
 	        	
 	            const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
 	            labelContainer.childNodes[i].innerHTML = classPrediction;
-	            
-	        } // 출력 형식
+	         	//출력 형식 -> 클래스 명 : 퍼센트  ex)뱅갈 : 0.85
+	        } 
 	        
-	        result.sort(); // 
-	        finalValue = result[result.length - 1];  // 배열의 마지막 값 출력
+	        result.sort(); //오름차순 정렬
+	        finalValue = result[result.length - 1];  //배열의 마지막 값 출력
 
+	        //가장 큰 퍼센트 값에 해당하는 클래스 명을 찾아내기 위해 반복문 사용
 	        for(var i=0; i<temp.length; i++){
 	        	if(temp[i] === finalValue){
 	        		finalAnimal = animal[i];
@@ -547,20 +540,20 @@
 				,success: function(response){
 					var txt="";
 					for(var i=0; i<response.petList.length; i++){
-							txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">';
-							txt += '<div class="project-img mb30">';
-							txt += '<a href="javascript:goView(';
-							txt += response.petList[i].iffpSeq;
-							txt += ')" class="imghover">';
-							txt += '<img id="imgsize" src="';
-							txt += response.petList[i].path + response.petList[i].uuidName;
-							txt += '"';
-							txt += 'class="img-responsive">';
-							txt += '</a>';
-							txt += '</div>';
-							txt += '</div>';
-							
+						txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">';
+						txt += '<div class="project-img mb30">';
+						txt += '<a href="javascript:goView(';
+						txt += response.petList[i].iffpSeq;
+						txt += ')" class="imghover">';
+						txt += '<img id="imgsize" src="';
+						txt += response.petList[i].path + response.petList[i].uuidName;
+						txt += '"';
+						txt += 'class="img-responsive">';
+						txt += '</a>';
+						txt += '</div>';
+						txt += '</div>';
 					}
+					
 					$("#petListArea").html(txt);
 					
 					//location.href ="/findpet/findpetSearchForm"

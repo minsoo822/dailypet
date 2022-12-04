@@ -342,8 +342,7 @@
 			</div>
 			<!-- 이미지 업로드 코드 -->
 			<div class="file-upload">
-				<button class="file-upload-btn" type="button" id="start"
-					onclick="init()">시작하기</button>
+				<button class="file-upload-btn" type="button" id="start" onclick="init()">시작하기</button>
 				<div class="image-upload-wrap" id="uploadBox">
 					<input class="file-upload-input" type='file'
 						onchange="readURL(this);" accept="image/*" />
@@ -476,7 +475,7 @@
 	    // Load the image model and setup the webcam
 	    async function init() {
 	    	$("#uploadBox").show();
-			$("#searching").show();
+			$("#searching").show();   
 	        const modelURL = URL + "model.json";
 	        const metadataURL = URL + "metadata.json";
 	

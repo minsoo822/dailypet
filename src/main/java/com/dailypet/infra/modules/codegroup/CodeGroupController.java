@@ -42,10 +42,10 @@ public class CodeGroupController {
 		CodeGroup result = service.selectOne(vo);
 		model.addAttribute("item", result);
 		
-		return "infra/code/xdmin/codegroupForm";
+		return "infra/codegroup/xdmin/codegroupForm";
 	}
 	
-	@RequestMapping(value = "codeInst")
+	@RequestMapping(value = "codegroupInst")
 	public String codegroupInst(CodeGroupVo vo, CodeGroup dto, RedirectAttributes redirectAttributes) throws Exception {
 		
 		service.insert(dto);

@@ -246,7 +246,7 @@
 							<!-- 좋아요 댓글 버튼 s -->
 							<div class="postbtn">
 								<c:choose>
-									<c:when test="${like ne null }">
+									<c:when test="${list.like_ing eq 1 }">
 										<button type="button" id="like">
 											<span class="heart" style="font-size: 25px"><i id="likedBtn${list.ifdaSeq}" style="color: rgb(225, 0, 0);" onclick="liked(${list.ifdaSeq})" class="fa-solid fa-heart"></i></span>
 										</button>
@@ -263,7 +263,7 @@
 							</div>
 							<!-- 좋아요 댓글 버튼 e -->
 							<!-- 좋아요 갯수	 s -->	
-							<p><b>좋아요 9,234개</b></p>
+							<p><b>좋아요 <b id="postlikeCount${list.ifdaSeq}"><c:out value="${list.likeCount }"/></b>개</b></p>
 							<!-- 좋아요 갯수	 e -->
 							<!-- contents s -->
 							<div class="cardcontent">
@@ -370,7 +370,7 @@
 				success:function(result){
 					if(result.list != null){
 	    				//좋아요 count 숫자 변경 
-	        			$("#postlikeCount").html(result.list.length);
+	        			$("#postlikeCount"+key).html(result.likeCount);
 						
 	    				if(status == "rgb(0, 0, 0)"){
 			    			//https://webstudynote.tistory.com/95

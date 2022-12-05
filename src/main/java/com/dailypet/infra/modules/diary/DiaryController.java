@@ -45,11 +45,12 @@ public class DiaryController {
 		Diary item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
+		vo.setLoginUser((String)httpSession.getAttribute("sessSeq"));
 		List<Diary> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
-		List<Comment> cmList = serviceComment.commentList(cmvo);
-		model.addAttribute("cmList", cmList);
+//		List<Comment> cmList = serviceComment.commentList(cmvo);
+//		model.addAttribute("cmList", cmList);
 		
 //		int count = serviceLike.selectCheckLike(lidto);
 //		if(count == 1) {
@@ -175,10 +176,10 @@ public class DiaryController {
 				
 		serviceLike.diaryLikeInst(dto);
 		
-//		int likecount = serviceLike.likeCount(dto);
+		int likecount = serviceLike.likeCount(dto);
 		List<Like> list = serviceLike.selectList(dto);
 		
-//		result.put("likeCount", likecount);
+		result.put("likeCount", likecount);
 		result.put("list", list);
 		return result;
 	}
@@ -191,10 +192,10 @@ public class DiaryController {
 		
 		serviceLike.diaryLikeDel(dto);
 		
-//		int likecount = serviceLike.likeCount(dto);
+		int likecount = serviceLike.likeCount(dto);
 		List<Like> list = serviceLike.selectList(dto);
 		
-//		result.put("likeCount", likecount);
+		result.put("likeCount", likecount);
 		result.put("list", list);
 		return result;
 	}

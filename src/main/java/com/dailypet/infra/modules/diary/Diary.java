@@ -19,6 +19,8 @@ public class Diary extends Base {
 	private Integer follower;
 	private String ifmmIntrodution;
 	private Integer likeCount;
+	private Integer loginUser;
+	private Integer like_ing;
 
 	private MultipartFile[] diary_image;
 
@@ -327,6 +329,22 @@ public class Diary extends Base {
 
 	public void setLikeCount(Integer likeCount) {
 		this.likeCount = likeCount;
+	}
+
+	public Integer getLoginUser() {
+		return loginUser;
+	}
+
+	public void setLoginUser(Integer loginUser) {
+		this.loginUser = loginUser;
+	}
+
+	public Integer getLike_ing() {
+		return like_ing;
+	}
+
+	public void setLike_ing(Integer like_ing) {
+		this.like_ing = like_ing;
 	}
 
 }

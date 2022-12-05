@@ -53,13 +53,13 @@
 			,now()
 			,0
 			,#{ifdaSeq}
-			,#{ifmmSeq}
+			,#{ifmmSeq}  
 		)
 		<selectKey resultType="Integer" keyProperty="ifcmSeq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>	
 	</insert>
-	
+	 
 	<delete id="commentDel">
 		DELETE 
 		FROM comment 

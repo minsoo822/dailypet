@@ -250,15 +250,14 @@
 	
 <body>
 	<form method="post" id="mainForm">
-		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
 		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
-		<%-- <input type="hidden" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
+		
 	    <!-- herder s -->
 	    <%@include file="../../../common/xdmin/include/header.jsp"%>
 	    <!-- header e -->
 	    <!-- /.page header -->
 	    <div class="diaryheader">
-			<nav class="icon">
+			<nav class="icon"> 
 				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
 				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName
@@ -267,7 +266,7 @@
 		</div>
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
-		<input type="hidden" id="ifdaSeq" value="${dto.ifdaSeq }">
+		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${dto.ifdaSeq }">
 			<span id="close_modal" class="material-icons-outlined">
 				<i class="fa-solid fa-xmark"></i>
 			</span>
@@ -488,40 +487,44 @@
     	
     	
     	/* 댓글 s */
-		$("#upcomment").on("click", function() {
-    		$.ajax({
-    			url: "/comment/commentInst",
-    			type: "POST",
-    			datatype: "json",
-    			success: function(result) {
+		$("#upcomment").on("click", function() { 
+			$.ajax({
+				url: "/comment/commentInst",
+				type: 'POST',
+				datatype: 'json',
+				data: {
+					ifcmContent: $("#writecomm").val(),
+					ifdaSeq : $("#ifdaSeq").val(),
+					ifmmSeq: $("#mm_ifmmSeq").val() 
+				},
+    			success: function(result) { 
     				var txt = "";
-    				
-    				txt += '<div class="row">';
-    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
-    				txt += '<div class="modalprofile">';
-    				txt += '<img id="" src="'+ result.coUserImg +'" class="profilepic" alt="">';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
-    				txt += '<div class="row">';
-    				txt += '<div class=col>';
-    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.coUserid +'</b></h5>';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '<div class="row">';
-    				txt += '<div class=col>';
-    				txt += '<h5 style="font-size: 5px;"><b>방금전</b></h5>';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '<div class="col">';
-    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
-    				txt += '</div>';
-    				txt += '</div>';
-    			
-    				$("#comment_area").prepend(txt);
-    				$("#writecomm").val("");
-    			},
+	    				txt += '<div class="row">';
+	    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
+	    				txt += '<div class="modalprofile">';
+	    				txt += '<img id="" src="'+ result.coUserImg +'" class="profilepic" alt="">';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
+	    				txt += '<div class="row">';
+	    				txt += '<div class=col>';
+	    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.coUserid +'</b></h5>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '<div class="row">';
+	    				txt += '<div class=col>';
+	    				txt += '<h5 style="font-size: 5px;"><b>방금전</b></h5>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '<div class="col">';
+	    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    			
+	    				$("#comment_area").prepend(txt);
+	    				$("#writecomm").val("");
+	    			},
     			error:function(){
     				alert("ajax error..!");
     			}
@@ -558,7 +561,7 @@
 					ifdaSeq : ifdaSeq 
 				},
 				success:function (result) {
-					
+					$("#ifdaSeq").attr("value",result.ifdaSeq); 
 					$("#postImg").attr("src",result.diaryImg);
 					$("#userImg").attr("src",result.userImg);
 					$("#userID").html(result.userID);
@@ -601,7 +604,6 @@
   			seq.attr("value", ifdaSeq);
   			form.attr("action", "").submit();
   		} */
-    		  
     </script>
 </body>
 

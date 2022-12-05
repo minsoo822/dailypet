@@ -326,132 +326,131 @@
     <!-- footScript e -->
     <script type="text/javascript">
     	
-    var sessSeq = $("#sessSeq").val();
-    var ifdaSeq = $("input:hidden[name=ifdaSeq]");
-    var ifmmSeq = $("input:hidden[name=ifmmSeq]");
-	var seq = $("input:hidden[name=ifmmSeq]");
-	var form = $("#diaryForm")
-	
-	goUser = function(key) {
-		if(key == sessSeq ) {
-			form.attr("action", "/diary/diaryMypage").submit();	 //똑같아 그래서 하나의 컨트롤러에 내 정보로 갈땐 vo.seq == null 인상태로 다른사람 정보는 vo.seq = N 
-		} else {
-			ifmmSeq.val(key);
-			form.attr("action" ,"/diary/diaryUserpage").submit();
-		}
-	};
-	delPost = function(key) {
-		ifdaSeq.val(key);
-		form.attr("action", "/diary/diaryDel").submit();
-	};
-	
-	liked = function(key){
+	    var sessSeq = $("#sessSeq").val();
+	    var ifdaSeq = $("input:hidden[name=ifdaSeq]");
+	    var ifmmSeq = $("input:hidden[name=ifmmSeq]");
+		var seq = $("input:hidden[name=ifmmSeq]");
+		var form = $("#diaryForm")
 		
-		var likedUrl ="";
-		var likedBtn = $("#likedBtn"+key);
-		var status = $("#likedBtn"+key).css('color');
+		goUser = function(key) {
+			if(key == sessSeq ) {
+				form.attr("action", "/diary/diaryMypage").submit();	 //똑같아 그래서 하나의 컨트롤러에 내 정보로 갈땐 vo.seq == null 인상태로 다른사람 정보는 vo.seq = N 
+			} else {
+				ifmmSeq.val(key);
+				form.attr("action" ,"/diary/diaryUserpage").submit();
+			}
+		};
+		delPost = function(key) {
+			ifdaSeq.val(key);
+			form.attr("action", "/diary/diaryDel").submit();
+		};
 		
-		if(status == "rgb(0, 0, 0)") {
-			likedUrl = "/diary/addLiked";
-		} else {
-			likedUrl = "/diary/removeLiked";
-		}
-		
-		$.ajax({
-			url: likedUrl
-			,type: 'POST'
-			,dataType: 'json'
-			,data: {
-				//게시물 seq
-				ifdaSeq : key
-				//누가 눌렀는지 seq
-				,loginUser : $("#loginUser").val()
-			},
-			success:function(result){
-				if(result.list != null){
-    				//좋아요 count 숫자 변경 
-        			$("#postlikeCount").html(result.list.length);
-					
-    				if(status == "rgb(0, 0, 0)"){
-		    			//https://webstudynote.tistory.com/95
-		    			//채워주고
-		    			//빨간색으로
-		    			likedBtn.removeClass('fa-regular');
-		    			likedBtn.addClass('fa-solid');
-		    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
-		    			likedBtn.css("color",'red');
-    				} else {
-    					//비워주고
-    	    			//검정색으로
-    	    			likedBtn.removeClass('fa-solid');
-    	    			likedBtn.addClass('fa-regular');
-    	    			likedBtn.css("color",'black');
-    				}
-				}
-			},
-			error:function(){
-				alert("ajax error..!");
+		liked = function(key){
+			
+			var likedUrl ="";
+			var likedBtn = $("#likedBtn"+key);
+			var status = $("#likedBtn"+key).css('color');
+			
+			if(status == "rgb(0, 0, 0)") {
+				likedUrl = "/diary/addLiked";
+			} else {
+				likedUrl = "/diary/removeLiked";
 			}
 			
-		});
-		
-	};
-	
-	
-	
-	//댓글펼치고접기
-	function openCm(key){
-		
-	   let status = $('#cmList'+key).css('display');
-       if (status == 'flex') {
-            $('#cmList'+key).hide();
-            $('#cm'+key).text('댓글보기');
-
-       } else {
-            $('#cmList'+key).show();
-            $('#cm'+key).text('댓글 숨기기');
-
-       }
-    };
-	
-	commSubmit = function(key){
-		$.ajax({
-			url: '/diary/drListCmInst',
-			type: 'POST',
-			datatype: 'json',
-			data: {
-				ifdaSeq : key,
-				ifcmContent: $("#ifcmContent"+key).val(),
-				ifmmSeq: $("#ifmmSeq").val()
-			},
-			success:function(result){
-				var txt = "";
+			$.ajax({
+				url: likedUrl
+				,type: 'POST'
+				,dataType: 'json'
+				,data: {
+					//게시물 seq
+					ifdaSeq : key
+					//누가 눌렀는지 seq
+					,loginUser : $("#loginUser").val()
+				},
+				success:function(result){
+					if(result.list != null){
+	    				//좋아요 count 숫자 변경 
+	        			$("#postlikeCount").html(result.list.length);
+						
+	    				if(status == "rgb(0, 0, 0)"){
+			    			//https://webstudynote.tistory.com/95
+			    			//채워주고
+			    			//빨간색으로
+			    			likedBtn.removeClass('fa-regular');
+			    			likedBtn.addClass('fa-solid');
+			    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
+			    			likedBtn.css("color",'red');
+	    				} else {
+	    					//비워주고
+	    	    			//검정색으로
+	    	    			likedBtn.removeClass('fa-solid');
+	    	    			likedBtn.addClass('fa-regular');
+	    	    			likedBtn.css("color",'black');
+	    				}
+					}
+				},
+				error:function(){
+					alert("ajax error..!");
+				}
 				
-				txt +='<div class="row">';
-				txt +='<div class="col">';
-				txt +='<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">';
-				txt +='<img src="'+ result.img +'" class="profilepic" alt="">';
-				txt +='</div>';
-				txt +='<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
-				txt +='<div class="row">';
-				txt +='<div class="col-2 cmId">'+ result.writer +'</div>';
-				txt +='<div class="col cmTime">방금전</div>';
-				txt +='</div>';
-				txt +='<div class="row">';
-				txt +='<div class="col">'+ result.comment +'</div>';
-				txt +='</div>';
-				txt +='</div>';
-				txt +='</div>';
-				txt +='</div>';
-				
-				$("cmList").prepend(txt);
-				$("#ifcmContent").val("");
-			},
-			error:function(){
-				alert("ajax error..!");
-			}
-		})
-	};
+			});
+			
+		};
+		
+		
+		
+		//댓글펼치고접기
+		function openCm(key){
+			
+		   let status = $('#cmList'+key).css('display');
+	       if (status == 'flex') {
+	            $('#cmList'+key).hide();
+	            $('#cm'+key).text('댓글보기');
+	
+	       } else {
+	            $('#cmList'+key).show();
+	            $('#cm'+key).text('댓글 숨기기');
+	
+	       }
+	    };
+		
+		commSubmit = function(key){
+			$.ajax({
+				url: '/diary/drListCmInst',
+				type: 'POST',
+				datatype: 'json',
+				data: {
+					ifdaSeq : key,
+					ifcmContent: $("#ifcmContent"+key).val(),
+					ifmmSeq: $("#ifmmSeq").val()
+				},
+				success:function(result){
+					var txt = "";
+						txt +='<div class="row">';
+						txt +='<div class="col">';
+						txt +='<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 cmprofileView">';
+						txt +='<img src="'+ result.img +'" class="profilepic" alt="">';
+						txt +='</div>';
+						txt +='<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+						txt +='<div class="row">';
+						txt +='<div class="col-2 cmId">'+ result.writer +'</div>';
+						txt +='<div class="col cmTime">방금전</div>';
+						txt +='</div>';
+						txt +='<div class="row">';
+						txt +='<div class="col">'+ result.comment +'</div>';
+						txt +='</div>';
+						txt +='</div>';
+						txt +='</div>';
+						txt +='</div>';
+						
+						$("cmList").prepend(txt);
+						$("#ifcmContent").val("");
+					},
+				error:function(){
+					alert("ajax error..!");
+				}
+			})
+		};
     </script>
     
 </body>

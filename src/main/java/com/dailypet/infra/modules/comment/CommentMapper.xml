@@ -26,7 +26,7 @@
 	
 	<select id="commentOne" resultMap="resultMapObj">
 		SELECT
-			mm.ifmmID	AS writer
+			mm.ifmmID
 			,mmup.path
 			,mmup.uuidName
 		FROM member mm

@@ -502,13 +502,13 @@
 	    				txt += '<div class="row">';
 	    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
 	    				txt += '<div class="modalprofile">';
-	    				txt += '<img id="" src="'+ result.coUserImg +'" class="profilepic" alt="">';
+	    				txt += '<img id="" src="'+ result.img +'" class="profilepic" alt="">';
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
 	    				txt += '<div class="row">';
 	    				txt += '<div class=col>';
-	    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.coUserid +'</b></h5>';
+	    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.writer +'</b></h5>';
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    				txt += '<div class="row">';

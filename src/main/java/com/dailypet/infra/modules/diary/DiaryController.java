@@ -51,13 +51,9 @@ public class DiaryController {
 		List<Comment> cmList = serviceComment.commentList(cmvo);
 		model.addAttribute("cmList", cmList);
 		
-		int count = serviceLike.selectCheckLike(lidto);
-		if(count == 1) {
-			model.addAttribute("like", 1);
-		}
-//		int count = serviceFollow.selectChkFollow(Integer.parseInt(vo.getIfmmSeq()), (Integer)httpSession.getAttribute("sessSeq"));
+//		int count = serviceLike.selectCheckLike(lidto);
 //		if(count == 1) {
-//			model.addAttribute("IsFollow", 1);
+//			model.addAttribute("like", 1);
 //		}
 		
 		return "infra/diary/user/diaryList";

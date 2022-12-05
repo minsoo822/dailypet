@@ -23,7 +23,11 @@ public class CommentController {
 		int commentInst = service.commentInst(dto);
 		
 		Comment commentItem = service.commentOne(dto);
-		dto.setIfcmSeq(dto.getIfcmSeq());
+		result.put("img", commentItem.getPath() + commentItem.getUuidName());
+		result.put("writer", commentItem.getIfmmID());
+		result.put("comment", dto.getIfcmContent());
+		
+		
 		return result;
 	}
 	

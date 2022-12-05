@@ -12,6 +12,8 @@ public class Comment extends Base{
 	private Integer da_ifdaSeq;
 	private Integer mm_ifmmSeq;
 	private String writer;
+	private String path;
+	private String uuidName;
 	
 	private Integer ifdaSeq;
 	private Integer sessSeq;
@@ -96,6 +98,18 @@ public class Comment extends Base{
 	}
 	public void setIfmmID(String ifmmID) {
 		this.ifmmID = ifmmID;
+	}
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
+	public String getUuidName() {
+		return uuidName;
+	}
+	public void setUuidName(String uuidName) {
+		this.uuidName = uuidName;
 	}
 	
 }

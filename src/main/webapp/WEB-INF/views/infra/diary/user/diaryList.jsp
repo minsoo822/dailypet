@@ -451,6 +451,10 @@
 				}
 			})
 		};
+		
+		commentBtn = function() {
+			$("#writecomm").focus();
+		};
     </script>
     
 </body>

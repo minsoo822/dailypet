@@ -25,6 +25,10 @@ public class FindpetDao {
 		return sqlSession.selectOne(namespace + ".selectOne", vo); 
 	}
 	
+	public List<Findpet> findpetOne(FindpetVo vo) { 
+		return sqlSession.selectList(namespace + ".findpetOne", vo);
+	}
+	
 	//등록
 	public int findPetInst(Findpet dto) throws Exception { 
 		return sqlSession.insert(namespace + ".findPetInst", dto); 

@@ -104,11 +104,11 @@
 			color: black;
 		}
 		
-		select{
+		.form-select{
 			width: 370px;
-	    	height: 35px;	
+	    	height: 35px;
+	    	font-size: 13px;
 	   	    border: 1px solid #e2dcdb;
-			font-size: 14px;
 			margin-top: 5px;
 		}
 		
@@ -179,6 +179,45 @@
 	    .modal-header{
 	   		display: inline-flex;
 	    }
+	    
+	    #addrClear {
+	    	width: 35px;
+	    	height: 35px; 
+	    	margin-top: 6px; 
+	    	border: none;
+	    	border-radius: 6px;
+	    }
+	    
+	    #iffpSpotDate {
+	    	margin-top: 6px;
+	    	width: 325px;
+	    	height: 35px;
+	    }
+	    
+	    #iffpName, #iffpSpotPlace, #iffpCharacteristic {
+	    	width: 325px;
+	    }
+	    
+	    .Scroll {
+			overflow-y:auto;
+			height: 200px;
+			background-color:#E9ECEF;
+			padding-top:5px; 
+			padding-left:5px;
+		}
+	 	
+		.input-file-button {
+			padding: 4px 25px;
+			background-color:#FF6600;
+			border-radius: 4px;
+			color: white;
+			cursor: pointer;
+		}
+		
+		img {
+			width: 100px;
+			height: 100px;
+		}
 		 
 	</style>
 </head>
@@ -188,7 +227,7 @@
 	<%@include file="../../../common/xdmin/include/header.jsp"%>
 	
     <!-- /.page header -->
-    <form id="form" name="fpform" method="post">
+    <form id="form" name="fpform" method="post" enctype="multipart/form-data">
     <input type="hidden" id="iffpSeq" value="${item.iffpSeq}">
 	<div class="content">
         <div class="container">
@@ -202,46 +241,56 @@
                         </div>
                         <br>
                         <br>
-                       <!--  <h3><b>기본 정보</b></h3> -->
                         <hr>
                         <div class="row div2 left">
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
-								<label class="top4">사용여부</label>
+								<label class="top4">이미지 첨부</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<select class="form-select" name="ifcdUseNy">
-									<option selected>::선택::</option>
-									<option value="1" <c:if test="${item.ifcdUseNy eq 1}">selected</c:if>>Y</option>
-									<option value="0" <c:if test="${item.ifcdUseNy eq 0}">selected</c:if>>N</option>
-								</select>
+								<input class="form-control" id="imagefile" name="imagefile" type="file" multiple="multiple">
 							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div id="UploadedImagePreview" class="Scroll">
+									<c:forEach items="${listimg }" var="listimg" varStatus="status">
+										<img src="${listimg.path }${listimg.uuidName }">
+									</c:forEach>
+								</div>
+							</div>
+						</div>
+						<hr>
+                        <div class="row div2 left">
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
 								<label class="top4">삭제여부</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<select class="form-select" name="ifcdDelNy">
+								<select class="form-select" name="iffpDelNY">
 									<option selected>::선택::</option>
-									<option value="1" <c:if test="${item.ifcdDelNy eq 1}">selected</c:if>>Y</option>
-									<option value="0" <c:if test="${item.ifcdDelNy eq 0}">selected</c:if>>N</option>
+									<option value="1" <c:if test="${item.iffpDelNY eq 1}">selected</c:if>>Y</option>
+									<option value="0" <c:if test="${item.iffpDelNY eq 0}">selected</c:if>>N</option>
 								</select>
 							</div>
 						</div>
 						<hr>
 						<div class="row div2 left">
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
-								<label class="top4">번호</label>
+								<label class="top4">지역</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<input class="form-control input" type="text" name="ifcdSeq" id="ifcdSeq" value="<c:out value="${item.ifcdSeq }"/>" readonly>
+								<select class="form-select" name="iffpSpotLocation">
+									<option value="">::지역::</option>
+									<c:forEach items="${listA}" var="listA" varStatus="status">
+										<option value="<c:out value="${listA.ifcdSeq}"/>" <c:if test="${listA.ifcdSeq eq item.iffpSpotLocation }"> selected</c:if>><c:out value="${listA.ifcdName }"/></option>
+									</c:forEach>
+								</select>
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
-								<label class="top4">코드그룹 이름</label>
+								<label class="top4">품종</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<select class="form-select" name="cg_ifcgSeq">
-									<option value="">::코드그룹명::</option>
-									<c:forEach items="${add}" var="add" varStatus="status">
-										<option value="<c:out value="${add.ifcgSeq}"/>" <c:if test="${add.ifcgSeq eq item.cg_ifcgSeq }"> selected</c:if>><c:out value="${add.ifcgName }"/></option>
+								<select class="form-select" name="iffpBreed">
+									<option value="">::품종::</option>
+									<c:forEach items="${listB}" var="listB" varStatus="status">
+										<option value="<c:out value="${listB.ifcdSeq}"/>" <c:if test="${listB.ifcdSeq eq item.iffpBreed }"> selected</c:if>><c:out value="${listB.ifcdName }"/></option>
 									</c:forEach>
 								</select>
 							</div>
@@ -249,25 +298,49 @@
 						<hr>
 						<div class="row div2 left">
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
-								<label class="top4">코드 이름(한글)</label>
+								<label class="top4">이름</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<input class="form-control input" type="text" name="ifcdName" id="ifcdName" value="<c:out value="${item.ifcdName }"/>">
+								<input class="form-control input" type="text" name="iffpName" id="iffpName" value="<c:out value="${item.iffpName }"/>">
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
-								<label class="top4">코드 이름(영문)</label>
+								<label class="top4">발견장소</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<input class="form-control input" type="text" name="ifcdName_eng" id="ifcdName_eng" value="<c:out value="${item.ifcdName_eng }"/>">
+								<input class="form-control input" type="text" name="iffpSpotPlace" id="iffpSpotPlace" value="<c:out value="${item.iffpSpotPlace }"/>">
 							</div>
 						</div>
 						<hr>
 						<div class="row div2 left">
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
-								<label class="top4">설명</label>
+								<label class="top4">위탁장소</label>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1">
+								<input class="form-control input" type="text" name="iffpAnimalShelterzipCode" id="iffpAnimalShelterzipCode" value="${item.iffpAnimalShelterzipCode }" placeholder="주소 찾기" readonly>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1" style="max-width: 50px">
+								<button type="button" id="addrClear"><i class="fa-solid fa-rotate-left"></i></button>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<textarea class="form-control" type="textarea" name="cgcontent" id="cgcontent" style="height: 100px"></textarea>
+								<input class="form-control input" type="text" name="iffpAnimalShelter1" id="iffpAnimalShelter1" value="${item.iffpAnimalShelter1 }" readonly>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2">
+								<input class="form-control input" type="text" name="iffpAnimalShelter2" id="iffpAnimalShelter2" value="${item.iffpAnimalShelter2 }">
+							</div>
+						</div>
+						<hr>
+						<div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">발견일시</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input class="form-control" type="datetime-local" id="iffpSpotDate" name="iffpSpotDate" value="${item.iffpSpotDate }">
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">특이사항</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<textarea class="form-control" type="textarea" name="iffpCharacteristic" id="iffpCharacteristic" style="height: 100px; margin-top: 6px"><c:out value="${item.iffpCharacteristic }"/></textarea>
 							</div>
 						</div>
 						<hr class="hr1">
@@ -334,7 +407,7 @@
     </form>
     <form name="formVo" id="formVo" method="post">
 	<!-- *Vo.jsp s -->
-	<%@include file="codeVo.jsp"%>		<!-- #-> -->
+	<%@include file="findpetVo.jsp"%>		<!-- #-> -->
 	<!-- *Vo.jsp e -->
 	</form>
     <!-- footer s -->
@@ -343,23 +416,25 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
    
 	<script type="text/javascript">
 	
-		var goUrlList = "/code/codeList";
-		var goUrlInst = "/code/codeInst";
-		var goUrlUpdt = "/code/codeUpdt";
-		var goUrlUele = "/code/codeUele";
-		var goUrlDele = "/code/codeDele";
-		var goUrlForm = "/code/codeForm";
+		var goUrlList = "/findpet/findpetxdList";
+		var goUrlInst = "/findpet/findpetxdInst";
+		var goUrlUpdt = "/findpet/findpetxdUpdt";
+		var goUrlUele = "/findpet/findpetUele";
+		var goUrlDele = "/findpet/findpetDele";
+		var goUrlForm = "/findpet/findpetForm";
 		
-		var ifcdSeq = $("#ifcdSeq");
+		var iffpSeq = $("#iffpSeq");
 	
-		var form = $("form[name=codeform]");
+		var form = $("form[name=fpform]");
 		var formVo = $("form[name=formVo]");
 	
 		$("#btnSubmit").on("click", function(){
-			if (ifcdSeq.val() == "0" || ifcdSeq.val() == ""){
+			if (iffpSeq.val() == "0" || iffpSeq.val() == ""){
 		   		form.attr("action", goUrlInst).submit();
 		   	} else {
 		   		form.attr("action", goUrlUpdt).submit();
@@ -380,6 +455,54 @@
 		
 		$("#btnUelete").on("click", function(){
 			formVo.attr("action", goUrlUele).submit();
+		});
+	
+	</script>
+	
+	<script type="text/javascript">
+		
+		$("#iffpAnimalShelterzipCode").on("click", function() {
+			here();
+		});
+		
+		function here() {
+	        new daum.Postcode({
+	            oncomplete: function(data) {
+	                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+	                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+	                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+	                var roadAddr = data.roadAddress; // 도로명 주소 변수
+	                var extraRoadAddr = ''; // 참고 항목 변수
+
+	                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+	                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+	                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+	                    extraRoadAddr += data.bname;
+	                }
+	                // 건물명이 있고, 공동주택일 경우 추가한다.
+	                if(data.buildingName !== '' && data.apartment === 'Y'){
+	                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+	                }
+	                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+	                if(extraRoadAddr !== ''){
+	                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+	                }
+
+	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+	                document.getElementById('iffpAnimalShelterzipCode').value = data.zonecode;
+	                document.getElementById("iffpAnimalShelter1").value = roadAddr;
+	                // 커서를 상세주소로 이동한다
+	                document.getElementById('iffpAnimalShelter2').focus();
+	                
+	            }
+	        }).open();
+	    }
+		
+		$("#addrClear").on("click", function() {
+			$("#iffpAnimalShelterzipCode").val('');
+			$("#iffpAnimalShelter1").val('');
+			$("#iffpAnimalShelter2").val('');
 		});
 	
 	</script>

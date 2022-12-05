@@ -18,7 +18,6 @@ import com.dailypet.infra.modules.code.Code;
 import com.dailypet.infra.modules.code.CodeServiceImpl;
 import com.dailypet.infra.modules.code.CodeVo;
 
-
 @Controller
 @RequestMapping(value = "/findpet/")
 public class FindpetController {
@@ -164,7 +163,7 @@ public class FindpetController {
 	}
 	
 	@RequestMapping(value = "findpetForm")
-	public String findpetForm(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
+	public String findpetForm(@ModelAttribute("vo") FindpetVo vo, Findpet dto, Model model) throws Exception {
 		
 		Findpet result = service.selectOne(vo);
 		model.addAttribute("item", result);
@@ -174,6 +173,12 @@ public class FindpetController {
 		
 		List<Findpet> listB = service.BreedAdd(vo);
 		model.addAttribute("listB", listB);
+		
+		//이미지 가져오기
+		dto.setPseq(vo.getIffpSeq());
+				
+		List<Findpet> listimg = service.findpetOne(vo);
+		model.addAttribute("listimg", listimg);
 		
 		return "infra/findpet/xdmin/findpetForm";
 	}

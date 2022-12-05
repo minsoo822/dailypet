@@ -31,5 +31,6 @@ public interface FindpetService {
 	public List<Findpet> findpetResult(FindpetVo vo) throws Exception;
 	
 	public List<Findpet> xdminList(FindpetVo vo) throws Exception;
+	public List<Findpet> findpetOne(FindpetVo vo) throws Exception;
 	
 }

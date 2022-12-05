@@ -208,7 +208,7 @@
 			,type
 			,ifcmRegDate
 			,fp_iffpSeq
-			,ifcmDelNy
+			,ifcmDelNY
 		)
 		VALUE(
 			#{ifmmSeq}
@@ -245,6 +245,19 @@
 		AND b.ifcgSeq = 5
 	</select>
 	
+	<!-- 유기동물 등록 시 지역 추가 -->
+	<select id="AreaAdd" resultMap="resultMapObj">
+		SELECT
+			a.ifcdSeq
+			, a.ifcdName
+			, a.cg_ifcgSeq
+			, b.ifcgSeq
+		FROM code a
+		JOIN codegroup b ON b.ifcgSeq = a.cg_ifcgSeq
+		WHERE 1=1
+		AND b.ifcgSeq = 4
+	</select>
+	
 	<!-- 유기동물 찾기 결과 -->
 	<select id="findpetResult" resultMap="resultMapObj">
 		SELECT
@@ -260,5 +273,51 @@
 		WHERE 1=1
 		AND f.iffpBreed = ${iffpBreed}
 	</select>
+	
+	<!-- 관리자page -->
+	<sql id = "selectCommon">
+		FROM findpet a
+		WHERE 1=1
+		ORDER BY a.iffpSeq DESC
+		
+		<if test="shDelNy != null and !shDelNy.equals('')">AND a.iffpDelNy = #{shDelNy}</if>
+		<if test="shOptionBreed != null and !shOptionBreed.equals('')">AND a.iffpBreed = #{shOptionBreed}</if>
+		
+		<choose>
+			<when test="shOptionDate == 1">AND a.iffpSpotDate BETWEEN #{shstartDate} AND #{shendDate}</when>
+			<when test="shOptionDate == 2">AND a.iffpModDate BETWEEN #{shstartDate} AND #{shendDate}</when>
+		</choose>
+		
+		<choose>
+			<when test="shOption == 1">AND a.iffpName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 2">AND a.iffpCharacteristic LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3">AND a.iffpSpotPlace LIKE CONCAT('%',#{shValue},'%')</when>
+		</choose>
+	</sql>
+		
+	<select id="xdminList" resultMap="resultMapObj">
+		SELECT
+			a.iffpSeq
+			,a.iffpName
+			,a.iffpBreed
+		    ,a.iffpCharacteristic
+		    ,a.iffpSpotPlace
+		    ,a.iffpSpotDate
+		    ,a.iffpAnimalShelter1
+		    ,a.iffpDelNY
+	<include refid="selectCommon" />
+	</select>
+    
+	<update id="uelete">
+		UPDATE findpet
+		SET
+			iffpDelNY = 1
+		WHERE iffpSeq = #{iffpSeq}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM findpet
+		WHERE iffpSeq = #{iffpSeq}
+	</delete>
 	
 </mapper>	

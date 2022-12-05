@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.dailypet.infra.modules.code.Code;
 import com.dailypet.infra.modules.code.CodeServiceImpl;
@@ -74,6 +75,7 @@ public class FindpetController {
 	
 	@RequestMapping(value = "findpetMod")
 	public String findpetMod(FindpetVo vo, Model model) throws Exception {
+		
 		Findpet item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
@@ -141,6 +143,80 @@ public class FindpetController {
 		 
 		return "infra/findpet/user/findpetSearchForm";
 	}
-
+	
+	@RequestMapping(value = "findpetxdList")
+	public String findpetxdList(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
+		
+		setSearchAndPaging(vo);
+		
+		if(vo.getTotalRows() > 0) {
+			List<Findpet> list = service.xdminList(vo);
+			model.addAttribute("list", list);
+		}
+		
+		List<Findpet> listA = service.AreaAdd(vo);
+		model.addAttribute("listA", listA);
+		
+		List<Findpet> listB = service.BreedAdd(vo);
+		model.addAttribute("listB", listB);
+		
+		return "infra/findpet/xdmin/findpetxdList";
+	}
+	
+	@RequestMapping(value = "findpetForm")
+	public String findpetForm(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
+		
+		Findpet result = service.selectOne(vo);
+		model.addAttribute("item", result);
+		
+		List<Findpet> listA = service.AreaAdd(vo);
+		model.addAttribute("listA", listA);
+		
+		List<Findpet> listB = service.BreedAdd(vo);
+		model.addAttribute("listB", listB);
+		
+		return "infra/findpet/xdmin/findpetForm";
+	}
+	
+	@RequestMapping(value = "findpetxdInst")
+	public String findpetxdInst(FindpetVo vo, Findpet dto, RedirectAttributes redirectAttributes) throws Exception {
+		
+		service.findPetInst(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/findpet/findpetForm";
+	}
+	
+	@SuppressWarnings(value = { "all" })
+	@RequestMapping(value = "findpetxdUpdt")
+	public String findpetxdUpdt(FindpetVo vo, Findpet dto, RedirectAttributes redirectAttributes) throws Exception {
+		
+		service.findPetUpdt(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/findpet/findpetForm";
+	}
+	
+	@RequestMapping(value = "findpetUele")
+	public String findpetUele(FindpetVo vo, Findpet dto, RedirectAttributes redirectAttributes) throws Exception {
+		
+		service.uelete(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/findpet/findpetxdList";
+	}
+	
+	@RequestMapping(value = "findpetDele")
+	public String findpetDele(@ModelAttribute("vo") FindpetVo vo, Findpet dto, RedirectAttributes redirectAttributes) throws Exception {
+		
+		service.delete(vo);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/findpet/findpetxdList";
+	}
 
 }

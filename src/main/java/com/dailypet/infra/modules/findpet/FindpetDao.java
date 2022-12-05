@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public class FindpetDao {
 	
@@ -55,6 +54,11 @@ public class FindpetDao {
 		return sqlSession.selectOne(namespace + ".commentOne", dto);
 	}
 	
+	//유기동물 등록 시 지역 등록
+	public List<Findpet> AreaAdd(FindpetVo vo) {
+		return sqlSession.selectList(namespace + ".AreaAdd", vo);
+	}
+	
 	//유기동물 등록 시 품종 등록
 	public List<Findpet> BreedAdd(FindpetVo vo) {
 		return sqlSession.selectList(namespace + ".BreedAdd", vo);
@@ -75,5 +79,16 @@ public class FindpetDao {
 		return sqlSession.selectList(namespace + ".findpetResult", vo);
 	}
 	
+	public List<Findpet> xdminList(FindpetVo vo) throws Exception { 
+		return sqlSession.selectList(namespace + ".xdminList", vo); 
+	}
+	
+	public int uelete(Findpet dto) {
+		return sqlSession.update(namespace + ".uelete", dto);
+	}
+	
+	public int delete(FindpetVo vo) {
+		return sqlSession.delete(namespace + ".delete", vo);
+	}
 	
 }

@@ -9,12 +9,16 @@ public interface FindpetService {
 	
 	public int findPetInst(Findpet dto) throws Exception;
 	public int findPetUpdt(Findpet dto) throws Exception;
+	public int uelete(Findpet dto) throws Exception;
+	public int delete(FindpetVo vo) throws Exception;
 	
 	//댓글
 	public List<Findpet> commentList(FindpetVo vo) throws Exception;
 	public int commentInst(Findpet dto) throws Exception;
 	public Findpet commentOne(Findpet dto) throws Exception;
 
+	//유기동물 등록 시 지역 추가
+	public List<Findpet> AreaAdd(FindpetVo vo) throws Exception;
 	//유기동물 등록 시 품종 추가
 	public List<Findpet> BreedAdd(FindpetVo vo) throws Exception;
 	//페이징
@@ -25,5 +29,7 @@ public interface FindpetService {
 	
 	//유기동물 찾기 결과
 	public List<Findpet> findpetResult(FindpetVo vo) throws Exception;
+	
+	public List<Findpet> xdminList(FindpetVo vo) throws Exception;
 	
 }

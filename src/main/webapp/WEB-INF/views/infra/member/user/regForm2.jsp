@@ -344,11 +344,11 @@
 									<div class="col-lg-4 col-md-4 col-sm-4">
 										<select class="form-select select1" name="ifmmEmailDomain">
 											<option value="">::선택::</option>
-											<option value="1">naver.com</option>
-											<option value="2">gmail.com</option>
-											<option value="3">hanmail.com</option>
-											<option value="4">nate.com</option>
-											<option value="5">daum.net</option>
+											<option value="4">naver.com</option>
+											<option value="5">gmail.com</option>
+											<option value="6">hanmail.com</option>
+											<option value="7">nate.com</option>
+											<option value="8">daum.net</option>
 										</select> 
 									</div>
 		                       	</div>

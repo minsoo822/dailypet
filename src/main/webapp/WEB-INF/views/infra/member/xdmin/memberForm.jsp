@@ -259,9 +259,9 @@
 							<div class="col-lg-1 col-md-1 col-sm-1">
 								<select class="form-select" name="ifmmTelecom">
 									<option value="">::선택::</option>
-									<option value="1">SKT</option>
-									<option value="2">KT</option>
-									<option value="3">LG</option>
+									<option value="1" <c:if test="${item.ifmmTelecom eq 1}">selected</c:if>>SKT</option>
+									<option value="2" <c:if test="${item.ifmmTelecom eq 2}">selected</c:if>>KT</option>
+									<option value="3" <c:if test="${item.ifmmTelecom eq 3}">selected</c:if>>LG</option>
 								</select>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-3">
@@ -279,11 +279,11 @@
 							<div class="col-lg-2 col-md-2 col-sm-2">
 								<select class="form-select" name="ifmmEmailDomain" style="max-width: 165px">
 									<option value="">::선택::</option>
-									<option value="4">naver.com</option>
-									<option value="5">gmail.com</option>
-									<option value="6">hanmail.net</option>
-									<option value="7">nate.com</option>
-									<option value="8">daum.com</option>
+									<option value="4" <c:if test="${item.ifmmEmailDomain eq 4}">selected</c:if>>naver.com</option>
+									<option value="5" <c:if test="${item.ifmmEmailDomain eq 5}">selected</c:if>>gmail.com</option>
+									<option value="6" <c:if test="${item.ifmmEmailDomain eq 6}">selected</c:if>>hanmail.net</option>
+									<option value="7" <c:if test="${item.ifmmEmailDomain eq 7}">selected</c:if>>nate.com</option>
+									<option value="8" <c:if test="${item.ifmmEmailDomain eq 8}">selected</c:if>>daum.com</option>
 								</select>
 							</div>
 						</div>

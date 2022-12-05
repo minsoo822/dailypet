@@ -92,7 +92,7 @@
     <!-- header e -->
 	<div class="totalContent">
 	    <div class="content">
-	        <div class="container">
+	        <div class="container" style="max-width: 1500px">
 	            <div class="row">
 	            	 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 	                    <div class="widget widget-categories category" >
@@ -101,8 +101,8 @@
 	                        <ul class="listnone">
 	                        	<li class="listtitle">Setting</li>
 	                            <li class="listmenu" style="color: #808080"><a href="/member/memberList"><b>회원 리스트</b></a></li>
-	                            <li class="listmenu"><a href="/findpet/findpetList">반려동물 리스트</a></li>
-	                            <li class="listmenu"><a href="/animal/animalList">유기동물 리스트</a></li>
+	                            <li class="listmenu"><a href="/animal/animalList">반려동물 리스트</a></li>
+	                            <li class="listmenu"><a href="/findpet/findpetxdList">유기동물 리스트</a></li>
 	                            <br>
 	                            <li class="listtitle">Code</li>
 	                            <li class="listmenu"><a href="/code/codeList">코드 리스트</a></li>
@@ -113,6 +113,7 @@
 	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 	                    <div class="row">
 	                    	<form method="post" name="memform">
+	                    	<input type="hidden" name="ifmmSeq">
 							<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 							<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 							<input type="hidden" name="checkboxSeqArray">

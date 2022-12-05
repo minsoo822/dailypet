@@ -27,28 +27,26 @@
 	</sql>
 	
 	<select id="selectList" resultMap="resultMapObj">
-		<include refid="Base.selectListUpperForMysql" />
-			SELECT 
-				a.ifmmSeq
-				, a.ifmmName
-				, a.ifmmZipcode
-				, a.ifmmAddr1
-				, a.ifmmAddr2
-				, a.ifmmAddr3
-				, a.ifmmID
-				, a.ifmmPW
-				, a.ifmmNickname
-				, a.ifmmTelecom
-				, a.ifmmTel
-				, a.ifmmEmail
-				, a.ifmmEmailID
-				, a.ifmmEmailDomain
-				, a.ifmmIntroduction
-				, a.ifmmRegDate
-				, a.ifmmModDate
-				, a.ifmmDelNy
-			<include refid="selectCommon" />
-		<include refid="Base.selectListLowerForMysql" />
+		SELECT 
+			a.ifmmSeq
+			, a.ifmmName
+			, a.ifmmZipcode
+			, a.ifmmAddr1
+			, a.ifmmAddr2
+			, a.ifmmAddr3
+			, a.ifmmID
+			, a.ifmmPW
+			, a.ifmmNickname
+			, a.ifmmTelecom
+			, a.ifmmTel
+			, a.ifmmEmail
+			, a.ifmmEmailID
+			, a.ifmmEmailDomain
+			, a.ifmmIntroduction
+			, a.ifmmRegDate
+			, a.ifmmModDate
+			, a.ifmmDelNy
+		<include refid="selectCommon" />
 	</select>
 	
 	<!-- 회원가입 -->

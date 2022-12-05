@@ -14,245 +14,240 @@
     <%@include file="../../../common/xdmin/include/head.jsp"%>
     <!-- meta,link e -->
     <title>육아수첩 마이피드</title>
-</head>
-
-<style type="text/css">
-
-	.container2 {
-		margin: 6% 10%;
-		margin-bottom: 30px;
-	} 
-	
-	.profile {
-		width: 180px;
-	    height: 180px; 
-	    border-radius: 70%;
-	    overflow: hidden;
-	}
-	.modalprofile {
-		width: 30px;
-	    height: 30px; 
-	    border-radius: 70%;
-	    overflow: hidden;
-	}
-	.profilepic {
-		width: 100%;
-	    height: 100%;
-	    object-fit: cover;
-	}
-	
-	.imghover {
-		overflow: hidden;
-	}
-	
-	img.img-responsive {
-		margin: 0;
-	}
-	
-	.img-responsive {
-		width: 100%;
-	    height: 100%;
-	    max-width: 360px;
-	    max-height: 304px;
-		object-fit: cover;
-	}
-	
-	#followbtn {
-		background-color: white;
-		width: 100px;
-		border: 1px solid gray;
-		border-radius: 4px;
-		font-weight: bold;
-	}
-	
-	.diaryheader {
-		position: fixed;
-		margin-top: 100px;
-		margin-bottom: 5%;
-		border: 1px solid lightgray;
-		background-color: white;
-		top: 0;
-		left: 0;
-		padding: 1.5rem;
-		height: 60px;
-		width: 100%;
-		z-index: 1;
-	}
-	
-	.icon {
-		margin-right: 400px;
-		float: right;
-	}
-	
-	.icon span {
-		margin: 0 15px;
-		vertical-align: middle;
-	}
-	
-	.profileheader {
-		width: 30px;
-	    height: 30px;
-	    border-radius: 70%;
-	    overflow: hidden;
-	    display: inline-block;
-	}
-	
-	.icon i {
-		margin-bottom: 10px;
-		color: black;
-	}
-	.img-responsive {
-		margin: 0px;
-		height: 450px;
-	}
-	.img-responsive img {
-		width: 100%;
-	}
-/* -------------------------------------------------------------------------- */	
-    .modal_overlay {
-    	z-index: 1999;
-        width: 100%;
-        height: 100%;
-        padding-top: 100px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(1.5px);
-        -webkit-backdrop-filter: blur(1.5px);
-    }
-
-    .modal_window {
-		z-index: 1999;
-        background: white;
-        backdrop-filter: blur(13.5px);
-        -webkit-backdrop-filter: blur(13.5px);
-        width: 1000px;
-        height: 700px;
-        position: relative;
-        bottom: 70px;
-    }
-    .material-icons-outlined {
-		position: relative;
-		bottom: 90px;
-		left: 700px;
-		color:white;
-		font-size: 20pt;		
-	}
-     .modal_title{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    .modal_title_side{
-        flex: 0 0 40px;
-        text-align: center;
-    }
-    .imgdetail {
-    	width: 440px;
-    	height: 495px;
-    	background: black;
-    	display: flex;
-    	justify-content: center;
-    	align-items: center;
-    }
-    .img-responsive2 {
-    	object-fit: cover;
-    	max-width: 100%;
-    	max-height: 100%;
-    }
     
-/* ------------------------------------------------------------------------ */
-	
-	#thumbList .col-lg-4 {
-		margin: 18px 10px;
-		max-width: 380px;
-	}
-	
-	.col-lg-5 {
-		padding: 0px;
-	}
-	
-	button {
-		background-color: white;
-		border: none;
-	}
-	
-	#like, #comment {
-		margin-right: 10px;
-	}
-	
-	.service-content > * {
-		margin-left: 10px;
-	}
-	
-	.postbtn {
-		margin: -20px 0 0 10px;
-	}
-	
-	.cardcontent {
-		margin-top: 10px;
-	}
-	
-	.row {
-		margin: 0;
-		padding: 0;
-	}
-	
-	div.col-lg-7 {
-		padding: 0;
-	}
-	
-	#idbox {
-		padding: 7.5px;
-	}
-	
-	.col-lg-5 {
-		position: relative;
-		height: 500px;
-	}
-	
-	.cardcontent p {
-		font-size: 11px; 
-		color: lightgray;
-	}
+	<style type="text/css">
+		.container2 {
+			margin: 6% 10%;
+			margin-bottom: 30px;
+		} 
 		
-	.cardfooter {
-		position: absolute;
-	    bottom: 0;
-	}
+		.profile {
+			width: 180px;
+		    height: 180px; 
+		    border-radius: 70%;
+		    overflow: hidden;
+		}
+		.modalprofile {
+			width: 30px;
+		    height: 30px; 
+		    border-radius: 70%;
+		    overflow: hidden;
+		}
+		.profilepic {
+			width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		}
+		
+		.imghover {
+			overflow: hidden;
+		}
+		
+		img.img-responsive {
+			margin: 0;
+		}
+		
+		.img-responsive {
+			width: 100%;
+		    height: 100%;
+		    max-width: 360px;
+		    max-height: 304px;
+			object-fit: cover;
+		}
+		
+		#followbtn {
+			background-color: white;
+			width: 100px;
+			border: 1px solid gray;
+			border-radius: 4px;
+			font-weight: bold;
+		}
+		
+		.diaryheader {
+			position: fixed;
+			margin-top: 100px;
+			margin-bottom: 5%;
+			border: 1px solid lightgray;
+			background-color: white;
+			top: 0;
+			left: 0;
+			padding: 1.5rem;
+			height: 60px;
+			width: 100%;
+			z-index: 1;
+		}
+		
+		.icon {
+			margin-right: 400px;
+			float: right;
+		}
+		
+		.icon span {
+			margin: 0 15px;
+			vertical-align: middle;
+		}
+		
+		.profileheader {
+			width: 30px;
+		    height: 30px;
+		    border-radius: 70%;
+		    overflow: hidden;
+		    display: inline-block;
+		}
+		
+		.icon i {
+			margin-bottom: 10px;
+			color: black;
+		}
+		.img-responsive {
+			margin: 0px;
+			height: 450px;
+		}
+		.img-responsive img {
+			width: 100%;
+		}
+	/* -------------------------------------------------------------------------- */	
+	    .modal_overlay {
+	    	z-index: 1999;
+	        width: 100%;
+	        height: 100%;
+	        padding-top: 100px;
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        display: none;
+	        flex-direction: column;
+	        align-items: center;
+	        justify-content: center;
+	        background: rgba(0, 0, 0, 0.8);
+	        backdrop-filter: blur(1.5px);
+	        -webkit-backdrop-filter: blur(1.5px);
+	    }
 	
-	.cardfooter .form-control {
-		margin-bottom: 2px;
-		padding: 0 15px;
-	}
+	    .modal_window {
+			z-index: 1999;
+	        background: white;
+	        backdrop-filter: blur(13.5px);
+	        -webkit-backdrop-filter: blur(13.5px);
+	        width: 1000px;
+	        height: 700px;
+	        position: relative;
+	        bottom: 70px;
+	    }
+	    .material-icons-outlined {
+			position: relative;
+			bottom: 90px;
+			left: 700px;
+			color:white;
+			font-size: 20pt;		
+		}
+	     .modal_title{
+	        display: flex;
+	        flex-direction: row;
+	        justify-content: space-between;
+	        font-weight: bold;
+	        font-size: 20px;
+	    }
 	
-	#writecomm {
-		width: 280px;
-		padding: 8px;
-		display: inline;
-		border: none;
-		height: 40px;
-	}
+	    .modal_title_side{
+	        flex: 0 0 40px;
+	        text-align: center;
+	    }
+	    .imgdetail {
+	    	width: 570px;
+	    	height: 700px;
+	    	background: black;
+	    	display: flex;
+	    	justify-content: center;
+	    	align-items: center;
+	    }
+	    .img-responsive2 {
+	    	object-fit: cover;
+	    	max-width: 100%;
+	    	max-height: 100%;
+	    }
+	    
+	/* ------------------------------------------------------------------------ */
+		
+		#thumbList .col-lg-4 {
+			margin: 18px 10px;
+			max-width: 380px;
+		}
+		
+		button {
+			background-color: white;
+			border: none;
+		}
+		
+		#like, #comment {
+			margin-right: 10px;
+		}
+		
+		.service-content > * {
+			margin-left: 10px;
+		}
+		
+		.postbtn {
+			margin: -20px 0 0 10px;
+		}
+		
+		.cardcontent {
+			margin-top: 10px;
+		}
+		
+		.row {
+			margin: 0;
+			padding: 0;
+		}
+		
+		div.col-lg-7 {
+			padding: 0;
+		}
+		
+		#idbox {
+			padding: 7.5px;
+		}
+		
+		.col-lg-5 {
+			position: relative;
+			height: 700px;
+			padding: 0px;
+		}
+		
+		.cardcontent p {
+			font-size: 11px; 
+			color: lightgray;
+		}
+			
+		.cardfooter {
+			position: absolute;
+		    bottom: 0;
+		}
+		
+		.cardfooter .form-control {
+			margin-bottom: 2px;
+			padding: 0 15px;
+		}
+		
+		#writecomm {
+			width: 373px;
+			padding: 8px;
+			display: inline;
+			border: none;
+			height: 40px;
+		}
+		
+		.upcomment {
+			color: brown;
+			background-color: none;
+			border: none;
+			font-size: 14px;
+			font-weight: bold;
+			display: inline;
+		}
+	</style>
+</head>
 	
-	.upcomment {
-		color: brown;
-		background-color: none;
-		border: none;
-		font-size: 14px;
-		font-weight: bold;
-		display: inline;
-	}
-	
-</style>
-
 <body>
 	<form method="post" id="mainForm">
 		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
@@ -266,7 +261,8 @@
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
+				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName
+				}" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 		<!-- Modal s -->

@@ -112,7 +112,7 @@
 	                </div>
 	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 	                    <div class="row">
-	                    	<form method="post" name="codeform">
+	                    	<form method="post" name="cgform">
 						    <input type="hidden" name="ifcgSeq">
 							<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 							<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
@@ -261,7 +261,7 @@
 								    </div>
 									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
 										<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
-										<a href="/code/codeForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
+										<a href="/codegroup/codegroupForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
 									</div>
 								</div>
 							</div>
@@ -294,7 +294,7 @@
 			});
 		});
     
-		var form = $("form[name=codeform]");
+		var form = $("form[name=cgform]");
 		var ifcgSeq = $("input:hidden[name=ifcgSeq]");
 		
 		var goUrlList = "/codegroup/codegroupList";

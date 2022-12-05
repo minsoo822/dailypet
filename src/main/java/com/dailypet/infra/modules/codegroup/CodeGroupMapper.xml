@@ -42,7 +42,8 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
 			a.*
-		<include refid="selectCommon" />
+		FROM codegroup a
+		WHERE 1=1
 			AND a.ifcgSeq = #{ifcgSeq}
 	</select>
 	

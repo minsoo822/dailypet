@@ -188,7 +188,7 @@
 	<%@include file="../../../common/xdmin/include/header.jsp"%>
 	
     <!-- /.page header -->
-    <form id="form" name="codeform" method="post">
+    <form id="form" name="cgform" method="post">
     <input type="hidden" id="ifcgSeq" value="${item.ifcgSeq}">
 	<div class="content">
         <div class="container">
@@ -326,7 +326,7 @@
 		
 		var ifcgSeq = $("#ifcgSeq");
 	
-		var form = $("form[name=codeform]");
+		var form = $("form[name=cgform]");
 		var formVo = $("form[name=formVo]");
 	
 		$("#btnSubmit").on("click", function(){

@@ -24,7 +24,7 @@ public class CodeGroupController {
 	}
 
 	@RequestMapping(value = "codegroupList")
-	public String selectList(CodeGroupVo vo, Model model) throws Exception {
+	public String codegroupList(@ModelAttribute("vo") CodeGroupVo vo, Model model) throws Exception {
 		
 		setSearchAndPaging(vo);
 		

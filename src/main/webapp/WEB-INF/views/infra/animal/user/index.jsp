@@ -79,7 +79,7 @@
 		
 		.wid{
 			width: 1080px;
-			margin-left: 500px;
+			margin-left: 600px;
 		}
 		
 		a{

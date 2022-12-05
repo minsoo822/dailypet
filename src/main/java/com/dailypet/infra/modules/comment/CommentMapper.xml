@@ -23,6 +23,7 @@
 	    ON mm.ifmmSeq = mmup.pseq
 	    WHERE co.da_ifdaSeq = #{ifdaSeq}
 	</select>
+	
 	<select id="commentOne" resultMap="resultMapObj">
 		SELECT
 			mm.ifmmID	AS writer
@@ -58,11 +59,11 @@
 			SELECT last_insert_id()
 		</selectKey>	
 	</insert>
-	<delete id="commentDel">
 	
-	DELETE 
-	FROM comment 
-	WHERE da_ifdaSeq = #{ifdaSeq}
+	<delete id="commentDel">
+		DELETE 
+		FROM comment 
+		WHERE da_ifdaSeq = #{ifdaSeq}
 	</delete>
 	
 </mapper>

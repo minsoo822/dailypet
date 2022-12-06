@@ -188,12 +188,29 @@
 	        ,diup.uuidName	AS diuuidName
 	        ,mmup.path		AS mmPath
 	        ,mmup.uuidName	AS mmuuidName
+	        , (
+          		<!-- 좋아요중인지 체크 -->
+            	SELECT
+					COUNT( * )
+			    FROM likebtn li
+			    WHERE li.postSeq =	di.ifdaSeq
+			    AND clickUser = #{loginUser}
+			    AND likeType = 1
+            )	AS like_ing
 	        ,(
+	        	<!-- 좋아요갯수 -->
 	        	SELECT
 	        		COUNT(*)
 	        	FROM likebtn li	
 	        	WHERE li.postSeq = di.ifdaSeq
 	        )	AS likeCount
+	        , ( 
+          		<!-- 댓글갯수 -->
+            	SELECT
+              		COUNT( * )
+              	FROM comment co
+              	WHERE co.da_ifdaSeq = di.ifdaSeq
+            )	AS commentCount
 		FROM diary di
 	    JOIN diaryUploaded diup
 	    ON di.mm_ifmmSeq = diup.pseq

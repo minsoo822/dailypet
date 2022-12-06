@@ -579,6 +579,9 @@
 		});
     		  
 		goDiaryDetail = function(ifdaSeq) {
+			
+			var likedBtn = $("#likedBtn");
+			
 			$.ajax({
 				url: '/diary/getPost',
 				type: 'POST',
@@ -587,17 +590,26 @@
 					ifdaSeq : ifdaSeq 
 				},
 				success:function (result) {
+					//게시물 정보 
 					$("#ifdaSeq").attr("value",result.ifdaSeq); 
 					$("#postImg").attr("src",result.diaryImg);
-					$("#userImg").attr("src",result.userImg);
-					$("#userID").html(result.userID);
-					$("#userID").html(result.userID);
 					$("#postContents").html(result.diaryContents);
 					$("#postRegDate").html(result.regDate);
-					//좋아요 카운트
-					//게시물 정보 
 					//게시자 정보
-					
+					$("#userImg").attr("src",result.userImg);
+					$("#userID").html(result.userID);
+					//좋아요 카운트
+					$("#postlikeCount").html(result.likeCount);
+					//좋아요 유무에따른 하트모양변경
+					if(result.loginUgerLike == 1) {
+						likedBtn.removeClass('fa-regular');
+		    			likedBtn.addClass('fa-solid');
+		    			likedBtn.css("color",'red');
+					} else{
+						likedBtn.removeClass('fa-solid');
+    	    			likedBtn.addClass('fa-regular');
+    	    			likedBtn.css("color",'black');
+					}
 					// 게시물 한개당 + For문 
 					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
 						//댓글정보

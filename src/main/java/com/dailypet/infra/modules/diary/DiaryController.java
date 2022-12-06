@@ -167,6 +167,7 @@ public class DiaryController {
 		result.put("diaryContents" ,item.getIfdaContents());
 		result.put("regDate" ,item.getIfdaRegDate());
 		result.put("likeCount", item.getLikeCount());
+		result.put("loginUgerLike", item.getLike_ing());
 		
 		//게시물 댓글
 		List<Comment> cmList = serviceComment.commentList(cmvo);

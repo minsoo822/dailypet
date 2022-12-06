@@ -21,8 +21,9 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />		<!-- jQuery UI CSS파일 -->
 
 	<style type="text/css">
+	
 		.background{
-			background-image:url(/resources/images/xdmin/dog.jpg); 
+			background-image:url(/resources/images/xdmin/indexbg.jpg); 
 			background-attachment: fixed; 
 			background-size: cover;
 		}

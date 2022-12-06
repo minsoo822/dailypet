@@ -258,7 +258,7 @@
 									</c:otherwise>
 								</c:choose>
 								<button type="button" id="comment">
-									<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+									<span class="comm" style="font-size: 25px"><i onclick="goComment(${list.ifdaSeq})" class="fa fa-comment-o"></i></span>
 								</button>
 							</div>
 							<!-- 좋아요 댓글 버튼 e -->
@@ -271,12 +271,21 @@
 									<b><c:out value="${list.ifmmID }"/></b>
 								</h5>
 								<p style="font-size: 13px; display: inline;"><c:out value="${list.ifdaContents }"/></p>
-								<p style="font-size: 11px; color: lightgray">2022/22/22</p>
+								<p style="font-size: 11px; color: lightgray"><c:out value="${list.ifdaRegDate }"/></p>
 							<!-- contents e -->
 								<!-- Comment s -->
-								<a onclick="openCm(${list.ifdaSeq})" >
-									<p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm${list.ifdaSeq}">댓글보기</p>
-								</a>
+								<c:choose>
+									<c:when test="${list.commentCount eq 0 }">
+										<a>
+											<p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm${list.ifdaSeq}">댓글이 없습니다</p>
+										</a>
+									</c:when>
+									<c:otherwise>
+										<a onclick="openCm(${list.ifdaSeq})" >
+											<p style="font-size: 13px; color: lightgray; margin-bottom: 5px;" id="cm${list.ifdaSeq}">댓글 ${list.commentCount }개 보기</p>
+										</a>
+									</c:otherwise>
+								</c:choose>
 								<div class="row mt-2 mb-2" id="cmList${list.ifdaSeq}" style="display: none;">
 									<c:forEach items="${cmList }" var="cmList" varStatus="status">
 										<div class="row">
@@ -344,7 +353,7 @@
 			ifdaSeq.val(key);
 			form.attr("action", "/diary/diaryDel").submit();
 		};
-		
+
 		liked = function(key){
 			
 			var likedUrl ="";

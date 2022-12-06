@@ -321,6 +321,30 @@
 										<b style="font-weight: 0;">귀엽다!!</b>
 									</div>
 								</div>
+								<c:forEach items="${cmList }" var="cmList" varStatus="status">
+									<div class="row">
+										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
+											<div class="modalprofile">
+												<img id="" src="${cmList.mmPath }${cmList.mmuuidName}" class="profilepic" alt="">
+											</div>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	
+											<div class="row">
+												<div class=col>
+													<h5 style="font-size: 12px; margin-bottom: 0px;"><b><c:out value="${cmList.ifmmID }"/></b></h5>
+												</div>
+											</div>
+											<div class="row">
+												<div class=col>
+													<h5 style="font-size: 5px;"><b id=""><c:out value="${cmList.ifcmRegDate }"/></b></h5>
+												</div>
+											</div>
+										</div>
+										<div class="col">
+											<b style="font-weight: 0;"><c:out value="${cmList.ifcmContent }"/></b>
+										</div>
+									</div>
+								</c:forEach>
 								<!-- 댓글 e -->
 							</div>
 						</div>

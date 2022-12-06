@@ -4,6 +4,10 @@ public class CommentVo {
 	
 	private String ifcmSeq;
 	private String ifdaSeq;
+	private String ifcmContent;
+	private String ifcmRegDate;
+	private String mmPath;
+	private String mmuuidName;
 	
 	public String getIfcmSeq() {
 		return ifcmSeq;
@@ -19,6 +23,38 @@ public class CommentVo {
 
 	public void setIfdaSeq(String ifdaSeq) {
 		this.ifdaSeq = ifdaSeq;
+	}
+
+	public String getIfcmContent() {
+		return ifcmContent;
+	}
+
+	public void setIfcmContent(String ifcmContent) {
+		this.ifcmContent = ifcmContent;
+	}
+
+	public String getIfcmRegDate() {
+		return ifcmRegDate;
+	}
+
+	public void setIfcmRegDate(String ifcmRegDate) {
+		this.ifcmRegDate = ifcmRegDate;
+	}
+
+	public String getMmPath() {
+		return mmPath;
+	}
+
+	public void setMmPath(String mmPath) {
+		this.mmPath = mmPath;
+	}
+
+	public String getMmuuidName() {
+		return mmuuidName;
+	}
+
+	public void setMmuuidName(String mmuuidName) {
+		this.mmuuidName = mmuuidName;
 	}
 	
 	

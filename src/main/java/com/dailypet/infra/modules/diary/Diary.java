@@ -21,6 +21,7 @@ public class Diary extends Base {
 	private Integer likeCount;
 	private Integer loginUser;
 	private Integer like_ing;
+	private Integer commentCount;
 
 	private MultipartFile[] diary_image;
 
@@ -345,6 +346,14 @@ public class Diary extends Base {
 
 	public void setLike_ing(Integer like_ing) {
 		this.like_ing = like_ing;
+	}
+
+	public Integer getCommentCount() {
+		return commentCount;
+	}
+
+	public void setCommentCount(Integer commentCount) {
+		this.commentCount = commentCount;
 	}
 
 }

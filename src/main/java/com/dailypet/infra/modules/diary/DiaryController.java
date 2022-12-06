@@ -49,8 +49,9 @@ public class DiaryController {
 		List<Diary> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		
-//		List<Comment> cmList = serviceComment.commentList(cmvo);
-//		model.addAttribute("cmList", cmList);
+		cmvo.setIfdaSeq(cmvo.getIfdaSeq());
+		List<Comment> cmList = serviceComment.commentList(cmvo);
+		model.addAttribute("cmList", cmList);
 		
 //		int count = serviceLike.selectCheckLike(lidto);
 //		if(count == 1) {
@@ -115,6 +116,7 @@ public class DiaryController {
 		List<Diary> list = service.mypageImageList(vo);
 		model.addAttribute("list", list);
 		
+		
 		return "infra/diary/user/diaryMypage";
 	}
 	//
@@ -150,10 +152,12 @@ public class DiaryController {
 	
 	@ResponseBody
 	@RequestMapping(value = "getPost")
-	public Map<String, Object> getPost(HttpSession httpSession, Diary dto, Model model) throws Exception {
+	public Map<String, Object> getPost(CommentVo cmvo, HttpSession httpSession, Diary dto, Model model) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
-
+		
+				
+		
 		Diary item = service.selectOnePost(dto);
 		
 		result.put("ifdaSeq" ,item.getIfdaSeq());
@@ -164,6 +168,10 @@ public class DiaryController {
 		result.put("regDate" ,item.getIfdaRegDate());
 		result.put("likeCount", item.getLikeCount());
 		
+		//게시물 댓글
+		List<Comment> cmList = serviceComment.commentList(cmvo);
+		model.addAttribute("cmList", cmList);
+
 		return result;
 	}
 	

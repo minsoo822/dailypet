@@ -7,7 +7,23 @@
 <mapper namespace="com.dailypet.infra.modules.animal.AnimalMapper">
 	
 	<resultMap id="resultMapObj" type="com.dailypet.infra.modules.animal.Animal"></resultMap>
-
+	
+	<sql id = "selectCommon">
+		FROM animal a
+		JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
+		WHERE 1=1 
+		
+		<if test="shOptionGen != null and shOptionGen.equals('')">AND a.ifamGender = #{shOptionGen}</if>
+		<if test="shOptionChip != null and shOptionChip.equals('')">AND a.ifamChipNY = #{shOptionChip}</if>
+		<if test="shOptionVacc != null and shOptionVacc.equals('')">AND a.ifamVaccinateNY = #{shOptionVacc}</if> 
+		
+		<choose>
+			<when test="shOption == 1">AND a.ifamName LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 2">AND a.ifamKind LIKE CONCAT('%',#{shValue},'%')</when>
+			<when test="shOption == 3">AND b.ifmmName LIKE CONCAT('%',#{shValue},'%')</when>
+		</choose>
+	</sql>
+	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT 
 			a.ifamSeq
@@ -17,11 +33,26 @@
 			, a.ifamGender
 			, a.ifamChipNY
 			, a.ifamVaccinateNY
+			, a.mm_ifmmSeq
 			, b.ifmmSeq
-		FROM animal a
-		JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq
-		WHERE 1=1
+			, b.ifmmName
+		<include refid="selectCommon" />
 		ORDER BY a.ifamSeq DESC;
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			a.*
+		FROM animal a
+		WHERE 1=1
+		AND a.ifamSeq = #{ifamSeq}
+	</select>
+	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT 
+			COUNT(*)
+		FROM animal
+		WHERE 1=1	
 	</select>
 	
 	<!-- 애완동물 -->
@@ -100,7 +131,7 @@
 			,ifamChipNY	= #{ifamChipNY}
 			,mm_ifmmSeq	= #{ifmmSeq}
 		WHERE 1=1
-		AND ifamSeq =#{ifamSeq}
+		AND ifamSeq = #{ifamSeq}
 	</update>
 	<update id="petImgUpdate">
 		UPDATE petUploaded
@@ -117,5 +148,30 @@
 		WHERE 1=1
 		AND pseq = #{ifamSeq}
 	</update>
+	
+	<!-- 반려동물 폼 이미지 -->
+	<select id="selectPhoto" resultMap="resultMapObj">
+		SELECT 
+			a.*
+			,up.path
+			,up.uuidName
+		FROM animal a
+		JOIN petUploaded up
+		ON a.ifamSeq = up.pseq
+        WHERE 1=1
+        AND a.ifamSeq = #{ifamSeq}
+	</select>
+	
+	<!-- 반려동물 주인 시퀀스 -->
+	<select id="selectWith" resultMap="resultMapObj">
+		SELECT
+			a.ifmmSeq
+			, a.ifmmName
+			, b.mm_ifmmSeq
+			, b.ifamSeq
+		FROM member a
+		JOIN animal b ON b.mm_ifmmSeq = a.ifmmSeq
+		WHERE 1=1
+	</select>
 	
 </mapper>

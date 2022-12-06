@@ -1,5 +1,7 @@
 package com.dailypet.infra.modules.animal;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,12 +15,26 @@ public class AnimalServiceImpl implements AnimalService{
 	AnimalDao dao;
 	
 	@Override
+	public List<Animal> selectList(AnimalVo vo) throws Exception {
+		return dao.selectList(vo);
+	}
+	
+	@Override 
+	public Animal selectOne(AnimalVo vo) throws Exception {
+		return dao.selectOne(vo);
+	}
+	
+	@Override 
+	public int selectOneCount(AnimalVo vo) throws Exception {
+		return dao.selectOneCount(vo);
+	}
+	
+	@Override
 	public int animalInsert(Animal dto) throws Exception {
 		
 		dto.setIfmmSeq(dao.selectLastSeq(dto));
-		int animalInsert = dao.animalInsert(dto);
 		
-		return animalInsert;
+		return dao.animalInsert(dto);
 	}
 	
 	@Override
@@ -50,7 +66,6 @@ public class AnimalServiceImpl implements AnimalService{
 
 	@Override
 	public int petUpdate(Animal dto) throws Exception {
-		int petUpdate = dao.petUpdate(dto);
 		
 		int j = 0;
         for(MultipartFile myFile : dto.getPet_image()) {
@@ -69,7 +84,17 @@ public class AnimalServiceImpl implements AnimalService{
                 j++;
             }
         }
-		return petUpdate;
+		return dao.petUpdate(dto);
+	}
+	
+	@Override
+	public List<Animal> selectPhoto(AnimalVo vo) throws Exception {
+		return dao.selectPhoto(vo);
+	}
+	
+	@Override
+	public List<Animal> selectWith(AnimalVo vo) throws Exception {
+		return dao.selectWith(vo);
 	}
 	
 }

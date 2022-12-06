@@ -8,6 +8,8 @@ import com.dailypet.infra.common.base.Base;
 public class Animal extends Base{
 	
 	private String ifmmSeq;
+	public String ifmmName;
+	public String mm_ifmmSeq;
 	
 	public String ifamSeq;
 	public Integer ifamGender;
@@ -73,6 +75,18 @@ public class Animal extends Base{
 	}
 	public void setIfmmSeq(String ifmmSeq) {
 		this.ifmmSeq = ifmmSeq;
+	}
+	public String getIfmmName() {
+		return ifmmName;
+	}
+	public void setIfmmName(String ifmmName) {
+		this.ifmmName = ifmmName;
+	}
+	public String getMm_ifmmSeq() {
+		return mm_ifmmSeq;
+	}
+	public void setMm_ifmmSeq(String mm_ifmmSeq) {
+		this.mm_ifmmSeq = mm_ifmmSeq;
 	}
 	
 	

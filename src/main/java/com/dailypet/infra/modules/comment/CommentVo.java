@@ -8,6 +8,7 @@ public class CommentVo {
 	private String ifcmRegDate;
 	private String mmPath;
 	private String mmuuidName;
+	private Integer da_ifdaSeq;
 	
 	public String getIfcmSeq() {
 		return ifcmSeq;
@@ -55,6 +56,14 @@ public class CommentVo {
 
 	public void setMmuuidName(String mmuuidName) {
 		this.mmuuidName = mmuuidName;
+	}
+
+	public Integer getDa_ifdaSeq() {
+		return da_ifdaSeq;
+	}
+
+	public void setDa_ifdaSeq(Integer da_ifdaSeq) {
+		this.da_ifdaSeq = da_ifdaSeq;
 	}
 	
 	

@@ -20,7 +20,7 @@ public class CommentController {
 	public Map<String, Object> commentInst(Comment dto) throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
 		
-		int commentInst = service.commentInst(dto);
+		service.commentInst(dto);
 		
 		Comment commentItem = service.commentOne(dto);
 		result.put("img", commentItem.getPath() + commentItem.getUuidName());

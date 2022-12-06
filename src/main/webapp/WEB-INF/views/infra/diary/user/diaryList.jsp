@@ -191,7 +191,6 @@
     <!-- <input type="hidden" name="ifdaSeq"> -->
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
     <input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
-    <input type="hidden" id="ifdaSeq" name="ifdaSeq" value="">
     
 		<div class="diaryheader">
 			<nav class="icon">
@@ -262,8 +261,13 @@
 								</button>
 							</div>
 							<!-- 좋아요 댓글 버튼 e -->
-							<!-- 좋아요 갯수	 s -->	
-							<p><b>좋아요 <b id="postlikeCount${list.ifdaSeq}"><c:out value="${list.likeCount }"/></b>개</b></p>
+							<!-- 좋아요 갯수	 s -->
+							<c:choose>
+								<c:when test="${list.likeCount eq 0 }"><br></c:when>
+								<c:otherwise>
+									<p><b>좋아요 <b id="postlikeCount${list.ifdaSeq}"><c:out value="${list.likeCount }"/></b>개</b></p>
+								</c:otherwise>
+							</c:choose>	
 							<!-- 좋아요 갯수	 e -->
 							<!-- contents s -->
 							<div class="cardcontent">

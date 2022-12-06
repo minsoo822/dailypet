@@ -8,7 +8,7 @@
 
 <html>
 <head>
-    <title>코드그룹 리스트</title>
+    <title>유기동물 리스트</title>
     <%@include file="../../../common/xdmin/include/head.jsp"%>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
@@ -92,9 +92,9 @@
     <!-- header e -->
 	<div class="totalContent">
 	    <div class="content">
-	        <div class="container">
+	        <div class="container" style="max-width: 1700px">
 	            <div class="row">
-	            	 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+	            	 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 	                    <div class="widget widget-categories category" >
 	                        <!-- widget categories -->
 	                        <!-- widget start -->
@@ -102,18 +102,18 @@
 	                        	<li class="listtitle">Setting</li>
 	                            <li class="listmenu"><a href="/member/memberList">회원 리스트 </a></li>
 	                            <li class="listmenu"><a href="/animal/animalList">반려동물 리스트</a></li>
-	                            <li class="listmenu"><a href="/findpet/findpetxdList">유기동물 리스트</a></li>
+	                            <li class="listmenu" style="color: #808080"><a href="/findpet/findpetxdList"><b>유기동물 리스트</b></a></li>
 	                            <br>
 	                            <li class="listtitle">Code</li>
 	                            <li class="listmenu"><a href="/code/codeList">코드 리스트</a></li>
-	                            <li class="listmenu" style="color: #808080"><a href="/codegroup/codegroupList"><b>코드그룹 리스트</b></a></li>
+	                            <li class="listmenu"><a href="/codegroup/codegroupList">코드그룹 리스트</a></li>
 	                        </ul>
 	                    </div>
 	                </div>
-	                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+	                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
 	                    <div class="row">
-	                    	<form method="post" name="cgform">
-						    <input type="hidden" name="ifcgSeq">
+	                    	<form method="post" name="fpform">
+						    <input type="hidden" name="iffpSeq">
 							<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 							<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 							<input type="hidden" name="checkboxSeqArray">
@@ -143,17 +143,30 @@
 	                            		</div>
 	                            		<div class="row">
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                            				<select class="form-control" name="shUseNy">
-	                            					<option value="" <c:if test="${empty vo.shUseNy }">selected</c:if>>사용여부</option>
-													<option value="0" <c:if test="${vo.shUseNy eq 0 }">selected</c:if>>N</option>
-													<option value="1" <c:if test="${vo.shUseNy eq 1 }">selected</c:if>>Y</option>
+	                            				<select class="form-control" name="shOptionBreed">
+	                            					<option value="" <c:if test="${empty vo.shOptionBreed }">selected</c:if>>품종</option>
+													<option value="30" <c:if test="${vo.shOptionBreed eq 30 }">selected</c:if>>러시안블루</option>
+													<option value="31" <c:if test="${vo.shOptionBreed eq 31 }">selected</c:if>>뱅갈</option>
+													<option value="32" <c:if test="${vo.shOptionBreed eq 32 }">selected</c:if>>스핑크스</option>
+													<option value="33" <c:if test="${vo.shOptionBreed eq 33 }">selected</c:if>>아비시니안</option>
+													<option value="34" <c:if test="${vo.shOptionBreed eq 34 }">selected</c:if>>샴</option>
+													<option value="35" <c:if test="${vo.shOptionBreed eq 35 }">selected</c:if>>랙돌</option>
+													<option value="36" <c:if test="${vo.shOptionBreed eq 36 }">selected</c:if>>리트리버</option>
+													<option value="37" <c:if test="${vo.shOptionBreed eq 37 }">selected</c:if>>포메라니안</option>
+													<option value="38" <c:if test="${vo.shOptionBreed eq 38 }">selected</c:if>>말티즈</option>
+													<option value="39" <c:if test="${vo.shOptionBreed eq 39 }">selected</c:if>>비숑</option>
+													<option value="40" <c:if test="${vo.shOptionBreed eq 40 }">selected</c:if>>시바이누</option>
+													<option value="41" <c:if test="${vo.shOptionBreed eq 41 }">selected</c:if>>말라뮤트</option>
+													<option value="42" <c:if test="${vo.shOptionBreed eq 42 }">selected</c:if>>거북이</option>
+													<option value="43" <c:if test="${vo.shOptionBreed eq 43 }">selected</c:if>>기타</option>
 	                            				</select>
 	                            			</div>
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 	                           					<select class="form-control" name="shOption">
 													<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>선택</option>
-													<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>코드그룹 이름</option>
-													<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름(영문)</option>
+													<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>유기동물 이름</option>
+													<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>특이사항</option>
+													<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>발견장소</option>
 												 </select>
 	                            			</div>
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -172,7 +185,7 @@
 	                            <div class="post-block">
 	                               <div class="row">
 		                               <div class="col"> 
-			                           		<h1>코드그룹 리스트</h1>
+			                           		<h1>유기동물 리스트</h1>
 		                               </div>
 								   </div>
 								   <div class="row" style="display: flex; justify-content: space-between; height: 30px;">
@@ -201,46 +214,43 @@
 											<tr>
 												<th><input class="form-check-input" type="checkbox" name="check" id="allcheck"></th>
 												<th>Seq</th>
-												<th>코드그룹이름</th>
-												<th>영문이름</th>
-												<th>코드개수</th>
-												<th>최근수정일</th>
-												<th>사용유무</th>
-												<th>삭제유무</th>
+												<th>유기동물이름</th>
+												<th>특징</th>
+												<th>발견장소</th>
+												<th>발견일시</th>
+												<th>위탁장소</th>
+												<th>삭제</th>
 											</tr>
 											<tr>
 												<c:choose>
 													<c:when test="${fn:length(list) eq 0 }">
-														<td colspan="7">데이터가 존재하지 않습니다</td>
+														<td colspan="8">데이터가 존재하지 않습니다</td>
 													</c:when>
 													<c:otherwise>	
 														<c:forEach items="${list}" var="list" varStatus="status">
-															<tr onclick="goForm(${list.ifcgSeq })" class="in">
-																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.ifcgSeq }"/>"></td>
+															<tr onclick="goForm(${list.iffpSeq })" class="in">
+																<td onClick="event.cancelBubble = true"><input class="form-check-input" type="checkbox" name="check" value="<c:out value="${list.iffpSeq }"/>"></td>
 																<td>
-																	<c:out value="${list.ifcgSeq }"/>
+																	<c:out value="${list.iffpSeq }"/>
 																</td>
 																<td>
-																	<c:out value="${list.ifcgName }"/>
+																	<c:out value="${list.iffpName }"/>
 																</td>
 																<td>
-																	<c:out value="${list.ifcgName_eng }"/>
+																	<c:out value="${list.iffpCharacteristic }"/>
 																</td>
 																<td>
-																	<c:out value="${list.ifcgcodeCount }"/>
+																	<c:out value="${list.iffpSpotPlace }"/>
 																</td>
 																<td>
-																	<c:out value="${list.ifcgModDate }"/>
+																	<c:out value="${list.iffpSpotDate }"/>
 																</td>
-																<td id="UseNY">
-																	<c:choose>
-																		<c:when test="${list.ifcgUseNy eq 0 }">N</c:when>
-																		<c:otherwise>Y</c:otherwise>
-																	</c:choose>
+																<td>
+																	<c:out value="${list.iffpAnimalShelter1 }"/>
 																</td>
 																<td id="DelNY">
 																	<c:choose>
-																		<c:when test="${list.ifcgDelNy eq 0 }">N</c:when>
+																		<c:when test="${list.iffpDelNY eq 0 }">N</c:when>
 																		<c:otherwise>Y</c:otherwise>
 																	</c:choose>
 																</td>
@@ -261,7 +271,7 @@
 								    </div>
 									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="display: flex; justify-content: flex-end;">
 										<button type="button" class="btn btn-success"><i class="fa-regular fa-file-excel"></i></button>
-										<a href="/codegroup/codegroupForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
+										<a href="/findpet/findpetForm"><button type="button" class="btn btn-primary" id="regbtn" style="margin-left: 5px;"><i class="fa-solid fa-plus"></i></button></a>
 									</div>
 								</div>
 							</div>
@@ -294,11 +304,11 @@
 			});
 		});
     
-		var form = $("form[name=cgform]");
-		var ifcgSeq = $("input:hidden[name=ifcgSeq]");
+		var form = $("form[name=fpform]");
+		var iffpSeq = $("input:hidden[name=iffpSeq]");
 		
-		var goUrlList = "/codegroup/codegroupList";
-		var goUrlForm = "/codegroup/codegroupForm";
+		var goUrlList = "/findpet/findpetxdList";
+		var goUrlForm = "/findpet/findpetForm";
 		
 		$("#searchBtn").on("click", function(){
 			form.attr("action", goUrlList).submit();
@@ -309,7 +319,7 @@
 		});
 		
 		goForm = function(key) {
-			ifcgSeq.attr("value", key);
+			iffpSeq.attr("value", key);
 			form.attr("action", goUrlForm).submit();
 		}
 		

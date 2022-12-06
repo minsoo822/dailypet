@@ -101,8 +101,8 @@
 	                        <ul class="listnone">
 	                        	<li class="listtitle">Setting</li>
 	                            <li class="listmenu"><a href="/member/memberList">회원 리스트 </a></li>
-	                            <li class="listmenu"><a href="/findpet/findpetList">반려동물 리스트</a></li>
-	                            <li class="listmenu"><a href="/animal/animalList">유기동물 리스트</a></li>
+	                            <li class="listmenu"><a href="/animal/animalList">반려동물 리스트</a></li>
+	                            <li class="listmenu"><a href="/findpet/findpetxdList">유기동물 리스트</a></li>
 	                            <br>
 	                            <li class="listtitle">Code</li>
 	                            <li class="listmenu" style="color: #808080"><a href="/code/codeList"><b>코드 리스트</b></a></li>

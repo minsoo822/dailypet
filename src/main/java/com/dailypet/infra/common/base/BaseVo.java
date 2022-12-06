@@ -5,14 +5,14 @@ import com.dailypet.infra.common.constants.Constants;
 public class BaseVo {
 //	search
 	private String shValue;					//value값(내용)
-	private Integer shOption;				//선택옵션
+	private String shOption;				//선택옵션
 	private Integer shUseOption;			//useNY
 	private Integer shDelOption;			//delNy
-	private String shDelNy;
+	private Integer shDelNy;
 //	날짜
 	private Integer shOptionDate;			//날짜선택 옵션
-	private Integer shDateStart;			//시작날짜
-	private Integer shDateEnd;				//끝날짜
+	private String shstartDate;			//시작날짜
+	private String shendDate;				//끝날짜
 
 	
 //	paging
@@ -90,11 +90,11 @@ public class BaseVo {
 		this.shValue = shValue;
 	}
 
-	public Integer getShOption() {
+	public String getShOption() {
 		return shOption;
 	}
 
-	public void setShOption(Integer shOption) {
+	public void setShOption(String shOption) {
 		this.shOption = shOption;
 	}
 
@@ -114,11 +114,11 @@ public class BaseVo {
 		this.shDelOption = shDelOption;
 	}
 
-	public String getShDelNy() {
+	public Integer getShDelNy() {
 		return shDelNy;
 	}
 
-	public void setShDelNy(String shDelNy) {
+	public void setShDelNy(Integer shDelNy) {
 		this.shDelNy = shDelNy;
 	}
 
@@ -130,20 +130,20 @@ public class BaseVo {
 		this.shOptionDate = shOptionDate;
 	}
 
-	public Integer getShDateStart() {
-		return shDateStart;
+	public String getShstartDate() {
+		return shstartDate;
 	}
 
-	public void setShDateStart(Integer shDateStart) {
-		this.shDateStart = shDateStart;
+	public void setShstartDate(String shstartDate) {
+		this.shstartDate = shstartDate;
 	}
 
-	public Integer getShDateEnd() {
-		return shDateEnd;
+	public String getShendDate() {
+		return shendDate;
 	}
 
-	public void setShDateEnd(Integer shDateEnd) {
-		this.shDateEnd = shDateEnd;
+	public void setShendDate(String shendDate) {
+		this.shendDate = shendDate;
 	}
 
 	public int getThisPage() {

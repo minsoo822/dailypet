@@ -267,6 +267,7 @@
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
 		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${dto.ifdaSeq }">
+		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
 			<span id="close_modal" class="material-icons-outlined">
 				<i class="fa-solid fa-xmark"></i>
 			</span>
@@ -355,10 +356,10 @@
 										<span class="heart" style="font-size: 25px"><i id="likedBtn" onclick="liked()" class="fa-regular fa-heart"></i></span>
 									</button>
 									<button type="button" id="comment">
-										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o"></i></span>
+										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o" onclick="commentBtn()"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 0개</b></p> 
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 <b id="postlikeCount">0</b>개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p id="postRegDate"></p>
@@ -460,34 +461,14 @@
     	
     	liked = function(){
     		
-    		var likedBtn = $("#likedBtn");
     		var likedUrl ="";
-    		
-    		if(likedBtn.hasClass('fa-regular'))
-    		{
-    			//https://webstudynote.tistory.com/95
-    			//채워주고
-    			//빨간색으로
-    			likedBtn.removeClass('fa-regular');
-    			likedBtn.addClass('fa-solid');
-    			
-    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
-    			likedBtn.css("color",'red');
+    		var likedBtn = $("#likedBtn");
+    		var status = $("#likedBtn").css('color');
+   		
+    		if(status == "rgb(0, 0, 0)") {
     			likedUrl = "/diary/addLiked";
-    			
-    			//좋아요 count 숫자 변경 
-    		}
-    		else
-    		{
-    			//비워주고
-    			//검정색으로
-    			likedBtn.removeClass('fa-solid');
-    			likedBtn.addClass('fa-regular');
-    			likedBtn.css("color",'black');
-
+    		} else {
     			likedUrl = "/diary/removeLiked";
-    			
-    			//좋아요 count 숫자 변경
     		}
     		
     		$.ajax({
@@ -496,18 +477,39 @@
     			,dataType: 'json'
     			,data: {
     				//게시물 seq
+    				ifdaSeq : $("#ifdaSeq").val()
     				//누가 눌렀는지 seq
-    			}
-    			,success:function(result){
-    				
-    			}
-    			,error:function(){
+    				,loginUser : $("#loginUser").val()
+    			},
+    			success:function(result){
+    				if(result.list != null){
+	    				//좋아요 count 숫자 변경 
+	        			$("#postlikeCount").html(result.likeCount);
+    					
+	    				if(status == "rgb(0, 0, 0)"){
+			    			//https://webstudynote.tistory.com/95
+			    			//채워주고
+			    			//빨간색으로
+			    			likedBtn.removeClass('fa-regular');
+			    			likedBtn.addClass('fa-solid');
+			    			//https://zetawiki.com/wiki/JQuery_CSS_%EC%86%8D%EC%84%B1_%EB%B3%80%EA%B2%BD 
+			    			likedBtn.css("color",'red');
+	    				} else {
+	    					//비워주고
+	    	    			//검정색으로
+	    	    			likedBtn.removeClass('fa-solid');
+	    	    			likedBtn.addClass('fa-regular');
+	    	    			likedBtn.css("color",'black');
+	    				}
+    				}
+    			},
+    			error:function(){
     				alert("ajax error..!");
     			}
     			
     		});
     		
-    	}
+    	};
     	
     	
     	/* 댓글 s */
@@ -611,7 +613,9 @@
 				}
 			});	
 		}
-		  
+		commentBtn = function() {
+			$("#writecomm").focus();
+		};  
  		 /* goDiaryDetail = function(ifdaSeq) {
   			1.아작스문 작성
   			2.게시물 시퀀스를 넘긴다

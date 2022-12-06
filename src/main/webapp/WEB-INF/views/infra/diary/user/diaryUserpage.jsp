@@ -113,147 +113,148 @@
 	}
 /* -------------------------------------------------------------------------- */	
     .modal_overlay {
-    	z-index: 999;
-        width: 100%;
-        height: 100%;
-        padding-top: 100px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(1.5px);
-        -webkit-backdrop-filter: blur(1.5px);
-    }
-
-    .modal_window {
-		z-index: 999;
-        background: white;
-        backdrop-filter: blur(13.5px);
-        -webkit-backdrop-filter: blur(13.5px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        width: 800px;
-        height: 550px;
-        position: relative;
-        padding: 10px;
-    }
-     .modal_title{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    .modal_title_side{
-        flex: 0 0 40px;
-        text-align: center;
-    }
-    
-    .imgdetail {
-    	width: 440px;
-    	height: 495px;
-    	background: black;
-    	display: flex;
-    	justify-content: center;
-    	align-items: center;
-    }
-    
-    .img-responsive2 {
-    	object-fit: cover;
-    	max-width: 100%;
-    	max-height: 100%;
-    }
-    
-/* ------------------------------------------------------------------------ */
+	    	z-index: 1999;
+	        width: 100%;
+	        height: 100%;
+	        padding-top: 100px;
+	        position: absolute;
+	        left: 0;
+	        top: 0;
+	        display: none;
+	        flex-direction: column;
+	        align-items: center;
+	        justify-content: center;
+	        background: rgba(0, 0, 0, 0.8);
+	        backdrop-filter: blur(1.5px);
+	        -webkit-backdrop-filter: blur(1.5px);
+	    }
 	
-	#thumbList .col-lg-4 {
-		margin: 18px 10px;
-		max-width: 380px;
-	}
+	    .modal_window {
+			z-index: 1999;
+	        background: white;
+	        backdrop-filter: blur(13.5px);
+	        -webkit-backdrop-filter: blur(13.5px);
+	        width: 1000px;
+	        height: 700px;
+	        position: relative;
+	        bottom: 70px;
+	    }
+	    .material-icons-outlined {
+			position: relative;
+			bottom: 90px;
+			left: 700px;
+			color:white;
+			font-size: 20pt;		
+		}
+	     .modal_title{
+	        display: flex;
+	        flex-direction: row;
+	        justify-content: space-between;
+	        font-weight: bold;
+	        font-size: 20px;
+	    }
 	
-	.col-lg-5 {
-		padding: 0px;
-	}
-	
-	button {
-		background-color: white;
-		border: none;
-	}
-	
-	#like, #comment {
-		margin-right: 10px;
-	}
-	
-	.service-content > * {
-		margin-left: 10px;
-	}
-	
-	.postbtn {
-		margin: -20px 0 0 10px;
-	}
-	
-	.cardcontent {
-		margin-top: 10px;
-	}
-	
-	.row {
-		margin: 0;
-		padding: 0;
-	}
-	
-	div.col-lg-7 {
-		padding: 0;
-	}
-	
-	#idbox {
-		padding: 7.5px;
-	}
-	
-	.col-lg-5 {
-		position: relative;
-		height: 500px;
-	}
-	
-	.cardcontent p {
-		font-size: 11px; 
-		color: lightgray;
-	}
+	    .modal_title_side{
+	        flex: 0 0 40px;
+	        text-align: center;
+	    }
+	    .imgdetail {
+	    	width: 570px;
+	    	height: 700px;
+	    	background: black;
+	    	display: flex;
+	    	justify-content: center;
+	    	align-items: center;
+	    }
+	    .img-responsive2 {
+	    	object-fit: cover;
+	    	max-width: 100%;
+	    	max-height: 100%;
+	    }
+	    
+	/* ------------------------------------------------------------------------ */
 		
-	.cardfooter {
-		position: absolute;
-	    bottom: 0;
-	}
-	
-	.cardfooter .form-control {
-		margin-bottom: 2px;
-		padding: 0 15px;
-	}
-	
-	.writecomm {
-		width: 280px;
-		padding: 8px;
-		display: inline;
-		border: none;
-	}
-	
-	.upcomment {
-		color: brown;
-		background-color: none;
-		border: none;
-		font-size: 14px;
-		font-weight: bold;
-		display: inline;
-	}
-	
+		#thumbList .col-lg-4 {
+			margin: 18px 10px;
+			max-width: 380px;
+		}
+		
+		button {
+			background-color: white;
+			border: none;
+		}
+		
+		#like, #comment {
+			margin-right: 10px;
+		}
+		
+		.service-content > * {
+			margin-left: 10px;
+		}
+		
+		.postbtn {
+			margin: -20px 0 0 10px;
+		}
+		
+		.cardcontent {
+			margin-top: 10px;
+		}
+		
+		.row {
+			margin: 0;
+			padding: 0;
+		}
+		
+		div.col-lg-7 {
+			padding: 0;
+		}
+		
+		#idbox {
+			padding: 7.5px;
+		}
+		
+		.col-lg-5 {
+			position: relative;
+			height: 700px;
+			padding: 0px;
+		}
+		
+		.cardcontent p {
+			font-size: 11px; 
+			color: lightgray;
+		}
+			
+		.cardfooter {
+			position: absolute;
+		    bottom: 0;
+		}
+		
+		.cardfooter .form-control {
+			margin-bottom: 2px;
+			padding: 0 15px;
+		}
+		
+		#writecomm {
+			width: 373px;
+			padding: 8px;
+			display: inline;
+			border: none;
+			height: 40px;
+		}
+		
+		.upcomment {
+			color: brown;
+			background-color: none;
+			border: none;
+			font-size: 14px;
+			font-weight: bold;
+			display: inline;
+		}
 </style>
 
 <body>
 	<form method="post" id="mainForm">
+		<input type="hidden" id="mm_ifmmSeq" name="mm_ifmmSeq" value="${sessSeq }">
 		<input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
 		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
 		<%-- <input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${vo.ifdaSeq }"> --%>
@@ -270,18 +271,12 @@
 		</div>
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
-		<input type="hidden" id="ifdaSeq" value="">
+		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${dto.ifdaSeq }">
 		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
+			<span id="close_modal" class="material-icons-outlined">
+				<i class="fa-solid fa-xmark"></i>
+			</span>
 			<div class="modal_window">
-				<div class="modal_title">
-					<div class="modal_title_side"></div>
-					<div style="margin-bottom: 7px"> 게시물 상세 </div>
-					<div class="modal_title_side">
-						<span id="close_modal" class="material-icons-outlined">
-							<i class="fa-solid fa-xmark"></i>
-						</span>
-					</div>
-				</div>
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
@@ -332,6 +327,30 @@
 										<b style="font-weight: 0;">귀엽다!!</b>
 									</div>
 								</div>
+								<c:forEach items="${cmList }" var="cmList" varStatus="status">
+									<div class="row">
+										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
+											<div class="modalprofile">
+												<img id="" src="${cmList.mmPath }${cmList.mmuuidName}" class="profilepic" alt="">
+											</div>
+										</div>
+										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	
+											<div class="row">
+												<div class=col>
+													<h5 style="font-size: 12px; margin-bottom: 0px;"><b><c:out value="${cmList.ifmmID }"/></b></h5>
+												</div>
+											</div>
+											<div class="row">
+												<div class=col>
+													<h5 style="font-size: 5px;"><b id=""><c:out value="${cmList.ifcmRegDate }"/></b></h5>
+												</div>
+											</div>
+										</div>
+										<div class="col">
+											<b style="font-weight: 0;"><c:out value="${cmList.ifcmContent }"/></b>
+										</div>
+									</div>
+								</c:forEach>
 								<!-- 댓글 e -->
 							</div>
 						</div>
@@ -339,13 +358,13 @@
 							<div class="service-content">
 								<div class="postbtn">
 									<button type="button" id="like">
-										<span class="heart" style="font-size: 25px"><i id="likedBtn" style="color: rgb(0, 0, 0);" onclick="liked()" class="fa-regular fa-heart"></i></span>
+										<span class="heart" style="font-size: 25px"><i id="likedBtn" onclick="liked()" class="fa-regular fa-heart"></i></span>
 									</button>
 									<button type="button" id="comment">
 										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o" onclick="commentBtn()"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 <b id="postlikeCount"></b>개</b></p> 
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 0개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p id="postRegDate"></p>
@@ -505,40 +524,44 @@
     	
     	
     	/* 댓글 s */
-		$("#upcomment").on("click", function() {
-    		$.ajax({
-    			url: "/comment/commentInst",
-    			type: "POST",
-    			datatype: "json",
-    			success: function(result) {
+		$("#upcomment").on("click", function() { 
+			$.ajax({
+				url: "/comment/commentInst",
+				type: 'POST',
+				datatype: 'json',
+				data: {
+					ifcmContent: $("#writecomm").val(),
+					ifdaSeq : $("#ifdaSeq").val(),
+					ifmmSeq: $("#mm_ifmmSeq").val() 
+				},
+    			success: function(result) { 
     				var txt = "";
-    				
-    				txt += '<div class="row">';
-    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
-    				txt += '<div class="modalprofile">';
-    				txt += '<img id="" src="'+ result.coUserImg +'" class="profilepic" alt="">';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
-    				txt += '<div class="row">';
-    				txt += '<div class=col>';
-    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.coUserid +'</b></h5>';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '<div class="row">';
-    				txt += '<div class=col>';
-    				txt += '<h5 style="font-size: 5px;"><b>방금전</b></h5>';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '</div>';
-    				txt += '<div class="col">';
-    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
-    				txt += '</div>';
-    				txt += '</div>';
-    			
-    				$("#comment_area").prepend(txt);
-    				$("#writecomm").val("");
-    			},
+	    				txt += '<div class="row">';
+	    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
+	    				txt += '<div class="modalprofile">';
+	    				txt += '<img id="" src="'+ result.img +'" class="profilepic" alt="">';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
+	    				txt += '<div class="row">';
+	    				txt += '<div class=col>';
+	    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.writer +'</b></h5>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '<div class="row">';
+	    				txt += '<div class=col>';
+	    				txt += '<h5 style="font-size: 5px;"><b>방금전</b></h5>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    				txt += '<div class="col">';
+	    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
+	    				txt += '</div>';
+	    				txt += '</div>';
+	    			
+	    				$("#comment_area").prepend(txt);
+	    				$("#writecomm").val("");
+	    			},
     			error:function(){
     				alert("ajax error..!");
     			}

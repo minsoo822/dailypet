@@ -16,7 +16,22 @@
 		<if test="shOptionGen != null and shOptionGen.equals('')">AND a.ifamGender = #{shOptionGen}</if>
 		<if test="shOptionChip != null and shOptionChip.equals('')">AND a.ifamChipNY = #{shOptionChip}</if>
 		<if test="shOptionVacc != null and shOptionVacc.equals('')">AND a.ifamVaccinateNY = #{shOptionVacc}</if> 
-		
+		<choose>
+			<!-- 반려동물 성별 -->
+			<when test="shOptionGen == 9">  AND a.ifamGender LIKE CONCAT ('%',9,'%') </when>
+			<when test="shOptionGen == 10"> AND a.ifamGender LIKE CONCAT ('%',10,'%') </when>
+			<when test="shOptionGen == 11"> AND a.ifamGender LIKE CONCAT ('%',11,'%') </when>
+		</choose>
+		<choose>
+			<!-- 칩여부 -->
+			<when test="shOptionChip == 0"> AND a.ifamChipNY LIKE CONCAT ('%',0,'%') </when>
+			<when test="shOptionChip == 1"> AND a.ifamChipNY LIKE CONCAT ('%',1,'%') </when>
+		</choose>
+		<choose>
+			<!-- 접종여부 -->
+			<when test="shOptionVacc == 0"> AND a.ifamVaccinateNY LIKE CONCAT ('%',0,'%') </when>
+			<when test="shOptionVacc == 1"> AND a.ifamVaccinateNY LIKE CONCAT ('%',1,'%') </when>
+		</choose>
 		<choose>
 			<when test="shOption == 1">AND a.ifamName LIKE CONCAT('%',#{shValue},'%')</when>
 			<when test="shOption == 2">AND a.ifamKind LIKE CONCAT('%',#{shValue},'%')</when>

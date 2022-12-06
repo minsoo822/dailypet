@@ -40,6 +40,7 @@
 	</sql>
 	
 	<select id="selectList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
 		SELECT 
 			a.ifamSeq
 			, a.ifamName
@@ -53,6 +54,8 @@
 			, b.ifmmName
 		<include refid="selectCommon" />
 		ORDER BY a.ifamSeq DESC;
+		<include refid="Base.orderByLimitForMysql" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<select id="selectOne" resultMap="resultMapObj">

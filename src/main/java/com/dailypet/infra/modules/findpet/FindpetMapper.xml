@@ -294,6 +294,7 @@
 	</sql>
 		
 	<select id="xdminList" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
 		SELECT
 			a.iffpSeq
 			,a.iffpName
@@ -303,8 +304,10 @@
 		    ,a.iffpSpotDate
 		    ,a.iffpAnimalShelter1
 		    ,a.iffpDelNY
-	<include refid="selectCommon" />
-	ORDER BY a.iffpSeq DESC
+		<include refid="selectCommon" />
+		ORDER BY a.iffpSeq DESC
+		<include refid="Base.orderByLimitForMysql" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
     
 	<update id="uelete">

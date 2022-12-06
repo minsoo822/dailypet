@@ -278,14 +278,12 @@
 	<sql id = "selectCommon">
 		FROM findpet a
 		WHERE 1=1
-		ORDER BY a.iffpSeq DESC
 		
 		<if test="shDelNy != null and !shDelNy.equals('')">AND a.iffpDelNy = #{shDelNy}</if>
 		<if test="shOptionBreed != null and !shOptionBreed.equals('')">AND a.iffpBreed = #{shOptionBreed}</if>
 		
 		<choose>
 			<when test="shOptionDate == 1">AND a.iffpSpotDate BETWEEN #{shstartDate} AND #{shendDate}</when>
-			<when test="shOptionDate == 2">AND a.iffpModDate BETWEEN #{shstartDate} AND #{shendDate}</when>
 		</choose>
 		
 		<choose>
@@ -306,6 +304,7 @@
 		    ,a.iffpAnimalShelter1
 		    ,a.iffpDelNY
 	<include refid="selectCommon" />
+	ORDER BY a.iffpSeq DESC
 	</select>
     
 	<update id="uelete">

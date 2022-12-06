@@ -131,7 +131,7 @@
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 	                            				<select class="form-control" name="shOptionDate">
 	                            					<option value="">날짜선택</option>
-													<option value="1">최근수정일</option>
+													<option value="1">발견일시</option>
 	                            				</select>
 	                            			</div>
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">

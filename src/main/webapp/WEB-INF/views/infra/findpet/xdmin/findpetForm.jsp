@@ -247,7 +247,7 @@
 								<label class="top4">이미지 첨부</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<input class="form-control" id="imagefile" name="imagefile" type="file" multiple="multiple">
+								<input class="form-control" id="imagefile" name="findpet_img" type="file" multiple="multiple">
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div id="UploadedImagePreview" class="Scroll">

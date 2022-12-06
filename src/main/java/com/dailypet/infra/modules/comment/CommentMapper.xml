@@ -21,7 +21,7 @@
 	    ON co.mm_ifmmSeq = mm.ifmmSeq
 	    JOIN memberUploaded mmup
 	    ON mm.ifmmSeq = mmup.pseq
-	    WHERE co.da_ifdaSeq = #{ifdaSeq}
+	    WHERE co.da_ifdaSeq = 7
 	</select>
 	
 	<select id="commentOne" resultMap="resultMapObj">

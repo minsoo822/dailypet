@@ -286,7 +286,7 @@
 										</a>
 									</c:otherwise>
 								</c:choose>
-								<div class="row mt-2 mb-2" id="cmList${list.ifdaSeq}" style="display: none;">
+								<div class="row mt-2 mb-2" id="cmList${list.ifdaSeq}" style="display: flex;">
 									<c:forEach items="${cmList }" var="cmList" varStatus="status">
 										<div class="row">
 											<div class="col">

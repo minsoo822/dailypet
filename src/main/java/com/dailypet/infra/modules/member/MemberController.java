@@ -55,10 +55,16 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "memberForm")
-	public String memberForm(@ModelAttribute("vo") MemberVo vo, Model model) throws Exception {
+	public String memberForm(@ModelAttribute("vo") MemberVo vo, Member dto, Model model) throws Exception {
 		
 		Member result = service.selectOne(vo);
 		model.addAttribute("item", result);
+		
+		//이미지 가져오기
+		dto.setPseq(vo.getIfmmSeq());
+				
+		List<Member> listimg = service.selectProfile(vo);
+		model.addAttribute("listimg", listimg);
 		
 		return "infra/member/xdmin/memberForm";
 	}

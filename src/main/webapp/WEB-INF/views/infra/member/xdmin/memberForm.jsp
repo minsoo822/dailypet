@@ -186,6 +186,28 @@
 	    	border: none;
 	    	border-radius: 6px;
 	    }
+	    
+	    .Scroll {
+			overflow-y:auto;
+			width: 550px;
+			height: 120px;
+			background-color:#E9ECEF;
+			padding-top:5px; 
+			padding-left:5px;
+		}
+	 	
+		.input-file-button {
+			padding: 4px 25px;
+			background-color:#FF6600;
+			border-radius: 4px;
+			color: white;
+			cursor: pointer;
+		}
+		
+		img {
+			width: 100px;
+			height: 100px;
+		}
 		 
 	</style>
 </head>
@@ -195,7 +217,7 @@
 	<%@include file="../../../common/xdmin/include/header.jsp"%>
 	
     <!-- /.page header -->
-    <form id="form" name="memform" method="post">
+    <form id="form" name="memform" method="post" enctype="multipart/form-data">
     <input type="hidden" id="ifmmSeq" value="${item.ifmmSeq}">
 	<div class="content">
         <div class="container">
@@ -209,6 +231,22 @@
                         </div>
                         <br>
                         <hr>
+                        <div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">이미지 첨부</label>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<input class="form-control" id="imagefile" name="imagefile" type="file" multiple="multiple" style="margin-top: 6px; height: 35px">
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6">
+								<div id="UploadedImagePreview" class="Scroll">
+									<c:forEach items="${listimg }" var="listimg" varStatus="status">
+										<img src="${listimg.path }${listimg.uuidName }">
+									</c:forEach>
+								</div>
+							</div>
+						</div>
+						<hr>
                         <div class="row div2 left">
 							<div class="col-lg-2 col-md-2 col-sm-2 gray">
 								<label class="top4">탈퇴여부</label>

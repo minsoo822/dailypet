@@ -11,7 +11,6 @@
 	<sql id = "selectCommon">
 		FROM member a
 		WHERE 1=1
-		ORDER BY a.ifmmSeq DESC
 		
 		<if test="shDelNy != null and !shDelNy.equals('')">AND a.ifmmDelNy = #{shDelNy}</if>
 		
@@ -47,6 +46,7 @@
 			, a.ifmmModDate
 			, a.ifmmDelNy
 		<include refid="selectCommon" />
+		ORDER BY a.ifmmSeq DESC
 	</select>
 	
 	<!-- 회원가입 -->
@@ -252,6 +252,18 @@
 		WHERE 1=1
 		AND pseq = #{ifmmSeq}	
 	</update>
+	
+	<select id="selectProfile" resultMap="resultMapObj">
+		SELECT 
+			m.*
+			,up.path
+			,up.uuidName
+		FROM member m
+		JOIN memberUploaded up
+		ON m.ifmmSeq = up.pseq
+        WHERE 1=1
+        AND m.ifmmSeq = #{ifmmSeq}
+	</select>
 	
 	<update id="memberDel">
 		UPDATE member

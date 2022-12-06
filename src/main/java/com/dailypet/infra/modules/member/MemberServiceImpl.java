@@ -20,6 +20,11 @@ public class MemberServiceImpl implements MemberService{
 		return list;
 	}
 	
+	@Override
+	public List<Member> selectProfile(MemberVo vo) throws Exception {
+		return dao.selectProfile(vo);
+	}
+	
 	//회원가입
 	@Override
 	public int userInsert(Member dto) throws Exception {

@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public class MemberDao {
 
@@ -39,6 +38,10 @@ public class MemberDao {
 	
 	public int selectOneCount(MemberVo vo) {
 		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
+	}
+	
+	public List<Member> selectProfile(MemberVo vo) { 
+		return sqlSession.selectList(namespace + ".selectProfile", vo);
 	}
 	
 //----------------------------------------------------------------------------------------	

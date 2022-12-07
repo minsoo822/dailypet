@@ -107,6 +107,8 @@ public class FindpetController {
 	@RequestMapping(value = "findpetResult")
 	public Map<String, Object> findpetResult(FindpetVo vo) throws Exception{
 		
+//		vo.setParamsPaging(service.searchCount(vo));
+		
 		Map<String, Object> result = new HashMap<String, Object>(); 
 		
 		//가져온 클래스 명을 ifcdSeq로 변환 s

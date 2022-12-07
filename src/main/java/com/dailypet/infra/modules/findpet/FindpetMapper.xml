@@ -56,7 +56,13 @@
 				</when>
 			</choose>
 	</select>
-	
+	<select id="searchCount" resultType="Integer">
+		SELECT 
+			COUNT(*)
+		FROM findpet
+		WHERE 1=1	
+		AND iffpBreed = ${iffpBreed}
+	</select>
 	<select id="findpetOne" resultMap="resultMapObj">
 		SELECT
 			  find.*
@@ -260,6 +266,7 @@
 	
 	<!-- 유기동물 찾기 결과 -->
 	<select id="findpetResult" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
 		SELECT
 			 f.iffpSeq
 		    ,f.iffpName
@@ -272,6 +279,8 @@
 		ON f.iffpSeq = u.pseq
 		WHERE 1=1
 		AND f.iffpBreed = ${iffpBreed}
+		<include refid="Base.orderByLimitForMysql" />
+		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
 	<!-- 관리자page -->

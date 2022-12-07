@@ -23,7 +23,7 @@ public interface FindpetService {
 	public List<Findpet> BreedAdd(FindpetVo vo) throws Exception;
 	//페이징
 	public int selectOneCount(FindpetVo vo) throws Exception;
-	
+	public int searchCount(FindpetVo vo) throws Exception;
 	//지역 탭
 	public List<Findpet> selectKorea(FindpetVo vo) throws Exception;
 	

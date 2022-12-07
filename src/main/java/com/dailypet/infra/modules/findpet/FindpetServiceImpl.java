@@ -125,6 +125,12 @@ public class FindpetServiceImpl implements FindpetService{
 		return dao.selectOneCount(vo);
 	}
 	
+	@Override
+	public int searchCount(FindpetVo vo) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.searchCount(vo);
+	}
+
 	//지역 탭
 	@Override
 	public List<Findpet> selectKorea(FindpetVo vo) throws Exception {

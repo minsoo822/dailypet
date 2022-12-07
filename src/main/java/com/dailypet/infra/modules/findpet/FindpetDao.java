@@ -72,7 +72,9 @@ public class FindpetDao {
 	public int selectOneCount(FindpetVo vo) {
 		return sqlSession.selectOne(namespace + ".selectOneCount" , vo);
 	}
-	
+	public int searchCount(FindpetVo vo) {
+		return sqlSession.selectOne(namespace + ".searchCount" , vo);
+	}
 	//지역 탭
 	public List<Findpet> selectKorea(FindpetVo vo) throws Exception { 
 		return sqlSession.selectList(namespace + ".selectKorea", vo); 

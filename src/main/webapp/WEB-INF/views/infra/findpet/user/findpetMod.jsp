@@ -50,7 +50,7 @@
     	width: 45px;
     	height: 50px;
     	border-radius: 6px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
     	margin-left: auto;
     	margin-right: auto;
@@ -70,7 +70,7 @@
     	width: 55px;
     	height: 50px;
     	border-radius: 6px;
-    	font-size: 13pt;
+    	font-size: 13px;
     	font-weight: bold;
     	margin-top: 30px;
     	margin-right: 20px;
@@ -190,8 +190,8 @@
 								발견지역
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<select class="form-control" name="iffpSpotLocation">
-									<option value="12" selected hidden>:: 선택 ::</option>
+								<select class="form-select" name="iffpSpotLocation">
+									<option value="">::지역 선택::</option>
 									<option value="12">전국</option>
 									<option value="13">서울</option>
 									<option value="14">경기</option>

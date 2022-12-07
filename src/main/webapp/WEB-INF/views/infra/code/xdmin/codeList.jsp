@@ -14,7 +14,6 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     
     <style type="text/css">
-    
 	    .category {
 	    	text-align: left;
 	    	height: 500px;
@@ -37,9 +36,13 @@
 	    	height: 200px;
 	    	padding: 37px 20px;
 	    }
-	    .form-control {
+	    
+	    .form-select {
 	    	color: black;
+	    	height: 50px;
+	    	font-size: 12px;
 	    }
+	    
 	    .searchBtn, .resetBtn {
 	    	border: 1px solid #efefef;
 	    	background: #f3f0eb;
@@ -51,11 +54,13 @@
 	    	font-size: 13pt;
 	    	font-weight: bold;
 	    }
+	    
 	    .searchBtn:hover, .resetBtn:hover {
 	    	background: #372d2b;
 	    	color: #f3f0eb;
 	    	cursor: pointer;
 	    }
+	    
 	    .post-block {
 	    	margin-top: 30px;
 	    }
@@ -105,7 +110,7 @@
 	                            <li class="listmenu"><a href="/findpet/findpetxdList">유기동물 리스트</a></li>
 	                            <br>
 	                            <li class="listtitle">Code</li>
-	                            <li class="listmenu" style="color: #808080"><a href="/code/codeList"><b>코드 리스트</b></a></li>
+	                            <li class="listmenu" style="color: #808080;"><a href="/code/codeList"><b>코드 리스트</b></a></li>
 	                            <li class="listmenu"><a href="/codegroup/codegroupList">코드그룹 리스트</a></li>
 	                        </ul>
 	                    </div>
@@ -122,15 +127,15 @@
 	                            	<div class="col searchBox">
 	                            		<div class="row">
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                            				<select class="form-control" name="shDelNy">
-	                            					<option value="" <c:if test="${empty vo.shDelNy }">selected</c:if>>삭제여부</option>
+	                            				<select class="form-select" name="shDelNy">
+	                            					<option value="" <c:if test="${empty vo.shDelNy }">selected</c:if>>::삭제여부::</option>
 													<option value="0" <c:if test="${vo.shDelNy eq 0 }">selected</c:if>>N</option>
 													<option value="1" <c:if test="${vo.shDelNy eq 1 }">selected</c:if>>Y</option>
 	                            				</select>
 	                            			</div>
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                            				<select class="form-control" name="shOptionDate">
-	                            					<option value="">날짜선택</option>
+	                            				<select class="form-select" name="shOptionDate">
+	                            					<option value="">::날짜선택::</option>
 													<option value="1">최근수정일</option>
 	                            				</select>
 	                            			</div>
@@ -140,18 +145,18 @@
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 	                            				<input type="text" id="shendDate" name="shendDate" class="form-control shDate" value="${vo.shendDate}" placeholder="종료일" autocomplete="off">
 	                            			</div>
-	                            		</div>
+	                            		</div> 
 	                            		<div class="row">
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                            				<select class="form-control" name="shUseNy">
-	                            					<option value="" <c:if test="${empty vo.shUseNy }">selected</c:if>>사용여부</option>
+	                            				<select class="form-select" name="shUseNy">
+	                            					<option value="" <c:if test="${empty vo.shUseNy }">selected</c:if>>::사용여부::</option>
 													<option value="0" <c:if test="${vo.shUseNy eq 0 }">selected</c:if>>N</option>
 													<option value="1" <c:if test="${vo.shUseNy eq 1 }">selected</c:if>>Y</option>
 	                            				</select>
 	                            			</div>
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                           					<select class="form-control" name="shOption">
-													<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>선택</option>
+	                           					<select class="form-select" name="shOption">
+													<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>::선택::</option>
 													<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>코드이름</option>
 													<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>코드그룹 이름</option>
 													<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>코드이름(영문)</option>

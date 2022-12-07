@@ -53,7 +53,7 @@
 			, b.ifmmSeq
 			, b.ifmmName
 		<include refid="selectCommon" />
-		ORDER BY a.ifamSeq DESC;
+		ORDER BY a.ifamSeq DESC
 		<include refid="Base.orderByLimitForMysql" />
 		<include refid="Base.selectListLowerForMysql" />
 	</select>

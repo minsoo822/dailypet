@@ -327,30 +327,6 @@
 										<b style="font-weight: 0;">귀엽다!!</b>
 									</div>
 								</div>
-								<c:forEach items="${cmList }" var="cmList" varStatus="status">
-									<div class="row">
-										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
-											<div class="modalprofile">
-												<img id="" src="${cmList.mmPath }${cmList.mmuuidName}" class="profilepic" alt="">
-											</div>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	
-											<div class="row">
-												<div class=col>
-													<h5 style="font-size: 12px; margin-bottom: 0px;"><b><c:out value="${cmList.ifmmID }"/></b></h5>
-												</div>
-											</div>
-											<div class="row">
-												<div class=col>
-													<h5 style="font-size: 5px;"><b id=""><c:out value="${cmList.ifcmRegDate }"/></b></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col">
-											<b style="font-weight: 0;"><c:out value="${cmList.ifcmContent }"/></b>
-										</div>
-									</div>
-								</c:forEach>
 								<!-- 댓글 e -->
 							</div>
 						</div>
@@ -600,9 +576,9 @@
 				data: {
 					ifdaSeq : ifdaSeq, 
 					loginUser : ${sessSeq}
+					
 				},
 				success:function (result) {
-					console.log(result.loginUgerLike);
 					//게시물 정보 
 					$("#ifdaSeq").attr("value",result.ifdaSeq); 
 					$("#postImg").attr("src",result.diaryImg);
@@ -623,11 +599,29 @@
     	    			likedBtn.addClass('fa-regular');
     	    			likedBtn.css("color",'black');
 					}
+					
+//					var comment = "";
+					
+//					console.log(cmList[i].result.cmimg);
+					
+//					for(var i = 0; i < result.cmList.length; i++) {
+//							comment += '<div class="row">'
+//							comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">'
+//							comment += '<div class="modalprofile">'
+//							comment += '<img id="" src="'+ cmList[i].result.cmimg +'" class="profilepic" alt=""></div></div>'
+//							comment += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	'
+//							comment += '<div class="row"><div class=col>'
+//							comment += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ cmList[i].result.ifmmID +'</b></h5>'
+//							comment += '</div></div><div class="row"><div class=col>'
+//							comment += '<h5 style="font-size: 5px;"><b id="">'+ cmList[i].result.ifcmRegDate +'</b></h5>'
+//							comment += '</div></div></div><div class="col">'
+//							comment += '<b style="font-weight: 0;">'+ cmList[i].result.ifcmContent +'</b></div></div>'
+//					}
+//					$("#comment_area").html(comment);
 					// 게시물 한개당 + For문 
 					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
 						//댓글정보
 						//댓글작성자 닉네임 이미지
-					
 					
 					
 					

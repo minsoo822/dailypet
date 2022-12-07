@@ -141,8 +141,7 @@
 			position: relative;
 			bottom: 90px;
 			left: 700px;
-			color:white;
-			font-size: 20pt;		
+			font-size: 20px;		
 		}
 		
 	    .modal_title{
@@ -245,7 +244,35 @@
 			border: none;
 			font-size: 14px;
 			font-weight: bold;
-			display: inline;
+			display: inline; 
+		}
+		
+		hr{
+			color: gray;
+			margin-top: 25px; 
+			margin-bottom: 15px;
+		}
+		
+		textarea{
+			border: 0px;
+			width: 400px;
+			-ms-overflow-style: none;
+		} 
+		
+		textarea:focus{
+			outline: none;
+		}
+		
+		#comment_area {
+		   -ms-overflow-style: none;
+		}
+		
+		#comment_area::-webkit-scrollbar{
+		  display:none;
+		}
+		
+		textarea::-webkit-scrollbar{
+		  display:none;
 		}
 	</style>
 </head>
@@ -269,10 +296,8 @@
 		<div id="modal_add_feed" class="modal_overlay">
 		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${dto.ifdaSeq }">
 		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
-			<span id="close_modal" class="material-icons-outlined">
-				<i class="fa-solid fa-xmark"></i>
-			</span>
-			<div class="modal_window">
+
+			<div class="modal_window" id="">
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
@@ -289,19 +314,19 @@
 							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-top: 5px;">	
 								<span style="margin-left: -4px; font-size: 16px"><b id="userID"></b></span>
 							</div>
-						</div> 
-						<hr style="color: red; margin-top: 12px; margin-bottom: 0">
+						</div>  
+						<hr>
 						<div class="row" style="margin-top: 10px;"> 
-							<div class="col">
-								<p name="ifdaContent" style="font-size: 14px;" id="postContents"></p>
+							<div class="col" style="width: 400px;">
+								<textarea name="ifdaContent" style="font-size: 14px;" id="postContents" readonly></textarea>
 							</div>
 						</div> 
-						<hr style="color: lightgray; margin-top: 25px; margin-bottom: 15px;">
+						<hr>
 						<div class="row">
-							<div class="col" id="comment_area"> 
+							<div class="col" id="comment_area" style="height: 260px; overflow: scroll;"> 
 								<!-- 댓글 s -->
-								 
-								<!-- 댓글 e -->
+								  
+								<!-- 댓글 e --> 
 							</div>
 						</div>
 						<div class="cardfooter">
@@ -320,7 +345,7 @@
 									<p id="postRegDate"></p>
 								</div>
 							</div>
-							<hr style="color: lightgray; margin: 3px">
+							<hr> 
 							<div class="cardcomment">
 								<input type="text" class="form-control" class="writecomm" id="writecomm" name="ifcmContent" placeholder="댓글 달기...">
 								<button type="button" class="upcomment" id="upcomment">게시</button>
@@ -331,7 +356,7 @@
 			</div>
 		</div>
 		<!-- Modal e -->
-	    <div class="content">
+	    <div class="content"> 
 	    	<div class="container2">
 	    		<div class="row">
 	    			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
@@ -350,10 +375,9 @@
 	    					</div>
 	    					<div class="col-lg-6 col-md-4 col-sm-4">
 	    						<!-- <button type="button" id="followbtn">팔로우</button> -->
-	    						
 	    					</div>
 	    				</div>
-	    				<br>
+	    				<br> 
 	    				<div class="row">
 	    					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 	    					</div>
@@ -384,7 +408,7 @@
 	    			</div>
 	    		</div>
 	    		<br>
-	    		<hr style="border: 1px solid lightgray; width: 1150px; margin-left: auto; margin-right: auto;">
+	    		<hr style="border: 1px solid gray; width: 1150px; margin-left: auto; margin-right: auto;">
 	    	</div>
 	        <div class="container" id="thumbList">
 	            <div class="row" style="margin-left: 50px;">
@@ -499,7 +523,7 @@
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    				txt += '<div class="col">';
-	    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
+	    				txt += '<span style="font-weight: 0;">'+ result.comment +'</span>';
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    			

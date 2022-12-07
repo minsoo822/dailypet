@@ -90,7 +90,7 @@ b, strong { font-weight: 600; }
 .text-caps { text-transform: uppercase; letter-spacing: 2px; font-size: 14px; }
 ::selection { background: #ffecb3; color: #333; }
 h3 small { font-weight: 400; line-height: 1; color: #aa9144; font-size: 14px; }
-hr { margin-top: 30px; margin-bottom: 30px; border: 0; border-top: 1px solid #e2dcdb; }
+hr { margin-top: 30px; margin-bottom: 30px; border: 0; border-top: 1px solid; }
 blockquote { padding: 50px; margin: 0px; font-size: 21px; line-height: 32px; color: #3c3c3c; font-style: italic; border-left: 5px solid #372d2b; }
 
 /*-------------- align ------------*/

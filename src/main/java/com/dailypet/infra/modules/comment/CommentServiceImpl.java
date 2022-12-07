@@ -21,11 +21,6 @@ public class CommentServiceImpl implements CommentService{
 		return dao.commentOne(dto);
 	}
 	@Override
-	public Comment cmItem(Comment dto) throws Exception {
-		// TODO Auto-generated method stub
-		return dao.cmItem(dto);
-	}
-	@Override
 	public List<Comment> commentList(CommentVo vo) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.commentList(vo);
@@ -34,6 +29,11 @@ public class CommentServiceImpl implements CommentService{
 	public int commentDel(Comment dto) throws Exception {
 		// TODO Auto-generated method stub
 		return dao.commentDel(dto);
+	}
+	@Override
+	public Comment cmItem(int i) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.cmItem(i);
 	}
 	
 }

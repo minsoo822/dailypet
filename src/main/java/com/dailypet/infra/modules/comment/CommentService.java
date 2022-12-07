@@ -8,6 +8,6 @@ public interface CommentService {
 	public List<Comment> commentList(CommentVo vo) throws Exception;
 	public int commentInst(Comment dto) throws Exception;
 	public Comment commentOne(Comment dto) throws Exception;
-	public Comment cmItem(Comment dto) throws Exception;
 	public int commentDel(Comment dto) throws Exception;
+	public Comment cmItem(int i) throws Exception;
 }

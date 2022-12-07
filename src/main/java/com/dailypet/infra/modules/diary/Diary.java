@@ -24,7 +24,8 @@ public class Diary extends Base {
 	private Integer commentCount;
 
 	private MultipartFile[] diary_image;
-
+	private String ifcmRegDate;
+	private String ifcmContent;
 	private String diPath;
 	private String diuuidName;
 	private String mmPath;

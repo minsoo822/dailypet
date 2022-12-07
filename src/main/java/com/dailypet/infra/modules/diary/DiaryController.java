@@ -171,17 +171,17 @@ public class DiaryController {
 		
 		
 		//게시물 댓글
-		
-		List<Comment> cmList = serviceComment.commentList(cmvo);
-		result.put("cmList", cmList);
-		
-		Comment cmItem = serviceComment.cmItem(cm);
-
-		result.put("ifdaSeq", cmItem.getIfdaSeq());
-		result.put("ifcmContent", cmItem.getIfcmContent());
-		result.put("ifcmRegDate", cmItem.getIfcmRegDate());
-		result.put("ifmmID", cmItem.getIfmmID());
-		result.put("cmimg", cmItem.getMmPath() + cmItem.getUuidName());
+//		
+//		List<Comment> cmList = serviceComment.commentList(cmvo);
+//		result.put("cmList", cmList);
+//		
+//		Comment cmItem = serviceComment.cmItem((Integer.parseInt(dto.getIfdaSeq())));
+//
+//		result.put("ifdaSeq", cmItem.getIfdaSeq());
+//		result.put("ifcmContent", cmItem.getIfcmContent());
+//		result.put("ifcmRegDate", cmItem.getIfcmRegDate());
+//		result.put("ifmmID", cmItem.getIfmmID());
+//		result.put("cmimg", cmItem.getMmPath() + cmItem.getUuidName());
 
 		return result;
 	}

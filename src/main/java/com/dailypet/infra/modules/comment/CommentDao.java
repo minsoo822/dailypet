@@ -28,10 +28,10 @@ public class CommentDao {
 	public Comment commentOne(Comment dto) { 
 		return sqlSession.selectOne(namespace + ".commentOne", dto);
 	}
-	public Comment cmItem(Comment dto) { 
-		return sqlSession.selectOne(namespace + ".cmItem", dto);
-	}
 	public int commentDel(Comment dto) {
 		return sqlSession.delete(namespace + ".commentDel", dto);
+	}
+	public Comment cmItem(int i) { 
+		return sqlSession.selectOne(namespace + ".cmItem", i);
 	}
 }

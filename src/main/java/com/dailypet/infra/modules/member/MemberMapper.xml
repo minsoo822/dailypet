@@ -65,7 +65,9 @@
 			, ifmmEmail
 			, ifmmEmailID
 			, ifmmEmailDomain
+			, ifmmIntroduction
 			, ifmmRegDate
+			, ifmmModDate
 			, ifmmDelNy
 		)
 		VALUES (
@@ -82,10 +84,11 @@
 			, #{ifmmEmail}
 			, #{ifmmEmailID}
 			, #{ifmmEmailDomain}
+			, #{ifmmIntroduction}
+			, now()
 			, now()
 			, 0
 		)
-		
 		<selectKey resultType="String" keyProperty="ifmmSeq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>
@@ -207,50 +210,6 @@
         WHERE 1=1
         AND mm.ifmmSeq = #{ifmmSeq}
 	</select>
-	
-	<insert id="userInsert">
-		INSERT INTO member (
-			ifmmName
-			, ifmmZipcode
-			, ifmmAddr1
-			, ifmmAddr2
-			, ifmmAddr3
-			, ifmmID
-			, ifmmPW
-			, ifmmNickname
-			, ifmmTelecom
-			, ifmmTel
-			, ifmmEmail
-			, ifmmEmailID
-			, ifmmEmailDomain
-			, ifmmIntroduction
-			, ifmmRegDate
-			, ifmmModDate
-			, ifmmDelNy
-		)
-		VALUES (
-			#{ifmmName}
-			, #{ifmmZipcode}
-			, #{ifmmAddr1}
-			, #{ifmmAddr2}
-			, #{ifmmAddr3}
-			, #{ifmmID}
-			, #{ifmmPW}
-			, #{ifmmNickname}
-			, #{ifmmTelecom}
-			, #{ifmmTel}
-			, #{ifmmEmail}
-			, #{ifmmEmailID}
-			, #{ifmmEmailDomain}
-			, #{ifmmIntroduction}
-			, now()
-			, now()
-			, 0
-		)
-		<selectKey resultType="String" keyProperty="ifmmSeq" order="AFTER">
-			SELECT last_insert_id()
-		</selectKey>
-	</insert>
 	
 	<update id="userUpdate">
 		UPDATE member

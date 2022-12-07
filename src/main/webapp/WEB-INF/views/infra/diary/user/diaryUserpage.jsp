@@ -305,28 +305,7 @@
 						<div class="row">
 							<div class="col" id="comment_area">
 								<!-- 댓글 s -->
-								<div class="row">
-									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
-										<div class="modalprofile">
-											<img id="" src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	
-										<div class="row">
-											<div class=col>
-												<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">haha</b></h5>
-											</div>
-										</div>
-										<div class="row">
-											<div class=col>
-												<h5 style="font-size: 5px;"><b id="">2022-11-20 06:06:06</b></h5>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<b style="font-weight: 0;">귀엽다!!</b>
-									</div>
-								</div>
+								
 								<!-- 댓글 e -->
 							</div>
 						</div>
@@ -602,22 +581,32 @@
 					
 //					var comment = "";
 					
-//					console.log(cmList[i].result.cmimg);
+					for(var i = 0; i < result.cmList.length; i++) {
+						comment += '<div class="row">';
+							comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center;">';
+								comment += '<div class="modalprofile">';
+									comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt="">';
+								comment += '</div>';
+							comment += '</div>';
+							comment += '<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" id="idbox">';
+								comment += '<div class="row">';
+								comment += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
+								comment += '<h5 style="font-size: 12px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.cmList[i].ifmmID +'</b></h5>';
+								comment += '</div>';
+								comment += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+								comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
+								comment += '</div>';
+								comment += '</div>';
+								comment += '<div class="row">';
+								comment += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
+								comment += '<span style="font-weight: 0; font-size: 13.5px;">'+ result.cmList[i].ifcmContent +'</span>';
+								comment += '</div>';
+								comment += '</div>';
+							comment += '</div>';
+						comment += '</div>';
+					} 
 					
-//					for(var i = 0; i < result.cmList.length; i++) {
-//							comment += '<div class="row">'
-//							comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">'
-//							comment += '<div class="modalprofile">'
-//							comment += '<img id="" src="'+ cmList[i].result.cmimg +'" class="profilepic" alt=""></div></div>'
-//							comment += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	'
-//							comment += '<div class="row"><div class=col>'
-//							comment += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ cmList[i].result.ifmmID +'</b></h5>'
-//							comment += '</div></div><div class="row"><div class=col>'
-//							comment += '<h5 style="font-size: 5px;"><b id="">'+ cmList[i].result.ifcmRegDate +'</b></h5>'
-//							comment += '</div></div></div><div class="col">'
-//							comment += '<b style="font-weight: 0;">'+ cmList[i].result.ifcmContent +'</b></div></div>'
-//					}
-//					$("#comment_area").html(comment);
+					$("#comment_area").html(comment);  
 					// 게시물 한개당 + For문 
 					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
 						//댓글정보

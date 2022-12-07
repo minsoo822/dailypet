@@ -182,6 +182,19 @@
 	.cmTime {
 		font-size: 5pt;
 	} 
+	textarea{
+		border: 0px;
+		width: 470px;
+		-ms-overflow-style: none;
+		} 
+		
+	textarea:focus{
+		outline: none;
+	}
+	
+	textarea::-webkit-scrollbar{
+		display:none;
+	}	
 </style>
 
 <body>
@@ -276,7 +289,11 @@
 								<h5 style="font-size: 13px; margin: 0 10px 0 0; display: inline">
 									<b><c:out value="${list.ifmmID }"/></b>
 								</h5>
-								<p style="font-size: 13px; display: inline;"><c:out value="${list.ifdaContents }"/></p>
+								<div class="row" style="margin-top: 10px;"> 
+									<div class="col" style="width: 400px;">
+										<textarea name="ifdaContent" style="font-size: 14px;" id="postContents" readonly><c:out value="${list.ifdaContents }"/></textarea>
+									</div>
+								</div>
 								<p style="font-size: 11px; color: lightgray"><c:out value="${list.ifdaRegDate }"/></p>
 							<!-- contents e -->
 								<!-- Comment s -->

@@ -300,6 +300,44 @@
 	.fade {
 		opacity: 100;
 	}
+/* ---------------------------------------------------------------------- */	
+
+		.loader {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100vw;
+	  height: 100vh;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: #f7f9fb;
+	  transition: opacity 0.75s, visibility 0.75s;
+	}
+	
+	.loader-hidden {
+	  opacity: 0;
+	  visibility: hidden;
+	}
+	
+	.loader::after {
+	  content: "";
+	  width: 75px;
+	  height: 75px;
+	  border: 15px solid #dddd;
+	  border-top-color: #7449f5;
+	  border-radius: 50%;
+	  animation: loading 0.75s ease infinite;
+	}
+	
+	@keyframes loading {
+	  form {
+	    transform: rotate(0turn);
+	  }
+	  to {
+	    transform: rotate(1turn);
+	  }
+	}
 </style>
 
 </head>
@@ -363,6 +401,7 @@
 				<button class="file-upload-btn" type="button" id="searching"
 					onclick="predict()">검색하기</button>
 			</div>
+			<!-- <div class="loader" style=""></div> -->
 			<!-- <div class="row" style="float: right">
 				<button type="button" class="left" onclick="predict()">Predict</button>
 			</div> -->
@@ -537,6 +576,10 @@
 				,data: {
 					iffpBreed : finalAnimal 
 				} 
+	        	/* ,beforeSend : function(request){
+	                // Performed before calling Ajax
+	                $(".loader").show();
+	            }, */
 				,success: function(response){
 					var txt="";
 					for(var i=0; i<response.petList.length; i++){
@@ -553,7 +596,12 @@
 						txt += '</div>';
 						txt += '</div>';
 					}
-					
+				/* ,beforeSend: function() { //로딩이미지 보여주기
+						$(".loader").show();
+					}
+				,complete: function() { //로딩이미지 숨기기
+					    $(".loader").hide();
+					}	 */
 					$("#petListArea").html(txt);
 					
 					//location.href ="/findpet/findpetSearchForm"
@@ -667,6 +715,31 @@
 	    $('.image-upload-wrap').bind('dragleave', function () {
 	        $('.image-upload-wrap').removeClass('image-dropping');
 	    });  
+	    
+	    
+	    //스피너 js
+	    window.addEventListener("load", () => {
+	        const loader = document.querySelector(".loader");
+
+	        loader.classList.add("loader-hidden");
+
+	        loader.addEventListener("transitionend", () => {
+	            document.body.removeChild("loader");
+	        })
+	    })
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
     </script>
 
 </body>

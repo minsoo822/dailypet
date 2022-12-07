@@ -14,7 +14,6 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     
     <style type="text/css">
-    
 	    .category {
 	    	text-align: left;
 	    	height: 500px;
@@ -37,9 +36,13 @@
 	    	height: 200px;
 	    	padding: 37px 20px;
 	    }
-	    .form-control {
+	    
+	    .form-select {
 	    	color: black;
+	    	height: 50px;
+	    	font-size: 12px;
 	    }
+	    
 	    .searchBtn, .resetBtn {
 	    	border: 1px solid #efefef;
 	    	background: #f3f0eb;
@@ -48,14 +51,16 @@
 	    	width: 50px;
 	    	height: 50px;
 	    	border-radius: 10px;
-	    	font-size: 13pt;
+	    	font-size: 13px;
 	    	font-weight: bold;
 	    }
+	    
 	    .searchBtn:hover, .resetBtn:hover {
 	    	background: #372d2b;
 	    	color: #f3f0eb;
 	    	cursor: pointer;
 	    }
+	    
 	    .post-block {
 	    	margin-top: 30px;
 	    }
@@ -101,7 +106,7 @@
 	                        <ul class="listnone">
 	                        	<li class="listtitle">Setting</li>
 	                            <li class="listmenu"><a href="/member/memberList">회원 리스트 </a></li>
-	                            <li class="listmenu" style="color: #808080"><a href="/animal/animalList"><b>반려동물 리스트</b></a></li>
+	                            <li class="listmenu" style="color: #808080;"><a href="/animal/animalList"><b>반려동물 리스트</b></a></li>
 	                            <li class="listmenu"><a href="/findpet/findpetxdList">유기동물 리스트</a></li>
 	                            <br>
 	                            <li class="listtitle">Code</li>
@@ -122,32 +127,32 @@
 	                            	<div class="col searchBox">
 	                            		<div class="row">
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                            				<select class="form-control" name="shOptionGen">
-	                            					<option value="" <c:if test="${empty vo.shOptionGen }">selected</c:if>>성별</option>
+	                            				<select class="form-select" name="shOptionGen"> 
+	                            					<option value="" <c:if test="${empty vo.shOptionGen }">selected</c:if>>::성별::</option>
 													<option value="9" <c:if test="${vo.shOptionGen eq 9 }">selected</c:if>>수컷</option>
 													<option value="10" <c:if test="${vo.shOptionGen eq 10 }">selected</c:if>>암컷</option>
 													<option value="11" <c:if test="${vo.shOptionGen eq 11 }">selected</c:if>>중성화</option>
 	                            				</select>
-	                            			</div>
+	                            			</div> 
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                            				<select class="form-control" name="shOptionChip">
-	                            					<option value="" <c:if test="${empty vo.shOptionChip }">selected</c:if>>칩여부</option>
+	                            				<select class="form-select" name="shOptionChip">
+	                            					<option value="" <c:if test="${empty vo.shOptionChip }">selected</c:if>>::칩여부::</option>
 													<option value="0" <c:if test="${vo.shOptionChip eq 0 }">selected</c:if>>N</option>
 													<option value="1" <c:if test="${vo.shOptionChip eq 1 }">selected</c:if>>Y</option>
 	                            				</select>
 	                            			</div>
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                            				<select class="form-control" name="shOptionVacc">
-	                            					<option value="" <c:if test="${empty vo.shOptionVacc }">selected</c:if>>접종여부</option>
+	                            				<select class="form-select" name="shOptionVacc" style="margin-bottom: 15px;">
+	                            					<option value="" <c:if test="${empty vo.shOptionVacc }">selected</c:if>>::접종여부::</option>
 													<option value="0" <c:if test="${vo.shOptionVacc eq 0 }">selected</c:if>>N</option>
 													<option value="1" <c:if test="${vo.shOptionVacc eq 1 }">selected</c:if>>Y</option>
 	                            				</select>
-	                            			</div>
-	                            		</div>
+	                            			</div>   
+	                            		</div> 
 	                            		<div class="row">
 	                            			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-	                           					<select class="form-control" name="shOption">
-													<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>선택</option>
+	                           					<select class="form-select" name="shOption">
+													<option value="" <c:if test="${empty vo.shOption}">selected</c:if>>::선택::</option>
 													<option value="1" <c:if test="${vo.shOption eq 1}">selected</c:if>>반려동물 이름</option>
 													<option value="2" <c:if test="${vo.shOption eq 2}">selected</c:if>>품종</option>
 													<option value="3" <c:if test="${vo.shOption eq 3}">selected</c:if>>회원이름</option>

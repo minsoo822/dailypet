@@ -139,11 +139,10 @@
 	    
 	    .material-icons-outlined {
 			position: relative;
-			bottom: 90px;
-			left: 700px;
-			font-size: 20px;		
-		}
-		
+			font-size: 20px;	
+			color: black;	
+ 		} 
+		 
 	    .modal_title{
 	        display: flex;
 	        flex-direction: row;
@@ -296,7 +295,7 @@
 		<div id="modal_add_feed" class="modal_overlay">
 		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${dto.ifdaSeq }">
 		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
-
+								
 			<div class="modal_window" id="">
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
@@ -306,13 +305,18 @@
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="row" style="margin-top: 10px">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 								<div class="modalprofile">
 									<img id="userImg" class="profilepic">
 								</div>
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-top: 5px;">	
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-top: 5px;">	
 								<span style="margin-left: -4px; font-size: 16px"><b id="userID"></b></span>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+								<span id="close_modal" class="material-icons-outlined">
+									<i class="fa-solid fa-xmark"></i>
+								</span> 
 							</div>
 						</div>  
 						<hr>

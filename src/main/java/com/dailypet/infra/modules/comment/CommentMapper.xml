@@ -27,6 +27,25 @@
 	    ON mm.ifmmSeq = mmup.pseq
 	    WHERE da.ifdaSeq = #{ifdaSeq}
 	</select>
+	<select id="cmItem" resultMap="resultMapObj">
+		SELECT
+			co.ifcmSeq
+			, co.da_ifdaSeq
+			, co.ifcmContent
+			, co.ifcmRegDate
+			, mm.ifmmID
+			, mmup.path		AS mmPath
+			, mmup.uuidName	AS mmuuidName
+	    FROM comment co
+	    JOIN diary da
+	    ON co.da_ifdaSeq = da.ifdaSeq
+	    JOIN member mm
+	    ON co.mm_ifmmSeq = mm.ifmmSeq
+	    JOIN memberUploaded mmup
+	    ON mm.ifmmSeq = mmup.pseq
+	    WHERE da.ifdaSeq = #{ifdaSeq}
+	
+	</select>
 	
 	<select id="commentOne" resultMap="resultMapObj">
 		SELECT

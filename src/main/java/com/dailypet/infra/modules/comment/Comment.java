@@ -15,7 +15,7 @@ public class Comment extends Base{
 	private String path;
 	private String uuidName;
 	
-	private Integer ifdaSeq;
+	private String ifdaSeq;
 	private Integer sessSeq;
 	private String mmPath;
 	private String mmuuidName;
@@ -69,10 +69,10 @@ public class Comment extends Base{
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public Integer getIfdaSeq() {
+	public String getIfdaSeq() {
 		return ifdaSeq;
 	}
-	public void setIfdaSeq(Integer ifdaSeq) {
+	public void setIfdaSeq(String ifdaSeq) {
 		this.ifdaSeq = ifdaSeq;
 	}
 	public Integer getSessSeq() {

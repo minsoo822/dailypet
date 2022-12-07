@@ -587,7 +587,8 @@
 				type: 'POST',
 				datatype: 'json',
 				data: {
-					ifdaSeq : ifdaSeq 
+					ifdaSeq : ifdaSeq ,
+					loginUser : ${sessSeq}
 				},
 				success:function (result) {
 					//게시물 정보 

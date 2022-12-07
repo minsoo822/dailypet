@@ -6,8 +6,7 @@ public interface MemberService {
 	
 	public List<Member> selectList(MemberVo vo) throws Exception;
 	public Member selectMypage(MemberVo vo) throws Exception;
-	public List<Member> selectProfile(MemberVo vo) throws Exception;
-
+	
 	//회원가입
 	public int userInsert(Member dto) throws Exception;
 	
@@ -27,6 +26,13 @@ public interface MemberService {
 	public Member selectOneID(Member dto) throws Exception;
 	public Member selectOneLogin(Member dto) throws Exception;
 	
-	
 	public Member selectOne(MemberVo vo) throws Exception;
+	
+	//관리자 폼 사진
+	public List<Member> selectProfile(MemberVo vo) throws Exception;
+	
+	//관리자 업뎃
+	public int xdminUpdate(Member dto) throws Exception;
+	
+	public int memberDel(Member dto) throws Exception;
 }

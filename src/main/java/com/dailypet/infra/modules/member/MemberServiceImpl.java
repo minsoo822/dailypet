@@ -141,4 +141,14 @@ public class MemberServiceImpl implements MemberService{
 		return dao.selectOneCount(vo);
 	}
 	
+	@Override
+	public int xdminUpdate(Member dto) throws Exception {
+		return dao.xdminUpdate(dto);
+	}
+	
+	@Override
+	public int memberDel(Member dto) throws Exception {
+		return dao.memberDel(dto);
+	}
+	
 }

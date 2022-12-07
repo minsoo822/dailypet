@@ -246,15 +246,24 @@ public class MemberController {
 
 		return "infra/member/user/changePW";
 	}
-	//관리자 회원정보수정
-	@RequestMapping(value = "memberUpdt") 
-	public String memberUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, Animal dto1, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
-		
-		service.userUpdate(dto);
-		
-		redirectAttributes.addFlashAttribute("vo", vo);
-		return "redirect:/member/memberList";
-	}
 	
+	//관리자 회원정보수정
+		@RequestMapping(value = "memberUpdt") 
+		public String memberUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, Animal dto1, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+			
+			service.xdminUpdate(dto);
+			
+			redirectAttributes.addFlashAttribute("vo", vo);
+			
+			return "redirect:/member/memberForm";
+		}
+		
+		@RequestMapping(value = "memberDele")
+		public String memberDele(Member dto, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+			
+			service.memberDel(dto);
+			
+			return "redirect:/member/memberList";
+		}
 	
 } 

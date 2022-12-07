@@ -40,10 +40,6 @@ public class MemberDao {
 		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
 	}
 	
-	public List<Member> selectProfile(MemberVo vo) { 
-		return sqlSession.selectList(namespace + ".selectProfile", vo);
-	}
-	
 //----------------------------------------------------------------------------------------	
 	
 	//회원가입
@@ -95,5 +91,20 @@ public class MemberDao {
 	}
 	public Member selectMypage(MemberVo vo) {
 		return sqlSession.selectOne(namespace + ".selectMypage", vo);
+	}
+	
+//-----------------------------------관리자------------------------------------------	
+	
+	//이미지 가져오기
+	public List<Member> selectProfile(MemberVo vo) { 
+		return sqlSession.selectList(namespace + ".selectProfile", vo);
+	}
+	
+	public int xdminUpdate(Member dto) {
+		return sqlSession.update(namespace + ".xdminUpdate", dto);
+	}
+	
+	public int memberDel(Member dto) {
+		return sqlSession.delete(namespace + ".memberDel", dto);
 	}
 }

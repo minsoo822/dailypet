@@ -208,6 +208,50 @@
         AND mm.ifmmSeq = #{ifmmSeq}
 	</select>
 	
+	<insert id="userInsert">
+		INSERT INTO member (
+			ifmmName
+			, ifmmZipcode
+			, ifmmAddr1
+			, ifmmAddr2
+			, ifmmAddr3
+			, ifmmID
+			, ifmmPW
+			, ifmmNickname
+			, ifmmTelecom
+			, ifmmTel
+			, ifmmEmail
+			, ifmmEmailID
+			, ifmmEmailDomain
+			, ifmmIntroduction
+			, ifmmRegDate
+			, ifmmModDate
+			, ifmmDelNy
+		)
+		VALUES (
+			#{ifmmName}
+			, #{ifmmZipcode}
+			, #{ifmmAddr1}
+			, #{ifmmAddr2}
+			, #{ifmmAddr3}
+			, #{ifmmID}
+			, #{ifmmPW}
+			, #{ifmmNickname}
+			, #{ifmmTelecom}
+			, #{ifmmTel}
+			, #{ifmmEmail}
+			, #{ifmmEmailID}
+			, #{ifmmEmailDomain}
+			, #{ifmmIntroduction}
+			, now()
+			, now()
+			, 0
+		)
+		<selectKey resultType="String" keyProperty="ifmmSeq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
+	
 	<update id="userUpdate">
 		UPDATE member
 		SET
@@ -252,6 +296,7 @@
 		AND pseq = #{ifmmSeq}	
 	</update>
 	
+	<!-- 관리자 -->
 	<select id="selectProfile" resultMap="resultMapObj">
 		SELECT 
 			m.*
@@ -263,6 +308,32 @@
         WHERE 1=1
         AND m.ifmmSeq = #{ifmmSeq}
 	</select>
+	
+	<update id="xdminUpdate">
+		UPDATE member
+		SET
+			ifmmZipcode		=	#{ifmmZipcode}
+			, ifmmAddr1			=	#{ifmmAddr1}
+			, ifmmAddr2			=	#{ifmmAddr2}
+			, ifmmAddr3			=	#{ifmmAddr3}
+			, ifmmNickname		=	#{ifmmNickname}
+			, ifmmTelecom		=	#{ifmmTelecom}
+			, ifmmTel			=	#{ifmmTel}
+			, ifmmEmail			=   CONCAT(#{ifmmEmailID},
+									<choose>
+										<when test="ifmmEmailDomain eq 4">'@naver.com')</when>
+										<when test="ifmmEmailDomain eq 5">'@gmail.com')</when>
+										<when test="ifmmEmailDomain eq 6">'@hanmail.com')</when>
+										<when test="ifmmEmailDomain eq 7">'@nate.com')</when>
+										<when test="ifmmEmailDomain eq 8">'@daum.net')</when>
+									</choose>
+			, ifmmEmailID		=	#{ifmmEmailID}
+			, ifmmEmailDomain	=	#{ifmmEmailDomain}
+			, ifmmIntroduction	=	#{ifmmIntroduction}
+			, ifmmModDate		=	now()
+		WHERE 1=1
+		AND ifmmSeq = #{ifmmSeq}
+	</update>
 	
 	<update id="memberUel">
 		UPDATE member

@@ -83,9 +83,9 @@ public class MemberController {
 	}
 	
 	// 회원 탈퇴
-	@RequestMapping(value = "memberDel")
-	public String memberDel(MemberVo vo, Member dto, HttpSession httpSession,RedirectAttributes redirectAttributes) throws Exception {
-		service.memberDel(dto);
+	@RequestMapping(value = "memberUel")
+	public String memberUel(MemberVo vo, Member dto, HttpSession httpSession,RedirectAttributes redirectAttributes) throws Exception {
+		service.memberUel(dto);
 		redirectAttributes.addFlashAttribute("vo", vo);
 		httpSession.invalidate();
 		return "infra/member/user/memberDel2";

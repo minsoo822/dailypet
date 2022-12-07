@@ -208,7 +208,7 @@
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
     <script type="text/javascript">
-    	var goUrlDel = "/member/memberDel";
+    	var goUrlDel = "/member/memberUel";
     	var seq = $("input:hidden[name=seq]");		
     	var form = $("form[name=mainForm]");
    		

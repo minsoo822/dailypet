@@ -15,7 +15,7 @@ public interface MemberService {
 	public int userUpdate(Member dto) throws Exception;
 	
 	//회원 탈퇴
-	public int memberDel(Member dto) throws Exception;
+	public int memberUel(Member dto) throws Exception;
 	
 	//아이디 중복 체크
 	public int selectOneCheckId(Member dto) throws Exception;

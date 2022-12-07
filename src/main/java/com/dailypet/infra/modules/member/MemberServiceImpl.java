@@ -83,8 +83,8 @@ public class MemberServiceImpl implements MemberService{
 	}
 	
 	// 회원 탈퇴
-	public int memberDel(Member dto) throws Exception {
-		return dao.memberDel(dto);
+	public int memberUel(Member dto) throws Exception {
+		return dao.memberUel(dto);
 	}
 	
 //-----------------------------------------------------------------------------------	

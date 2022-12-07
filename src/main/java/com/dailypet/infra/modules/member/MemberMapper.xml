@@ -122,8 +122,7 @@
 	<select id="selectOneCount" resultType="Integer">
 		SELECT 
 			COUNT(*)
-		FROM member
-		WHERE 1=1
+		<include refid="selectCommon" />
 	</select>
 	
 	<select id="selectOne" resultMap ="resultMapObj">
@@ -265,12 +264,17 @@
         AND m.ifmmSeq = #{ifmmSeq}
 	</select>
 	
-	<update id="memberDel">
+	<update id="memberUel">
 		UPDATE member
 		SET 
 			ifmmDelNy = 1
 		WHERE 
-			ifmmSeq = #{seq}
+			ifmmSeq = #{ifmmSeq}
 	</update>
+	
+	<delete id="memberDel">
+		DELETE FROM member
+		WHERE ifmmSeq = #{ifmmSeq}
+	</delete>
 	
 </mapper>

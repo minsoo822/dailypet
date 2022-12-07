@@ -65,8 +65,8 @@ public class MemberDao {
 	}
 	
 	//회원 탈퇴
-	public int memberDel(Member dto) {
-		return sqlSession.update(namespace + ".memberDel", dto);
+	public int memberUel(Member dto) {
+		return sqlSession.update(namespace + ".memberUel", dto);
 	}
 	
 //----------------------------------------------------------------------------------------	

@@ -258,10 +258,9 @@
 	    <!-- /.page header -->
 	    <div class="diaryheader">
 			<nav class="icon"> 
-				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
-				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName
-				}" class="profilepic" alt=""></a></div></span>
+				<span style="font-size: 20px"><a href="/diary/diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
+				<span style="font-size: 25px"><a href="/diary/diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
+				<span><div class="profileheader"><a href="/diary/diaryMypage"><img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 		<!-- Modal s -->
@@ -303,26 +302,26 @@
 								<div class="row">
 									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
 										<div class="modalprofile">
-											<img id="" src="/resources/images/findpet/700.jpg" class="profilepic" alt="">
+											<img src="/resources/images/findpet/700.jpg" class="profilepic">
 										</div>
 									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">	
 										<div class="row">
-											<div class=col>
-												<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">haha</b></h5>
+											<div class="col">
+												<h5 style="font-size: 14px; margin-bottom: 0px;"><b>haha</b></h5>
 											</div>
 										</div>
 										<div class="row">
-											<div class=col>
-												<h5 style="font-size: 5px;"><b id="">2022-11-20 06:06:06</b></h5>
+											<div class="col">
+												<h5 style="font-size: 5px; width: 120px;"><b>2022-11-20 06:06:06</b></h5>
 											</div>
 										</div>
 									</div>
 									<div class="col">
-										<b style="font-weight: 0;">귀엽다!!</b>
+										<b style="font-size: 14px;  margin-left: 20px;">귀엽다!!</b>
 									</div>
 								</div>
-								<c:forEach items="${cmList }" var="cmList" varStatus="status">
+								<%-- <c:forEach items="${cmList }" var="cmList" varStatus="status">
 									<div class="row">
 										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
 											<div class="modalprofile">
@@ -345,7 +344,7 @@
 											<b style="font-weight: 0;"><c:out value="${cmList.ifcmContent }"/></b>
 										</div>
 									</div>
-								</c:forEach>
+								</c:forEach> --%>
 								<!-- 댓글 e -->
 							</div>
 						</div>
@@ -590,7 +589,7 @@
 					ifdaSeq : ifdaSeq ,
 					loginUser : ${sessSeq}
 				},
-				success:function (result) {
+				success: function(result) {
 					//게시물 정보 
 					$("#ifdaSeq").attr("value",result.ifdaSeq); 
 					$("#postImg").attr("src",result.diaryImg);
@@ -611,11 +610,29 @@
     	    			likedBtn.addClass('fa-regular');
     	    			likedBtn.css("color",'black');
 					}
-					// 게시물 한개당 + For문 
+					//게시물 한개당 + For문 
 					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
 						//댓글정보
-						//댓글작성자 닉네임 이미지
+						//댓글작성자 닉네임 이미지 
+						
+					var comment = "";
 					
+					for(var i = 0; i < result.cmList.length; i++) {
+						comment += '<div class="row">';
+						comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
+						comment += '<div class="modalprofile">';
+						comment += '<img id="" src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt=""></div></div>';
+						comment += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">';
+						comment += '<div class="row"><div class=col>';
+						comment += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.cmList[i].ifmmID +'</b></h5>';
+						comment += '</div></div><div class="row"><div class=col>';
+						comment += '<h5 style="font-size: 5px;"><b id="">'+ result.cmList[i].ifcmRegDate +'</b></h5>';
+						comment += '</div></div></div><div class="col">';
+						comment += '<b style="font-weight: 0;">'+ result.cmList[i].ifcmContent +'</b></div></div>';
+					} 
+					
+					$("#comment_area").html(comment); 
+						
 					modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌 
 			    	modal.style.display = "flex";
 			        
@@ -626,9 +643,11 @@
 				}
 			});	
 		}
+		
 		commentBtn = function() {
 			$("#writecomm").focus();
 		};  
+		
  		 /* goDiaryDetail = function(ifdaSeq) {
   			1.아작스문 작성
   			2.게시물 시퀀스를 넘긴다
@@ -640,7 +659,6 @@
   		var seq = $("#ifdaSeq")
   		var form = $("#mainForm")
   		
-
   		goDiaryDetail = function(ifdaSeq) {
   			seq.attr("value", ifdaSeq);
   			form.attr("action", "").submit();

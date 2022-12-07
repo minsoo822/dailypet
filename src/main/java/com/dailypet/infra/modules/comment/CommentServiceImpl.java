@@ -32,7 +32,6 @@ public class CommentServiceImpl implements CommentService{
 	}
 	@Override
 	public Comment cmItem(int i) throws Exception {
-		// TODO Auto-generated method stub
 		return dao.cmItem(i);
 	}
 	

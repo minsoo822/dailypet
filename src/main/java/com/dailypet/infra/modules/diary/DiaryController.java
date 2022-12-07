@@ -172,8 +172,8 @@ public class DiaryController {
 		
 		//게시물 댓글
 //		
-//		List<Comment> cmList = serviceComment.commentList(cmvo);
-//		result.put("cmList", cmList);
+		List<Comment> cmList = serviceComment.commentList(cmvo);
+		result.put("cmList", cmList);
 //		
 //		Comment cmItem = serviceComment.cmItem((Integer.parseInt(dto.getIfdaSeq())));
 //

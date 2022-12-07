@@ -27,7 +27,7 @@
 	    ON mm.ifmmSeq = mmup.pseq
 	    WHERE da.ifdaSeq = #{ifdaSeq}
 	</select>
-	<select id="cmItem" resultMap="resultMapObj" resultType="Integer">
+	<select id="cmItem" resultMap="resultMapObj">
 		SELECT
 			co.ifcmSeq
 			, co.da_ifdaSeq
@@ -44,7 +44,6 @@
 	    JOIN memberUploaded mmup
 	    ON mm.ifmmSeq = mmup.pseq
 	    WHERE #{i} = da.ifdaSeq
-	
 	</select>
 	
 	<select id="commentOne" resultMap="resultMapObj">

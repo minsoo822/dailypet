@@ -196,7 +196,7 @@
 	                                    </div>
 	                                    <hr class="hr">
 	                                    <br>
-										<div class="d-grid gap-2 btn-sm">
+										<!-- <div class="d-grid gap-2 btn-sm">
 										  <button class="btn btn-warning right" type="button"><i class="fa-solid fa-comments"></i> Kakao로 시작하기</button>
 										</div>
 										<div class="d-grid gap-2 btn-sm">
@@ -206,7 +206,7 @@
 										  <button class="btn btn-danger right" type="button"><i class="fa-brands fa-google"></i> Google로 시작하기</button>
 										</div>
 										<div class="d-grid gap-2 btn-sm">
-											<button class="btn btnBlue right" type="button"><i class="fa-brands fa-facebook"></i> Facebook으로 시작하기</button>
+											<button class="btn btnBlue right" type="button"><i class="fa-brands fa-facebook"></i> Facebook으로 시작하기</button> -->
 											<br>
 											<br>
 										</div>
@@ -216,26 +216,26 @@
 	                            </div>
 	                        </div>
 	                    </div>
-	                </div>
-	                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 top2">
-	                    <div class="contact-pic mb30"><img src="/resources/images/headerLogo.png" class="img-responsive size" alt=""> </div>
-	                    <div class="contact-info">
-	                        <h2>#Daily Pet</h2>
-	                        <address>
-	                            서울특별시 서초구 서초대로77길 55 
-	                            <br> 에이프로스퀘어 3층
-	                        </address>
-	                        <address>
-	                            <span class="text-caps">studio:</span> <strong>02-000-0000</strong>
-	                            <br>
-	                            <span class="text-caps">Mobile:</span> <strong>02-0000-0000</strong>
-	                        </address>
-	                        <address>
-	                            <span class="text-caps">e-mail:</span> <strong>ezen@itAcademy.com</strong>
-	                        </address>
-	                    </div>
-	                    <!-- /.widget search -->
-	                </div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 top2">
+						    <div class="contact-pic mb30"><img src="/resources/images/headerLogo.png" class="img-responsive size" alt=""> </div>
+						    <div class="contact-info">
+						        <h2>#Daily Pet</h2>
+						        <address>
+						            서울특별시 서초구 서초대로77길 55 
+						            <br> 에이프로스퀘어 3층
+						        </address>
+						        <address>
+						            <span class="text-caps">studio:</span> <strong>02-000-0000</strong>
+						            <br>
+						            <span class="text-caps">Mobile:</span> <strong>02-0000-0000</strong>
+						        </address>
+						        <address>
+						            <span class="text-caps">e-mail:</span> <strong>ezen@itAcademy.com</strong>
+						        </address>
+						    </div>
+						    <!-- /.widget search -->
+						</div>
+	                 </div>
 	            </div>
 	        </div>
        </div>

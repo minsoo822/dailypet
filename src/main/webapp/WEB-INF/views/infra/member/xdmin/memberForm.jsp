@@ -218,6 +218,7 @@
 	
     <!-- /.page header -->
     <form id="form" name="memform" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="seq">
     <input type="hidden" id="ifmmSeq" value="${item.ifmmSeq}">
 	<div class="content">
         <div class="container">
@@ -236,7 +237,7 @@
 								<label class="top4">이미지 첨부</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<input class="form-control" id="imagefile" name="imagefile" type="file" multiple="multiple" style="margin-top: 6px; height: 35px">
+								<input class="form-control" id="imagefile" name="user_image" type="file" multiple="multiple" style="margin-top: 6px; height: 35px">
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6">
 								<div id="UploadedImagePreview" class="Scroll">
@@ -286,7 +287,7 @@
 								<label class="top4">닉네임</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<input class="form-control input" type="text" name="ifmmNickame" id="ifmmNickame" value="<c:out value="${item.ifmmNickname }"/>">
+								<input class="form-control input" type="text" name="ifmmNickname" id="ifmmNickname" value="<c:out value="${item.ifmmNickname }"/>">
 							</div>
 						</div>
 						<hr>
@@ -344,6 +345,15 @@
 							</div>
 							<div class="col-lg-2 col-md-2 col-sm-2">
 								<input class="form-control input" type="text" name="ifmmAddr3" id="ifmmAddr3" value="${item.ifmmAddr3 }" readonly>
+							</div>
+						</div>
+						<hr>
+						<div class="row div2 left">
+							<div class="col-lg-2 col-md-2 col-sm-2 gray">
+								<label class="top4">자기소개</label>
+							</div>
+							<div class="col-lg-9 col-md-9 col-sm-9">
+								<input class="form-control input" type="text" name="ifmmIntroduction" id="ifmmIntroduction" value="${item.ifmmIntroduction }" >
 							</div>
 						</div>
 						<hr class="hr1">

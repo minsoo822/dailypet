@@ -266,7 +266,7 @@
 			<nav class="icon">
 				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
 				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage.html"><img src="${me.path}${me.uuidName }" class="profilepic" alt=""></a></div></span>
+				<span><div class="profileheader"><a href="/diary/diaryMypage"><img src="${me.path}${me.uuidName }" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 		<!-- Modal s -->
@@ -364,7 +364,7 @@
 										<span class="comm" style="font-size: 25px"><i class="fa fa-comment-o" onclick="commentBtn()"></i></span>
 									</button>
 								</div>
-								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 0개</b></p> 
+								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 <b id="postlikeCount">0</b>개</b></p> 
 								<div class="cardcontent">
 									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p id="postRegDate"></p>
@@ -590,25 +590,39 @@
 		});
     		  
 		goDiaryDetail = function(ifdaSeq) {
+			
+			var likedBtn = $("#likedBtn");
+			
 			$.ajax({
 				url: '/diary/getPost',
 				type: 'POST',
 				datatype: 'json',
 				data: {
-					ifdaSeq : ifdaSeq 
+					ifdaSeq : ifdaSeq, 
+					loginUser : ${sessSeq}
 				},
 				success:function (result) {
-					$("#ifdaSeq").attr("value", result.ifdaSeq);
+					console.log(result.loginUgerLike);
+					//게시물 정보 
+					$("#ifdaSeq").attr("value",result.ifdaSeq); 
 					$("#postImg").attr("src",result.diaryImg);
-					$("#userImg").attr("src",result.userImg);
-					$("#userID").html(result.userID);
 					$("#postContents").html(result.diaryContents);
 					$("#postRegDate").html(result.regDate);
+					//게시자 정보
+					$("#userImg").attr("src",result.userImg);
+					$("#userID").html(result.userID);
 					//좋아요 카운트
 					$("#postlikeCount").html(result.likeCount);
-					//게시물 정보 
-					//게시자 정보
-					
+					//좋아요 유무에따른 하트모양변경
+					if(result.loginUgerLike == 1) {
+						likedBtn.removeClass('fa-regular');
+		    			likedBtn.addClass('fa-solid');
+		    			likedBtn.css("color",'red');
+					} else{
+						likedBtn.removeClass('fa-solid');
+    	    			likedBtn.addClass('fa-regular');
+    	    			likedBtn.css("color",'black');
+					}
 					// 게시물 한개당 + For문 
 					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
 						//댓글정보

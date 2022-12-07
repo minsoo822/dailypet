@@ -305,52 +305,7 @@
 						<div class="row">
 							<div class="col" id="comment_area">
 								<!-- 댓글 s -->
-								<div class="row">
-									<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
-										<div class="modalprofile">
-											<img src="/resources/images/findpet/700.jpg" class="profilepic">
-										</div>
-									</div>
-									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">	
-										<div class="row">
-											<div class="col">
-												<h5 style="font-size: 14px; margin-bottom: 0px;"><b>haha</b></h5>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col">
-												<h5 style="font-size: 5px; width: 120px;"><b>2022-11-20 06:06:06</b></h5>
-											</div>
-										</div>
-									</div>
-									<div class="col">
-										<b style="font-size: 12px;  margin-left: 20px;">귀엽다!!</b>
-									</div>
-								</div>
-								<%-- <c:forEach items="${cmList }" var="cmList" varStatus="status">
-									<div class="row">
-										<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">
-											<div class="modalprofile">
-												<img id="" src="${cmList.mmPath }${cmList.mmuuidName}" class="profilepic" alt="">
-											</div>
-										</div>
-										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	
-											<div class="row">
-												<div class=col>
-													<h5 style="font-size: 12px; margin-bottom: 0px;"><b><c:out value="${cmList.ifmmID }"/></b></h5>
-												</div>
-											</div>
-											<div class="row">
-												<div class=col>
-													<h5 style="font-size: 5px;"><b id=""><c:out value="${cmList.ifcmRegDate }"/></b></h5>
-												</div>
-											</div>
-										</div>
-										<div class="col">
-											<b style="font-weight: 0;"><c:out value="${cmList.ifcmContent }"/></b>
-										</div>
-									</div>
-								</c:forEach> --%>
+								
 								<!-- 댓글 e -->
 							</div>
 						</div>
@@ -625,16 +580,27 @@
 					
 					for(var i = 0; i < result.cmList.length; i++) {
 						comment += '<div class="row">';
-						comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center;">';
-						comment += '<div class="modalprofile">'; 
-						comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt=""></div></div>';
-						comment += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">';
-						comment += '<div class="row"><div class=col>';
-						comment += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b>'+ result.cmList[i].ifmmID +'</b></h5>';
-						comment += '</div></div><div class="row"><div class=col>';
-						comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
-						comment += '</div></div></div><div class="col" style="display: flex; align-items: center;">';
-						comment += '<span style="font-weight: 0; font-size: 13.5px;">'+ result.cmList[i].ifcmContent +'</span></div></div>';
+							comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center;">';
+								comment += '<div class="modalprofile">';
+									comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt="">';
+								comment += '</div>';
+							comment += '</div>';
+							comment += '<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" id="idbox">';
+								comment += '<div class="row">';
+								comment += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
+								comment += '<h5 style="font-size: 12px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.cmList[i].ifmmID +'</b></h5>';
+								comment += '</div>';
+								comment += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+								comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
+								comment += '</div>';
+								comment += '</div>';
+								comment += '<div class="row">';
+								comment += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
+								comment += '<span style="font-weight: 0; font-size: 13.5px;">'+ result.cmList[i].ifcmContent +'</span>';
+								comment += '</div>';
+								comment += '</div>';
+							comment += '</div>';
+						comment += '</div>';
 					} 
 					
 					$("#comment_area").html(comment);  

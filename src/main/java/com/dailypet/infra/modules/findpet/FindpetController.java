@@ -107,7 +107,6 @@ public class FindpetController {
 	@RequestMapping(value = "findpetResult")
 	public Map<String, Object> findpetResult(FindpetVo vo) throws Exception{
 		
-		vo.setParamsPaging(service.searchCount(vo));
 		
 		Map<String, Object> result = new HashMap<String, Object>(); 
 		
@@ -120,6 +119,7 @@ public class FindpetController {
 					break; 
 				}
 			}
+			vo.setParamsPaging(service.searchCount(vo));
 		}
 		System.err.println(vo.getIffpBreed());
 		//e

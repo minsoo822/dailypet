@@ -22,7 +22,6 @@
 		ON find.iffpSeq = findup.pseq
 		WHERE 1=1
 		ORDER BY find.iffpSeq DESC
-		<include refid="Base.orderByLimitForMysql" />
 		<include refid="Base.selectListLowerForMysql" />
 		
 	</select>
@@ -41,7 +40,6 @@
 				</when>
 			</choose>
 		<!-- ORDER BY a.iffpSeq DESC -->
-		<include refid="Base.orderByLimitForMysql" />
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
@@ -56,6 +54,7 @@
 				</when>
 			</choose>
 	</select>
+	
 	<select id="searchCount" resultType="Integer">
 		SELECT 
 			COUNT(*)
@@ -63,6 +62,7 @@
 		WHERE 1=1	
 		AND iffpBreed = ${iffpBreed}
 	</select>
+	
 	<select id="findpetOne" resultMap="resultMapObj">
 		SELECT
 			  find.*
@@ -279,7 +279,6 @@
 		ON f.iffpSeq = u.pseq
 		WHERE 1=1
 		AND f.iffpBreed = ${iffpBreed}
-		<include refid="Base.orderByLimitForMysql" />
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
@@ -315,7 +314,6 @@
 		    ,a.iffpDelNY
 		<include refid="selectCommon" />
 		ORDER BY a.iffpSeq DESC
-		<include refid="Base.orderByLimitForMysql" />
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
     

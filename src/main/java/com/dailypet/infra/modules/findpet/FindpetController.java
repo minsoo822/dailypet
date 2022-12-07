@@ -148,18 +148,18 @@ public class FindpetController {
 	@RequestMapping(value = "findpetxdList")
 	public String findpetxdList(@ModelAttribute("vo") FindpetVo vo, Model model) throws Exception {
 		
+		List<Findpet> listA = service.AreaAdd(vo);
+		model.addAttribute("listA", listA);
+		
+		List<Findpet> listB = service.BreedAdd(vo);
+		model.addAttribute("listB", listB);
+		
 		setSearchAndPaging(vo);
 		
 		if(vo.getTotalRows() > 0) {
 			List<Findpet> list = service.xdminList(vo);
 			model.addAttribute("list", list);
 		}
-		
-		List<Findpet> listA = service.AreaAdd(vo);
-		model.addAttribute("listA", listA);
-		
-		List<Findpet> listB = service.BreedAdd(vo);
-		model.addAttribute("listB", listB);
 		
 		return "infra/findpet/xdmin/findpetxdList";
 	}

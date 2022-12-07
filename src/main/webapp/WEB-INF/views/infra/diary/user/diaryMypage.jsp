@@ -28,8 +28,8 @@
 		    overflow: hidden;
 		}
 		.modalprofile {
-			width: 30px;
-		    height: 30px; 
+			width: 40px;
+		    height: 40px; 
 		    border-radius: 70%;
 		    overflow: hidden;
 		}
@@ -210,10 +210,6 @@
 			padding: 0;
 		}
 		
-		#idbox {
-			padding-top: 15px;
-		} 
-		
 		.col-lg-5 {
 			position: relative;
 			height: 700px;
@@ -280,32 +276,31 @@
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
-							<img id="postImg" src="" class="img-responsive2" alt="">
+							<img id="postImg" class="img-responsive2">
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="row" style="margin-top: 10px">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 								<div class="modalprofile">
-									<img id="userImg" src="" class="profilepic" alt="">
+									<img id="userImg" class="profilepic">
 								</div>
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-								<h5 style="margin-left: -15px; font-size: 12px"><b id="userID"> </b></h5>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding-top: 5px;">	
+								<span style="margin-left: -4px; font-size: 16px"><b id="userID"></b></span>
 							</div>
-						</div>
-						<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
-						
-						<div class="row" style="margin-top: 10px">
+						</div> 
+						<hr style="color: red; margin-top: 12px; margin-bottom: 0">
+						<div class="row" style="margin-top: 10px;"> 
 							<div class="col">
 								<p name="ifdaContent" style="font-size: 14px;" id="postContents"></p>
 							</div>
-						</div>
+						</div> 
 						<hr style="color: lightgray; margin-top: 25px; margin-bottom: 15px;">
 						<div class="row">
-							<div class="col" id="comment_area">
+							<div class="col" id="comment_area"> 
 								<!-- 댓글 s -->
-								
+								 
 								<!-- 댓글 e -->
 							</div>
 						</div>
@@ -580,26 +575,26 @@
 					
 					for(var i = 0; i < result.cmList.length; i++) {
 						comment += '<div class="row">';
-							comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center;">';
-								comment += '<div class="modalprofile">';
-									comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt="">';
-								comment += '</div>';
-							comment += '</div>';
-							comment += '<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" id="idbox">';
-								comment += '<div class="row">';
-								comment += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-								comment += '<h5 style="font-size: 12px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.cmList[i].ifmmID +'</b></h5>';
-								comment += '</div>';
-								comment += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
-								comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
-								comment += '</div>';
-								comment += '</div>';
-								comment += '<div class="row">';
-								comment += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
-								comment += '<span style="font-weight: 0; font-size: 13.5px;">'+ result.cmList[i].ifcmContent +'</span>';
-								comment += '</div>';
-								comment += '</div>';
-							comment += '</div>';
+						comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center; width: 50px;">';
+						comment += '<div class="modalprofile">';
+						comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt="">';
+						comment += '</div>';
+						comment += '</div>';
+						comment += '<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">';
+						comment += '<div class="row">';
+						comment += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
+						comment += '<span style="font-size: 13px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.cmList[i].ifmmID +'</b></span>';
+						comment += '</div>';
+						comment += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+						comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
+						comment += '</div>';
+						comment += '</div>';
+						comment += '<div class="row">';
+						comment += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
+						comment += '<span style="font-weight: 0; font-size: 14px;">'+ result.cmList[i].ifcmContent +'</span>';
+						comment += '</div>';
+						comment += '</div>'; 
+						comment += '</div>';
 						comment += '</div>';
 					} 
 					

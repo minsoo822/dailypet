@@ -89,11 +89,13 @@
 		hr{
 			margin-top: 5px;
 			margin-bottom: 3px;
+			color: #afafaf;
 		}
 		
-		hr1{
+		hr1{ 
 			margin-top: 10px;
 			margin-bottom: 10px;
+			color: #afafaf;
 		}
 		
 		.form-control{
@@ -237,6 +239,7 @@
 	    .btn-space{
 		    margin-right: 5px;
 		}
+		
 		.userimgBox {
 			width: 100px;
 			height: 100px;
@@ -338,9 +341,9 @@
 		                        	<div class="col-lg-4 col-md-4 col-sm-4">
 										<input type="text" class="form-control input" name="ifmmEmailID" id="ifmmEmailID">
 									</div>	
-									<div class="col-1 top2">
+									<div class="col-1 top2" style="max-width: 30px;">
 										<span>@</span>
-									</div>
+									</div>  
 									<div class="col-lg-4 col-md-4 col-sm-4">
 										<select class="form-select select1" name="ifmmEmailDomain">
 											<option value="">::선택::</option>
@@ -427,8 +430,17 @@
 									</div>
 								</div>
 								<hr>
+								<div class="row div2 left">
+		                       		<div class="col-lg-2 col-md-2 col-sm-2 gray">
+		                        		<label class="top4">자기소개</label>
+		                        	</div> 
+		                        	<div class="col-lg-4 col-md-4 col-sm-4">
+		                       			<input class="form-control input" type="text" name="ifmmIntroduction" placeholder="">
+		                        	</div>
+		                       	</div>
+								<hr>
 								<br>
-								<br>
+								<br> 
 								<h3>반려동물 정보 등록</h3>
 								<hr>
 								<div id="petPoint">
@@ -441,7 +453,7 @@
 										</div>
 										<div class="col-lg-6 col-md-6 col-sm-6 top2">
 											<div id="UploadedImagePreview" class="addScroll">
-												<img src="" id="petImage" style="height: 180px;">
+												<img id="petImage" style="height: 180px;">
 											</div>
 										</div>							
 									</div>

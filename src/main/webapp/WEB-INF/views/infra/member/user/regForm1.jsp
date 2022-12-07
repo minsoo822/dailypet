@@ -104,6 +104,10 @@
 	    	color: #f3f0eb;
 	    	cursor: pointer;
 	    }
+	    
+	    hr{
+	    	color: #e2e2e2;
+	    }
     </style>
 </head>
 

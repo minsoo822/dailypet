@@ -98,9 +98,10 @@
 	<!-- herder s -->
     <%@include file="../../../common/xdmin/include/header.jsp"%>
     <!-- header e -->
-    <form method="post" id="findModForm" enctype="multipart/form-data">
+    <form method="post" id="findModForm" name="findModForm" enctype="multipart/form-data" onsubmit="return check()">
     <input type="hidden" name="iffpSeq" value="${item.iffpSeq }">
     <input type="hidden" name="ifmmSeq" value="${sessSeq}">
+    <input type="hidden" name="seq" value="${sessSeq}">
     <div class="totalContent">
 	    <div class="content">
 	        <div class="container">
@@ -247,13 +248,13 @@
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
     <script type="text/javascript">
-    
     var findpetInst = "/findpet/findpetInst";
     var findpetUpdt = "/findpet/findpetUpdt";
     var findpetList = "/findpet/findpetList";
     
     var iffpSeq = $("input:hidden[name=iffpSeq]")
     var form = $("#findModForm")
+    var seq = $("input:hidden[name=seq]")
     
     $("#saveBtn").on("click", function(){
     	if(iffpSeq.val() == "0" || iffpSeq.val() == "") {
@@ -262,8 +263,10 @@
     		form.attr("action", findpetUpdt).submit();
     	}
     });
+    
     $("#backBtn").on("click", function(){
-    	form.attr("action", findpetList).submit();
+    	/* form.attr("action", findpetList).submit(); */
+    	location.href = "/findpet/findpetList";
     });
     	
     /* 카카오지도API */
@@ -307,13 +310,67 @@
 		$("#address").val('');
 		$("#address_detail").val('');
 	})
+	
 	//이미지 미리보기
     $("#file").on("change", function(e) {
 		var tmp = e.target.files[0];
 	    var img = URL.createObjectURL(tmp);
 	    $("#image").attr("src", img);
 	});
-    
+     
+	//validation
+	function check(){
+			var fp = document.findModForm;
+			
+			if (fp.iffpName.value == "") {
+	            alert("이름을 입력해주세요. 이름을 모르시면 '모름'이라고 적어주시기 바랍니다.");
+	            fp.iffpName.focus();
+	            return false;  
+	        }
+			
+			if (fp.iffpBreed.value == "") {
+	            alert("품종을 입력해주세요. 해당 종이 없을 경우 '기타'를 선택해주시기 바랍니다.");
+	            fp.ifrsPurpose.focus();
+	            return false;  
+	        }
+			
+			if (fp.iffpGender.value == "") {
+	            alert("성별을 입력해주세요.");
+	            fp.iffpGender.focus();
+	            return false;  
+	        }
+			
+			if (fp.iffpCharacteristic.value == "") {
+	            alert("특징을 입력해주세요.");
+	            fp.iffpCharacteristic.focus();
+	            return false;  
+	        }
+			
+			if (fp.iffpAnimalShelterzipCode.value == "") {
+	            alert("필수입력 사항입니다.");
+	            fp.iffpAnimalShelterzipCode.focus();
+	            return false;  
+	        }
+			
+			if (fp.iffpSpotLocation.value == "") {
+	            alert("필수입력 사항입니다.");
+	            fp.iffpSpotLocation.focus();
+	            return false;  
+	        }
+			
+			if (fp.iffpSpotPlace.value == "") {
+	            alert("필수입력 사항입니다.");
+	            fp.iffpSpotPlace.focus();
+	            return false;  
+	        }
+			
+			if (fp.iffpSpotDate.value == "") {
+	            alert("필수입력 사항입니다.");
+	            fp.iffpSpotDate.focus();
+	            return false;  
+	        }
+			
+	    }
     </script>
     
 </body>

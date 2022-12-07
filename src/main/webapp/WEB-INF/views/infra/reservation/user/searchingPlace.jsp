@@ -13,7 +13,6 @@
 </head>
 
 <style type="text/css">
-
 	.btn {
 	    padding: 7px 12px;
 	    color: white;
@@ -107,7 +106,6 @@
 #pagination {margin:10px auto;text-align: center;}
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
-
 </style>
 
 
@@ -151,7 +149,7 @@
 						    </div>
 						</div>
 						<br>
-						<form id="form" name="formRV" method="post">
+						<form id="form" name="formRV" method="post" onsubmit="return check()">
 					    	<input type="hidden" name="ifmmSeq" value="${user.ifmmSeq}">
 					    	<input type="hidden" name="ifmmName" value="${user.ifmmName}">
 					    	<input type="hidden" name="ifmmTel" value="${user.ifmmTel}">
@@ -479,7 +477,7 @@
 		        fragment.appendChild(el);
 		    }
 		    paginationEl.appendChild(fragment);
-		}
+		} 
 		
 		// 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 		// 인포윈도우에 장소명을 표시합니다
@@ -510,7 +508,29 @@
 		$("#bookingbtn").on("click", function(){
 	   		form.attr("action", goUrlInst).submit();
 		});
-
+		
+		//validation
+		function check(){
+			var re = document.formRV;
+			
+			if (re.ifrsPetName.value == "") {
+	            alert("동물 이름을 입력해주세요.");
+	            re.ifrsPetName.focus();
+	            return false;  
+	        }
+			
+			if (re.ifrsPurpose.value == "") {
+	            alert("방문 목적을 작성해주세요.");
+	            re.ifrsPurpose.focus();
+	            return false;  
+	        }
+			
+			if (re.ifrsHopeDate.value == "") {
+	            alert("예약 날짜를 입력해주세요.");
+	            re.ifrsHopeDate.focus();
+	            return false;  
+	        }
+	    }
 	/*	 		
 		function openRV() {
 			var Pname = $("#placeName").text();

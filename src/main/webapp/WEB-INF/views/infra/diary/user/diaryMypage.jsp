@@ -78,10 +78,10 @@
 		}
 		
 		.icon {
-			margin-right: 400px;
+			margin-right: 350px;
 			float: right;
 		}
-		
+		 
 		.icon span {
 			margin: 0 15px;
 			vertical-align: middle;
@@ -99,10 +99,12 @@
 			margin-bottom: 10px;
 			color: black;
 		}
+		
 		.img-responsive {
 			margin: 0px;
 			height: 450px;
 		}
+		
 		.img-responsive img {
 			width: 100%;
 		}
@@ -134,6 +136,7 @@
 	        position: relative;
 	        bottom: 70px;
 	    }
+	    
 	    .material-icons-outlined {
 			position: relative;
 			bottom: 90px;
@@ -141,7 +144,8 @@
 			color:white;
 			font-size: 20pt;		
 		}
-	     .modal_title{
+		
+	    .modal_title{
 	        display: flex;
 	        flex-direction: row;
 	        justify-content: space-between;
@@ -153,6 +157,7 @@
 	        flex: 0 0 40px;
 	        text-align: center;
 	    }
+	    
 	    .imgdetail {
 	    	width: 570px;
 	    	height: 700px;
@@ -161,6 +166,7 @@
 	    	justify-content: center;
 	    	align-items: center;
 	    }
+	    
 	    .img-responsive2 {
 	    	object-fit: cover;
 	    	max-width: 100%;
@@ -205,8 +211,8 @@
 		}
 		
 		#idbox {
-			padding: 7.5px;
-		}
+			padding-top: 15px;
+		} 
 		
 		.col-lg-5 {
 			position: relative;
@@ -258,8 +264,8 @@
 	    <!-- /.page header -->
 	    <div class="diaryheader">
 			<nav class="icon"> 
-				<span style="font-size: 20px"><a href="/diary/diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
-				<span style="font-size: 25px"><a href="/diary/diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
+				<span style="font-size: 20px;"><a href="/diary/diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
+				<span style="font-size: 25px;"><a href="/diary/diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
 				<span><div class="profileheader"><a href="/diary/diaryMypage"><img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
@@ -292,7 +298,7 @@
 						
 						<div class="row" style="margin-top: 10px">
 							<div class="col">
-								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px" id="postContents"></p>
+								<p name="ifdaContent" style="font-size: 14px;" id="postContents"></p>
 							</div>
 						</div>
 						<hr style="color: lightgray; margin-top: 25px; margin-bottom: 15px;">
@@ -318,7 +324,7 @@
 										</div>
 									</div>
 									<div class="col">
-										<b style="font-size: 14px;  margin-left: 20px;">귀엽다!!</b>
+										<b style="font-size: 12px;  margin-left: 20px;">귀엽다!!</b>
 									</div>
 								</div>
 								<%-- <c:forEach items="${cmList }" var="cmList" varStatus="status">
@@ -619,19 +625,19 @@
 					
 					for(var i = 0; i < result.cmList.length; i++) {
 						comment += '<div class="row">';
-						comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
-						comment += '<div class="modalprofile">';
-						comment += '<img id="" src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt=""></div></div>';
+						comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center;">';
+						comment += '<div class="modalprofile">'; 
+						comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt=""></div></div>';
 						comment += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">';
 						comment += '<div class="row"><div class=col>';
-						comment += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.cmList[i].ifmmID +'</b></h5>';
+						comment += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b>'+ result.cmList[i].ifmmID +'</b></h5>';
 						comment += '</div></div><div class="row"><div class=col>';
-						comment += '<h5 style="font-size: 5px;"><b id="">'+ result.cmList[i].ifcmRegDate +'</b></h5>';
-						comment += '</div></div></div><div class="col">';
-						comment += '<b style="font-weight: 0;">'+ result.cmList[i].ifcmContent +'</b></div></div>';
+						comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
+						comment += '</div></div></div><div class="col" style="display: flex; align-items: center;">';
+						comment += '<span style="font-weight: 0; font-size: 13.5px;">'+ result.cmList[i].ifcmContent +'</span></div></div>';
 					} 
 					
-					$("#comment_area").html(comment); 
+					$("#comment_area").html(comment);  
 						
 					modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌 
 			    	modal.style.display = "flex";

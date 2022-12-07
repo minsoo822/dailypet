@@ -214,6 +214,7 @@
 		        </div>
 		    </div>
 	    </div>
+	    
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
 			<div class="modal_window">
@@ -234,6 +235,7 @@
 			</div>
 		</div>
 		<!-- Modal e -->
+		
 	</form>
     <%@include file="../../../common/xdmin/include/footer.jsp"%>
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>

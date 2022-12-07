@@ -63,11 +63,11 @@
     .text {
     	padding-top: 10px;
     	padding-left: 15px;
+    	font-weight: bold;
     }
     .contents {
     	padding-top: 10px;
     	padding-left: 40px;
-    	font-weight: bold;
     }
     .myPage {
     	margin-bottom: 30px;
@@ -131,36 +131,36 @@
 										</div>                      	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">소개글</div>
-										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">소개글</div>
+										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 contents">
 											<c:out value="${item.ifmmIntroduction }"/>
-										</div>                            	
+										</div>                             	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text">이메일</div>
-										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">이메일</div>
+										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 contents">
 											<c:out value="${item.ifmmEmail }"/>
-										</div>                            	
+										</div>                            	 
 		                            </div>
 		                            <div class="row">
-										<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 text text">주소</div>
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ge-1 contents" style="padding-right: 0px;">
+										<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">주소</div>
+										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 contents" style="padding-right: 0px;">
 											<c:out value="${item.ifmmAddr1 }"/>
 										</div>
 									</div>
 		                            <div class="row">
-		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
-										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">&nbsp;</div>
+										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 contents">
 											<c:out value="${item.ifmmAddr3 }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">&nbsp;</div>
-										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">&nbsp;</div>
+										<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 contents">
 											<c:out value="${item.ifmmAddr2 }"/>
 										</div>                            	
 		                            </div>
-		                            <hr>
+		                            <hr> 
 		                        </div>
 		                    </div>
 		                    <div class="row">
@@ -195,13 +195,13 @@
 										</div>                      	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">품종</div>
-										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">품종</div>
+										<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 contents">
 											<c:out value="${item.ifamKind }"/>
 										</div>                            	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">칩</div>
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">칩</div>
 										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
 											<%-- <c:out value="${item.ifamChipNY }"/> --%>
 											<c:choose>
@@ -211,7 +211,7 @@
 										</div>                            	
 		                            </div>
 		                            <div class="row">
-		                            	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text">접종</div>
+		                            	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text">접종</div>
 										<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 contents">
 											<%-- <c:out value="${item.ifamVaccinateNY }"/> --%>
 											<c:choose>

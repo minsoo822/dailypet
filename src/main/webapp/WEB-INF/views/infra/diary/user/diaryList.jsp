@@ -114,7 +114,7 @@
 	}
 	
 	.icon {
-		margin-right: 400px;
+		margin-right: 350px;
 		float: right;
 	}
 	
@@ -194,10 +194,10 @@
     <input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
     
 		<div class="diaryheader">
-			<nav class="icon">
-				<span style="font-size: 20px"><a href="diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
-				<span style="font-size: 25px"><a href="diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="diaryMypage"><img src="${item.memberPath}${item.memberuuidName }" class="profilepic" alt=""></a></div></span>
+			<nav class="icon"> 
+				<span style="font-size: 20px;"><a href="/diary/diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
+				<span style="font-size: 25px;"><a href="/diary/diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
+				<span><div class="profileheader"><a href="/diary/diaryMypage"><img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div> 
 		<!-- <div class="diaryheader">

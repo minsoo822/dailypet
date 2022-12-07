@@ -51,7 +51,7 @@
 	}
 	
 	.icon {
-		margin-right: 400px;
+		margin-right: 350px;
 		float: right;
 	}
 	
@@ -67,7 +67,7 @@
 	
 	#whole {
 		width: 1000px;
-	}
+	} 
 	
 	.profilepic {
 		width: 100%;
@@ -187,10 +187,10 @@
     <!-- header e -->
     <!-- /.page header -->
 	<div class="diaryheader">
-		<nav class="icon">
-			<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
-			<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-			<span><div class="profileheader"><a href="diaryMypage.html"><img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
+		<nav class="icon"> 
+			<span style="font-size: 20px;"><a href="/diary/diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
+			<span style="font-size: 25px;"><a href="/diary/diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
+			<span><div class="profileheader"><a href="/diary/diaryMypage"><img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
 		</nav>
 	</div>
     <div class="content">

@@ -206,9 +206,9 @@
 										  <button class="btn btn-danger right" type="button"><i class="fa-brands fa-google"></i> Google로 시작하기</button>
 										</div>
 										<div class="d-grid gap-2 btn-sm">
-											<button class="btn btnBlue right" type="button"><i class="fa-brands fa-facebook"></i> Facebook으로 시작하기</button> -->
+											<button class="btn btnBlue right" type="button"><i class="fa-brands fa-facebook"></i> Facebook으로 시작하기</button>
 											<br>
-											<br>
+											<br> -->
 										</div>
 	                                </div>
 	                               	<span class="mem">아직 회원이 아니신가요?</span>

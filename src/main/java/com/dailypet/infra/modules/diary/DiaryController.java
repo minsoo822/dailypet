@@ -152,7 +152,7 @@ public class DiaryController {
 	
 	@ResponseBody
 	@RequestMapping(value = "getPost")
-	public Map<String, Object> getPost(CommentVo cmvo, HttpSession httpSession, Diary dto, Model model) throws Exception {
+	public Map<String, Object> getPost(Comment cm,CommentVo cmvo, HttpSession httpSession, Diary dto, Model model) throws Exception {
 		
 		Map<String, Object> result = new HashMap<String, Object>();
 		
@@ -169,9 +169,19 @@ public class DiaryController {
 		result.put("likeCount", item.getLikeCount());
 		result.put("loginUgerLike", item.getLike_ing());
 		
+		
 		//게시물 댓글
+		
 		List<Comment> cmList = serviceComment.commentList(cmvo);
-		model.addAttribute("cmList", cmList);
+		result.put("cmList", cmList);
+		
+		Comment cmItem = serviceComment.cmItem(cm);
+
+		result.put("ifdaSeq", cmItem.getIfdaSeq());
+		result.put("ifcmContent", cmItem.getIfcmContent());
+		result.put("ifcmRegDate", cmItem.getIfcmRegDate());
+		result.put("ifmmID", cmItem.getIfmmID());
+		result.put("cmimg", cmItem.getMmPath() + cmItem.getUuidName());
 
 		return result;
 	}

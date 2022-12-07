@@ -23,7 +23,9 @@
               <div class="footer-widget">
                   <!-- newsletter block -->
                   <h3 class="widget-title">e-mail Us</h3>
-                  <p>ezenIt@ezen.com</p>
+                  <p>minsoo822@naver.com</p>
+                  <p>jjjy879@naver.com</p>
+                  <p>cuj0405@naver.com</p>
               </div>
               <!-- newsletter block -->
           </div>

@@ -148,6 +148,7 @@
 			,ifamKind	= #{ifamKind}
 			,ifamChipNY	= #{ifamChipNY}
 			,mm_ifmmSeq	= #{ifmmSeq}
+			,ifamVaccinateNY = #{ifamVaccinateNY}
 		WHERE 1=1
 		AND ifamSeq = #{ifamSeq}
 	</update>
@@ -191,5 +192,41 @@
 		JOIN animal b ON b.mm_ifmmSeq = a.ifmmSeq
 		WHERE 1=1
 	</select>
+	
+	<!-- 관리자 -->
+	<insert id="xdminInsert">
+		INSERT INTO animal(
+			mm_ifmmSeq
+			, ifamName
+			, ifamAge
+			, ifamKind
+			, ifamGender
+			, ifamChipNY
+			, ifamVaccinateNY
+		)
+		VALUES(
+			#{mm_ifmmSeq}
+			, #{ifamName}
+			, #{ifamAge}
+			, #{ifamKind}
+			, #{ifamGender}
+			, #{ifamChipNY}
+			, #{ifamVaccinateNY}
+		)
+	</insert>
+	
+	<update id="xdminUpdate">
+		UPDATE animal
+		SET
+			 ifamGender	= #{ifamGender}
+			,ifamName	= #{ifamName}
+			,ifamAge	= #{ifamAge}
+			,ifamKind	= #{ifamKind}
+			,ifamChipNY	= #{ifamChipNY}
+			,ifamVaccinateNY = #{ifamVaccinateNY}
+			,mm_ifmmSeq	= #{mm_ifmmSeq}
+		WHERE 1=1
+		AND ifamSeq = #{ifamSeq}
+	</update>
 	
 </mapper>

@@ -52,8 +52,23 @@ public class AnimalDao {
 	public List<Animal> selectWith(AnimalVo vo) { 
 		return sqlSession.selectList(namespace + ".selectWith", vo);
 	}
+	
 	//펫정보수정
-	public int petUpdate(Animal dto) { return sqlSession.update(namespace + ".petUpdate", dto); }
-	public int petImgUpdate(Animal dto) { return sqlSession.update(namespace + ".petImgUpdate", dto); }
+	public int petUpdate(Animal dto) { 
+		return sqlSession.update(namespace + ".petUpdate", dto); 
+	}
+	
+	public int petImgUpdate(Animal dto) { 
+		return sqlSession.update(namespace + ".petImgUpdate", dto); 
+	}
+	
+	//관리자
+	public int xdminInsert(Animal dto) {
+		return sqlSession.insert(namespace + ".xdminInsert", dto);
+	}
+	
+	public int xdminUpdate(Animal dto) {
+		return sqlSession.update(namespace + ".xdminUpdate", dto);
+	}
 	
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping(value = "/animal/")
@@ -58,6 +59,33 @@ public class AnimalController {
 		model.addAttribute("listimg", listimg);
 		
 		return "infra/animal/xdmin/animalForm";
+	}
+	
+	@RequestMapping(value = "animalInst")
+	public String animalInst(AnimalVo vo, Animal dto, RedirectAttributes redirectAttributes) throws Exception {
+		
+		service.xdminInsert(dto);
+		service.petimgInsert(dto);
+		
+		vo.setIfamSeq(dto.getIfamSeq());
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/animal/animalForm";
+	}
+	
+	@SuppressWarnings(value = { "all" })
+	@RequestMapping(value = "animalUpdt")
+	public String animalUpdt(AnimalVo vo, Animal dto, RedirectAttributes redirectAttributes) throws Exception {
+		
+		dto.setPseq(vo.getIfamSeq());
+		
+		service.xdminUpdate(dto);
+		service.petImgUpdate(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/animal/animalForm";
 	}
 	
 }

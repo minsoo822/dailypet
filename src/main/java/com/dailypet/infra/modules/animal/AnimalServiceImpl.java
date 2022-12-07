@@ -62,12 +62,14 @@ public class AnimalServiceImpl implements AnimalService{
         }
 		return 0;
 	}
-	//펫정보수정
-
+	
 	@Override
-	public int petUpdate(Animal dto) throws Exception {
+	public int petImgUpdate(Animal dto) throws Exception {
 		
-		int j = 0;
+		//여기부터 파일
+        String seq = dao.petLastSeq(dto); //seq 자동으로 부여되기때문
+
+        int j = 0;
         for(MultipartFile myFile : dto.getPet_image()) {
 
             if(!myFile.isEmpty()) {
@@ -78,12 +80,19 @@ public class AnimalServiceImpl implements AnimalService{
                 dto.setType(1);
                 dto.setDefaultNy(j == 0 ? 1 : 0);
                 dto.setSort(j+1);
-                dto.setPseq(dto.getIfamSeq());
+                dto.setPseq(seq+"");
 
                 dao.petImgUpdate(dto);
                 j++;
             }
         }
+		return 0;
+	}
+	
+	//펫정보수정
+	@Override
+	public int petUpdate(Animal dto) throws Exception {
+		
 		return dao.petUpdate(dto);
 	}
 	
@@ -95,6 +104,18 @@ public class AnimalServiceImpl implements AnimalService{
 	@Override
 	public List<Animal> selectWith(AnimalVo vo) throws Exception {
 		return dao.selectWith(vo);
+	}
+	
+	@Override
+	public int xdminInsert(Animal dto) throws Exception {
+
+		return dao.xdminInsert(dto);
+	}
+	
+	@Override
+	public int xdminUpdate(Animal dto) throws Exception {
+		
+        return dao.xdminUpdate(dto);
 	}
 	
 }

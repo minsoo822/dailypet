@@ -264,7 +264,7 @@
 								<label class="top4">회원명(주인)</label>
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-4">
-								<select class="form-select" name="ifmmName">
+								<select class="form-select" name="mm_ifmmSeq">
 									<option value="">::회원 찾기::</option>
 									<c:forEach items="${with}" var="with" varStatus="status">
 										<option value="<c:out value="${with.ifmmSeq}"/>" <c:if test="${with.ifmmSeq eq item.mm_ifmmSeq }"> selected</c:if>><c:out value="${with.ifmmName }"/></option>

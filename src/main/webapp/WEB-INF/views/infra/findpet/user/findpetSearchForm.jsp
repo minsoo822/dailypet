@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -13,7 +12,6 @@
 	<title>유기동물 검색</title>
 
 	<style type="text/css">
-	
 		#imgsize {
 			width: 258px;
 			height: 218px;
@@ -61,8 +59,8 @@
 			margin-left: 190px;
 		}
 	
-	/* inputfile 커스텀 s */
-	/*  .filebox {
+		/* inputfile 커스텀 s */
+		/*  .filebox {
 		    	text-align: center;
 		    }
 		    
@@ -105,10 +103,10 @@
 			    overflow: hidden;
 			    border: 0;
 			} */
-	/* inputfile 커스텀 e */
+		/* inputfile 커스텀 e */
 	
-	/* 이미지 프리뷰 s */
-	/* .preview {
+		/* 이미지 프리뷰 s */
+		/* .preview {
 				margin-bottom: 50px;
 			}
 			
@@ -124,220 +122,220 @@
 				max-height: 100%;
 				padding: 20px 0px 0px 40px;
 			} */
-	/* 이미지 프리뷰 e */
-	.btn {
-		border: 0px;
-		background-color: white;
-		color: black;
-		float: right;
-		padding: 0px;
-	}
-	
-	.left {
-		background-color: #F0F0F0;
-		border: 1px solid black;
-		width: 75px;
-	}
-	
-	.down {
-		margin-top: 5px;
-	}
-	
-	/* 이미지 첨부 */
-	.file-upload {
-		background-color: #ffffff;
-		width: 800px;
-		margin: 0 auto;
-		padding: 20px;
-	}
-	
-	.file-upload-btn {
-		width: 100%;
-		margin: 0;
-		color: #372d2b;
-		background: #f3f0eb;
-		border: none;
-		padding: 10px;
-		border-radius: 4px;
-		transition: all .2s ease;
-		outline: none;
-		text-transform: uppercase;
-		font-weight: 700;
-	}
-	
-	.file-upload-btn:hover {
-		background: #372d2b;
-		color: #ffffff;
-		transition: all .2s ease;
-		cursor: pointer;
-	}
-	
-	.file-upload-btn:active {
-		border: 0;
-		transition: all .2s ease;
-	}
-	
-	.file-upload-content {
-		display: none;
-		text-align: center;
-	}
-	
-	.file-upload-input {
-		position: absolute;
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		height: 100%;
-		outline: none;
-		opacity: 0;
-		cursor: pointer;
-	}
-	
-	.image-upload-wrap {
-		margin-top: 20px;
-		border: 4px dashed #c3b9b6;
-		position: relative;
-	}
-	
-	.image-dropping, .image-upload-wrap:hover {
-		background-color: #ffffff;
-		border: 4px dashed #372d2b;
-	}
-	
-	.image-title-wrap {
-		padding: 0 15px 15px 15px;
-		color: #222;
-	}
-	
-	.drag-text {
-		text-align: center;
-	}
-	
-	.drag-text h3 {
-		font-weight: 100;
-		text-transform: uppercase;
-		color: #3d423f;
-		padding: 60px 0;
-	}
-	
-	.file-upload-image {
-		max-height: 200px;
-		max-width: 200px;
-		margin: auto;
-		padding: 20px;
-	}
-	
-	.remove-image {
-		width: 200px;
-		margin: 0;
-		color: #fff;
-		background: #cd4535;
-		border: none;
-		padding: 5px;
-		border-radius: 4px;
-		transition: all .2s ease;
-		outline: none;
-		text-transform: uppercase;
-		font-size: 14px;
-	}
-	
-	.remove-image:hover {
-		background: #c13b2a;
-		color: #ffffff;
-		transition: all .2s ease;
-		cursor: pointer;
-	}
-	
-	.remove-image:active {
-		border: 0;
-		transition: all .2s ease;
-	}
-	
-	.nav-tabs {
-	    border-bottom: 1px solid #ddd;
-	}
-	
-	.nav {
-	    padding-left: 0;
-	    margin-bottom: 0;
-	    list-style: none;
-	}
-	
-	.nav-tabs>li {
-	    float: left;
-	    margin-bottom: -1px;
-	}
-	
-	.nav>li {
-	    position: relative;
-	    display: block;
-	}
-	
-	.nav-tabs>li>.active {
-	    margin-right: 2px;
-	    line-height: 1.42857143;
-	    border: 1px solid transparent;
-	    border-radius: 4px 4px 0 0;
-	    background-color: #C9AF96 !important;
-	    color: white !important;
-	}
-	
-	.nav-tabs>li>.nav-link {
-	    margin-right: 2px;
-	    line-height: 1.42857143;
-	    border: 1px solid transparent;
-	    border-radius: 4px 4px 0 0;
-	    color: #aa9144;
-	}
-	
-	.nav>li>.nav-link {
-	    position: relative;
-	    background-color: transparent;
-	    display: block;
-	    padding: 10px 15px;
-	}
-	
-	.fade {
-		opacity: 100;
-	}
-/* ---------------------------------------------------------------------- */	
-
+			
+		/* 이미지 프리뷰 e */
+		.btn {
+			border: 0px;
+			background-color: white;
+			color: black;
+			float: right;
+			padding: 0px;
+		}
+		
+		.left {
+			background-color: #F0F0F0;
+			border: 1px solid black;
+			width: 75px;
+		}
+		
+		.down {
+			margin-top: 5px;
+		}
+		
+		/* 이미지 첨부 */
+		.file-upload {
+			background-color: #ffffff;
+			width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		
+		.file-upload-btn {
+			width: 100%;
+			margin: 0;
+			color: #372d2b;
+			background: #f3f0eb;
+			border: none;
+			padding: 10px;
+			border-radius: 4px;
+			transition: all .2s ease;
+			outline: none;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		
+		.file-upload-btn:hover {
+			background: #372d2b;
+			color: #ffffff;
+			transition: all .2s ease;
+			cursor: pointer;
+		}
+		
+		.file-upload-btn:active {
+			border: 0;
+			transition: all .2s ease;
+		}
+		
+		.file-upload-content {
+			display: none;
+			text-align: center;
+		}
+		
+		.file-upload-input {
+			position: absolute;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			outline: none;
+			opacity: 0;
+			cursor: pointer;
+		}
+		
+		.image-upload-wrap {
+			margin-top: 20px;
+			border: 4px dashed #c3b9b6;
+			position: relative;
+		}
+		
+		.image-dropping, .image-upload-wrap:hover {
+			background-color: #ffffff;
+			border: 4px dashed #372d2b;
+		}
+		
+		.image-title-wrap {
+			padding: 0 15px 15px 15px;
+			color: #222;
+		}
+		
+		.drag-text {
+			text-align: center;
+		}
+		
+		.drag-text h3 {
+			font-weight: 100;
+			text-transform: uppercase;
+			color: #3d423f;
+			padding: 60px 0;
+		}
+		
+		.file-upload-image {
+			max-height: 200px;
+			max-width: 200px;
+			margin: auto;
+			padding: 20px;
+		}
+		
+		.remove-image {
+			width: 200px;
+			margin: 0;
+			color: #fff;
+			background: #cd4535;
+			border: none;
+			padding: 5px;
+			border-radius: 4px;
+			transition: all .2s ease;
+			outline: none;
+			text-transform: uppercase;
+			font-size: 14px;
+		}
+		
+		.remove-image:hover {
+			background: #c13b2a;
+			color: #ffffff;
+			transition: all .2s ease;
+			cursor: pointer;
+		}
+		
+		.remove-image:active {
+			border: 0;
+			transition: all .2s ease;
+		}
+		
+		.nav-tabs {
+		    border-bottom: 1px solid #ddd;
+		}
+		
+		.nav {
+		    padding-left: 0;
+		    margin-bottom: 0;
+		    list-style: none;
+		}
+		
+		.nav-tabs>li {
+		    float: left;
+		    margin-bottom: -1px;
+		}
+		
+		.nav>li {
+		    position: relative;
+		    display: block;
+		}
+		
+		.nav-tabs>li>.active {
+		    margin-right: 2px;
+		    line-height: 1.42857143;
+		    border: 1px solid transparent;
+		    border-radius: 4px 4px 0 0;
+		    background-color: #C9AF96 !important;
+		    color: white !important;
+		}
+		
+		.nav-tabs>li>.nav-link {
+		    margin-right: 2px;
+		    line-height: 1.42857143;
+		    border: 1px solid transparent;
+		    border-radius: 4px 4px 0 0;
+		    color: #aa9144;
+		}
+		
+		.nav>li>.nav-link {
+		    position: relative;
+		    background-color: transparent;
+		    display: block;
+		    padding: 10px 15px;
+		}
+		
+		.fade {
+			opacity: 100;
+		}
+	/* ---------------------------------------------------------------------- */	
 		.loader {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100vw;
-	  height: 100vh;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  background-color: #f7f9fb;
-	  transition: opacity 0.75s, visibility 0.75s;
-	}
-	
-	.loader-hidden {
-	  opacity: 0;
-	  visibility: hidden;
-	}
-	
-	.loader::after {
-	  content: "";
-	  width: 75px;
-	  height: 75px;
-	  border: 15px solid #dddd;
-	  border-top-color: #7449f5;
-	  border-radius: 50%;
-	  animation: loading 0.75s ease infinite;
-	}
-	
-	@keyframes loading {
-	  form {
-	    transform: rotate(0turn);
-	  }
-	  to {
-	    transform: rotate(1turn);
-	  }
-	}
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  width: 100vw;
+		  height: 100vh;
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  background-color: #f7f9fb;
+		  transition: opacity 0.75s, visibility 0.75s;
+		}
+		
+		.loader-hidden {
+		  opacity: 0;
+		  visibility: hidden;
+		}
+		
+		.loader::after {
+		  content: "";
+		  width: 75px;
+		  height: 75px;
+		  border: 15px solid #dddd;
+		  border-top-color: #7449f5;
+		  border-radius: 50%;
+		  animation: loading 0.75s ease infinite;
+		}
+		
+		@keyframes loading {
+		  form {
+		    transform: rotate(0turn);
+		  }
+		  to {
+		    transform: rotate(1turn);
+		  }
+		}
 </style>
 
 </head>
@@ -397,11 +395,10 @@
 						</button>
 					</div>
 				</div>
-				<br>
-				<button class="file-upload-btn" type="button" id="searching"
-					onclick="predict()">검색하기</button>
+				<br> 
+				<button class="file-upload-btn" type="button" id="searching" onclick="predict()">검색하기</button>
 			</div>
-			<!-- <div class="loader" style=""></div> -->
+			<div class="loader" id="loader" style=""></div>  
 			<!-- <div class="row" style="float: right">
 				<button type="button" class="left" onclick="predict()">Predict</button>
 			</div> -->
@@ -576,10 +573,6 @@
 				,data: {
 					iffpBreed : finalAnimal 
 				} 
-	        	/* ,beforeSend : function(request){
-	                // Performed before calling Ajax
-	                $(".loader").show();
-	            }, */
 				,success: function(response){
 					var txt="";
 					for(var i=0; i<response.petList.length; i++){
@@ -593,16 +586,14 @@
 						txt += '"';
 						txt += 'class="img-responsive">';
 						txt += '</a>';
-						txt += '</div>';
+						txt += '</div>';  
 						txt += '</div>';
 					}
 				/* ,beforeSend: function() { //로딩이미지 보여주기
-						$(".loader").show();
-					}
-				,complete: function() { //로딩이미지 숨기기
-					    $(".loader").hide();
-					}	 */
-					$("#petListArea").html(txt);
+					$(".loader").show();
+				}
+					 */
+				$("#petListArea").html(txt); 
 					
 					//location.href ="/findpet/findpetSearchForm"
 					//이대로 넘기면 vo에 텅 사실 그냥 버튼 눌러서 오는 기본페이지 불러오는 곳
@@ -724,16 +715,17 @@
 	        loader.classList.add("loader-hidden");
 
 	        loader.addEventListener("transitionend", () => {
-	            document.body.removeChild("loader");
+	        	var loader = document.getElementById("loader");
+	            document.body.removeChild(loader);
 	        })
-	    })
+	    }); 
 	    
 	    
 	    
 	    
 	    
 	    
-	    
+	     
 	    
 	    
 	    

@@ -13,39 +13,41 @@
     <title>유기동물 리스트</title>
     
     <style type="text/css">
-    /* div {
-    	border: 1px solid orange;
-    } */
-    .Search {
-    	margin-top: 50px; 
-    	margin-bottom: 20px;
-    	display: flex; 
-    	justify-content: end;
-    }
-    .Searchbtn {
-    	border: 1px solid #efefef;
-    	background: #f3f0eb;
-    	color: #372d2b;
-    	text-align: center;
-    	width: 80px;
-    	height: 50px;
-    	border-radius: 10px;
-    	font-size: 13pt;
-    	font-weight: bold;
-    }
-    .Searchbtn:hover {
-    	background: #372d2b;
-    	color: #f3f0eb;
-    	cursor: pointer;
-    }
-    .imgsize {
-    	width: 258px;
-    	height: 218px;
-    	max-width: 100%;
-    	max-height: 100%;
-    }
-    
-    .nav-tabs {
+	    /* div {
+	    	border: 1px solid orange;
+	    } */
+	    .Search {
+	    	margin-top: 50px; 
+	    	margin-bottom: 20px;
+	    	display: flex; 
+	    	justify-content: end;
+	    }
+	    .Searchbtn {
+	    	border: 1px solid #efefef;
+	    	background: #f3f0eb;
+	    	color: #372d2b;
+	    	text-align: center;
+	    	width: 80px;
+	    	height: 50px;
+	    	border-radius: 10px;
+	    	font-size: 13pt;
+	    	font-weight: bold;
+	    }
+	    
+	    .Searchbtn:hover {
+	    	background: #372d2b;
+	    	color: #f3f0eb;
+	    	cursor: pointer;
+	    }
+	    
+	    .imgsize {
+	    	width: 258px;
+	    	height: 218px;
+	    	max-width: 100%;
+	    	max-height: 100%;
+	    }
+	    
+	    .nav-tabs {
 		    border-bottom: 1px solid #ddd;
 		}
 		

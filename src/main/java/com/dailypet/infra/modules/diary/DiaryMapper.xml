@@ -43,7 +43,7 @@
             	SELECT
               		COUNT( * )
               	FROM comment co
-              	WHERE co.da_ifdaSeq = a.[]
+              	WHERE co.da_ifdaSeq = a.ifdaSeq
             )	AS commentCount
 		FROM diary a
 		JOIN member b ON a.mm_ifmmSeq = b.ifmmSeq

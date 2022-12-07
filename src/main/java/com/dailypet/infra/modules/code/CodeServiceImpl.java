@@ -62,6 +62,7 @@ public class CodeServiceImpl implements CodeService{
 		Code.cachedCodeArrayList.addAll(codeListFromDb);
 		System.out.println("cachedCodeArrayList: " + Code.cachedCodeArrayList.size() + " chached !");
 	}
+	
     public static List<Code> selectListCachedCode(int cg_ifcgSeq) throws Exception {
         
         List<Code> rt = new ArrayList<Code>();

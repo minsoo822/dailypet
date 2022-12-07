@@ -18,6 +18,7 @@ import com.dailypet.infra.common.constants.Constants;
 import com.dailypet.infra.common.util.UtilCookie;
 import com.dailypet.infra.modules.animal.Animal;
 import com.dailypet.infra.modules.animal.AnimalServiceImpl;
+import com.dailypet.infra.modules.code.CodeServiceImpl;
 
 @Controller
 @RequestMapping(value = "/member/")
@@ -73,7 +74,7 @@ public class MemberController {
 	@RequestMapping(value="allInst")
 	public String allInst(Member dto, Animal dto1) throws Exception {
 		
-		dto.setIfmmEmail(dto.getIfmmEmailID() + MemberServiceImpl.selectOneCachedCode(dto.getIfmmEmailDomain()));
+		dto.setIfmmEmail(dto.getIfmmEmailID() + "@" + CodeServiceImpl.selectOneCachedCode(dto.getIfmmEmailDomain()));
 		
 		service.userInsert(dto);
 		service1.animalInsert(dto1);

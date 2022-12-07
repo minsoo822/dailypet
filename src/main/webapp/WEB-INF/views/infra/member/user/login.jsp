@@ -180,9 +180,9 @@
 										  	<label class="form-check-label" for="flexSwitchCheckChecked">&nbsp;자동로그인</label>
 										</div>
 										<div class="col-md-11">
-											<a href="/member/findPW" style="color: #000;"><span class="right">비밀번호 찾기</span></a> 
+											<a href="#" style="color: #000" id="findpw"><span class="right">비밀번호 찾기</span></a> 
 											<span class="right">|</span>
-											<a href="/member/findID" style="color: #000;"><span class="right">아이디 찾기</span></a>
+											<a href="#" style="color: #000" id="findid"><span class="right">아이디 찾기</span></a>
 											<br>
 											<br>
 											<br> 
@@ -264,6 +264,21 @@
 				}
 			});
 		});
+	</script>
+	
+		
+	<script type="text/javascript">
+	
+		$("#findpw").on("click", function(){
+	   		alert("준비 중입니다.");
+	   		return false;
+		});
+		
+		$("#findid").on("click", function(){
+	   		alert("준비 중입니다.");
+	   		return false;
+		});
+	
 	</script>
     
 </body>

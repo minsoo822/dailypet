@@ -92,7 +92,7 @@
 		                        <!-- widget start -->
 		                        <h3 class="widget-title myPage"> 마이페이지 </h3>
 		                        <ul class="listnone">
-		                            <li><a href="/member/changePW">비밀번호 변경 </a></li>
+		                            <li><a href="#" id="changepw">비밀번호 변경</a></li>
 		                            <li><a href="/member/memberDel1">회원탈퇴</a></li>
 		                        </ul>
 		                    </div>
@@ -243,6 +243,15 @@
     <!-- footScript s -->
     <%@include file="../../../common/xdmin/include/footScript.jsp"%>
     <!-- footScript e -->
+    
+    <script type="text/javascript">
+    
+	    $("#changepw").on("click", function(){
+	    	alert("준비 중입니다.");
+	    	return false;
+		});
+    
+    </script>
     
     <script type="text/javascript">
     

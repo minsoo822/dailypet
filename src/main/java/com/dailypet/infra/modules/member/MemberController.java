@@ -245,6 +245,15 @@ public class MemberController {
 
 		return "infra/member/user/changePW";
 	}
+	//관리자 회원정보수정
+	@RequestMapping(value = "memberUpdt") 
+	public String memberUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, Animal dto1, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+		
+		service.userUpdate(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		return "redirect:/member/myPage";
+	}
 	
 	
 } 

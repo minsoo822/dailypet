@@ -113,143 +113,165 @@
 	}
 /* -------------------------------------------------------------------------- */	
     .modal_overlay {
-	    	z-index: 1999;
-	        width: 100%;
-	        height: 100%;
-	        padding-top: 100px;
-	        position: absolute;
-	        left: 0;
-	        top: 0;
-	        display: none;
-	        flex-direction: column;
-	        align-items: center;
-	        justify-content: center;
-	        background: rgba(0, 0, 0, 0.8);
-	        backdrop-filter: blur(1.5px);
-	        -webkit-backdrop-filter: blur(1.5px);
-	    }
+    	z-index: 1999;
+        width: 100%;
+        height: 100%;
+        padding-top: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(1.5px);
+        -webkit-backdrop-filter: blur(1.5px);
+    }
 	
-	    .modal_window {
-			z-index: 1999;
-	        background: white;
-	        backdrop-filter: blur(13.5px);
-	        -webkit-backdrop-filter: blur(13.5px);
-	        width: 1000px;
-	        height: 700px;
-	        position: relative;
-	        bottom: 70px;
-	    }
-	    .material-icons-outlined {
-			position: relative;
-			bottom: 90px;
-			left: 700px;
-			color:white;
-			font-size: 20pt;		
-		}
-	     .modal_title{
-	        display: flex;
-	        flex-direction: row;
-	        justify-content: space-between;
-	        font-weight: bold;
-	        font-size: 20px;
-	    }
+    .modal_window {
+		z-index: 1999;
+        background: white;
+        backdrop-filter: blur(13.5px);
+        -webkit-backdrop-filter: blur(13.5px);
+        width: 1000px;
+        height: 700px;
+        position: relative;
+        bottom: 70px;
+    }
+    
+    .material-icons-outlined {
+		position: relative;
+		color:black;
+		font-size: 20px;		
+	}
 	
-	    .modal_title_side{
-	        flex: 0 0 40px;
-	        text-align: center;
-	    }
-	    .imgdetail {
-	    	width: 570px;
-	    	height: 700px;
-	    	background: black;
-	    	display: flex;
-	    	justify-content: center;
-	    	align-items: center;
-	    }
-	    .img-responsive2 {
-	    	object-fit: cover;
-	    	max-width: 100%;
-	    	max-height: 100%;
-	    }
-	    
-	/* ------------------------------------------------------------------------ */
+     .modal_title{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .modal_title_side{
+        flex: 0 0 40px;
+        text-align: center;
+    }
+    
+    .imgdetail {
+    	width: 570px;
+    	height: 700px;
+    	background: black;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    }
+    
+    .img-responsive2 {
+    	object-fit: cover;
+    	max-width: 100%;
+    	max-height: 100%;
+    }
+    
+/* ------------------------------------------------------------------------ */
+	
+	#thumbList .col-lg-4 {
+		margin: 18px 10px;
+		max-width: 380px;
+	}
+	
+	button {
+		background-color: white;
+		border: none;
+	}
+	
+	#like, #comment {
+		margin-right: 10px;
+	}
+	
+	.service-content > * {
+		margin-left: 10px;
+	}
+	
+	.postbtn {
+		margin: -20px 0 0 10px;
+	}
+
+	.row {
+		margin: 0;
+		padding: 0;
+	}
+	
+	div.col-lg-7 {
+		padding: 0;
+	}
+	
+	.col-lg-5 {
+		position: relative;
+		height: 700px;
+		padding: 0px;
+	}
+	
+	.cardcontent p {
+		font-size: 11px; 
+		color: lightgray;
+	}
 		
-		#thumbList .col-lg-4 {
-			margin: 18px 10px;
-			max-width: 380px;
-		}
-		
-		button {
-			background-color: white;
-			border: none;
-		}
-		
-		#like, #comment {
-			margin-right: 10px;
-		}
-		
-		.service-content > * {
-			margin-left: 10px;
-		}
-		
-		.postbtn {
-			margin: -20px 0 0 10px;
-		}
-		
-		.cardcontent {
-			margin-top: 10px;
-		}
-		
-		.row {
-			margin: 0;
-			padding: 0;
-		}
-		
-		div.col-lg-7 {
-			padding: 0;
-		}
-		
-		#idbox {
-			padding: 7.5px;
-		}
-		
-		.col-lg-5 {
-			position: relative;
-			height: 700px;
-			padding: 0px;
-		}
-		
-		.cardcontent p {
-			font-size: 11px; 
-			color: lightgray;
-		}
-			
-		.cardfooter {
-			position: absolute;
-		    bottom: 0;
-		}
-		
-		.cardfooter .form-control {
-			margin-bottom: 2px;
-			padding: 0 15px;
-		}
-		
-		#writecomm {
-			width: 373px;
-			padding: 8px;
-			display: inline;
-			border: none;
-			height: 40px;
-		}
-		
-		.upcomment {
-			color: brown;
-			background-color: none;
-			border: none;
-			font-size: 14px;
-			font-weight: bold;
-			display: inline;
-		}
+	.cardfooter {
+		position: absolute;
+	    bottom: 0;
+	}
+	
+	.cardfooter .form-control {
+		margin-bottom: 2px;
+		padding: 0 15px;
+	}
+	
+	#writecomm {
+		width: 373px;
+		padding: 8px;
+		display: inline;
+		border: none;
+		height: 40px;
+	}
+	
+	.upcomment {
+		color: brown;
+		background-color: none;
+		border: none;
+		font-size: 14px;
+		font-weight: bold;
+		display: inline;
+	}
+	
+	hr{
+		color: gray;
+		margin-top: 25px; 
+		margin-bottom: 15px;
+	}
+	
+	textarea{
+		border: 0px;
+		width: 400px;
+		-ms-overflow-style: none;
+	} 
+	
+	textarea:focus{
+		outline: none;
+	}
+	
+	#comment_area {
+	   -ms-overflow-style: none;
+	}
+	
+	#comment_area::-webkit-scrollbar{
+	  display:none;
+	}
+	
+	textarea::-webkit-scrollbar{
+	  display:none;
+	}
 </style>
 
 <body>
@@ -264,46 +286,48 @@
 	    <!-- /.page header -->
 	    <div class="diaryheader">
 			<nav class="icon">
-				<span style="font-size: 20px"><a href="diaryList.html"><i class="fa-sharp fa-solid fa-house"></i></a></span>
-				<span style="font-size: 25px"><a href="diaryForm.html"><i class="fa-regular fa-square-plus"></i></a></span>
-				<span><div class="profileheader"><a href="/diary/diaryMypage"><img src="${me.path}${me.uuidName }" class="profilepic" alt=""></a></div></span>
+				<span style="font-size: 20px;"><a href="/diary/diaryList"><i class="fa-sharp fa-solid fa-house"></i></a></span>
+				<span style="font-size: 25px;"><a href="/diary/diaryForm"><i class="fa-regular fa-square-plus"></i></a></span>
+				<span><div class="profileheader"><a href="/diary/diaryMypage"><img src="${item.memberPath}${item.memberuuidName}" class="profilepic" alt=""></a></div></span>
 			</nav>
 		</div>
 		<!-- Modal s -->
 		<div id="modal_add_feed" class="modal_overlay">
 		<input type="hidden" id="ifdaSeq" name="ifdaSeq" value="${dto.ifdaSeq }">
 		<input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
-			<span id="close_modal" class="material-icons-outlined">
-				<i class="fa-solid fa-xmark"></i>
-			</span>
+			
 			<div class="modal_window">
 				<div class="modal_body row">
 					<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 						<div class="imgdetail">
-							<img id="postImg" src="" class="img-responsive2" alt="">
+							<img id="postImg" class="img-responsive2">
 						</div>
 					</div>
 					<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
 						<div class="row" style="margin-top: 10px">
-							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 								<div class="modalprofile">
-									<img id="userImg" src="" class="profilepic" alt="">
+									<img id="userImg" class="profilepic">
 								</div>
 							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" id="idbox">	
-								<h5 style="margin-left: -15px; font-size: 12px"><b id="userID"> </b></h5>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">	
+								<span style="margin-left: -4px; font-size: 16px;"><b id="userID"></b></span>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+								<span id="close_modal" class="material-icons-outlined">
+									<i class="fa-solid fa-xmark"></i>
+								</span> 
+							</div>
+						</div>  
+						<hr>
+						<div class="row" style="margin-top: 10px;">
+							<div class="col" style="width: 400px;">
+								<textarea name="ifdaContent" style="font-size: 14px;" id="postContents" readonly></textarea>
 							</div>
 						</div>
-						<hr style="color: lightgray; margin-top: 12px; margin-bottom: 0">
-						
-						<div class="row" style="margin-top: 10px">
-							<div class="col">
-								<p name="ifdaContent" style="margin: -10px 0 0 -15px; font-size: 12px" id="postContents"></p>
-							</div>
-						</div>
-						<hr style="color: lightgray; margin-top: 25px; margin-bottom: 15px;">
+						<hr>
 						<div class="row">
-							<div class="col" id="comment_area">
+							<div class="col" id="comment_area" style="height: 260px; overflow: scroll;"> 
 								<!-- 댓글 s -->
 								
 								<!-- 댓글 e -->
@@ -321,11 +345,10 @@
 								</div>
 								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 <b id="postlikeCount">0</b>개</b></p> 
 								<div class="cardcontent">
-									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p id="postRegDate"></p>
 								</div>
 							</div>
-							<hr style="color: lightgray; margin: 3px">
+							<hr> 
 							<div class="cardcomment">
 								<input type="text" class="form-control" class="writecomm" id="writecomm" name="ifcmContent" placeholder="댓글 달기...">
 								<button type="button" class="upcomment" id="upcomment">게시</button>
@@ -395,7 +418,7 @@
 	    			</div>
 	    		</div>
 	    		<br>
-	    		<hr style="border: 1px solid lightgray; width: 1150px; margin-left: auto; margin-right: auto;">
+	    		<hr style="border: 1px solid gray; width: 1150px; margin-left: auto; margin-right: auto;">
 	    	</div>
 	        <div class="container" id="thumbList">
 	            <div class="row" style="margin-left: 50px;">
@@ -492,25 +515,25 @@
     			success: function(result) { 
     				var txt = "";
 	    				txt += '<div class="row">';
-	    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
+	    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center; width: 50px;">';
 	    				txt += '<div class="modalprofile">';
-	    				txt += '<img id="" src="'+ result.img +'" class="profilepic" alt="">';
+	    				txt += '<img src="'+ result.img +'" class="profilepic">';
 	    				txt += '</div>';
 	    				txt += '</div>';
-	    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
+	    				txt += '<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">';
 	    				txt += '<div class="row">';
-	    				txt += '<div class=col>';
-	    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.writer +'</b></h5>';
+	    				txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
+	    				txt += '<span style="font-size: 13px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.writer +'</b></h5>';
+	    				txt += '</div>';
+	    				txt += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+	    				txt += '<span style="font-size: 3px;">방금전</span>';
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    				txt += '<div class="row">';
-	    				txt += '<div class=col>';
-	    				txt += '<h5 style="font-size: 5px;"><b>방금전</b></h5>';
+	    				txt += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
+	    				txt += '<span style="font-weight: 0; font-size: 14px;">'+ result.comment +'</span>';
 	    				txt += '</div>';
 	    				txt += '</div>';
-	    				txt += '</div>';
-	    				txt += '<div class="col">';
-	    				txt += '<b style="font-weight: 0;">'+ result.comment +'</b>';
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    			
@@ -579,30 +602,30 @@
     	    			likedBtn.css("color",'black');
 					}
 					
-//					var comment = "";
+					var comment = "";
 					
 					for(var i = 0; i < result.cmList.length; i++) {
 						comment += '<div class="row">';
-							comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center;">';
-								comment += '<div class="modalprofile">';
-									comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt="">';
-								comment += '</div>';
-							comment += '</div>';
-							comment += '<div class="col-lg-11 col-md-11 col-sm-11 col-xs-11" id="idbox">';
-								comment += '<div class="row">';
-								comment += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
-								comment += '<h5 style="font-size: 12px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.cmList[i].ifmmID +'</b></h5>';
-								comment += '</div>';
-								comment += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
-								comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
-								comment += '</div>';
-								comment += '</div>';
-								comment += '<div class="row">';
-								comment += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
-								comment += '<span style="font-weight: 0; font-size: 13.5px;">'+ result.cmList[i].ifcmContent +'</span>';
-								comment += '</div>';
-								comment += '</div>';
-							comment += '</div>';
+						comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center; width: 50px;">';
+						comment += '<div class="modalprofile">';
+						comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt="">';
+						comment += '</div>';
+						comment += '</div>';
+						comment += '<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">';
+						comment += '<div class="row">';
+						comment += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
+						comment += '<span style="font-size: 13px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.cmList[i].ifmmID +'</b></span>';
+						comment += '</div>';
+						comment += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+						comment += '<span style="font-size: 3px;">'+ result.cmList[i].ifcmRegDate +'</span>';
+						comment += '</div>';
+						comment += '</div>';
+						comment += '<div class="row">';
+						comment += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
+						comment += '<span style="font-weight: 0; font-size: 14px;">'+ result.cmList[i].ifcmContent +'</span>';
+						comment += '</div>';
+						comment += '</div>'; 
+						comment += '</div>';
 						comment += '</div>';
 					} 
 					
@@ -611,8 +634,6 @@
 					//댓글들 ( 게시물을 여러개 불러오는 느낌 )
 						//댓글정보
 						//댓글작성자 닉네임 이미지
-					
-					
 					
 					modal.style.top = window.pageYOffset + 'px'; // top을 이용해 시작 y위치를 바꿔줌 
 			    	modal.style.display = "flex";

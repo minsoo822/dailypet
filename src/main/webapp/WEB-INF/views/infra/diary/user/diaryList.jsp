@@ -20,6 +20,7 @@
 	div {
 		/* border: 1px solid orange; */
 	}
+	
 	.content {
 		display: flex;
 		 justify-content: center;

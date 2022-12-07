@@ -311,7 +311,7 @@
 								</div>
 							</div>
 							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding-top: 5px;">	
-								<span style="margin-left: -4px; font-size: 16px"><b id="userID"></b></span>
+								<span style="margin-left: -4px; font-size: 16px;"><b id="userID"></b></span>
 							</div>
 							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
 								<span id="close_modal" class="material-icons-outlined">
@@ -345,7 +345,6 @@
 								</div>
 								<p style="font-size: 13px; margin-top: 5px;"><b id="liked">좋아요 <b id="postlikeCount">0</b>개</b></p> 
 								<div class="cardcontent">
-									<p style="margin: 10px 0 0 0">view all 365 comments</p>
 									<p id="postRegDate"></p>
 								</div>
 							</div>
@@ -509,25 +508,25 @@
     			success: function(result) { 
     				var txt = "";
 	    				txt += '<div class="row">';
-	    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px;">';
+	    				txt += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center; width: 50px;">';
 	    				txt += '<div class="modalprofile">';
-	    				txt += '<img id="" src="'+ result.img +'" class="profilepic" alt="">';
+	    				txt += '<img src="'+ result.img +'" class="profilepic">';
 	    				txt += '</div>';
 	    				txt += '</div>';
-	    				txt += '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="idbox">	';
+	    				txt += '<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">';
 	    				txt += '<div class="row">';
-	    				txt += '<div class=col>';
-	    				txt += '<h5 style="font-size: 12px; margin-bottom: 0px;"><b id="">'+ result.writer +'</b></h5>';
+	    				txt += '<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">';
+	    				txt += '<span style="font-size: 13px; margin-bottom: 0px; display: flex; align-items: center;"><b>'+ result.writer +'</b></h5>';
+	    				txt += '</div>';
+	    				txt += '<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">';
+	    				txt += '<span style="font-size: 3px;">방금전</span>';
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    				txt += '<div class="row">';
-	    				txt += '<div class=col>';
-	    				txt += '<h5 style="font-size: 5px;"><b>방금전</b></h5>';
+	    				txt += '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: flex; align-items: center;">';
+	    				txt += '<span style="font-weight: 0; font-size: 14px;">'+ result.comment +'</span>';
 	    				txt += '</div>';
 	    				txt += '</div>';
-	    				txt += '</div>';
-	    				txt += '<div class="col">';
-	    				txt += '<span style="font-weight: 0;">'+ result.comment +'</span>';
 	    				txt += '</div>';
 	    				txt += '</div>';
 	    			
@@ -605,7 +604,7 @@
 						comment += '<div class="row">';
 						comment += '<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="padding: 0px; display: flex; align-items: center; width: 50px;">';
 						comment += '<div class="modalprofile">';
-						comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic" alt="">';
+						comment += '<img src="'+ result.cmList[i].mmPath + result.cmList[i].mmuuidName + '" class="profilepic">';
 						comment += '</div>';
 						comment += '</div>';
 						comment += '<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">';

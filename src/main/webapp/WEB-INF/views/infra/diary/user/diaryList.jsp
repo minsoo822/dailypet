@@ -190,6 +190,7 @@
     <form method="post" id="diaryForm">
     <!-- <input type="hidden" name="ifdaSeq"> -->
     <input type="hidden" id="ifmmSeq" name="ifmmSeq" value="${item.ifmmSeq }">
+    <input type="hidden" id="sessSeq" name="sessSeq" value="${sessSeq }">
     <input type="hidden" id="loginUser" name="loginUser" value="${sessSeq }">
     
 		<div class="diaryheader">

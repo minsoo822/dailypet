@@ -252,7 +252,7 @@ public class MemberController {
 		service.userUpdate(dto);
 		
 		redirectAttributes.addFlashAttribute("vo", vo);
-		return "redirect:/member/myPage";
+		return "redirect:/member/memberList";
 	}
 	
 	

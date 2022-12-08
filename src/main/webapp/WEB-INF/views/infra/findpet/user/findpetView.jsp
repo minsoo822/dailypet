@@ -373,7 +373,7 @@
 					txt +='<div class="comment-content">';
 					txt +='<p>'+ result.comment +'</p>';
 					txt +='</div>';
-					txt +='<div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>';
+					/* txt +='<div class="reply"><a href="#" class="btn-link"><i class="fa fa-mail-reply"></i> Reply</a></div>'; */
 					txt +='</div>';
 					txt +='</div>';
 					txt +='</li>';

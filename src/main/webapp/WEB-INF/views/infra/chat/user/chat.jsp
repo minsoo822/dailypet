@@ -269,29 +269,21 @@
 	                        </div> -->
 	                        <div class="card-body contacts_body">
 	                            <ui class="contacts" id="chatList">
-	                            
 	                            	<c:forEach items="${list }" var="list" varStatus="status">
-	                            		
-																		<li class="room" id="${list.chatSeq}" onclick="selectChatRoom(${list.chatSeq})">
+										<li class="room" id="${list.chatSeq}" onclick="selectChatRoom(${list.chatSeq})">
 		                                    <div class="d-flex bd-highlight">
 		                                        <div class="img_cont">
-																								<!-- 아래 path 와 uuidname 도 본인의 dto field에 맞게 수정 -->
-		                                            <img src="
-																										<c:if test = "${list.path ne null}">
-																											${list.path}${list.uuidName}
-																										</c:if>
-		                                                " class="rounded-circle user_img">
+													<!-- 아래 path 와 uuidname 도 본인의 dto field에 맞게 수정 -->
+		                                            <img src="<c:if test = "${list.path ne null}">${list.path}${list.uuidName}</c:if>" class="rounded-circle user_img">
 		                                        </div>
 		                                        <div class="chat_product_info">
-																								<!-- 아래 mmNickName  도 본인의 dto field에 맞게 수정 -->
+													<!-- 아래 mmNickName  도 본인의 dto field에 맞게 수정 -->
 		                                            <span class="status"><c:out value="${list.ifmmNickname }"/></span>
-					                                 			<p></p>
+					                                <p></p>
 		                                        </div>
 		                                    </div>
 		                                </li>
-	                            			
 	                            	</c:forEach>
-	                             
 	                            </ui>
 	                        </div>
 	                        <div class="card-footer"></div>

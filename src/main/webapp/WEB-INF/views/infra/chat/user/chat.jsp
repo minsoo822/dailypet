@@ -266,10 +266,10 @@
 									<input type="text" placeholder="add ChatUser Seq..." id="cuMember" name="cuMember" class="form-control search">
 	                                <span class="input-group-text search_btn" onclick="addChat()"><i class="fa-solid fa-plus"></i></span>
 	                            </div>
-	                        </div> -->
-	                        <div class="card-body contacts_body">
-	                            <ui class="contacts" id="chatList">
-	                            	<c:forEach items="${list }" var="list" varStatus="status">
+	                        </div> --> 
+	                        <div class="card-body contacts_body">  
+	                            <ui class="contacts" id="chatList">  
+	                            	<c:forEach items="${list }" var="list" varStatus="status">   
 										<li class="room" id="${list.chatSeq}" onclick="selectChatRoom(${list.chatSeq})">
 		                                    <div class="d-flex bd-highlight">
 		                                        <div class="img_cont">

@@ -48,19 +48,26 @@ public class ChatController {
 	}
 	
 	@RequestMapping(value="instChat")
-	public String instChat(HttpSession httpSession,Chat dto) throws Exception {
+	public String instChat(HttpSession httpSession,Chat dto,Model model) throws Exception {
 		
 		Chat newChat = service.createChat(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()),dto.getCuMember());
 		List<Chat> list = service.selectChatListFromOne(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()));
-
-		int Count = service.selectCountChat(dto);
+ 
+		int Count = service.selectCountChat(dto); 
 		System.out.println("Count : " + Count);
+		
+		model.addAttribute("list", list);
+		
+		//여기서 list라는 이름으로 attribute를 넘겨줘야 저기 jsp에서 list.어쩌구 로 받아서 쓰지
+		// 셋다 있다가 옥상와서 두들겨 맞자 :D
+		//addAttribute로 넘겨줘야지
+		//챗 리스트랑 뉴 팻을 불러왔으면 
 		
 		//기존 채팅방이 존재하지 않을때만 채팅방 생성
 		if(Count == 0 ) {
 			service.createChat(Integer.parseInt(httpSession.getAttribute("sessSeq").toString()),dto.getCuMember());
 		}
-		
-		return "redirect:/chat/"; 
+		 
+		return "infra/chat/user/chat";  
 	}
 }

@@ -147,6 +147,7 @@
   	<br>
   	<br>
   	<br>
+  	<form action="">
     <div class="content">
         <div class="container">
             <div class="row"> 
@@ -163,7 +164,7 @@
                                         <div class="form-group has-feedback">
                                             <label class="control-label" for="ifmmName">사용자 이름</label>
                                             <div class="input-group"> <span class="input-group-addon"><div class="top"><i class="fa fa-user"></i></div></span>
-                                                <input type="text" class="form-control" id="ifmmName" placeholder="이름 입력">
+                                                <input type="text" class="form-control" name="ifmmName" id="ifmmName" placeholder="이름 입력" value="">
                                             </div>
                                         </div>
                                     </div>
@@ -171,9 +172,12 @@
                                         <div class="form-group has-feedback">
                                             <label class="control-label" for="ifmmEmail">가입하신 이메일</label>
                                             <div class="input-group"> <span class="input-group-addon"><div class="top"><i class="fa-solid fa-envelope"></i></div></span>
-                                                <input type="text" class="form-control" id="ifmmEmail" placeholder="ex) dailypet@naver.com">
+                                                <input type="text" class="form-control" name="ifmmEmail" id="ifmmEmail" placeholder="ex) dailypet@naver.com" value="">
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-11" id="idHidden" style="display: none;">
+										<b>고객님의 아이디는 <strong class="personerId"></strong>입니다</b>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -210,9 +214,36 @@
             </div>
         </div>
     </div>
-    
+    </form>
    	<%@include file="../../../common/xdmin/include/footer.jsp"%>
 	<%@include file="../../../common/xdmin/include/footScript.jsp"%>
+	<script type="text/javascript">
+	$("#singlebutton").on("click", function() {
+		
+		$.ajax({
+			url : '/member/findId'
+			,type: 'POST'
+			,datatype: 'json' 	
+			,data: {
+				ifmmName : $("#ifmmName").val()
+				,ifmmEmail : $("#ifmmEmail").val()
+			},
+			success:function(response) {
+				if (response.rt == "success") {
+					$("#idHidden").css("display", "")
+					$(".personerId").html(response.id.id);
+				} else {
+					alert("정확한 정보를 입력해주세요!!!");
+				}
+			},
+			error:function(){
+				alert("ajax error..!")
+			}
+		})
+	});
+	
+	
+	
+	</script>
 </body>
-
 </html>

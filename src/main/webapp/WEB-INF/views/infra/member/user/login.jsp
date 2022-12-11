@@ -182,7 +182,7 @@
 										<div class="col-md-11">
 											<a href="#" style="color: #000" id="findpw"><span class="right">비밀번호 찾기</span></a> 
 											<span class="right">|</span>
-											<a href="#" style="color: #000" id="findid"><span class="right">아이디 찾기</span></a>
+											<a href="/member/findID" style="color: #000" id=""><span class="right">아이디 찾기</span></a>
 											<br>
 											<br>
 											<br> 

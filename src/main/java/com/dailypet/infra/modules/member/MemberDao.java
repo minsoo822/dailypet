@@ -92,7 +92,9 @@ public class MemberDao {
 	public Member selectMypage(MemberVo vo) {
 		return sqlSession.selectOne(namespace + ".selectMypage", vo);
 	}
-	
+	public Member findId(Member dto) {
+		return sqlSession.selectOne(namespace + ".findId", dto);
+	}
 //-----------------------------------관리자------------------------------------------	
 	
 	//이미지 가져오기

@@ -265,5 +265,20 @@ public class MemberController {
 			
 			return "redirect:/member/memberList";
 		}
-	
+	@ResponseBody
+	@RequestMapping(value = "findId")
+	public Map<String, Object> findId(Member dto) throws Exception {
+		
+		Map<String, Object> result = new HashMap<String, Object>();
+		
+		Member id = service.findId(dto);
+		
+		if(id != null) {
+			result.put("rt", "success");
+			result.put("id", id);
+		} else {
+			result.put("rt", "fail");
+		}
+		return result;
+	}
 } 

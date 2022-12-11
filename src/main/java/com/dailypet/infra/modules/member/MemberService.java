@@ -25,6 +25,7 @@ public interface MemberService {
 	//로그인
 	public Member selectOneID(Member dto) throws Exception;
 	public Member selectOneLogin(Member dto) throws Exception;
+	public Member findId(Member dto)throws Exception;
 	
 	public Member selectOne(MemberVo vo) throws Exception;
 	

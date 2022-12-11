@@ -306,5 +306,24 @@
 		DELETE FROM member
 		WHERE ifmmSeq = #{ifmmSeq}
 	</delete>
+	<select id="findId" resultMap="resultMapObj">
+		SELECT
+			mm.ifmmID
+		FROM member	mm
+		WHERE 1=1
+			AND ifmmName = #{ifmmName}
+			AND ifmmEmail = #{ifmmEmail}
+	</select>
+	
+	
+	<!-- <select id="findPwd" parameterType="String" resultType="int">
+		select 
+			count(*)
+		from user u
+		where 1=1
+			and id = #{id}
+			and name = #{name}
+			and dob = #{dob}
+	</select> -->
 	
 </mapper>

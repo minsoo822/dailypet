@@ -150,5 +150,11 @@ public class MemberServiceImpl implements MemberService{
 	public int memberDel(Member dto) throws Exception {
 		return dao.memberDel(dto);
 	}
+
+	@Override
+	public Member findId(Member dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.findId(dto);
+	}
 	
 }

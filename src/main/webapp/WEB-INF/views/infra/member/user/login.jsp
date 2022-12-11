@@ -241,6 +241,16 @@
 	            </div>
 	        </div>
        </div>
+       
+    <form name="form">
+    	<input type="hidden" name="snsID"/>
+    	<input type="hidden" name="ifmmName"/>
+    	<input type="hidden" name="ifmmTel"/>
+    	<input type="hidden" name="ifmmEmail"/>
+    	<input type="hidden" name="snsImg"/>
+    	<input type="hidden" name="token"/>
+    </form> 
+
 	<%@include file="../../../common/xdmin/include/footer.jsp"%>
 	<%@include file="../../../common/xdmin/include/footScript.jsp"%>
     
@@ -305,7 +315,13 @@
 							,cache: false
 							,type:"POST"
 							,url: "/member/kakaoLoginProc"
-							,data: {"name": $("input[name=ifmmName]").val(), "phone": $("input[name=ifmmTel]").val(), "email": $("input[name=ifmmEmail]").val(), "snsImg": $("input[name=snsImg]").val(), "token": $("input[name=token]").val()}
+							,data: { 
+									"name": $("input[name=ifmmName]").val(), 
+									"phone": $("input[name=ifmmTel]").val(), 
+									"email": $("input[name=ifmmEmail]").val(), 
+									"snsImg": $("input[name=snsImg]").val(), 
+									"token": $("input[name=token]").val()
+									}
 							,success : function(response) {
 								if (response.rt == "fail") {
 									alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");

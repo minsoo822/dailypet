@@ -423,11 +423,11 @@
 			                    </div> 
 			                </div>
 		                </c:forEach>
-		            </div>
-		        </div>
 				<!-- pagination s -->
 				<%@include file="../../../common/xdmin/include/pagination.jsp"%>
 				<!-- pagination e -->
+		            </div>
+		        </div>
    			</div>
 		</div>
 	</div>
@@ -588,6 +588,8 @@
 						txt += '</a>';
 						txt += '</div>';  
 						txt += '</div>';
+						
+						
 					}
 				/* ,beforeSend: function() { //로딩이미지 보여주기
 					$(".loader").show();

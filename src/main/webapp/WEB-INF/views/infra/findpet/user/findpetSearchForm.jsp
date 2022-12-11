@@ -395,7 +395,17 @@
 						</button>
 					</div>
 				</div>
-				<br> 
+				<br>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contents" id="notice" style="text-align: center">
+						<span style="font-size: 15px">최초 검색 시 약 10초 정도 소요됩니다.</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contents" id="searchInfo" style="width: 550px">
+						<span style="color: blue">Google Teachable machine으로 학습 시킨 클래스를 이용하여 검색합니다.(머신러닝)</span>
+					</div>
+				</div>
 				<button class="file-upload-btn" type="button" id="searching" onclick="predict()">검색하기</button>
 			</div>
 			<div class="loader" id="loader" style=""></div>  
@@ -484,20 +494,27 @@
 	    };
 	    
 	    $("#uploadBox").hide();
+	    $("#notice").hide();
+	    $("#searchInfo").hide();
 		$("#searching").hide();
+	    
 	    //시작하기 버튼 누르기 전까진 파일첨부, 검색하기 박스 안 뜸
 	    /* $(function(){
-			$("#uploadBox").hide();
+	    	$("#uploadBox").hide();
+		    $("#notice").hide();
+		    $("#searchInfo").hide();
 			$("#searching").hide();
 			$("#start").change(function() {
 				$("#uploadBox").show();
+		    	$("#notice").show();
+			    $("#searchInfo").show();
 				$("#searching").show();
 			}) 
 		}); */
 		
 		//버튼 클릭 시 내용 변경
 		 
-		(function () {
+		/* (function () {
 			$('#searching').click( function() {
 				if( $(this).html() == '검색하기' ) {
 					$(this).html('검색을 시작합니다... 최초 검색 시 약 10초 정도 소요됩니다.');
@@ -506,7 +523,7 @@
 					$(this).html('검색하기');
 				}
 			});
-		}());
+		}()); */
 	</script>
 	   	
 	<script type="text/javascript">
@@ -517,9 +534,12 @@
 	
 	    //예측 준비
 	    async function init() {
-	    	$("#uploadBox").show();
-			$("#searching").show();   
 			
+	    	$("#uploadBox").show();
+	    	$("#notice").show();
+		    $("#searchInfo").show();
+			$("#searching").show();
+	    	
 			//Teachable Machine에서 학습시켰던 model.json, metadata.json을 초기값으로 설정
 	        const modelURL = URL + "model.json";
 	        const metadataURL = URL + "metadata.json";

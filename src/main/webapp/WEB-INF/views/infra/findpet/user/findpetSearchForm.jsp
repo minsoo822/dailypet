@@ -494,6 +494,19 @@
 				$("#searching").show();
 			}) 
 		}); */
+		
+		//버튼 클릭 시 내용 변경
+		 
+		(function () {
+			$('#searching').click( function() {
+				if( $(this).html() == '검색하기' ) {
+					$(this).html('검색을 시작합니다... 최초 검색 시 약 10초 정도 소요됩니다.');
+				}
+				else {
+					$(this).html('검색하기');
+				}
+			});
+		}());
 	</script>
 	   	
 	<script type="text/javascript">
@@ -530,20 +543,9 @@
     	var finalAnimal; //최종 결과의 클래스 명을 담아줄 객체
     	var finalValue; //최종 결과의 퍼센트 값을 담아줄 객체
     	
-    	//버튼 클릭 시 내용 변경
-    	$(function() {
-		  $('#searching').click( function() {
-		    if( $(this).html() == '검색하기' ) {
-		      $(this).html('검색을 시작합니다... 최초 검색 시 약 10초 정도 소요됩니다.');
-		    }
-		    else {
-		      $(this).html('검색하기');
-		    }
-		  });
-		});
-    	
 	    //예측 결과 실행
 	    async function predict() {
+
     		//웹캠 대신 이미지를 사용하기 위해 이미지를 불러오도록 설정
 	    	var image = document.getElementById("upload-image");
 	    	const prediction = await model.predict(image, false);
@@ -576,7 +578,7 @@
 	        console.log(finalValue);
 	       	/* const percent = Math.max.apply(null, result); */
 	        /*  $("#mySpinner").hide(); */
-	       
+	        
 	        $.ajax({
 				async: true
 				,cach: false

@@ -456,6 +456,7 @@
 	    	seq.attr("value", iffpSeq);
 	    	form.attr("action", goUrlView).submit();
 	    }
+	   	
 	   	goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",goUrlList).submit();
@@ -529,6 +530,18 @@
     	var finalAnimal; //최종 결과의 클래스 명을 담아줄 객체
     	var finalValue; //최종 결과의 퍼센트 값을 담아줄 객체
     	
+    	//버튼 클릭 시 내용 변경
+    	$(function() {
+		  $('#searching').click( function() {
+		    if( $(this).html() == '검색하기' ) {
+		      $(this).html('검색을 시작합니다... 최초 검색 시 약 10초 정도 소요됩니다.');
+		    }
+		    else {
+		      $(this).html('검색하기');
+		    }
+		  });
+		});
+    	
 	    //예측 결과 실행
 	    async function predict() {
     		//웹캠 대신 이미지를 사용하기 위해 이미지를 불러오도록 설정
@@ -588,8 +601,6 @@
 						txt += '</a>';
 						txt += '</div>';  
 						txt += '</div>';
-						
-						
 					}
 				/* ,beforeSend: function() { //로딩이미지 보여주기
 					$(".loader").show();
@@ -711,15 +722,12 @@
 	    
 	    
 	    //스피너 js
-	    window.addEventListener("load", () => {
-	        const loader = document.querySelector(".loader");
-
-	        loader.classList.add("loader-hidden");
-
-	        loader.addEventListener("transitionend", () => {
-	        	var loader = document.getElementById("loader");
-	            document.body.removeChild(loader);
-	        })
+	    $(document).ready(function() {
+	    	$('#loader').hide();
+	    	$('#spin').submit(function(){
+	    	    $('#loader').show();
+	    	    return true;
+	    	    });
 	    }); 
 	    
 	    

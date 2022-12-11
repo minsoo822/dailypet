@@ -277,12 +277,7 @@
 							</div>
 							<!-- 좋아요 댓글 버튼 e -->
 							<!-- 좋아요 갯수	 s -->
-							<c:choose>
-								<c:when test="${list.likeCount eq 0 }"><br></c:when>
-								<c:otherwise>
-									<p><b>좋아요 <b id="postlikeCount${list.ifdaSeq}"><c:out value="${list.likeCount }"/></b>개</b></p>
-								</c:otherwise>
-							</c:choose>	
+							<p><b>좋아요 <b id="postlikeCount${list.ifdaSeq}"><c:out value="${list.likeCount }"/></b>개</b></p>
 							<!-- 좋아요 갯수	 e -->
 							<!-- contents s -->
 							<div class="cardcontent">

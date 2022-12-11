@@ -36,4 +36,9 @@ public interface MemberService {
 	public int xdminUpdate(Member dto) throws Exception;
 	
 	public int memberDel(Member dto) throws Exception;
+	
+	//sns로그인
+	public Member snsLoginCheck(Member dto) throws Exception;
+	public int kakaoInst(Member dto) throws Exception;
+	
 }

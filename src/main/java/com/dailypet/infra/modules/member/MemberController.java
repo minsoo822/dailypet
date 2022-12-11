@@ -248,23 +248,59 @@ public class MemberController {
 	}
 	
 	//관리자 회원정보수정
-		@RequestMapping(value = "memberUpdt") 
-		public String memberUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, Animal dto1, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
-			
-			service.xdminUpdate(dto);
-			
-			redirectAttributes.addFlashAttribute("vo", vo);
-			
-			return "redirect:/member/memberForm";
-		}
+	@RequestMapping(value = "memberUpdt") 
+	public String memberUpdt(@ModelAttribute("vo") MemberVo vo, Member dto, Animal dto1, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
 		
-		@RequestMapping(value = "memberDele")
-		public String memberDele(Member dto, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+		service.xdminUpdate(dto);
+		
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+		return "redirect:/member/memberForm";
+	}
+	
+	@RequestMapping(value = "memberDele")
+	public String memberDele(Member dto, HttpSession httpSession, RedirectAttributes redirectAttributes) throws Exception {
+		
+		service.memberDel(dto);
+		
+		return "redirect:/member/memberList";
+	}
+	
+	//카카오로그인
+	@ResponseBody
+	@RequestMapping(value = "kakaoLoginProc")
+	public Map<String, Object> kakaoLoginProc(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		Member kakaoLogin = service.snsLoginCheck(dto);
+		
+		 System.out.println("test : " + dto.getToken());
+		
+		if (kakaoLogin == null) {
+			service.kakaoInst(dto);
 			
-			service.memberDel(dto);
+			httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE);
+			// session(dto.getSeq(), dto.getId(), dto.getName(), dto.getEmail(), dto.getUser_div(), dto.getSnsImg(), dto.getSns_type(), httpSession);
+           session(dto, httpSession); 
+			returnMap.put("rt", "success");
+		} else {
+			httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE);
 			
-			return "redirect:/member/memberList";
+			// session(kakaoLogin.getSeq(), kakaoLogin.getId(), kakaoLogin.getName(), kakaoLogin.getEmail(), kakaoLogin.getUser_div(), kakaoLogin.getSnsImg(), kakaoLogin.getSns_type(), httpSession);
+			session(kakaoLogin, httpSession);
+			returnMap.put("rt", "success");
 		}
+		return returnMap;
+	}
+
+	public void session(Member dto, HttpSession httpSession) {
+		httpSession.setAttribute("sessSeq", dto.getIfmmSeq());    
+		httpSession.setAttribute("sessId", dto.getIfmmID());
+		httpSession.setAttribute("sessName", dto.getIfmmName());
+		httpSession.setAttribute("sessEmail", dto.getIfmmEmail());
+		httpSession.setAttribute("sessImg", dto.getSnsImg());
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "findId")
 	public Map<String, Object> findId(Member dto) throws Exception {

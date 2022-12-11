@@ -10,6 +10,8 @@
 
 <head>
     <%@include file="../../../common/xdmin/include/head.jsp"%>
+    <!-- 카카오 로그인 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
    
     <title>로그인</title>
     
@@ -196,10 +198,10 @@
 	                                    </div>
 	                                    <hr class="hr">
 	                                    <br>
-										<!-- <div class="d-grid gap-2 btn-sm">
-										  <button class="btn btn-warning right" type="button"><i class="fa-solid fa-comments"></i> Kakao로 시작하기</button>
-										</div>
 										<div class="d-grid gap-2 btn-sm">
+										  <button class="btn btn-warning right" type="button" id="kakaoLogin"><i class="fa-solid fa-comments"></i> Kakao로 시작하기</button>
+										</div>
+										<!-- <div class="d-grid gap-2 btn-sm">
 										  <button class="btn btn-success right" type="button"><i class="fa-brands fa-neos"></i> Naver로 시작하기</button>
 										</div>
 										<div class="d-grid gap-2 btn-sm">
@@ -266,6 +268,69 @@
 		});
 	</script>
 	
+	<!-- 카카오로그인 -->
+	<script type="text/javascript">
+	
+		Kakao.init('b2c3303d6ae0328f82f572d94aa8946b'); 
+		console.log(Kakao.isInitialized());
+		
+		$("#kakaoLogin").on("click", function() {
+			
+			Kakao.Auth.login({
+			      success: function (response) {
+			        Kakao.API.request({
+			          url: '/v2/user/me',
+			          success: function (response) {
+			        	  
+			        	  var accessToken = Kakao.Auth.getAccessToken();
+			        	  Kakao.Auth.setAccessToken(accessToken);
+	
+			        	  var account = response.kakao_account;
+			        	  
+			        	  console.log(response)
+	   		        	  console.log("email : " + account.email);
+	   		        	  console.log("name : " + account.name);
+	   		        	  console.log("nickname : " + account.profile.nickname);
+	   		        	  console.log("picture : " + account.profile.thumbnail_image_url);
+		        	  
+			        	  $("input[name=snsID]").val("카카오");
+		  	        	  $("input[name=ifmmName]").val(account.profile.nickname);
+		  	        	  $("input[name=ifmmTel]").val(account.profile.phone_number);
+		  	        	  $("input[name=ifmmEmail]").val(account.email);
+		  	        	  $("input[name=snsImg]").val(account.profile.thumbnail_image_url);
+		  	        	  $("input[name=token]").val(accessToken);
+	  	        	  
+		  	        	  $.ajax({
+							async: true
+							,cache: false
+							,type:"POST"
+							,url: "/member/kakaoLoginProc"
+							,data: {"name": $("input[name=ifmmName]").val(), "phone": $("input[name=ifmmTel]").val(), "email": $("input[name=ifmmEmail]").val(), "snsImg": $("input[name=snsImg]").val(), "token": $("input[name=token]").val()}
+							,success : function(response) {
+								if (response.rt == "fail") {
+									alert("아이디와 비밀번호를 다시 확인 후 시도해 주세요.");
+									return false;
+								} else {
+									window.location.href = "/animal/home";
+								}
+							},
+							error : function(jqXHR, status, error) {
+								alert("알 수 없는 에러 [ " + error + " ]");
+							}
+						});
+			          },
+			          fail: function (error) {
+			            console.log(error)
+			          },
+			        })
+			      },
+			      fail: function (error) {
+			        console.log(error)
+			      },
+			 })
+		});
+		
+	</script>
 		
 	<script type="text/javascript">
 	

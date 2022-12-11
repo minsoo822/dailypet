@@ -29,6 +29,10 @@ public class Member extends Base{
 	public String ifmmModDate;
 	public Integer ifmmDelNy;
 	
+	private String snsID;
+	public String snsImg;
+	private String token;
+	
 	private String mmPath;
 	private String mmuuidName;
 	private String petPath;
@@ -159,6 +163,24 @@ public class Member extends Base{
 	}
 	public void setIfmmDelNy(Integer ifmmDelNy) {
 		this.ifmmDelNy = ifmmDelNy;
+	}
+	public String getSnsID() {
+		return snsID;
+	}
+	public void setSnsID(String snsID) {
+		this.snsID = snsID;
+	}
+	public String getSnsImg() {
+		return snsImg;
+	}
+	public void setSnsImg(String snsImg) {
+		this.snsImg = snsImg;
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	}
 	public String getMm_ifmmSeq() {
 		return mm_ifmmSeq;

@@ -95,6 +95,16 @@ public class MemberDao {
 	public Member findId(Member dto) {
 		return sqlSession.selectOne(namespace + ".findId", dto);
 	}
+	
+	//sns로그인
+	public Member snsLoginCheck(Member dto) {
+	    return sqlSession.selectOne(namespace + ".snsLoginCheck", dto);
+	}
+	
+	public int kakaoInst(Member dto) {
+		return sqlSession.insert(namespace + ".kakaoInst", dto);
+	}
+	
 //-----------------------------------관리자------------------------------------------	
 	
 	//이미지 가져오기

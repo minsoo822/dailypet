@@ -315,6 +315,40 @@
 			AND ifmmEmail = #{ifmmEmail}
 	</select>
 	
+	<!-- sns 로그인 -->
+	<select id="snsLoginCheck" resultMap="resultMapObj">
+		SELECT 
+			u.ifmmSeq
+			,u.ifmmID
+			,u.ifmmName
+			,u.ifmmEmail
+			,u.ifmmPW
+			,u.snsImg
+		FROM member u
+		WHERE 1=1 
+			AND ifmmID = #{snsID} 
+			AND ifmmName = #{ifmmName}
+	</select>
+	
+	<insert id="kakaoInst">
+		INSERT INTO member (
+			ifmmID
+			,ifmmName
+			,ifmmEmail
+			,ifmmDelNy
+			,snsImg
+		)
+		VALUES (
+			#{snsID}
+			,#{ifmmName}
+			,#{ifmmEmail}
+			,0
+			,#{snsImg}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+	</insert>
 	
 	<!-- <select id="findPwd" parameterType="String" resultType="int">
 		select 

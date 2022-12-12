@@ -21,7 +21,6 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />		<!-- jQuery UI CSS파일 -->
 
 	<style type="text/css">
-	
 		.background{
 			background-image:url(/resources/images/xdmin/indexbg.jpg); 
 			background-attachment: fixed; 
@@ -79,8 +78,7 @@
 		}
 		
 		.wid{
-			width: 1080px;
-			margin-left: 600px;
+			width: 800px;
 		}
 		
 		a{
@@ -89,12 +87,12 @@
 			font-weight: bold;
 			font-size: 15px;
 			cursor: pointer;
-		}
+		} 
 		
 		a:hover{
 			color: #5c7406;
 		}
-	</style>
+	</style>  
 </head>
 
 <body class="background">
@@ -110,22 +108,22 @@
 		<br>
 		<div class="container wid"> 
 			<div class="row mid">
-				<div class="col-lg-4 col-md-4">
+				<div class="col-lg-4 col-md-4" style="margin: auto;">
 					<div class="container box">
 						<span class="choose">사용자</span>
 					</div>
-					<br>
+					<br> 
 					<br>
 					<a href="/animal/home">ENTER</a>
-				</div>
-				<div class="col-lg-4 col-md-4">
+				</div> 
+				<div class="col-lg-4 col-md-4" style="margin: auto;">
 					<div class="container box">
 						<span class="choose"><center>관리자</center></span>
 					</div>
 					<br> 
 					<br>
-					<a href="/member/memberList">ENTER</a>
-				</div>
+					<a href="/member/loginDmin">ENTER</a> 
+				</div> 
 			</div>
 		</div>
 	</div>

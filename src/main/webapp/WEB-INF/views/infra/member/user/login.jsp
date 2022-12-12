@@ -149,7 +149,7 @@
 
 <body>
 	<%@include file="../../../common/xdmin/include/header.jsp"%>
-	
+	<form name="form">
 	<div class="totalContent">
 	    <div class="content">
 	        <div class="container">
@@ -202,7 +202,7 @@
 										  <button class="btn btn-warning right" type="button" id="kakaoLogin"><i class="fa-solid fa-comments"></i> Kakao로 시작하기</button>
 										</div>
 										<div class="d-grid gap-2 btn-sm">
-										  <button class="btn btn-danger right" type="button"><i class="fa-brands fa-google"></i> Google로 시작하기</button>
+										  <button class="btn btn-danger right" type="button" id="googleLogin"><i class="fa-brands fa-google"></i> Google로 시작하기</button>
 										</div>
 										<!-- <div class="d-grid gap-2 btn-sm">
 										  <button class="btn btn-success right" type="button"><i class="fa-brands fa-neos"></i> Naver로 시작하기</button>
@@ -241,8 +241,7 @@
 	            </div>
 	        </div>
        </div>
-       
-    <form name="form">
+    
     	<input type="hidden" name="snsID"/>
     	<input type="hidden" name="ifmmName"/>
     	<input type="hidden" name="ifmmTel"/>
@@ -346,6 +345,55 @@
 			 })
 		});
 		
+	</script>
+	<script type="module">
+	/* 구글로그인 s */
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getAuth, signInWithPopup,  GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDdGuMcLtCeWX5UFXIizj0LNzPGqgiLSuw",
+      authDomain: "my-chat-3f2d7.firebaseapp.com",
+      databaseURL: "https://my-chat-3f2d7-default-rtdb.firebaseio.com",
+      projectId: "my-chat-3f2d7",
+      storageBucket: "my-chat-3f2d7.appspot.com",
+      messagingSenderId: "949173847138",
+      appId: "1:949173847138:web:fc3d0373e54b7097ce3d3b"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth();
+    
+    $("#googleLogin").on("click", function() {
+    	signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                console.log(result)
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+                console.log(error)
+            });
+    });
+    /* 구글로그인 e */
 	</script>
 		
 	<script type="text/javascript">

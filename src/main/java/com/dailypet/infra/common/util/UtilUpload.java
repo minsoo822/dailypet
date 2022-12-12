@@ -28,7 +28,9 @@ public class UtilUpload {
 		String pathDate = nowString.substring(0,4) + "/" + nowString.substring(5,7) + "/" + nowString.substring(8,10); 
 //		0부터 4까지 ->123, 5부터 7 ->5,6 8부터 10까지 -> 8,9   시분초까지 나눌수 있음 위에 nowString 추가해서하면 된다.
 //		1995/10/27 보리.png
-		String path = "D://factory/ws_sts_4151/dailypet/src/main/webapp/resources/uploaded" + "/" + pathModule + "/" + pathDate + "/";
+//		String path = "D://factory/ws_sts_4151/dailypet/src/main/webapp/resources/uploaded" + "/" + pathModule + "/" + pathDate + "/";
+		// 위에 경로 아래 처럼 변경 EC2 서버는 C D 드라이브 없이 root가  "/" 라서  filezila 가지고 프로젝트 파일 옮기는곳 경로 넣어줘야함
+		String path = "/factory/workspace/dailypet/resources/uploaded" + "/" + pathModule +  "/" + pathDate + "/";
 //		절대경로! community에 년폴더 월폴더 일폴더 여기에 이미지 파일들이 uuid로 저장된다.
 		String pathForView = "/resources/uploaded/" + pathModule + "/" + pathDate + "/";
 //		보여줄때 경로!

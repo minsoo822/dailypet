@@ -192,6 +192,13 @@ public class MemberController {
 		return "infra/member/user/findPW";
 	}
 	
+	@RequestMapping(value = "loginDmin")
+	public String loginDmin(HttpSession httpSession) throws Exception {
+
+		httpSession.invalidate();
+		return "infra/member/xdmin/loginDmin";
+	}
+	
 	@RequestMapping(value = "memberDel1")
 	public String memberDel1(@ModelAttribute("vo") MemberVo vo, Model model, HttpSession httpSession) throws Exception {
 

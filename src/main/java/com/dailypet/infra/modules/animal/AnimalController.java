@@ -2,6 +2,8 @@ package com.dailypet.infra.modules.animal;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,8 @@ public class AnimalController {
 	}
 	
 	@RequestMapping(value = "index")
-	public String index() throws Exception {
+	public String index(HttpSession httpSession) throws Exception {
+		httpSession.invalidate();
 		return "infra/animal/user/index";
 	}
 	

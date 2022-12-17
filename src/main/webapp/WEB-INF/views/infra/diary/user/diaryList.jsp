@@ -242,7 +242,7 @@
 								<c:if test="${list.ifmmSeq eq sessSeq }">
 									<button style="margin-left: 25px;" type="button" onclick="delPost(${list.ifdaSeq})"><i class="fa-regular fa-trash-can fa-lg"></i></button>
 								</c:if><c:if test="${list.ifmmSeq ne sessSeq }">
-								
+							
 								</c:if>
 							</div>
 						</div>

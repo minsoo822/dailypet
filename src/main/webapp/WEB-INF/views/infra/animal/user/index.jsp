@@ -19,9 +19,10 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 	<!-- jquery ui CSS -->    
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />		<!-- jQuery UI CSS파일 -->
+	<link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2088/2088112.png">
 
 	<style type="text/css">
-		.background{
+		.background{ 
 			background-image:url(/resources/images/xdmin/indexbg.jpg); 
 			background-attachment: fixed; 
 			background-size: cover;

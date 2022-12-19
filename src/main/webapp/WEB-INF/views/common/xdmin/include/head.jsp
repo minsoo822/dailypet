@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/2b8f3e92c4.js" crossorigin="anonymous"></script>
     <!-- Style -->
     <link href="/resources/css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2088/2088112.png">
     
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>   
     

@@ -160,6 +160,7 @@
 								<c:out value="${item.iffpAnimalShelter2 }"/>
 							</div>
 						</div>
+						<hr>
 						<div class="row">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								발견지역
@@ -176,6 +177,7 @@
 								<c:out value="${item.iffpSpotPlace }"/>
 							</div>
 						</div>
+						<hr>
 						<div class="row">
 							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 text textbtm">
 								발견일시
@@ -184,7 +186,7 @@
 								<c:out value="${item.iffpSpotDate }"/>
 							</div>
 						</div>
-	                </div>
+	                </div> 
 				</div>
 				<div class="row">
 					<c:if test="${item.mm_ifmmSeq eq sessSeq }">

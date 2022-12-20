@@ -34,12 +34,12 @@
 		FROM findpet a
 			LEFT JOIN abandonedUploaded c ON a.iffpSeq = c.pseq
 		WHERE 1=1
-		ORDER BY a.iffpSeq DESC
 			<choose>
 				<when test="iffpSpotLocation != 12 and iffpSpotLocation != null">
 					AND a.iffpSpotLocation = #{iffpSpotLocation}
 				</when>
 			</choose>
+		ORDER BY a.iffpSeq DESC
 		<include refid="Base.selectListLowerForMysql" />
 	</select>
 	

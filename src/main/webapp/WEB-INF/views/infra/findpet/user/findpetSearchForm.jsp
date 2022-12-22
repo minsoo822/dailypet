@@ -511,19 +511,6 @@
 				$("#searching").show();
 			}) 
 		}); */
-		
-		//버튼 클릭 시 내용 변경
-		 
-		/* (function () {
-			$('#searching').click( function() {
-				if( $(this).html() == '검색하기' ) {
-					$(this).html('검색을 시작합니다... 최초 검색 시 약 10초 정도 소요됩니다.');
-				}
-				else {
-					$(this).html('검색하기');
-				}
-			});
-		}()); */
 	</script>
 	   	
 	<script type="text/javascript">
@@ -751,19 +738,6 @@
 	    	    return true;
 	    	    });
 	    }); 
-	    
-	    
-	    
-	    
-	    
-	    
-	     
-	    
-	    
-	    
-	    
-	    
-	    
     </script>
 
 </body>

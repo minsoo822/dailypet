@@ -23,9 +23,9 @@
               <div class="footer-widget">
                   <!-- newsletter block -->
                   <h3 class="widget-title">e-mail Us</h3>
-                  <p>minsoo822@naver.com</p>
-                  <p>jjjy879@naver.com</p>
-                  <p>cuj0405@naver.com</p>
+                  <p>kimminsoo@dailypet.com</p>
+                  <p>kimjaeyi@dailypet.com</p>
+                  <p>choiyujin@dailypet.com</p>
               </div>
               <!-- newsletter block -->
           </div>
@@ -33,8 +33,9 @@
               <div class="footer-widget">
                   <!-- newsletter block -->
                   <h3 class="widget-title">Call us</h3>
-                  <p>180-874-5234</p>
-                  <p>180-752-3957</p>
+                  <p>010-0000-0000</p>
+                  <p>010-0000-0000</p>
+                  <p>010-0000-0000</p>
               </div>
               <!-- newsletter block -->
             </div>
